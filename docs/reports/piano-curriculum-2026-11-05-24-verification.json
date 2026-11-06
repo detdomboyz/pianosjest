@@ -1,0 +1,270 @@
+{
+  "batch": "2026-11-05-24",
+  "releaseVersion": "23.5.5",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonIds": [
+    "detail-p-chordmove-04"
+  ],
+  "newDistinctGoalCount": 0,
+  "primarySameGoalLessonId": "course08-05",
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 417,
+    "checkedMidiRouteLessons": 153,
+    "withStructuredProvenance": 53,
+    "individuallyMappedToDomain": 53,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 1,
+    "goalGroupUpperBound": 416,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 278,
+    "failed": 0,
+    "durationMs": 120266.6076,
+    "newTests": 7,
+    "logs": "tmp/piano-batch-24-tests.log"
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 417,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 565,
+        "pianoThemes": 90,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1278,
+        "beginnerChallenges": 153,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "version": 4,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 417,
+        "checkedMidiRouteLessons": 153,
+        "withStructuredProvenance": 53,
+        "individuallyMappedToDomain": 53,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 1,
+        "goalGroupUpperBound": 416,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "detail-p-chordmove-04"
+          ]
+        }
+      ]
+    }
+  },
+  "reproduction": {
+    "correct": {
+      "legacy": true,
+      "v2": true
+    },
+    "early": {
+      "legacy": true,
+      "v2": false
+    },
+    "late": {
+      "legacy": true,
+      "v2": false
+    },
+    "split": {
+      "legacy": true,
+      "v2": false
+    }
+  },
+  "preservation": {
+    "diff": {
+      "missing": [],
+      "new": [],
+      "music": [
+        "detail-p-chordmove-04"
+      ],
+      "instruction": [
+        "detail-p-chordmove-04"
+      ],
+      "classification": []
+    },
+    "catalogOrderUnchanged": true,
+    "protectedHashes": {
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "midi-keyboard-settings.ini": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "practice-assessment.js": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+      "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "newFingerprint": "e19f9d0e",
+    "previousFingerprint": "1c8c4ed0",
+    "notes": [
+      [
+        60,
+        64,
+        67
+      ],
+      [
+        65,
+        69,
+        72
+      ],
+      [
+        67,
+        71,
+        74
+      ],
+      [
+        60,
+        64,
+        67
+      ]
+    ],
+    "fingersAndHandUnchanged": true,
+    "otherLessonCountUnchanged": 564
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4180",
+    "version": "23.5.5",
+    "lessonId": "detail-p-chordmove-04",
+    "compact": {
+      "bodyCreated": false,
+      "height": 112,
+      "lineHeight": "22.4px",
+      "mode": "compact",
+      "preview": "Повторение навыка «Смена C–F–G–C».\nПовтори C4–E4–G4, F4–A4–C5, G4–B4–D5, C4–E4–G4 правой 1–3–5. Держи две доли, на третью отпускай все клавиши и готовь следующую форму.\nПодготовка: это повторение навыка из «Смена C–F–G–C», а не новая цель из-за другого темпа. Найди C4–E4–G4, F4–A4–C5 и G4–B4–D5 правой 1–3–5. Верхние ноты двух последних форм — C5 и D5. Послушай образец: цельное созвучие, затем тишина и новая опора. Не удерживай охват силой.",
+      "title": "Правая: C–F–G–C"
+    },
+    "expanded": {
+      "expanded": "true",
+      "primaryButtons": 1,
+      "relation": "Здесь закрепляется тот же навык. Открыть основной разбор:Смена C–F–G–C",
+      "title": "Правая: C–F–G–C",
+      "twoBeatText": true
+    },
+    "navigation": {
+      "focus": "lesson-name",
+      "relationAbsent": true,
+      "title": "Смена C–F–G–C"
+    },
+    "hiddenAfterReload": {
+      "cardAbsent": true,
+      "mode": "hidden",
+      "restoreEnabled": true
+    },
+    "memory": {
+      "cardAbsent": true,
+      "catalogAbsent": true,
+      "keyAbsent": true,
+      "modeDisabled": true,
+      "octaveAbsent": true,
+      "preparationsAbsent": true,
+      "relationAbsent": true,
+      "title": "Игра из памяти"
+    },
+    "mobile": {
+      "client": 376,
+      "lineHeight": "22.4px",
+      "mode": "compact",
+      "previewHeight": 112,
+      "scroll": 376
+    },
+    "disclosureEnterAndSpace": true,
+    "errors": [],
+    "screenshots": [
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-batch-24-repetition.jpg",
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-batch-24-compact.jpg"
+    ],
+    "physicalMidiTested": false
+  },
+  "build": {
+    "version": "23.5.5",
+    "assetCount": 18,
+    "allManifestHashesAndBytesMatch": true,
+    "currentSourceMatchesArtifact": true,
+    "publicDirectoryOnlyContainsAllowlistedAssetsAndManifest": true,
+    "serverPublished": false
+  },
+  "remainingLegacyDurationLessonIds": [
+    "course09-01",
+    "course09-02",
+    "course09-03",
+    "course09-04",
+    "course09-06",
+    "course10-04",
+    "course10-06",
+    "course10-08"
+  ],
+  "sourceEvidenceIds": [
+    "ou-triads-2026-11-05",
+    "ou-time-values-2026-11-05",
+    "hutchinson-meter-2026-11-05",
+    "kovarsky-fingering-context-2026-11-05",
+    "duke-simmons-small-goals-2026-11-05",
+    "kovarsky-chords-in-music-2026-11-05"
+  ],
+  "sourceEntryCount": 20,
+  "quota": {
+    "checkedOn": "2026-11-05",
+    "checkedAt": "2026-11-05T18:43:45.563Z",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 34,
+    "remainingPercent": 66,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031,
+    "spendControlReached": false,
+    "otherWindowExhausted": false,
+    "otherWindowUnavailable": false
+  },
+  "limitations": [
+    "MIDI does not prove fingers, physical comfort or artistic quality.",
+    "Known material is not an independent ear test.",
+    "Final rest is not observed after the last note-off.",
+    "416 is an explicit-link upper bound, not a verified number of distinct goals.",
+    "8 legacy long-note candidates, earlier cross-hand prerequisites, held voices and pedal still need separate work.",
+    "No physical MIDI device, independent teacher review, cloud deployment or completed React/Next migration."
+  ],
+  "ownedQaPreviewClosed": true,
+  "ownedQaTabClosed": true,
+  "guitarFilesChanged": false,
+  "commitPushOrDeployment": false
+}

@@ -1,0 +1,407 @@
+{
+  "batch": "2026-11-06-14",
+  "triggeredAt": "2026-11-06T00:43:08.388Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.19",
+  "status": "implemented-and-tested",
+  "changeType": "system-only; readonly-document-pilot and real parser extraction",
+  "newLessonCount": 0,
+  "reviewedLessonCount": 0,
+  "changedAssessmentContractIds": [],
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 421,
+    "checkedMidiRouteLessons": 157,
+    "withStructuredProvenance": 71,
+    "individuallyMappedToDomain": 71,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 414,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "modules": [
+    {
+      "runtime": "music-document.js",
+      "declaration": "music-document.d.ts",
+      "role": "Common independent-note document validation"
+    },
+    {
+      "runtime": "piano-catalog-adapter.js",
+      "declaration": "piano-catalog-adapter.d.ts",
+      "role": "Shipped parser, key map and guarded readonly legacy projection"
+    }
+  ],
+  "integration": {
+    "parserUsedByApplication": true,
+    "wholeCatalogProjectionOnInteractivePath": false,
+    "interactiveCatalogVersion": 7,
+    "sourceArchivePreserved": true,
+    "changedGraphsRejected": true,
+    "noteIdsScopedToCatalogRevision": true,
+    "catalogRevisionPrefix": "piano-catalog-v7:",
+    "catalogRevisionIsNotAssessmentCredit": true
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 391,
+    "failed": 0,
+    "newTests": 12,
+    "durationMs": 158927.6928,
+    "log": "tmp/piano-batch-38-tests.log",
+    "focused": {
+      "passed": 17,
+      "log": "tmp/piano-batch-38-focused.log"
+    },
+    "physicalMidiOrAudioUsed": false
+  },
+  "types": {
+    "compiler": "TypeScript 5.8.3",
+    "compilerSource": "Existing read-only ../libre/node_modules/typescript/lib/tsc.js",
+    "exitCode": 0,
+    "command": "node --preserve-symlinks --preserve-symlinks-main ../libre/node_modules/typescript/lib/tsc.js --noEmit --strict --target ES2022 --module commonjs --lib ES2022 --typeRoots ./tmp/empty-type-roots tools/type-tests/music-document.ts",
+    "fixture": "tools/type-tests/music-document.ts",
+    "log": "tmp/piano-batch-38-types.log",
+    "installsPerformed": false,
+    "emittedFiles": false,
+    "scope": "New declarations and their typed consumer; not the full app"
+  },
+  "audits": {
+    "musicDocument": {
+      "schemaVersion": 1,
+      "scope": "read-only compatibility projection; not editable score migration",
+      "lessons": 569,
+      "notes": 39247,
+      "knownTimeNotes": 23102,
+      "unknownTimeNotes": 16145,
+      "explicitPianoAssignments": 1507,
+      "warningCounts": {
+        "LEGACY_SHARED_CHORD_TIME": 3258,
+        "EXACT_TIME_UNAVAILABLE": 141
+      },
+      "musicVersionsPreserved": true,
+      "jsonRoundTripExact": true,
+      "individualChordReleaseRecovered": false,
+      "physicalValidation": false,
+      "elapsedMs": 3003.7053,
+      "snapshotSha256": "13540c4ab09734629a4bf7690b301d5ab0cf1cf9e39c5ca980a6f78232b7d5c7"
+    },
+    "lessons": {
+      "checked": {
+        "piano": 421,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 569,
+        "pianoThemes": 93,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1282,
+        "beginnerChallenges": 157,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 421,
+        "checkedMidiRouteLessons": 157,
+        "withStructuredProvenance": 71,
+        "individuallyMappedToDomain": 71,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 6,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 414,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-03",
+          "lessonIds": [
+            "course04-03",
+            "detail-p-rhythm-01"
+          ]
+        },
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "sourceLedgerEntries": 26,
+  "sources": [
+    {
+      "id": "typescript-module-declarations-2026-11-06",
+      "kind": "technical-reference",
+      "author": "Microsoft / TypeScript documentation",
+      "title": "Modules .d.ts",
+      "url": "https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html",
+      "additionalUrls": [],
+      "edition": "Online Handbook, declaration-file module template",
+      "application": {
+        "batch": "2026-11-06-14",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "scope": "Pure musical-document and readonly compatibility adapter pilot; no lesson review",
+        "section": "Optional Global Usage; Testing your types",
+        "application": "Pure JS remains executable without dependencies; matching .d.ts describes readonly musical data, separate piano assignments and compatibility restoration.",
+        "limits": "TypeScript 5.8.3 checks declarations and a consumer only; runtime validators and integration tests are separate. No React/Next.js migration or installed package is implied.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-14.md"
+      }
+    },
+    {
+      "id": "musicxml-individual-duration-2026-11-06",
+      "kind": "technical-reference",
+      "author": "W3C Music Notation Community Group",
+      "title": "MusicXML 4.0: duration and chord",
+      "url": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/chord/",
+      "additionalUrls": [
+        "https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/duration/"
+      ],
+      "edition": "MusicXML 4.0 reference",
+      "application": {
+        "batch": "2026-11-06-14",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "scope": "Pure musical-document and readonly compatibility adapter pilot; no lesson review",
+        "section": "chord description, same duration or shorter added note; duration description, intended versus notated duration and attack/release",
+        "application": "Store a span per note in the common contract. Mark existing piano chord actions as a shared-time limitation; archive source data rather than inventing individual releases. Retain source quarter values without quantization.",
+        "limits": "Project schema is not MusicXML. This stage neither imports MusicXML nor recovers discarded original MIDI voices, notated duration or pedal from legacy grouped actions.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-14.md"
+      }
+    }
+  ],
+  "originalReproduction": {
+    "observedOn": "2026-11-06",
+    "performanceProbe": {
+      "catalogJsonBytes": 8050304,
+      "lessons": 569,
+      "notes": 39247,
+      "baseWriteMs": 42.2046,
+      "prototypeProjectionRoundTripMs": 1082.7462,
+      "writeAfterMs": 60.7853,
+      "decision": "Rejected synchronous projection in export/import; final interactive transfer keeps its original path. Explicit development audit instead. This single local probe is not a general benchmark."
+    },
+    "versionProbe": [
+      {
+        "id": "detail-p-release-01",
+        "runtimeCredit": "d1eab36d",
+        "serializedSource": "aa8588c5"
+      },
+      {
+        "id": "detail-p-black-04",
+        "runtimeCredit": "ef39f991",
+        "serializedSource": "567b2cf1"
+      },
+      {
+        "id": "course08-02",
+        "runtimeCredit": "eab4e917",
+        "serializedSource": "ed8ab7cf"
+      }
+    ],
+    "versionDecision": "Catalog revision is namespaced piano-catalog-v7 and cannot be treated as assessment credit. Runtime normalization adds timing stepIndex; isolated legacy reload must preserve actual credit fingerprints. No grading algorithm change."
+  },
+  "browser": {
+    "consoleErrors": [],
+    "chord": {
+      "assets": [
+        "music-document.js",
+        "piano-catalog-adapter.js"
+      ],
+      "target": "[80w]C3 + E3 + G3 — нажать одновременноСозвучие целиком: удерживай все звуки до указанного конца и отпусти вместе. Один оставшийся или рано снятый звук меняет окончание.Ритм: такт 1, доля 1; 𝅗𝅥 половинная (2 доли, 2400 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C3–G3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C3: левая рука: палец 5 — мизинецE3: левая рука: палец 3 — среднийG3: левая рука: палец 1 — большойБлижайший фрагмент:[80w] [80w] [80w] [80w]",
+      "title": "C major левой: C–E–G"
+    },
+    "downloadPath": "D:\\Загрузки\\melodiajest-catalog-2026-11-06.json",
+    "memory": {
+      "events": 0,
+      "keys": 0,
+      "material": 0,
+      "materialMode": "expanded",
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0,
+      "target": "Играй из памяти, сохраняя пульс. Подсказки скрыты."
+    },
+    "screenshot": "docs/qa/piano-2026-11-06-14-musical-core.jpg",
+    "hardwareMidiOrAudioUsed": false,
+    "downloadWait": "Browser download action had a long tool wait; it is not an application latency benchmark."
+  },
+  "download": {
+    "path": "D:/Загрузки/melodiajest-catalog-2026-11-06.json",
+    "bytes": 8050304,
+    "version": 7,
+    "lessonCount": 569,
+    "themeCount": 93,
+    "firstId": "course01-01",
+    "lastId": "detail-p-left-whole-01",
+    "savedAt": "2026-11-06T03:36:37.919Z",
+    "sourceOnly": true,
+    "sha256": "9e3d7ab767e2cce77e4ebd8c3bfa3fe6a85dcd21d4b41e6e86bc271286bb32f1",
+    "allLessonFieldsMatchWhenResolvingFreshBootThemeIdentity": true,
+    "themeNamesOrderAndClassificationMatch": true,
+    "freshBootGeneratedThemeIdDifference": {
+      "affectedLessonCount": 15,
+      "sampleIds": [
+        "fav-hachiko-v3-part-01",
+        "fav-hachiko-v3-part-02",
+        "fav-hachiko-v3-part-03",
+        "fav-hachiko-v3-part-04",
+        "fav-hachiko-v3-part-05"
+      ],
+      "scope": "Comparing two separate fresh boots; not an export/import change. Exact IDs are preserved within one source snapshot and its projection."
+    },
+    "excludedProgressAndDeviceSettings": true
+  },
+  "preservation": {
+    "changedMusic": [],
+    "changedInstructions": [],
+    "changedParsedData": [],
+    "priorLessonCount": 569,
+    "currentLessonCount": 569,
+    "newLessonIds": [],
+    "oldRelativeOrderPreserved": true,
+    "parserMapUnchanged": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.19",
+    "publicAssets": 20,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "4ad2b3461b44120efbc6a61d2720e21c38109909bd19f39ffbcf899f57112c21",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased"
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T03:37:06.126Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 45,
+    "remainingPercent": 55,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "gitDiffCheckPassed": true,
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "verifiedDistinctGoalCount": null,
+    "individualChordReleasesRecovered": false,
+    "legacyUnknownTimingPreserved": true,
+    "savedNoteIdsAcrossEdits": false,
+    "musicXmlImporter": false,
+    "pianoPedalOrHeldVoiceExecutionChanged": false,
+    "fullGuitarAdapter": false,
+    "progressTransfer": false,
+    "freshBootThemeIdentityDifferenceQueued": true,
+    "fullReactNextMigrationComplete": false,
+    "domainBought": false,
+    "deployed": false,
+    "guitarWritePerformed": false,
+    "portalServicesChanged": false,
+    "commitOrPush": false
+  },
+  "lastMusicalReport": "docs/reports/piano-curriculum-2026-11-06-13.md",
+  "nextWork": {
+    "priority": "relocation-preparation-source-review",
+    "action": "Следующая малая музыкальная партия: индивидуально исследовать detail-p-relocate-01, detail-p-relocate-02 и detail-p-relocate-04. Проверить первоисточники и реальные ноты, направления, руку и пальцы, а также роль course05-07: левая первая и поздняя переносные записи ещё требуют правые предшественники. После доказанной подготовки исправить 1–3 записи с переносом в другую фразу, сохраняя музыку, классификацию, порядок, пользовательские редакции и зачёт; не удалять все перекрёстные связи. Контракт music-document v1 и адаптер для чтения готовы как пилот: 569 записей / 39 247 нот проверены обратным преобразованием, разборщик уже используется приложением. Обычный экспорт оставлен без тяжёлой проекции; редакция каталога не используется как зачёт. Затем один компонент чтения в отдельном необязательном пакете React/Next.js на этом контракте, с явными неизвестными временами и ограничениями общих окончаний. Музыкальный учёт остаётся 421 запись / 157 MIDI-контрактов / 71 подробное описание / 3 будущих плана; верхняя граница 414 целей не является проверенным числом самостоятельных уроков. Минимум 1000 ещё не достигнут.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "lesson-development.js",
+      "curriculum-plan.js",
+      "docs/MUSIC_DOCUMENT_V1.md"
+    ]
+  }
+}

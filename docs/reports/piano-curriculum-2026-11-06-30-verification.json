@@ -1,0 +1,224 @@
+{
+  "batch": "2026-11-06-30",
+  "version": "23.5.30",
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "newPlans": 0,
+  "importConnected": true,
+  "fragmentImportConnected": true,
+  "supportedSourceVersions": [
+    1,
+    2
+  ],
+  "writePolicy": "empty-or-semantically-identical; empty-source-keeps-destination",
+  "previewTicketRequired": true,
+  "backupBeforeData": true,
+  "idempotentRetry": true,
+  "automaticRollback": false,
+  "portablePendingArchiveBlocked": true,
+  "legacyRecoveryApplied": false,
+  "transferArchiveExportConnected": true,
+  "preparationContractsUnchanged": 6,
+  "readingGateUiConnected": false,
+  "eligibleFirstReadingItems": 0,
+  "tests": {
+    "mainPassed": 611,
+    "mainFailed": 0,
+    "mainCancelled": 0,
+    "mainDurationMs": 257459.0776,
+    "earlierMainPassed": 609,
+    "newRegressions": 22,
+    "finalFocusedPassed": 79,
+    "initialFocused": {
+      "passed": 75,
+      "cancelled": 2,
+      "reason": "old fake lock manager serialized all names; corrected to per-resource queues as Web Locks specifies"
+    },
+    "strictTypeScriptExitCode": 0,
+    "optionalReaderPassed": 6,
+    "optionalNextPassed": 4,
+    "nextLintEnabled": false,
+    "postMainChange": "clarify incomplete-copy instruction only; final 79 regressions, fresh browser check and rebuilt web artifact passed"
+  },
+  "musicalAudits": {
+    "lessonContradictions": 0,
+    "fingeringStructuralFailures": 0,
+    "beginner": {
+      "ok": true,
+      "lessonsChecked": 80,
+      "notesChecked": 1036,
+      "fingeringNotesChecked": 1036,
+      "issues": []
+    },
+    "unsupportedActions": 83,
+    "flaggedLessons": 10,
+    "curriculumHardErrors": [],
+    "preparationPlans": 2,
+    "requirements": 6,
+    "assessmentVersionsStillApplicable": 570
+  },
+  "counts": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 82,
+    "individuallyMappedToDomain": 82,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "preservation": {
+    "catalogRecordsUnchanged": 570,
+    "assessmentVersionsUnchanged": 570,
+    "allPreparationContractsUnchanged": 6,
+    "selectedFragmentExportPreservesAll570Records": true,
+    "protectedFiles": 62,
+    "unchangedProtectedFiles": 57,
+    "intentionalProtectedChanges": [
+      "index.html",
+      "package.json",
+      "piano-preparation-capture.d.ts",
+      "piano-preparation-transfer.js",
+      "piano-preparation-transfer.d.ts"
+    ],
+    "newModules": [
+      "piano-preparation-import.js",
+      "piano-preparation-import.d.ts"
+    ],
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "readerChanged": [
+      "reader-release.json"
+    ],
+    "nextRuntimeChunksUnchanged": 17,
+    "ownedQaPortsClosed": {
+      "4214": true,
+      "4215": true
+    },
+    "artifacts": {
+      "web": {
+        "version": "23.5.30",
+        "mainReleaseVersion": "23.5.30",
+        "resources": 27,
+        "allHashesMatch": true
+      },
+      "reader": {
+        "version": "0.1.0",
+        "mainReleaseVersion": "23.5.30",
+        "resources": 6,
+        "allHashesMatch": true
+      },
+      "next": {
+        "version": "0.1.1",
+        "mainReleaseVersion": "23.5.30",
+        "resources": 30,
+        "allHashesMatch": true
+      }
+    }
+  },
+  "browser": {
+    "source": "synthetic MIDI QA copy with four whole observations and one fragment",
+    "physicalMidiTested": false,
+    "compareA": "Сравнение выполнено. Будет записано разделов: 3. Остальные данные сохранятся. Перед записью будет проверена резервная копия.",
+    "compareB": "Сравнение выполнено. Будет записано разделов: 3. Остальные данные сохранятся. Перед записью будет проверена резервная копия.",
+    "saveA": "Копия сохранена. Исходный пакет и прежняя история включены в резервный журнал переноса.",
+    "saveB": "Эта копия уже перенесена. Повтор не переписывает последующие результаты.",
+    "normalExport": {
+      "whole": 4,
+      "fragments": 1,
+      "backups": 1,
+      "phase": "applied",
+      "sourceExact": true,
+      "legacyRawExact": true,
+      "right": 1,
+      "left": 3,
+      "complete": true
+    },
+    "conflict": "В этом браузере уже есть отличающаяся история. Экспортируй её: автоматическая замена не выполняется. Исходный текст оставлен в поле.",
+    "conflictExportUnchanged": true,
+    "partial": "Перенос прерван при записи. Повтор продолжит его по резервному журналу. Исходный текст оставлен в поле.",
+    "partialExport": {
+      "whole": 4,
+      "fragments": 0,
+      "legacy": null,
+      "phase": "prepared",
+      "sourceExact": true,
+      "beforeAllEmpty": true
+    },
+    "resume": "Найден незавершённый перенос. Будет записано разделов: 3. Остальные данные сохранятся. Перед записью будет проверена резервная копия.",
+    "recovered": "Копия сохранена. Исходный пакет и прежняя история включены в резервный журнал переноса.",
+    "recoveredExport": {
+      "whole": 4,
+      "fragments": 1,
+      "legacyRawExact": true,
+      "backups": 1,
+      "sameOperation": true,
+      "phase": "applied"
+    },
+    "oldFaultRetry": "Эта копия уже перенесена. Повтор не переписывает последующие результаты.",
+    "memory": {
+      "scoreNotes": 0,
+      "transferFields": 0
+    },
+    "v1Compare": "Сравнение выполнено. Будет записано разделов: 0. Остальные данные сохранятся. Перед записью будет проверена резервная копия.",
+    "v1After": {
+      "fragments": 1,
+      "whole": 4,
+      "legacyRawExact": true,
+      "backups": 2
+    },
+    "mobile": {
+      "buttonHeight": 44,
+      "client": 376,
+      "inputWidth": 318.3999938964844,
+      "result": "Эта копия уже перенесена. Повтор не переписывает последующие результаты.",
+      "scroll": 376
+    },
+    "consoleErrors": {
+      "a": [],
+      "b": [],
+      "partial": [],
+      "recovered": [],
+      "final": [],
+      "last": []
+    },
+    "portablePending": {
+      "applyButtons": 0,
+      "compareDisabled": true,
+      "inputLength": 115043,
+      "result": "Копия v2 неполная: есть незавершённый перенос. Заверши его на исходном адресе и подготовь новый JSON. Полных записей: 4; фрагментов: 0. Для текущих редакций: 4; для других редакций: 0. Прежняя история: 0. Операций восстановления: 0. Проверка не меняет счётчики. Для переноса сравни копию с местной историей.",
+      "exportUnchanged": true,
+      "layout": {
+        "client": 376,
+        "scroll": 376
+      },
+      "finalHelp": "Копия v2 неполная: есть незавершённый перенос. Заверши его на исходном адресе и подготовь новый JSON. Полных записей: 4; фрагментов: 0. Для текущих редакций: 4; для других редакций: 0. Прежняя история: 0. Операций восстановления: 0. Проверка не меняет счётчики. Подготовь полную копию перед переносом.",
+      "finalCompareDisabled": true
+    }
+  },
+  "dependencyFreeLocalServer": {
+    "loopbackOnly": true,
+    "assets": 7,
+    "allServedExact": true,
+    "contentApiRequested": false,
+    "nativeEndpointRequested": false,
+    "trainerContentUnchanged": true
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T15:53:48.461Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 60,
+    "remainingPercent": 40,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "physicalMidiTested": false,
+  "independentTeacherReviewed": false,
+  "nativeBeforeUnloadPromptConfirmed": false,
+  "forbiddenIncidentalActionsPerformed": [],
+  "next": "left-five-finger-preparation-transition-review"
+}

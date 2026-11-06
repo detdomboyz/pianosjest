@@ -1,0 +1,509 @@
+{
+  "batch": "2026-11-06-05",
+  "triggeredAt": "2026-11-05T20:40:34.687Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.10",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonIds": [
+    "course09-06"
+  ],
+  "newDistinctGoalCount": 0,
+  "sameGoalAs": "course07-06",
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 419,
+    "checkedMidiRouteLessons": 155,
+    "withStructuredProvenance": 61,
+    "individuallyMappedToDomain": 61,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 3,
+    "goalGroupUpperBound": 416,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 308,
+    "failed": 0,
+    "durationMs": 137058.6964,
+    "newTests": 6,
+    "logs": "tmp/piano-batch-29-tests.log",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 419,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 567,
+        "pianoThemes": 92,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1280,
+        "beginnerChallenges": 155,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 419,
+        "checkedMidiRouteLessons": 155,
+        "withStructuredProvenance": 61,
+        "individuallyMappedToDomain": 61,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 3,
+        "goalGroupUpperBound": 416,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "omt-simple-counting-2026-11-05",
+      "author": "Mark Gotham; Chelsey Hamm; Kris Shaffer",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/simple-meter-and-time-signatures/",
+      "section": "Time Signatures, Example 9; Counting in Simple Meter, Example 10 and bullets on held beats and and subdivisions",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "application": "Time Signatures, Examples 9–10: four quarter-note beats and counting through longer values. New project rhythm has bass starts 0/4/8/12 and a two-beat last note.",
+      "limits": "The Russian words, note patterns, 48/56 BPM and numerical MIDI tolerances belong to the project. No copied notation or author approval."
+    },
+    {
+      "id": "ou-time-values-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-3.1",
+      "section": "Paragraph following Example 13 and the relation of time values preceding Example 14",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "application": "Section 3.1, Examples 13–14: a half note lasts twice a quarter. Project chooses fourteen quarters and a last half; this is not reconstructed repertoire.",
+      "limits": "Does not prescribe piano fingers, repetitions, tempo, a fixed duration tolerance or this MIDI assessment contract."
+    },
+    {
+      "id": "pierce-hands-learning-2026-11-05",
+      "author": "Stephen Pierce",
+      "url": "https://hub.yamaha.com/music-educators/prof-dev/teaching-tips/12-practice-tips/",
+      "section": "7 Avoid Hands-Separate Learning; 10 Repeat Target Passages with Variation Until Errors are Corrected, then Practice in Context",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "application": "Read sections 7 and 10: check each hand briefly, immediately return to the combined bass/reply pulse; vary a short reply and restore context. This retained record is a transfer/repetition of course07-06, not claimed as a new independent goal.",
+      "limits": "Only sections 7 and 10 are applied. Awkward transposition, extended leaps and blind-leap examples from other sections are not assigned to beginners. The exact project phrase, released bass, 58 BPM and machine tolerances are not endorsed by the author."
+    },
+    {
+      "id": "duke-simmons-small-goals-2026-11-05",
+      "author": "Bob Duke and Amy Simmons",
+      "url": "https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice",
+      "section": "How much to try and change at one time; How to think about what you are trying to play; How to organize practice time over the week; How to maintain beautiful fundamentals",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": false,
+      "application": "Reuse verified small-goal and varied-context practice principle for one handoff, a complete phrase and a new short reply.",
+      "limits": "The lesson duration, repetitions, metronome goal and MIDI tolerances are project choices, not requirements established by these authors."
+    },
+    {
+      "id": "dumlavwalla-basic-technique-2026-11-05",
+      "author": "Dr. Diana Dumlavwalla",
+      "url": "https://hub.yamaha.com/music-educators/instruments/piano/piano-pedagogy-fix-basic-technique/",
+      "section": "Fix It: Unbalanced Posture; Fix It: Tension in Arms; Fix It: Inconsistent Hand Shape, wrist paragraph",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": false,
+      "application": "Reuse verified free-wrist guidance while the hands remain prepared in two registers. Comfort is not established by MIDI.",
+      "limits": "Does not supply the project notes, fingering, duration ratio, tempo or repetitions. This review does not prescribe the article’s assisted arm-drop exercises."
+    }
+  ],
+  "lesson": {
+    "id": "course09-06",
+    "musicFingerprint": "74650f0a",
+    "oldMusicFingerprint": "1e8193a7",
+    "notes": [
+      [
+        48
+      ],
+      [
+        60
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        48
+      ],
+      [
+        64
+      ],
+      [
+        65
+      ],
+      [
+        67
+      ],
+      [
+        48
+      ],
+      [
+        67
+      ],
+      [
+        65
+      ],
+      [
+        64
+      ],
+      [
+        48
+      ],
+      [
+        62
+      ],
+      [
+        60
+      ]
+    ],
+    "fingers": [
+      [
+        {
+          "hand": "left",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 4
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 4
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ]
+    ],
+    "starts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "durations": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "rests": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "meter": {
+      "numerator": 4,
+      "denominator": 4
+    },
+    "bpm": 58,
+    "timingPrecision": "beat-boundary-v1",
+    "requires": [
+      "course07-06",
+      "course04-02"
+    ],
+    "provenance": "project-technical-drill",
+    "handoffCueProfile": "sequential-release"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4185",
+    "tabId": "40",
+    "desktop": {
+      "fullBody": false,
+      "heading": "Мелодия с басовыми ответами",
+      "lineHeight": "22.4px",
+      "previewHeight": 112
+    },
+    "primaryNavigation": {
+      "focus": "lesson-name",
+      "heading": "Левая опора, правая фраза"
+    },
+    "leftToRight": "Смена рук: левая → правая. Закончи звук прежней руки у вступления новой. Здесь руки играют по очереди, без удержания прежней клавиши.",
+    "rightToLeft": "Смена рук: правая → левая. Закончи звук прежней руки у вступления новой. Здесь руки играют по очереди, без удержания прежней клавиши.",
+    "hidden": {
+      "card": false,
+      "control": true,
+      "mode": "hidden"
+    },
+    "primaryButtonCount": 1,
+    "memory": {
+      "goalLink": false,
+      "handoff": false,
+      "keyboard": false,
+      "material": false,
+      "octaves": false,
+      "savedMode": "expanded",
+      "selectDisabled": true
+    },
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "spaceExpanded": "true"
+    },
+    "consoleErrors": [],
+    "cleanup": {
+      "tabClosed": true,
+      "viewportReset": true
+    },
+    "physicalMidiOrAudioEnabled": false,
+    "mobileMethod": "Read-only DOM geometry and actual keyboard disclosure; desktop screenshot visually inspected."
+  },
+  "preservation": {
+    "changedMusic": [
+      "course09-06"
+    ],
+    "changedInstructions": [
+      "course09-06"
+    ],
+    "explicitClassificationChanges": [
+      "course09-06"
+    ],
+    "newLessonIds": [],
+    "priorLessonCount": 567,
+    "currentLessonCount": 567,
+    "unchangedMusicAndInstructions": 566,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "build": {
+    "manifest": "dist/web/web-release.json",
+    "publicAssets": 18,
+    "allManifestAndCurrentSourceBytesMatch": true,
+    "privateAndResearchFilesAbsent": true,
+    "manifestSha256": "5d9c7e5df682606337b5ccf6771d08250275430c8379c720c8022434631b881c"
+  },
+  "quota": {
+    "checkedOn": "2026-11-06",
+    "checkedAt": "2026-11-05T20:51:56.802Z",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 37,
+    "remainingPercent": 63,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031,
+    "spendControlReached": false,
+    "otherWindowExhausted": false,
+    "otherWindowUnavailable": false
+  },
+  "limits": {
+    "teacherReview": false,
+    "physicalFingersValidated": false,
+    "artisticQualityValidated": false,
+    "independentHeldVoiceSupportAdded": false,
+    "remainingLegacyDurationLessons": 3,
+    "verifiedDistinctGoalCount": null,
+    "domainPurchased": false,
+    "deployed": false,
+    "fullNextMigrationComplete": false
+  },
+  "screenshots": [
+    "docs/qa/piano-2026-11-06-05-handoff.jpg"
+  ],
+  "nextWork": {
+    "priority": "blind-rhythm-role-memory-and-timing-review",
+    "action": "Следующая малая партия: course10-04 «Ритм вслепую». Сверить 12 событий и три рисунка 1–0,5–0,5–2 в трёх тактах 4/4 при 66 BPM, назначение правой руки/пальцев, подготовку и точные отпускания. Проверить роль повторения относительно уже разобранного ритма: режим памяти или отсутствие взгляда не создают новую самостоятельную цель. Различить вспомогательную игру без взгляда на руки и отдельный MIDI-режим с действительно скрытыми подсказками; знакомый рисунок не выдавать за независимый слуховой тест. При подтверждённом пробеле применить защищённую редакцию с сохранением личных данных и истории. После этого останутся course10-06 и course10-08 с прежними допусками. Открыты ранние цепочки между руками, совпадение целей целой ноты, конечная пауза, удержанные голоса и типовой музыкальный документ перед React/Next.js. Сейчас 419 записей / 155 MIDI-контрактов / 61 подробное описание / 3 будущих плана. Три явно связанные записи повторения дают верхнюю границу 416 групп, полное различие целей не проверено. course09-06 уточнён как закрепление course07-06: четыре такта, бас на 0/4/8/12, без удержанного голоса.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "tests/piano-bass-answer.test.cjs",
+      "curriculum-plan.js"
+    ]
+  }
+}

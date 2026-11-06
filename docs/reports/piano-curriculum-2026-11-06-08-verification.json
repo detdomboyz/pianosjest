@@ -1,0 +1,834 @@
+{
+  "batch": "2026-11-06-08",
+  "triggeredAt": "2026-11-05T21:58:05.849Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.13",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonIds": [
+    "course10-08"
+  ],
+  "newDistinctGoalCount": 0,
+  "goalCounting": "checkpoint-only",
+  "sameGoalAs": null,
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 419,
+    "checkedMidiRouteLessons": 155,
+    "withStructuredProvenance": 64,
+    "individuallyMappedToDomain": 64,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 5,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 413,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 334,
+    "failed": 0,
+    "durationMs": 145976.2128,
+    "newTests": 10,
+    "log": "tmp/piano-batch-32-tests-verified.log",
+    "focusedExam": {
+      "passed": 8,
+      "log": "tmp/piano-batch-32-final-focused.log"
+    },
+    "accountingAndRelatedTests": {
+      "passed": 19,
+      "log": "tmp/piano-batch-32-accounting-tests.log"
+    },
+    "initialFailures": [
+      {
+        "log": "tmp/piano-batch-32-tests.log",
+        "cause": "Two older tests expected the old upper-bound formula without subtracting the explicit checkpoint; exact formula was updated."
+      },
+      {
+        "log": "tmp/piano-batch-32-tests-final.log",
+        "cause": "New adaptation-label assertion contained an unescaped slash in a regex; replaced by a literal string assertion, then all eight exam tests passed before the final full run."
+      }
+    ],
+    "postFullRunChange": "Only explanatory wording in the Markdown coverage generator; audit:piano-coverage rerun.",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 419,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 567,
+        "pianoThemes": 92,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1280,
+        "beginnerChallenges": 155,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "schemaVersion": 5,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 419,
+        "checkedMidiRouteLessons": 155,
+        "withStructuredProvenance": 64,
+        "individuallyMappedToDomain": 64,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 5,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 413,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "reproduction": {
+    "sourceFingerprint": "30eb2595",
+    "oldMusicFingerprint": "3b9f601b",
+    "oldSpanBeats": 30,
+    "results": {
+      "correct": {
+        "legacy": true,
+        "scopedV2": true
+      },
+      "split-pair": {
+        "legacy": true,
+        "scopedV2": false
+      },
+      "split-triad": {
+        "legacy": true,
+        "scopedV2": false
+      },
+      "early-half": {
+        "legacy": true,
+        "scopedV2": false
+      },
+      "late-half": {
+        "legacy": true,
+        "scopedV2": false
+      }
+    }
+  },
+  "lesson": {
+    "id": "course10-08",
+    "midiNotes": [
+      [
+        48
+      ],
+      [
+        60
+      ],
+      [
+        50
+      ],
+      [
+        62
+      ],
+      [
+        52
+      ],
+      [
+        64
+      ],
+      [
+        48,
+        60
+      ],
+      [
+        50,
+        62
+      ],
+      [
+        52,
+        64
+      ],
+      [
+        48,
+        52,
+        55
+      ],
+      [
+        60
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        60,
+        64,
+        67
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        65
+      ],
+      [
+        67
+      ],
+      [
+        67
+      ],
+      [
+        65
+      ],
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        60
+      ]
+    ],
+    "soundingNoteCount": 30,
+    "handsAndFingers": [
+      [
+        {
+          "hand": "left",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 4
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 5
+        },
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 4
+        },
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 3
+        },
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "left",
+          "num": 5
+        },
+        {
+          "hand": "left",
+          "num": 3
+        },
+        {
+          "hand": "left",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        },
+        {
+          "hand": "right",
+          "num": 3
+        },
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 4
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 4
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ]
+    ],
+    "startsBeats": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      30
+    ],
+    "durationsBeats": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "restsBeforeBeats": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "totalBeats": 32,
+    "finalRestObserved": false,
+    "bpm": 64,
+    "timeSignature": {
+      "numerator": 4,
+      "denominator": 4
+    },
+    "timingPrecision": "beat-boundary-v2",
+    "guardInstructionFingerprint": "30eb2595",
+    "previousAssessmentFingerprint": "3b9f601b",
+    "currentAssessmentFingerprint": "c1fcc01b",
+    "goalCounting": "checkpoint-only",
+    "stage": "p6",
+    "after": "course10-07",
+    "requires": [
+      "course07-03",
+      "course08-07",
+      "course08-01",
+      "course04-04"
+    ],
+    "nextLessonId": "course08-06",
+    "provenance": {
+      "type": "study-or-adaptation",
+      "author": "Составной учебный этюд проекта; мелодическая концовка — Л. ван Бетховен",
+      "workTitle": "Ода к радости / Ode to Joy — девять начальных нот сопрано",
+      "sourceLocation": "Mutopia-2009/08/05-528, Peter Chubb, с. 1, сопрано: такты 1–2 и первая нота такта 3",
+      "sourceUrl": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode-a4.pdf",
+      "sourceCatalogUrl": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=528",
+      "usage": "Наборщик и каталог заявляют Public Domain; остальные три голоса не используются.",
+      "adaptation": "Сопрано B4–B4–C5–D5–D5–C5–B4–A4–G4 перенесено вниз на семь полутонов в C major. Девять исходных четвертей превращены в шесть четвертей и три половинные E4–D4–C4, темп 100 заменён учебными 64 BPM; пальцы назначены проектом. Первые пять тактов — собственная техническая связка проекта.",
+      "purpose": "Проверить сохранение пульса при последовательном соединении уже подготовленных способов игры, не прибавляя контрольную попытку к самостоятельным новым навыкам.",
+      "context": "Именованные подготовки относятся к общим движениям, аккордам и длительностям; обязательного прохождения конкретного произведения нет. Полное заучивание музыки остаётся в «Произведениях».",
+      "sourceNote": "Концовка — Л. ван Бетховен, «Ода к радости / Ode to Joy». Проверенная редакция Peter Chubb, Mutopia-2009/08/05-528, с. 1: девять начальных нот сопрано, такты 1–2 и первая нота такта 3. Из G major они перенесены вниз на семь полутонов в C major; девять четвертей изменены на шесть четвертей и три половинные, 100 BPM — на учебные 64. Остальные голоса сняты, пальцы назначены проектом. Наборщик и каталог заявляют Public Domain. Первые пять тактов — собственная техническая связка проекта. Это учебная адаптация, не точные такты симфонии и не критическое издание. В каталоге источник Various; его дату c. 1800 как историческое свидетельство не используем. Open Music Theory и OpenLearn подтверждают счёт и отношения длительностей; Duke/Simmons — небольшие посильные задачи и возвращение к ним. Восьмитактовая связка, новый ритм, пальцы, 64 BPM и машинные допуски выбраны проектом, источники экзамен не утверждали."
+    }
+  },
+  "sourceLedgerEntries": 24,
+  "sources": [
+    {
+      "id": "duke-simmons-small-goals-2026-11-05",
+      "author": "Bob Duke and Amy Simmons",
+      "title": "Tips for Effective Practice",
+      "url": "https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice",
+      "edition": "Online primary edition; exact location recorded in application",
+      "application": {
+        "batch": "2026-11-06-08",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "course10-08"
+        ],
+        "section": "Sections on choosing playable material, one small change, making changes manageable, and organizing practice across sessions",
+        "application": "Read guidance to work with mostly playable material and one small tangible goal. Prepare each component, then join nearby blocks and return after a break.",
+        "limits": "3–5 minute blocks, 64 BPM and a whole-exam memory attempt are project choices. A composite check does not certify a new skill or independent ear perception.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-08.md"
+      }
+    },
+    {
+      "id": "ou-time-values-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: 3.1 Time values",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-3.1",
+      "edition": "Online chapter, verified 2026-11-05; no fixed print pagination asserted",
+      "application": {
+        "batch": "2026-11-06-08",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "course10-08"
+        ],
+        "section": "§3.1, Examples 13–14 and the paragraph relating halves to quarters",
+        "application": "Read the duration relation used for the paired attacks, right-hand triad and the adapted three half-note ending.",
+        "limits": "Does not prescribe project pitches, fingers, tempo, memory grading or MIDI tolerances.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-08.md"
+      }
+    },
+    {
+      "id": "omt-simple-counting-2026-11-05",
+      "author": "Mark Gotham; Chelsey Hamm; Kris Shaffer",
+      "title": "Open Music Theory: Simple Meter and Time Signatures",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/simple-meter-and-time-signatures/",
+      "edition": "Online chapter, verified 2026-11-05; no fixed print pagination asserted",
+      "application": {
+        "batch": "2026-11-06-08",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "course10-08"
+        ],
+        "section": "Time Signatures / Counting in Simple Meter, Examples 9–10 and rules for long notes and rests",
+        "application": "Count four quarter-note pulses per bar, including both two-beat internal rests. Use an explicit 32-beat project edition instead of unprepared cross-bar entrances.",
+        "limits": "The eight-bar project arrangement and its musical changes are editorial choices; not assigned by the source.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-08.md"
+      }
+    },
+    {
+      "id": "mutopia-528-ode-2026-11-05",
+      "author": "Ludwig van Beethoven (melody); Peter Chubb (typesetter / maintainer)",
+      "title": "Ode to Joy — Mutopia-2009/08/05-528, hymn setting for SATB",
+      "url": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode-a4.pdf",
+      "edition": "Online primary edition; exact location recorded in application",
+      "application": {
+        "batch": "2026-11-06-08",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "course10-08"
+        ],
+        "section": "Peter Chubb, Mutopia-2009/08/05-528; page 1, soprano bars 1–2 and first note of bar 3",
+        "application": "Read the first nine soprano pitches B4 B4 C5 D5 D5 C5 B4 A4 G4. Transpose down seven semitones; change nine quarters to six quarters and three halves, use one voice only, and retain 64 project BPM. First five bars are project technical material.",
+        "limits": "Live catalog and PDF edition identity were rechecked; visual score and LilyPond syntax reread from the previously cached copy of this same edition. Direct .ly fetch was unavailable; no fresh byte comparison is claimed. Catalog and typesetter declare Public Domain. Various is not a critical symphony source; c.1800 is not used as history.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-08.md"
+      }
+    }
+  ],
+  "sourceScoreEvidence": {
+    "edition": "Mutopia-2009/08/05-528",
+    "liveCatalog": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=528",
+    "pdfUrl": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode-a4.pdf",
+    "location": "page 1, soprano bars 1–2 and first note of bar 3",
+    "cachedFiles": {
+      "tmp/piano-sources/mutopia-528-ode.ly": {
+        "sha256": "a0c865aa9f71221605362622d281405071e0734540e86ce131131757cc803a71"
+      },
+      "tmp/piano-sources/mutopia-528-ode-a4.pdf": {
+        "sha256": "b11e9f934de259ad3b9231e03000e8676cc5e5b85ea917cb387de06a10fe7864"
+      },
+      "tmp/piano-sources/mutopia-528-ode-page-1.png": {
+        "sha256": "a202a9905160c36a87db139e120b941002689ebdd5b06807734dab6de56d1164"
+      }
+    },
+    "freshByteComparison": false,
+    "sourceMidi": [
+      71,
+      71,
+      72,
+      74,
+      74,
+      72,
+      71,
+      69,
+      67
+    ],
+    "sourceDurations": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "projectMidi": [
+      64,
+      64,
+      65,
+      67,
+      67,
+      65,
+      64,
+      62,
+      60
+    ],
+    "projectDurations": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "transpositionSemitones": -7,
+    "catalogDateNotUsed": true
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4188",
+    "isolatedOrigin": true,
+    "compact": {
+      "height": 112,
+      "lineHeight": "22.4px",
+      "prefix": "Контроль знакомых навыков.\nПроверь "
+    },
+    "preparationButtons": [
+      "Пары C–D–E одновременно",
+      "Левый аккорд + правая мелодия",
+      "C major правой: C–E–G",
+      "Четверть + четверть + половина"
+    ],
+    "note": "Контроль знакомых навыков. Здесь соединяются подготовленные задания. Эта запись не добавляет новую самостоятельную цель; начни с подготовки той части, которая пока не получается.",
+    "preparationNavigation": {
+      "focus": "lesson-name",
+      "title": "Пары C–D–E одновременно"
+    },
+    "memory": {
+      "card": false,
+      "checkpoint": false,
+      "keys": 0,
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0,
+      "title": "Игра из памяти"
+    },
+    "hiddenPersistence": {
+      "card": false,
+      "checkpoint": false,
+      "selected": "hidden",
+      "switch": true
+    },
+    "mobileKeyboard": {
+      "expanded": "true",
+      "focused": true,
+      "outlineStyle": "solid"
+    },
+    "mobileExpanded": {
+      "checkpoint": true,
+      "clientWidth": 376,
+      "scrollWidth": 376
+    },
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "viewport": 390
+    },
+    "consoleErrors": [],
+    "screenshot": "docs/qa/piano-2026-11-06-08-checkpoint.jpg",
+    "physicalMidi": false,
+    "audioPlayback": false,
+    "syntheticMidiVerifiedByTests": true,
+    "checkedAt": "2026-11-05T22:19:53.570Z"
+  },
+  "preservation": {
+    "changedMusic": [
+      "course10-08"
+    ],
+    "changedInstructions": [
+      "course10-08"
+    ],
+    "explicitClassificationChanges": [
+      "course10-08"
+    ],
+    "newLessonIds": [],
+    "priorLessonCount": 567,
+    "currentLessonCount": 567,
+    "unchangedMusicAndInstructions": 566,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.13",
+    "publicAssets": 18,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "23ae3c8bc8faac2caef0afd94093fb83d6172378dbf439150cf789ded19a82d5",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased",
+    "nativeCompanion": false
+  },
+  "longHoldInventory": {
+    "midiRouteLessons": 155,
+    "criterion": "At least one note of two or more beats; timingPrecision must explicitly be beat-boundary-v1 or beat-boundary-v2",
+    "legacyLessonIds": [],
+    "scope": "Metadata coverage only, not independent pedagogical, physical or artistic validation"
+  },
+  "quota": {
+    "checkedAt": "2026-11-05T22:21:00.525Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 39,
+    "remainingPercent": 61,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "knownTuneIsNotIndependentEarTest": true,
+    "verifiedDistinctGoalCount": null,
+    "freshScoreByteComparison": false,
+    "heldVoicesAndPedalNotResolved": true,
+    "domainBought": false,
+    "deployed": false,
+    "fullReactNextMigrationComplete": false,
+    "guitarWritePerformed": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "whole-note-primary-goal-and-repetition-review",
+    "action": "Следующая малая партия: сопоставить course04-03 и detail-p-rhythm-01 — подтверждённое совпадение целой ноты по высотам, пальцам, темпу и длительностям. Установить основной разбор и роль повторения, сохранить оба ID, пользовательские редакции и историю; при подтверждении связать sameGoalAs и уточнить счёт самостоятельных целей без переписывания нот. Проверить, что связь не портит раннюю подготовку и маршрут, особенно зависимости между правой и левой рукой. После этого вернуться к конкретным будущим микроурокам с отдельной целью и индивидуальным планом, а не увеличивать предварительные 1310 мест. Следующий системный этап — типовой музыкальный документ и чистые адаптеры для постепенного React/Next.js-переноса. Конечная пауза, удержанные голоса и педаль ещё требуют модели и тестов. Сейчас 419 записей / 155 MIDI-контрактов / 64 подробных описания / 3 будущих плана. Пять повторений и один составной контроль дают верхнюю границу 413 целей; число независимых целей не установлено. Во всех 155 записях маршрута с нотами от двух долей задан ограниченный контракт v1/v2; это проверка метаданных, не сертификация курса.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "tools/piano-skill-coverage.cjs",
+      "curriculum-plan.js"
+    ]
+  }
+}

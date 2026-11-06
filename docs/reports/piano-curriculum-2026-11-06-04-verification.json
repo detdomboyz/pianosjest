@@ -1,0 +1,746 @@
+{
+  "batch": "2026-11-06-04",
+  "triggeredAt": "2026-11-05T20:18:34.338Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.9",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonIds": [
+    "course09-04"
+  ],
+  "newDistinctGoalCount": 0,
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 419,
+    "checkedMidiRouteLessons": 155,
+    "withStructuredProvenance": 60,
+    "individuallyMappedToDomain": 60,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 2,
+    "goalGroupUpperBound": 417,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 302,
+    "failed": 0,
+    "durationMs": 120571.0413,
+    "newTests": 6,
+    "logs": "tmp/piano-batch-28-tests.log",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 419,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 567,
+        "pianoThemes": 92,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1280,
+        "beginnerChallenges": 155,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 419,
+        "checkedMidiRouteLessons": 155,
+        "withStructuredProvenance": 60,
+        "individuallyMappedToDomain": 60,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 2,
+        "goalGroupUpperBound": 417,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ]
+    }
+  },
+  "source": {
+    "id": "mary-commons-score-2012-2026-11-06",
+    "title": "Mary Had a Little Lamb",
+    "edition": "Wikimedia Commons, File:Mary Had a Little Lamb.pdf, uploaded by Ferbr1 on 2012-03-13; one-page MuseScore 1.0 engraving.",
+    "editionAuthor": "Typesetter not independently identified; Ferbr1 is the uploader, not asserted as composer or engraver.",
+    "catalogUrl": "https://commons.wikimedia.org/wiki/File:Mary_Had_a_Little_Lamb.pdf",
+    "scoreUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Mary_Had_a_Little_Lamb.pdf",
+    "verifiedOn": "2026-11-06",
+    "method": "Visually read the rendered PDF and record each bar independently of the trainer. Compare named historical settings before accepting a composer attribution.",
+    "page": 1,
+    "part": "Soprano",
+    "bars": [
+      {
+        "bar": 1,
+        "midi": [
+          71,
+          69,
+          67,
+          69
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "bar": 2,
+        "midi": [
+          71,
+          71,
+          71
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "bar": 3,
+        "midi": [
+          69,
+          69,
+          69
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "bar": 4,
+        "midi": [
+          71,
+          74,
+          74
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "bar": 5,
+        "midi": [
+          71,
+          69,
+          67,
+          69
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "bar": 6,
+        "midi": [
+          71,
+          71,
+          71,
+          71
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "bar": 7,
+        "midi": [
+          69,
+          69,
+          71,
+          69
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "bar": 8,
+        "midi": [
+          67
+        ],
+        "quarterDurations": [
+          4
+        ]
+      }
+    ],
+    "timeSignature": [
+      4,
+      4
+    ],
+    "sourceKey": "G major",
+    "sourceQuarterBpm": null,
+    "projectTranspositionSemitones": -7,
+    "projectKey": "C major",
+    "projectQuarterBpm": 64,
+    "rights": "The edition file/footer and Commons listing declare PD (old) / public domain in the USA. Used for note verification; no source engraving or lyrics included in the web release.",
+    "attributionLimit": "PDF prints Lowell Mason and Sarah Josepha Hale. This is not adopted as verified authorship of this particular tune. The read 1831 Mary's Lamb setting and 1911 Moffat setting begin with repeated pitches, unlike this descending step opening. No claim about the first publication or composer of the familiar tune is made.",
+    "changes": [
+      "transpose melody down 7 semitones from G major to C major",
+      "assign piano right hand and explicit project digits 1–5",
+      "choose 64 BPM; source has no numeric tempo",
+      "no lyrics or historical composer claim"
+    ],
+    "sourceFile": {
+      "path": "docs/sources/mary-commons-2012.pdf",
+      "bytes": 13220,
+      "sha256": "5406835e5f39a58772eebbd21852c908780fb26f103f78059c48a2444ca5ed99"
+    },
+    "contrastSources": [
+      {
+        "title": "Mary's Lamb, Juvenile Lyre, 1831, p.61",
+        "url": "https://archive.org/details/juvenilelyreorhy00maso/page/60/mode/2up",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Mary%27s_Lamb_music.jpg",
+        "local": "docs/sources/mason-1831-marys-lamb.jpg",
+        "sha256": "956780f51e9f88fbe2144b1c69f0aab4686ce866f48eef273034d6b126ba74ad",
+        "verified": "Read the opening repeated-pitch setting, not the descending-step melody of the project. Do not transfer composer credit from a shared title."
+      },
+      {
+        "title": "Our Old Nursery Rhymes, tunes harmonized by Alfred Moffat, Augener, 1911, p.7",
+        "url": "https://www.gutenberg.org/files/61009/61009-h/61009-h.htm",
+        "imageUrl": "https://www.gutenberg.org/files/61009/61009-h/images/marylamb_music.jpg",
+        "local": "docs/sources/moffat-1911-mary-score.jpg",
+        "sha256": "38816e06435bbec059c8a26c7233e9ab56acaa0b40195b97ddddb900b153b28b",
+        "xml": "docs/sources/moffat-1911-mary.mxl",
+        "xmlSha256": "31802025d966ba08d1c9b539ddf4ffaae8b4118436a99ba141e019de71fa3ea5",
+        "verified": "Image and Linda Cantoni MusicXML transcription: A major, 2/4, upper opening A4/A4/G-sharp4/A4. Different melody from the project; excluded as its note/rhythm source. Title page identifies Moffat as harmonizer."
+      }
+    ]
+  },
+  "lesson": {
+    "id": "course09-04",
+    "musicFingerprint": "8067d11c",
+    "oldMusicFingerprint": "ccd2659e",
+    "notes": [
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        60
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        62
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        67
+      ],
+      [
+        67
+      ],
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        60
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        62
+      ],
+      [
+        64
+      ],
+      [
+        62
+      ],
+      [
+        60
+      ]
+    ],
+    "fingers": [
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 5
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 3
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 2
+        }
+      ],
+      [
+        {
+          "hand": "right",
+          "num": 1
+        }
+      ]
+    ],
+    "starts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "durations": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "rests": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "meter": {
+      "numerator": 4,
+      "denominator": 4
+    },
+    "bpm": 64,
+    "timingPrecision": "beat-boundary-v1",
+    "requires": [
+      "course04-03",
+      "course02-02",
+      "detail-p-position-skips-02",
+      "course05-06"
+    ],
+    "provenance": "study-or-adaptation",
+    "sourceAttributionNotAssumed": true
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4184",
+    "tabId": "39",
+    "desktop": {
+      "bodyPresent": false,
+      "heading": "Mary Had a Little Lamb",
+      "lineHeight": "22.4px",
+      "previewHeight": 112
+    },
+    "preparation": {
+      "focus": "lesson-name",
+      "heading": "Целые: держим четыре доли",
+      "wholeCue": "Целая в 4/4: один звук на «раз, два, три, четыре». Отпусти у следующего «раз»; новые удары внутри удержания не нужны."
+    },
+    "hidden": {
+      "card": false,
+      "control": true,
+      "mode": "hidden"
+    },
+    "finalCue": "Целая в 4/4: один звук на «раз, два, три, четыре». Отпусти у следующего «раз»; новые удары внутри удержания не нужны.",
+    "memory": {
+      "keyboard": false,
+      "material": false,
+      "octaveLabels": false,
+      "preparation": false,
+      "savedMode": "expanded",
+      "selectDisabled": true,
+      "wholeCue": false
+    },
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "spaceExpanded": "true"
+    },
+    "consoleErrors": [],
+    "cleanup": {
+      "tabClosed": true,
+      "viewportReset": true
+    },
+    "physicalMidiOrAudioEnabled": false,
+    "mobileMethod": "DOM geometry and actual keyboard disclosure; desktop whole-note screenshot visually inspected."
+  },
+  "preservation": {
+    "changedMusic": [
+      "course09-04"
+    ],
+    "changedInstructions": [
+      "course09-04"
+    ],
+    "explicitClassificationChanges": [
+      "course09-04"
+    ],
+    "newLessonIds": [],
+    "priorLessonCount": 567,
+    "currentLessonCount": 567,
+    "unchangedMusicAndInstructions": 566,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "build": {
+    "manifest": "dist/web/web-release.json",
+    "publicAssets": 18,
+    "allManifestAndCurrentSourceBytesMatch": true,
+    "privateAndResearchFilesAbsent": true,
+    "manifestSha256": "6d3dabe09fbc74603942639bfe98a27f314f3a555c475a3131ce4252fe5a5c41"
+  },
+  "quota": {
+    "checkedOn": "2026-11-06",
+    "checkedAt": "2026-11-05T20:32:38.384Z",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 36,
+    "remainingPercent": 64,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031,
+    "spendControlReached": false,
+    "otherWindowExhausted": false,
+    "otherWindowUnavailable": false
+  },
+  "limits": {
+    "teacherReview": false,
+    "physicalFingersValidated": false,
+    "artisticQualityValidated": false,
+    "historicalComposerOfThisTuneEstablished": false,
+    "remainingLegacyDurationLessons": 4,
+    "verifiedDistinctGoalCount": null,
+    "domainPurchased": false,
+    "deployed": false,
+    "fullNextMigrationComplete": false
+  },
+  "screenshots": [
+    "docs/qa/piano-2026-11-06-04-whole.jpg"
+  ],
+  "nextWork": {
+    "priority": "bass-answer-source-role-and-timing-review",
+    "action": "Следующая малая партия: course09-06 «Мелодия с басовыми ответами». Сверить левый C3/5, правые ответы, текущие 18 долей, метр и отпускание баса перед мелодией. Сравнить цель и роль с course07-06: другая длина или мелодическая последовательность не доказывает отдельный навык. Это собственная учебная заготовка: подобрать первичные рекомендации по подготовке рук и передаче пульса, не приписывать автору наши ноты, темп и допуски. При необходимости уточнить ритм защищённой миграцией, сохранить ID, пользовательские редакции и историю; чередование не выдавать за независимый удержанный бас. Затем остаются course10-04/06/08 с прежними допусками, ранние зависимости между руками, совпадение целей целой ноты, конечная пауза и удержанные голоса. Сейчас 419 записей / 155 MIDI-контрактов / 60 подробных описаний / 3 будущих плана. Два явных повторения дают максимум 417 групп, полная независимость целей не проверена. Mary исправлена по конкретному восьмитактному источнику до 32 долей; историческое авторство знакомой мелодии не выдумано.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "tests/piano-mary-phrasing.test.cjs",
+      "curriculum-plan.js"
+    ]
+  }
+}

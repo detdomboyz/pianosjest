@@ -1,0 +1,9 @@
+# Future deployment example only. melodiajest.ru has not been purchased.
+# Copy only dist/web into an isolated release directory, never the repository root.
+# Validate with the actual hosting Caddy version before applying.
+melodiajest.ru {
+    root * /var/www/melodiajest/current
+    encode zstd gzip
+    header X-Content-Type-Options nosniff
+    file_server
+}

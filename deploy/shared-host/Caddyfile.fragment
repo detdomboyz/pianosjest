@@ -1,0 +1,11 @@
+# BEGIN MELODIAJEST
+melodiajest.ru {
+	encode zstd gzip
+	header X-Content-Type-Options nosniff
+	reverse_proxy melodiajest-web:8080
+}
+
+www.melodiajest.ru {
+	redir https://melodiajest.ru{uri} permanent
+}
+# END MELODIAJEST

@@ -1,0 +1,1841 @@
+{
+  "version": 32,
+  "scope": "piano-only",
+  "status": "lessons contains future plans only; promotedLessons and implementedSpecifications retain concrete specifications separately",
+  "lessons": [
+    {
+      "id": "detail-p-held-voice-01",
+      "title": "Левый бас держится, правая меняет ноты",
+      "coverageDomain": "coordination",
+      "stage": "p5",
+      "goal": "Удержать один C3 левой 5 на две доли без повторного нажатия, пока правая сыграет E4/3 и D4/2 по одной доле; отпустить оба голоса у общей границы.",
+      "after": "course07-07",
+      "requires": [
+        "course07-06",
+        "course07-03",
+        "course07-07"
+      ],
+      "hand": "both",
+      "sustainedHand": "left",
+      "targetNotes": [
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 2
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "distinctFrom": "В текущих handoff-уроках бас отпускается до ответа; здесь он остаётся при смене другой ноты.",
+      "requiresModel": [
+        "independent-note-durations-and-voice-identities",
+        "held-voice-fingering-and-playback",
+        "per-note-release-assessment-and-persistence"
+      ],
+      "candidateEvidenceIds": [
+        "hutchinson-meter-2026-11-05",
+        "ou-time-values-2026-11-05"
+      ],
+      "reviewStatus": "planned-needs-held-voice-model-musical-source-review-and-tests"
+    },
+    {
+      "id": "detail-p-held-voice-02",
+      "title": "Правый звук держится, левая меняет ноты",
+      "coverageDomain": "coordination",
+      "stage": "p5",
+      "goal": "Удержать один E4 правой 3 на две доли, пока левая сыграет C3/5 и D3/4 по одной доле, без повторного нажатия удержанного правого звука.",
+      "after": "course07-07",
+      "requires": [
+        "course07-06",
+        "course07-03",
+        "course07-07"
+      ],
+      "hand": "both",
+      "sustainedHand": "right",
+      "targetNotes": [
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 0,
+          "durationBeats": 2
+        },
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "distinctFrom": "Удержание и движение распределены между руками наоборот; требуется независимость правой руки, а не смена темпа или названия.",
+      "requiresModel": [
+        "independent-note-durations-and-voice-identities",
+        "held-voice-fingering-and-playback",
+        "per-note-release-assessment-and-persistence"
+      ],
+      "candidateEvidenceIds": [
+        "hutchinson-meter-2026-11-05",
+        "ou-time-values-2026-11-05"
+      ],
+      "reviewStatus": "planned-needs-held-voice-model-musical-source-review-and-tests"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-direction-01",
+      "title": "Слух: второй звук выше, ниже или тот же",
+      "goalKey": "ear.direction.up-down-same",
+      "goal": "После неизвестной заранее пары звуков определить только направление: выше, ниже или та же высота. Не угадывать название ноты и не выдавать знакомую пару за распознавание.",
+      "after": "course02-03",
+      "requires": [
+        "course01-03",
+        "course02-03"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64
+      ],
+      "targetFingers": [
+        1,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Услышать отношение второго звука к первому до поиска клавиши; двигательная подготовка уже освоена отдельно.",
+      "application": "Следить за направлением мелодии при подборе и замечать, изменился ли звук.",
+      "distinctFrom": "detail-p-hearing-01..04 заранее называют обе ноты и дают фиксированный рисунок; course10-* повторяют знакомую музыку. Здесь ответ неизвестен до прослушивания, а движение вверх/вниз/повтор — три исхода одной цели, не три урока.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "pitch-direction",
+        "response": "direction-choice",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Будущий результат только по явно измеренному ответу; одно угадывание не доказывает устойчивого навыка."
+      },
+      "responseChoices": [
+        {
+          "id": "up",
+          "label": "Выше"
+        },
+        {
+          "id": "down",
+          "label": "Ниже"
+        },
+        {
+          "id": "same",
+          "label": "Та же высота"
+        }
+      ],
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64,
+          65,
+          67
+        ],
+        "events": 2,
+        "sampling": "По классам направления; без повторной выдачи уже открытой пары. Разные темпы не создают новых целей.",
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "separate-ear-choice-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно найди C4–G4 правой 1–5. В учебных примерах послушай C4–E4 (выше), E4–C4 (ниже) и D4–D4 (та же высота). После пары сделай паузу и скажи отношение; затем при желании проверь клавиши. Это открытые примеры, они не входят в будущую первую проверку.",
+        "Медленно: заранее объясни три кнопки ответа. Нажми «Слушать задание»; два звука идут по очереди. До ответа не показывать клавиши, названия, пальцы, нотную запись и ответ в доступном имени кнопки. Не требуется абсолютный слух, громкость и высота — разные признаки.",
+        "Блок 3–5 минут: несколько разных пар с отдыхом; ответ зафиксировать до раскрытия. Прослушивание, повтор или подсказку учитывать отдельно. После раскрытия можно правой проверить высоты и пальцы. После перерыва нужна другая пара; при исчерпании неизвестных примеров остаётся практика."
+      ],
+      "selfCheck": [
+        "Отвечаю о направлении, а не о громкости, интервале в полутонах или названии.",
+        "Второй одинаковый звук имеет отдельную атаку, а не является продолжением первого.",
+        "До своего ответа не видел и не открывал решение; знакомый или подсказанный элемент помечен как практика.",
+        "Мышь/клавиатура фиксируют выбор; MIDI не доказывает, что направление услышано, и не измеряет пальцы."
+      ],
+      "typicalErrors": [
+        "Спутать тихий звук с низким.",
+        "Выучить порядок вариантов или смотреть на подсвеченную клавишу вместо слушания."
+      ],
+      "hearingModel": "Два последовательных тона с одинаковым тембром и уровнем: относительное направление, включая новый повтор той же высоты.",
+      "transfer": {
+        "goal": "Новая пара с другим первым звуком: E4–D4, ответ «ниже»; её названия раскрываются после ответа. Это опубликованный пример переноса, будущий неизвестный банк должен его исключать.",
+        "notes": [
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          }
+        ],
+        "expectedDirection": "down"
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-echo-01",
+      "title": "Слух: короткое эхо в C–D–E",
+      "goalKey": "ear.echo.known-anchor-four-events",
+      "goal": "После неизвестной заранее четырёхзвучной фразы в C4–D4–E4 воспроизвести порядок высот правой рукой, получив C4 как известную начальную опору. Это подбор от опоры, не проверка абсолютного слуха.",
+      "after": "detail-p-ear-direction-01",
+      "requires": [
+        "detail-p-ear-direction-01",
+        "course02-03",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64,
+        62,
+        60
+      ],
+      "targetFingers": [
+        1,
+        3,
+        2,
+        1
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Удержать короткий слуховой образ целиком и перевести его в уже подготовленные клавиши после окончания образца.",
+      "application": "Подобрать короткий мотив от заданной первой ноты и сравнить свой результат с услышанным.",
+      "distinctFrom": "Фиксированные интервалы detail-p-hearing-* и память course10-* известны заранее. Здесь опора C4 известна, продолжение скрыто; правильный ответ нельзя получить из заголовка. Новые варианты этой одной задачи не считаются отдельными уроками.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "melody-playback",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Порядок высот и число атак после окончания образца; не оценивать пение, пальцы, художественное качество или задержку первой реакции как слух."
+      },
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64
+        ],
+        "events": 4,
+        "firstMidi": 60,
+        "atLeastOnePitchChange": true,
+        "examplesArePracticeOnly": true,
+        "sampling": "Разные продолжения от C4 без повторной выдачи уже открытого элемента."
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "reference-audio-and-response-time-separated",
+        "separate-ear-playback-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно сыграй C4–D4–E4 правой 1–2–3. Послушай опору C4, затем открытый образец C4–E4–D4–C4 пальцами 1–3–2–1. Представь или пропой фразу, затем проверь на инструменте. Данная демонстрация известна и не является независимым испытанием.",
+        "Медленно: перед неизвестным элементом можно услышать и найти только начальную C4. Затем слушай всю фразу без клавишных и нотных подсказок; вход исполнителя разрешается после окончания образца. Старт реакции не задаёт музыкальный уровень; события звукового образца и ответа нельзя смешивать.",
+        "Блок 3–5 минут: одна короткая фраза, спокойная попытка, раскрытие и сравнение после ответа, отдых. Дополнительное прослушивание учитывается как помощь; повтор этого элемента — практика. На следующий день выбирается другая не открытая здесь фраза."
+      ],
+      "selfCheck": [
+        "Первая C4 известна, продолжение вспоминаю по слуховому образу, а не по названию карточки.",
+        "Число атак и порядок высот совпали; повтор одной высоты нажимается заново.",
+        "Сначала закончил слушать, затем начал ответ; звуковой образец не попал в мои MIDI-события.",
+        "MIDI-порядок не доказывает пение, пальцы и точный ритм; эти проверки не заявлены выполненными."
+      ],
+      "typicalErrors": [
+        "Начать подыгрывать до окончания неизвестного образца.",
+        "Заменить услышанную фразу знакомым C–D–E или подсмотреть ноты до ответа."
+      ],
+      "hearingModel": "Четыре одинаковые длительности в пределах трёх известных высот; внимание к изменению направления и возврату к C4.",
+      "transfer": {
+        "goal": "Другой четырёхзвучный рисунок C4–D4–E4–D4 пальцами 1–2–3–2. Это отдельная опубликованная демонстрация переноса; в будущий неизвестный банк не включать.",
+        "notes": [
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-source-and-data-reviewed-needs-fresh-bank-and-course-gates",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-read-treble-01",
+      "title": "Чтение: первые три ориентира в скрипичном ключе",
+      "goalKey": "reading.treble.c4-e4.pitch-to-key",
+      "goal": "Соотнести C4–D4–E4 на нотном стане с уже знакомыми клавишами правой руки и сыграть новую короткую последовательность. Это начальная подготовка чтения высот, не зачёт чтения целой пьесы.",
+      "after": "course02-02",
+      "requires": [
+        "course02-02",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        62,
+        62,
+        64
+      ],
+      "targetFingers": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Перевести положение головки на линейке/между линейками через ключ в конкретную клавишу, сохраняя собственную позицию руки.",
+      "application": "Начать разбор новой записи по нотному стану; позднее добавить непрерывный ритм и более широкий диапазон.",
+      "distinctFrom": "Текущий холст показывает QWERTY/время и известный каталог, но не обучает чтению по линейкам и ключу. Здесь C4 на первой добавочной снизу, D4 под нижней линейкой и E4 на нижней.",
+      "notation": {
+        "clef": "treble",
+        "staffLines": 5,
+        "positionUnit": "diatonic half-space, bottom line = 0, upward positive",
+        "anchor": {
+          "midi": 67,
+          "position": 2
+        },
+        "pitchPositions": [
+          {
+            "midi": 60,
+            "position": -2,
+            "ledger": true
+          },
+          {
+            "midi": 62,
+            "position": -1,
+            "ledger": false
+          },
+          {
+            "midi": 64,
+            "position": 0,
+            "ledger": false
+          }
+        ],
+        "clefDoesNotAssignHand": true
+      },
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "notation-to-key",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "Учитывать все опубликованные встроенные фразы курса и произведений, включая точные одноголосные окна, и местную историю показов. Текущий банк уже опубликован и доступен только для практики; знакомство в частных редакциях и вне сервиса неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Только соответствие видимых нотных позиций порядку сыгранных высот. Паузы для называния допустимы; скорость реакции и ритмическая непрерывность не зачтены.",
+        "accessibleAlternative": "Текстовое называние высот доступно как отдельная практика с явной отметкой; его не выдавать за визуальное чтение нотного стана.",
+        "excludePublishedCatalogWindows": true
+      },
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64
+        ],
+        "events": 4,
+        "stepwise": true,
+        "oneDirection": true,
+        "allowRepeatedNotes": true,
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "staff-clef-ledger-renderer",
+        "item-exposure-history",
+        "notation-only-first-reading-mode",
+        "separate-reading-progress",
+        "preparation-fragment-completion",
+        "published-catalog-exclusions",
+        "preparation-fragment-tempo-adaptation-v1"
+      ],
+      "practiceSteps": [
+        "Подготовка: найди C4–D4–E4 отдельно правой 1–2–3. Объясни пять линеек и промежутки, затем ключ: G4 на второй линейке снизу. C4 лежит на первой добавочной ниже стана; D4 — в промежутке под нижней; E4 — на нижней. Ключ сам по себе не назначает руку; здесь рука выбрана явно.",
+        "Медленно назови и сыграй открытый рисунок C4–D4–D4–E4, 1–2–2–3. Повторная высота получает новое нажатие. Можно остановиться перед каждым звуком. На этапе знакомства счёт по одной доле помогает, но не превращает нахождение высоты в экзамен ритма.",
+        "Блок 3–5 минут: сначала названия и клавиши с помощью, затем другая ещё не открытая последовательность на стане. В первой пробе остаётся стан; заранее не звучит мелодия, нет QWERTY, имён высот и следующих клавиш с подсветкой. После ответа можно раскрыть разбор. Новая проба после перерыва и завтра использует другую запись; первая запись остаётся практикой."
+      ],
+      "selfCheck": [
+        "Верно прочитан ключ, линейки считаются снизу; имена не взяты из QWERTY.",
+        "Сохраняется правая рука в своей позиции; пальцы проверяются самостоятельно, MIDI их не видит.",
+        "Для каждого повтора C, D или E клавиша освобождена и нажата заново. Пальцы и спокойное движение проверены отдельно; MIDI их не распознаёт.",
+        "Новую запись не слушал и не раскрывал до ответа; знакомый или подсказанный рисунок имеет статус практики."
+      ],
+      "typicalErrors": [
+        "Считать линейки сверху или пропустить промежуток.",
+        "Перенести номера пальцев другой руки или принять отсутствие подписи за режим памяти."
+      ],
+      "hearingModel": "При ознакомлении послушай поступенное движение с повтором средней высоты; перед первой пробой новой записи мелодия не проигрывается.",
+      "transfer": {
+        "goal": "Повтор перемещён к первой высоте: C4–C4–D4–E4, 1–1–2–3. Это опубликованная проба переноса, а не неизвестный элемент будущего банка.",
+        "notes": [
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "ou-staff-clefs-2026-11-06",
+        "rcm-sight-reading-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "preparationFragments": [
+        {
+          "lessonId": "course02-06",
+          "firstStep": 0,
+          "lastStep": 4,
+          "goal": "Отдельно повторить C–D–D–E–E в своей позиции: пальцы 2 и 3 должны давать новые атаки на D и E.",
+          "requiredBeforeAssessment": true,
+          "adaptation": {
+            "version": 1,
+            "id": "three-note-repeat-preparation-v1",
+            "kind": "project-training-adaptation",
+            "targetBpm": 56,
+            "rationale": "Отдельная моторная подготовка C–D–D–E–E в темпе 56 BPM будущего образца чтения. Сохраняются пять исходных высот, четвертные длительности и пальцы своей руки; сокращается только область, темп исходника 62/60 не переписывается. Это техническая адаптация проекта, знакомая практика, без зачёта полного урока или независимого чтения/слуха."
+          }
+        }
+      ],
+      "musicalReview": {
+        "batch": "2026-11-06-23",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "goal": "Чтение трёх подготовленных высот отдельно от разучивания готового рисунка и моторной тренировки.",
+        "prerequisiteCorrection": "Трёхпальцевый возврат course02-02 заменяет избыточную пятипальцевую фигуру вверх. Для повторов D/E отдельно нужна подготовка указанного фрагмента; автоматический зачёт фрагмента пока не подключён.",
+        "pitches": [
+          60,
+          62,
+          62,
+          64
+        ],
+        "fingers": [
+          1,
+          2,
+          2,
+          3
+        ],
+        "register": "C4–E4",
+        "notationPositions": [
+          -2,
+          -1,
+          -1,
+          0
+        ],
+        "bankFinding": "Все шесть текущих шаблонов каждого ключа обнаружены в опубликованном каталоге; восемь прежних локально новых вариантов не являются независимым новым материалом.",
+        "deferredTransfer": "После перерыва можно сменить известную фразу как практику; независимый перенос потребует иной ещё не опубликованной и подготовленной записи.",
+        "teacherReviewed": false,
+        "physicalInstrumentReviewed": false,
+        "report": "docs/reports/piano-curriculum-2026-11-06-23.md"
+      },
+      "preparationFragmentReview": {
+        "batch": "2026-11-06-26",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "sourceLessonId": "course02-06",
+        "range": "0–4 inclusive",
+        "sourceBpm": 62,
+        "adaptedBpm": 56,
+        "sourceEvidenceIds": [
+          "duke-simmons-small-goals-2026-11-05",
+          "kovarsky-fingering-context-2026-11-05"
+        ],
+        "limits": "API оценки и отдельного журнала проверены; экран/захват фрагмента и допуск чтения ещё не подключены. Не новый урок и не перенос в неизвестную фразу."
+      }
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-source-and-data-reviewed-needs-fresh-bank-and-course-gates",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-read-bass-01",
+      "title": "Чтение: первые три ориентира в басовом ключе",
+      "goalKey": "reading.bass.c3-e3.pitch-to-key",
+      "goal": "Соотнести C3–D3–E3 на нотном стане с уже знакомыми клавишами левой руки и сыграть новую короткую последовательность. Это начальная подготовка чтения высот, не зачёт чтения целой пьесы.",
+      "after": "course03-02",
+      "requires": [
+        "course03-02",
+        "detail-p-release-02"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        50,
+        50,
+        52
+      ],
+      "targetFingers": [
+        5,
+        4,
+        4,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 52,
+          "hand": "left",
+          "finger": 3,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Перевести положение головки на линейке/между линейками через ключ в конкретную клавишу, сохраняя собственную позицию руки.",
+      "application": "Начать разбор новой записи по нотному стану; позднее добавить непрерывный ритм и более широкий диапазон.",
+      "distinctFrom": "Текущий холст показывает QWERTY/время и известный каталог, но не обучает чтению по линейкам и ключу. Здесь C3 во втором промежутке, D3 на средней (третьей) линейке, E3 в третьем промежутке. Басовый ключ имеет другую опорную высоту; правая рука не является обязательной подготовкой левой.",
+      "notation": {
+        "clef": "bass",
+        "staffLines": 5,
+        "positionUnit": "diatonic half-space, bottom line = 0, upward positive",
+        "anchor": {
+          "midi": 53,
+          "position": 6
+        },
+        "pitchPositions": [
+          {
+            "midi": 48,
+            "position": 3,
+            "ledger": false
+          },
+          {
+            "midi": 50,
+            "position": 4,
+            "ledger": false
+          },
+          {
+            "midi": 52,
+            "position": 5,
+            "ledger": false
+          }
+        ],
+        "clefDoesNotAssignHand": true
+      },
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "notation-to-key",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "Учитывать все опубликованные встроенные фразы курса и произведений, включая точные одноголосные окна, и местную историю показов. Текущий банк уже опубликован и доступен только для практики; знакомство в частных редакциях и вне сервиса неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Только соответствие видимых нотных позиций порядку сыгранных высот. Паузы для называния допустимы; скорость реакции и ритмическая непрерывность не зачтены.",
+        "accessibleAlternative": "Текстовое называние высот доступно как отдельная практика с явной отметкой; его не выдавать за визуальное чтение нотного стана.",
+        "excludePublishedCatalogWindows": true
+      },
+      "itemPool": {
+        "midis": [
+          48,
+          50,
+          52
+        ],
+        "events": 4,
+        "stepwise": true,
+        "oneDirection": true,
+        "allowRepeatedNotes": true,
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "staff-clef-ledger-renderer",
+        "item-exposure-history",
+        "notation-only-first-reading-mode",
+        "separate-reading-progress",
+        "preparation-fragment-completion",
+        "published-catalog-exclusions",
+        "preparation-fragment-tempo-adaptation-v1"
+      ],
+      "practiceSteps": [
+        "Подготовка: найди C3–D3–E3 отдельно левой 5–4–3. Объясни пять линеек и промежутки, затем ключ: F3 на четвёртой линейке снизу. От неё вниз E3 в промежутке, D3 на средней линейке, C3 в следующем промежутке. Ключ сам по себе не назначает руку; здесь рука выбрана явно.",
+        "Медленно назови и сыграй открытый рисунок C3–D3–D3–E3, 5–4–4–3. Повторная высота получает новое нажатие. Можно остановиться перед каждым звуком. На этапе знакомства счёт по одной доле помогает, но не превращает нахождение высоты в экзамен ритма.",
+        "Блок 3–5 минут: сначала названия и клавиши с помощью, затем другая ещё не открытая последовательность на стане. В первой пробе остаётся стан; заранее не звучит мелодия, нет QWERTY, имён высот и следующих клавиш с подсветкой. После ответа можно раскрыть разбор. Новая проба после перерыва и завтра использует другую запись; первая запись остаётся практикой."
+      ],
+      "selfCheck": [
+        "Верно прочитан ключ, линейки считаются снизу; имена не взяты из QWERTY.",
+        "Сохраняется левая рука в своей позиции; пальцы проверяются самостоятельно, MIDI их не видит.",
+        "Для каждого повтора C, D или E клавиша освобождена и нажата заново. Пальцы и спокойное движение проверены отдельно; MIDI их не распознаёт.",
+        "Новую запись не слушал и не раскрывал до ответа; знакомый или подсказанный рисунок имеет статус практики."
+      ],
+      "typicalErrors": [
+        "Считать линейки сверху или пропустить промежуток.",
+        "Перенести номера пальцев другой руки или принять отсутствие подписи за режим памяти."
+      ],
+      "hearingModel": "При ознакомлении послушай поступенное движение с повтором средней высоты; перед первой пробой новой записи мелодия не проигрывается.",
+      "transfer": {
+        "goal": "Повтор перемещён к первой высоте: C3–C3–D3–E3, 5–5–4–3. Это опубликованная проба переноса, а не неизвестный элемент будущего банка.",
+        "notes": [
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 50,
+            "hand": "left",
+            "finger": 4,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 52,
+            "hand": "left",
+            "finger": 3,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "ou-staff-clefs-2026-11-06",
+        "rcm-sight-reading-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "preparationFragments": [
+        {
+          "lessonId": "course03-06",
+          "firstStep": 0,
+          "lastStep": 4,
+          "goal": "Отдельно повторить C–D–D–E–E в своей позиции: пальцы 4 и 3 должны давать новые атаки на D и E.",
+          "requiredBeforeAssessment": true,
+          "adaptation": {
+            "version": 1,
+            "id": "three-note-repeat-preparation-v1",
+            "kind": "project-training-adaptation",
+            "targetBpm": 56,
+            "rationale": "Отдельная моторная подготовка C–D–D–E–E в темпе 56 BPM будущего образца чтения. Сохраняются пять исходных высот, четвертные длительности и пальцы своей руки; сокращается только область, темп исходника 62/60 не переписывается. Это техническая адаптация проекта, знакомая практика, без зачёта полного урока или независимого чтения/слуха."
+          }
+        }
+      ],
+      "musicalReview": {
+        "batch": "2026-11-06-23",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "goal": "Чтение трёх подготовленных высот отдельно от разучивания готового рисунка и моторной тренировки.",
+        "prerequisiteCorrection": "Трёхпальцевый возврат course03-02 заменяет избыточную пятипальцевую фигуру вверх. Для повторов D/E отдельно нужна подготовка указанного фрагмента; автоматический зачёт фрагмента пока не подключён.",
+        "pitches": [
+          48,
+          50,
+          50,
+          52
+        ],
+        "fingers": [
+          5,
+          4,
+          4,
+          3
+        ],
+        "register": "C3–E3",
+        "notationPositions": [
+          3,
+          4,
+          4,
+          5
+        ],
+        "bankFinding": "Все шесть текущих шаблонов каждого ключа обнаружены в опубликованном каталоге; восемь прежних локально новых вариантов не являются независимым новым материалом.",
+        "deferredTransfer": "После перерыва можно сменить известную фразу как практику; независимый перенос потребует иной ещё не опубликованной и подготовленной записи.",
+        "teacherReviewed": false,
+        "physicalInstrumentReviewed": false,
+        "report": "docs/reports/piano-curriculum-2026-11-06-23.md"
+      },
+      "preparationFragmentReview": {
+        "batch": "2026-11-06-26",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "sourceLessonId": "course03-06",
+        "range": "0–4 inclusive",
+        "sourceBpm": 60,
+        "adaptedBpm": 56,
+        "sourceEvidenceIds": [
+          "duke-simmons-small-goals-2026-11-05",
+          "kovarsky-fingering-context-2026-11-05"
+        ],
+        "limits": "API оценки и отдельного журнала проверены; экран/захват фрагмента и допуск чтения ещё не подключены. Не новый урок и не перенос в неизвестную фразу."
+      }
+    }
+  ],
+  "promotedLessons": [
+    {
+      "id": "detail-p-legato-pairs-01",
+      "batch": "2026-11-05-04",
+      "report": "docs/reports/piano-curriculum-2026-11-05-04.md"
+    },
+    {
+      "id": "detail-p-legato-pairs-03",
+      "batch": "2026-11-05-04",
+      "report": "docs/reports/piano-curriculum-2026-11-05-04.md"
+    },
+    {
+      "id": "detail-p-legato-pairs-02",
+      "batch": "2026-11-05-05",
+      "report": "docs/reports/piano-curriculum-2026-11-05-05.md"
+    },
+    {
+      "id": "detail-p-legato-pairs-04",
+      "batch": "2026-11-05-05",
+      "report": "docs/reports/piano-curriculum-2026-11-05-05.md"
+    },
+    {
+      "id": "detail-p-position-skips-01",
+      "batch": "2026-11-05-07",
+      "report": "docs/reports/piano-curriculum-2026-11-05-07.md"
+    },
+    {
+      "id": "detail-p-position-skips-03",
+      "batch": "2026-11-05-07",
+      "report": "docs/reports/piano-curriculum-2026-11-05-07.md"
+    },
+    {
+      "id": "detail-p-position-skips-02",
+      "batch": "2026-11-05-08",
+      "report": "docs/reports/piano-curriculum-2026-11-05-08.md"
+    },
+    {
+      "id": "detail-p-position-skips-04",
+      "batch": "2026-11-05-08",
+      "report": "docs/reports/piano-curriculum-2026-11-05-08.md"
+    },
+    {
+      "id": "detail-p-position-skips-05",
+      "batch": "2026-11-05-09",
+      "report": "docs/reports/piano-curriculum-2026-11-05-09.md"
+    },
+    {
+      "lessonId": "detail-p-left-g-position-01",
+      "status": "implemented-and-tested",
+      "report": "docs/reports/piano-curriculum-2026-11-05-20.md",
+      "fromPlanVersion": 15,
+      "previousPlan": {
+        "id": "detail-p-left-g-position-01",
+        "title": "Левая: ориентир G3–B3–D4 перед трезвучием",
+        "coverageDomain": "positions",
+        "stage": "p3",
+        "goal": "Заранее найти G3, B3, D4 левой рукой, сохранив палец 5 на нижней опоре и большой 1 на D4; сыграть звуки по одному в новой позиции.",
+        "after": "detail-p-relocate-04",
+        "requires": [
+          "detail-p-relocate-04",
+          "detail-p-relocate-02"
+        ],
+        "hand": "left",
+        "targetMidis": [
+          55,
+          59,
+          62,
+          59,
+          55
+        ],
+        "targetFingers": [
+          5,
+          3,
+          1,
+          3,
+          5
+        ],
+        "articulation": "nonlegato",
+        "distinctFrom": "Позиционная подготовка G-регистра левой рукой до одновременного созвучия; проверка дублей в непроверенном наследии не завершена.",
+        "candidateEvidenceIds": [
+          "kovarsky-fingering-context-2026-11-05",
+          "ou-triads-2026-11-05"
+        ],
+        "preparation": "Отпусти прежнюю F-опору, перенеси предплечье к G и найди новый диапазон без звука. Не удерживай старую позицию растяжением.",
+        "slowPractice": "Проверь G3 мизинцем, B3 средним, D4 большим. Затем сыграй вверх и вернись. Пульс и точные длительности выбираются при реализации.",
+        "auralCue": "Последовательность звучит по одной ноте; созвучие одновременно ещё не требуется.",
+        "transferTask": "После перерыва начни с D4–B3–G3 пальцами 1–3–5, сохраняя левую руку.",
+        "commonErrors": [
+          "Передать D4 правой руке.",
+          "Принять G-позицию за продолжение F без переноса.",
+          "Сжать кисть или поднять плечо ради большого пальца."
+        ],
+        "materialType": "project-technical-drill",
+        "exactFingeringStatus": "project-candidate; not teacher verified",
+        "reviewStatus": "new-plan-needs-independent-goal-and-implementation-review",
+        "reviewReport": "docs/reports/piano-curriculum-2026-11-05-19.md"
+      },
+      "note": "The implemented G anchor uses prepared legato; F/G construction is reduced to one bar of three single notes and one fresh chord. Final machine/browser checks are pending."
+    },
+    {
+      "lessonId": "detail-p-left-position-triad-01",
+      "status": "implemented-and-tested",
+      "report": "docs/reports/piano-curriculum-2026-11-05-20.md",
+      "fromPlanVersion": 15,
+      "previousPlan": {
+        "id": "detail-p-left-position-triad-01",
+        "title": "Левая: новая форма F major",
+        "coverageDomain": "triads",
+        "stage": "p5",
+        "goal": "Левой рукой заранее найти F3–A3–C4 по одному пальцами 5–3–1, затем собрать звуки вместе без смены руки и с общим окончанием.",
+        "after": "detail-p-triads-02",
+        "requires": [
+          "detail-p-triads-02",
+          "detail-p-relocate-04"
+        ],
+        "hand": "left",
+        "targetMidis": [
+          53,
+          57,
+          60
+        ],
+        "targetFingers": [
+          5,
+          3,
+          1
+        ],
+        "targetGroups": [
+          [
+            53
+          ],
+          [
+            57
+          ],
+          [
+            60
+          ],
+          [
+            53,
+            57,
+            60
+          ],
+          [
+            53,
+            57,
+            60
+          ]
+        ],
+        "targetTiming": {
+          "startsBeats": [
+            0,
+            1,
+            2,
+            4,
+            6
+          ],
+          "noteDurationsBeats": [
+            1,
+            1,
+            2,
+            1.5,
+            2
+          ],
+          "timeSignature": {
+            "numerator": 4,
+            "denominator": 4
+          },
+          "status": "draft-not-a-midi-contract",
+          "note": "Final exact profile and the half-beat gap before the repeated chord must be verified during implementation."
+        },
+        "distinctFrom": "Сборка левого созвучия после отдельной позиционной подготовки; независимость от одноимённой правой формы. Самостоятельная цель и отсутствие дубля ещё проверяются до внедрения.",
+        "candidateEvidenceIds": [
+          "ou-triads-2026-11-05",
+          "kovarsky-basic-triads-2026-11-05",
+          "alfred-musical-fingers-position-2026-11-05"
+        ],
+        "reviewStatus": "source-and-prerequisite-refined; not implemented",
+        "preparation": "Найди опору всей рукой; сначала коснись трёх клавиш без звука. Сыграй каждую отдельно и только после этого собери форму. Не растягивай руку силой; при напряжении вернись к отдельным звукам.",
+        "slowPractice": "Проговори названия и 5–3–1. Новое нажатие каждого звука начинается по счёту; перед повторным аккордом отпусти все три клавиши. Последний аккорд заканчивается общим отпусканием, без воображаемой конечной паузы.",
+        "auralCue": "Сначала услышь три самостоятельных звука, затем одно мажорное созвучие: средняя нота на четыре полутона выше нижней, верхняя на три выше средней. Не подменяй среднюю ступень соседней.",
+        "commonErrors": [
+          "Назначать большому нижний звук по примеру правой руки.",
+          "Переходить на правую руку ради верхней ноты около C4.",
+          "Давить сильнее ради одновременности или держать запястье неподвижно.",
+          "Удерживать верхний звук между повторными аккордами вместо нового общего нажатия."
+        ],
+        "transferTask": {
+          "midis": [
+            57,
+            53,
+            60
+          ],
+          "fingers": [
+            3,
+            5,
+            1
+          ],
+          "hand": "left",
+          "description": "После перерыва отдельно сыграй новую последовательность, затем собери исходный аккорд. Это самостоятельная проба переноса, не автоматический независимый тест слуха."
+        },
+        "materialType": "project-technical-drill",
+        "exactFingeringStatus": "project-candidate; physical comfort and implementation review still required",
+        "reviewReport": "docs/reports/piano-curriculum-2026-11-05-19.md"
+      },
+      "note": "The implemented G anchor uses prepared legato; F/G construction is reduced to one bar of three single notes and one fresh chord. Final machine/browser checks are pending."
+    },
+    {
+      "lessonId": "detail-p-left-position-triad-02",
+      "status": "implemented-and-tested",
+      "report": "docs/reports/piano-curriculum-2026-11-05-20.md",
+      "fromPlanVersion": 15,
+      "previousPlan": {
+        "id": "detail-p-left-position-triad-02",
+        "title": "Левая: новая форма G major",
+        "coverageDomain": "triads",
+        "stage": "p5",
+        "goal": "После подготовки G3–B3–D4 левой рукой соединить отдельные звуки 5–3–1 в цельное G-трезвучие; не отдавать D4 правой руке из-за среднего регистра.",
+        "after": "detail-p-left-position-triad-01",
+        "requires": [
+          "detail-p-left-position-triad-01",
+          "detail-p-left-g-position-01"
+        ],
+        "hand": "left",
+        "targetMidis": [
+          55,
+          59,
+          62
+        ],
+        "targetFingers": [
+          5,
+          3,
+          1
+        ],
+        "targetGroups": [
+          [
+            55
+          ],
+          [
+            59
+          ],
+          [
+            62
+          ],
+          [
+            55,
+            59,
+            62
+          ],
+          [
+            55,
+            59,
+            62
+          ]
+        ],
+        "targetTiming": {
+          "startsBeats": [
+            0,
+            1,
+            2,
+            4,
+            6
+          ],
+          "noteDurationsBeats": [
+            1,
+            1,
+            2,
+            1.5,
+            2
+          ],
+          "timeSignature": {
+            "numerator": 4,
+            "denominator": 4
+          },
+          "status": "draft-not-a-midi-contract",
+          "note": "Final exact profile and the half-beat gap before the repeated chord must be verified during implementation."
+        },
+        "distinctFrom": "Сборка левого созвучия после отдельной позиционной подготовки; независимость от одноимённой правой формы. Самостоятельная цель и отсутствие дубля ещё проверяются до внедрения.",
+        "candidateEvidenceIds": [
+          "ou-triads-2026-11-05",
+          "kovarsky-basic-triads-2026-11-05",
+          "alfred-musical-fingers-position-2026-11-05"
+        ],
+        "reviewStatus": "source-and-prerequisite-refined; not implemented",
+        "preparation": "Найди опору всей рукой; сначала коснись трёх клавиш без звука. Сыграй каждую отдельно и только после этого собери форму. Не растягивай руку силой; при напряжении вернись к отдельным звукам.",
+        "slowPractice": "Проговори названия и 5–3–1. Новое нажатие каждого звука начинается по счёту; перед повторным аккордом отпусти все три клавиши. Последний аккорд заканчивается общим отпусканием, без воображаемой конечной паузы.",
+        "auralCue": "Сначала услышь три самостоятельных звука, затем одно мажорное созвучие: средняя нота на четыре полутона выше нижней, верхняя на три выше средней. Не подменяй среднюю ступень соседней.",
+        "commonErrors": [
+          "Назначать большому нижний звук по примеру правой руки.",
+          "Переходить на правую руку ради верхней ноты около C4.",
+          "Давить сильнее ради одновременности или держать запястье неподвижно.",
+          "Удерживать верхний звук между повторными аккордами вместо нового общего нажатия."
+        ],
+        "transferTask": {
+          "midis": [
+            59,
+            55,
+            62
+          ],
+          "fingers": [
+            3,
+            5,
+            1
+          ],
+          "hand": "left",
+          "description": "После перерыва отдельно сыграй новую последовательность, затем собери исходный аккорд. Это самостоятельная проба переноса, не автоматический независимый тест слуха."
+        },
+        "materialType": "project-technical-drill",
+        "exactFingeringStatus": "project-candidate; physical comfort and implementation review still required",
+        "reviewReport": "docs/reports/piano-curriculum-2026-11-05-19.md"
+      },
+      "note": "The implemented G anchor uses prepared legato; F/G construction is reduced to one bar of three single notes and one fresh chord. Final machine/browser checks are pending."
+    },
+    {
+      "lessonId": "detail-p-rhythm-final-rest-01",
+      "status": "implemented-and-tested",
+      "report": "docs/reports/piano-curriculum-2026-11-06-17.md",
+      "fromPlanVersion": 29,
+      "previousPlan": {
+        "id": "detail-p-rhythm-final-rest-01",
+        "title": "Полная доля тишины после последней ноты",
+        "coverageDomain": "rhythm",
+        "stage": "p2",
+        "goal": "Сохранить пульс после последнего отпускания и выдержать конечную долю тишины до границы завершения, без нового нажатия.",
+        "after": "detail-p-rhythm-03",
+        "requires": [
+          "detail-p-rhythm-03",
+          "detail-p-release-01"
+        ],
+        "hand": "right",
+        "targetMidis": [
+          60,
+          60
+        ],
+        "targetFingers": [
+          1,
+          1
+        ],
+        "articulation": "nonlegato",
+        "targetTiming": {
+          "noteDurationsBeats": [
+            1,
+            1
+          ],
+          "startsBeats": [
+            0,
+            2
+          ],
+          "trailingRestBeats": 1
+        },
+        "distinctFrom": "Внутреннюю паузу ограничивает следующее вступление; здесь последующая атака отсутствует, нужна наблюдаемая временная граница тишины.",
+        "requiresModel": [
+          "explicit-final-rest-boundary",
+          "observation-until-ending",
+          "audio-tail",
+          "persistence-and-contract-versioning"
+        ],
+        "candidateEvidenceIds": [
+          "ou-rest-values-2026-11-05",
+          "omt-simple-counting-2026-11-05"
+        ],
+        "reviewStatus": "planned-needs-final-rest-model-source-review-and-tests"
+      }
+    }
+  ],
+  "reviewNotes": [
+    {
+      "lessonId": "detail-p-hearing-01",
+      "note": "Существующая C4–E4 (1–3) сохранена и подробно разобрана как слуховое представление известной пары; независимое распознавание не оценивается. Новая копия не создавалась.",
+      "status": "reviewed-known-phrase-imagery",
+      "report": "docs/reports/piano-curriculum-2026-11-05-09.md",
+      "preparationReport": "docs/reports/piano-curriculum-2026-11-05-10.md"
+    },
+    {
+      "lessonId": "detail-p-hearing-02",
+      "status": "reviewed-known-phrase-imagery",
+      "report": "docs/reports/piano-curriculum-2026-11-05-10.md",
+      "note": "Данные сохранены; уточнены конкретная слуховая задача, подготовка, окончания и самостоятельный перенос. Это существующий урок, не новый будущий ID."
+    },
+    {
+      "lessonId": "detail-p-hearing-03",
+      "status": "reviewed-known-phrase-imagery",
+      "report": "docs/reports/piano-curriculum-2026-11-05-10.md",
+      "note": "Данные сохранены; уточнены конкретная слуховая задача, подготовка, окончания и самостоятельный перенос. Это существующий урок, не новый будущий ID."
+    },
+    {
+      "lessonId": "detail-p-hearing-04",
+      "status": "reviewed-known-phrase-imagery",
+      "report": "docs/reports/piano-curriculum-2026-11-05-10.md",
+      "note": "Данные сохранены; уточнены конкретная слуховая задача, подготовка, окончания и самостоятельный перенос. Это существующий урок, не новый будущий ID."
+    },
+    {
+      "lessonId": "course04-03",
+      "relatedLessonId": "detail-p-rhythm-01",
+      "status": "goal-overlap-needs-role-and-counting-review",
+      "report": "docs/reports/piano-curriculum-2026-11-05-12.md",
+      "note": "Одинаковые звук, пальцы, темп и длительности. Это сохранённые записи каталога, не два новых самостоятельных урока для целевого минимума."
+    },
+    {
+      "lessonId": "course07-06",
+      "status": "reviewed-project-rhythm-regularization",
+      "report": "docs/reports/piano-curriculum-2026-11-05-14.md",
+      "note": "Сохранены высоты и пальцы. Ритм собственной заготовки приведён к регулярным тактам 4/4; это новая редакция прежнего ID, не новый самостоятельный урок."
+    },
+    {
+      "lessonId": "course07-07",
+      "status": "reviewed-project-rhythm-regularization",
+      "report": "docs/reports/piano-curriculum-2026-11-05-14.md",
+      "note": "Сохранены высоты и пальцы. Ритм собственной заготовки приведён к регулярным тактам 4/4; это новая редакция прежнего ID, не новый самостоятельный урок."
+    },
+    {
+      "lessonId": "course08-01",
+      "status": "reviewed-blocked-major-triad-consolidation",
+      "report": "docs/reports/piano-curriculum-2026-11-05-15.md",
+      "note": "Устойчивое повторение ранее собранного C major, две доли и общие окончания. Сохранены ноты и пальцы; это редакция существующего задания, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "course08-02",
+      "status": "reviewed-blocked-major-triad-consolidation",
+      "report": "docs/reports/piano-curriculum-2026-11-05-15.md",
+      "note": "Устойчивое повторение ранее собранного C major, две доли и общие окончания. Сохранены ноты и пальцы; это редакция существующего задания, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "course08-03",
+      "status": "reviewed-new-position-major-triad",
+      "report": "docs/reports/piano-curriculum-2026-11-05-16.md",
+      "note": "Уточнены новая опора, подготовка переноса и окончания. Ноты и пальцы сохранены; существующие задания не считаются вновь добавленными."
+    },
+    {
+      "lessonId": "course08-04",
+      "status": "reviewed-new-position-major-triad",
+      "report": "docs/reports/piano-curriculum-2026-11-05-16.md",
+      "note": "Уточнены новая опора, подготовка переноса и окончания. Ноты и пальцы сохранены; существующие задания не считаются вновь добавленными."
+    },
+    {
+      "lessonId": "course08-05",
+      "status": "reviewed-meter-and-chord-handoff",
+      "report": "docs/reports/piano-curriculum-2026-11-05-17.md",
+      "note": "Уточнены метр, счёт и окончания; у второй фразы упрощён ритм. Сохранены ноты и пальцы, прежний ритм записан в историю. Это два существующих урока, не новый контент для количественного минимума."
+    },
+    {
+      "lessonId": "course08-07",
+      "status": "reviewed-meter-and-chord-handoff",
+      "report": "docs/reports/piano-curriculum-2026-11-05-17.md",
+      "note": "Уточнены метр, счёт и окончания; у второй фразы упрощён ритм. Сохранены ноты и пальцы, прежний ритм записан в историю. Это два существующих урока, не новый контент для количественного минимума."
+    },
+    {
+      "lessonId": "course08-06",
+      "status": "reviewed-instruction-musical-data-unchanged",
+      "report": "docs/reports/piano-curriculum-2026-11-05-21.md",
+      "note": "Разложенная правая фраза получила правильное объяснение отдельных звуков, повторной вершины, счёта восьмых и переноса в паузе. Ноты, пальцы, ритм и музыкальный отпечаток сохранены; это редакция прежнего урока, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "detail-p-minor-triads-01",
+      "status": "reviewed-minor-assembly-meter-and-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-05-22.md",
+      "note": "Сохранены ноты, руки, пальцы и 52 BPM. Ритм собственной заготовки приведён к пяти полным тактам 4/4; общий конец проверяется новым контрактом. Прежний ритм и результаты сохранены; это редакция прежнего задания, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "detail-p-minor-triads-02",
+      "status": "reviewed-minor-assembly-meter-and-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-05-22.md",
+      "note": "Сохранены ноты, руки, пальцы и 52 BPM. Ритм собственной заготовки приведён к пяти полным тактам 4/4; общий конец проверяется новым контрактом. Прежний ритм и результаты сохранены; это редакция прежнего задания, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "detail-p-minor-triads-03",
+      "status": "reviewed-minor-comparison-meter-and-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-05-23.md",
+      "note": "Сохранены ноты, пальцы, 52 BPM, абсолютные начала и длительности; размер уточнён как 3/4, созвучия с паузами имеют профиль standard и новый контракт общего окончания. Прежние данные и результаты сохранены. Это редакция существующего урока, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "detail-p-minor-triads-04",
+      "status": "reviewed-minor-comparison-meter-and-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-05-23.md",
+      "note": "Сохранены ноты, пальцы, 52 BPM, абсолютные начала и длительности; размер уточнён как 3/4, созвучия с паузами имеют профиль standard и новый контракт общего окончания. Прежние данные и результаты сохранены. Это редакция существующего урока, не новый урок для количественного минимума."
+    },
+    {
+      "lessonId": "detail-p-chordmove-04",
+      "status": "reviewed-same-goal-cadence-and-rhythm",
+      "sameGoalAs": "course08-05",
+      "report": "docs/reports/piano-curriculum-2026-11-05-24.md",
+      "note": "Сохранены ID, ноты, пальцы, 56 BPM, начала и история. Ритм 1,7+1,3 упрощён до 2+1 в 3/4, включён контракт общего отпускания v2. Это повторение существующей цели, не новый самостоятельный урок; удалена неподходящая прямая зависимость от левого переноса."
+    },
+    {
+      "lessonId": "detail-p-dotted-quarter-01",
+      "status": "implemented-independent-dotted-preparation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-01.md",
+      "note": "New general rhythmic goal: hold three eighth units, enter on beat two-and and reattack the final half note. No specific piece prerequisite."
+    },
+    {
+      "lessonId": "course09-01",
+      "status": "reviewed-source-backed-study-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-01.md",
+      "note": "Retained pitch/finger data and 64 BPM; final dotted-quarter/eighth corrected from verified Mutopia soprano. Original instruction, rhythm and versioned progress remain preserved."
+    },
+    {
+      "lessonId": "course09-02",
+      "status": "reviewed-source-backed-study-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-01.md",
+      "note": "Retained pitch/finger data and 64 BPM; final dotted-quarter/eighth corrected from verified Mutopia soprano. Original instruction, rhythm and versioned progress remain preserved."
+    },
+    {
+      "lessonId": "course09-07",
+      "status": "reviewed-combined-adaptation-as-repetition",
+      "sameGoalAs": "course09-02",
+      "report": "docs/reports/piano-curriculum-2026-11-06-02.md",
+      "note": "Same sounding notes, hands, fingers and 66 BPM; two dotted endings and 32-beat span now match source. Old 30 quarter-note beats plus one rest totalled 31 beats, not 30. No new independent goal is claimed for length or memory mode."
+    },
+    {
+      "lessonId": "course09-03",
+      "status": "reviewed-two-position-source-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-03.md",
+      "note": "Historical 1878 Tema bars 1–8 visually read; retained project pitches/fingers/absolute timing and explicit simplifications. Meter is 2/4 and holds use scoped v1. New released C–G ↔ D–A preparation is a separate project drill, not a Mozart exercise."
+    },
+    {
+      "lessonId": "course09-04",
+      "status": "reviewed-source-rhythm-and-attribution-limits",
+      "report": "docs/reports/piano-curriculum-2026-11-06-04.md",
+      "note": "Retained 26 pitches, right-hand digits and 64 BPM. Source bars 1–8 establish 32 beats, three half-note endings and a final whole. Historical same-title settings differ; printed Mason credit is not asserted as verified tune authorship. No new lesson count."
+    },
+    {
+      "lessonId": "course09-06",
+      "status": "reviewed-handoff-repetition-and-regular-timing",
+      "sameGoalAs": "course07-06",
+      "report": "docs/reports/piano-curriculum-2026-11-06-05.md",
+      "note": "Retain all 15 pitches, hands, fingers and 58 BPM. New project edition places basses on 0/4/8/12, final half ends at 16. Released sequential line, not an independent held bass. Old 18-beat edition and personal edits remain preserved; no new goal increment."
+    },
+    {
+      "lessonId": "course10-04",
+      "status": "reviewed-identical-rhythm-as-repetition",
+      "sameGoalAs": "course04-08",
+      "report": "docs/reports/piano-curriculum-2026-11-06-06.md",
+      "note": "Retain all 12 pitches/fingers, exact starts, 1–0.5–0.5–2 rhythm in each of three 4/4 bars and 66 BPM. Correct the nonexistent-pause advice, scope hold boundaries and retain the p6 consolidation route before its transfer dependent. New screen mode and 2 BPM do not add an independent lesson."
+    },
+    {
+      "lessonId": "course10-06",
+      "status": "reviewed-prepared-chord-repetition-and-common-release",
+      "sameGoalAs": "course08-05",
+      "report": "docs/reports/piano-curriculum-2026-11-06-07.md",
+      "note": "Keep the right C/F/G/C and left C-major pitches, digits, 54 BPM, two-beat holds and four one-beat internal rests. Relabel 4/4 to 3/4 without changing absolute times; scope common release v2. Left C major and left triple-pulse preparation are explicit. No new distinct-goal increment for blind mode or this prepared recombination; trailing silence after beat 14 is not observed."
+    },
+    {
+      "lessonId": "course10-08",
+      "status": "reviewed-eight-bar-checkpoint-with-source-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-08.md",
+      "note": "Retain all 30 sounding notes and explicit hands/fingers, 64 BPM and separate version history. Replace 30-beat irregular project timing with 32 beats in eight regular bars; identify last nine pitches as transposed and rhythmically simplified Mutopia soprano. Explicit checkpoint-only role has four general-skill preparations; it is excluded once from the independent-goal upper bound."
+    },
+    {
+      "lessonId": "detail-p-rhythm-01",
+      "status": "reviewed-explicit-whole-note-repetition",
+      "sameGoalAs": "course04-03",
+      "report": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "note": "Retain all music, fingering and original early-rhythm review. Append a separate guarded roleReview only. The existing musical version and memory credit remain valid; source records and user editions are preserved."
+    },
+    {
+      "batch": "2026-11-06-10",
+      "lessonId": "detail-p-release-02",
+      "status": "guarded-hand-preparation-reviewed",
+      "requires": [
+        "course01-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "note": "Preserve notes, fingers, raw timing, display anchors and previous reviews. Only detail-p-triads-02 adds scoped common-release v2; legacy memory retained in history. No new lesson or independent-teacher claim."
+    },
+    {
+      "batch": "2026-11-06-10",
+      "lessonId": "detail-p-release-03",
+      "status": "guarded-hand-preparation-reviewed",
+      "requires": [
+        "detail-p-release-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "note": "Preserve notes, fingers, raw timing, display anchors and previous reviews. Only detail-p-triads-02 adds scoped common-release v2; legacy memory retained in history. No new lesson or independent-teacher claim."
+    },
+    {
+      "batch": "2026-11-06-10",
+      "lessonId": "detail-p-release-04",
+      "status": "guarded-hand-preparation-reviewed",
+      "requires": [
+        "detail-p-release-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "note": "Preserve notes, fingers, raw timing, display anchors and previous reviews. Only detail-p-triads-02 adds scoped common-release v2; legacy memory retained in history. No new lesson or independent-teacher claim."
+    },
+    {
+      "batch": "2026-11-06-10",
+      "lessonId": "detail-p-triads-02",
+      "status": "guarded-hand-preparation-reviewed",
+      "requires": [
+        "course03-08",
+        "detail-p-release-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "note": "Preserve notes, fingers, raw timing, display anchors and previous reviews. Only detail-p-triads-02 adds scoped common-release v2; legacy memory retained in history. No new lesson or independent-teacher claim."
+    },
+    {
+      "batch": "2026-11-06-12",
+      "lessonId": "detail-p-black-02",
+      "status": "guarded-left-preparation-reviewed",
+      "requires": [
+        "course03-08",
+        "detail-p-release-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-12.md",
+      "note": "Music, fingering, raw time and assessment fingerprint unchanged. Full black-key guide added; left half-note holding now prepares the repeated triad. Previous instructions and blocked-triad review retained. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-12",
+      "lessonId": "course08-02",
+      "status": "guarded-left-preparation-reviewed",
+      "requires": [
+        "detail-p-triads-02",
+        "course03-08",
+        "detail-p-left-half-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-12.md",
+      "note": "Music, fingering, raw time and assessment fingerprint unchanged. Full black-key guide added; left half-note holding now prepares the repeated triad. Previous instructions and blocked-triad review retained. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-13",
+      "lessonId": "detail-p-release-01",
+      "status": "guarded-release-black-preparation-reviewed",
+      "requires": [
+        "course01-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "note": "Music, fingering, rhythm and assessment fingerprint unchanged. Earlier instructions retained; right two-black and both three-black guides explain separate transfers. Left three-black lesson explicitly relates flat names to current sharp key labels. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-13",
+      "lessonId": "detail-p-black-01",
+      "status": "guarded-release-black-preparation-reviewed",
+      "requires": [
+        "course02-08",
+        "detail-p-release-03"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "note": "Music, fingering, rhythm and assessment fingerprint unchanged. Earlier instructions retained; right two-black and both three-black guides explain separate transfers. Left three-black lesson explicitly relates flat names to current sharp key labels. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-13",
+      "lessonId": "detail-p-black-03",
+      "status": "guarded-release-black-preparation-reviewed",
+      "requires": [
+        "detail-p-black-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "note": "Music, fingering, rhythm and assessment fingerprint unchanged. Earlier instructions retained; right two-black and both three-black guides explain separate transfers. Left three-black lesson explicitly relates flat names to current sharp key labels. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-13",
+      "lessonId": "detail-p-black-04",
+      "status": "guarded-release-black-preparation-reviewed",
+      "requires": [
+        "detail-p-black-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "note": "Music, fingering, rhythm and assessment fingerprint unchanged. Earlier instructions retained; right two-black and both three-black guides explain separate transfers. Left three-black lesson explicitly relates flat names to current sharp key labels. Teacher and physical validation remain separate."
+    },
+    {
+      "batch": "2026-11-06-15",
+      "lessonId": "detail-p-relocate-01",
+      "status": "guarded-relocation-preparation-reviewed",
+      "requires": [
+        "course02-08",
+        "detail-p-release-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "note": "Detailed independent-hand preparation, exact 0.85 sound / 1.15 silence or 0.15 gap, manual changed-phrase transfer and position cues. All notes, fingering, timing and assessment fingerprint retained. Not independent teacher or physical validation."
+    },
+    {
+      "batch": "2026-11-06-15",
+      "lessonId": "detail-p-relocate-02",
+      "status": "guarded-relocation-preparation-reviewed",
+      "requires": [
+        "course03-08",
+        "detail-p-release-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "note": "Detailed independent-hand preparation, exact 0.85 sound / 1.15 silence or 0.15 gap, manual changed-phrase transfer and position cues. All notes, fingering, timing and assessment fingerprint retained. Not independent teacher or physical validation."
+    },
+    {
+      "batch": "2026-11-06-15",
+      "lessonId": "detail-p-relocate-03",
+      "status": "guarded-relocation-preparation-reviewed",
+      "requires": [
+        "detail-p-relocate-01",
+        "course02-08"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "note": "Detailed independent-hand preparation, exact 0.85 sound / 1.15 silence or 0.15 gap, manual changed-phrase transfer and position cues. All notes, fingering, timing and assessment fingerprint retained. Not independent teacher or physical validation."
+    },
+    {
+      "batch": "2026-11-06-15",
+      "lessonId": "detail-p-relocate-04",
+      "status": "guarded-relocation-preparation-reviewed",
+      "requires": [
+        "detail-p-relocate-02",
+        "course03-08"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "note": "Detailed independent-hand preparation, exact 0.85 sound / 1.15 silence or 0.15 gap, manual changed-phrase transfer and position cues. All notes, fingering, timing and assessment fingerprint retained. Not independent teacher or physical validation."
+    }
+  ],
+  "implementedSpecifications": [
+    {
+      "id": "detail-p-left-half-01",
+      "title": "Левая: половинные мизинцем",
+      "createdInBatch": "2026-11-06-09",
+      "status": "individually-specified-and-implemented-in-this-batch; not a future plan",
+      "implementationReport": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "coverageDomain": "rhythm",
+      "stage": "p2",
+      "goal": "Левым мизинцем удержать C3 две полные доли и повторно нажать на границе без счётной паузы.",
+      "after": "course04-02",
+      "requires": [
+        "course01-02"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "targetFingers": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "targetTiming": {
+        "startsBeats": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "noteDurationsBeats": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "restsBeforeBeats": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timeSignature": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "bpm": 56,
+        "totalBeats": 8,
+        "contract": "beat-boundary-v1"
+      },
+      "origin": "project-technical-drill",
+      "distinctFrom": "The right-thumb half note uses another hand and finger. Existing left C3/5 triple pulse has a rest every third beat and later preparation; this is an early continuous two-beat hold and reattack.",
+      "sourceEvidenceIds": [
+        "ou-time-values-2026-11-05",
+        "omt-simple-counting-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "slowBreakdown": "Найти C3 без звука; отдельно одно удержание; затем повтор на границе в том же пульсе. Правая отдыхает, счёт продолжается.",
+      "hearing": "Отдельные ровные длинные звуки; нет дополнительной атаки внутри удержания или лишней тишины между повторами.",
+      "selfCheck": [
+        "Сохранить полный счёт до следующей границы.",
+        "Освободить клавишу для повторного нажатия.",
+        "Проверить реальный палец и свободу руки отдельно от MIDI."
+      ],
+      "transfer": "После попытки найти D3 и сыграть два D3 левым 5 по две доли.",
+      "nextLessonId": "detail-p-left-whole-01",
+      "verification": "tests/piano-left-durations-role.test.cjs",
+      "independentTeacherReviewed": false
+    },
+    {
+      "id": "detail-p-left-whole-01",
+      "title": "Левая: целые мизинцем",
+      "createdInBatch": "2026-11-06-09",
+      "status": "individually-specified-and-implemented-in-this-batch; not a future plan",
+      "implementationReport": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "coverageDomain": "rhythm",
+      "stage": "p2",
+      "goal": "Левым мизинцем удержать C3 четыре полные доли до нового раз и повторно нажать без замены двух звуков одним удержанием.",
+      "after": "course04-03",
+      "requires": [
+        "detail-p-left-half-01"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        48
+      ],
+      "targetFingers": [
+        5,
+        5
+      ],
+      "targetTiming": {
+        "startsBeats": [
+          0,
+          4
+        ],
+        "noteDurationsBeats": [
+          4,
+          4
+        ],
+        "restsBeforeBeats": [
+          0,
+          0
+        ],
+        "timeSignature": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "bpm": 56,
+        "totalBeats": 8,
+        "contract": "beat-boundary-v1"
+      },
+      "origin": "project-technical-drill",
+      "distinctFrom": "Existing right C4 whole note trains the right thumb; the new task lengthens the separately prepared left-finger-5 hold from two to four beats. No identical left C3/5 whole-note drill was found in the current catalog.",
+      "sourceEvidenceIds": [
+        "ou-time-values-2026-11-05",
+        "omt-simple-counting-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "slowBreakdown": "Найти C3 без звука; отдельно одно удержание; затем повтор на границе в том же пульсе. Правая отдыхает, счёт продолжается.",
+      "hearing": "Отдельные ровные длинные звуки; нет дополнительной атаки внутри удержания или лишней тишины между повторами.",
+      "selfCheck": [
+        "Сохранить полный счёт до следующей границы.",
+        "Освободить клавишу для повторного нажатия.",
+        "Проверить реальный палец и свободу руки отдельно от MIDI."
+      ],
+      "transfer": "После попытки найти D3 и сыграть один D3 левым 5 на четыре доли.",
+      "nextLessonId": "course04-04",
+      "verification": "tests/piano-left-durations-role.test.cjs",
+      "independentTeacherReviewed": false
+    },
+    {
+      "id": "detail-p-rhythm-final-rest-01",
+      "title": "Полная доля тишины после последней ноты",
+      "coverageDomain": "rhythm",
+      "stage": "p2",
+      "goal": "Сохранить пульс после последнего отпускания и выдержать конечную долю тишины до границы завершения, без нового нажатия.",
+      "after": "detail-p-rhythm-03",
+      "requires": [
+        "detail-p-rhythm-03",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        60
+      ],
+      "targetFingers": [
+        1,
+        1
+      ],
+      "articulation": "nonlegato",
+      "targetTiming": {
+        "startsBeats": [
+          0,
+          2
+        ],
+        "noteDurationsBeats": [
+          1,
+          1
+        ],
+        "trailingRestBeats": 1,
+        "timeSignature": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "ending": {
+          "version": 1,
+          "endBeat": 4
+        }
+      },
+      "bpm": 56,
+      "distinctFrom": "Внутреннюю паузу ограничивает следующее вступление; здесь последующая атака отсутствует, нужна наблюдаемая временная граница тишины.",
+      "sourceEvidenceIds": [
+        "ou-rest-values-2026-11-05",
+        "omt-simple-counting-2026-11-05"
+      ],
+      "origin": "project-technical-drill",
+      "practiceMinutes": {
+        "min": 3,
+        "max": 5,
+        "strict": false
+      },
+      "slowPractice": "C4 на раз, отпустить на два; C4 на три, отпустить на четыре; последняя тишина до нового раз без атаки.",
+      "hearingModel": "Два одинаковых до с равными промежутками тишины; известный образец, не независимый слуховой тест.",
+      "selfChecks": [
+        "Правая 1 на C4, без педали.",
+        "Последняя нота отпущена у начала четыре.",
+        "Доля тишины сохранена до следующего раз без новой ноты."
+      ],
+      "transfer": "Вне зачёта три C4 по одной доле на раз, два, три; конечная пауза на четыре до нового раз.",
+      "nextLessonId": "detail-p-rhythm-04",
+      "verification": "tests/piano-terminal-rest.test.cjs",
+      "independentTeacherReviewed": false
+    }
+  ],
+  "latestPlanningBatch": {
+    "id": "2026-11-06-23",
+    "reviewedPlannedLessonIds": [
+      "detail-p-read-treble-01",
+      "detail-p-read-bass-01"
+    ],
+    "newPlannedLessonCount": 0,
+    "note": "Prepared-hand prerequisites refined; explicit repeat fragments and published-catalog exclusion; plans remain unregistered."
+  }
+}

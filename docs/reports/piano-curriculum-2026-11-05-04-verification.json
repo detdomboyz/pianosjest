@@ -1,0 +1,292 @@
+{
+  "checkedAt": "2026-11-05T06:52:27.103Z",
+  "batch": {
+    "id": "2026-11-05-04",
+    "status": "implemented-and-tested",
+    "changeType": "new-pairs-and-guarded-description-upgrade",
+    "lessonIds": [
+      "detail-p-release-03",
+      "detail-p-release-04",
+      "detail-p-legato-pairs-01",
+      "detail-p-legato-pairs-03"
+    ],
+    "newLessonCount": 2,
+    "reviewedLessonCount": 2,
+    "promotedPlannedLessonCount": 2,
+    "report": "docs/reports/piano-curriculum-2026-11-05-04.md",
+    "testsPassed": 162,
+    "guitarFilesChanged": false,
+    "independentTeacherReview": false
+  },
+  "counts": {
+    "plannedFutureLessons": 2,
+    "implementedLearningLessons": 406,
+    "checkedMidiRouteLessons": 142,
+    "withStructuredProvenance": 14,
+    "individuallyMappedToDomain": 14,
+    "independentTeacherReviewed": 0
+  },
+  "tests": {
+    "pass": 162,
+    "fail": 0,
+    "log": "tmp/piano-batch-04-tests.log"
+  },
+  "audits": {
+    "lessons": {
+      "status": "pass",
+      "pianoLearning": 406,
+      "guitarLearning": 456,
+      "contradictions": 0
+    },
+    "curriculum": {
+      "status": "pass",
+      "catalogItems": 1267,
+      "hardErrors": 0
+    },
+    "fingering": {
+      "status": "pass-with-known-model-limits",
+      "structuralFailures": 0,
+      "unsupportedActions": 83,
+      "flaggedPieceFragments": 10
+    },
+    "coverage": {
+      "status": "generated",
+      "remainingPlannedLessons": 2,
+      "capacitySlots": 1310,
+      "capacityIsNotIndividualLessonPlan": true
+    }
+  },
+  "upgradeChecks": [
+    {
+      "id": "detail-p-release-03",
+      "musicalSignatureBefore": "18aae9a6",
+      "musicalSignatureAfter": "18aae9a6",
+      "musicUnchanged": true,
+      "timingUnchanged": true,
+      "fingersUnchanged": true,
+      "preparationUnchanged": true,
+      "historyPreserved": true,
+      "review": {
+        "id": "early-release-v2",
+        "sourceFingerprint": "e470472c",
+        "reviewedFingerprint": "871feb6b",
+        "previous": {
+          "id": "early-release-v1",
+          "sourceFingerprint": "51fe80d9",
+          "reviewedFingerprint": "e470472c"
+        }
+      },
+      "noVisibleInternalIds": true
+    },
+    {
+      "id": "detail-p-release-04",
+      "musicalSignatureBefore": "86e2ca4b",
+      "musicalSignatureAfter": "86e2ca4b",
+      "musicUnchanged": true,
+      "timingUnchanged": true,
+      "fingersUnchanged": true,
+      "preparationUnchanged": true,
+      "historyPreserved": true,
+      "review": {
+        "id": "early-release-v2",
+        "sourceFingerprint": "7614534f",
+        "reviewedFingerprint": "6b5ea549",
+        "previous": {
+          "id": "early-release-v1",
+          "sourceFingerprint": "2dd5e6bb",
+          "reviewedFingerprint": "7614534f"
+        }
+      },
+      "noVisibleInternalIds": true
+    }
+  ],
+  "newLessonChecks": [
+    {
+      "id": "detail-p-legato-pairs-01",
+      "notes": [
+        [
+          64
+        ],
+        [
+          65
+        ],
+        [
+          64
+        ],
+        [
+          65
+        ]
+      ],
+      "fingers": {
+        "version": 1,
+        "source": "focused-exercise-intent-v1",
+        "pattern": "u i u i",
+        "steps": [
+          [
+            {
+              "hand": "right",
+              "num": 3
+            }
+          ],
+          [
+            {
+              "hand": "right",
+              "num": 4
+            }
+          ],
+          [
+            {
+              "hand": "right",
+              "num": 3
+            }
+          ],
+          [
+            {
+              "hand": "right",
+              "num": 4
+            }
+          ]
+        ]
+      },
+      "hand": "right",
+      "bpm": 52,
+      "musicalSignature": "94b3d1fe",
+      "preparation": [
+        "detail-p-legato-03",
+        "course02-03"
+      ],
+      "preparationPrecedes": true,
+      "sourceEvidenceIds": [
+        "alfred-musical-fingers-position-2026-11-05",
+        "czerny-letter2-legato-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ]
+    },
+    {
+      "id": "detail-p-legato-pairs-03",
+      "notes": [
+        [
+          52
+        ],
+        [
+          53
+        ],
+        [
+          52
+        ],
+        [
+          53
+        ]
+      ],
+      "fingers": {
+        "version": 1,
+        "source": "focused-exercise-intent-v1",
+        "pattern": "0 q 0 q",
+        "steps": [
+          [
+            {
+              "hand": "left",
+              "num": 3
+            }
+          ],
+          [
+            {
+              "hand": "left",
+              "num": 2
+            }
+          ],
+          [
+            {
+              "hand": "left",
+              "num": 3
+            }
+          ],
+          [
+            {
+              "hand": "left",
+              "num": 2
+            }
+          ]
+        ]
+      },
+      "hand": "left",
+      "bpm": 52,
+      "musicalSignature": "1af1e53f",
+      "preparation": [
+        "detail-p-legato-04",
+        "course03-03"
+      ],
+      "preparationPrecedes": true,
+      "sourceEvidenceIds": [
+        "alfred-musical-fingers-position-2026-11-05",
+        "czerny-letter2-legato-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ]
+    }
+  ],
+  "guitarSourceHashesUnchanged": true,
+  "guitarHashes": {
+    "app.js": "cf7a01530519def65f39c5c88fdb2e8ffb5e66fc99104e4a8604549d0b68be66",
+    "catalog-sections.css": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+    "catalog-sections.js": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+    "course-editor.js": "23140fd191861ae43ec3096ace1cc217e15578cd1ebcc2d408a312ebb4afba56",
+    "curriculum-data.js": "234774648e9d52fa79c255a6600b5a061c460083ab53673313c1849297a5d6ce",
+    "curriculum-plan.js": "ecf35167951f09ab627ec9bdd5b32d8e3b933dafdfbea462ab6141276ef9c6a8",
+    "curriculum.js": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+    "edition20-content.js": "55f2707d232ba6b4589e82b49b51a139874538f03e625d048a3d1acf329d007d",
+    "guitar-curriculum-quality.js": "5b0788b434c8f1fe0c0f8ab155b803404b006be29235e9b8481638bc45b0bc64",
+    "index.html": "2a541b6296d7e3f90a0095ae3cdc5ed3d8723b9158484b130206b2edab16a364",
+    "lesson-development.js": "0225f1f25f2313a9301b8de4a96eec46185b71b413ebfbb77b051137e617c75a",
+    "lesson-quality-apply.js": "6fd09aa5156d0881bd3781cf96a735a83f595150837ab117307cb1c88da2b2c0",
+    "lesson-quality.js": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+    "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+    "lifes-a-gas-study.js": "4e2b03eff34ee510729beed95f4ffa1962498e9d728ce12e77730a704ca71fee",
+    "multi-song-studies.js": "1e65849b1937bc117706a55f854ba43d54625a0e48a45ae7742087d61640bf7b",
+    "practice-assessment.js": "0a57fbcf6f066d5971085d5c47ad2c3d9323698424f2fb57d0c0d46df740f498",
+    "server.js": "d0d8fa8065c86b937738c5c7f62dc1d59efa5e56be783b7cc933cc8e828fd48d",
+    "styles.css": "fc2eb92264605c0340e229cf6e2ac05f1138f438b010b96548f3d0742c48c056"
+  },
+  "browserChecks": [
+    "406 learning exercises and 27 works remain separate",
+    "Right E4/F4 explicitly display fingers 3/4; goal, count, transfer and sources are visible",
+    "Left E3/F3 explicitly display fingers 3/2",
+    "Memory mode hides materials and keyboard hints",
+    "Release-04 displays readable preparation/next-lesson names without raw IDs",
+    "No browser error logs observed"
+  ],
+  "screenshot": "docs/qa/piano-legato-pairs-04.png",
+  "sourceInspection": {
+    "id": "alfred-musical-fingers-position-2026-11-05",
+    "author": "Alfred Music / Frances Clark Library (verified publisher and series; personal authorship not established from the inspected pages)",
+    "title": "Musical Fingers, Book 1, publisher sample, item 00-1009X",
+    "url": "https://content.alfred.com/catpages/00-1009X.pdf",
+    "edition": "Official publisher sample. Publication year and personal author credit are absent on the inspected sample pages; no attribution beyond publisher/series is made.",
+    "metadataSource": "https://images.alfred.com/pdf/MIPiano-10CATALOG/Piano/Methods.pdf",
+    "metadataScope": "Publisher-indexed Musical Fingers Book 1 entry, item 00-1009X, ISBN 9780913277096. No claim to have inspected the full catalogue or a title-page facsimile.",
+    "section": "Printed page 6 (PDF page 2): Five-Finger Positions, Beginning on Each Finger, patterns 1/2 and instruction to transpose into C major; printed page 26 (PDF page 3), explanatory paragraph on a legato line",
+    "verifiedOn": "2026-11-05",
+    "evidence": "The five-key pattern uses consecutive right-hand fingers and the reversed left-hand assignment; it begins on different fingers and is explicitly transferred to C major. A later paragraph describes sustaining each melodic tone until the next is played.",
+    "application": "From the C-major five-finger position, independently select E4/F4 with RH 3/4 and E3/F3 with LH 3/2; practise the transfer as a shorter original task.",
+    "limits": "These four-quarter patterns are original project exercises, not copies of the printed eight-note patterns. Tempo 52, count, repetitions and MIDI tolerances are project choices. Personal author names, historical student stories and approval of our exact lessons are not asserted. Two-voice examples on page 26 are not implemented by this batch.",
+    "sampleSha256": "20163d0a6ff8d3c4a19ef954f4b82ba045b4c79ab584e72a3cc48b7c2b5a3dd5",
+    "sampleBytes": 311889,
+    "inspection": "Downloaded from the official URL; rendered with bundled Poppler and visually inspected PDF pages 1–3, including printed pages 6 and 26.",
+    "lessonIds": [
+      "detail-p-legato-pairs-01",
+      "detail-p-legato-pairs-03"
+    ]
+  },
+  "trainerContentExists": false,
+  "physicalInstrumentTest": false,
+  "teacherReview": false,
+  "quota": {
+    "checkedOn": "2026-11-05",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 22,
+    "remainingPercent": 78,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031
+  }
+}

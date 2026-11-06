@@ -1,0 +1,889 @@
+{
+  "batch": "2026-11-06-22",
+  "triggeredAt": "2026-11-06T07:49:45.202Z",
+  "status": "implemented-and-tested",
+  "mainReleaseVersion": "23.5.23",
+  "optionalReaderVersion": "0.1.0",
+  "nextPackageVersion": "0.1.0",
+  "newImplementedLessons": 0,
+  "reviewedExistingLessons": 0,
+  "newFuturePlans": 0,
+  "changedAssessmentContractIds": [],
+  "implementation": {
+    "sourceSha256": {
+      "piano-reading-bank.js": "f9f0ef6341f5ce613ee82f3101ce455dc7427c561c2e56d3519e05d3dfb6d5e7",
+      "piano-reading-controller.js": "6116dac689f4f6c8ec9948d7a4a497a678360fc049486d83f56ccc81db5192bf",
+      "piano-reading-midi.js": "8ca99d229d012d436884977e9536234597e7c071e68101547906c30e4a20cd1f",
+      "piano-reading-store.js": "a996357dfdec6bf339787e8dc93114b52adb963af111871cc89309a255ec6571",
+      "web-app/src/ReadingScreen.tsx": "ad0e9a747044003f897cd6140c1247ae9bfa8ccde359178ea8433a5afa8b1cee"
+    },
+    "bank": "piano-reading-bank.js",
+    "controller": "piano-reading-controller.js",
+    "midi": "piano-reading-midi.js",
+    "ui": "web-app/src/ReadingScreen.tsx",
+    "storage": "piano-reading-store.js",
+    "firstItemsPerClef": 4,
+    "atomicNextSelection": true,
+    "separateHistory": true,
+    "conflictingImportRefusesReplacement": true,
+    "importMergeImplemented": false,
+    "sourcePlanExamplesExcluded": true,
+    "scope": "pitch-order-only",
+    "executionVerified": false,
+    "nextRoutes": [
+      "/",
+      "/reading/treble/",
+      "/reading/bass/"
+    ],
+    "actualNextProductionBuild": true,
+    "oldLocalApiExposed": false
+  },
+  "tests": {
+    "root": {
+      "passed": 490,
+      "failed": 0,
+      "durationMs": 187589.6044,
+      "log": "tmp/piano-batch-46-tests-final.log"
+    },
+    "focused": {
+      "passed": 42,
+      "failed": 0,
+      "durationMs": 882.2124,
+      "log": "tmp/piano-batch-46-focused-final.log"
+    },
+    "reader": {
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 643.7969,
+      "log": "tmp/piano-batch-46-reader-tests.log"
+    },
+    "next": {
+      "passed": 4,
+      "failed": 0,
+      "durationMs": 775.9737,
+      "log": "tmp/piano-batch-46-next-tests-final.log"
+    },
+    "strictTypes": {
+      "typescript": "5.8.3",
+      "strict": true,
+      "readingScreenIncluded": true,
+      "nodeTypes": "24.0.13",
+      "reactTypes": "19.1.8",
+      "reactDomTypes": "19.1.3"
+    },
+    "browser": {
+      "first": {
+        "answerAttributes": 0,
+        "details": 0,
+        "fontLoaded": true,
+        "heads": 4,
+        "namesInReader": false,
+        "preparation": 0,
+        "screenKeys": 0,
+        "status": "Первая проба: ответь до раскрытия названий.\n\nПолучено нажатий: 0. Ожидается 4. Удерживается клавиш: 0.",
+        "svgDescription": "Четыре нотные головки на пяти линейках. Текстовые названия доступны отдельной практикой после раскрытия."
+      },
+      "practiceStatus": "Высоты совпали в практике. Это не новая первая проба.",
+      "expanded": {
+        "expanded": "true",
+        "mode": "full",
+        "paragraphs": 3
+      },
+      "afterReload": {
+        "expanded": "true",
+        "mode": "full",
+        "remaining": "Ещё не открытых записей: 3. Известная запись не становится новой после перезагрузки."
+      },
+      "firstWithExpandedPreference": {
+        "answerAttributes": 0,
+        "details": 0,
+        "preparation": 0,
+        "readerNames": false
+      },
+      "tabA": {
+        "coordinates": [
+          "128",
+          "128",
+          "136",
+          "144"
+        ],
+        "status": "Первая проба: ответь до раскрытия названий.\n\nПолучено нажатий: 0. Ожидается 4. Удерживается клавиш: 0."
+      },
+      "tabB": {
+        "coordinates": [
+          "128",
+          "136",
+          "136",
+          "144"
+        ],
+        "status": "Первая проба: ответь до раскрытия названий.\n\nПолучено нажатий: 0. Ожидается 4. Удерживается клавиш: 0."
+      },
+      "afterTabSwitch": "Первая проба: ответь до раскрытия названий.\n\nПолучено нажатий: 0. Ожидается 4. Удерживается клавиш: 0.",
+      "exportSummary": {
+        "schemaVersion": 1,
+        "scope": "piano-staff-reading",
+        "revision": 7,
+        "exposures": [
+          {
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"C4\",\"D4\",\"E4\",\"E4\"]",
+            "openedAt": "2026-11-06T08:16:50.000Z"
+          },
+          {
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"E4\",\"E4\",\"D4\",\"C4\"]",
+            "openedAt": "2026-11-06T08:18:37.947Z"
+          },
+          {
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"E4\",\"D4\",\"D4\",\"C4\"]",
+            "openedAt": "2026-11-06T08:19:04.846Z"
+          }
+        ],
+        "attempts": [
+          {
+            "id": "5178c9df-44cc-42d2-9288-cc00fd0dbccf",
+            "identity": {
+              "instrument": "piano",
+              "lessonId": "detail-p-read-treble-01",
+              "itemId": "reading-treble-0122",
+              "itemVersion": "1",
+              "documentId": "score:reading-treble-0122",
+              "documentRevision": "pitch-reading-v1",
+              "partId": "melody"
+            },
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"C4\",\"D4\",\"E4\",\"E4\"]",
+            "openedAt": "2026-11-06T08:16:50.000Z",
+            "mode": "first",
+            "reasons": [
+              "names",
+              "non-midi-input"
+            ],
+            "result": {
+              "schemaVersion": 1,
+              "scope": "pitch-order-only",
+              "executionVerified": false,
+              "outcome": "practice-only",
+              "matched": true,
+              "reasons": [
+                "names",
+                "non-midi-input"
+              ],
+              "played": [
+                60,
+                62,
+                64,
+                64
+              ],
+              "finishedAt": "2026-11-06T08:18:06.641Z"
+            }
+          },
+          {
+            "id": "7765d6cc-5b1f-4c56-8eae-aa712fbe9d3e",
+            "identity": {
+              "instrument": "piano",
+              "lessonId": "detail-p-read-treble-01",
+              "itemId": "reading-treble-2210",
+              "itemVersion": "1",
+              "documentId": "score:reading-treble-2210",
+              "documentRevision": "pitch-reading-v1",
+              "partId": "melody"
+            },
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"E4\",\"E4\",\"D4\",\"C4\"]",
+            "openedAt": "2026-11-06T08:18:37.947Z",
+            "mode": "first",
+            "reasons": [
+              "interrupted"
+            ],
+            "result": null
+          },
+          {
+            "id": "190e162c-6d19-4039-8a7a-0d76940298f9",
+            "identity": {
+              "instrument": "piano",
+              "lessonId": "detail-p-read-treble-01",
+              "itemId": "reading-treble-2110",
+              "itemVersion": "1",
+              "documentId": "score:reading-treble-2110",
+              "documentRevision": "pitch-reading-v1",
+              "partId": "melody"
+            },
+            "contentKey": "[1,\"pitch-order\",\"treble\",\"E4\",\"D4\",\"D4\",\"C4\"]",
+            "openedAt": "2026-11-06T08:19:04.846Z",
+            "mode": "first",
+            "reasons": [
+              "interrupted"
+            ],
+            "result": null
+          }
+        ]
+      },
+      "importRoundtripExact": true,
+      "importConflict": "Новую запись пока нельзя открыть. История не сброшена.\n\nЗдесь уже есть другая история. Сохрани оба файла; объединение пока не поддерживается.",
+      "mobile": {
+        "clientWidth": 376,
+        "preview": {
+          "height": 148,
+          "lineClamp": "5",
+          "lineHeight": "24px",
+          "scrollHeight": 172
+        },
+        "scrollWidth": 376,
+        "svgWidth": 335.67999267578125
+      },
+      "keyboardExpanded": "true",
+      "keyboardCollapsed": "false",
+      "mobileFinal": {
+        "actionVisible": true,
+        "clamp": "4",
+        "clientWidth": 376,
+        "controlledTargetExists": true,
+        "copyHeight": 96,
+        "details": 0,
+        "lineHeight": "24px",
+        "scrollWidth": 376
+      },
+      "hiddenAfterReload": {
+        "mode": "hidden",
+        "preview": 0,
+        "selectExists": true
+      },
+      "bassFirstFinal": {
+        "answerAttributes": 0,
+        "details": 0,
+        "heads": 4,
+        "namedAnswers": false,
+        "preparation": 0,
+        "scrollWidth": 376,
+        "status": "Первая проба: ответь до раскрытия названий.\n\nПолучено нажатий: 0. Ожидается 4. Удерживается клавиш: 0.",
+        "width": 376
+      },
+      "conflictFinalBeforeFix": {
+        "notice": "История импортирована. Известные элементы остаются практикой.",
+        "status": "Сначала разбери образец; затем выбери другую запись без подсказок.\n\nЗдесь уже есть другая история. Сохрани оба файла; объединение пока не поддерживается."
+      },
+      "importConflictFinal": {
+        "notice": "Импорт не выполнен. Проверь сообщение выше.",
+        "status": "Сначала разбери образец; затем выбери другую запись без подсказок.\n\nЗдесь уже есть другая история. Сохрани оба файла; объединение пока не поддерживается."
+      },
+      "conflictPreservedHistory": true,
+      "consoleErrors": [],
+      "storageUnavailable": {
+        "verified": true,
+        "method": "opaque-origin CSP sandbox on isolated port 4203",
+        "message": "История недоступна. Разреши хранение данных для этой страницы или открой обычное окно браузера.",
+        "newItemOpened": false,
+        "testedBeforeFinalImportNoticeOnlyFix": true
+      },
+      "nativeBlurVisibilityConfirmed": false,
+      "hardwareMidiOrAudioUsed": false,
+      "requestedMobileViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cleanup": {
+        "closedTabs": 5,
+        "viewportReset": true,
+        "errors": []
+      }
+    },
+    "cleanup": {
+      "ownedPreviewServersStopped": true,
+      "ports": [
+        {
+          "port": 4201,
+          "listening": false
+        },
+        {
+          "port": 4202,
+          "listening": false
+        },
+        {
+          "port": 4203,
+          "listening": false
+        }
+      ],
+      "default4173Untouched": true,
+      "checkedAt": "2026-11-06T09:04:37.601Z"
+    },
+    "rootRuntimeUnchangedAfterFullRun": true,
+    "afterFullRunChange": "No executable code changed after the final 490-test run. The extra closed-port MIDI defect was reproduced, fixed, and followed by full/focused/Next checks. Browser visual/transfer paths were unchanged by that MIDI-only fix.",
+    "otherMusicalAuditsRerun": false,
+    "reason": "All 570 catalog records, lesson/assessment/fingering data and old trainer executables unchanged; future reading items remain unregistered."
+  },
+  "preservation": {
+    "catalogContentSha256": "655d96f0ca21964c62cbcbd4cc4ead523243b3f8978661b20f3faeb6cc7d09e4",
+    "catalogContentsExactExcludingSavedAt": true,
+    "runtimeLessonsUnchanged": 570,
+    "files": {
+      "index.html": {
+        "before": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "after": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "chopin-theme.js": {
+        "before": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "after": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "audio-transcriber.js": {
+        "before": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "after": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "beginner-fingering.js": {
+        "before": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "after": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "practice-assessment.js": {
+        "before": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "after": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "curriculum.js": {
+        "before": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "after": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "curriculum-plan.js": {
+        "before": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "after": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "catalog-sections.js": {
+        "before": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "after": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "lesson-quality.js": {
+        "before": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "after": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-lesson-development.js": {
+        "before": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "after": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-learning-ui.js": {
+        "before": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "after": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "catalog-transfer.js": {
+        "before": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "after": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "music-document.js": {
+        "before": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "after": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-catalog-adapter.js": {
+        "before": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "after": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "catalog-sections.css": {
+        "before": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "after": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-learning-ui.css": {
+        "before": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "after": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "package.json": {
+        "before": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "after": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "music-document.d.ts": {
+        "before": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "after": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-catalog-adapter.d.ts": {
+        "before": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "after": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-learning-ui.d.ts": {
+        "before": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "after": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-staff-view.js": {
+        "before": "4ce81c851decdca328750601ff3663d9fada36510a5ad04d5a9771a191f708d7",
+        "after": "4ce81c851decdca328750601ff3663d9fada36510a5ad04d5a9771a191f708d7",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-staff-view.d.ts": {
+        "before": "9bb6421b20c054e139d52a8c1d59d127029c1654be982989b3e1a0634b22cc47",
+        "after": "9bb6421b20c054e139d52a8c1d59d127029c1654be982989b3e1a0634b22cc47",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/src/StaffReader.tsx": {
+        "before": "8f065e11633566efe93a884d0ff9c766a0a34cf4a209bf40c2c6893d37ed6f2d",
+        "after": "7a6e46cd94d42d869ea4ffd1b14567706fca1d417d0425f1c33c0fdff420d4dc",
+        "unchanged": false,
+        "intentionalChangeAllowed": true
+      },
+      "web-reader/package.json": {
+        "before": "2269eab552596781196cbaa31c30d44f00cad7b88046767c258da21b7739eca4",
+        "after": "2269eab552596781196cbaa31c30d44f00cad7b88046767c258da21b7739eca4",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/reader.css": {
+        "before": "6143027d6125c8dd2dce0c26d5b0397cd42b23beaaccd7076adca0bda3f02dda",
+        "after": "6143027d6125c8dd2dce0c26d5b0397cd42b23beaaccd7076adca0bda3f02dda",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/tsconfig.json": {
+        "before": "41deea5241c681d6d3da5e0104e6a63b26a2cd50495024e20cf6126669198ea3",
+        "after": "41deea5241c681d6d3da5e0104e6a63b26a2cd50495024e20cf6126669198ea3",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/tools/build.cjs": {
+        "before": "9a96cdbd995d652e39451a3a14d791af79f9d215cb463537831a97497f055e93",
+        "after": "9a96cdbd995d652e39451a3a14d791af79f9d215cb463537831a97497f055e93",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/tools/check.cjs": {
+        "before": "3f4afd46c215e16426bd7f40844367ed5eeda9c150aa714a503ef75d664eaa42",
+        "after": "22e451cb11b40375d8c517c5d5f2926c29ec3f867c97b1c6beffcf968e09bef4",
+        "unchanged": false,
+        "intentionalChangeAllowed": true
+      },
+      "web-reader/tools/serve.cjs": {
+        "before": "883ad087ea1157b4add0c118a7f9a631053ab01d3054608dce5442b9137520e3",
+        "after": "883ad087ea1157b4add0c118a7f9a631053ab01d3054608dce5442b9137520e3",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/tools/fixtures.cjs": {
+        "before": "43a65846a00d050aea1653f47f9525566e5eb8cfe0e182af7a80a83d629633e6",
+        "after": "43a65846a00d050aea1653f47f9525566e5eb8cfe0e182af7a80a83d629633e6",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/assets/Bravura.woff2": {
+        "before": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4",
+        "after": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "web-reader/assets/OFL-Bravura.txt": {
+        "before": "c24929be7028026a65ee8894da1e3c36d2a4ccce0548d9ba8ba64509f46319ee",
+        "after": "c24929be7028026a65ee8894da1e3c36d2a4ccce0548d9ba8ba64509f46319ee",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-reading-session.js": {
+        "before": "d4772a9809b4da91982af85f4ef4e5de61c7d6787729f6f4f879589db849cfea",
+        "after": "d4772a9809b4da91982af85f4ef4e5de61c7d6787729f6f4f879589db849cfea",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-reading-session.d.ts": {
+        "before": "b6d0d4aedb6c08a931c8bc3f8efeb332217e5468c990336069352c8a3313a41d",
+        "after": "b6d0d4aedb6c08a931c8bc3f8efeb332217e5468c990336069352c8a3313a41d",
+        "unchanged": true,
+        "intentionalChangeAllowed": false
+      },
+      "piano-reading-store.js": {
+        "before": "0eea21e6846a92af5468d9a6cd74be698e7d69cced5a8ebe577911b67e1f96e7",
+        "after": "a996357dfdec6bf339787e8dc93114b52adb963af111871cc89309a255ec6571",
+        "unchanged": false,
+        "intentionalChangeAllowed": true
+      },
+      "piano-reading-store.d.ts": {
+        "before": "477477d1e62b7a8d40cf56c13426004f8062fa7232ecdf51f46404a3a229055f",
+        "after": "d1f0440707db4858921b7d7836eb582996fdc5ad0ea6d81ce27af5059bf1569d",
+        "unchanged": false,
+        "intentionalChangeAllowed": true
+      }
+    },
+    "unchangedFiles": 36,
+    "intentionallyChangedFiles": [
+      "web-reader/src/StaffReader.tsx",
+      "web-reader/tools/check.cjs",
+      "piano-reading-store.js",
+      "piano-reading-store.d.ts"
+    ],
+    "mainWeb": {
+      "count": 21,
+      "unchanged": true,
+      "hashes": {
+        "audio-transcriber.js": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "beginner-fingering.js": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "catalog-sections.css": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "catalog-sections.js": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "catalog-transfer.js": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "chopin-theme.js": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "curriculum-plan.js": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "curriculum.js": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "index.html": "e09c4e754cddbb67f5de5c73df821d547b1a972fe81c85c1a1849f9fd203cd20",
+        "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "lesson-quality.js": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "music-document.js": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "piano-catalog-adapter.js": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "piano-learning-ui.css": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "piano-learning-ui.js": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "piano-lesson-development.js": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "web-release.json": "152cb7f3a4ce39a40f664eec5330a086af0d48173c6b3651151a622ce48549d3",
+        "web-runtime.js": "a6945e27642c8b63df58171bab1d8287f9fac67e2ca35a74a7d8c80016440280"
+      }
+    },
+    "readerWeb": {
+      "count": 7,
+      "unchanged": true,
+      "hashes": {
+        "bass.html": "30ac5231a208db8f2652d8b3753f2ded0e5fe50e6df81ba6a6973e7bc7b020b3",
+        "Bravura.woff2": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4",
+        "index.html": "9a749312ae9d2a760a6b678415e7ebbbfb20b3ee7db2a999a52c2d8bfa7a927f",
+        "limitations.html": "fca911d3d55e32016996ec36937eb7df74d9bc3ba128176924fd062a2a73d660",
+        "OFL-Bravura.txt": "c24929be7028026a65ee8894da1e3c36d2a4ccce0548d9ba8ba64509f46319ee",
+        "reader-release.json": "10126f9abe73480152377dd3358230f12c79050954459aeb8fa2e4961e9e071e",
+        "reader.css": "6143027d6125c8dd2dce0c26d5b0397cd42b23beaaccd7076adca0bda3f02dda"
+      }
+    },
+    "backlogUnchanged": true,
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false,
+    "strictTypes": {
+      "typescript": "5.8.3",
+      "strict": true,
+      "readingScreenIncluded": true,
+      "nodeTypes": "24.0.13",
+      "reactTypes": "19.1.8",
+      "reactDomTypes": "19.1.3"
+    }
+  },
+  "counts": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 80,
+    "individuallyMappedToDomain": 80,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "nextManifest": {
+    "version": "0.1.0",
+    "mainReleaseVersion": "23.5.23",
+    "kind": "bounded-piano-reading-next-export",
+    "next": "15.5.27",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "typescript": "5.8.3",
+    "registeredLessons": 0,
+    "localOnly": true,
+    "serverEndpoints": false,
+    "files": {
+      "404/index.html": {
+        "bytes": 7555,
+        "sha256": "0ad1ebc20dd5c79eb0ef10f680542b0f3895f4b2bfb6ec9ee545f95fb2f996d5"
+      },
+      "404.html": {
+        "bytes": 7555,
+        "sha256": "0ad1ebc20dd5c79eb0ef10f680542b0f3895f4b2bfb6ec9ee545f95fb2f996d5"
+      },
+      "Bravura.woff2": {
+        "bytes": 323416,
+        "sha256": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4"
+      },
+      "index.html": {
+        "bytes": 8738,
+        "sha256": "1392b4d1810e304d5d5d242c7e1292dfdde6ca22f742e1af7e1c83844964a675"
+      },
+      "index.txt": {
+        "bytes": 5071,
+        "sha256": "8dbf00bb1f3f285870a4f45b0d7b39eb4a2bb6dfdde47c64cb4e28941d911a3c"
+      },
+      "OFL-Bravura.txt": {
+        "bytes": 4420,
+        "sha256": "c24929be7028026a65ee8894da1e3c36d2a4ccce0548d9ba8ba64509f46319ee"
+      },
+      "reading/bass/index.html": {
+        "bytes": 13282,
+        "sha256": "afa510693feeff982a47d07fd1a6882ca306f5f0e7633fa6e4ac15b9d4563f0b"
+      },
+      "reading/bass/index.txt": {
+        "bytes": 4637,
+        "sha256": "63d44fa5c00728d3b594c06c10c7f2729908989b6b6c0298031ff97b80ffc583"
+      },
+      "reading/treble/index.html": {
+        "bytes": 13415,
+        "sha256": "4746d248ea1c11e5bcd98c26b76a18b89a968d8ed1ec065e1506eb002346e733"
+      },
+      "reading/treble/index.txt": {
+        "bytes": 4647,
+        "sha256": "dfafe24329ee46b4e79e7bc0e33a013095e016f6fd10ce040d2dfadcc081d2ef"
+      },
+      "_next/static/chunks/119-7d1e3ccc86dc7217.js": {
+        "bytes": 44645,
+        "sha256": "2f657bb787cf9bd1b84f1a043eaf412f7f181d871dd84f82120bc37b9f10f194"
+      },
+      "_next/static/chunks/179.14334ab44e25c7ca.js": {
+        "bytes": 739,
+        "sha256": "b8481cc425b6a8ac78acf9104ad9098c5784a3fc5ae144855834c53c067ba741"
+      },
+      "_next/static/chunks/321-734006201b5ce75a.js": {
+        "bytes": 174186,
+        "sha256": "f19415d344604f1c8e848376fecb761fbd158a3b741091c9c63cd6c73ec6c532"
+      },
+      "_next/static/chunks/798.9ddeec3adc72335a.js": {
+        "bytes": 5438,
+        "sha256": "dc259136bf5c147cc7690a1599649b6486f8c106c02c1244dab95a07f4f92b99"
+      },
+      "_next/static/chunks/app/layout-2f87a0d6881e6985.js": {
+        "bytes": 195,
+        "sha256": "78e948c657f4fa06d42d899be6b252370e861b9b18568067654abd969820da36"
+      },
+      "_next/static/chunks/app/page-fe8988d5747067a0.js": {
+        "bytes": 131,
+        "sha256": "af1640c159aa5ab7eac6792d67aee776c1adb371d74fc54bd6e1c59e2804173a"
+      },
+      "_next/static/chunks/app/reading/bass/page-fa5d5539e3a80845.js": {
+        "bytes": 124,
+        "sha256": "c40c629213dc5525ba038e357707320d209d9dbd43d3bf1017c0542d7e0b1dc3"
+      },
+      "_next/static/chunks/app/reading/treble/page-fa1198b8bd4fa4a8.js": {
+        "bytes": 124,
+        "sha256": "68c2a182b5704f3fa66caaf64b202bc45b52cf9864885cee9ddf47f686d7c817"
+      },
+      "_next/static/chunks/app/_not-found/page-289e9c89e727e683.js": {
+        "bytes": 2670,
+        "sha256": "119dc6ba2eb98751ba3921e56977b659f45a679f119166f5c4529828824f5b7b"
+      },
+      "_next/static/chunks/eccda1b8-9b68fd9d3af63bed.js": {
+        "bytes": 173016,
+        "sha256": "c1bbc5fd19e52c299f1fd802d48ef880c2437f6dc0ce6f664d419be93bf957b9"
+      },
+      "_next/static/chunks/framework-7432e9c36263fcf9.js": {
+        "bytes": 219006,
+        "sha256": "b54c609607d8d6c8447e4508d77e94045d1299b1d271aac2b757e47916029102"
+      },
+      "_next/static/chunks/main-app-ef9dcb32ffcfc5c1.js": {
+        "bytes": 557,
+        "sha256": "14d5eb7b58d2077b2d4f6781098ecc23ab955e71bf5b1e2cd43db372854b8210"
+      },
+      "_next/static/chunks/main-d13d344e7e5ac14a.js": {
+        "bytes": 122399,
+        "sha256": "590fb1011d77edad95e063a0caba6f2ea276e8b536d3d26cd2f1da02ab88b35d"
+      },
+      "_next/static/chunks/pages/_app-0111cff247fb6db3.js": {
+        "bytes": 913,
+        "sha256": "325ab8e6565456fdea81d0370ead1b10a51028fdf9450e71921dcb2d686b468e"
+      },
+      "_next/static/chunks/pages/_error-94bf833c34f8086b.js": {
+        "bytes": 5646,
+        "sha256": "5dfe8c64c92c4db096f6411b8d4d3bdad7af3bfaefa443990d6927963576dbe3"
+      },
+      "_next/static/chunks/polyfills-42372ed130431b0a.js": {
+        "bytes": 112594,
+        "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+      },
+      "_next/static/chunks/webpack-4ca84829642fd214.js": {
+        "bytes": 3410,
+        "sha256": "73f26f417f0832ba0f060b2bb4596e92ca8956898bd29c16ab4e4701d8421cce"
+      },
+      "_next/static/css/e2e4e99049c4986a.css": {
+        "bytes": 6666,
+        "sha256": "f6b71bb4e6898a970bbdc1defed83f1cbfae247f1f2274fbf0f843b704b222e6"
+      },
+      "_next/static/fVRkyFBlVWnqZ-DcO8i1B/_buildManifest.js": {
+        "bytes": 581,
+        "sha256": "04646dd0437532d508a211dd8a40a9d1bf14a82667cb9ad5cffeef04889709a3"
+      },
+      "_next/static/fVRkyFBlVWnqZ-DcO8i1B/_ssgManifest.js": {
+        "bytes": 80,
+        "sha256": "678f6ce2cb80b1fe72fc67e7412be6e2ab6ada083111b64f7c40d35e3cba5e00"
+      }
+    }
+  },
+  "sourceLedgerEntries": 43,
+  "sourceApplications": [
+    {
+      "sourceId": "whatwg-origin-storage-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "section": "12.1–12.2 Web Storage",
+      "application": "Separate origin-local reading history; actual two-origin JSON roundtrip; conflicting import refuses replacement. Opaque-origin QA displays storage failure and does not open a new item.",
+      "limits": "No cloud account, existing catalog/progress transfer or merge of different reading journals."
+    },
+    {
+      "sourceId": "vercel-interface-feedback-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "section": "Accessibility, focus, forms, typography, content handling and hydration safety",
+      "application": "Native buttons/selects, polite status/errors, visible expand action outside clipped copy, empty ARIA targets, persisted short/full/hidden material, 390px without horizontal overflow.",
+      "limits": "No accessibility-tool or screen-reader certification; browser/keyboard checks only."
+    },
+    {
+      "sourceId": "w3c-webmidi-observation-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "section": "4.3 requestMIDIAccess / MIDIOptions; 5.4 port open/close; 5.5 message event; 5.6 connection event",
+      "application": "Explicit user request with sysex:false; selected input only; remove listeners, close owned port and mark interruption on input change/reset/loss.",
+      "limits": "Port/events tested with injected fixtures; physical MIDI and browser permission prompt were not opened."
+    },
+    {
+      "sourceId": "ou-staff-clefs-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "section": "2.2 Clefs: G on second line from bottom, F on second line from top; left-to-right reading",
+      "application": "Keep verified note coordinates and both explicit clefs in the shared React view. The bank uses original project sequences in the prepared registers.",
+      "limits": "Text freshly read. No fresh inspection of embedded score images; no attribution of our templates, fingering or MIDI assessment to OpenLearn."
+    },
+    {
+      "sourceId": "w3c-web-locks-reading-history-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "section": "1.1; 3.2.1 exclusive request()",
+      "application": "Atomic next selection and import share the reading lock. Native browser tabs select different items; injected concurrent tests cover serialization.",
+      "limits": "Cooperating same-origin writers only; no cross-origin/device lock."
+    },
+    {
+      "sourceId": "next15-static-reading-export-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "application": "Next build, strict types, static route/manifest/HTTP tests and isolated browser hydration.",
+      "limits": "Clean registry installation and deployment not verified."
+    },
+    {
+      "sourceId": "react-reading-controller-refs-2026-11-06",
+      "batch": "2026-11-06-22",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Bounded reading UI and isolated Next export; no lesson promotion/review",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "application": "Client controller lifecycle without browser reads during prerender or implicit input access.",
+      "limits": "Not a general migration or memory-certification mechanism."
+    }
+  ],
+  "skills": [
+    "find-skills",
+    "frontend-design",
+    "web-design-guidelines",
+    "react-best-practices",
+    "sites:local-only",
+    "computer-use:browser"
+  ],
+  "quota": {
+    "checkedAt": "2026-11-06T09:14:35.902Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 52,
+    "remainingPercent": 48,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalMidiVerified": false,
+    "nativeBlurVisibilityConfirmed": false,
+    "firstReadingHistoryCoversOldTrainer": false,
+    "fullRhythmicEngraving": false,
+    "fullCatalogOrProgressInNext": false,
+    "fullReactNextMigrationComplete": false,
+    "cleanRegistryInstallVerified": false,
+    "domainBought": false,
+    "deployed": false,
+    "guitarWritePerformed": false,
+    "portalServicesChanged": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "reading-musical-review-and-course-integration",
+    "action": "Провести небольшую музыкальную сверку двух будущих уроков detail-p-read-treble-01 / detail-p-read-bass-01 перед включением в курс: цель, подготовка по ID и активной руке, направления соседних движений и повторных атак, аппликатура, слуховой ориентир и отсроченная новая фраза. Проверить знакомство банка с остальным опубликованным каталогом и путь сохранения/возврата из основного тренажёра: текущая новая история знает только этот раздел на своём адресе. Выбрать и протестировать связь с прежним каталогом, редакциями и прогрессом без перезаписи старых данных. Отдельно проверить физическое MIDI и настоящие blur/visibility-события; до этих проверок планы не продвигать и не заявлять полный перенос в Next.js. Для следующих музыкальных партий сохраняется курс 422 / 158 MIDI-контрактов / 80 структурированных / 6 будущих планов, минимум 1000 содержательных уроков остаётся целью.",
+    "files": [
+      "docs/piano-lesson-backlog.json",
+      "docs/PIANO_FIRST_EXPOSURE_PLAN.md",
+      "docs/PIANO_READING_SESSION_CONTRACT.md",
+      "piano-reading-bank.js",
+      "piano-reading-controller.js",
+      "piano-reading-midi.js",
+      "web-app/src/ReadingScreen.tsx",
+      "docs/WEB_APP_PLAN.md"
+    ]
+  }
+}

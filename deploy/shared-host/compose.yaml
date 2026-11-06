@@ -1,0 +1,46 @@
+name: melodiajest
+
+services:
+  web:
+    # Reuse the official image already present on the shared host.
+    # Record its digest with each release; updating the image is a separate step.
+    image: nginx:stable-alpine
+    pull_policy: never
+    entrypoint: ["nginx"]
+    command: ["-g", "daemon off;"]
+    user: "101:101"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m,mode=1777
+    volumes:
+      # On the VPS this file lives at /opt/melodiajest/deploy/compose.yaml.
+      # Recreate ONLY this service after switching the current symlink.
+      - ../current:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    expose: ["8080"]
+    networks:
+      edge:
+        aliases: [melodiajest-web]
+    mem_limit: 64m
+    cpus: 0.25
+    pids_limit: 64
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+networks:
+  edge:
+    external: true
+    name: libre_public

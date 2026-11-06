@@ -1,0 +1,719 @@
+{
+  "batch": "2026-11-06-09",
+  "triggeredAt": "2026-11-05T22:26:06.232Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.14",
+  "status": "implemented-and-tested",
+  "newLessonCount": 2,
+  "newLessonIds": [
+    "detail-p-left-half-01",
+    "detail-p-left-whole-01"
+  ],
+  "reviewedLessonIds": [
+    "detail-p-rhythm-01"
+  ],
+  "newDistinctGoalCount": 2,
+  "distinctGoalReviewScope": "Specific project tasks; global distinct goals and teacher review not established",
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 421,
+    "checkedMidiRouteLessons": 157,
+    "withStructuredProvenance": 66,
+    "individuallyMappedToDomain": 66,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 414,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 342,
+    "failed": 0,
+    "durationMs": 139152.305,
+    "newTests": 8,
+    "log": "tmp/piano-batch-33-tests.log",
+    "focused": {
+      "passed": 8,
+      "log": "tmp/piano-batch-33-focused.log"
+    },
+    "routeCorrection": "The proposed course03-01 preparation came later in the existing route; the exact earlier C3/left-5 orientation course01-02 is now the required preparation. The ordering assertion was kept.",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 421,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 569,
+        "pianoThemes": 93,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1282,
+        "beginnerChallenges": 157,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "schemaVersion": 5,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 421,
+        "checkedMidiRouteLessons": 157,
+        "withStructuredProvenance": 66,
+        "individuallyMappedToDomain": 66,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 6,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 414,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-03",
+          "lessonIds": [
+            "course04-03",
+            "detail-p-rhythm-01"
+          ]
+        },
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "newLessons": [
+    {
+      "id": "detail-p-left-half-01",
+      "title": "Левая: половинные мизинцем",
+      "midiNotes": [
+        [
+          48
+        ],
+        [
+          48
+        ],
+        [
+          48
+        ],
+        [
+          48
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "durationsBeats": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "restsBeforeBeats": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "totalBeats": 8,
+      "bpm": 56,
+      "timeSignature": {
+        "numerator": 4,
+        "denominator": 4
+      },
+      "timingPrecision": "beat-boundary-v1",
+      "assessmentFingerprint": "b178eede",
+      "stage": "p2",
+      "after": "course04-02",
+      "requires": [
+        "course01-02"
+      ],
+      "nextLessonId": "detail-p-left-whole-01",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Подготовить самостоятельное двухдольное удержание и повторную атаку левым мизинцем в раннем курсе, без третьей доли паузы.",
+        "context": "Длинные ноты левой руки используются в басе и сопровождении. Это одно последовательное голосовое движение без удержанного баса под другой партией. Поздний левый пульс 3/4 уже содержит две доли звучания, но не заменяет раннюю подготовку без пауз и последующее четырёхдольное удержание.",
+        "sourceNote": "Собственная техническая последовательность проекта, не фрагмент произведения и не упражнение, рекомендованное авторами именно в этом виде. OpenLearn, §3.1, Examples 13–14, подтверждает отношения длительностей; Open Music Theory, Counting in Simple Meter, Example 10 и правила долгих звуков, — продолжение счёта. Dumlavwalla, разделы о напряжении руки и форме кисти, поддерживает свободное движение; её упражнения с поддержкой и отпусканием руки здесь не назначаются. C3/D3, палец 5, порядок, 56 BPM, размер блока и машинные допуски заданы проектом. Исторических атрибуций нет."
+      }
+    },
+    {
+      "id": "detail-p-left-whole-01",
+      "title": "Левая: целые мизинцем",
+      "midiNotes": [
+        [
+          48
+        ],
+        [
+          48
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        4
+      ],
+      "durationsBeats": [
+        4,
+        4
+      ],
+      "restsBeforeBeats": [
+        0,
+        0
+      ],
+      "totalBeats": 8,
+      "bpm": 56,
+      "timeSignature": {
+        "numerator": 4,
+        "denominator": 4
+      },
+      "timingPrecision": "beat-boundary-v1",
+      "assessmentFingerprint": "b297a77f",
+      "stage": "p2",
+      "after": "course04-03",
+      "requires": [
+        "detail-p-left-half-01"
+      ],
+      "nextLessonId": "course04-04",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Освоить полное четырёхдольное удержание и повторную атаку левым мизинцем после двухдольной подготовки.",
+        "context": "Длинные ноты левой руки используются в басе и сопровождении. Это одно последовательное голосовое движение без удержанного баса под другой партией. Поздний левый пульс 3/4 уже содержит две доли звучания, но не заменяет раннюю подготовку без пауз и последующее четырёхдольное удержание.",
+        "sourceNote": "Собственная техническая последовательность проекта, не фрагмент произведения и не упражнение, рекомендованное авторами именно в этом виде. OpenLearn, §3.1, Examples 13–14, подтверждает отношения длительностей; Open Music Theory, Counting in Simple Meter, Example 10 и правила долгих звуков, — продолжение счёта. Dumlavwalla, разделы о напряжении руки и форме кисти, поддерживает свободное движение; её упражнения с поддержкой и отпусканием руки здесь не назначаются. C3/D3, палец 5, порядок, 56 BPM, размер блока и машинные допуски заданы проектом. Исторических атрибуций нет."
+      }
+    }
+  ],
+  "reviewedLesson": {
+    "id": "detail-p-rhythm-01",
+    "primary": "course04-03",
+    "previousAssessmentFingerprint": "e664aca0",
+    "currentAssessmentFingerprint": "e664aca0",
+    "sameGoalAs": "course04-03",
+    "requires": [
+      "course04-03"
+    ],
+    "originalReview": {
+      "id": "early-rhythm-v1",
+      "sourceFingerprint": "33335195",
+      "reviewedFingerprint": "6a1e1e32"
+    },
+    "roleReview": {
+      "id": "whole-note-same-goal-v1",
+      "sourceFingerprint": "6a1e1e32",
+      "previousInstructionPreserved": true
+    },
+    "oldMemoryCreditRemainsValid": true
+  },
+  "sourceLedgerEntries": 24,
+  "sources": [
+    {
+      "id": "duke-simmons-small-goals-2026-11-05",
+      "author": "Bob Duke and Amy Simmons",
+      "title": "Tips for Effective Practice",
+      "url": "https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice",
+      "edition": "Online primary page; exact section in application",
+      "application": {
+        "batch": "2026-11-06-09",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": false,
+        "lessonIds": [
+          "detail-p-rhythm-01",
+          "detail-p-left-half-01",
+          "detail-p-left-whole-01"
+        ],
+        "section": "Previously verified small-goal and distributed-practice sections",
+        "application": "Reuse a short focused practice block, returning after a break and a separate D3 transfer after preparing the new position.",
+        "limits": "Not reread this batch; 3–5 minutes, 56 BPM and the number of repetitions remain project choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-09.md"
+      }
+    },
+    {
+      "id": "dumlavwalla-basic-technique-2026-11-05",
+      "author": "Dr. Diana Dumlavwalla",
+      "title": "Fix It: Tips for Teaching Basic Piano Technique",
+      "url": "https://hub.yamaha.com/music-educators/instruments/piano/piano-pedagogy-fix-basic-technique/",
+      "edition": "Online primary page; exact section in application",
+      "application": {
+        "batch": "2026-11-06-09",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-rhythm-01",
+          "detail-p-left-half-01",
+          "detail-p-left-whole-01"
+        ],
+        "section": "Fix It: Tension in Arms; Fix It: Inconsistent Hand Shape, flexible-wrist paragraph",
+        "application": "Reread release of excess arm tension, supported hand and flexible neutral wrist. Keep the left little-finger task gentle; do not prescribe an immobile wrist or added pressure through the hold.",
+        "limits": "The article does not prescribe C3 with finger 5 or these durations; assisted arm-drop and elastic exercises are not assigned. No physical validation or injury-prevention guarantee is claimed.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-09.md"
+      }
+    },
+    {
+      "id": "ou-time-values-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: 3.1 Time values",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-3.1",
+      "edition": "Online chapter, verified 2026-11-05; no fixed print pagination asserted",
+      "application": {
+        "batch": "2026-11-06-09",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-rhythm-01",
+          "detail-p-left-half-01",
+          "detail-p-left-whole-01"
+        ],
+        "section": "§3.1, Examples 13–14 and explanation of the duration ratios",
+        "application": "Reread that a half note equals two quarters and a whole equals four. Apply to early left-finger-5 holding and to identifying the existing identical right whole-note repetition.",
+        "limits": "The C3/C4 pitches, finger assignments, 56 BPM, repeats and MIDI tolerances are project choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-09.md"
+      }
+    },
+    {
+      "id": "omt-simple-counting-2026-11-05",
+      "author": "Mark Gotham; Chelsey Hamm; Kris Shaffer",
+      "title": "Open Music Theory: Simple Meter and Time Signatures",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/simple-meter-and-time-signatures/",
+      "edition": "Online chapter, verified 2026-11-05; no fixed print pagination asserted",
+      "application": {
+        "batch": "2026-11-06-09",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-rhythm-01",
+          "detail-p-left-half-01",
+          "detail-p-left-whole-01"
+        ],
+        "section": "Time Signatures / Counting in Simple Meter, Examples 9–10; long-note and rest counting paragraphs",
+        "application": "Reread continuing a four-beat count through a long note. Teach two left half notes per bar, then one whole per bar; the fourth spoken count starts the last beat rather than ending it.",
+        "limits": "A new hand/finger task is distinguished from the duplicated right whole-note goal; no source endorsement of the project drills or independent ear test.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-09.md"
+      }
+    }
+  ],
+  "gapInventory": {
+    "criterion": "Previous catalog only: repeated C3, explicit left finger 5, every duration 2 or 4 beats",
+    "candidates": [
+      {
+        "id": "detail-p-left-triple-pulse-01",
+        "title": "Левая: две доли звука и пауза в 3/4",
+        "stage": "p3",
+        "starts": [
+          0,
+          3,
+          6
+        ],
+        "durations": [
+          2,
+          2,
+          2
+        ],
+        "rests": [
+          0,
+          1,
+          1
+        ]
+      }
+    ],
+    "conclusion": "The existing triple pulse has three two-beat sounds with one-beat rests in 3/4. New early studies prepare continuous half-note reattacks and whole-note holding without counted gaps; no global uniqueness or teacher certificate is implied."
+  },
+  "implementedSpecifications": [
+    {
+      "id": "detail-p-left-half-01",
+      "title": "Левая: половинные мизинцем",
+      "createdInBatch": "2026-11-06-09",
+      "status": "individually-specified-and-implemented-in-this-batch; not a future plan",
+      "implementationReport": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "coverageDomain": "rhythm",
+      "stage": "p2",
+      "goal": "Левым мизинцем удержать C3 две полные доли и повторно нажать на границе без счётной паузы.",
+      "after": "course04-02",
+      "requires": [
+        "course01-02"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        48,
+        48,
+        48
+      ],
+      "targetFingers": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "targetTiming": {
+        "startsBeats": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "noteDurationsBeats": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "restsBeforeBeats": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timeSignature": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "bpm": 56,
+        "totalBeats": 8,
+        "contract": "beat-boundary-v1"
+      },
+      "origin": "project-technical-drill",
+      "distinctFrom": "The right-thumb half note uses another hand and finger. Existing left C3/5 triple pulse has a rest every third beat and later preparation; this is an early continuous two-beat hold and reattack.",
+      "sourceEvidenceIds": [
+        "ou-time-values-2026-11-05",
+        "omt-simple-counting-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "slowBreakdown": "Найти C3 без звука; отдельно одно удержание; затем повтор на границе в том же пульсе. Правая отдыхает, счёт продолжается.",
+      "hearing": "Отдельные ровные длинные звуки; нет дополнительной атаки внутри удержания или лишней тишины между повторами.",
+      "selfCheck": [
+        "Сохранить полный счёт до следующей границы.",
+        "Освободить клавишу для повторного нажатия.",
+        "Проверить реальный палец и свободу руки отдельно от MIDI."
+      ],
+      "transfer": "После попытки найти D3 и сыграть два D3 левым 5 по две доли.",
+      "nextLessonId": "detail-p-left-whole-01",
+      "verification": "tests/piano-left-durations-role.test.cjs",
+      "independentTeacherReviewed": false
+    },
+    {
+      "id": "detail-p-left-whole-01",
+      "title": "Левая: целые мизинцем",
+      "createdInBatch": "2026-11-06-09",
+      "status": "individually-specified-and-implemented-in-this-batch; not a future plan",
+      "implementationReport": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "coverageDomain": "rhythm",
+      "stage": "p2",
+      "goal": "Левым мизинцем удержать C3 четыре полные доли до нового раз и повторно нажать без замены двух звуков одним удержанием.",
+      "after": "course04-03",
+      "requires": [
+        "detail-p-left-half-01"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        48
+      ],
+      "targetFingers": [
+        5,
+        5
+      ],
+      "targetTiming": {
+        "startsBeats": [
+          0,
+          4
+        ],
+        "noteDurationsBeats": [
+          4,
+          4
+        ],
+        "restsBeforeBeats": [
+          0,
+          0
+        ],
+        "timeSignature": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "bpm": 56,
+        "totalBeats": 8,
+        "contract": "beat-boundary-v1"
+      },
+      "origin": "project-technical-drill",
+      "distinctFrom": "Existing right C4 whole note trains the right thumb; the new task lengthens the separately prepared left-finger-5 hold from two to four beats. No identical left C3/5 whole-note drill was found in the current catalog.",
+      "sourceEvidenceIds": [
+        "ou-time-values-2026-11-05",
+        "omt-simple-counting-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "slowBreakdown": "Найти C3 без звука; отдельно одно удержание; затем повтор на границе в том же пульсе. Правая отдыхает, счёт продолжается.",
+      "hearing": "Отдельные ровные длинные звуки; нет дополнительной атаки внутри удержания или лишней тишины между повторами.",
+      "selfCheck": [
+        "Сохранить полный счёт до следующей границы.",
+        "Освободить клавишу для повторного нажатия.",
+        "Проверить реальный палец и свободу руки отдельно от MIDI."
+      ],
+      "transfer": "После попытки найти D3 и сыграть один D3 левым 5 на четыре доли.",
+      "nextLessonId": "course04-04",
+      "verification": "tests/piano-left-durations-role.test.cjs",
+      "independentTeacherReviewed": false
+    }
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:4189",
+    "isolatedOrigin": true,
+    "compact": {
+      "height": 112,
+      "lineHeight": "22.4px"
+    },
+    "halfPreparation": [
+      "Левая: найди C3 / До"
+    ],
+    "preparationNavigation": {
+      "focus": "lesson-name",
+      "title": "Левая: найди C3 / До"
+    },
+    "wholePreparation": [
+      "Левая: половинные мизинцем"
+    ],
+    "wholeCue": "Целая в 4/4: один звук на «раз, два, три, четыре». Отпусти у следующего «раз»; новые удары внутри удержания не нужны.",
+    "primaryLinkCount": 1,
+    "primaryNavigation": {
+      "focus": "lesson-name",
+      "title": "Целые: держим четыре доли"
+    },
+    "memory": {
+      "card": false,
+      "keys": 0,
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0,
+      "relation": false,
+      "title": "Игра из памяти",
+      "wholeCue": false
+    },
+    "hiddenPersistence": {
+      "card": false,
+      "selected": "hidden",
+      "switch": true
+    },
+    "mobileKeyboard": {
+      "expanded": "true",
+      "focused": true,
+      "outlineStyle": "solid"
+    },
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "viewport": 390
+    },
+    "consoleErrors": [],
+    "screenshot": "docs/qa/piano-2026-11-06-09-left-whole.jpg",
+    "physicalMidi": false,
+    "audioPlayback": false,
+    "syntheticMidiVerifiedByTests": true,
+    "actionLabels": {
+      "half": "4 действия",
+      "whole": "2 действия",
+      "finalExam": "23 действия"
+    },
+    "checkedAt": "2026-11-05T22:44:50.829Z"
+  },
+  "preservation": {
+    "changedMusic": [],
+    "changedInstructions": [
+      "detail-p-rhythm-01"
+    ],
+    "explicitClassificationChanges": [],
+    "newLessonIds": [
+      "detail-p-left-half-01",
+      "detail-p-left-whole-01"
+    ],
+    "priorLessonCount": 567,
+    "currentLessonCount": 569,
+    "unchangedMusicAndInstructions": 566,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.14",
+    "publicAssets": 18,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "4698df88e730baedfdbd6d50bcddeca9dad70d95fc6178c53db27690541e120f",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased",
+    "nativeCompanion": false
+  },
+  "longHoldInventory": {
+    "midiRouteLessons": 157,
+    "criterion": "Notes of two or more beats require explicit beat-boundary-v1/v2",
+    "legacyLessonIds": [],
+    "scope": "Metadata only, not teacher or physical validation"
+  },
+  "quota": {
+    "checkedAt": "2026-11-05T22:45:47.415Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 40,
+    "remainingPercent": 60,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "knownPatternIsNotIndependentEarTest": true,
+    "verifiedDistinctGoalCount": null,
+    "heldVoicesAndPedalNotResolved": true,
+    "domainBought": false,
+    "deployed": false,
+    "fullReactNextMigrationComplete": false,
+    "guitarWritePerformed": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "left-release-independent-preparation-review",
+    "action": "Следующая малая партия: detail-p-release-02 и его ранняя левая подготовка. Проверить подтверждённую транзитивную зависимость от правой руки и сделать левый маршрут самостоятельным по действительной задаче, не удаляя нужное знание счёта и отпускания. Сверить высоты, пальцы, направление и звуковые окончания; сохранить личные редакции, исходный lesson-review-baseline.js и историю. После этого применить новые левые половинные/целые как подготовку только там, где задача реально требует долгого удержания, без массового изменения всех связей. Следующий системный этап — типовой музыкальный документ и чистые адаптеры перед React/Next.js; конкретные будущие уроки, конечная пауза, удержанные голоса и педаль продолжаются отдельными проверенными партиями. Сейчас 421 запись / 157 MIDI-контрактов / 66 подробных описаний / 3 будущих плана; две новые левые спецификации записаны отдельно как реализованные. Шесть повторений и один контроль дают верхнюю границу 414 целей, полное различие ещё не проверено. Правое повторение целой ноты явно связано с course04-03 без смены музыкальной версии и сброса зачёта.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "tests/piano-left-durations-role.test.cjs",
+      "curriculum-plan.js"
+    ]
+  }
+}

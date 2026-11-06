@@ -1,0 +1,405 @@
+{
+  "batch": "2026-11-06-01",
+  "triggeredAt": "2026-11-05T18:52:09.408Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.6",
+  "status": "implemented-and-tested",
+  "newLessonCount": 1,
+  "newLessonIds": [
+    "detail-p-dotted-quarter-01"
+  ],
+  "reviewedLessonIds": [
+    "course09-01",
+    "course09-02"
+  ],
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 418,
+    "checkedMidiRouteLessons": 154,
+    "withStructuredProvenance": 56,
+    "individuallyMappedToDomain": 56,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 1,
+    "goalGroupUpperBound": 417,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 284,
+    "failed": 0,
+    "durationMs": 132924.5143,
+    "newTests": 6,
+    "logs": "tmp/piano-batch-25-tests-final.log",
+    "initialFullRun": {
+      "passed": 283,
+      "failed": 1,
+      "reason": "Shared contract requires exactly three practice steps; four new steps were merged without dropping source or practice text."
+    }
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 418,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 566,
+        "pianoThemes": 91,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1279,
+        "beginnerChallenges": 154,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "version": 4,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 418,
+        "checkedMidiRouteLessons": 154,
+        "withStructuredProvenance": 56,
+        "individuallyMappedToDomain": 56,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 1,
+        "goalGroupUpperBound": 417,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "detail-p-chordmove-04"
+          ]
+        }
+      ]
+    }
+  },
+  "reproduction": {
+    "course09-01": {
+      "oldStraightEndingAcceptedByOldContract": true,
+      "oldStraightEndingAcceptedByCorrectedScore": false,
+      "newDottedEndingAccepted": true,
+      "oldEarlyLastAccepted": true,
+      "oldLateLastAccepted": true,
+      "sameOldScoreWithBoundedEarlyAccepted": false,
+      "sameOldScoreWithBoundedLateAccepted": false
+    },
+    "course09-02": {
+      "oldStraightEndingAcceptedByOldContract": true,
+      "oldStraightEndingAcceptedByCorrectedScore": false,
+      "newDottedEndingAccepted": true,
+      "oldEarlyLastAccepted": true,
+      "oldLateLastAccepted": true,
+      "sameOldScoreWithBoundedEarlyAccepted": false,
+      "sameOldScoreWithBoundedLateAccepted": false
+    }
+  },
+  "preservation": {
+    "diff": {
+      "missing": [],
+      "new": [
+        "detail-p-dotted-quarter-01"
+      ],
+      "music": [
+        "course09-01",
+        "course09-02"
+      ],
+      "instruction": [
+        "course09-01",
+        "course09-02"
+      ],
+      "classification": []
+    },
+    "previousCatalogOrderUnchanged": true,
+    "protectedHashes": {
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "midi-keyboard-settings.ini": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "practice-assessment.js": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+      "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "fingerprints": {
+      "detail-p-dotted-quarter-01": "056a6598",
+      "course09-01": "1178a033",
+      "course09-02": "3faeba1e"
+    },
+    "otherOldLessonCountUnchanged": 563
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4181",
+    "version": "23.5.6",
+    "lessonIds": [
+      "detail-p-dotted-quarter-01",
+      "course09-01",
+      "course09-02"
+    ],
+    "prep": {
+      "bodyAbsent": true,
+      "duration": true,
+      "hint": "Четверть с точкой: полторы доли, как три равные восьмые. Продолжай ровный счёт.",
+      "lineHeight": "22.4px",
+      "mode": "compact",
+      "previewHeight": 112,
+      "title": "Правая: полторы доли и восьмая"
+    },
+    "navigation": {
+      "focus": "lesson-name",
+      "title": "Правая: полторы доли и восьмая"
+    },
+    "phrase1": {
+      "title": "Ода к радости · фраза 1",
+      "sourceLink": {
+        "href": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode-a4.pdf",
+        "text": "Бетховен / Mutopia: ноты, soprano, такты 1–4"
+      },
+      "correctEdition": true,
+      "explicitAdaptation": true
+    },
+    "phrase2": {
+      "title": "Ода к радости · продолжение",
+      "correctEdition": true,
+      "correctEnding": true
+    },
+    "hiddenAfterReload": {
+      "cardAbsent": true,
+      "mode": "hidden",
+      "restoreEnabled": true
+    },
+    "memory": {
+      "cardAbsent": true,
+      "catalogAbsent": true,
+      "hintAbsent": true,
+      "keyAbsent": true,
+      "octaveAbsent": true,
+      "preparationAbsent": true,
+      "title": "Игра из памяти",
+      "viewDisabled": true
+    },
+    "mobile": {
+      "client": 376,
+      "dottedHint": true,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scroll": 376
+    },
+    "disclosureEnterAndSpace": true,
+    "errors": [],
+    "screenshots": [
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-2026-11-06-01-dotted.jpg",
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-2026-11-06-01-ode.jpg"
+    ],
+    "physicalMidiTested": false,
+    "screenshotsVisuallyCheckedAfterSeparatePaint": true,
+    "ownedQaTabClosed": true,
+    "ownedQaPreviewClosed": true,
+    "viewportReset": true
+  },
+  "sourceProof": {
+    "id": "mutopia-528-ode-2026-11-05",
+    "composer": "L. V. Beethoven",
+    "title": "Ode to Joy",
+    "edition": "Mutopia-2009/08/05-528",
+    "typesetter": "Peter Chubb",
+    "catalogUrl": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=528",
+    "scoreUrl": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode-a4.pdf",
+    "sourceUrl": "https://www.mutopiaproject.org/ftp/BeethovenLv/ode/ode.ly",
+    "verifiedOn": "2026-11-05",
+    "method": "Read the rendered one-page score and its soprano LilyPond block; record note names and durations independently of project data.",
+    "part": "soprano",
+    "page": 1,
+    "sourceKey": "G major",
+    "sourceQuarterBpm": 100,
+    "sourceTimeSignature": [
+      4,
+      4
+    ],
+    "targetKey": "C major",
+    "projectTranspositionSemitones": -7,
+    "rights": "Score footer and catalog declare Public Domain for this typesetting.",
+    "limits": "Catalog says Source: Various. This is a hymn setting, not the symphony autograph or a critical edition. Source date c. 1800 is not used as historical evidence. Piano hand, digits and practice tempo belong to the project.",
+    "phrases": [
+      {
+        "lessonId": "course09-01",
+        "bars": [
+          1,
+          4
+        ],
+        "sourceMidi": [
+          71,
+          71,
+          72,
+          74,
+          74,
+          72,
+          71,
+          69,
+          67,
+          67,
+          69,
+          71,
+          71,
+          69,
+          69
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1.5,
+          0.5,
+          2
+        ]
+      },
+      {
+        "lessonId": "course09-02",
+        "bars": [
+          5,
+          8
+        ],
+        "sourceMidi": [
+          71,
+          71,
+          72,
+          74,
+          74,
+          72,
+          71,
+          69,
+          67,
+          67,
+          69,
+          71,
+          69,
+          67,
+          67
+        ],
+        "quarterDurations": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1.5,
+          0.5,
+          2
+        ]
+      }
+    ],
+    "sourceFiles": {
+      "pdf": {
+        "path": "docs/sources/mutopia-528-ode-a4.pdf",
+        "sha256": "b11e9f934de259ad3b9231e03000e8676cc5e5b85ea917cb387de06a10fe7864"
+      },
+      "lilypond": {
+        "path": "docs/sources/mutopia-528-ode.ly",
+        "sha256": "a0c865aa9f71221605362622d281405071e0734540e86ce131131757cc803a71"
+      }
+    }
+  },
+  "build": {
+    "version": "23.5.6",
+    "assetCount": 18,
+    "allManifestHashesAndBytesMatch": true,
+    "currentSourceMatchesArtifact": true,
+    "publicDirectoryOnlyContainsAllowlistedAssetsAndManifest": true,
+    "serverPublished": false
+  },
+  "remainingLegacyDurationLessonIds": [
+    "course09-03",
+    "course09-04",
+    "course09-06",
+    "course10-04",
+    "course10-06",
+    "course10-08"
+  ],
+  "sourceEntryCount": 22,
+  "quotaPolicy": "until-exhausted",
+  "quota": {
+    "checkedOn": "2026-11-06",
+    "checkedAt": "2026-11-05T19:20:17.542Z",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 35,
+    "remainingPercent": 65,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031,
+    "spendControlReached": false,
+    "otherWindowExhausted": false,
+    "otherWindowUnavailable": false
+  },
+  "nextConfirmedGap": {
+    "lessonId": "course09-07",
+    "title": "Из памяти: Ода к радости",
+    "currentNoteCount": 30,
+    "expectedFromCheckedSourceBeats": 32,
+    "sourceBars": [
+      1,
+      8
+    ],
+    "status": "queued-for-source-and-goal-role-review",
+    "currentSoundingBeats": 30,
+    "currentPhraseSpanBeats": 31,
+    "internalRestBeats": 1,
+    "countCorrectionVerifiedIn": "docs/reports/piano-curriculum-2026-11-06-02.md"
+  },
+  "limitations": [
+    "MIDI does not prove fingers, physical comfort or artistic quality.",
+    "Known material is not an independent ear test.",
+    "Only the two named adapted phrases were corrected; the combined memory record remains queued.",
+    "417 is an explicit-link upper bound, not a verified number of distinct goals.",
+    "6 legacy long-hold candidates, cross-hand prerequisites, held voices, final rest and pedal need separate review.",
+    "No physical MIDI device, teacher review, cloud deployment or completed React/Next migration."
+  ],
+  "ownedQaPreviewClosed": true,
+  "ownedQaTabClosed": true,
+  "viewportReset": true,
+  "guitarFilesChanged": false,
+  "commitPushOrDeployment": false
+}

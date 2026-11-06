@@ -1,0 +1,97 @@
+{
+  "batch": "2026-11-06-24",
+  "completedAt": "2026-11-06T11:03:52.265Z",
+  "mainVersion": "23.5.24",
+  "nextVersion": "0.1.1",
+  "changeScope": "pure-contract-and-audit; no UI or device/storage writes",
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "newPlans": 0,
+  "reviewedPlans": 0,
+  "checks": {
+    "root": {
+      "total": 516,
+      "passed": 516,
+      "failed": 0,
+      "log": "tmp/piano-batch-48-tests-final.log"
+    },
+    "focused": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "log": "tmp/piano-batch-48-focused.log"
+    },
+    "typescript": {
+      "version": "5.8.3",
+      "strict": true,
+      "noEmit": true,
+      "config": "tmp/piano-batch-48-types.json",
+      "log": "tmp/piano-batch-48-types.log",
+      "exitCode": 0
+    }
+  },
+  "preparation": {
+    "compiledPlans": 2,
+    "requirements": 6,
+    "emptyStatuses": [
+      "pending",
+      "pending"
+    ],
+    "assessmentVersions": [
+      1
+    ],
+    "realCaptureConnected": false,
+    "newStorageConnected": false,
+    "gateUiConnected": false
+  },
+  "coverage": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 82,
+    "individuallyMappedToDomain": 82,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "preservation": {
+    "catalogRecordsUnchanged": 570,
+    "assessmentVersionsUnchanged": 570,
+    "protectedFiles": 50,
+    "unchangedProtectedFiles": 49,
+    "intentionalProtectedChanges": [
+      "package.json"
+    ],
+    "publicMainFilesUnchanged": 21,
+    "publicReaderFilesUnchanged": 7,
+    "publicNextFilesUnchanged": 31,
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false
+  },
+  "sourceHashes": {
+    "piano-preparation.js": "638e55e8918868033642dd7b7e7ec0baea013981f1b5c122260c3d55ee199c14",
+    "piano-preparation.d.ts": "449183473291a65cc8906ede6c234fca6ccf1cb31fe723cc02488e7b1935424c",
+    "tools/audit-piano-preparation.cjs": "8b706647ec60d354ead5862621c508f88d04c0250a14a91170a84fd0753b3fb9",
+    "tools/piano-skill-coverage.cjs": "f9fbaa21bb209a98960cfd28c2ed2d73258d9669833e07e4e69e7197dd10c79b",
+    "tests/piano-preparation.test.cjs": "5edce19d0ea0677e72132a24e9d28fc6e14e03e43120a567597f66b1501c21eb"
+  },
+  "reusedBrowserAndMusicAuditEvidence": "docs/reports/piano-curriculum-2026-11-06-23-verification.json",
+  "freshBrowserTest": false,
+  "physicalMidiTested": false,
+  "nativeBlurVisibilityConfirmed": false,
+  "teacherReview": false,
+  "sourceEntries": 43,
+  "quota": {
+    "checkedAt": "2026-11-06T11:02:31.759Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 54,
+    "remainingPercent": 46,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "nextAction": "Подключить производителя завершённых полных MIDI-подготовок к реальному completeLesson: фиксировать исходные события, версию оценщика/урока, режим и помощь; сохранять отдельный версионированный журнал с видимой ошибкой и экспортом, сохраняя старый music-learning-piano-v1 и его поведение. Затем отдельным этапом подключить фрагмент 0–4 без зачёта родительского урока и явно решить его темп (сейчас источники 62/60 BPM, будущий образец чтения 56 BPM). Контракт уже компилирует 2 плана / 6 требований, но захват, хранение и экранный допуск не подключены. Банк остаётся с 0 новыми первыми пробами; до действительного допуска и неопубликованного подготовленного банка планы не продвигать. Физическое MIDI, нативный blur/visibility и независимая преподавательская проверка остаются отдельными."
+}

@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "kind": "piano-preparation-audit",
+  "scope": "hydrated built-in lesson contracts; no user storage read",
+  "contracts": [
+    {
+      "contract": {
+        "schemaVersion": 1,
+        "kind": "piano-preparation-contract",
+        "planId": "detail-p-read-treble-01",
+        "policy": "three-clean-one-memory-v1",
+        "requirements": [
+          {
+            "lessonId": "course02-02",
+            "assessmentVersion": 1,
+            "fingerprint": "b623c94b",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 9
+            },
+            "steps": [
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 0,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 1,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  64
+                ],
+                "startBeat": 2,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 3,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 4,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 6,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 7,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  64
+                ],
+                "startBeat": 8,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 9,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 10,
+                "durationBeats": 1
+              }
+            ],
+            "targetBpm": 60,
+            "articulation": "standard",
+            "key": "[\"piano-preparation\",1,1,\"course02-02\",\"b623c94b\",\"whole\",0,9,\"16cc61a5\"]"
+          },
+          {
+            "lessonId": "detail-p-release-01",
+            "assessmentVersion": 1,
+            "fingerprint": "d1eab36d",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 3
+            },
+            "steps": [
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 0,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 1,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 2,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 3,
+                "durationBeats": 0.65
+              }
+            ],
+            "targetBpm": 56,
+            "articulation": "nonlegato",
+            "key": "[\"piano-preparation\",1,1,\"detail-p-release-01\",\"d1eab36d\",\"whole\",0,3,\"02084b8f\"]"
+          },
+          {
+            "lessonId": "course02-06",
+            "assessmentVersion": 1,
+            "fingerprint": "28c4e84b",
+            "range": {
+              "kind": "fragment",
+              "firstStep": 0,
+              "lastStep": 4
+            },
+            "steps": [
+              {
+                "midis": [
+                  60
+                ],
+                "startBeat": 0,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 1,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  62
+                ],
+                "startBeat": 2,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  64
+                ],
+                "startBeat": 3,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  64
+                ],
+                "startBeat": 4,
+                "durationBeats": 1
+              }
+            ],
+            "targetBpm": 56,
+            "adaptation": {
+              "version": 1,
+              "id": "three-note-repeat-preparation-v1",
+              "kind": "project-training-adaptation",
+              "sourceBpm": 62
+            },
+            "articulation": "standard",
+            "key": "[\"piano-preparation\",1,1,\"course02-06\",\"28c4e84b\",\"fragment\",0,4,\"7614682f\"]"
+          }
+        ]
+      },
+      "emptyEvidence": {
+        "schemaVersion": 1,
+        "planId": "detail-p-read-treble-01",
+        "status": "pending",
+        "code": null,
+        "requirements": [
+          {
+            "key": "[\"piano-preparation\",1,1,\"course02-02\",\"b623c94b\",\"whole\",0,9,\"16cc61a5\"]",
+            "lessonId": "course02-02",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 9
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          },
+          {
+            "key": "[\"piano-preparation\",1,1,\"detail-p-release-01\",\"d1eab36d\",\"whole\",0,3,\"02084b8f\"]",
+            "lessonId": "detail-p-release-01",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 3
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          },
+          {
+            "key": "[\"piano-preparation\",1,1,\"course02-06\",\"28c4e84b\",\"fragment\",0,4,\"7614682f\"]",
+            "lessonId": "course02-06",
+            "range": {
+              "kind": "fragment",
+              "firstStep": 0,
+              "lastStep": 4
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          }
+        ],
+        "ignored": [],
+        "scope": "local-midi-data-only",
+        "fingeringVerified": false,
+        "physicalPerformanceVerified": false,
+        "teacherReviewed": false
+      }
+    },
+    {
+      "contract": {
+        "schemaVersion": 1,
+        "kind": "piano-preparation-contract",
+        "planId": "detail-p-read-bass-01",
+        "policy": "three-clean-one-memory-v1",
+        "requirements": [
+          {
+            "lessonId": "course03-02",
+            "assessmentVersion": 1,
+            "fingerprint": "70befb4e",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 9
+            },
+            "steps": [
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 0,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 1,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  52
+                ],
+                "startBeat": 2,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 3,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 4,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 6,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 7,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  52
+                ],
+                "startBeat": 8,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 9,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 10,
+                "durationBeats": 1
+              }
+            ],
+            "targetBpm": 58,
+            "articulation": "standard",
+            "key": "[\"piano-preparation\",1,1,\"course03-02\",\"70befb4e\",\"whole\",0,9,\"e6f08622\"]"
+          },
+          {
+            "lessonId": "detail-p-release-02",
+            "assessmentVersion": 1,
+            "fingerprint": "ae3ba34c",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 3
+            },
+            "steps": [
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 0,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 1,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 2,
+                "durationBeats": 0.65
+              },
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 3,
+                "durationBeats": 0.65
+              }
+            ],
+            "targetBpm": 56,
+            "articulation": "nonlegato",
+            "key": "[\"piano-preparation\",1,1,\"detail-p-release-02\",\"ae3ba34c\",\"whole\",0,3,\"67e9ecd7\"]"
+          },
+          {
+            "lessonId": "course03-06",
+            "assessmentVersion": 1,
+            "fingerprint": "ff3e5665",
+            "range": {
+              "kind": "fragment",
+              "firstStep": 0,
+              "lastStep": 4
+            },
+            "steps": [
+              {
+                "midis": [
+                  48
+                ],
+                "startBeat": 0,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 1,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  50
+                ],
+                "startBeat": 2,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  52
+                ],
+                "startBeat": 3,
+                "durationBeats": 1
+              },
+              {
+                "midis": [
+                  52
+                ],
+                "startBeat": 4,
+                "durationBeats": 1
+              }
+            ],
+            "targetBpm": 56,
+            "adaptation": {
+              "version": 1,
+              "id": "three-note-repeat-preparation-v1",
+              "kind": "project-training-adaptation",
+              "sourceBpm": 60
+            },
+            "articulation": "standard",
+            "key": "[\"piano-preparation\",1,1,\"course03-06\",\"ff3e5665\",\"fragment\",0,4,\"86ed51e3\"]"
+          }
+        ]
+      },
+      "emptyEvidence": {
+        "schemaVersion": 1,
+        "planId": "detail-p-read-bass-01",
+        "status": "pending",
+        "code": null,
+        "requirements": [
+          {
+            "key": "[\"piano-preparation\",1,1,\"course03-02\",\"70befb4e\",\"whole\",0,9,\"e6f08622\"]",
+            "lessonId": "course03-02",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 9
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          },
+          {
+            "key": "[\"piano-preparation\",1,1,\"detail-p-release-02\",\"ae3ba34c\",\"whole\",0,3,\"67e9ecd7\"]",
+            "lessonId": "detail-p-release-02",
+            "range": {
+              "kind": "whole",
+              "firstStep": 0,
+              "lastStep": 3
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          },
+          {
+            "key": "[\"piano-preparation\",1,1,\"course03-06\",\"ff3e5665\",\"fragment\",0,4,\"86ed51e3\"]",
+            "lessonId": "course03-06",
+            "range": {
+              "kind": "fragment",
+              "firstStep": 0,
+              "lastStep": 4
+            },
+            "status": "pending",
+            "cleanTakes": 0,
+            "memory": false,
+            "retained": false
+          }
+        ],
+        "ignored": [],
+        "scope": "local-midi-data-only",
+        "fingeringVerified": false,
+        "physicalPerformanceVerified": false,
+        "teacherReviewed": false
+      }
+    }
+  ],
+  "fragmentJournal": {
+    "storageKey": "music-preparation-fragments-piano-v1",
+    "scope": "piano-fragment-preparation-v1",
+    "emptyHistory": {
+      "schemaVersion": 1,
+      "scope": "piano-fragment-preparation-v1",
+      "revision": 0,
+      "entries": []
+    },
+    "profileMatchesReadingContracts": true,
+    "captureUiConnected": true,
+    "combinedExportSchemaVersion": 2,
+    "routeRegression": "tests/piano-preparation-fragment-capture.test.cjs"
+  },
+  "registeredLessons": 0,
+  "legacyProgressPromoted": false,
+  "physicalMidiTested": false,
+  "teacherReviewed": false
+}

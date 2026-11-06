@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-05",
+  "version": "23.5.0",
+  "changeType": "product-ui-web-and-catalog-preservation",
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "tests": {
+    "passed": 240,
+    "failed": 0,
+    "log": "tmp/ux-web-all-tests-complete.log"
+  },
+  "audits": {
+    "fingering": {
+      "exitCode": 0,
+      "lessons": 80,
+      "fingerAssignments": 1036
+    },
+    "lessons": {
+      "exitCode": 0,
+      "piano": 413,
+      "guitar": 456
+    },
+    "curriculum": {
+      "exitCode": 0,
+      "hardErrors": []
+    }
+  },
+  "preservation": {
+    "lessonsCompared": 561,
+    "changedLessons": [],
+    "sameOrder": true,
+    "protectedChanges": [],
+    "hashes": {
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "midi-keyboard-settings.ini": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    "trainerPresentBefore": false,
+    "trainerPresentAfter": false
+  },
+  "presentation": {
+    "lessonId": "course01-01",
+    "compactHtmlBytes": 754,
+    "expandedHtmlBytes": 5639,
+    "compactTags": 6,
+    "expandedTags": 50,
+    "fullBodyBuiltInCompact": false,
+    "limit": "Presentation HTML size; not an FPS or input-latency benchmark"
+  },
+  "browser": {
+    "compact": true,
+    "expanded": true,
+    "hidden": true,
+    "preferenceSurvivesReload": true,
+    "memoryHasNoGuidanceDom": true,
+    "desktop": {
+      "clientWidth": 1265,
+      "scrollWidth": 1265
+    },
+    "mobile": {
+      "viewportWidth": 390,
+      "clientWidth": 376,
+      "scrollWidth": 376,
+      "previewHeight": 112,
+      "lineHeight": 22.4,
+      "maxLines": 5
+    },
+    "editSurvivesReload": true,
+    "jsonDownload": true,
+    "jsonImport": true,
+    "jsonReload": true,
+    "firstChallengeEligibleAfterImport": true,
+    "demoStartStop": true,
+    "nativeControlPreservedInIsolatedLocalMode": true,
+    "hardwareMidiTested": false,
+    "nativeLaunchInvoked": false,
+    "consoleErrorsOnTestWebPath": []
+  },
+  "web": {
+    "publicAssetCount": 18,
+    "manifest": "dist/web/web-release.json",
+    "privateStorage": "browser-only",
+    "cloudAccounts": false,
+    "frameworkMigrated": false,
+    "typedUiContract": "piano-learning-ui.d.ts",
+    "domain": "melodiajest.ru",
+    "domainPurchased": false,
+    "deployed": false
+  },
+  "limitations": [
+    "No independent teacher review",
+    "No physical MIDI/device test",
+    "Catalog JSON does not transfer progress or device preferences",
+    "Next/React/TypeScript runtime remains planned",
+    "Caddy example not validated on a host"
+  ]
+}

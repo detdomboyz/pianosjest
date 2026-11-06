@@ -1,0 +1,13 @@
+{
+  "name": "melodiajest-staff-reader",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node --preserve-symlinks --preserve-symlinks-main tools/build.cjs",
+    "typecheck": "node --preserve-symlinks --preserve-symlinks-main tools/build.cjs --check",
+    "preview": "node --preserve-symlinks --preserve-symlinks-main tools/serve.cjs",
+    "test": "node --preserve-symlinks --preserve-symlinks-main tools/check.cjs"
+  },
+  "dependencies": {"react":"19.3.0","react-dom":"19.3.0"},
+  "devDependencies": {"typescript":"5.8.3","@types/react":"19.1.8","@types/react-dom":"19.1.3"}
+}

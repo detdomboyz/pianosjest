@@ -1,0 +1,1029 @@
+{
+  "batch": "2026-11-06-15",
+  "triggeredAt": "2026-11-06T03:48:41.305Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.20",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonCount": 4,
+  "reviewedLessonIds": [
+    "detail-p-relocate-01",
+    "detail-p-relocate-02",
+    "detail-p-relocate-03",
+    "detail-p-relocate-04"
+  ],
+  "changedAssessmentContractIds": [],
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 421,
+    "checkedMidiRouteLessons": 157,
+    "withStructuredProvenance": 75,
+    "individuallyMappedToDomain": 75,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 414,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 399,
+    "failed": 0,
+    "newTests": 8,
+    "durationMs": 177308.7645,
+    "log": "tmp/piano-batch-39-tests.log",
+    "focused": {
+      "passed": 8,
+      "log": "tmp/piano-batch-39-focused.log"
+    },
+    "scope": "Actual shipped code, synthetic MIDI controller and isolated browser; not teacher or physical validation",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 421,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 569,
+        "pianoThemes": 93,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1282,
+        "beginnerChallenges": 157,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "musicDocument": {
+      "schemaVersion": 1,
+      "scope": "read-only compatibility projection; not editable score migration",
+      "lessons": 569,
+      "notes": 39247,
+      "knownTimeNotes": 23102,
+      "unknownTimeNotes": 16145,
+      "explicitPianoAssignments": 1507,
+      "warningCounts": {
+        "LEGACY_SHARED_CHORD_TIME": 3258,
+        "EXACT_TIME_UNAVAILABLE": 141
+      },
+      "musicVersionsPreserved": true,
+      "jsonRoundTripExact": true,
+      "individualChordReleaseRecovered": false,
+      "physicalValidation": false,
+      "elapsedMs": 4462.651900000001,
+      "snapshotSha256": "128f0664ab7881ce8bd775bae91325ed5a27fbb88ecc4e9b59a69b4cf4f99761"
+    },
+    "coverage": {
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 421,
+        "checkedMidiRouteLessons": 157,
+        "withStructuredProvenance": 75,
+        "individuallyMappedToDomain": 75,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 6,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 414,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-03",
+          "lessonIds": [
+            "course04-03",
+            "detail-p-rhythm-01"
+          ]
+        },
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "reviewedLessons": [
+    {
+      "id": "detail-p-relocate-01",
+      "title": "Правая: большой палец C4 → G4",
+      "midiNotes": [
+        [
+          60
+        ],
+        [
+          67
+        ],
+        [
+          60
+        ],
+        [
+          67
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        1.15,
+        1.15,
+        1.1500000000000004
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "c75e1dde",
+      "previousAssessmentFingerprint": "c75e1dde",
+      "stage": "p3",
+      "after": "course05-07",
+      "requires": [
+        "course02-08",
+        "detail-p-release-01"
+      ],
+      "nextLessonId": "detail-p-relocate-03",
+      "positionCues": [
+        {
+          "stepIndex": 1,
+          "text": "После заданного окончания C4 отпусти клавишу и перенеси правую руку к G4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        },
+        {
+          "stepIndex": 2,
+          "text": "После заданного окончания G4 отпусти клавишу и перенеси правую руку к C4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        },
+        {
+          "stepIndex": 3,
+          "text": "После заданного окончания C4 отпусти клавишу и перенеси правую руку к G4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        }
+      ],
+      "preparationReview": {
+        "id": "relocation-preparation-v1",
+        "sourceFingerprint": "b31b4189",
+        "reviewedFingerprint": "e7cf8e15",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Освоить правый перенос между двумя белыми опорами одним большим пальцем, сохраняя отпускание и пульс.",
+        "context": "Перенос подготовленной опоры применяется между позициями и при скачках мелодии или сопровождения. Здесь он отделён от гаммового подкладывания и удержанных голосов.",
+        "sourceNote": "Высоты, пальцы, 56 BPM, длительности и порядок выбраны проектом. Kovarsky подтверждает предварительное планирование положения; Dumlavwalla — поддержанную руку и гибкое запястье. Из Quick Cover Graham Fitch взят только принцип проверки новой опоры до её звучания. Его быстрые прыжки, Springboarding и пример Bruch не назначены и не скопированы. Черни, письмо 3, с. 20–21, различает удержание звука и тишину; эти конкретные задания ему не приписываются. Источники не утверждают наш курс, пальцы или числовые допуски."
+      }
+    },
+    {
+      "id": "detail-p-relocate-02",
+      "title": "Левая: мизинец C3 → F3",
+      "midiNotes": [
+        [
+          48
+        ],
+        [
+          53
+        ],
+        [
+          48
+        ],
+        [
+          53
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        1.15,
+        1.15,
+        1.1500000000000004
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "e552ccb3",
+      "previousAssessmentFingerprint": "e552ccb3",
+      "stage": "p3",
+      "after": "detail-p-relocate-01",
+      "requires": [
+        "course03-08",
+        "detail-p-release-02"
+      ],
+      "nextLessonId": "detail-p-relocate-04",
+      "positionCues": [
+        {
+          "stepIndex": 1,
+          "text": "После заданного окончания C3 отпусти клавишу и перенеси левую руку к F3; палец 5. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        },
+        {
+          "stepIndex": 2,
+          "text": "После заданного окончания F3 отпусти клавишу и перенеси левую руку к C3; палец 5. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        },
+        {
+          "stepIndex": 3,
+          "text": "После заданного окончания C3 отпусти клавишу и перенеси левую руку к F3; палец 5. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением."
+        }
+      ],
+      "preparationReview": {
+        "id": "relocation-preparation-v1",
+        "sourceFingerprint": "065617a8",
+        "reviewedFingerprint": "b2ac274b",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Подготовить самостоятельный левый перенос мизинца между C3 и F3 без обязательного прохождения правого переноса.",
+        "context": "Перенос подготовленной опоры применяется между позициями и при скачках мелодии или сопровождения. Здесь он отделён от гаммового подкладывания и удержанных голосов.",
+        "sourceNote": "Высоты, пальцы, 56 BPM, длительности и порядок выбраны проектом. Kovarsky подтверждает предварительное планирование положения; Dumlavwalla — поддержанную руку и гибкое запястье. Из Quick Cover Graham Fitch взят только принцип проверки новой опоры до её звучания. Его быстрые прыжки, Springboarding и пример Bruch не назначены и не скопированы. Черни, письмо 3, с. 20–21, различает удержание звука и тишину; эти конкретные задания ему не приписываются. Источники не утверждают наш курс, пальцы или числовые допуски."
+      }
+    },
+    {
+      "id": "detail-p-relocate-03",
+      "title": "Правая: новая опора G4–B4–D5",
+      "midiNotes": [
+        [
+          67
+        ],
+        [
+          71
+        ],
+        [
+          74
+        ],
+        [
+          71
+        ],
+        [
+          67
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.15000000000000002,
+        0.1499999999999999,
+        0.1499999999999999,
+        0.1499999999999999
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "335c2316",
+      "previousAssessmentFingerprint": "335c2316",
+      "stage": "p3",
+      "after": "detail-p-relocate-02",
+      "requires": [
+        "detail-p-relocate-01",
+        "course02-08"
+      ],
+      "nextLessonId": "course05-06",
+      "positionCues": [
+        {
+          "stepIndex": 0,
+          "text": "До начала подготовь G4–B4–D5 правой 1–3–5. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена."
+        }
+      ],
+      "preparationReview": {
+        "id": "relocation-preparation-v1",
+        "sourceFingerprint": "8910977b",
+        "reviewedFingerprint": "9aadc4ed",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Перенести знакомую правую форму 1–3–5 в позицию G4 и сохранить её при движении вверх и вниз.",
+        "context": "Знакомые пальцевые опоры применяются в новом регистре и гармонической форме. Полные арпеджио, одновременные аккорды и удержанные голоса требуют отдельных этапов.",
+        "sourceNote": "Высоты, пальцы, 56 BPM, длительности и порядок выбраны проектом. Kovarsky подтверждает предварительное планирование положения; Dumlavwalla — поддержанную руку и гибкое запястье. Из Quick Cover Graham Fitch взят только принцип проверки новой опоры до её звучания. Его быстрые прыжки, Springboarding и пример Bruch не назначены и не скопированы. Черни, письмо 3, с. 20–21, различает удержание звука и тишину; эти конкретные задания ему не приписываются. Источники не утверждают наш курс, пальцы или числовые допуски. Open University, §7, Example 63 и абзацы о двух терциях: состав G–B–D / F–A–C и интервалы 4+3 полутонов сверены по фактическим MIDI. Источник не задаёт нашу аппликатуру."
+      }
+    },
+    {
+      "id": "detail-p-relocate-04",
+      "title": "Левая: новая опора F3–A3–C4",
+      "midiNotes": [
+        [
+          53
+        ],
+        [
+          57
+        ],
+        [
+          60
+        ],
+        [
+          57
+        ],
+        [
+          53
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 5
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.15000000000000002,
+        0.1499999999999999,
+        0.1499999999999999,
+        0.1499999999999999
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "8105ab0e",
+      "previousAssessmentFingerprint": "8105ab0e",
+      "stage": "p3",
+      "after": "detail-p-relocate-03",
+      "requires": [
+        "detail-p-relocate-02",
+        "course03-08"
+      ],
+      "nextLessonId": "detail-p-left-g-position-01",
+      "positionCues": [
+        {
+          "stepIndex": 0,
+          "text": "До начала подготовь F3–A3–C4 левой 5–3–1. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена."
+        }
+      ],
+      "preparationReview": {
+        "id": "relocation-preparation-v1",
+        "sourceFingerprint": "c6c6b594",
+        "reviewedFingerprint": "369bcd3e",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Подготовить левую форму 5–3–1 в новой F-позиции и сохранить принадлежность верхней C4 левой руке.",
+        "context": "Знакомые пальцевые опоры применяются в новом регистре и гармонической форме. Полные арпеджио, одновременные аккорды и удержанные голоса требуют отдельных этапов.",
+        "sourceNote": "Высоты, пальцы, 56 BPM, длительности и порядок выбраны проектом. Kovarsky подтверждает предварительное планирование положения; Dumlavwalla — поддержанную руку и гибкое запястье. Из Quick Cover Graham Fitch взят только принцип проверки новой опоры до её звучания. Его быстрые прыжки, Springboarding и пример Bruch не назначены и не скопированы. Черни, письмо 3, с. 20–21, различает удержание звука и тишину; эти конкретные задания ему не приписываются. Источники не утверждают наш курс, пальцы или числовые допуски. Open University, §7, Example 63 и абзацы о двух терциях: состав G–B–D / F–A–C и интервалы 4+3 полутонов сверены по фактическим MIDI. Источник не задаёт нашу аппликатуру."
+      }
+    }
+  ],
+  "systemImprovement": {
+    "module": "Existing PianoLearningUI.positionChangeHtml",
+    "contract": "Existing piano-learning-ui.d.ts LearningPositionCue",
+    "learningField": "positionCues",
+    "htmlCssOrUiModuleChanged": false,
+    "explicitEditorialTargetsOnly": true,
+    "wholeHandMoveSeparatedFromWithinPositionPhrase": true,
+    "memoryEarlyReturnPreserved": true,
+    "performanceOrGradingAlgorithmChanged": false
+  },
+  "sourceLedgerEntries": 27,
+  "sources": [
+    {
+      "id": "ou-triads-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: 7 Harmony: the triad",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-7",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "§7, Example 63; root/third/fifth and major 4+3 semitones",
+        "application": "Verify G4–B4–D5 and F3–A3–C4 as sequential major-triad tones, with actual MIDI and hand digits checked separately.",
+        "limits": "These short figures are not complete scales, simultaneous chord attempts, source fingering or original repertoire quotations.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    },
+    {
+      "id": "duke-simmons-small-goals-2026-11-05",
+      "author": "Bob Duke and Amy Simmons",
+      "title": "Tips for Effective Practice",
+      "url": "https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": false,
+        "lessonIds": [
+          "detail-p-relocate-01",
+          "detail-p-relocate-02",
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "Previously verified small-goal and return-after-break context",
+        "application": "Reuse one short practice goal, changed-phrase transfer outside the attempt and return after a break.",
+        "limits": "Not reread this batch. The 3–5 minute block, exact transfer patterns and repetitions are project choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    },
+    {
+      "id": "dumlavwalla-basic-technique-2026-11-05",
+      "author": "Dr. Diana Dumlavwalla",
+      "title": "Fix It: Tips for Teaching Basic Piano Technique",
+      "url": "https://hub.yamaha.com/music-educators/instruments/piano/piano-pedagogy-fix-basic-technique/",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-relocate-01",
+          "detail-p-relocate-02",
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "Fix It: Tension in Arms; Inconsistent Hand Shape, flexible-wrist paragraph",
+        "application": "Retain supported hand shape and a flexible wrist; release the old key before relocating rather than force a held stretch.",
+        "limits": "No assisted arm-drop drill, medical guarantee, universal hand posture or physical validation is assigned.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    },
+    {
+      "id": "czerny-letter3-release-2026-11-05",
+      "author": "Carl Czerny",
+      "title": "Briefe über den Unterricht auf dem Pianoforte, Dritter Brief: Über Takt, Eintheilung und Fingersatz",
+      "url": "https://www.koelnklavier.de/quellen/czer-brf/brief-03.html",
+      "edition": "Wien: A. Diabelli und Comp., undated on the transcribed title page. Digital primary-text transcription by KölnKlavier / Wolfgang Lempfrid.",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-relocate-01",
+          "detail-p-relocate-02",
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "Dritter Brief, original pagination pp.20–21, held key versus silent rest",
+        "application": "Reread the distinction between the duration of a held sound and a silent rest; preserve exact source endings before movement.",
+        "limits": "Transcription reread; no new scan comparison. Project 0.85/1.15/0.15 values and 56 BPM are not Czerny instructions.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    },
+    {
+      "id": "kovarsky-fingering-context-2026-11-05",
+      "author": "Jerry Kovarsky",
+      "title": "The Basics Of Piano Keyboard Fingering",
+      "url": "https://hub.yamaha.com/keyboards/k-how-to/the-basics-of-piano-keyboard-fingering/",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-relocate-01",
+          "detail-p-relocate-02",
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "Opening planning paragraph; The Basics, numbers and prepared hand position",
+        "application": "Plan the active hand and its new position before playing; distinguish preparation of a whole position from repeatedly moving on every third.",
+        "limits": "Specific fingers, lesson IDs, source rhythm and project drill are not prescribed by the article.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    },
+    {
+      "id": "fitch-prepare-landing-2026-11-06",
+      "author": "Graham Fitch",
+      "title": "Precision Measurement in Jumps",
+      "url": "https://practisingthepiano.com/precision-measurement-in-jumps/",
+      "edition": "Author online article; publication date not independently taken from related-post cards",
+      "application": {
+        "batch": "2026-11-06-15",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-relocate-01",
+          "detail-p-relocate-02",
+          "detail-p-relocate-03",
+          "detail-p-relocate-04"
+        ],
+        "section": "Quick Cover, paragraphs/bullets before Springboarding",
+        "application": "Read the actual author article: prepare the next place, arrive silently and check landing before sounding in isolated preparation. Only this principle is reused.",
+        "limits": "Fast lightning jumps, Springboarding and the Bruch notes are not assigned or copied. This is not a source-authored exercise or a claim of author approval.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-15.md"
+      }
+    }
+  ],
+  "browser": {
+    "preparations": {
+      "detail-p-relocate-01": [
+        {
+          "id": "course02-08",
+          "name": "Мини-экзамен правой руки"
+        },
+        {
+          "id": "detail-p-release-01",
+          "name": "Правая: окончание одного звука"
+        }
+      ],
+      "detail-p-relocate-02": [
+        {
+          "id": "course03-08",
+          "name": "Мини-экзамен левой руки"
+        },
+        {
+          "id": "detail-p-release-02",
+          "name": "Левая: окончание одного звука"
+        }
+      ],
+      "detail-p-relocate-03": [
+        {
+          "id": "detail-p-relocate-01",
+          "name": "Правая: большой палец C4 → G4"
+        },
+        {
+          "id": "course02-08",
+          "name": "Мини-экзамен правой руки"
+        }
+      ],
+      "detail-p-relocate-04": [
+        {
+          "id": "detail-p-relocate-02",
+          "name": "Левая: мизинец C3 → F3"
+        },
+        {
+          "id": "course03-08",
+          "name": "Мини-экзамен левой руки"
+        }
+      ]
+    },
+    "cards": [
+      {
+        "id": "detail-p-relocate-01",
+        "cue": null,
+        "preparations": [
+          {
+            "id": "course02-08",
+            "name": "Мини-экзамен правой руки"
+          },
+          {
+            "id": "detail-p-release-01",
+            "name": "Правая: окончание одного звука"
+          }
+        ],
+        "target": "tC4Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: C4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C4: правая рука: палец 1 — большойБлижайший фрагмент:t o t o",
+        "title": "Правая: большой палец C4 → G4"
+      },
+      {
+        "id": "detail-p-relocate-02",
+        "cue": null,
+        "preparations": [
+          {
+            "id": "course03-08",
+            "name": "Мини-экзамен левой руки"
+          },
+          {
+            "id": "detail-p-release-02",
+            "name": "Левая: окончание одного звука"
+          }
+        ],
+        "target": "8C3Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C3: левая рука: палец 5 — мизинецБлижайший фрагмент:8 q 8 q",
+        "title": "Левая: мизинец C3 → F3"
+      },
+      {
+        "id": "detail-p-relocate-03",
+        "cue": "Смена позиции: До начала подготовь G4–B4–D5 правой 1–3–5. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена.",
+        "preparations": [
+          {
+            "id": "detail-p-relocate-01",
+            "name": "Правая: большой палец C4 → G4"
+          },
+          {
+            "id": "course02-08",
+            "name": "Мини-экзамен правой руки"
+          }
+        ],
+        "target": "oG4Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Смена позиции: До начала подготовь G4–B4–D5 правой 1–3–5. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена.Текущие опоры рук:Правая: G4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:G4: правая рука: палец 1 — большойБлижайший фрагмент:o a d a o",
+        "title": "Правая: новая опора G4–B4–D5"
+      },
+      {
+        "id": "detail-p-relocate-04",
+        "cue": "Смена позиции: До начала подготовь F3–A3–C4 левой 5–3–1. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена.",
+        "preparations": [
+          {
+            "id": "detail-p-relocate-02",
+            "name": "Левая: мизинец C3 → F3"
+          },
+          {
+            "id": "course03-08",
+            "name": "Мини-экзамен левой руки"
+          }
+        ],
+        "target": "qF3Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Смена позиции: До начала подготовь F3–A3–C4 левой 5–3–1. Внутри этой фразы нового переноса нет; прежняя позиция уже отпущена.Текущие опоры рук:Левая: F3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:F3: левая рука: палец 5 — мизинецБлижайший фрагмент:q e t e q",
+        "title": "Левая: новая опора F3–A3–C4"
+      }
+    ],
+    "navigation": [
+      {
+        "focus": "lesson-name",
+        "title": "Левая: мизинец C3 → F3"
+      }
+    ],
+    "consoleErrors": [],
+    "compact": {
+      "body": false,
+      "mode": "compact",
+      "target": "tC4Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: C4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C4: правая рука: палец 1 — большойБлижайший фрагмент:t o t o"
+    },
+    "leftTransfer": {
+      "cue": "Смена позиции: После заданного окончания C3 отпусти клавишу и перенеси левую руку к F3; палец 5. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением.",
+      "target": "qF3Ритм: такт 1, доля 3; 0,85 доли (911 мс); перед нотой пауза 1.15 доли / 1232 мс.Проверка выключена: сейчас важны только правильные клавиши.Смена позиции: После заданного окончания C3 отпусти клавишу и перенеси левую руку к F3; палец 5. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением.Текущие опоры рук:Левая: F3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:F3: левая рука: палец 5 — мизинецБлижайший фрагмент:8 q 8 q"
+    },
+    "rightTransfer": {
+      "cue": "Смена позиции: После заданного окончания C4 отпусти клавишу и перенеси правую руку к G4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением.",
+      "target": "oG4Ритм: такт 1, доля 3; 0,85 доли (911 мс); перед нотой пауза 1.15 доли / 1232 мс.Проверка выключена: сейчас важны только правильные клавиши.Смена позиции: После заданного окончания C4 отпусти клавишу и перенеси правую руку к G4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением.Текущие опоры рук:Правая: G4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:G4: правая рука: палец 1 — большойБлижайший фрагмент:t o t o"
+    },
+    "rightPositionAfterFirst": {
+      "cue": false,
+      "target": "aB4Ритм: такт 1, доля 2; 0,85 доли (911 мс); перед нотой пауза 0.15 доли / 161 мс.Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: B4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:B4: правая рука: палец 3 — среднийБлижайший фрагмент:o a d a o"
+    },
+    "leftMiddleC": {
+      "cue": false,
+      "target": "tC4Ритм: такт 1, доля 3; 0,85 доли (911 мс); перед нотой пауза 0.15 доли / 161 мс.Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C4: левая рука: палец 1 — большойБлижайший фрагмент:q e t e q"
+    },
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "title": "Правая: большой палец C4 → G4"
+    },
+    "keyboard": {
+      "expanded": "true",
+      "focused": true,
+      "collapsed": "false",
+      "collapsedFocused": true
+    },
+    "mobileCue": {
+      "scroll": 272,
+      "text": "Смена позиции: После заданного окончания C4 отпусти клавишу и перенеси правую руку к G4; палец 1. На подготовку есть 1,15 доли тишины. Не держи прежнюю опору растяжением.",
+      "width": 272
+    },
+    "hiddenPersistence": {
+      "available": true,
+      "card": false,
+      "selected": "hidden"
+    },
+    "memory": {
+      "cues": 0,
+      "events": 0,
+      "keys": 0,
+      "material": 0,
+      "materialMode": "expanded",
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0,
+      "target": "Играй из памяти, сохраняя пульс. Подсказки скрыты.",
+      "bpm": "40"
+    },
+    "screenshot": "docs/qa/piano-2026-11-06-15-relocation-cue.jpg",
+    "hardwareMidiOrAudioUsed": false,
+    "inputScope": "Native PC keyboard in isolated practice mode; not a MIDI performance proof."
+  },
+  "preservation": {
+    "changedMusic": [],
+    "changedInstructions": [
+      "detail-p-relocate-01",
+      "detail-p-relocate-02",
+      "detail-p-relocate-03",
+      "detail-p-relocate-04"
+    ],
+    "newLessonIds": [],
+    "priorLessonCount": 569,
+    "currentLessonCount": 569,
+    "unchangedMusicAndInstructions": 565,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      },
+      "music-document.js": {
+        "before": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "after": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "same": true
+      },
+      "music-document.d.ts": {
+        "before": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "after": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "same": true
+      },
+      "piano-catalog-adapter.js": {
+        "before": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "after": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "same": true
+      },
+      "piano-catalog-adapter.d.ts": {
+        "before": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "after": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "same": true
+      },
+      "catalog-transfer.js": {
+        "before": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "after": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "same": true
+      },
+      "index.html": {
+        "before": "fa3344bca2dc4bfb4c8f05f6e76437d30e00a0bb3286147a16684628f56ff3f7",
+        "after": "fa3344bca2dc4bfb4c8f05f6e76437d30e00a0bb3286147a16684628f56ff3f7",
+        "same": true
+      },
+      "piano-learning-ui.js": {
+        "before": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "after": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "same": true
+      },
+      "piano-learning-ui.d.ts": {
+        "before": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "after": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "same": true
+      },
+      "piano-learning-ui.css": {
+        "before": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "after": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.20",
+    "publicAssets": 20,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "e835e59bf4adea5347cb5992185b927d634068930e414352bc89c3783bee93ad",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased"
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T04:08:07.421Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 46,
+    "remainingPercent": 54,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "gitDiffCheckPassed": true,
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "verifiedDistinctGoalCount": null,
+    "globalStagePrerequisitesUnchanged": true,
+    "pedalAndHeldVoiceModelUnchanged": true,
+    "terminalSilenceNotScored": true,
+    "manualTransferNotCurrentMidiSequence": true,
+    "freshBootThemeIdentityIssueQueued": true,
+    "fullReactNextMigrationComplete": false,
+    "domainBought": false,
+    "deployed": false,
+    "guitarWritePerformed": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "stable-initial-theme-id-safety",
+    "action": "Следующий короткий системный этап перед дальнейшей веб-миграцией: воспроизвести различие генерируемых ID начальных тем двух чистых запусков у 15 записей, найти точные инициализаторы и проверить детерминированные ID только для нового встроенного каталога. Не перенумеровывать сохранённые пользовательские темы, уроки, классификацию или порядок. Проверить одинаковый первый запуск, загрузку прежнего JSON с произвольными ID, сохранение ссылок и полное обратное преобразование без установки зависимостей. Четыре текущих переноса уже имеют подготовку своей руки, подробный разбор и подсказки в точке движения; их музыка и зачёт сохранены. После этого вернуться к конкретным новым учебным целям и расширению планов, затем перенести один компонент чтения в отдельный необязательный React/Next.js-пакет. Музыкальная точка: 421 запись / 157 MIDI-контрактов / 75 подробных описаний / 3 конкретных будущих плана; 6 повторений и 1 контроль дают лишь верхнюю границу 414 целей. Минимум 1000 содержательных уроков и независимая преподавательская редактура ещё не достигнуты.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "index.html",
+      "catalog-transfer.js",
+      "piano-catalog-adapter.js",
+      "tests/catalog-transfer.test.cjs",
+      "docs/MUSIC_DOCUMENT_V1.md"
+    ]
+  }
+}

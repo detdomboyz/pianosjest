@@ -1,0 +1,1400 @@
+{
+  "version": 1,
+  "scope": "piano-only",
+  "status": "ready-for-next-batch",
+  "automationId": "automation",
+  "baseline": {
+    "version": "23.4.0",
+    "pianoLearningExercises": 400,
+    "pianoCheckedRouteLessons": 136,
+    "pianoPieceFragments": 148,
+    "testsPassed": 142,
+    "evidence": "docs/lesson-review-verification.json"
+  },
+  "budget": {
+    "requestedPercent": 0,
+    "interpretation": "until-exhausted",
+    "reservePercent": 0,
+    "guardRemainingPercent": 0,
+    "confirmedByUserOn": "2026-11-05",
+    "timezone": "Asia/Yekaterinburg",
+    "measurement": "shared-account-usage; not an exact per-task meter",
+    "lastObservation": {
+      "checkedOn": "2026-11-06",
+      "checkedAt": "2026-11-06T15:53:48.461Z",
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "windowDurationMins": 10080,
+      "usedPercent": 60,
+      "remainingPercent": 40,
+      "resetsAt": 1794379031,
+      "otherWindows": [],
+      "otherWindowExhausted": false,
+      "otherWindowUnavailable": false
+    },
+    "policyUpdatedAt": "2026-11-05T18:51:07.124Z",
+    "previousPolicy": {
+      "interpretation": "weekly-reserve",
+      "reservePercent": 25,
+      "guardRemainingPercent": 30
+    },
+    "changeReason": "Explicit user request: remove the 25% reserve and work until 0% remaining; keep native availability checks and no paid bypass."
+  },
+  "cadence": {
+    "type": "interval",
+    "intervalMinutes": 20,
+    "timezone": "Asia/Yekaterinburg",
+    "configured": true,
+    "stageDeadlineMinutes": null,
+    "overrunPolicy": "finish-and-verify; consume pending continuation serially; no duplicate automation",
+    "lastPendingContinuation": {
+      "receivedAt": "2026-11-05T14:23:35.052Z",
+      "handledAfter": "2026-11-05-18",
+      "result": "2026-11-05-19"
+    }
+  },
+  "nextWork": {
+    "priority": "left-five-finger-preparation-transition-review",
+    "action": "Вернуться к левой пятипальцевой позиции: отдельно сверить course03-03 и course03-04, их переход к course03-05 после course03-02. Прочитать первичные нотные/методические материалы для движения 5–4–3–2–1 вверх и 1–2–3–4–5 вниз; проверить высоты, ритм, паузы, руку и подготовку указательного/большого. Сначала найти существующую подходящую подготовку своей руки; при подтверждённом отсутствии добавить один короткий мостик. Завершить 1–3 новых/исправленных микроурока с отдельной целью и переносом на новую фразу, построить маршрут генератором без смены ID/пользовательского порядка и проверить затронутый UI. Не продвигать шесть будущих планов и банк первых проб без их отдельной подготовки; физическая и независимая преподавательская проверки остаются отдельными.",
+    "files": [
+      "piano-lesson-development.js",
+      "lesson-quality.js",
+      "curriculum.js",
+      "curriculum-plan.js",
+      "docs/piano-lesson-backlog.json",
+      "docs/piano-curriculum-sources.json"
+    ]
+  },
+  "completedBatches": [
+    {
+      "id": "2026-11-05-01",
+      "status": "implemented-and-tested",
+      "lessonIds": [
+        "detail-p-minor-triads-01",
+        "detail-p-minor-triads-02",
+        "detail-p-minor-triads-03",
+        "detail-p-minor-triads-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-01.md",
+      "testsPassed": 148,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-02",
+      "status": "implemented-and-tested",
+      "changeType": "instruction-review; musical-data-unchanged",
+      "lessonIds": [
+        "detail-p-release-01",
+        "detail-p-release-02",
+        "detail-p-release-03",
+        "detail-p-release-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "report": "docs/reports/piano-curriculum-2026-11-05-02.md",
+      "testsPassed": 153,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-03",
+      "status": "implemented-and-tested",
+      "changeType": "instruction-review; musical-data-unchanged; explicit-future-plan",
+      "lessonIds": [
+        "detail-p-legato-01",
+        "detail-p-legato-02",
+        "detail-p-legato-03",
+        "detail-p-legato-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "newPlannedLessonCount": 4,
+      "report": "docs/reports/piano-curriculum-2026-11-05-03.md",
+      "testsPassed": 157,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-04",
+      "status": "implemented-and-tested",
+      "changeType": "new-pairs-and-guarded-description-upgrade",
+      "lessonIds": [
+        "detail-p-release-03",
+        "detail-p-release-04",
+        "detail-p-legato-pairs-01",
+        "detail-p-legato-pairs-03"
+      ],
+      "newLessonCount": 2,
+      "reviewedLessonCount": 2,
+      "promotedPlannedLessonCount": 2,
+      "report": "docs/reports/piano-curriculum-2026-11-05-04.md",
+      "testsPassed": 162,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-05",
+      "status": "implemented-and-tested",
+      "changeType": "new-upper-position-pairs-and-next-skill-plan",
+      "lessonIds": [
+        "detail-p-legato-pairs-02",
+        "detail-p-legato-pairs-04"
+      ],
+      "newLessonCount": 2,
+      "reviewedLessonCount": 0,
+      "promotedPlannedLessonCount": 2,
+      "newPlannedLessonCount": 5,
+      "report": "docs/reports/piano-curriculum-2026-11-05-05.md",
+      "testsPassed": 163,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-06",
+      "status": "implemented-and-tested",
+      "changeType": "staccato-instruction-and-provenance-review; musical-data-unchanged",
+      "lessonIds": [
+        "detail-p-staccato-01",
+        "detail-p-staccato-02",
+        "detail-p-staccato-03",
+        "detail-p-staccato-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "report": "docs/reports/piano-curriculum-2026-11-05-06.md",
+      "testsPassed": 167,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-07",
+      "status": "implemented-and-tested",
+      "changeType": "new-melodic-thirds-in-position",
+      "lessonIds": [
+        "detail-p-position-skips-01",
+        "detail-p-position-skips-03"
+      ],
+      "newLessonCount": 2,
+      "reviewedLessonCount": 0,
+      "promotedPlannedLessonCount": 2,
+      "report": "docs/reports/piano-curriculum-2026-11-05-07.md",
+      "testsPassed": 171,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-08",
+      "status": "implemented-and-tested",
+      "changeType": "new-middle-and-upper-melodic-thirds-in-position",
+      "lessonIds": [
+        "detail-p-position-skips-02",
+        "detail-p-position-skips-04"
+      ],
+      "newLessonCount": 2,
+      "reviewedLessonCount": 0,
+      "promotedPlannedLessonCount": 2,
+      "report": "docs/reports/piano-curriculum-2026-11-05-08.md",
+      "testsPassed": 172,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-09",
+      "status": "implemented-and-tested",
+      "changeType": "new-left-middle-thumb-pair; guarded-known-third-instruction-review; coverage-domain-validation",
+      "lessonIds": [
+        "detail-p-position-skips-05",
+        "detail-p-hearing-01"
+      ],
+      "newLessonCount": 1,
+      "reviewedLessonCount": 1,
+      "promotedPlannedLessonCount": 1,
+      "report": "docs/reports/piano-curriculum-2026-11-05-09.md",
+      "testsPassed": 178,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-10",
+      "status": "implemented-and-tested",
+      "changeType": "known-interval-instruction-review; guarded-general-skill-preparation-upgrade; musical-data-unchanged",
+      "lessonIds": [
+        "detail-p-hearing-01",
+        "detail-p-hearing-02",
+        "detail-p-hearing-03",
+        "detail-p-hearing-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "report": "docs/reports/piano-curriculum-2026-11-05-10.md",
+      "testsPassed": 183,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-11",
+      "status": "implemented-and-tested",
+      "changeType": "early-rhythm-instruction-review; opt-in-beat-boundary-assessment; final-rest-scope-clarification",
+      "lessonIds": [
+        "detail-p-rhythm-01",
+        "detail-p-rhythm-02",
+        "detail-p-rhythm-03",
+        "detail-p-rhythm-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "newPlannedLessonCount": 1,
+      "changedAssessmentContractIds": [
+        "detail-p-rhythm-01",
+        "detail-p-rhythm-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-11.md",
+      "testsPassed": 191,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-12",
+      "status": "implemented-and-tested",
+      "changeType": "basic-duration-instruction-review; per-lesson-timing-upgrade; existing-route-entry-reposition-fix",
+      "lessonIds": [
+        "course04-02",
+        "course04-03",
+        "course04-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 3,
+      "changedAssessmentContractIds": [
+        "course04-02",
+        "course04-03",
+        "course04-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-12.md",
+      "testsPassed": 198,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-13",
+      "status": "implemented-and-tested",
+      "changeType": "coordinated-release-assessment-v2; held-pair-and-rhythm-instruction-review",
+      "lessonIds": [
+        "course01-07",
+        "course04-08",
+        "course07-03"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 3,
+      "changedAssessmentContractIds": [
+        "course01-07",
+        "course04-08",
+        "course07-03"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-13.md",
+      "testsPassed": 204,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-14",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-project-rhythm-regularization; alternating-hands-instruction-review; held-voice-future-plans",
+      "lessonIds": [
+        "course07-06",
+        "course07-07"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "newPlannedLessonCount": 2,
+      "changedAssessmentContractIds": [
+        "course07-06",
+        "course07-07"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-14.md",
+      "testsPassed": 210,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-15",
+      "status": "implemented-and-tested",
+      "changeType": "blocked-major-triad-consolidation-review; opt-in-common-release-contract; musical-data-unchanged",
+      "lessonIds": [
+        "course08-01",
+        "course08-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "changedAssessmentContractIds": [
+        "course08-01",
+        "course08-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-15.md",
+      "testsPassed": 215,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-16",
+      "status": "implemented-and-tested",
+      "changeType": "new-position-major-triad-review; opt-in-common-release-contract; two-left-hand-future-plans; musical-data-unchanged",
+      "lessonIds": [
+        "course08-03",
+        "course08-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "newPlannedLessonCount": 2,
+      "changedAssessmentContractIds": [
+        "course08-03",
+        "course08-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-16.md",
+      "testsPassed": 220,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-17",
+      "status": "implemented-and-tested",
+      "changeType": "meter-clarification-and-quarter-handoff; opt-in-common-release-contract; guarded-rhythm-editions",
+      "lessonIds": [
+        "course08-05",
+        "course08-07"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "newPlannedLessonCount": 0,
+      "changedAssessmentContractIds": [
+        "course08-05",
+        "course08-07"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-17.md",
+      "testsPassed": 225,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-18",
+      "status": "implemented-and-tested",
+      "changeType": "product-ui-web-and-catalog-preservation",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "report": "docs/reports/piano-curriculum-2026-11-05-18.md",
+      "testsPassed": 240,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-19",
+      "status": "plans-and-sources-reviewed; not implemented",
+      "changeType": "prerequisite-and-source-planning",
+      "lessonIds": [],
+      "plannedLessonIds": [
+        "detail-p-left-g-position-01",
+        "detail-p-left-position-triad-01",
+        "detail-p-left-position-triad-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlanCount": 1,
+      "report": "docs/reports/piano-curriculum-2026-11-05-19.md",
+      "testsPassed": 240,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-20",
+      "status": "implemented-and-tested",
+      "changeType": "new-left-position-and-major-triad-studies; prerequisite-navigation; memory-title-and-sidebar-mask",
+      "lessonIds": [
+        "detail-p-left-g-position-01",
+        "detail-p-left-position-triad-01",
+        "detail-p-left-position-triad-02"
+      ],
+      "newLessonCount": 3,
+      "reviewedLessonCount": 0,
+      "promotedPlannedLessonCount": 3,
+      "report": "docs/reports/piano-curriculum-2026-11-05-20.md",
+      "testsPassed": 247,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-21",
+      "status": "implemented-and-tested",
+      "changeType": "broken-chord-instruction-review; music-unchanged; repeated-note-target-hint; hide-memory-octave-chips",
+      "lessonIds": [
+        "course08-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-05-21.md",
+      "testsPassed": 253,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-22",
+      "status": "implemented-and-tested",
+      "changeType": "minor-assembly-meter-and-common-release; independent-left-preparation; forward-route-anchor-resolution",
+      "lessonIds": [
+        "detail-p-minor-triads-01",
+        "detail-p-minor-triads-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "changedAssessmentContractIds": [
+        "detail-p-minor-triads-01",
+        "detail-p-minor-triads-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-22.md",
+      "testsPassed": 263,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-23",
+      "status": "implemented-and-tested",
+      "changeType": "new-left-triple-pulse; scoped-minor-comparison-release; explicit-triple-meter; E-flat-key-label-explanation",
+      "lessonIds": [
+        "detail-p-left-triple-pulse-01",
+        "detail-p-minor-triads-03",
+        "detail-p-minor-triads-04"
+      ],
+      "newLessonCount": 1,
+      "reviewedLessonCount": 2,
+      "newMidiContractIds": [
+        "detail-p-left-triple-pulse-01"
+      ],
+      "changedAssessmentContractIds": [
+        "detail-p-minor-triads-03",
+        "detail-p-minor-triads-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-23.md",
+      "testsPassed": 271,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-05-24",
+      "status": "implemented-and-tested",
+      "changeType": "same-goal-cadence-review; two-plus-one-rhythm; common-release-contract; accessible-primary-lesson-link; goal-group-upper-bound",
+      "lessonIds": [
+        "detail-p-chordmove-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "detail-p-chordmove-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-05-24.md",
+      "testsPassed": 278,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-01",
+      "triggeredOn": "2026-11-05",
+      "status": "implemented-and-tested",
+      "changeType": "new-independent-dotted-quarter-preparation; source-backed-ode-phrase-rhythm; scoped-duration-contracts; memory-safe-target-hint",
+      "lessonIds": [
+        "detail-p-dotted-quarter-01",
+        "course09-01",
+        "course09-02"
+      ],
+      "newLessonCount": 1,
+      "reviewedLessonCount": 2,
+      "newMidiContractIds": [
+        "detail-p-dotted-quarter-01"
+      ],
+      "changedAssessmentContractIds": [
+        "course09-01",
+        "course09-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-01.md",
+      "testsPassed": 284,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-02",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-32-beat-ode-memory-repetition; explicit-same-goal-link; immediate-memory-assistance-feedback; prior-span-count-erratum",
+      "lessonIds": [
+        "course09-07"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course09-07"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-02.md",
+      "testsPassed": 290,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-03",
+      "status": "implemented-and-tested",
+      "changeType": "new-released-position-preparation; guarded-twinkle-source-adaptation; scoped-holds; contextual-position-cues",
+      "lessonIds": [
+        "detail-p-position-return-01",
+        "course09-03"
+      ],
+      "newLessonCount": 1,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 1,
+      "newMidiContractIds": [
+        "detail-p-position-return-01"
+      ],
+      "changedAssessmentContractIds": [
+        "course09-03"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-03.md",
+      "testsPassed": 296,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-04",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-source-backed-mary-rhythm-revision; verified-attribution-limits; whole-note-count-cue",
+      "lessonIds": [
+        "course09-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course09-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-04.md",
+      "testsPassed": 302,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-05",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-bass-answer-regular-timing; explicit-same-goal-link; opt-in-hand-handoff-cue",
+      "lessonIds": [
+        "course09-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "sameGoalAs": "course07-06",
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course09-06"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-05.md",
+      "testsPassed": 308,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-06",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-blind-rhythm-same-goal-review; scoped-holds; accessible-explicit-memory-entry",
+      "lessonIds": [
+        "course10-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "sameGoalAs": "course04-08",
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course10-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-06.md",
+      "testsPassed": 316,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-07",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-blind-chords-preparation-and-role-review; three-beat-meter; scoped-common-release; current-target-release-cue",
+      "lessonIds": [
+        "course10-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "sameGoalAs": "course08-05",
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course10-06"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-07.md",
+      "testsPassed": 324,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-08",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-eight-bar-final-exam; source-attributed-ending; explicit-checkpoint-accounting-and-presentation",
+      "lessonIds": [
+        "course10-08"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 0,
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "course10-08"
+      ],
+      "explicitCheckpointIds": [
+        "course10-08"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-08.md",
+      "testsPassed": 334,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-09",
+      "status": "implemented-and-tested",
+      "changeType": "new-left-half-and-whole-studies; guarded-whole-note-role-link; localized-action-counts",
+      "lessonIds": [
+        "detail-p-rhythm-01",
+        "detail-p-left-half-01",
+        "detail-p-left-whole-01"
+      ],
+      "newLessonCount": 2,
+      "reviewedLessonCount": 1,
+      "newDistinctGoalCount": 2,
+      "distinctGoalReviewScope": "Specific project tasks; global distinct count and independent teacher review remain unverified",
+      "newMidiContractIds": [
+        "detail-p-left-half-01",
+        "detail-p-left-whole-01"
+      ],
+      "changedAssessmentContractIds": [],
+      "sameGoalAs": "course04-03",
+      "report": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "testsPassed": 342,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-10",
+      "status": "implemented-and-tested",
+      "changeType": "four-guarded-hand-preparation-reviews; scoped-left-triad-common-release; concrete-prerequisite-navigation",
+      "lessonIds": [
+        "detail-p-release-02",
+        "detail-p-release-03",
+        "detail-p-release-04",
+        "detail-p-triads-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "newMidiContractIds": [],
+      "changedAssessmentContractIds": [
+        "detail-p-triads-02"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "testsPassed": 350,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-11",
+      "status": "implemented-and-tested",
+      "changeType": "system-only; pure-exact-duration-presenter-with-types; compact-symbols-and-wrapped-score-labels",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "changedAssessmentContractIds": [],
+      "numericDisplayCatalogRecords": 311,
+      "report": "docs/reports/piano-curriculum-2026-11-06-11.md",
+      "testsPassed": 358,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-12",
+      "status": "implemented-and-tested",
+      "changeType": "two-guarded-left-preparation-reviews; pure-practice-tempo-display; immediate-target-refresh",
+      "lessonIds": [
+        "detail-p-black-02",
+        "course08-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-12.md",
+      "testsPassed": 370,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-13",
+      "status": "implemented-and-tested",
+      "changeType": "four-guarded-preparation-reviews; three-black-key-guides; pure-opt-in-flat-alias-cue",
+      "lessonIds": [
+        "detail-p-release-01",
+        "detail-p-black-01",
+        "detail-p-black-03",
+        "detail-p-black-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "testsPassed": 379,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-14",
+      "status": "implemented-and-tested",
+      "changeType": "system-only; pure-typed-musical-document; readonly-catalog-adapter; shipped-parser-extraction",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-14.md",
+      "testsPassed": 391,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-15",
+      "status": "implemented-and-tested",
+      "changeType": "four-guarded-relocation-preparation-reviews; explicit-position-cues-through-existing-typed-view",
+      "lessonIds": [
+        "detail-p-relocate-01",
+        "detail-p-relocate-02",
+        "detail-p-relocate-03",
+        "detail-p-relocate-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "testsPassed": 399,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-16",
+      "status": "implemented-and-tested",
+      "changeType": "system-only; stable-initial-work-theme-identities; saved-ID-and-collision-regressions",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-16.md",
+      "testsPassed": 405,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-17",
+      "status": "implemented-and-tested",
+      "changeType": "one-new-lesson; opt-in-ending-v1; MIDI-observation-interruption; accessible-feedback-and-settings-grid",
+      "lessonIds": [
+        "detail-p-rhythm-final-rest-01"
+      ],
+      "newLessonCount": 1,
+      "reviewedLessonCount": 0,
+      "changedAssessmentContractIds": [
+        "detail-p-rhythm-final-rest-01"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-17.md",
+      "testsPassed": 424,
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-18",
+      "status": "implemented-and-tested",
+      "changeType": "four-existing-dyad-reviews; active-hand-preparation; opt-in-common-release",
+      "lessonIds": [
+        "detail-p-dyads-01",
+        "detail-p-dyads-02",
+        "detail-p-dyads-03",
+        "detail-p-dyads-04"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 4,
+      "newPlannedLessonCount": 0,
+      "testsPassed": 432,
+      "changedAssessmentContractIds": [
+        "detail-p-dyads-01",
+        "detail-p-dyads-02",
+        "detail-p-dyads-03",
+        "detail-p-dyads-04"
+      ],
+      "report": "docs/reports/piano-curriculum-2026-11-06-18.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-19",
+      "status": "planned-and-audit-tested",
+      "changeType": "four-future-ear-reading-plans; pure-plan-validation",
+      "lessonIds": [],
+      "plannedLessonIds": [
+        "detail-p-ear-direction-01",
+        "detail-p-ear-echo-01",
+        "detail-p-read-treble-01",
+        "detail-p-read-bass-01"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 4,
+      "testsPassed": 440,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-20",
+      "status": "implemented-and-tested",
+      "changeType": "read-only-staff-contract; optional-typescript-react-reader",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "testsPassed": 448,
+      "optionalReaderTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-20.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-21",
+      "status": "implemented-and-tested",
+      "changeType": "pure-first-reading-session; isolated-storage-and-exclusive-lock-contract",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "testsPassed": 470,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-21.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-22",
+      "status": "implemented-and-tested",
+      "changeType": "bounded-reading-bank; React-controller; real-local-Next-export; separate-history-transfer",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "testsPassed": 490,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-23",
+      "status": "implemented-and-tested",
+      "changeType": "guarded-three-finger-instruction-review; future-reading-preparation-review; full-published-catalog-exclusions-v2",
+      "lessonIds": [
+        "course02-02",
+        "course03-02"
+      ],
+      "reviewedPlanIds": [
+        "detail-p-read-treble-01",
+        "detail-p-read-bass-01"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 2,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 2,
+      "promotedPlannedLessonCount": 0,
+      "testsPassed": 501,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-23.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "2026-11-06-24",
+      "status": "implemented-and-tested",
+      "changeType": "pure-versioned-preparation-contract; read-only-legacy-progress-inspection; executable-audit-integration",
+      "lessonIds": [],
+      "contractPlanIds": [
+        "detail-p-read-treble-01",
+        "detail-p-read-bass-01"
+      ],
+      "sourceLessonIds": [
+        "course02-02",
+        "detail-p-release-01",
+        "course02-06",
+        "course03-02",
+        "detail-p-release-02",
+        "course03-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 516,
+      "focusedTestsPassed": 15,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-24.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "realCaptureConnected": false
+    },
+    {
+      "id": "2026-11-06-25",
+      "status": "implemented-and-tested",
+      "changeType": "real-local-full-midi-capture; separate-locked-journal; recovery-export-and-retry-ui",
+      "lessonIds": [],
+      "capturedPreparationIds": [
+        "course02-02",
+        "detail-p-release-01",
+        "course03-02",
+        "detail-p-release-02"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 531,
+      "focusedCaptureTestsPassed": 15,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "report": "docs/reports/piano-curriculum-2026-11-06-25.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    },
+    {
+      "id": "2026-11-06-26",
+      "status": "implemented-and-tested",
+      "changeType": "explicit-56-bpm-fragment-adaptations; shared-range-separated-storage; whole-contract-compatibility",
+      "lessonIds": [],
+      "reviewedPlannedLessonIds": [
+        "detail-p-read-treble-01",
+        "detail-p-read-bass-01"
+      ],
+      "fragmentSourceIds": [
+        "course02-06",
+        "course03-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 2,
+      "testsPassed": 547,
+      "newRegressionTests": 16,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "wholePreparationContractsUnchanged": 4,
+      "adaptedFragmentContracts": 2,
+      "fragmentCaptureUiConnected": false,
+      "report": "docs/reports/piano-curriculum-2026-11-06-26.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    },
+    {
+      "id": "2026-11-06-27",
+      "status": "implemented-and-tested",
+      "changeType": "real-fragment-capture-and-selection; final-release-and-frozen-scope; combined-v2-recovery-export",
+      "lessonIds": [],
+      "fragmentSourceIds": [
+        "course02-06",
+        "course03-06"
+      ],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 560,
+      "newRegressionTests": 13,
+      "fragmentFinalTestsPassed": 13,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "preparationContractsUnchanged": 6,
+      "fragmentCaptureUiConnected": true,
+      "combinedExportSchemaVersion": 2,
+      "report": "docs/reports/piano-curriculum-2026-11-06-27.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    },
+    {
+      "id": "2026-11-06-28",
+      "status": "implemented-and-tested",
+      "changeType": "reproduced-stale-writer-loss; shared-legacy-lock-and-fresh-read; idempotent-receipts; visible-pending-and-v2-recovery",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 573,
+      "newRegressionTests": 13,
+      "focusedFinalTestsPassed": 41,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "preparationContractsUnchanged": 6,
+      "combinedExportSchemaVersion": 2,
+      "legacySaveRecoveryConnected": true,
+      "importImplemented": false,
+      "report": "docs/reports/piano-curriculum-2026-11-06-28.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    },
+    {
+      "id": "2026-11-06-29",
+      "status": "implemented-and-tested",
+      "changeType": "pure-v1-v2-transfer-validation; actual-assessor-and-raw-consistency; accessible-read-only-preview",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 589,
+      "newRegressionTests": 16,
+      "focusedFinalTestsPassed": 57,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "changedAssessmentContractIds": [],
+      "preparationContractsUnchanged": 6,
+      "transferValidationConnected": true,
+      "importImplemented": false,
+      "report": "docs/reports/piano-curriculum-2026-11-06-29.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    },
+    {
+      "id": "2026-11-06-30",
+      "status": "implemented-and-tested",
+      "changeType": "destination-preview-and-revalidated-ticket; backup-before-write; idempotent-partial-recovery; explicit-conflict-and-incomplete-archive-refusal",
+      "lessonIds": [],
+      "newLessonCount": 0,
+      "reviewedLessonCount": 0,
+      "newPlannedLessonCount": 0,
+      "reviewedPlannedLessonCount": 0,
+      "testsPassed": 611,
+      "newRegressionTests": 22,
+      "focusedFinalTestsPassed": 79,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "preparationContractsUnchanged": 6,
+      "importConnected": true,
+      "fragmentImportConnected": true,
+      "report": "docs/reports/piano-curriculum-2026-11-06-30.md",
+      "guitarFilesChanged": false,
+      "independentTeacherReview": false,
+      "physicalMidiTested": false
+    }
+  ],
+  "reviewCursor": {
+    "catalogInventoryComplete": true,
+    "pedagogicalReviewComplete": false,
+    "lastFamily": "three-finger-position",
+    "lastLessonId": "course03-02",
+    "legacyProvenanceStillToReview": 340,
+    "lastNewLessonId": "detail-p-rhythm-final-rest-01",
+    "lastNewLessonBatch": "2026-11-06-17"
+  },
+  "lastReport": "docs/reports/piano-curriculum-2026-11-06-30.md",
+  "pendingIssues": [
+    {
+      "id": "legacy-long-note-timing-review",
+      "status": "resolved-for-current-long-hold-midi-route-scope",
+      "lessonCount": 0,
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-09-verification.json",
+      "note": "Zero among 157 available MIDI-route records have a duration >= 2 beats without explicit beat-boundary-v1/v2. This is metadata coverage, not a certificate for all music, fingers or artistic quality.",
+      "lessonIds": [],
+      "resolvedLessonIds": [
+        "course10-08"
+      ]
+    },
+    {
+      "id": "final-rest-model",
+      "status": "planned-not-implemented",
+      "lessonId": "detail-p-rhythm-final-rest-01",
+      "note": "Current rhythm-03 checks three internal rests and ends on the final note-off; it does not observe a trailing rest."
+    },
+    {
+      "id": "whole-note-goal-overlap",
+      "status": "explicitly-linked-and-excluded-from-distinct-goal-increment",
+      "lessonIds": [
+        "course04-03",
+        "detail-p-rhythm-01"
+      ],
+      "note": "detail-p-rhythm-01 now references primary course04-03. The two C4 whole notes and the target musical version e664aca0 are unchanged; right-hand practice and new left-finger-5 studies remain separate.",
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-09.md"
+    },
+    {
+      "id": "independent-held-voice-model",
+      "status": "planned-not-implemented",
+      "lessonIds": [
+        "detail-p-held-voice-01",
+        "detail-p-held-voice-02"
+      ],
+      "note": "Independent note durations, voice identity, playback, held-note fingering and assessment must be modeled and tested before adding these piano lessons. Current handoff lessons release the bass before the reply."
+    },
+    {
+      "id": "legacy-cross-hand-preparation-chains",
+      "status": "ten-guarded-records-resolved; known-single-release-black-triad-cluster-complete",
+      "lessonIds": [],
+      "note": "The confirmed four-record remainder now uses the active hand: right C4 release, right two-black group and both three-black groups. Exact original scores, display anchors, global stage gates and assessment versions remain. This is not an assertion that every cross-hand link in the full curriculum is wrong or resolved.",
+      "resolvedLessonIds": [
+        "detail-p-release-02",
+        "detail-p-release-03",
+        "detail-p-release-04",
+        "detail-p-triads-02",
+        "detail-p-black-02",
+        "course08-02",
+        "detail-p-release-01",
+        "detail-p-black-01",
+        "detail-p-black-03",
+        "detail-p-black-04"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-13.md"
+    },
+    {
+      "id": "cadence-same-goal-repetition",
+      "status": "explicitly-linked-and-excluded-from-distinct-goal-increment",
+      "lessonIds": [
+        "course08-05",
+        "course10-06",
+        "detail-p-chordmove-04"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-05-24.md",
+      "note": "The detail cadence and the blind practice consolidate course08-05; course10-06 also requires the already learned left C major and left triple pulse. Keep IDs and edition histories; new tempo/display and recombination of these prepared components do not increment distinct goals.",
+      "additionalEvidence": [
+        "docs/reports/piano-curriculum-2026-11-06-07.md"
+      ]
+    },
+    {
+      "id": "ode-combined-memory-source-and-role-review",
+      "status": "resolved-guarded-source-revision-and-same-goal-link",
+      "lessonIds": [
+        "course09-07"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-02.md",
+      "note": "Original had 30 quarter-note beats plus one beat of rest, total span 31. Corrected from verified soprano bars 1–8 to 32 beats with two dotted endings and no internal rest. sameGoalAs course09-02 excludes a new independent-goal increment; old edits and progress remain preserved."
+    },
+    {
+      "id": "bass-answer-same-goal-repetition",
+      "status": "explicitly-linked-and-excluded-from-distinct-goal-increment",
+      "lessonIds": [
+        "course07-06",
+        "course09-06"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-05.md",
+      "note": "Common handoff goal, with an already prepared descending transfer and a half-note ending. Preserve both IDs and version histories; the changed melody/length is not counted as a new independent skill."
+    },
+    {
+      "id": "blind-rhythm-same-goal-repetition",
+      "status": "explicitly-linked-and-excluded-from-distinct-goal-increment",
+      "lessonIds": [
+        "course04-08",
+        "course10-04"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-06.md",
+      "note": "Identical pitches, fingers, starts and durations; 64 versus 66 BPM and blind display are retained repetition variants. Keep the p6 consolidation anchor after course10-03 and before detail-p-transfer-01; do not move its dependent transfer ahead of earlier stages."
+    },
+    {
+      "id": "final-exam-checkpoint-role",
+      "status": "explicit-checkpoint-excluded-from-new-goal-count",
+      "lessonIds": [
+        "course10-08"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-08.md",
+      "note": "Multi-skill control with known general-skill preparation; not an alias for one component. Full old edition and personal progress remain preserved. Only the short ending is a documented Beethoven/Mutopia adaptation."
+    },
+    {
+      "id": "noncanonical-duration-labels",
+      "status": "resolved-with-exact-named-values-and-localized-numeric-fallback",
+      "lessonIds": [
+        "detail-p-release-02",
+        "detail-p-release-03",
+        "detail-p-release-04",
+        "detail-p-triads-02"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-11.md",
+      "note": "Pure rhythmDurationView with .d.ts: names/symbols only for equivalent quarter-note values; numeric fallback for 0.3/0.65/0.85 and explicit approximation for rounded fractions. Current target gives full names; narrow score cards use symbols plus source milliseconds and wrap. No catalog, music, assessment or sound change."
+    },
+    {
+      "id": "practice-tempo-display-ms",
+      "status": "resolved-for-note-rest-display-and-immediate-controller-refresh",
+      "lessonIds": [
+        "detail-p-release-02"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-12.md",
+      "note": "Pure typed rhythmTimingView prefers explicit beat data, scales source-only fallback and updates current target plus score on native BPM input. 0.65 at 40 BPM is 975 ms with 525-ms gaps; at 80 it is 488 ms with 263-ms gaps. Active challenge display uses captured attempt BPM and explains restart/reselection. Audio helper, grade timing and edition fingerprints unchanged; preview audibility floor remains."
+    },
+    {
+      "id": "relocation-preparation-chains",
+      "status": "four-guarded-relocation-records-resolved",
+      "lessonIds": [],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "note": "Right thumb C4-to-G4 no longer requires the longer left C-to-F position exercise. Left pinky transfer and both new-position figures now use their own hand preparation. Original display anchors, notes, fingers, raw time and grading versions remain. Explicit cues distinguish movement through silence from an already prepared position.",
+      "resolvedLessonIds": [
+        "detail-p-relocate-01",
+        "detail-p-relocate-02",
+        "detail-p-relocate-03",
+        "detail-p-relocate-04"
+      ]
+    },
+    {
+      "id": "fresh-boot-generated-theme-ids",
+      "status": "resolved-for-two-known-initial-work-themes; stored-identities-retained",
+      "affectedLessonCount": 15,
+      "lessonIds": [],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-16.md",
+      "note": "Reproduced two random initial themes and 15 references. Two creation sites now supply explicit IDs. Existing themes keep their stored IDs and matching names; new-ID collisions receive a free suffix. Independent fresh VMs and two isolated browser origins agree. Existing v7 IDs, custom ordering, classification, selection, real progress key and synthetic MIDI selection were retained in executable regression paths.",
+      "resolvedLessonIds": [
+        "fav-hachiko-v3-part-01",
+        "fav-hachiko-v3-part-02",
+        "fav-hachiko-v3-part-03",
+        "fav-hachiko-v3-part-04",
+        "fav-hachiko-v3-part-05",
+        "fav-hachiko-v3-part-06",
+        "fav-hachiko-v3-exam",
+        "fav-new-soul-v5-part-01",
+        "fav-new-soul-v5-part-02",
+        "fav-new-soul-v5-part-03",
+        "fav-new-soul-v5-part-04",
+        "fav-new-soul-v5-part-05",
+        "fav-new-soul-v5-join-01",
+        "fav-new-soul-v5-join-02",
+        "fav-new-soul-v5-exam"
+      ],
+      "initialThemeIds": [
+        "builtin-theme-hachiko",
+        "builtin-theme-new-soul"
+      ]
+    },
+    {
+      "id": "dyad-preparation-and-release-contract",
+      "status": "resolved-for-four-matching-builtins",
+      "lessonIds": [
+        "detail-p-dyads-01",
+        "detail-p-dyads-02",
+        "detail-p-dyads-03",
+        "detail-p-dyads-04"
+      ],
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-18.md",
+      "note": "Own-hand prerequisites replace cross-hand requirements; display anchors and user order stay. Existing beat-boundary-v2 is enabled only for these exact original dyads. Former instructions and fingerprints are archived; new memory credit must be earned. Physical comfort, fingering and artistic quality still need instrument/teacher review.",
+      "resolvedIn": "docs/reports/piano-curriculum-2026-11-06-18.md",
+      "resolvedLessonIds": [
+        "detail-p-dyads-01",
+        "detail-p-dyads-02",
+        "detail-p-dyads-03",
+        "detail-p-dyads-04"
+      ],
+      "previousEvidence": "docs/reports/piano-curriculum-2026-11-06-17.md"
+    },
+    {
+      "id": "future-plan-dependency-validation",
+      "status": "resolved-in-plan-audit",
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "note": "Actual coverage builder previously accepted self preparation, mutual prerequisite cycles and self display anchors. It now invokes a pure validator that rejects all three without changing plan/catalog order. Structural success is not pedagogical certification."
+    },
+    {
+      "id": "preparation-event-capture-and-persistence",
+      "status": "partially-resolved-capture-and-guarded-import; reading-gate-pending",
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-30.md",
+      "note": "Whole and fragment capture, exact recovery export and empty/identical destination import are connected. Pending retry retains source/before/after and protects later writers. Conflicting history merge, reading gate, unseen bank, physical MIDI and teacher validation remain separate.",
+      "previousEvidence": "docs/reports/piano-curriculum-2026-11-06-27.md"
+    },
+    {
+      "id": "stale-legacy-progress-writer",
+      "status": "resolved-for-cooperating-current-version-tabs",
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-28.md",
+      "note": "Reproduced stale-tab overwrite of another lesson and a private extension. New fresh read/grade/write/readback under a shared Web Lock, versioned idempotence receipts, preserved archives and visible pending recovery fix current writers. Old loaded code requires reload; safe v1/v2 import still pending."
+    },
+    {
+      "id": "progress-transfer-explicit-history-merge",
+      "status": "known-limitation; no-automatic-overwrite",
+      "evidence": "docs/reports/piano-curriculum-2026-11-06-30.md",
+      "note": "Different nonempty histories, foreign unfinished archives and forced reapplication of an already applied source are not merged/reset. Keep originals and backups; require a separately reviewed merge workflow."
+    }
+  ],
+  "excludedWriteRoots": [
+    "C:\\Users\\Alexander\\Documents\\web\\guitarjest"
+  ],
+  "automationStatus": "ACTIVE",
+  "curriculumTarget": {
+    "minimumMeaningfulLessons": 1000,
+    "allowMore": true,
+    "requestedByUserOn": "2026-11-05",
+    "lessonBlockMinutes": {
+      "typicalMin": 3,
+      "typicalMax": 5,
+      "strictLimit": false
+    },
+    "countingRule": "Count implemented lessons with a distinct pedagogical purpose; track plans, attempts and review states separately.",
+    "descriptionRequired": true,
+    "materialTypes": [
+      "project-technical-drill",
+      "study-or-adaptation",
+      "score-excerpt"
+    ],
+    "verifiedHistoryWhenRelevant": true,
+    "unsupportedHistoricalClaimsAllowed": false,
+    "coverageIncludes": [
+      "classical-technique",
+      "accompaniment",
+      "ear-and-reading",
+      "improvisation",
+      "progressive-motor-patterns",
+      "musical-transfer"
+    ]
+  },
+  "current": {
+    "version": "23.5.30",
+    "learningExercises": 422,
+    "checkedMidiRouteLessons": 158,
+    "pieceFragments": 148,
+    "testsPassed": 611,
+    "structuredProvenanceLessons": 82,
+    "independentTeacherReviewed": 0,
+    "coverageCapacitySlots": 1310,
+    "capacityIsNotIndividualLessonPlan": true,
+    "individuallyMappedToDomain": 82,
+    "plannedFutureLessons": 6,
+    "knownGoalOverlapGroups": 5,
+    "meaningfulCountStatus": "422 catalog records include six explicitly linked repetitions and one multi-skill checkpoint. 415 is an upper bound after these exclusions, not a verified count of distinct pedagogical goals.",
+    "explicitSameGoalVariants": 6,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null,
+    "explicitCheckpoints": 1,
+    "legacyLongHoldRouteLessons": 0,
+    "optionalReaderTestsPassed": 6,
+    "optionalNextTestsPassed": 4
+  },
+  "lastProductReport": "docs/reports/piano-curriculum-2026-11-06-30.md",
+  "productState": "docs/product-development-state.json",
+  "lastMusicalReport": "docs/reports/piano-curriculum-2026-11-06-23.md",
+  "lastPlanningReport": "docs/reports/piano-curriculum-2026-11-06-26.md"
+}

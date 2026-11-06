@@ -1,0 +1,1146 @@
+{
+  "batch": "2026-11-06-19",
+  "triggeredAt": "2026-11-06T06:18:14.900Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.23",
+  "status": "planned-and-audit-tested",
+  "newImplementedLessons": 0,
+  "reviewedExistingLessons": 0,
+  "newFuturePlans": 4,
+  "plannedLessonIds": [
+    "detail-p-ear-direction-01",
+    "detail-p-ear-echo-01",
+    "detail-p-read-treble-01",
+    "detail-p-read-bass-01"
+  ],
+  "plans": [
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-direction-01",
+      "title": "Слух: второй звук выше, ниже или тот же",
+      "goalKey": "ear.direction.up-down-same",
+      "goal": "После неизвестной заранее пары звуков определить только направление: выше, ниже или та же высота. Не угадывать название ноты и не выдавать знакомую пару за распознавание.",
+      "after": "course02-03",
+      "requires": [
+        "course01-03",
+        "course02-03"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64
+      ],
+      "targetFingers": [
+        1,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Услышать отношение второго звука к первому до поиска клавиши; двигательная подготовка уже освоена отдельно.",
+      "application": "Следить за направлением мелодии при подборе и замечать, изменился ли звук.",
+      "distinctFrom": "detail-p-hearing-01..04 заранее называют обе ноты и дают фиксированный рисунок; course10-* повторяют знакомую музыку. Здесь ответ неизвестен до прослушивания, а движение вверх/вниз/повтор — три исхода одной цели, не три урока.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "pitch-direction",
+        "response": "direction-choice",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Будущий результат только по явно измеренному ответу; одно угадывание не доказывает устойчивого навыка."
+      },
+      "responseChoices": [
+        {
+          "id": "up",
+          "label": "Выше"
+        },
+        {
+          "id": "down",
+          "label": "Ниже"
+        },
+        {
+          "id": "same",
+          "label": "Та же высота"
+        }
+      ],
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64,
+          65,
+          67
+        ],
+        "events": 2,
+        "sampling": "По классам направления; без повторной выдачи уже открытой пары. Разные темпы не создают новых целей.",
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "separate-ear-choice-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно найди C4–G4 правой 1–5. В учебных примерах послушай C4–E4 (выше), E4–C4 (ниже) и D4–D4 (та же высота). После пары сделай паузу и скажи отношение; затем при желании проверь клавиши. Это открытые примеры, они не входят в будущую первую проверку.",
+        "Медленно: заранее объясни три кнопки ответа. Нажми «Слушать задание»; два звука идут по очереди. До ответа не показывать клавиши, названия, пальцы, нотную запись и ответ в доступном имени кнопки. Не требуется абсолютный слух, громкость и высота — разные признаки.",
+        "Блок 3–5 минут: несколько разных пар с отдыхом; ответ зафиксировать до раскрытия. Прослушивание, повтор или подсказку учитывать отдельно. После раскрытия можно правой проверить высоты и пальцы. После перерыва нужна другая пара; при исчерпании неизвестных примеров остаётся практика."
+      ],
+      "selfCheck": [
+        "Отвечаю о направлении, а не о громкости, интервале в полутонах или названии.",
+        "Второй одинаковый звук имеет отдельную атаку, а не является продолжением первого.",
+        "До своего ответа не видел и не открывал решение; знакомый или подсказанный элемент помечен как практика.",
+        "Мышь/клавиатура фиксируют выбор; MIDI не доказывает, что направление услышано, и не измеряет пальцы."
+      ],
+      "typicalErrors": [
+        "Спутать тихий звук с низким.",
+        "Выучить порядок вариантов или смотреть на подсвеченную клавишу вместо слушания."
+      ],
+      "hearingModel": "Два последовательных тона с одинаковым тембром и уровнем: относительное направление, включая новый повтор той же высоты.",
+      "transfer": {
+        "goal": "Новая пара с другим первым звуком: E4–D4, ответ «ниже»; её названия раскрываются после ответа. Это опубликованный пример переноса, будущий неизвестный банк должен его исключать.",
+        "notes": [
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          }
+        ],
+        "expectedDirection": "down"
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-echo-01",
+      "title": "Слух: короткое эхо в C–D–E",
+      "goalKey": "ear.echo.known-anchor-four-events",
+      "goal": "После неизвестной заранее четырёхзвучной фразы в C4–D4–E4 воспроизвести порядок высот правой рукой, получив C4 как известную начальную опору. Это подбор от опоры, не проверка абсолютного слуха.",
+      "after": "detail-p-ear-direction-01",
+      "requires": [
+        "detail-p-ear-direction-01",
+        "course02-03",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64,
+        62,
+        60
+      ],
+      "targetFingers": [
+        1,
+        3,
+        2,
+        1
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Удержать короткий слуховой образ целиком и перевести его в уже подготовленные клавиши после окончания образца.",
+      "application": "Подобрать короткий мотив от заданной первой ноты и сравнить свой результат с услышанным.",
+      "distinctFrom": "Фиксированные интервалы detail-p-hearing-* и память course10-* известны заранее. Здесь опора C4 известна, продолжение скрыто; правильный ответ нельзя получить из заголовка. Новые варианты этой одной задачи не считаются отдельными уроками.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "melody-playback",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Порядок высот и число атак после окончания образца; не оценивать пение, пальцы, художественное качество или задержку первой реакции как слух."
+      },
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64
+        ],
+        "events": 4,
+        "firstMidi": 60,
+        "atLeastOnePitchChange": true,
+        "examplesArePracticeOnly": true,
+        "sampling": "Разные продолжения от C4 без повторной выдачи уже открытого элемента."
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "reference-audio-and-response-time-separated",
+        "separate-ear-playback-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно сыграй C4–D4–E4 правой 1–2–3. Послушай опору C4, затем открытый образец C4–E4–D4–C4 пальцами 1–3–2–1. Представь или пропой фразу, затем проверь на инструменте. Данная демонстрация известна и не является независимым испытанием.",
+        "Медленно: перед неизвестным элементом можно услышать и найти только начальную C4. Затем слушай всю фразу без клавишных и нотных подсказок; вход исполнителя разрешается после окончания образца. Старт реакции не задаёт музыкальный уровень; события звукового образца и ответа нельзя смешивать.",
+        "Блок 3–5 минут: одна короткая фраза, спокойная попытка, раскрытие и сравнение после ответа, отдых. Дополнительное прослушивание учитывается как помощь; повтор этого элемента — практика. На следующий день выбирается другая не открытая здесь фраза."
+      ],
+      "selfCheck": [
+        "Первая C4 известна, продолжение вспоминаю по слуховому образу, а не по названию карточки.",
+        "Число атак и порядок высот совпали; повтор одной высоты нажимается заново.",
+        "Сначала закончил слушать, затем начал ответ; звуковой образец не попал в мои MIDI-события.",
+        "MIDI-порядок не доказывает пение, пальцы и точный ритм; эти проверки не заявлены выполненными."
+      ],
+      "typicalErrors": [
+        "Начать подыгрывать до окончания неизвестного образца.",
+        "Заменить услышанную фразу знакомым C–D–E или подсмотреть ноты до ответа."
+      ],
+      "hearingModel": "Четыре одинаковые длительности в пределах трёх известных высот; внимание к изменению направления и возврату к C4.",
+      "transfer": {
+        "goal": "Другой четырёхзвучный рисунок C4–D4–E4–D4 пальцами 1–2–3–2. Это отдельная опубликованная демонстрация переноса; в будущий неизвестный банк не включать.",
+        "notes": [
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-read-treble-01",
+      "title": "Чтение: первые три ориентира в скрипичном ключе",
+      "goalKey": "reading.treble.c4-e4.pitch-to-key",
+      "goal": "Соотнести C4–D4–E4 на нотном стане с уже знакомыми клавишами правой руки и сыграть новую короткую последовательность. Это начальная подготовка чтения высот, не зачёт чтения целой пьесы.",
+      "after": "course02-03",
+      "requires": [
+        "course02-03",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        62,
+        62,
+        64
+      ],
+      "targetFingers": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Перевести положение головки на линейке/между линейками через ключ в конкретную клавишу, сохраняя собственную позицию руки.",
+      "application": "Начать разбор новой записи по нотному стану; позднее добавить непрерывный ритм и более широкий диапазон.",
+      "distinctFrom": "Текущий холст показывает QWERTY/время и известный каталог, но не обучает чтению по линейкам и ключу. Здесь C4 на первой добавочной снизу, D4 под нижней линейкой и E4 на нижней.",
+      "notation": {
+        "clef": "treble",
+        "staffLines": 5,
+        "positionUnit": "diatonic half-space, bottom line = 0, upward positive",
+        "anchor": {
+          "midi": 67,
+          "position": 2
+        },
+        "pitchPositions": [
+          {
+            "midi": 60,
+            "position": -2,
+            "ledger": true
+          },
+          {
+            "midi": 62,
+            "position": -1,
+            "ledger": false
+          },
+          {
+            "midi": 64,
+            "position": 0,
+            "ledger": false
+          }
+        ],
+        "clefDoesNotAssignHand": true
+      },
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "notation-to-key",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Только соответствие видимых нотных позиций порядку сыгранных высот. Паузы для называния допустимы; скорость реакции и ритмическая непрерывность не зачтены.",
+        "accessibleAlternative": "Текстовое называние высот доступно как отдельная практика с явной отметкой; его не выдавать за визуальное чтение нотного стана."
+      },
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64
+        ],
+        "events": 4,
+        "stepwise": true,
+        "oneDirection": true,
+        "allowRepeatedNotes": true,
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "staff-clef-ledger-renderer",
+        "item-exposure-history",
+        "notation-only-first-reading-mode",
+        "separate-reading-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: найди C4–D4–E4 отдельно правой 1–2–3. Объясни пять линеек и промежутки, затем ключ: G4 на второй линейке снизу. C4 лежит на первой добавочной ниже стана; D4 — в промежутке под нижней; E4 — на нижней. Ключ сам по себе не назначает руку; здесь рука выбрана явно.",
+        "Медленно назови и сыграй открытый рисунок C4–D4–D4–E4, 1–2–2–3. Повторная высота получает новое нажатие. Можно остановиться перед каждым звуком. На этапе знакомства счёт по одной доле помогает, но не превращает нахождение высоты в экзамен ритма.",
+        "Блок 3–5 минут: сначала названия и клавиши с помощью, затем другая ещё не открытая последовательность на стане. В первой пробе остаётся стан; заранее не звучит мелодия, нет QWERTY, имён высот и следующих клавиш с подсветкой. После ответа можно раскрыть разбор. Новая проба после перерыва и завтра использует другую запись; первая запись остаётся практикой."
+      ],
+      "selfCheck": [
+        "Верно прочитан ключ, линейки считаются снизу; имена не взяты из QWERTY.",
+        "Сохраняется правая рука в своей позиции; пальцы проверяются самостоятельно, MIDI их не видит.",
+        "Повтор D имеет новую атаку, рука не смещается ради следующей соседней ноты.",
+        "Новую запись не слушал и не раскрывал до ответа; знакомый или подсказанный рисунок имеет статус практики."
+      ],
+      "typicalErrors": [
+        "Считать линейки сверху или пропустить промежуток.",
+        "Перенести номера пальцев другой руки или принять отсутствие подписи за режим памяти."
+      ],
+      "hearingModel": "При ознакомлении послушай поступенное движение с повтором средней высоты; перед первой пробой новой записи мелодия не проигрывается.",
+      "transfer": {
+        "goal": "Повтор перемещён к первой высоте: C4–C4–D4–E4, 1–1–2–3. Это опубликованная проба переноса, а не неизвестный элемент будущего банка.",
+        "notes": [
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "ou-staff-clefs-2026-11-06",
+        "rcm-sight-reading-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-read-bass-01",
+      "title": "Чтение: первые три ориентира в басовом ключе",
+      "goalKey": "reading.bass.c3-e3.pitch-to-key",
+      "goal": "Соотнести C3–D3–E3 на нотном стане с уже знакомыми клавишами левой руки и сыграть новую короткую последовательность. Это начальная подготовка чтения высот, не зачёт чтения целой пьесы.",
+      "after": "course03-03",
+      "requires": [
+        "course03-03",
+        "detail-p-release-02"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        50,
+        50,
+        52
+      ],
+      "targetFingers": [
+        5,
+        4,
+        4,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 52,
+          "hand": "left",
+          "finger": 3,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Перевести положение головки на линейке/между линейками через ключ в конкретную клавишу, сохраняя собственную позицию руки.",
+      "application": "Начать разбор новой записи по нотному стану; позднее добавить непрерывный ритм и более широкий диапазон.",
+      "distinctFrom": "Текущий холст показывает QWERTY/время и известный каталог, но не обучает чтению по линейкам и ключу. Здесь C3 во втором промежутке, D3 на средней (третьей) линейке, E3 в третьем промежутке. Басовый ключ имеет другую опорную высоту; правая рука не является обязательной подготовкой левой.",
+      "notation": {
+        "clef": "bass",
+        "staffLines": 5,
+        "positionUnit": "diatonic half-space, bottom line = 0, upward positive",
+        "anchor": {
+          "midi": 53,
+          "position": 6
+        },
+        "pitchPositions": [
+          {
+            "midi": 48,
+            "position": 3,
+            "ledger": false
+          },
+          {
+            "midi": 50,
+            "position": 4,
+            "ledger": false
+          },
+          {
+            "midi": 52,
+            "position": 5,
+            "ledger": false
+          }
+        ],
+        "clefDoesNotAssignHand": true
+      },
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "notation-to-key",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Только соответствие видимых нотных позиций порядку сыгранных высот. Паузы для называния допустимы; скорость реакции и ритмическая непрерывность не зачтены.",
+        "accessibleAlternative": "Текстовое называние высот доступно как отдельная практика с явной отметкой; его не выдавать за визуальное чтение нотного стана."
+      },
+      "itemPool": {
+        "midis": [
+          48,
+          50,
+          52
+        ],
+        "events": 4,
+        "stepwise": true,
+        "oneDirection": true,
+        "allowRepeatedNotes": true,
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "staff-clef-ledger-renderer",
+        "item-exposure-history",
+        "notation-only-first-reading-mode",
+        "separate-reading-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: найди C3–D3–E3 отдельно левой 5–4–3. Объясни пять линеек и промежутки, затем ключ: F3 на четвёртой линейке снизу. От неё вниз E3 в промежутке, D3 на средней линейке, C3 в следующем промежутке. Ключ сам по себе не назначает руку; здесь рука выбрана явно.",
+        "Медленно назови и сыграй открытый рисунок C3–D3–D3–E3, 5–4–4–3. Повторная высота получает новое нажатие. Можно остановиться перед каждым звуком. На этапе знакомства счёт по одной доле помогает, но не превращает нахождение высоты в экзамен ритма.",
+        "Блок 3–5 минут: сначала названия и клавиши с помощью, затем другая ещё не открытая последовательность на стане. В первой пробе остаётся стан; заранее не звучит мелодия, нет QWERTY, имён высот и следующих клавиш с подсветкой. После ответа можно раскрыть разбор. Новая проба после перерыва и завтра использует другую запись; первая запись остаётся практикой."
+      ],
+      "selfCheck": [
+        "Верно прочитан ключ, линейки считаются снизу; имена не взяты из QWERTY.",
+        "Сохраняется левая рука в своей позиции; пальцы проверяются самостоятельно, MIDI их не видит.",
+        "Повтор D имеет новую атаку, рука не смещается ради следующей соседней ноты.",
+        "Новую запись не слушал и не раскрывал до ответа; знакомый или подсказанный рисунок имеет статус практики."
+      ],
+      "typicalErrors": [
+        "Считать линейки сверху или пропустить промежуток.",
+        "Перенести номера пальцев другой руки или принять отсутствие подписи за режим памяти."
+      ],
+      "hearingModel": "При ознакомлении послушай поступенное движение с повтором средней высоты; перед первой пробой новой записи мелодия не проигрывается.",
+      "transfer": {
+        "goal": "Повтор перемещён к первой высоте: C3–C3–D3–E3, 5–5–4–3. Это опубликованная проба переноса, а не неизвестный элемент будущего банка.",
+        "notes": [
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 50,
+            "hand": "left",
+            "finger": 4,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 52,
+            "hand": "left",
+            "finger": 3,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "ou-staff-clefs-2026-11-06",
+        "rcm-sight-reading-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    }
+  ],
+  "existingMaterialComparison": {
+    "learningRecords": 422,
+    "focusedIds": [
+      "detail-p-hearing-01",
+      "detail-p-hearing-02",
+      "detail-p-hearing-03",
+      "detail-p-hearing-04",
+      "course10-01",
+      "course10-02",
+      "course10-03",
+      "course10-04",
+      "course10-05",
+      "course10-06",
+      "course10-07",
+      "course10-08"
+    ],
+    "knownRepresentationAndMemoryDoNotImplementUnknownItemProtocol": true,
+    "currentRendererHasNoStaffClefs": true
+  },
+  "validation": {
+    "module": "tools/piano-lesson-plan.cjs",
+    "actualConsumer": "tools/piano-skill-coverage.cjs",
+    "result": {
+      "planCount": 6,
+      "dependencyOrder": [
+        "detail-p-held-voice-01",
+        "detail-p-held-voice-02",
+        "detail-p-ear-direction-01",
+        "detail-p-ear-echo-01",
+        "detail-p-read-treble-01",
+        "detail-p-read-bass-01"
+      ]
+    },
+    "reproductionBefore": {
+      "scope": "Actual coverage builder, isolated in-memory backlog; no user files changed",
+      "results": [
+        {
+          "name": "self-preparation",
+          "acceptedBeforeFix": true,
+          "error": null
+        },
+        {
+          "name": "mutual-preparation-cycle",
+          "acceptedBeforeFix": true,
+          "error": null
+        },
+        {
+          "name": "self-display-anchor",
+          "acceptedBeforeFix": true,
+          "error": null
+        }
+      ]
+    },
+    "reproductionAfter": {
+      "scope": "Actual current coverage builder with complete, otherwise valid in-memory future specifications",
+      "results": [
+        {
+          "name": "self-preparation",
+          "rejectedAfterFix": true,
+          "error": "Invalid planned lesson future-self: unknown, repeated or self preparation"
+        },
+        {
+          "name": "mutual-preparation-cycle",
+          "rejectedAfterFix": true,
+          "error": "Planned preparation/anchor cycle: future-a -> future-b -> future-a"
+        },
+        {
+          "name": "self-display-anchor",
+          "rejectedAfterFix": true,
+          "error": "Invalid planned lesson future-anchor: unknown or self display anchor"
+        }
+      ]
+    },
+    "semanticPedagogicalIndependenceCertified": false,
+    "allPriorBacklogReconstructsExactly": true,
+    "requiresSourcesAndExplicitPianoAssignments": true,
+    "doesNotRegisterOrGradeLessons": true
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 440,
+    "failed": 0,
+    "newTests": 8,
+    "durationMs": 177387.3988,
+    "log": "tmp/piano-batch-43-tests.log",
+    "focusedLog": "tmp/piano-batch-43-focused.log",
+    "newTestFile": "tests/piano-lesson-plan.test.cjs"
+  },
+  "counts": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 80,
+    "individuallyMappedToDomain": 80,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "preservation": {
+    "releaseVersion": "23.5.23",
+    "runtimeLessonsUnchanged": 570,
+    "allAssessmentFingerprintsUnchanged": true,
+    "allInstructionsUnchanged": true,
+    "allIdsThemesAndOrderUnchanged": true,
+    "catalogExportMetadata": {
+      "savedAtIsVolatile": true,
+      "rawExportHashCompared": false,
+      "beforeRawHash": "37c9f0c74fddcb037bc66a211b63180a255147e2b264665881a03a23ee81c3d2",
+      "afterRawHash": "f6e080b48661d59b0d26f335de7bf8239c26c46922777c5ea55592161fd71085"
+    },
+    "protectedFiles": {
+      "index.html": {
+        "before": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "after": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "same": true
+      },
+      "chopin-theme.js": {
+        "before": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "after": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "same": true
+      },
+      "audio-transcriber.js": {
+        "before": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "after": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      },
+      "beginner-fingering.js": {
+        "before": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "after": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "after": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "same": true
+      },
+      "curriculum.js": {
+        "before": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "after": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "same": true
+      },
+      "curriculum-plan.js": {
+        "before": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "after": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "same": true
+      },
+      "catalog-sections.js": {
+        "before": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "after": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "same": true
+      },
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "lesson-quality.js": {
+        "before": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "after": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "piano-lesson-development.js": {
+        "before": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "after": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "same": true
+      },
+      "piano-learning-ui.js": {
+        "before": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "after": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "same": true
+      },
+      "catalog-transfer.js": {
+        "before": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "after": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "same": true
+      },
+      "music-document.js": {
+        "before": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "after": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "same": true
+      },
+      "piano-catalog-adapter.js": {
+        "before": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "after": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "same": true
+      },
+      "catalog-sections.css": {
+        "before": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "after": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "same": true
+      },
+      "piano-learning-ui.css": {
+        "before": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "after": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "package.json": {
+        "before": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "after": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "same": true
+      }
+    },
+    "webReleaseUnchanged": true,
+    "webFiles": {
+      "audio-transcriber.js": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+      "beginner-fingering.js": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+      "catalog-sections.css": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+      "catalog-sections.js": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+      "catalog-transfer.js": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+      "chopin-theme.js": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+      "curriculum-plan.js": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+      "curriculum.js": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+      "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+      "index.html": "e09c4e754cddbb67f5de5c73df821d547b1a972fe81c85c1a1849f9fd203cd20",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "lesson-quality.js": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "music-document.js": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+      "piano-catalog-adapter.js": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+      "piano-learning-ui.css": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+      "piano-learning-ui.js": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+      "piano-lesson-development.js": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+      "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "web-release.json": "152cb7f3a4ce39a40f664eec5330a086af0d48173c6b3651151a622ce48549d3",
+      "web-runtime.js": "a6945e27642c8b63df58171bab1d8287f9fac67e2ca35a74a7d8c80016440280"
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "newPrimarySources": [
+    {
+      "id": "rcm-ear-training-2026-11-06",
+      "author": "The Royal Conservatory of Music",
+      "title": "Ear Training: introductory activity types",
+      "url": "https://www.rcmusic.com/learning/digital-learning/rcm-online-ear-training-rcm-online-sight-reading/ear-training",
+      "section": "Explore what is included in each Level: Prep A & B",
+      "evidence": "Introductory tasks distinguish pitch direction, pitch patterns, melody playback and rhythm. Used to separate direction-choice and melody-reproduction goals.",
+      "limits": "Activity overview, not an exact exercise, fingering, tempo, scoring threshold or endorsement of the project.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "planningApplications": [
+        {
+          "batch": "2026-11-06-19",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "plannedLessonIds": [
+            "detail-p-ear-direction-01",
+            "detail-p-ear-echo-01"
+          ],
+          "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+        }
+      ]
+    },
+    {
+      "id": "rcm-sight-reading-2026-11-06",
+      "author": "The Royal Conservatory of Music",
+      "title": "Sight Reading: Guided Practice and Independent Practice",
+      "url": "https://www.rcmusic.com/learning/digital-learning/rcm-online-ear-training-rcm-online-sight-reading/sight-reading",
+      "section": "Guided Practice: Rhythm reading / Sight playing; Independent Practice",
+      "evidence": "Before playing, analyse counting, patterns and fingering; guided preparation and independent work have different purposes.",
+      "limits": "Our first pitch-to-key tasks are preparation, not a claim that a complete reading test or RCM exam is implemented.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "planningApplications": [
+        {
+          "batch": "2026-11-06-19",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "plannedLessonIds": [
+            "detail-p-read-treble-01",
+            "detail-p-read-bass-01"
+          ],
+          "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+        }
+      ]
+    },
+    {
+      "id": "rcm-piano-musicianship-2022-2026-11-06",
+      "author": "The Royal Conservatory of Music",
+      "title": "Piano Syllabus, 2022 Edition: Preparatory A Musicianship",
+      "url": "https://teacherportal.rcmusic.com/getattachment/57f3734d-97e5-4777-b67e-4b1111ee31a3/piano-syllabus-2022-edition.pdf",
+      "edition": "2022 Edition; checked 6 November 2026",
+      "section": "Printed page 9 / PDF page 9 (zero-based 8): Playback and Sight Reading / Playing",
+      "evidence": "Beginning playback stays within the first three major-scale notes; the initial tonic/reference is given. Reading distinguishes a right-hand treble melody and a left-hand bass melody with stepwise motion/repeats.",
+      "limits": "Own note sequences and project protocols; no printed examination example or parameter table copied. Exact rhythmic symbols in the table were not extracted or used. Four events are project demonstrations, not an examination equivalence.",
+      "validityCheck": {
+        "url": "https://rcmusic-production-strapi-media.s3.ca-central-1.amazonaws.com/rcm_musicianship_addendum_2024_1_f17d4fb439.pdf",
+        "section": "PDF page 2 / zero-based 1, instrument-specific note",
+        "evidence": "The 2024 addendum refers piano musicianship back to Piano Syllabus 2022; no blanket replacement of its piano requirements inferred."
+      },
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "planningApplications": [
+        {
+          "batch": "2026-11-06-19",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "plannedLessonIds": [
+            "detail-p-ear-echo-01",
+            "detail-p-read-treble-01",
+            "detail-p-read-bass-01"
+          ],
+          "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+        }
+      ]
+    },
+    {
+      "id": "abrsm-reading-aural-2025-26-2026-11-06",
+      "author": "ABRSM",
+      "title": "Practical Music Grades: Piano 2025 & 2026",
+      "url": "https://www.abrsm.org/sites/default/files/2024-06/Piano%202025%20%26%202026%20Prac%20syllabus%2020240524_access.pdf",
+      "edition": "2025 & 2026 specification; valid through 31 December 2026; checked 6 November 2026",
+      "section": "Printed p. 15 (PDF page 16 / zero-based 15): About the test and Fingering; printed pp. 45–46 (PDF pages 46–47 / zero-based 45–46): Aural tests and Initial Grade C",
+      "evidence": "Reading uses previously unseen music with preparation; fingering is guidance. Initial sung echoes use a limited tonic-to-mediant range with a given start, distinct from reading.",
+      "limits": "Our MIDI playback response is not ABRSM sung echo; no vocal assessment, exam timing, copied phrase or board approval claimed. Project rules for freshness/history are an implementation design.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "planningApplications": [
+        {
+          "batch": "2026-11-06-19",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "plannedLessonIds": [
+            "detail-p-ear-echo-01",
+            "detail-p-read-treble-01",
+            "detail-p-read-bass-01"
+          ],
+          "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+        }
+      ]
+    },
+    {
+      "id": "ou-staff-clefs-2026-11-06",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: clefs, great staff and middle C",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-2.2",
+      "section": "Sections 2.2 Clefs; 2.3 The great staff; 2.4 Middle C and ledger lines",
+      "additionalUrls": [
+        "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-2.3",
+        "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-2.4"
+      ],
+      "evidence": "Treble G4 anchors the second line from below; bass F3 anchors the fourth. Middle C uses a ledger line. C4/D4/E4 and C3/D3/E3 positions are derived independently by adjacent diatonic positions from those anchors.",
+      "limits": "Read explanatory text. Requests for Example 6/7 images returned 403; no claim to have visually inspected these figures. Exact staff rendering remains a future independently checked stage; source does not assign our hand/fingers.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "planningApplications": [
+        {
+          "batch": "2026-11-06-19",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "plannedLessonIds": [
+            "detail-p-read-treble-01",
+            "detail-p-read-bass-01"
+          ],
+          "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+        }
+      ]
+    }
+  ],
+  "reusedFingeringSource": {
+    "id": "kovarsky-fingering-context-2026-11-05",
+    "recheckedInThisBatch": false
+  },
+  "sourceLedgerEntries": 36,
+  "checks": {
+    "coverageAuditPassed": true,
+    "otherMusicalAuditsRerun": false,
+    "reason": "All runtime music, instructions and assessment signatures plus protected executable files match the pre-stage checkpoint; no new music/evaluator/UI risk.",
+    "browserRerun": false,
+    "webRebuild": false,
+    "reasonForNoBrowserOrBuild": "No runtime/interface or public artifact changed; full suite still covers static routes and preservation.",
+    "typescriptRerun": false,
+    "reasonForNoTypeCheck": "No declaration or TypeScript consumer changed.",
+    "gitDiffCheckPassed": true
+  },
+  "skills": {
+    "findSkillsLeaderboardChecked": true,
+    "existingPrimaryProjectSkillsReused": true,
+    "webGuidelinesReadForFutureRequirementsOnly": true,
+    "newInstallations": false
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T06:37:42.929Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 49,
+    "remainingPercent": 51,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "firstExposureProtocolImplemented": false,
+    "earOrReadingCreditAwarded": false,
+    "staffRendererImplemented": false,
+    "fullReactNextMigrationComplete": false,
+    "domainBought": false,
+    "deployed": false,
+    "guitarWritePerformed": false,
+    "portalServicesChanged": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "staff-pitch-contract-and-reader",
+    "action": "Выделить чистый контракт нотного представления для шести подготовленных натуральных высот: C4/D4/E4 в скрипичном и C3/D3/E3 в басовом ключе. Вход брать из music-document v1 с сохранением ID, высот и времени; явно задавать ключ/нотацию, не выводить руку из ключа и не придумывать энгармоническое написание из MIDI. Неподдержанные случаи показывать как ограничения. Проверить позиции независимыми эталонами −2/−1/0 и 3/4/5 и настоящий нотный стан в изолированном браузере. Затем использовать контракт в одном необязательном TypeScript/React-компоненте отдельного веб-пакета с учётом фактического Next.js портала; сохранить корневой запуск без установки зависимостей. Четыре плана ear-transfer остаются планами до реализации протокола первой пробы, истории показов/прослушиваний и отдельного прогресса. Действующий учёт: 422 записи / 158 MIDI-контрактов / 80 структурированных записей / 6 будущих планов; число самостоятельных проверенных целей не установлено.",
+    "files": [
+      "docs/PIANO_FIRST_EXPOSURE_PLAN.md",
+      "docs/piano-lesson-backlog.json",
+      "music-document.js",
+      "music-document.d.ts",
+      "piano-catalog-adapter.js",
+      "docs/WEB_APP_PLAN.md",
+      "docs/product-development-state.json"
+    ]
+  }
+}

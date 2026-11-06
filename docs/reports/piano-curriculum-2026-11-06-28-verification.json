@@ -1,0 +1,249 @@
+{
+  "batch": "2026-11-06-28",
+  "version": "23.5.28",
+  "changeType": "confirmed-stale-legacy-writer-data-loss-fix",
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "newPlans": 0,
+  "importImplemented": false,
+  "preparationContractsUnchanged": 6,
+  "reproduction": {
+    "reproduced": true,
+    "importedRecordLost": true,
+    "privateExtensionLost": true,
+    "lateAttemptStored": true,
+    "scope": "isolated stale-tab legacy writer; no user storage"
+  },
+  "tests": {
+    "mainPassed": 573,
+    "mainFailed": 0,
+    "mainDurationMs": 237297.1807,
+    "addedRegressions": 13,
+    "focusedAfterDisclosureFixPassed": 41,
+    "progressFinalPassed": 13,
+    "strictTypeScriptExitCode": 0,
+    "optionalReaderPassed": 6,
+    "optionalNextPassed": 4,
+    "nextLintEnabled": false,
+    "initialMain": {
+      "passed": 571,
+      "failed": 2,
+      "reason": "old tests read synchronous persistence; updated to await real store settlement",
+      "correctedFocusedPassed": 27
+    },
+    "postMainChange": "preserve native disclosure intent across asynchronous renders; then 41 focused tests and fresh browser fixture"
+  },
+  "musicalAudits": {
+    "lessonContradictions": 0,
+    "fingeringStructuralFailures": 0,
+    "beginner": {
+      "ok": true,
+      "lessonsChecked": 80,
+      "notesChecked": 1036,
+      "fingeringNotesChecked": 1036,
+      "issues": []
+    },
+    "unsupportedActions": 83,
+    "flaggedLessons": 10,
+    "curriculumHardErrors": [],
+    "preparationPlans": 2,
+    "requirements": 6
+  },
+  "counts": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 82,
+    "individuallyMappedToDomain": 82,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "preservation": {
+    "catalogRecordsUnchanged": 570,
+    "assessmentVersionsUnchanged": 570,
+    "allPreparationContractsUnchanged": 6,
+    "selectedFragmentExportPreservesAll570Records": true,
+    "protectedFiles": 58,
+    "unchangedProtectedFiles": 54,
+    "intentionalProtectedChanges": [
+      "index.html",
+      "package.json",
+      "piano-preparation-capture.js",
+      "piano-preparation-capture.d.ts"
+    ],
+    "newModules": [
+      "piano-progress-store.js",
+      "piano-progress-store.d.ts"
+    ],
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "readerChanged": [
+      "reader-release.json"
+    ],
+    "nextRuntimeChunksUnchanged": 17,
+    "ownedQaPortsClosed": {
+      "4211": true,
+      "4212": true
+    },
+    "artifacts": {
+      "web": {
+        "version": "23.5.28",
+        "mainReleaseVersion": "23.5.28",
+        "resources": 25,
+        "allHashesMatch": true
+      },
+      "reader": {
+        "version": "0.1.0",
+        "mainReleaseVersion": "23.5.28",
+        "resources": 6,
+        "allHashesMatch": true
+      },
+      "next": {
+        "version": "0.1.1",
+        "mainReleaseVersion": "23.5.28",
+        "resources": 30,
+        "allHashesMatch": true
+      }
+    }
+  },
+  "browser": {
+    "syntheticMidiAndClock": true,
+    "physicalMidiTested": false,
+    "pending": {
+      "operations": 1,
+      "storedRaw": "{\"mine\":{\"personal\":\"QA: сохранить личное поле\",\"history\":{\"old\":{\"memory\":true}}}}",
+      "draft": {
+        "mine": {
+          "personal": "QA: сохранить личное поле",
+          "history": {
+            "old": {
+              "memory": true
+            }
+          }
+        },
+        "course02-02": {
+          "version": 1,
+          "instrument": "piano",
+          "lessonId": "course02-02",
+          "fingerprint": "b623c94b",
+          "history": {},
+          "firstCleanAt": 1793973548291,
+          "takes": [
+            {
+              "at": 1793973548291,
+              "mode": "challenge"
+            }
+          ],
+          "cleanTakes": 1,
+          "memory": false,
+          "retained": false,
+          "ready": false,
+          "melodiajestPersistence": {
+            "version": 1,
+            "receipts": [
+              {
+                "id": "7ae97ba7-caf1-4355-a3eb-f0d613cbbd52",
+                "lessonId": "course02-02",
+                "fingerprint": "b623c94b",
+                "mode": "challenge",
+                "clean": true,
+                "at": 1793973548291
+              }
+            ]
+          }
+        }
+      },
+      "wholeMidiEntries": 1,
+      "confirmedSummary": "Чистые повторы: 0 / 3 · память: пока нет · через сутки: пока нет"
+    },
+    "merged": {
+      "right": 1,
+      "left": 1,
+      "privateRow": {
+        "personal": "QA: сохранить личное поле",
+        "history": {
+          "old": {
+            "memory": true
+          }
+        }
+      },
+      "legacyRecovery": null,
+      "wholeMidiEntries": 2
+    },
+    "staleTab": {
+      "right": 1,
+      "left": 2,
+      "privatePreserved": true
+    },
+    "panelOpenAfterAsync": "",
+    "readback": {
+      "pending": 1,
+      "storedLeft": 3,
+      "confirmedSummary": "Чистые повторы: 2 / 3 · память: пока нет · через сутки: пока нет",
+      "operationId": "a08153e3-edd6-4466-933c-37f99ced5005"
+    },
+    "afterRetry": {
+      "right": 1,
+      "left": 3,
+      "leftReceipts": 3,
+      "privatePreserved": true,
+      "recoveryAbsent": true
+    },
+    "panelStaysOpen": true,
+    "memory": {
+      "json": 0,
+      "materials": 0,
+      "notes": 0
+    },
+    "errorsB": [],
+    "errorsA": [],
+    "mobile": {
+      "buttons": [
+        {
+          "height": 44,
+          "text": "Подготовить JSON прогресса"
+        }
+      ],
+      "client": 376,
+      "panelWidth": 318.3999938964844,
+      "scroll": 376,
+      "textareaWidth": 318.3999938964844
+    },
+    "normalExport": {
+      "version": 2,
+      "completeCopy": true,
+      "legacyRecoveryAbsent": true
+    },
+    "errorsNormal": []
+  },
+  "dependencyFreeLocalServer": {
+    "loopbackOnly": true,
+    "assets": 5,
+    "allServedExact": true,
+    "contentApiRequested": false,
+    "nativeEndpointRequested": false,
+    "trainerContentUnchanged": true
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T14:17:40.639Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 58,
+    "remainingPercent": 42,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "physicalMidiTested": false,
+  "nativeBeforeUnloadPromptConfirmed": false,
+  "independentTeacherReviewed": false,
+  "oldLoadedTabsMustReload": true,
+  "cooperativeLockOnly": true,
+  "combinedExportSchemaVersion": 2,
+  "optionalLegacyRecoverySchemaVersion": 1,
+  "forbiddenIncidentalActionsPerformed": [],
+  "next": "preparation-v2-import-validation-and-preservation"
+}

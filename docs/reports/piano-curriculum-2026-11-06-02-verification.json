@@ -1,0 +1,260 @@
+{
+  "batch": "2026-11-06-02",
+  "triggeredAt": "2026-11-05T19:24:08.575Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.7",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonIds": [
+    "course09-07"
+  ],
+  "newDistinctGoalCount": 0,
+  "sameGoalAs": "course09-02",
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 418,
+    "checkedMidiRouteLessons": 154,
+    "withStructuredProvenance": 57,
+    "individuallyMappedToDomain": 57,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 2,
+    "goalGroupUpperBound": 416,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 290,
+    "failed": 0,
+    "durationMs": 117765.5854,
+    "newTests": 6,
+    "logs": "tmp/piano-batch-26-tests.log",
+    "playbackAudioMocked": true,
+    "actualStartStopMidiAssessmentExecuted": true
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 418,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 566,
+        "pianoThemes": 91,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1279,
+        "beginnerChallenges": 154,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 418,
+        "checkedMidiRouteLessons": 154,
+        "withStructuredProvenance": 57,
+        "individuallyMappedToDomain": 57,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 2,
+        "goalGroupUpperBound": 416,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ]
+    }
+  },
+  "reproduction": {
+    "oldEditionAcceptedByOldContract": true,
+    "oldEditionAcceptedByNewContract": false,
+    "newEditionAccepted": true,
+    "oldEarlyAccepted": true,
+    "oldLateAccepted": true,
+    "sameOldScoreWithBoundedEarlyAccepted": false,
+    "sameOldScoreWithBoundedLateAccepted": false
+  },
+  "preservation": {
+    "diff": {
+      "missing": [],
+      "new": [],
+      "music": [
+        "course09-07"
+      ],
+      "instruction": [
+        "course09-07"
+      ],
+      "classification": []
+    },
+    "catalogOrderUnchanged": true,
+    "protectedHashes": {
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "midi-keyboard-settings.ini": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "practice-assessment.js": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+      "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "newFingerprint": "a124d1c9",
+    "previousFingerprint": "1a3225a8",
+    "fingersAndHandsUnchanged": true,
+    "otherOldLessonCountUnchanged": 565,
+    "oldSoundingBeats": 30,
+    "oldSpanBeats": 31,
+    "newSpanBeats": 32
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4182",
+    "version": "23.5.7",
+    "lessonId": "course09-07",
+    "compact": {
+      "height": 112,
+      "lineHeight": "22.4px",
+      "preview": "Повторение навыка «Ода к радости · продолжение».\nЗакрепи две подготовленные фразы подряд. В каждом окончании сохраняй полторы доли — полдоли — две доли. Для проверки из памяти выбери «Из памяти по MIDI»: нот, пальцев и разбора в этом режиме нет.\nПодготовка: отдельно сыграй обе проверенные фразы и заранее услышь их разные окончания — сначала D4, затем C4. Первые три такта каждой фразы состоят из четвертей; в четвёртом полторы доли, полдоли и две доли. Сохраняй правые пальцы 1–5 и новые нажатия повторных E4, G4, C4 и конечных пар. Можно послушать образец до первой ноты; затем начни самостоятельную попытку.",
+      "title": "Из памяти: Ода к радости"
+    },
+    "expanded": {
+      "correctSpan": true,
+      "sameGoalButton": "Ода к радости · продолжение",
+      "source": true
+    },
+    "navigation": {
+      "focus": "lesson-name",
+      "title": "Ода к радости · продолжение"
+    },
+    "memoryBeforeExplicitAssistance": {
+      "cardAbsent": true,
+      "catalogAbsent": true,
+      "dottedHintAbsent": true,
+      "initialStatus": "",
+      "keysAbsent": true,
+      "live": "polite",
+      "octaveAbsent": true,
+      "title": "Игра из памяти"
+    },
+    "assistedAfterFirstManualKeyAndEditor": {
+      "editorClosed": true,
+      "role": "status",
+      "sourceHintsAbsent": true,
+      "text": "В этой попытке использована подсказка. Зачёт памяти не записывается; начни заново без подсказок."
+    },
+    "reset": {
+      "status": ""
+    },
+    "hiddenAfterReload": {
+      "cardAbsent": true,
+      "mode": "hidden",
+      "restoreEnabled": true
+    },
+    "mobile": {
+      "client": 376,
+      "height": 112,
+      "lineHeight": "22.4px",
+      "scroll": 376
+    },
+    "errors": [],
+    "screenshots": [
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-2026-11-06-02-memory.jpg",
+      "C:/Users/Alexander/Documents/web/pianosjest/docs/qa/piano-2026-11-06-02-combined.jpg"
+    ],
+    "disclosureKeyboard": true,
+    "audioPreviewActivatedInBrowser": false,
+    "physicalMidiTested": false,
+    "previewAssistanceTestedInActualExecutableCodeWithMockedAudio": true,
+    "ownedQaTabClosed": true,
+    "ownedQaPreviewClosed": true,
+    "viewportReset": true,
+    "screenshotsVisuallyVerified": true
+  },
+  "sourceEvidenceIds": [
+    "mutopia-528-ode-2026-11-05",
+    "ou-dots-and-ties-2026-11-05",
+    "duke-simmons-small-goals-2026-11-05"
+  ],
+  "sourceArchiveHashes": {
+    "pdf": {
+      "path": "docs/sources/mutopia-528-ode-a4.pdf",
+      "sha256": "b11e9f934de259ad3b9231e03000e8676cc5e5b85ea917cb387de06a10fe7864"
+    },
+    "lilypond": {
+      "path": "docs/sources/mutopia-528-ode.ly",
+      "sha256": "a0c865aa9f71221605362622d281405071e0734540e86ce131131757cc803a71"
+    }
+  },
+  "sourceEntryCount": 22,
+  "build": {
+    "assetCount": 18,
+    "allManifestHashesAndBytesMatch": true,
+    "currentSourceMatchesArtifact": true,
+    "onlyAllowlistedPublicFiles": true,
+    "serverPublished": false
+  },
+  "quotaPolicy": "until-exhausted",
+  "quota": {
+    "checkedOn": "2026-11-06",
+    "checkedAt": "2026-11-05T19:41:42.844Z",
+    "ordinaryUsageAllowed": true,
+    "usedPercent": 35,
+    "remainingPercent": 65,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031,
+    "spendControlReached": false,
+    "otherWindowExhausted": false,
+    "otherWindowUnavailable": false
+  },
+  "limitations": [
+    "MIDI does not prove fingers or artistic quality; no physical instrument or teacher review.",
+    "Audio preview was mocked in executable-code tests; real browser verified explicit editor assistance without enabling audio.",
+    "A known repeated melody is not an independent ear test or a new distinct goal.",
+    "The final rest is not observed after the last note-off.",
+    "416 is only an upper bound after two explicit repetition links; full deduplication remains.",
+    "Six legacy long-hold candidates, early cross-hand prerequisites, held voices and pedal still need work.",
+    "No completed React/Next migration, cloud account, domain purchase or deployment."
+  ],
+  "ownedQaTabClosed": true,
+  "ownedQaPreviewClosed": true,
+  "viewportReset": true,
+  "guitarFilesChanged": false,
+  "commitPushOrDeployment": false
+}

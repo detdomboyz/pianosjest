@@ -1,0 +1,35 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\web-app",
+    "paths": {
+      "react": [
+        "C:\\Users\\Alexander\\Documents\\web\\libre\\node_modules\\@types\\react\\index.d.ts"
+      ],
+      "react/*": [
+        "C:\\Users\\Alexander\\Documents\\web\\libre\\node_modules\\@types\\react\\*"
+      ],
+      "next": [
+        "C:\\Users\\Alexander\\Documents\\web\\libre\\node_modules\\next"
+      ],
+      "next/*": [
+        "C:\\Users\\Alexander\\Documents\\web\\libre\\node_modules\\next\\*"
+      ]
+    },
+    "typeRoots": [
+      "C:\\Users\\Alexander\\Documents\\web\\libre\\node_modules\\@types"
+    ]
+  },
+  "include": [
+    "../.next/types/**/*.ts",
+    "../app/**/*.ts",
+    "../app/**/*.tsx",
+    "../generated/**/*.json",
+    "../next-env.d.ts",
+    "../src/**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\web-app\\node_modules"
+  ]
+}

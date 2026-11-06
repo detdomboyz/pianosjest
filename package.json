@@ -1,0 +1,21 @@
+{
+  "name": "piano-blind-trainer",
+  "version": "23.5.30",
+  "private": true,
+  "scripts": {
+    "start": "node --preserve-symlinks --preserve-symlinks-main server.cjs",
+    "build:web": "node --preserve-symlinks --preserve-symlinks-main tools/build-web.cjs",
+    "preview:web": "node --preserve-symlinks --preserve-symlinks-main tools/serve-web.cjs",
+    "test": "node --preserve-symlinks --preserve-symlinks-main --test tests",
+    "audit:fingering": "node --preserve-symlinks --preserve-symlinks-main tools/audit-fingering.cjs",
+    "audit:piano-coverage": "node --preserve-symlinks --preserve-symlinks-main tools/piano-skill-coverage.cjs",
+    "audit:lessons": "node --preserve-symlinks --preserve-symlinks-main tools/inspect-pedagogy.cjs",
+    "audit:curriculum": "node --preserve-symlinks --preserve-symlinks-main tools/audit-curriculum.cjs",
+    "audit:music-document": "node --preserve-symlinks --preserve-symlinks-main tools/audit-music-document.cjs",
+    "audit:reading-bank": "node --preserve-symlinks --preserve-symlinks-main tools/piano-reading-catalog-audit.cjs",
+    "audit:preparations": "node --preserve-symlinks --preserve-symlinks-main tools/audit-piano-preparation.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

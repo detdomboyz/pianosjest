@@ -1,0 +1,4 @@
+import type {Metadata} from 'next';
+import './globals.css';
+export const metadata:Metadata={title:{default:'MelodiaJest — чтение нот',template:'%s · MelodiaJest'},description:'Короткая практика чтения высот на настоящем пианино.',robots:{index:false,follow:false}};
+export default function Layout({children}:{readonly children:React.ReactNode}){return <html lang="ru"><head><meta name="theme-color" content="#091321"/><link rel="preload" href="/Bravura.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/></head><body><a className="skip" href="#main">К практике</a><header className="site-head"><a className="brand" href="/" translate="no">MelodiaJest</a><span>Пианино · чтение нот</span></header>{children}<footer className="site-footer">Музыкальные знаки: Bravura, Steinberg · <a href="/OFL-Bravura.txt">Лицензия шрифта</a></footer></body></html>;}

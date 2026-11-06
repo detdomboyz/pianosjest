@@ -1,0 +1,887 @@
+{
+  "batch": "2026-11-06-13",
+  "triggeredAt": "2026-11-06T00:16:07.991Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.18",
+  "status": "implemented-and-tested",
+  "newLessonCount": 0,
+  "reviewedLessonCount": 4,
+  "reviewedLessonIds": [
+    "detail-p-release-01",
+    "detail-p-black-01",
+    "detail-p-black-03",
+    "detail-p-black-04"
+  ],
+  "changedAssessmentContractIds": [],
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 421,
+    "checkedMidiRouteLessons": 157,
+    "withStructuredProvenance": 71,
+    "individuallyMappedToDomain": 71,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 414,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 379,
+    "failed": 0,
+    "durationMs": 174611.1261,
+    "newTests": 9,
+    "log": "tmp/piano-batch-37-tests.log",
+    "focused": {
+      "passed": 14,
+      "log": "tmp/piano-batch-37-focused.log"
+    },
+    "scope": "Actual shipped code, synthetic MIDI controller events and isolated browser; not physical or teacher validation",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 421,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 569,
+        "pianoThemes": 93,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1282,
+        "beginnerChallenges": 157,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "schemaVersion": 5,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 421,
+        "checkedMidiRouteLessons": 157,
+        "withStructuredProvenance": 71,
+        "individuallyMappedToDomain": 71,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 6,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 414,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-03",
+          "lessonIds": [
+            "course04-03",
+            "detail-p-rhythm-01"
+          ]
+        },
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "reviewedLessons": [
+    {
+      "id": "detail-p-release-01",
+      "title": "Правая: окончание одного звука",
+      "midiNotes": [
+        [
+          60
+        ],
+        [
+          60
+        ],
+        [
+          60
+        ],
+        [
+          60
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "durationsBeats": [
+        0.65,
+        0.65,
+        0.65,
+        0.65
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.35,
+        0.3500000000000001,
+        0.3500000000000001
+      ],
+      "bpm": 56,
+      "articulation": "nonlegato",
+      "assessmentFingerprint": "d1eab36d",
+      "previousAssessmentFingerprint": "d1eab36d",
+      "stage": "p1",
+      "after": "course01-04",
+      "requires": [
+        "course01-01"
+      ],
+      "nextLessonId": "detail-p-release-03",
+      "originalReview": {
+        "id": "early-release-v1",
+        "sourceFingerprint": "9e013289",
+        "reviewedFingerprint": "b7082afc"
+      },
+      "preparationReview": {
+        "id": "right-release-black-groups-v1",
+        "sourceFingerprint": "b7082afc",
+        "reviewedFingerprint": "c4332c6e",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Разделить нажатие и отпускание одного звука правым большим пальцем, сохраняя равномерные вступления.",
+        "context": "Точное окончание ноты нужно в мелодии, повторяющихся звуках и басовом сопровождении: тишина и следующая атака тоже входят в музыкальную фразу.",
+        "sourceNote": "Ноты, пальцы и ритм придуманы для этой учебной задачи. Dumlavwalla объясняет удобную посадку и гибкое запястье; Черни обсуждает окончания нот. Источники не предписывают эту последовательность, 56 BPM или числовые допуски проекта. Подготовка этой редакции ссылается на правую C4; первоначальная левая пара сохраняется в истории инструкции. Счёт, ноты, пальцы и музыкальный зачёт текущей версии не меняются.",
+        "history": "Карл Черни в третьем письме «Briefe über den Unterricht auf dem Pianoforte», с. 20–21, обсуждает точное окончание нот: и запоздалое, и слишком раннее отпускание меняет музыку. Это историческая рекомендация о времени; данное упражнение создано проектом."
+      },
+      "pitchSpelling": null
+    },
+    {
+      "id": "detail-p-black-01",
+      "title": "Правая: группа из двух чёрных",
+      "midiNotes": [
+        [
+          61
+        ],
+        [
+          63
+        ],
+        [
+          61
+        ],
+        [
+          63
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.15000000000000002,
+        0.1499999999999999,
+        0.1499999999999999
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "e2814691",
+      "previousAssessmentFingerprint": "e2814691",
+      "stage": "p3",
+      "after": "course05-08",
+      "requires": [
+        "course02-08",
+        "detail-p-release-03"
+      ],
+      "nextLessonId": "detail-p-black-03",
+      "originalReview": null,
+      "preparationReview": {
+        "id": "right-release-black-groups-v1",
+        "sourceFingerprint": "145c98ea",
+        "reviewedFingerprint": "d305e5e8",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Подготовить правую опору на двух чёрных и согласовать отдельные нажатия соседних пальцев 2–3 в обоих направлениях.",
+        "context": "Чёрные клавиши образуют удобные зрительные и осязательные группы для новых позиций и тональностей. Здесь изучается короткое подготовленное движение; перенос и полные гаммы требуют своих этапов.",
+        "sourceNote": "Ноты, регистр, конкретные пальцы, последовательность, 56 BPM и длительности выбраны проектом. Kovarsky, The Basics и Scenario One, подтверждает нумерацию и предварительный выбор подходящей позиции; Dumlavwalla, Inconsistent Hand Shape, — поддержанную руку и гибкое запястье. Источники не предписывают эти точные упражнения и допуски, не утверждают их педагогическую или физическую проверку."
+      },
+      "pitchSpelling": null
+    },
+    {
+      "id": "detail-p-black-03",
+      "title": "Правая: группа из трёх чёрных",
+      "midiNotes": [
+        [
+          66
+        ],
+        [
+          68
+        ],
+        [
+          70
+        ],
+        [
+          68
+        ],
+        [
+          66
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.15000000000000002,
+        0.1499999999999999,
+        0.1499999999999999,
+        0.1499999999999999
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "da3754b5",
+      "previousAssessmentFingerprint": "da3754b5",
+      "stage": "p3",
+      "after": "detail-p-black-02",
+      "requires": [
+        "detail-p-black-01"
+      ],
+      "nextLessonId": "detail-p-relocate-01",
+      "originalReview": null,
+      "preparationReview": {
+        "id": "right-release-black-groups-v1",
+        "sourceFingerprint": "1127202a",
+        "reviewedFingerprint": "253329ee",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Добавить третью правую опору под безымянным пальцем 4 в новой группе чёрных, согласовать подъём и обратное движение.",
+        "context": "Чёрные клавиши образуют удобные зрительные и осязательные группы для новых позиций и тональностей. Здесь изучается короткое подготовленное движение; перенос и полные гаммы требуют своих этапов.",
+        "sourceNote": "Ноты, регистр, конкретные пальцы, последовательность, 56 BPM и длительности выбраны проектом. Kovarsky, The Basics и Scenario One, подтверждает нумерацию и предварительный выбор подходящей позиции; Dumlavwalla, Inconsistent Hand Shape, — поддержанную руку и гибкое запястье. Источники не предписывают эти точные упражнения и допуски, не утверждают их педагогическую или физическую проверку."
+      },
+      "pitchSpelling": null
+    },
+    {
+      "id": "detail-p-black-04",
+      "title": "Левая: три чёрные сверху вниз",
+      "midiNotes": [
+        [
+          58
+        ],
+        [
+          56
+        ],
+        [
+          54
+        ],
+        [
+          56
+        ],
+        [
+          58
+        ]
+      ],
+      "handsAndFingers": [
+        [
+          {
+            "hand": "left",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "left",
+            "num": 2
+          }
+        ]
+      ],
+      "startsBeats": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "durationsBeats": [
+        0.85,
+        0.85,
+        0.85,
+        0.85,
+        0.85
+      ],
+      "restsBeforeBeats": [
+        0,
+        0.15000000000000002,
+        0.1499999999999999,
+        0.1499999999999999,
+        0.1499999999999999
+      ],
+      "bpm": 56,
+      "articulation": "standard",
+      "assessmentFingerprint": "ef39f991",
+      "previousAssessmentFingerprint": "ef39f991",
+      "stage": "p3",
+      "after": "detail-p-black-03",
+      "requires": [
+        "detail-p-black-02"
+      ],
+      "nextLessonId": "detail-p-relocate-02",
+      "originalReview": null,
+      "preparationReview": {
+        "id": "right-release-black-groups-v1",
+        "sourceFingerprint": "4f2c14ff",
+        "reviewedFingerprint": "b0f3ae76",
+        "previousInstructionPreserved": true
+      },
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Упражнение проекта",
+        "purpose": "Подготовить левую группу трёх чёрных, связать спуск 2–3–4 и возвращение 4–3–2, различая направление и номера пальцев.",
+        "context": "Чёрные клавиши образуют удобные зрительные и осязательные группы для новых позиций и тональностей. Здесь изучается короткое подготовленное движение; перенос и полные гаммы требуют своих этапов.",
+        "sourceNote": "Ноты, регистр, конкретные пальцы, последовательность, 56 BPM и длительности выбраны проектом. Kovarsky, The Basics и Scenario One, подтверждает нумерацию и предварительный выбор подходящей позиции; Dumlavwalla, Inconsistent Hand Shape, — поддержанную руку и гибкое запястье. Источники не предписывают эти точные упражнения и допуски, не утверждают их педагогическую или физическую проверку. Hutchinson, §1.5 и абзац после Figure 1.5.1, перечисляет F♯=G♭, G♯=A♭, A♯=B♭ на фортепиано. В данном регистре это MIDI 54/56/58; написание и текущая подпись клавиши различаются, высоты не меняются."
+      },
+      "pitchSpelling": "flat-alias-v1"
+    }
+  ],
+  "flatAliasDisplay": {
+    "module": "piano-learning-ui.js",
+    "contract": "piano-learning-ui.d.ts",
+    "function": "flatNameHtml",
+    "explicitProfile": "flat-alias-v1",
+    "onlyExplicitSingleBlackKey": true,
+    "scorePitchAndSpellingUnchanged": true,
+    "memoryEarlyReturn": true,
+    "examples": [
+      {
+        "midi": 54,
+        "html": "<p class=\"hint flat-name-hint\"><b>Название ноты:</b> G♭3 и F#3 — одна клавиша в этом упражнении.</p>"
+      },
+      {
+        "midi": 56,
+        "html": "<p class=\"hint flat-name-hint\"><b>Название ноты:</b> A♭3 и G#3 — одна клавиша в этом упражнении.</p>"
+      },
+      {
+        "midi": 58,
+        "html": "<p class=\"hint flat-name-hint\"><b>Название ноты:</b> B♭3 и A#3 — одна клавиша в этом упражнении.</p>"
+      }
+    ],
+    "invalidInputsCovered": true
+  },
+  "sourceLedgerEntries": 24,
+  "sources": [
+    {
+      "id": "duke-simmons-small-goals-2026-11-05",
+      "author": "Bob Duke and Amy Simmons",
+      "title": "Tips for Effective Practice",
+      "url": "https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-13",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": false,
+        "lessonIds": [
+          "detail-p-release-01",
+          "detail-p-black-01",
+          "detail-p-black-03",
+          "detail-p-black-04"
+        ],
+        "section": "Previously verified small-goal and return-after-break practice context",
+        "application": "Reuse a short practice goal, a separate changed-phrase transfer and a return after a break.",
+        "limits": "Not reread this batch. The 3–5 minute block, exact transfer phrases and repetition counts are project choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+      }
+    },
+    {
+      "id": "dumlavwalla-basic-technique-2026-11-05",
+      "author": "Dr. Diana Dumlavwalla",
+      "title": "Fix It: Tips for Teaching Basic Piano Technique",
+      "url": "https://hub.yamaha.com/music-educators/instruments/piano/piano-pedagogy-fix-basic-technique/",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-13",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-release-01",
+          "detail-p-black-01",
+          "detail-p-black-03",
+          "detail-p-black-04"
+        ],
+        "section": "Fix It: Tension in Arms; Fix It: Inconsistent Hand Shape, supported joints and flexible-wrist paragraph",
+        "application": "Reread supported hand shape and flexible wrist. Prepare the next black-key group after releasing the old position; stop and inspect an uncomfortable position.",
+        "limits": "No forced stretching, assisted arm-drop exercise, medical claim, exact project fingering or physical validation inferred.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+      }
+    },
+    {
+      "id": "czerny-letter3-release-2026-11-05",
+      "author": "Carl Czerny",
+      "title": "Briefe über den Unterricht auf dem Pianoforte, Dritter Brief: Über Takt, Eintheilung und Fingersatz",
+      "url": "https://www.koelnklavier.de/quellen/czer-brf/brief-03.html",
+      "edition": "Wien: A. Diabelli und Comp., undated on the transcribed title page. Digital primary-text transcription by KölnKlavier / Wolfgang Lempfrid.",
+      "application": {
+        "batch": "2026-11-06-13",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-release-01"
+        ],
+        "section": "Dritter Brief, original pagination pp. 20–21; KölnKlavier transcription",
+        "application": "Reread Czerny distinguishing held sounds from silent rests and early/late release. Retain the general historical context for deliberate endings; change only the preparation to right C4.",
+        "limits": "Transcription reread; no new scan comparison. The four repeated C4 notes, thumb choice, 0.65/0.35 ratio and 56 BPM are project choices, not a Czerny exercise or an endorsement.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+      }
+    },
+    {
+      "id": "kovarsky-fingering-context-2026-11-05",
+      "author": "Jerry Kovarsky",
+      "title": "The Basics Of Piano Keyboard Fingering",
+      "url": "https://hub.yamaha.com/keyboards/k-how-to/the-basics-of-piano-keyboard-fingering/",
+      "edition": "Online primary article; section in application",
+      "application": {
+        "batch": "2026-11-06-13",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-black-01",
+          "detail-p-black-03",
+          "detail-p-black-04"
+        ],
+        "section": "Opening planning paragraph; The Basics; Scenario One including black-key positions; Scenario Three alternatives",
+        "application": "Reread piano finger numbers 1–5 and planning a prepared position. Independently checked retained right 2–3 / 2–3–4–3–2 and left 2–3–4–3–2 against actual MIDI and direction.",
+        "limits": "Does not prescribe these exact drills, numbers, course prerequisites, tempo or MIDI tolerances; large stretch demonstrations not assigned.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+      }
+    },
+    {
+      "id": "hutchinson-enharmonic-2026-11-05",
+      "author": "Robert Hutchinson",
+      "title": "Music Theory for the 21st-Century Classroom: 1.5 Enharmonic Notes",
+      "url": "https://musictheory.pugetsound.edu/mt21c/EnharmonicNotes.html",
+      "edition": "Online textbook, Section 1.5, Figure 1.5.1 and following paragraph",
+      "application": {
+        "batch": "2026-11-06-13",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "lessonIds": [
+          "detail-p-black-04"
+        ],
+        "section": "§1.5, paragraph immediately after Figure 1.5.1; list of five black-key sharp/flat pairs",
+        "application": "Reread F-sharp=G-flat, G-sharp=A-flat and A-sharp=B-flat on piano. Independently checked project MIDI 54/56/58 as G-flat3/A-flat3/B-flat3; display both names without rewriting sounding notes.",
+        "limits": "Same piano key does not make all written spellings interchangeable in notation. No exact fingers, rhythm, MIDI tolerances or independent hearing test supplied.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+      }
+    }
+  ],
+  "systemSourceApplications": [
+    {
+      "id": "hutchinson-enharmonic-2026-11-05",
+      "batch": "2026-11-06-13",
+      "verifiedOn": "2026-11-06",
+      "recheckedInThisBatch": true,
+      "scope": "Opt-in current-target flat/sharp piano-key alias; no score respelling or pitch changes",
+      "exampleLessonIds": [
+        "detail-p-black-04"
+      ],
+      "section": "§1.5, paragraph after Figure 1.5.1",
+      "application": "PianoLearningUI.flatNameHtml handles one explicit black-key MIDI target and correct octave; unknown values and profiles render no cue.",
+      "limits": "The profile and display format are project choices. No notation engine, chord respelling or universal enharmonic substitution is claimed.",
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md"
+    }
+  ],
+  "originalReproduction": {
+    "lessonId": "detail-p-black-04",
+    "description": "B♭3–A♭3–G♭3 пальцами 2–3–4 и обратно. Эти названия обозначают те же клавиши A♯–G♯–F♯.",
+    "currentTarget": "<div class=\"target-scroll\"><div class=\"big-next\">E</div><p class=\"hint\">A#3</p><p class=\"hint\"><b>Ритм:</b> такт 1, доля 1; 0,85 доли (911 мс).<br>Проверка выключена: сейчас важны только правильные клавиши.</p><p class=\"hint\"><b>Текущие опоры рук:</b><br>Левая: A#3<br><span class=\"finger-plan-badge\">Учебные назначения</span><br><span class=\"small-note-line\">1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.</span></p><p class=\"hint\"><b>Аппликатура текущей цели:</b><br>A#3: левая рука: палец 2 — указательный</p><p class=\"hint\"><b>Ближайший фрагмент:</b><br>E W Q W E</p></div>",
+    "issue": "Flat lesson names versus only sharp key label in the current target; same physical MIDI pitch."
+  },
+  "browser": {
+    "preparations": {
+      "detail-p-release-01": [
+        {
+          "id": "course01-01",
+          "name": "Правая: найди C4 / До"
+        }
+      ],
+      "detail-p-black-01": [
+        {
+          "id": "course02-08",
+          "name": "Мини-экзамен правой руки"
+        },
+        {
+          "id": "detail-p-release-03",
+          "name": "Правая: две ноты с просветом"
+        }
+      ],
+      "detail-p-black-03": [
+        {
+          "id": "detail-p-black-01",
+          "name": "Правая: группа из двух чёрных"
+        }
+      ],
+      "detail-p-black-04": [
+        {
+          "id": "detail-p-black-02",
+          "name": "Левая: группа из двух чёрных"
+        }
+      ]
+    },
+    "cards": [
+      {
+        "id": "detail-p-release-01",
+        "mode": "compact",
+        "preparations": [],
+        "target": "tC4Ритм: такт 1, доля 1; 0,65 доли (696 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: C4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C4: правая рука: палец 1 — большойБлижайший фрагмент:t t t t",
+        "title": "Правая: окончание одного звука"
+      },
+      {
+        "id": "detail-p-black-01",
+        "mode": "compact",
+        "preparations": [],
+        "target": "TC#4Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: C#4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C#4: правая рука: палец 2 — указательныйБлижайший фрагмент:T Y T Y",
+        "title": "Правая: группа из двух чёрных"
+      },
+      {
+        "id": "detail-p-black-03",
+        "mode": "compact",
+        "preparations": [],
+        "target": "IF#4Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: F#4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:F#4: правая рука: палец 2 — указательныйБлижайший фрагмент:I O P O I",
+        "title": "Правая: группа из трёх чёрных"
+      },
+      {
+        "id": "detail-p-black-04",
+        "mode": "compact",
+        "preparations": [],
+        "target": "EA#3Название ноты: B♭3 и A#3 — одна клавиша в этом упражнении.Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: A#3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:A#3: левая рука: палец 2 — указательныйБлижайший фрагмент:E W Q W E",
+        "title": "Левая: три чёрные сверху вниз"
+      }
+    ],
+    "navigation": [
+      {
+        "focus": "lesson-name",
+        "title": "Левая: группа из двух чёрных"
+      },
+      {
+        "focus": "lesson-name",
+        "title": "Правая: найди C4 / До"
+      }
+    ],
+    "consoleErrors": [],
+    "mobile": {
+      "clientWidth": 376,
+      "expanded": "false",
+      "flatCue": "Название ноты: B♭3 и A#3 — одна клавиша в этом упражнении.",
+      "flatScroll": 272,
+      "flatWidth": 272,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "title": "Левая: три чёрные сверху вниз"
+    },
+    "mobileKeyboard": {
+      "expanded": "true",
+      "focused": true,
+      "preparations": 1,
+      "collapsed": "false",
+      "collapsedFocused": true
+    },
+    "hiddenPersistence": {
+      "card": false,
+      "selected": "hidden",
+      "switch": true
+    },
+    "memory": {
+      "bpm": "40",
+      "card": false,
+      "durationLabels": 0,
+      "events": 0,
+      "flatCues": 0,
+      "keys": 0,
+      "materialMode": "expanded",
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0,
+      "target": "Играй из памяти, сохраняя пульс. Подсказки скрыты."
+    },
+    "mobilePractice": {
+      "clientWidth": 376,
+      "flatCue": "Название ноты: B♭3 и A#3 — одна клавиша в этом упражнении.",
+      "flatScroll": 272,
+      "flatWidth": 272,
+      "scrollWidth": 376
+    },
+    "screenshot": "docs/qa/piano-2026-11-06-13-flat-black-keys.jpg"
+  },
+  "preservation": {
+    "changedMusic": [],
+    "changedInstructions": [
+      "detail-p-release-01",
+      "detail-p-black-01",
+      "detail-p-black-03",
+      "detail-p-black-04"
+    ],
+    "newLessonIds": [],
+    "priorLessonCount": 569,
+    "currentLessonCount": 569,
+    "unchangedMusicAndInstructions": 565,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.18",
+    "publicAssets": 18,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "ccc44ca8e3066a185772828cf87a05dc72694d9bac111764ebf7d683a4035dfc",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased",
+    "nativeCompanion": false
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T00:39:17.296Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 42,
+    "remainingPercent": 58,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "gitDiffCheckPassed": true,
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "verifiedDistinctGoalCount": null,
+    "heldVoicesAndPedalNotResolved": true,
+    "globalStagePrerequisitesUnchanged": true,
+    "remainingRelocationLinksQueued": true,
+    "previewAudibilityFloorUnchanged": true,
+    "domainBought": false,
+    "deployed": false,
+    "fullReactNextMigrationComplete": false,
+    "guitarWritePerformed": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "typed-musical-document-adapter-pilot",
+    "action": "Следующий системный этап: определить версионированный типовой музыкальный документ и один чистый адаптер существующего пианистического каталога с точным обратным преобразованием. До оболочки React/Next.js сохранить ID нот и уроков, индивидуальные границы звучания, исходные редакции, классификацию, пользовательский порядок, аппликатуру отдельно от высоты, MIDI/звук и версии прогресса. Содержательно проверить гитарные контракты без записи в guitarjest; не устанавливать зависимости в локальный тренажёр. Музыкальная точка: четыре текущие подготовки проверены по руке; после системного этапа отдельно проверить detail-p-relocate-01/02/04, включая фактическую роль course05-07 и перекрёстные требования переносов. Не удалять связи массово. Сейчас 421 учебная запись / 157 MIDI-контрактов / 71 подробное описание / 3 будущих плана. Шесть повторений и один контроль дают лишь верхнюю границу 414 целей; доказанное число самостоятельных целей ещё не установлено. Затем развивать конкретные планы и перенос к минимуму 1000 содержательных уроков.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/MULTI_INSTRUMENT_MODEL.md",
+      "docs/WEB_APP_PLAN.md",
+      "docs/product-development-state.json",
+      "catalog-transfer.js",
+      "practice-assessment.js",
+      "tests/helpers/load-app.cjs"
+    ]
+  }
+}

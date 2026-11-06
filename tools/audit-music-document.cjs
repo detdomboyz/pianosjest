@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{performance}=require('node:perf_hooks'),{loadApp}=require('../tests/helpers/load-app.cjs'),Adapter=require('../piano-catalog-adapter.js'),Music=require('../music-document.js'),Assessment=require('../practice-assessment.js');
+function audit(){
+ const app=loadApp(),snapshot=JSON.parse(JSON.stringify(app.catalogSnapshot())),oldVersions=Array.from(app.lessons,l=>({id:l.id,version:Assessment.pianoSignature(l)})),restored=[],start=performance.now(),result={schemaVersion:1,scope:'read-only compatibility projection; not editable score migration',lessons:snapshot.lessons.length,notes:0,knownTimeNotes:0,unknownTimeNotes:0,explicitPianoAssignments:0,warningCounts:{},musicVersionsPreserved:false,jsonRoundTripExact:true,individualChordReleaseRecovered:false,physicalValidation:false};
+ for(const entry of snapshot.lessons){const document=Adapter.project(entry);Music.assertValid(document.music);const copy=Adapter.restore(document);assert.deepEqual(copy,entry);restored.push(copy);result.notes+=document.music.notes.length;result.explicitPianoAssignments+=document.execution.assignments.length;for(const n of document.music.notes)result[n.span.kind==='known'?'knownTimeNotes':'unknownTimeNotes']++;for(const w of document.warnings)result.warningCounts[w.code]=(result.warningCounts[w.code]||0)+1;}
+ assert.equal(app.applyCatalogSnapshot({...snapshot,lessons:restored}),true);assert.deepEqual(Array.from(app.lessons,l=>({id:l.id,version:Assessment.pianoSignature(l)})),oldVersions);result.musicVersionsPreserved=true;
+ result.elapsedMs=performance.now()-start;result.snapshotSha256=crypto.createHash('sha256').update(JSON.stringify(snapshot.lessons)).digest('hex');return result;
+}
+if(require.main===module){const result=audit(),out=path.resolve(__dirname,'../docs/music-document-audit-results.json');fs.writeFileSync(out,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));}
+module.exports={audit};

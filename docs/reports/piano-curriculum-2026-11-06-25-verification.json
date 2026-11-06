@@ -1,0 +1,202 @@
+{
+  "batch": "2026-11-06-25",
+  "completedAt": "2026-11-06T11:57:02.094Z",
+  "version": "23.5.25",
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "newPlans": 0,
+  "checks": {
+    "root": {
+      "total": 531,
+      "passed": 531,
+      "failed": 0,
+      "log": "tmp/piano-batch-49-tests-final.log"
+    },
+    "capture": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "log": "tmp/piano-batch-49-capture-final.log"
+    },
+    "reader": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "log": "tmp/piano-batch-49-reader.log"
+    },
+    "next": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "log": "tmp/piano-batch-49-next.log"
+    },
+    "typescript": {
+      "version": "5.8.3",
+      "strict": true,
+      "noEmit": true,
+      "config": "tmp/piano-batch-49-types.json",
+      "log": "tmp/piano-batch-49-types.log",
+      "exitCode": 0
+    }
+  },
+  "capture": {
+    "targetIds": [
+      "course02-02",
+      "detail-p-release-01",
+      "course03-02",
+      "detail-p-release-02"
+    ],
+    "hook": "actual completeLesson after final NoteOff",
+    "wholeOnly": true,
+    "fragmentEnabled": false,
+    "readingGateEnabled": false,
+    "importEnabled": false,
+    "physicalMidiTested": false
+  },
+  "preservation": {
+    "catalogRecordsUnchanged": 570,
+    "assessmentVersionsUnchanged": 570,
+    "protectedFiles": 52,
+    "unchangedProtectedFiles": 49,
+    "intentionalProtectedChanges": [
+      "index.html",
+      "piano-learning-ui.css",
+      "package.json"
+    ],
+    "guitarRouteUnchanged": true,
+    "trainerPresent": false,
+    "readerChanged": [
+      "reader-release.json"
+    ],
+    "artifacts": {
+      "web": {
+        "version": "23.5.25",
+        "mainReleaseVersion": "23.5.25",
+        "resources": 23,
+        "allHashesMatch": true
+      },
+      "reader": {
+        "version": "0.1.0",
+        "mainReleaseVersion": "23.5.25",
+        "resources": 6,
+        "allHashesMatch": true
+      },
+      "next": {
+        "version": "0.1.1",
+        "mainReleaseVersion": "23.5.25",
+        "resources": 30,
+        "allHashesMatch": true
+      }
+    }
+  },
+  "localServer": {
+    "loopbackOnly": true,
+    "newAssets": 3,
+    "allServedExact": true,
+    "contentApiRequested": false,
+    "nativeEndpointRequested": false,
+    "trainerContentUnchanged": true
+  },
+  "browser": {
+    "origins": {
+      "main": "http://127.0.0.1:4206",
+      "syntheticFixture": "http://127.0.0.1:4207"
+    },
+    "fixture": {
+      "namespacedStorage": true,
+      "syntheticMidi": true,
+      "syntheticClock": true,
+      "physicalMidi": false
+    },
+    "emptyExport": {
+      "complete": true,
+      "stored": 0,
+      "recovery": 0
+    },
+    "recovery": {
+      "rightStoredAfterReload": 1,
+      "rightSameId": true,
+      "storedAfterLeftRetry": 2,
+      "leftSameId": true,
+      "legacyUnchangedByRetry": true,
+      "legacyUnchangedByReload": true,
+      "staleExportCleared": true,
+      "midis": [
+        60,
+        48
+      ]
+    },
+    "memory": {
+      "exportFields": 0,
+      "fullMaterials": 0,
+      "compactMaterials": 0,
+      "exportEnabled": false
+    },
+    "mobile": {
+      "client": 376,
+      "exportField": true,
+      "exportWidth": 318.3999938964844,
+      "scroll": 376
+    },
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "consoleErrors": {
+      "main": [],
+      "fixture": [],
+      "mobile": []
+    },
+    "nativeBeforeUnloadPromptConfirmed": false,
+    "cleanup": {
+      "closedOwnedTabs": [
+        "64",
+        "65",
+        "66"
+      ],
+      "viewportReset": true,
+      "defaultPreviewUntouched": true,
+      "closedOwnedPorts": [
+        4206,
+        4207
+      ]
+    }
+  },
+  "coverage": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 82,
+    "individuallyMappedToDomain": 82,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "sourceEntries": 43,
+  "sourceHashes": {
+    "index.html": "25c10f4835ee96dfb85a12a70d51608e99ea8398cdb19d5f946d4dd66b408d41",
+    "piano-learning-ui.css": "db4ba75bd2526d229373d02b6b10f8c5decbb349a5cab2f31f37e9ea19bcb7cc",
+    "piano-preparation-store.js": "36b81452a7c280ab268bec428bb5e1ba29d53531a8b2d11b7a3bdfe8f5552ab9",
+    "piano-preparation-store.d.ts": "dddf5d0c288c0729918221b9defd6c214f391e9b3b7b4cba9cacf5cf7aa7e57d",
+    "piano-preparation-capture.js": "d1313a7d9febd6857bfe6ff49734c2da3d642be8f2b0f2302ed0aaded99b37ff",
+    "piano-preparation-capture.d.ts": "86c479b264d4df4b3e66dfccf9eb3eff85ae9334a1991987d96af46b06833770",
+    "tools/build-web.cjs": "b82146295a920c3d10fa61a6e03d5ac4259893e44fc22c1d0bb0f95cf24bafbc",
+    "tests/helpers/load-app.cjs": "fdfa675ef06149e61b24730616cad8b7bb6cbd09e8ec9a5b4d1374459d02dd98",
+    "tests/piano-preparation-capture.test.cjs": "143b22a2fd15ee55f5482e8655808a1418e116e2c83789f1fbef08ed857efd4e"
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T11:55:16.936Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 55,
+    "remainingPercent": 45,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "independentTeacherReview": false,
+  "published": false,
+  "nextAction": "Подготовить отдельную оценку участка 0–4 course02-06/course03-06 без зачёта родительского упражнения: явно решить учебный темп и версию адаптации (источники 62/60 BPM, будущий образец чтения 56 BPM), сохранить границы и собственные MIDI-события. Полные четыре подготовки уже записываются в отдельный журнал с повтором/экспортом; фрагменты пока не оцениваются и не дают допуска. Затем добавить проверенный импорт нового пакета с сохранением архивов и отказом замены отличающегося местного журнала. Только после этого связывать допуск чтения и неопубликованный подготовленный банк. Сейчас банк остаётся с 0 новыми первыми пробами, планы не продвигать; физическое MIDI, нативное прерывание и преподавательская проверка остаются отдельными."
+}

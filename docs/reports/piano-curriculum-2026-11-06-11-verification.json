@@ -1,0 +1,1151 @@
+{
+  "batch": "2026-11-06-11",
+  "triggeredAt": "2026-11-05T23:20:07.134Z",
+  "timezone": "Asia/Yekaterinburg",
+  "releaseVersion": "23.5.16",
+  "status": "implemented-and-tested",
+  "stageType": "system-only; display does not change lesson content or review status",
+  "newLessonCount": 0,
+  "reviewedLessonCount": 0,
+  "counts": {
+    "plannedFutureLessons": 3,
+    "implementedLearningLessons": 421,
+    "checkedMidiRouteLessons": 157,
+    "withStructuredProvenance": 67,
+    "individuallyMappedToDomain": 67,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 414,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "tests": {
+    "command": "npm test",
+    "passed": 358,
+    "failed": 0,
+    "durationMs": 153287.6292,
+    "newTests": 8,
+    "log": "tmp/piano-batch-35-tests.log",
+    "focused": {
+      "passed": 8,
+      "log": "tmp/piano-batch-35-focused.log"
+    },
+    "beforeCompactSymbols": {
+      "passed": 358,
+      "failed": 0,
+      "log": "tmp/piano-batch-35-tests-before-compact-symbols.log"
+    },
+    "rerunReason": "Browser measurements found clipping in short imported MIDI events. Compact exact symbols and final row height were applied, then all tests rerun.",
+    "physicalMidiOrAudioUsed": false
+  },
+  "audits": {
+    "lessons": {
+      "checked": {
+        "piano": 421,
+        "guitar": 456
+      },
+      "summary": {}
+    },
+    "fingering": {
+      "beginner": {
+        "ok": true,
+        "lessonsChecked": 80,
+        "notesChecked": 1036,
+        "fingeringNotesChecked": 1036,
+        "issues": []
+      },
+      "structuralFailures": [],
+      "issueCounts": {
+        "unsupported": 21,
+        "held-voices": 62
+      }
+    },
+    "curriculum": {
+      "counts": {
+        "pianoLessons": 569,
+        "pianoThemes": 93,
+        "guitarLessons": 713,
+        "guitarTopics": 109,
+        "total": 1282,
+        "beginnerChallenges": 157,
+        "correctedHarmonicNotes": 38
+      },
+      "hardErrors": [],
+      "issueCounts": {
+        "NO_EXACT_RHYTHM": 141,
+        "UNSUPPORTED_FINGERING": 10,
+        "OVERLAPPING_VOICES_NEED_REVIEW": 4,
+        "SEQUENTIAL_ETUDE_TIMING_NOT_SOURCE_SCORE": 596,
+        "POLYPHONY_NOT_VERIFIED_BY_DETECTOR": 48,
+        "LARGE_CHORD_STRETCH_NEEDS_REVIEW": 14
+      }
+    },
+    "coverage": {
+      "schemaVersion": 5,
+      "counts": {
+        "plannedFutureLessons": 3,
+        "implementedLearningLessons": 421,
+        "checkedMidiRouteLessons": 157,
+        "withStructuredProvenance": 67,
+        "individuallyMappedToDomain": 67,
+        "independentTeacherReviewed": 0,
+        "explicitSameGoalVariants": 6,
+        "explicitCheckpoints": 1,
+        "goalGroupUpperBound": 414,
+        "verifiedDistinctGoalCount": null
+      },
+      "sameGoalGroups": [
+        {
+          "primaryId": "course04-03",
+          "lessonIds": [
+            "course04-03",
+            "detail-p-rhythm-01"
+          ]
+        },
+        {
+          "primaryId": "course04-08",
+          "lessonIds": [
+            "course04-08",
+            "course10-04"
+          ]
+        },
+        {
+          "primaryId": "course07-06",
+          "lessonIds": [
+            "course07-06",
+            "course09-06"
+          ]
+        },
+        {
+          "primaryId": "course08-05",
+          "lessonIds": [
+            "course08-05",
+            "course10-06",
+            "detail-p-chordmove-04"
+          ]
+        },
+        {
+          "primaryId": "course09-02",
+          "lessonIds": [
+            "course09-02",
+            "course09-07"
+          ]
+        }
+      ],
+      "checkpointLessonIds": [
+        "course10-08"
+      ]
+    }
+  },
+  "display": {
+    "module": "piano-learning-ui.js",
+    "contract": "piano-learning-ui.d.ts",
+    "function": "rhythmDurationView",
+    "unit": "quarter-note units, not a tempo-dependent or inferred notated value",
+    "cases": [
+      {
+        "value": 0.125,
+        "view": {
+          "label": "𝅘𝅥𝅰 тридцать вторая",
+          "beatsText": "0,125 доли",
+          "symbol": "𝅘𝅥𝅰",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.1875,
+        "view": {
+          "label": "𝅘𝅥𝅰· тридцать вторая с точкой",
+          "beatsText": "0,1875 доли",
+          "symbol": "𝅘𝅥𝅰·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.25,
+        "view": {
+          "label": "𝅘𝅥𝅯 шестнадцатая",
+          "beatsText": "0,25 доли",
+          "symbol": "𝅘𝅥𝅯",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.3,
+        "view": {
+          "label": "0,3 доли",
+          "beatsText": "0,3 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.375,
+        "view": {
+          "label": "𝅘𝅥𝅯· шестнадцатая с точкой",
+          "beatsText": "0,375 доли",
+          "symbol": "𝅘𝅥𝅯·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.5,
+        "view": {
+          "label": "♪ восьмая",
+          "beatsText": "0,5 доли",
+          "symbol": "♪",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.65,
+        "view": {
+          "label": "0,65 доли",
+          "beatsText": "0,65 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.75,
+        "view": {
+          "label": "♪· восьмая с точкой",
+          "beatsText": "0,75 доли",
+          "symbol": "♪·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.85,
+        "view": {
+          "label": "0,85 доли",
+          "beatsText": "0,85 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 1,
+        "view": {
+          "label": "♩ четверть",
+          "beatsText": "1 доля",
+          "symbol": "♩",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 1.25,
+        "view": {
+          "label": "1,25 доли",
+          "beatsText": "1,25 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 1.5,
+        "view": {
+          "label": "♩· четверть с точкой",
+          "beatsText": "1,5 доли",
+          "symbol": "♩·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 2,
+        "view": {
+          "label": "𝅗𝅥 половинная",
+          "beatsText": "2 доли",
+          "symbol": "𝅗𝅥",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 3,
+        "view": {
+          "label": "𝅗𝅥· половинная с точкой",
+          "beatsText": "3 доли",
+          "symbol": "𝅗𝅥·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 3.85,
+        "view": {
+          "label": "3,85 доли",
+          "beatsText": "3,85 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 4,
+        "view": {
+          "label": "𝅝 целая",
+          "beatsText": "4 доли",
+          "symbol": "𝅝",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 6,
+        "view": {
+          "label": "𝅝· целая с точкой",
+          "beatsText": "6 долей",
+          "symbol": "𝅝·",
+          "named": true,
+          "valid": true
+        }
+      },
+      {
+        "value": 8,
+        "view": {
+          "label": "8 долей",
+          "beatsText": "8 долей",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      },
+      {
+        "value": 0.3333333333333333,
+        "view": {
+          "label": "≈0,333333 доли",
+          "beatsText": "≈0,333333 доли",
+          "symbol": null,
+          "named": false,
+          "valid": true
+        }
+      }
+    ],
+    "exampleIds": [
+      "detail-p-release-02",
+      "detail-p-triads-02",
+      "detail-p-staccato-01",
+      "course09-01",
+      "detail-p-left-half-01"
+    ],
+    "inventory": {
+      "lessonsWithNumericDurations": 311,
+      "numericEvents": 18309,
+      "durations": {
+        "0.85": 18223,
+        "0.3333333333333333": 28,
+        "0.16666666666666666": 8,
+        "0.4166666666666667": 4,
+        "0.65": 28,
+        "0.3": 18
+      },
+      "scope": "Display inventory only; does not add lessons or certify pedagogy"
+    }
+  },
+  "sourceLedgerEntries": 24,
+  "sources": [
+    {
+      "id": "ou-time-values-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: 3.1 Time values",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-3.1",
+      "application": {
+        "batch": "2026-11-06-11",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "scope": "display-only; lesson instructions and pedagogical statuses unchanged",
+        "exampleLessonIds": [
+          "detail-p-release-02",
+          "detail-p-triads-02",
+          "detail-p-staccato-01",
+          "detail-p-left-half-01",
+          "course09-01"
+        ],
+        "section": "§3.1, Examples 13–14 and the paragraph on halving note values",
+        "application": "Reread the relationships: whole=4 quarters, half=2, eighth=1/2 and shorter values halve successively. A source sounding duration 0.65/0.85/0.3 quarter units must not be labeled as a full standard note value.",
+        "limits": "The pure presenter does not reconstruct notation, quantize performance, prescribe the project timing or certify the course. Machine equality epsilon and numeric formatting are implementation choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-11.md"
+      }
+    },
+    {
+      "id": "ou-dots-and-ties-2026-11-05",
+      "author": "The Open University / OpenLearn",
+      "title": "An introduction to music theory: 3.5 Dots and ties",
+      "url": "https://www.open.edu/openlearn/history-the-arts/music/an-introduction-music-theory/content-section-3.5",
+      "application": {
+        "batch": "2026-11-06-11",
+        "verifiedOn": "2026-11-06",
+        "recheckedInThisBatch": true,
+        "scope": "display-only; lesson instructions and pedagogical statuses unchanged",
+        "exampleLessonIds": [
+          "detail-p-release-02",
+          "detail-p-triads-02",
+          "detail-p-staccato-01",
+          "detail-p-left-half-01",
+          "course09-01"
+        ],
+        "section": "§3.5, paragraph preceding Example 18 and Examples 18–19",
+        "application": "Reread that a dot adds half the value. Display explicit dotted-note names only for equivalent 0.1875/0.375/0.75/1.5/3/6 quarter units, without inferring ties or triplet context.",
+        "limits": "The pure presenter does not reconstruct notation, quantize performance, prescribe the project timing or certify the course. Machine equality epsilon and numeric formatting are implementation choices.",
+        "report": "docs/reports/piano-curriculum-2026-11-06-11.md"
+      }
+    }
+  ],
+  "originalReproduction": [
+    {
+      "id": "detail-p-release-02",
+      "index": 0,
+      "duration": 0.65,
+      "target": "<div class=\"target-scroll\"><div class=\"big-next\">8</div><p class=\"hint\">C3</p><p class=\"hint\"><b>Ритм:</b> такт 1, доля 1; ♪ восьмая (0.65 доли, 696 мс).<br>Проверка выключена: сейчас важны только правильные клавиши.</p><p class=\"hint\"><b>Текущие опоры рук:</b><br>Левая: C3<br><span class=\"finger-plan-badge\">Учебные назначения</span><br><span class=\"small-note-line\">1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.</span></p><p class=\"hint\"><b>Аппликатура текущей цели:</b><br>C3: левая рука: палец 5 — мизинец</p><p class=\"hint\"><b>Ближайший фрагмент:</b><br>8 8 8 8</p></div>"
+    },
+    {
+      "id": "detail-p-triads-02",
+      "index": 0,
+      "duration": 0.85,
+      "target": "<div class=\"target-scroll\"><div class=\"big-next\">8</div><p class=\"hint\">C3</p><p class=\"hint\"><b>Ритм:</b> такт 1, доля 1; ♩ четверть (0.85 доли, 911 мс).<br>Проверка выключена: сейчас важны только правильные клавиши.</p><p class=\"hint\"><b>Текущие опоры рук:</b><br>Левая: C3<br><span class=\"finger-plan-badge\">Учебные назначения</span><br><span class=\"small-note-line\">1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.</span></p><p class=\"hint\"><b>Аппликатура текущей цели:</b><br>C3: левая рука: палец 5 — мизинец</p><p class=\"hint\"><b>Ближайший фрагмент:</b><br>8 0 w [80w]</p></div>"
+    },
+    {
+      "id": "detail-p-staccato-01",
+      "index": 0,
+      "duration": 0.3,
+      "target": "<div class=\"target-scroll\"><div class=\"big-next\">t</div><p class=\"hint\">C4</p><p class=\"hint\"><b>Ритм:</b> такт 1, доля 1; 𝅘𝅥𝅯 шестнадцатая (0.3 доли, 321 мс).<br>Проверка выключена: сейчас важны только правильные клавиши.</p><p class=\"hint\"><b>Текущие опоры рук:</b><br>Правая: C4<br><span class=\"finger-plan-badge\">Учебные назначения</span><br><span class=\"small-note-line\">1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.</span></p><p class=\"hint\"><b>Аппликатура текущей цели:</b><br>C4: правая рука: палец 1 — большой</p><p class=\"hint\"><b>Ближайший фрагмент:</b><br>t t t t</p></div>"
+    },
+    {
+      "id": "course09-01",
+      "index": 12,
+      "duration": 1.5,
+      "target": "<div class=\"target-scroll\"><div class=\"big-next\">u</div><p class=\"hint\">E4</p><p class=\"hint repeated-note-hint\"><b>Повтор звука:</b> отпусти клавишу и нажми заново. Удержание не заменяет новый звук.</p><p class=\"hint\"><b>Ритм:</b> такт 4, доля 1; ♩· с точкой (1.5 доли, 1406 мс).<br>Проверка выключена: сейчас важны только правильные клавиши.</p><p class=\"hint dotted-quarter-hint\"><b>Четверть с точкой:</b> полторы доли, как три равные восьмые. Продолжай ровный счёт.</p><p class=\"hint\"><b>Текущие опоры рук:</b><br>Правая: E4<br><span class=\"finger-plan-badge\">Учебные назначения</span><br><span class=\"small-note-line\">1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.</span></p><p class=\"hint\"><b>Аппликатура текущей цели:</b><br>E4: правая рука: палец 3 — средний</p><p class=\"hint\"><b>Ближайший фрагмент:</b><br> i u y  t t y u  u y</p></div>"
+    }
+  ],
+  "remainingTempoDisplayReproduction": {
+    "lessonId": "detail-p-release-02",
+    "sourceBpm": 56,
+    "practiceBpm": 40,
+    "quarterBeats": 0.65,
+    "targetStillShows696Ms": true,
+    "previewSoundDurationMs": 975,
+    "scope": "Existing display/preview mismatch on changed practice tempo; no playback or grading modification in this system stage"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4191",
+    "isolatedOrigin": true,
+    "cases": [
+      {
+        "durations": [
+          "0,65 доли · 696 мс",
+          "0,65 доли · 696 мс",
+          "0,65 доли · 696 мс",
+          "0,65 доли · 696 мс"
+        ],
+        "target": "8C3Ритм: такт 1, доля 1; 0,65 доли (696 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C3: левая рука: палец 5 — мизинецБлижайший фрагмент:8 8 8 8",
+        "title": "Левая: окончание одного звука"
+      },
+      {
+        "durations": [
+          "0,3 доли · 321 мс",
+          "0,3 доли · 321 мс",
+          "0,3 доли · 321 мс",
+          "0,3 доли · 321 мс"
+        ],
+        "target": "tC4Ритм: такт 1, доля 1; 0,3 доли (321 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Правая: C4Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C4: правая рука: палец 1 — большойБлижайший фрагмент:t t t t",
+        "title": "Правая: короткое C4"
+      },
+      {
+        "durations": [
+          "0,85 доли · 911 мс",
+          "0,85 доли · 911 мс",
+          "0,85 доли · 911 мс",
+          "0,85 доли · 911 мс"
+        ],
+        "target": "8C3Ритм: такт 1, доля 1; 0,85 доли (911 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C3: левая рука: палец 5 — мизинецБлижайший фрагмент:8 0 w [80w]",
+        "title": "Левая: собрать C major"
+      }
+    ],
+    "desktopDurations": [
+      {
+        "bottom": 658.2799549102783,
+        "height": 21,
+        "parentBottom": 682.6599731445312,
+        "scroll": 63,
+        "text": "0,65 доли · 696 мс",
+        "width": 63
+      },
+      {
+        "bottom": 658.2799549102783,
+        "height": 21,
+        "parentBottom": 682.6599731445312,
+        "scroll": 63,
+        "text": "0,65 доли · 696 мс",
+        "width": 63
+      },
+      {
+        "bottom": 658.2799549102783,
+        "height": 21,
+        "parentBottom": 682.6599731445312,
+        "scroll": 63,
+        "text": "0,65 доли · 696 мс",
+        "width": 63
+      },
+      {
+        "bottom": 658.2799549102783,
+        "height": 21,
+        "parentBottom": 682.6599731445312,
+        "scroll": 63,
+        "text": "0,65 доли · 696 мс",
+        "width": 63
+      }
+    ],
+    "mobileDurations": [
+      {
+        "bottom": 1593.669994354248,
+        "height": 31,
+        "parentBottom": 1607.699951171875,
+        "scroll": 33,
+        "text": "0,65 доли · 696 мс",
+        "width": 33
+      },
+      {
+        "bottom": 1593.669994354248,
+        "height": 31,
+        "parentBottom": 1607.699951171875,
+        "scroll": 33,
+        "text": "0,65 доли · 696 мс",
+        "width": 33
+      },
+      {
+        "bottom": 1593.669994354248,
+        "height": 31,
+        "parentBottom": 1607.699951171875,
+        "scroll": 33,
+        "text": "0,65 доли · 696 мс",
+        "width": 33
+      },
+      {
+        "bottom": 1593.669994354248,
+        "height": 31,
+        "parentBottom": 1607.699951171875,
+        "scroll": 33,
+        "text": "0,65 доли · 696 мс",
+        "width": 33
+      }
+    ],
+    "mobile": {
+      "clientWidth": 376,
+      "lineHeight": "22.4px",
+      "previewHeight": 112,
+      "scrollWidth": 376,
+      "viewport": 390
+    },
+    "triadMobileDurations": [
+      {
+        "bottom": 1585.8799304962158,
+        "parentBottom": 1604.260009765625,
+        "scroll": 47,
+        "width": 47
+      },
+      {
+        "bottom": 1585.8799304962158,
+        "parentBottom": 1604.260009765625,
+        "scroll": 47,
+        "width": 47
+      },
+      {
+        "bottom": 1585.8799304962158,
+        "parentBottom": 1604.260009765625,
+        "scroll": 47,
+        "width": 47
+      },
+      {
+        "bottom": 1585.8799304962158,
+        "parentBottom": 1604.260009765625,
+        "scroll": 47,
+        "width": 47
+      }
+    ],
+    "staccatoMobileDurations": [
+      {
+        "bottom": 1606.5799293518066,
+        "parentBottom": 1604.260009765625,
+        "scroll": 27,
+        "width": 27
+      },
+      {
+        "bottom": 1606.5799293518066,
+        "parentBottom": 1604.260009765625,
+        "scroll": 27,
+        "width": 27
+      },
+      {
+        "bottom": 1606.5799293518066,
+        "parentBottom": 1604.260009765625,
+        "scroll": 27,
+        "width": 27
+      },
+      {
+        "bottom": 1606.5799293518066,
+        "parentBottom": 1604.260009765625,
+        "scroll": 27,
+        "width": 27
+      }
+    ],
+    "keyboardDisclosure": {
+      "expanded": "true",
+      "focused": true,
+      "outlineStyle": "solid"
+    },
+    "memory": {
+      "card": false,
+      "durationLabels": 0,
+      "events": 0,
+      "keys": 0,
+      "materialMode": "expanded",
+      "mode": "memory",
+      "octaves": 0,
+      "preparations": 0
+    },
+    "hiddenPersistence": {
+      "card": false,
+      "selected": "hidden",
+      "switch": true
+    },
+    "canonicalHalf": {
+      "durations": [
+        "𝅗𝅥 · 2143 мс",
+        "𝅗𝅥 · 2143 мс",
+        "𝅗𝅥 · 2143 мс",
+        "𝅗𝅥 · 2143 мс"
+      ],
+      "target": "8C3Ритм: такт 1, доля 1; 𝅗𝅥 половинная (2 доли, 2143 мс).Проверка выключена: сейчас важны только правильные клавиши.Текущие опоры рук:Левая: C3Учебные назначения1 — большой, 2 — указательный, 3 — средний, 4 — безымянный, 5 — мизинец. MIDI проверяет ноты, но не выбранные пальцы.Аппликатура текущей цели:C3: левая рука: палец 5 — мизинецБлижайший фрагмент:8 8 8 8",
+      "title": "Левая: половинные мизинцем"
+    },
+    "fractionalPiece": [
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "𝅘𝅥𝅯 · 54 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "𝅘𝅥𝅯 · 54 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "𝅘𝅥𝅯 · 54 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "𝅘𝅥𝅯 · 54 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1953.4399147033691,
+        "height": 41,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "≈0,333333 доли · 71 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1953.4399147033691,
+        "height": 41,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "≈0,333333 доли · 71 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1953.4399147033691,
+        "height": 41,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 27,
+        "text": "≈0,333333 доли · 71 мс",
+        "width": 27
+      },
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 1932.7399158477783,
+        "height": 21,
+        "parentBottom": 1957.1199951171875,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2084.020067214966,
+        "height": 21,
+        "parentBottom": 2108.39990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2235.299852371216,
+        "height": 21,
+        "parentBottom": 2259.679931640625,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2386.579881668091,
+        "height": 21,
+        "parentBottom": 2410.9599609375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2537.859910964966,
+        "height": 21,
+        "parentBottom": 2562.239990234375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2689.139940261841,
+        "height": 21,
+        "parentBottom": 2713.52001953125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2840.419969558716,
+        "height": 21,
+        "parentBottom": 2864.800048828125,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      },
+      {
+        "bottom": 2991.699998855591,
+        "height": 21,
+        "parentBottom": 3016.079833984375,
+        "scroll": 35,
+        "text": "♪ · 107 мс",
+        "width": 35
+      }
+    ],
+    "consoleErrors": [],
+    "screenshot": "docs/qa/piano-2026-11-06-11-exact-duration.jpg",
+    "physicalMidi": false,
+    "audioPlayback": false,
+    "syntheticMidiVerifiedByTests": true,
+    "mobileLessonSelection": "Keyboard Enter after filtered search; pointer selection under viewport override was not established",
+    "checkedAt": "2026-11-05T23:40:08.913Z"
+  },
+  "preservation": {
+    "changedMusic": [],
+    "changedInstructions": [],
+    "newLessonIds": [],
+    "priorLessonCount": 569,
+    "currentLessonCount": 569,
+    "unchangedMusicAndInstructions": 569,
+    "oldRelativeOrderPreserved": true,
+    "protectedFiles": {
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "piano-lesson-development.js": {
+        "before": "af67b812a1fa43a5ebddfbdd8948ddfd6cf29cef1b7bb6a72a553acd2fb91cbd",
+        "after": "af67b812a1fa43a5ebddfbdd8948ddfd6cf29cef1b7bb6a72a553acd2fb91cbd",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "after": "0481659f7679b882d4f089eeb980b563fea6393e41def4040257cca83f63ad21",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      },
+      "curriculum-plan.js": {
+        "before": "f7ecbdb460ebadeaab8222655aedbb52376735d3e86815da155056179caf2126",
+        "after": "f7ecbdb460ebadeaab8222655aedbb52376735d3e86815da155056179caf2126",
+        "same": true
+      }
+    },
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "webBuild": {
+    "version": "23.5.16",
+    "publicAssets": 18,
+    "allBytesAndHashesMatch": true,
+    "allCurrentSourcesMatch": true,
+    "privateFilesAbsent": true,
+    "manifestSha256": "54789fec27471b0c78b4e474cc197abeaad0da6b3ee1f80542e25f41fcb43d76",
+    "mode": "web",
+    "storage": "browser",
+    "domainStatus": "not-purchased",
+    "nativeCompanion": false
+  },
+  "quota": {
+    "checkedAt": "2026-11-05T23:36:26.779Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 41,
+    "remainingPercent": 59,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "verifiedDistinctGoalCount": null,
+    "notationNotReconstructed": true,
+    "heldVoicesAndPedalNotResolved": true,
+    "millisecondsStillSourceTempoWhenPracticeTempoChanges": true,
+    "mobilePointerLessonSelectionNotEstablished": true,
+    "domainBought": false,
+    "deployed": false,
+    "fullReactNextMigrationComplete": false,
+    "guitarWritePerformed": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "left-black-keys-and-repeated-triad-preparation",
+    "action": "Следующая учебная партия — detail-p-black-02 и course08-02: прочитать подходящие первоисточники, проверить левую подготовку двух чёрных клавиш и длительности левого C major. Для course08-02 предметно проверить замену правой половинной course04-02 новой левой detail-p-left-half-01, не удаляя нужное знание счёта. Сверить реальные высоты, пальцы, окончания, охват и перенос; сохранить личные редакции и музыкальную историю. Три отпускания и сборка C major уже имеют уточнённые необходимые подготовки; общий этап p5 и старая подготовка detail-p-release-01 не пересматривались. Следующий небольшой системный дефект подтверждён отдельно: при выборе 40 BPM для release-02 числовой текст ещё показывает исходные 696 мс вместо 975 мс звука. Исправлять масштабирование отображения отдельным тестируемым этапом без смены музыки, оценки и воспроизведения. Затем типовой музыкальный документ и чистые адаптеры перед React/Next.js. Сейчас 421 запись / 157 MIDI-контрактов / 67 подробных описаний / 3 будущих плана; 6 повторений и 1 контроль дают верхнюю границу 414 целей, полное различие ещё не проверено. Числовые длительности отображаются в 311 существующих записях и не являются новыми или педагогически пересмотренными уроками.",
+    "files": [
+      "AGENTS.md",
+      "docs/PIANO_CURRICULUM_RECURRING.md",
+      "docs/piano-curriculum-sources.json",
+      "piano-lesson-development.js",
+      "tests/piano-independent-preparation.test.cjs",
+      "curriculum-plan.js"
+    ]
+  }
+}

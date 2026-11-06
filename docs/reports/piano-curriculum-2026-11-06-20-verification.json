@@ -1,0 +1,1651 @@
+{
+  "batch": "2026-11-06-20",
+  "triggeredAt": "2026-11-06T06:43:14.165Z",
+  "timezone": "Asia/Yekaterinburg",
+  "mainReleaseVersion": "23.5.23",
+  "optionalReaderVersion": "0.1.0",
+  "status": "implemented-and-tested",
+  "newImplementedLessons": 0,
+  "reviewedExistingLessons": 0,
+  "newFuturePlans": 0,
+  "changedAssessmentContractIds": [],
+  "contract": {
+    "module": "piano-staff-view.js",
+    "declaration": "piano-staff-view.d.ts",
+    "version": 1,
+    "explicitRevisionScopedSpelling": true,
+    "partSelectionExplicit": true,
+    "maximumNotes": 8,
+    "treblePitches": [
+      60,
+      62,
+      64
+    ],
+    "treblePositions": [
+      -2,
+      -1,
+      0
+    ],
+    "bassPitches": [
+      48,
+      50,
+      52
+    ],
+    "bassPositions": [
+      3,
+      4,
+      5
+    ],
+    "inputImmutable": true,
+    "fullPhraseSuppressedIfUnsupported": true,
+    "handNotInferredFromClef": true,
+    "sourceTimingAndIdsPreserved": true
+  },
+  "reactComponent": {
+    "file": "web-reader/src/StaffReader.tsx",
+    "actualStrictTypecheck": true,
+    "actualReactDomServerRender": true,
+    "react": "19.3.0",
+    "typescript": "5.8.3",
+    "explicitInstanceIdPrefix": true,
+    "importsFullCatalog": false,
+    "renderTimeDomMeasurement": false,
+    "localFont": {
+      "font": "Bravura.woff2",
+      "author": "Steinberg Media Technologies GmbH",
+      "repository": "https://github.com/steinbergmedia/bravura",
+      "path": "redist/woff/Bravura.woff2",
+      "githubBlobSha": "4c6502f6f8eec2fb4f8c385a304fc757c60c31af",
+      "sha256": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4",
+      "bytes": 323416,
+      "license": "SIL Open Font License 1.1",
+      "licenseSource": "https://github.com/steinbergmedia/bravura/blob/master/redist/OFL.txt",
+      "licenseFile": "OFL-Bravura.txt",
+      "fontModified": false,
+      "verifiedOn": "2026-11-06",
+      "glyphReference": "https://smufl.formats.music/latest/tables/clefs.html",
+      "glyphsUsed": {
+        "gClef": "U+E050",
+        "fClef": "U+E062"
+      }
+    },
+    "nextJsRouteBuilt": false,
+    "portalPackageObserved": {
+      "next": "15.5.27",
+      "react": "19.3.0",
+      "typescript": "^5.8.3"
+    },
+    "existingToolchainReusedReadOnly": true,
+    "newInstallationsPerformed": false,
+    "cleanRegistryInstallVerified": false
+  },
+  "tests": {
+    "root": {
+      "command": "npm test",
+      "passed": 448,
+      "failed": 0,
+      "newTests": 8,
+      "durationMs": 190741.5275,
+      "log": "tmp/piano-batch-44-tests.log"
+    },
+    "focusedFinal": {
+      "passed": 8,
+      "failed": 0,
+      "log": "tmp/piano-batch-44-focused-final.log",
+      "afterFullRunChange": "Scope narrowed from 32 to 8 notes to keep this first view limited to a readable short phrase."
+    },
+    "optionalPackage": {
+      "strictTypecheck": true,
+      "passed": 4,
+      "failed": 0,
+      "log": "tmp/piano-batch-44-reader-tests-final.log"
+    },
+    "physicalMidiOrAudioUsed": false
+  },
+  "counts": {
+    "plannedFutureLessons": 6,
+    "implementedLearningLessons": 422,
+    "checkedMidiRouteLessons": 158,
+    "withStructuredProvenance": 80,
+    "individuallyMappedToDomain": 80,
+    "independentTeacherReviewed": 0,
+    "explicitSameGoalVariants": 6,
+    "explicitCheckpoints": 1,
+    "goalGroupUpperBound": 415,
+    "verifiedDistinctGoalCount": null
+  },
+  "capacitySlots": 1310,
+  "preservation": {
+    "runtimeLessonsUnchanged": 570,
+    "allAssessmentFingerprintsUnchanged": true,
+    "allInstructionsUnchanged": true,
+    "allIdsThemesAndOrderUnchanged": true,
+    "catalogContentsExactExcludingSavedAt": true,
+    "catalogContentSha256": "655d96f0ca21964c62cbcbd4cc4ead523243b3f8978661b20f3faeb6cc7d09e4",
+    "protectedFiles": {
+      "index.html": {
+        "before": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "after": "b0d2fc409f5dcb362e104780db23d26ad25b451ff904d3799a946c2f770641c8",
+        "same": true
+      },
+      "chopin-theme.js": {
+        "before": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "after": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+        "same": true
+      },
+      "audio-transcriber.js": {
+        "before": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "after": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+        "same": true
+      },
+      "fingering.js": {
+        "before": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "after": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+        "same": true
+      },
+      "beginner-fingering.js": {
+        "before": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "after": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+        "same": true
+      },
+      "practice-assessment.js": {
+        "before": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "after": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+        "same": true
+      },
+      "curriculum.js": {
+        "before": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "after": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+        "same": true
+      },
+      "curriculum-plan.js": {
+        "before": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "after": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+        "same": true
+      },
+      "catalog-sections.js": {
+        "before": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "after": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+        "same": true
+      },
+      "lesson-review-baseline.js": {
+        "before": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "after": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+        "same": true
+      },
+      "lesson-quality.js": {
+        "before": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "after": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+        "same": true
+      },
+      "lesson-development.js": {
+        "before": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "after": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+        "same": true
+      },
+      "piano-lesson-development.js": {
+        "before": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "after": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+        "same": true
+      },
+      "piano-learning-ui.js": {
+        "before": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "after": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+        "same": true
+      },
+      "catalog-transfer.js": {
+        "before": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "after": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "same": true
+      },
+      "music-document.js": {
+        "before": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "after": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "same": true
+      },
+      "piano-catalog-adapter.js": {
+        "before": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "after": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "same": true
+      },
+      "catalog-sections.css": {
+        "before": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "after": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+        "same": true
+      },
+      "piano-learning-ui.css": {
+        "before": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "after": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+        "same": true
+      },
+      "midi-keyboard-settings.ini": {
+        "before": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "after": "3072d6a6e4449023a0b3865484f9dd618445218b86f5f6925c28923a0c3fc25d",
+        "same": true
+      },
+      "package.json": {
+        "before": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "after": "c196e77db6974ab2bb07f97172cc0c3861a47ffa65da9e961989bb91fbeebb56",
+        "same": true
+      },
+      "music-document.d.ts": {
+        "before": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "after": "f9bd74ead309c61c2f17847f9c7334f3a415c64653e8428d926b42e274dae8c3",
+        "same": true
+      },
+      "piano-catalog-adapter.d.ts": {
+        "before": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "after": "5e4cf43c1ae4c72f057ecc379b1ecf6f25039b34347bdd34d32ffb84549c9d14",
+        "same": true
+      },
+      "piano-learning-ui.d.ts": {
+        "before": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "after": "907b32981236c10127c1524133783fade676ce5e836d08f97dff8935389d8122",
+        "same": true
+      }
+    },
+    "webReleaseUnchanged": true,
+    "webFiles": {
+      "audio-transcriber.js": "691360a5065486956efa895550b2bb2cabd16782440cd9daf778cff0e3dd5326",
+      "beginner-fingering.js": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f",
+      "catalog-sections.css": "f9cf93154ee1c6c2110d2696726d20c0a9ec83ad1e7b3dfc6ed92fa63eb2fb67",
+      "catalog-sections.js": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+      "catalog-transfer.js": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+      "chopin-theme.js": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4",
+      "curriculum-plan.js": "5e9d98d1daeff842914b024e8fde329c12f375119c7f054bf410e89fca8112be",
+      "curriculum.js": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a",
+      "fingering.js": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106",
+      "index.html": "e09c4e754cddbb67f5de5c73df821d547b1a972fe81c85c1a1849f9fd203cd20",
+      "lesson-development.js": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "lesson-quality.js": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "lesson-review-baseline.js": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+      "music-document.js": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+      "piano-catalog-adapter.js": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+      "piano-learning-ui.css": "e0a553d3a1ccc9b33ca65775ce5d353136e2c6b79a6667b330753cd6140bb7cb",
+      "piano-learning-ui.js": "e787a49a470e39656c23c41262f64c0487cc7558ea6ac6d9e7c00046030099ad",
+      "piano-lesson-development.js": "07221076f6b249b8b1c509876a6119f0318155a9864e93d45b290424116c13db",
+      "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "web-release.json": "152cb7f3a4ce39a40f664eec5330a086af0d48173c6b3651151a622ce48549d3",
+      "web-runtime.js": "a6945e27642c8b63df58171bab1d8287f9fac67e2ca35a74a7d8c80016440280"
+    },
+    "futureBacklogExact": true,
+    "guitarRouteHash": "9dccdf51162c3a77f9440ec086c3985ce7878a1fbb94a4b323dcca9d12934af6",
+    "guitarRouteUnchanged": true,
+    "trainerBefore": false,
+    "trainerAfter": false
+  },
+  "examples": {
+    "treble": {
+      "entry": {
+        "id": "staff-reader-demo-treble",
+        "title": "Открытый пример treble",
+        "pattern": "t y y u",
+        "contentKind": "exercise",
+        "rhythm": {
+          "version": 1,
+          "source": "project-reading-demonstration",
+          "bpm": 56,
+          "practiceBpm": 56,
+          "steps": [
+            {
+              "startBeat": 0,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 1,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 2,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 3,
+              "durationBeats": 1
+            }
+          ]
+        },
+        "handMode": "right",
+        "fingeringSpec": {
+          "version": 1,
+          "pattern": "t y y u",
+          "steps": [
+            [
+              {
+                "hand": "right",
+                "num": 1
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 2
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 2
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 3
+              }
+            ]
+          ]
+        }
+      },
+      "projection": {
+        "schemaVersion": 1,
+        "kind": "piano-catalog-projection",
+        "music": {
+          "schemaVersion": 1,
+          "id": "staff-reader-demo-treble",
+          "revision": "piano-catalog-v7:d4acf863",
+          "timeUnit": "quarter",
+          "bpm": 56,
+          "parts": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]"
+            }
+          ],
+          "notes": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 60
+              },
+              "span": {
+                "kind": "known",
+                "start": 0,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 62
+              },
+              "span": {
+                "kind": "known",
+                "start": 1,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 62
+              },
+              "span": {
+                "kind": "known",
+                "start": 2,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 64
+              },
+              "span": {
+                "kind": "known",
+                "start": 3,
+                "duration": 1
+              }
+            }
+          ]
+        },
+        "execution": {
+          "instrument": "piano",
+          "documentRevision": "piano-catalog-v7:d4acf863",
+          "assignments": [
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+              "hand": "right",
+              "finger": 1
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+              "hand": "right",
+              "finger": 2
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+              "hand": "right",
+              "finger": 2
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+              "hand": "right",
+              "finger": 3
+            }
+          ]
+        },
+        "warnings": [],
+        "compatibility": {
+          "format": "piano-catalog-v7",
+          "entry": {
+            "id": "staff-reader-demo-treble",
+            "title": "Открытый пример treble",
+            "pattern": "t y y u",
+            "contentKind": "exercise",
+            "rhythm": {
+              "version": 1,
+              "source": "project-reading-demonstration",
+              "bpm": 56,
+              "practiceBpm": 56,
+              "steps": [
+                {
+                  "startBeat": 0,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 1,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 2,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 3,
+                  "durationBeats": 1
+                }
+              ]
+            },
+            "handMode": "right",
+            "fingeringSpec": {
+              "version": 1,
+              "pattern": "t y y u",
+              "steps": [
+                [
+                  {
+                    "hand": "right",
+                    "num": 1
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 2
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 2
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 3
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "music": {
+        "schemaVersion": 1,
+        "id": "staff-reader-demo-treble",
+        "revision": "piano-catalog-v7:d4acf863",
+        "timeUnit": "quarter",
+        "bpm": 56,
+        "parts": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]"
+          }
+        ],
+        "notes": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 60
+            },
+            "span": {
+              "kind": "known",
+              "start": 0,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 62
+            },
+            "span": {
+              "kind": "known",
+              "start": 1,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 62
+            },
+            "span": {
+              "kind": "known",
+              "start": 2,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 64
+            },
+            "span": {
+              "kind": "known",
+              "start": 3,
+              "duration": 1
+            }
+          }
+        ]
+      },
+      "notation": {
+        "documentRevision": "piano-catalog-v7:d4acf863",
+        "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+        "clef": "treble",
+        "spelling": [
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+            "step": "C",
+            "octave": 4,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+            "step": "D",
+            "octave": 4,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+            "step": "D",
+            "octave": 4,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+            "step": "E",
+            "octave": 4,
+            "alter": 0
+          }
+        ]
+      },
+      "view": {
+        "schemaVersion": 1,
+        "status": "ready",
+        "documentId": "staff-reader-demo-treble",
+        "documentRevision": "piano-catalog-v7:d4acf863",
+        "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+        "clef": "treble",
+        "notes": [
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "midi": 60,
+            "label": "C4",
+            "staffPosition": -2,
+            "ledgerPositions": [
+              -2
+            ],
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "midi": 62,
+            "label": "D4",
+            "staffPosition": -1,
+            "ledgerPositions": [],
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "midi": 62,
+            "label": "D4",
+            "staffPosition": -1,
+            "ledgerPositions": [],
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "midi": 64,
+            "label": "E4",
+            "staffPosition": 0,
+            "ledgerPositions": [],
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ],
+        "warnings": []
+      }
+    },
+    "bass": {
+      "entry": {
+        "id": "staff-reader-demo-bass",
+        "title": "Открытый пример bass",
+        "pattern": "8 9 9 0",
+        "contentKind": "exercise",
+        "rhythm": {
+          "version": 1,
+          "source": "project-reading-demonstration",
+          "bpm": 56,
+          "practiceBpm": 56,
+          "steps": [
+            {
+              "startBeat": 0,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 1,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 2,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 3,
+              "durationBeats": 1
+            }
+          ]
+        },
+        "handMode": "left",
+        "fingeringSpec": {
+          "version": 1,
+          "pattern": "8 9 9 0",
+          "steps": [
+            [
+              {
+                "hand": "left",
+                "num": 5
+              }
+            ],
+            [
+              {
+                "hand": "left",
+                "num": 4
+              }
+            ],
+            [
+              {
+                "hand": "left",
+                "num": 4
+              }
+            ],
+            [
+              {
+                "hand": "left",
+                "num": 3
+              }
+            ]
+          ]
+        }
+      },
+      "projection": {
+        "schemaVersion": 1,
+        "kind": "piano-catalog-projection",
+        "music": {
+          "schemaVersion": 1,
+          "id": "staff-reader-demo-bass",
+          "revision": "piano-catalog-v7:d46595f6",
+          "timeUnit": "quarter",
+          "bpm": 56,
+          "parts": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]"
+            }
+          ],
+          "notes": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 48
+              },
+              "span": {
+                "kind": "known",
+                "start": 0,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 50
+              },
+              "span": {
+                "kind": "known",
+                "start": 1,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 50
+              },
+              "span": {
+                "kind": "known",
+                "start": 2,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 52
+              },
+              "span": {
+                "kind": "known",
+                "start": 3,
+                "duration": 1
+              }
+            }
+          ]
+        },
+        "execution": {
+          "instrument": "piano",
+          "documentRevision": "piano-catalog-v7:d46595f6",
+          "assignments": [
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+              "hand": "left",
+              "finger": 5
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+              "hand": "left",
+              "finger": 4
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+              "hand": "left",
+              "finger": 4
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+              "hand": "left",
+              "finger": 3
+            }
+          ]
+        },
+        "warnings": [],
+        "compatibility": {
+          "format": "piano-catalog-v7",
+          "entry": {
+            "id": "staff-reader-demo-bass",
+            "title": "Открытый пример bass",
+            "pattern": "8 9 9 0",
+            "contentKind": "exercise",
+            "rhythm": {
+              "version": 1,
+              "source": "project-reading-demonstration",
+              "bpm": 56,
+              "practiceBpm": 56,
+              "steps": [
+                {
+                  "startBeat": 0,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 1,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 2,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 3,
+                  "durationBeats": 1
+                }
+              ]
+            },
+            "handMode": "left",
+            "fingeringSpec": {
+              "version": 1,
+              "pattern": "8 9 9 0",
+              "steps": [
+                [
+                  {
+                    "hand": "left",
+                    "num": 5
+                  }
+                ],
+                [
+                  {
+                    "hand": "left",
+                    "num": 4
+                  }
+                ],
+                [
+                  {
+                    "hand": "left",
+                    "num": 4
+                  }
+                ],
+                [
+                  {
+                    "hand": "left",
+                    "num": 3
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "music": {
+        "schemaVersion": 1,
+        "id": "staff-reader-demo-bass",
+        "revision": "piano-catalog-v7:d46595f6",
+        "timeUnit": "quarter",
+        "bpm": 56,
+        "parts": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]"
+          }
+        ],
+        "notes": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 48
+            },
+            "span": {
+              "kind": "known",
+              "start": 0,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 50
+            },
+            "span": {
+              "kind": "known",
+              "start": 1,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 50
+            },
+            "span": {
+              "kind": "known",
+              "start": 2,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 52
+            },
+            "span": {
+              "kind": "known",
+              "start": 3,
+              "duration": 1
+            }
+          }
+        ]
+      },
+      "notation": {
+        "documentRevision": "piano-catalog-v7:d46595f6",
+        "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+        "clef": "bass",
+        "spelling": [
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+            "step": "C",
+            "octave": 3,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+            "step": "D",
+            "octave": 3,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+            "step": "D",
+            "octave": 3,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+            "step": "E",
+            "octave": 3,
+            "alter": 0
+          }
+        ]
+      },
+      "view": {
+        "schemaVersion": 1,
+        "status": "ready",
+        "documentId": "staff-reader-demo-bass",
+        "documentRevision": "piano-catalog-v7:d46595f6",
+        "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+        "clef": "bass",
+        "notes": [
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "midi": 48,
+            "label": "C3",
+            "staffPosition": 3,
+            "ledgerPositions": [],
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "midi": 50,
+            "label": "D3",
+            "staffPosition": 4,
+            "ledgerPositions": [],
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "midi": 50,
+            "label": "D3",
+            "staffPosition": 4,
+            "ledgerPositions": [],
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-bass\",\"part\"]",
+            "midi": 52,
+            "label": "E3",
+            "staffPosition": 5,
+            "ledgerPositions": [],
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ],
+        "warnings": []
+      }
+    },
+    "unsupported": {
+      "entry": {
+        "id": "staff-reader-demo-treble",
+        "title": "Открытый пример treble",
+        "pattern": "t y y u",
+        "contentKind": "exercise",
+        "rhythm": {
+          "version": 1,
+          "source": "project-reading-demonstration",
+          "bpm": 56,
+          "practiceBpm": 56,
+          "steps": [
+            {
+              "startBeat": 0,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 1,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 2,
+              "durationBeats": 1
+            },
+            {
+              "startBeat": 3,
+              "durationBeats": 1
+            }
+          ]
+        },
+        "handMode": "right",
+        "fingeringSpec": {
+          "version": 1,
+          "pattern": "t y y u",
+          "steps": [
+            [
+              {
+                "hand": "right",
+                "num": 1
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 2
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 2
+              }
+            ],
+            [
+              {
+                "hand": "right",
+                "num": 3
+              }
+            ]
+          ]
+        }
+      },
+      "projection": {
+        "schemaVersion": 1,
+        "kind": "piano-catalog-projection",
+        "music": {
+          "schemaVersion": 1,
+          "id": "staff-reader-demo-treble",
+          "revision": "piano-catalog-v7:d4acf863",
+          "timeUnit": "quarter",
+          "bpm": 56,
+          "parts": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]"
+            }
+          ],
+          "notes": [
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 60
+              },
+              "span": {
+                "kind": "known",
+                "start": 0,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 62
+              },
+              "span": {
+                "kind": "known",
+                "start": 1,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 62
+              },
+              "span": {
+                "kind": "known",
+                "start": 2,
+                "duration": 1
+              }
+            },
+            {
+              "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+              "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+              "pitch": {
+                "kind": "midi",
+                "value": 64
+              },
+              "span": {
+                "kind": "known",
+                "start": 3,
+                "duration": 1
+              }
+            }
+          ]
+        },
+        "execution": {
+          "instrument": "piano",
+          "documentRevision": "piano-catalog-v7:d4acf863",
+          "assignments": [
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+              "hand": "right",
+              "finger": 1
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+              "hand": "right",
+              "finger": 2
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+              "hand": "right",
+              "finger": 2
+            },
+            {
+              "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+              "hand": "right",
+              "finger": 3
+            }
+          ]
+        },
+        "warnings": [],
+        "compatibility": {
+          "format": "piano-catalog-v7",
+          "entry": {
+            "id": "staff-reader-demo-treble",
+            "title": "Открытый пример treble",
+            "pattern": "t y y u",
+            "contentKind": "exercise",
+            "rhythm": {
+              "version": 1,
+              "source": "project-reading-demonstration",
+              "bpm": 56,
+              "practiceBpm": 56,
+              "steps": [
+                {
+                  "startBeat": 0,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 1,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 2,
+                  "durationBeats": 1
+                },
+                {
+                  "startBeat": 3,
+                  "durationBeats": 1
+                }
+              ]
+            },
+            "handMode": "right",
+            "fingeringSpec": {
+              "version": 1,
+              "pattern": "t y y u",
+              "steps": [
+                [
+                  {
+                    "hand": "right",
+                    "num": 1
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 2
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 2
+                  }
+                ],
+                [
+                  {
+                    "hand": "right",
+                    "num": 3
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "music": {
+        "schemaVersion": 1,
+        "id": "staff-reader-demo-treble",
+        "revision": "piano-catalog-v7:d4acf863",
+        "timeUnit": "quarter",
+        "bpm": 56,
+        "parts": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]"
+          }
+        ],
+        "notes": [
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 61
+            },
+            "span": {
+              "kind": "known",
+              "start": 0,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 62
+            },
+            "span": {
+              "kind": "known",
+              "start": 1,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 62
+            },
+            "span": {
+              "kind": "known",
+              "start": 2,
+              "duration": 1
+            }
+          },
+          {
+            "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+            "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+            "pitch": {
+              "kind": "midi",
+              "value": 64
+            },
+            "span": {
+              "kind": "known",
+              "start": 3,
+              "duration": 1
+            }
+          }
+        ]
+      },
+      "notation": {
+        "documentRevision": "piano-catalog-v7:d4acf863",
+        "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+        "clef": "treble",
+        "spelling": [
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+            "step": "C",
+            "octave": 4,
+            "alter": 1
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+            "step": "D",
+            "octave": 4,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+            "step": "D",
+            "octave": 4,
+            "alter": 0
+          },
+          {
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+            "step": "E",
+            "octave": 4,
+            "alter": 0
+          }
+        ]
+      },
+      "view": {
+        "schemaVersion": 1,
+        "status": "unsupported",
+        "documentId": "staff-reader-demo-treble",
+        "documentRevision": "piano-catalog-v7:d4acf863",
+        "partId": "[\"piano\",\"staff-reader-demo-treble\",\"part\"]",
+        "clef": "treble",
+        "notes": [],
+        "warnings": [
+          {
+            "code": "SPELLING_UNSUPPORTED",
+            "message": "Этот вид пока читает только явно заданные натуральные C, D и E.",
+            "noteId": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]"
+          }
+        ]
+      }
+    }
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4200",
+    "physicalMidiOrAudioUsed": false,
+    "initialAuthorityTimeoutResolvedOnSingleRetry": true,
+    "treble": {
+      "clientWidth": 1265,
+      "detailsOpen": false,
+      "fontStatus": "loaded",
+      "notes": [
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",0,0]",
+          "midi": "60",
+          "position": "-2",
+          "start": "0"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",1,0]",
+          "midi": "62",
+          "position": "-1",
+          "start": "1"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",2,0]",
+          "midi": "62",
+          "position": "-1",
+          "start": "2"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-treble\",\"piano-catalog-v7:d4acf863\",3,0]",
+          "midi": "64",
+          "position": "0",
+          "start": "3"
+        }
+      ],
+      "scrollWidth": 1265,
+      "status": "ready",
+      "title": "Скрипичный ключ"
+    },
+    "trebleDetails": "Данные выбранной фразы\nНота\tРука, палец\tВступление, доли\tЗвучание, доли\nC4\tПравая, 1\t0\t1\nD4\tПравая, 2\t1\t1\nD4\tПравая, 2\t2\t1\nE4\tПравая, 3\t3\t1",
+    "bass": {
+      "fontStatus": "loaded",
+      "notes": [
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",0,0]",
+          "midi": "48",
+          "position": "3",
+          "start": "0"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",1,0]",
+          "midi": "50",
+          "position": "4",
+          "start": "1"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",2,0]",
+          "midi": "50",
+          "position": "4",
+          "start": "2"
+        },
+        {
+          "duration": "1",
+          "id": "[\"piano\",\"staff-reader-demo-bass\",\"piano-catalog-v7:d46595f6\",3,0]",
+          "midi": "52",
+          "position": "5",
+          "start": "3"
+        }
+      ],
+      "status": "ready",
+      "title": "Басовый ключ"
+    },
+    "bassDetails": "Данные выбранной фразы\nНота\tРука, палец\tВступление, доли\tЗвучание, доли\nC3\tЛевая, 5\t0\t1\nD3\tЛевая, 4\t1\t1\nD3\tЛевая, 4\t2\t1\nE3\tЛевая, 3\t3\t1",
+    "mobile": {
+      "clientWidth": 390,
+      "detailsOpen": true,
+      "mainWidth": 390.3999938964844,
+      "scrollWidth": 390,
+      "svgWidth": 350.3999938964844,
+      "tableWidth": 350.3999938964844
+    },
+    "unsupported": {
+      "noteCount": 0,
+      "status": "unsupported",
+      "warning": "Этот вид пока читает только явно заданные натуральные C, D и E.",
+      "warningCode": "SPELLING_UNSUPPORTED"
+    },
+    "finalSmoke": {
+      "detailsOpen": true,
+      "fontStatus": "loaded",
+      "notes": 4,
+      "scoreLabelledBy": "staff-bass-score-title staff-bass-score-desc",
+      "title": "Басовый ключ",
+      "viewportClientWidth": 1265
+    },
+    "consoleErrors": [],
+    "screenshot": "docs/qa/piano-2026-11-06-20-staff-reader.jpg"
+  },
+  "isolatedQaCleanup": {
+    "ownedTabClosed": true,
+    "ownedServerStopped": true,
+    "viewportReset": true,
+    "defaultPreviewUntouched": true
+  },
+  "readerBuild": {
+    "version": "0.1.0",
+    "mainReleaseVersion": "23.5.23",
+    "kind": "read-only-react-staff-preview",
+    "react": "19.3.0",
+    "typescript": "5.8.3",
+    "runtimeScripts": 0,
+    "registeredLessons": 0,
+    "storageWrites": false,
+    "localOnly": true,
+    "files": {
+      "index.html": {
+        "bytes": 5448,
+        "sha256": "9a749312ae9d2a760a6b678415e7ebbbfb20b3ee7db2a999a52c2d8bfa7a927f"
+      },
+      "bass.html": {
+        "bytes": 5315,
+        "sha256": "30ac5231a208db8f2652d8b3753f2ded0e5fe50e6df81ba6a6973e7bc7b020b3"
+      },
+      "limitations.html": {
+        "bytes": 2430,
+        "sha256": "fca911d3d55e32016996ec36937eb7df74d9bc3ba128176924fd062a2a73d660"
+      },
+      "reader.css": {
+        "bytes": 3144,
+        "sha256": "6143027d6125c8dd2dce0c26d5b0397cd42b23beaaccd7076adca0bda3f02dda"
+      },
+      "Bravura.woff2": {
+        "bytes": 323416,
+        "sha256": "e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4"
+      },
+      "OFL-Bravura.txt": {
+        "bytes": 4420,
+        "sha256": "c24929be7028026a65ee8894da1e3c36d2a4ccce0548d9ba8ba64509f46319ee"
+      }
+    }
+  },
+  "primarySources": [
+    {
+      "id": "hutchinson-clef-register-2026-11-06",
+      "author": "Robert Hutchinson / University of Puget Sound",
+      "title": "Music Theory for the 21st-Century Classroom: 1.2 Notation; 1.3 Octave Registers",
+      "url": "https://musictheory.pugetsound.edu/mt21c/Notation.html",
+      "additionalUrls": [
+        "https://musictheory.pugetsound.edu/mt21c/OctaveRegisters.html"
+      ],
+      "section": "1.2 paragraphs on staff lines, treble and bass anchors; 1.3 middle C paragraph / Figure 1.3.1 caption",
+      "evidence": "Five-line notation uses clef-specific reference pitches; C4 is middle C with a ledger line below treble. Supports independent C/D/E positions already planned.",
+      "limits": "Explanatory text read. The source SVG request returned cache miss; no claim to have inspected that image. Our browser proof is of the project renderer, not a copied textbook figure.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "systemApplications": [
+        {
+          "batch": "2026-11-06-20",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "scope": "Read-only six-pitch staff preview and typed React component",
+          "report": "docs/reports/piano-curriculum-2026-11-06-20.md"
+        }
+      ]
+    },
+    {
+      "id": "react-static-reader-2026-11-06",
+      "kind": "technical-reference",
+      "author": "React team",
+      "title": "renderToStaticMarkup",
+      "url": "https://react.dev/reference/react-dom/server/renderToStaticMarkup",
+      "section": "Reference and caveats: static HTML output",
+      "evidence": "Actual React server rendering produces non-interactive HTML; native HTML disclosure/navigation can work without hydration.",
+      "limits": "Does not establish a complete Next.js build or a client-side learning session; the preview has no runtime scripts.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "systemApplications": [
+        {
+          "batch": "2026-11-06-20",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "scope": "Read-only six-pitch staff preview and typed React component",
+          "report": "docs/reports/piano-curriculum-2026-11-06-20.md"
+        }
+      ]
+    },
+    {
+      "id": "steinberg-bravura-font-2026-11-06",
+      "kind": "technical-reference",
+      "author": "Steinberg Media Technologies GmbH",
+      "title": "Bravura reference music font and SIL OFL 1.1",
+      "url": "https://github.com/steinbergmedia/bravura",
+      "additionalUrls": [
+        "https://github.com/steinbergmedia/bravura/blob/master/redist/woff/Bravura.woff2",
+        "https://github.com/steinbergmedia/bravura/blob/master/redist/OFL.txt"
+      ],
+      "section": "redist/woff/Bravura.woff2 and redist/OFL.txt",
+      "evidence": "Unmodified official local WOFF2 plus full OFL; glyphs used instead of platform-dependent missing music characters.",
+      "limits": "Font asset only, not an installed library/plugin or author approval of the curriculum. File has 323416 bytes and pinned SHA-256 e68df66446e3ffa6f474ce9eb2949e938102406f12d8f40ad8754398c50f55d4.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "systemApplications": [
+        {
+          "batch": "2026-11-06-20",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "scope": "Read-only six-pitch staff preview and typed React component",
+          "report": "docs/reports/piano-curriculum-2026-11-06-20.md"
+        }
+      ]
+    },
+    {
+      "id": "smufl-clef-codes-2026-11-06",
+      "kind": "technical-reference",
+      "author": "SMuFL / W3C Music Notation Community Group",
+      "title": "Standard Music Font Layout: Clefs",
+      "url": "https://smufl.formats.music/latest/tables/clefs.html",
+      "section": "Clefs U+E050–U+E07F: gClef U+E050, fClef U+E062",
+      "evidence": "Explicit music glyph codes used with Bravura for conventional G and F clefs.",
+      "limits": "Glyph identity does not validate all engraving, hand assignments or performance. Only the two anchored clefs and six natural pitches are supported.",
+      "verifiedOn": "2026-11-06",
+      "lessonIds": [],
+      "systemApplications": [
+        {
+          "batch": "2026-11-06-20",
+          "verifiedOn": "2026-11-06",
+          "recheckedInThisBatch": true,
+          "scope": "Read-only six-pitch staff preview and typed React component",
+          "report": "docs/reports/piano-curriculum-2026-11-06-20.md"
+        }
+      ]
+    }
+  ],
+  "sourceLedgerEntries": 40,
+  "skills": [
+    "find-skills",
+    "frontend-design",
+    "web-design-guidelines",
+    "react-best-practices"
+  ],
+  "checks": {
+    "coverageAuditPassed": true,
+    "otherMusicalAuditsRerun": false,
+    "reason": "All 570 runtime records, their grades/instructions and the old executable/declaration files are unchanged; the new renderer is not loaded by the main application.",
+    "gitDiffCheckPassed": true
+  },
+  "quota": {
+    "checkedAt": "2026-11-06T07:13:05.914Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "windowDurationMins": 10080,
+    "usedPercent": 50,
+    "remainingPercent": 50,
+    "resetsAt": 1794379031,
+    "otherWindows": []
+  },
+  "limits": {
+    "independentTeacherReview": false,
+    "physicalInstrumentValidation": false,
+    "firstExposureProtocolImplemented": false,
+    "earOrReadingCreditAwarded": false,
+    "fullRhythmicEngraving": false,
+    "polyphonicStaffSupport": false,
+    "automaticEnharmonicSpelling": false,
+    "fullReactNextMigrationComplete": false,
+    "domainBought": false,
+    "deployed": false,
+    "guitarWritePerformed": false,
+    "portalServicesChanged": false,
+    "commitOrPush": false
+  },
+  "nextWork": {
+    "priority": "first-reading-session-contract",
+    "action": "Подготовить чистый контракт первой нотной пробы и истории открытых элементов для detail-p-read-treble-01 / detail-p-read-bass-01: сначала открытый разбор, затем другая ещё не показанная запись, ответ до раскрытия и отдельный статус подсказки/повтора. Опубликованные примеры и пробы переноса исключать из неизвестного банка; при исчерпании оставлять практику. Сохранять ID/версию элемента, источник/партию и независимый прогресс чтения; не наследовать память или MIDI-зачёт существующих уроков. После тестов подключить этот контракт к отдельному React-компоненту и проверить настоящий локальный Next.js-маршрут в необязательном веб-пакете по архитектуре портала. Стан пока отображает только подготовленные высоты, не полную ритмическую гравировку. Не продвигать планы в готовые уроки до проверки протокола и сохранения результатов. Каталог остаётся 422 / 158 MIDI-контрактов / 80 структурированных / 6 будущих планов.",
+    "files": [
+      "docs/PIANO_FIRST_EXPOSURE_PLAN.md",
+      "docs/piano-lesson-backlog.json",
+      "piano-staff-view.js",
+      "piano-staff-view.d.ts",
+      "web-reader/src/StaffReader.tsx",
+      "docs/WEB_APP_PLAN.md"
+    ]
+  }
+}

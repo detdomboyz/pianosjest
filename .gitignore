@@ -1,0 +1,30 @@
+/tmp/
+/dist/
+
+# Dependencies and generated web builds.
+node_modules/
+.next/
+.turbo/
+/web-app/out/
+*.tsbuildinfo
+
+# Personal catalog, MIDI settings, and local configuration stay on this PC.
+/trainer-content.json
+/trainer-content.json.*
+/midi-keyboard-settings.ini
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Credentials and generated native/runtime files.
+*.pem
+*.key
+*.pfx
+*.p12
+*.exe
+*.dll
+*.pdb
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,721 @@
+{
+  "version": 1,
+  "updatedOn": "2026-11-06",
+  "brand": "MelodiaJest",
+  "workingFolder": "pianosjest",
+  "scope": [
+    "piano-curriculum",
+    "design-and-accessibility",
+    "measured-performance",
+    "incremental-web-migration"
+  ],
+  "automation": {
+    "id": "automation",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "deadlineMinutes": null,
+    "serialContinuation": true,
+    "quotaPolicy": "until-exhausted",
+    "reservePercent": 0,
+    "guardRemainingPercent": 0
+  },
+  "release": {
+    "version": "23.5.30",
+    "artifact": "dist/web",
+    "build": "npm run build:web",
+    "preview": "npm run preview:web",
+    "startFile": "START-WEB.cmd",
+    "lastTestedUrl": "http://127.0.0.1:4214",
+    "storage": "private browser catalog; JSON transfer; no cloud account",
+    "domain": "melodiajest.ru",
+    "domainStatus": "not-purchased",
+    "deployed": false,
+    "exampleConfig": "deploy/shared-host/Caddyfile.fragment",
+    "standaloneExampleConfig": "deploy/Caddyfile.web.example",
+    "sharedHostPreparation": {
+      "checkedOn": "2026-11-06",
+      "guide": "docs/MELODIAJEST_SELECTEL_SETUP.md",
+      "compose": "deploy/shared-host/compose.yaml",
+      "report": "docs/reports/melodiajest-shared-host-2026-11-06.md",
+      "serverAddress": "135.106.217.27",
+      "proxyContainer": "libre-caddy-1",
+      "edgeNetwork": "libre_public",
+      "composeConfigValidated": true,
+      "caddyFragmentAdapted": true,
+      "nginxRuntimeValidated": false,
+      "productionChanged": false,
+      "nextStep": "User registers domain and sets root A plus www CNAME; verify public DNS, then execute separate first-release stage with nginx and HTTPS checks"
+    },
+    "lastTestedUrlNote": "Isolated QA origin; owned tab and preview server closed. Default preview remains 127.0.0.1:4173.",
+    "ownedQaClosed": true,
+    "lastBrowserReport": "docs/reports/piano-curriculum-2026-11-06-30.md"
+  },
+  "contentDeliveryCandidate": {
+    "status": "evaluated-not-implemented",
+    "proposedBy": "user",
+    "checkedOn": "2026-11-06",
+    "report": "docs/reports/melodiajest-content-delivery-2026-11-06.md",
+    "existingLibretaStorage": "Selectel S3 ru-3; external mode enabled, runtime flags verified",
+    "currentWebBytes": 1354547,
+    "estimatedGzipBytes": 290978,
+    "pianoDevelopmentModuleBytes": 454693,
+    "singleIsolatedBuildMilliseconds": 52.2,
+    "measurementIsNetworkBenchmark": false,
+    "remoteContentLoadingImplemented": false,
+    "bucketChanged": false,
+    "nextStep": "Extract a versioned lesson data contract and compare one locally served topic package before choosing remote S3 delivery; retain IDs, editions, local launch and private user data"
+  },
+  "completed": [
+    {
+      "id": "compact-guidance-and-browser-release",
+      "report": "docs/reports/piano-curriculum-2026-11-05-18.md",
+      "testsPassed": 240,
+      "newLessons": 0
+    },
+    {
+      "id": "left-triad-source-and-prerequisite-review",
+      "report": "docs/reports/piano-curriculum-2026-11-05-19.md",
+      "newLessons": 0,
+      "newPlans": 1
+    },
+    {
+      "id": "left-triads-preparation-and-memory-mask",
+      "report": "docs/reports/piano-curriculum-2026-11-05-20.md",
+      "testsPassed": 247,
+      "newLessons": 3,
+      "systemImprovements": [
+        "named prerequisite buttons",
+        "no title or sidebar note hints in memory mode"
+      ]
+    },
+    {
+      "id": "broken-chord-explanation-and-repeat-cue",
+      "report": "docs/reports/piano-curriculum-2026-11-05-21.md",
+      "testsPassed": 253,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "explicit repeated-note reattack cue",
+        "exact timing replaces legacy quick hint",
+        "octave labels absent in memory mode"
+      ]
+    },
+    {
+      "id": "minor-assembly-and-forward-route-anchors",
+      "report": "docs/reports/piano-curriculum-2026-11-05-22.md",
+      "testsPassed": 263,
+      "newLessons": 0,
+      "reviewedLessons": 2,
+      "systemImprovements": [
+        "bounded two-beat hold and common chord release for two lessons",
+        "forward after-dependencies resolve without rewriting catalog order",
+        "cycle and missing-anchor failures are explicit"
+      ]
+    },
+    {
+      "id": "left-triple-pulse-and-minor-comparison",
+      "report": "docs/reports/piano-curriculum-2026-11-05-23.md",
+      "testsPassed": 271,
+      "newLessons": 1,
+      "reviewedLessons": 2,
+      "systemImprovements": [
+        "left-hand triple-pulse preparation",
+        "bounded common chord release in two comparison lessons",
+        "clear E-flat/D-sharp piano-key explanation"
+      ]
+    },
+    {
+      "id": "cadence-repetition-and-goal-counting",
+      "report": "docs/reports/piano-curriculum-2026-11-05-24.md",
+      "testsPassed": 278,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "explicit same-goal relation and named primary-lesson action",
+        "goal-group upper bound with cycle/missing-target validation",
+        "scoped common-release check for the cadence variant"
+      ]
+    },
+    {
+      "id": "dotted-quarter-and-ode-source-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-01.md",
+      "testsPassed": 284,
+      "newLessons": 1,
+      "reviewedLessons": 2,
+      "systemImprovements": [
+        "short dotted-quarter subdivision cue in the actual target view",
+        "cue absent from memory DOM regardless of saved material mode",
+        "pure presentation and rhythm-builder boundaries with source-backed metadata"
+      ]
+    },
+    {
+      "id": "combined-ode-repetition-and-memory-assistance-status",
+      "report": "docs/reports/piano-curriculum-2026-11-06-02.md",
+      "testsPassed": 290,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "memory assistance is immediately visible and announced in a polite live region",
+        "listening before the first note stops at the first MIDI attack; later listening cannot earn memory credit",
+        "same-goal linkage keeps length and memory attempts out of new-goal counts"
+      ]
+    },
+    {
+      "id": "twinkle-two-position-preparation-and-source-adaptation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-03.md",
+      "testsPassed": 296,
+      "newLessons": 1,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "explicit position cues only at the relevant action; escaped pure presenter with TypeScript declaration",
+        "cues absent from memory and hidden-finger targets",
+        "new preparation reachable by named button; five-line description retained"
+      ]
+    },
+    {
+      "id": "mary-source-phrase-endings-and-whole-note-count",
+      "report": "docs/reports/piano-curriculum-2026-11-06-04.md",
+      "testsPassed": 302,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "short four-beat whole-note cue restricted to 4/4 and absent from memory DOM",
+        "actual sample-duration function preserves the final 3750 ms at 64 BPM",
+        "explicit source attribution limits prevent author credit by title alone"
+      ]
+    },
+    {
+      "id": "bass-answer-repetition-and-explicit-hand-handoff",
+      "report": "docs/reports/piano-curriculum-2026-11-06-05.md",
+      "testsPassed": 308,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "opt-in sequential-release handoff cues in both directions; no inference for held voices",
+        "same-goal relation excludes another melodic variation from independent-goal count",
+        "single named primary-goal button; memory hides it and the handoff cue"
+      ]
+    },
+    {
+      "id": "blind-rhythm-repetition-and-accessible-memory-entry",
+      "report": "docs/reports/piano-curriculum-2026-11-06-06.md",
+      "testsPassed": 316,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "explicit polite notice separates blind keyboard practice from hidden-cue MIDI memory",
+        "eligible memory action clears an active attempt and focuses the hidden title; no MIDI connection is forced",
+        "blind toggles expose aria-pressed and retain focus after rerender; 44 px button fits the narrow screen"
+      ]
+    },
+    {
+      "id": "blind-chords-preparation-and-common-release-cue",
+      "report": "docs/reports/piano-curriculum-2026-11-06-07.md",
+      "testsPassed": 324,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "short common-release cue in the actual chord target, only for the explicit v2 contract",
+        "memory mode has no release cue, material, goal relation, keys or octave labels in DOM",
+        "right-hand cadence plus separately prepared left triad; repetition count excludes new tempo and display"
+      ]
+    },
+    {
+      "id": "final-exam-checkpoint-and-eight-bar-edition",
+      "report": "docs/reports/piano-curriculum-2026-11-06-08.md",
+      "testsPassed": 334,
+      "newLessons": 0,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "explicit checkpoint-only metadata with validated general-skill preparation; no alias or double subtraction",
+        "compact and expanded checkpoint explanation absent from memory DOM",
+        "exact source location, transposition, changed rhythm and Public Domain declaration visible in full material"
+      ]
+    },
+    {
+      "id": "left-durations-whole-role-and-localized-counts",
+      "report": "docs/reports/piano-curriculum-2026-11-06-09.md",
+      "testsPassed": 342,
+      "newLessons": 2,
+      "reviewedLessons": 1,
+      "systemImprovements": [
+        "Russian action counts via shared Intl formatter in catalog and practice range",
+        "explicit right whole-note repetition without changing its musical version or credit",
+        "two concrete early left-finger-5 tasks with their own prerequisite chain"
+      ]
+    },
+    {
+      "id": "hand-preparation-and-left-triad-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-06-10.md",
+      "testsPassed": 350,
+      "newLessons": 0,
+      "reviewedLessons": 4,
+      "systemImprovements": [
+        "Named prerequisite navigation follows each corrected preparation",
+        "Only left-triad assembly changes its assessment version; old history retained",
+        "Top-level product lastReport now points to the actual current report"
+      ]
+    },
+    {
+      "id": "exact-duration-presenter",
+      "report": "docs/reports/piano-curriculum-2026-11-06-11.md",
+      "testsPassed": 358,
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "systemImprovements": [
+        "Pure typed duration display, no threshold guess of note value",
+        "Localized numeric durations with explicit rounding marker",
+        "Compact note symbols and readable wrapped timing, including imported MIDI",
+        "All 569 lesson music/instructions and all musical versions preserved"
+      ]
+    },
+    {
+      "id": "left-black-triad-and-practice-time",
+      "report": "docs/reports/piano-curriculum-2026-11-06-12.md",
+      "testsPassed": 370,
+      "newLessons": 0,
+      "reviewedLessons": 2,
+      "systemImprovements": [
+        "Correct left prerequisites with named navigation",
+        "Pure typed note/rest timing follows selected practice BPM",
+        "Native tempo input refreshes the target without losing slider focus",
+        "Active challenge tempo and all musical versions preserved"
+      ]
+    },
+    {
+      "id": "right-release-black-groups-flat-names",
+      "report": "docs/reports/piano-curriculum-2026-11-06-13.md",
+      "testsPassed": 379,
+      "newLessons": 0,
+      "reviewedLessons": 4,
+      "systemImprovements": [
+        "Four hand-specific preparation chains with protected edition history",
+        "Full three-black-key drill guides and manual changed-phrase transfers",
+        "Pure typed opt-in flat/sharp alias cue with exact MIDI octave",
+        "Memory hides alias cue at all material settings and after BPM change"
+      ]
+    },
+    {
+      "id": "typed-musical-document-readonly-pilot",
+      "report": "docs/reports/piano-curriculum-2026-11-06-14.md",
+      "testsPassed": 391,
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "systemImprovements": [
+        "Versioned pure musical document and strict TypeScript declarations",
+        "Separate note spans and explicit unknown timing; no recovered voices invented",
+        "Readonly legacy adapter with source history and guarded restoration",
+        "Real piano parser and key map extracted from HTML",
+        "Whole-catalog audit: 569 records and 39247 notes; exact runtime-credit reload",
+        "Expensive projection stays outside interactive save/export/import"
+      ]
+    },
+    {
+      "id": "relocation-preparation-and-target-cues",
+      "report": "docs/reports/piano-curriculum-2026-11-06-15.md",
+      "testsPassed": 399,
+      "newLessons": 0,
+      "reviewedLessons": 4,
+      "systemImprovements": [
+        "Four active-hand preparation chains with archived original instructions",
+        "Concrete position cues at the actual transfer target via existing typed view",
+        "Within-position figures do not ask for another shift at every note",
+        "Explicit left C4 and hidden memory DOM at all material modes",
+        "Notes, grades, parser and interactive catalog transfer unchanged"
+      ]
+    },
+    {
+      "id": "stable-initial-work-theme-identities",
+      "report": "docs/reports/piano-curriculum-2026-11-06-16.md",
+      "testsPassed": 405,
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "systemImprovements": [
+        "Two deterministic initial work-theme IDs and 15 consistent references",
+        "Saved v7 opaque IDs, names, order and classification remain authoritative",
+        "Occupied initial IDs do not merge or rename personal groups",
+        "Same catalog across fresh VMs and two browser origins",
+        "Existing progress key, UI preferences and MIDI selection regression coverage"
+      ]
+    },
+    {
+      "id": "terminal-rest-one-bar-and-settings-grid",
+      "report": "docs/reports/piano-curriculum-2026-11-06-17.md",
+      "testsPassed": 424,
+      "newLessons": 1,
+      "reviewedLessons": 0,
+      "systemImprovements": [
+        "Opt-in ending v1 waits through the last rest and invalidates an interrupted observed MIDI transport",
+        "Preview releases audio and visual keys before the final rest; reset/pause cancel timers",
+        "Memory feedback and target contain no release or rest hints; feedback uses a polite status region",
+        "Two keyboard settings sections use one grid column; their controls no longer squeeze descriptions"
+      ]
+    },
+    {
+      "id": "dyad-active-hand-preparation-and-common-release",
+      "report": "docs/reports/piano-curriculum-2026-11-06-18.md",
+      "testsPassed": 432,
+      "newLessons": 0,
+      "reviewedLessons": 4,
+      "systemImprovements": [
+        "Four own-hand prerequisite chains with archived original instructions",
+        "Existing common-release presenter now describes the four reviewed two-note contracts",
+        "Opt-in release grading archives old progress and requires a new take",
+        "Five-line preview, keyboard disclosure, named preparation and hidden memory DOM verified; no UI or common evaluator rewrite"
+      ]
+    },
+    {
+      "id": "first-exposure-goals-and-plan-validation",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "testsPassed": 440,
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 4,
+      "systemImprovements": [
+        "Separate future direction, echo, treble and bass reading goals with explicit demonstrations and transfer",
+        "Actual coverage audit rejects self/cyclic future dependencies and malformed source/note specifications",
+        "First-exposure protocol requires response before reveal and separate assisted/repeated practice",
+        "All 570 runtime records, 21 protected files and the local web release unchanged"
+      ]
+    },
+    {
+      "id": "explicit-six-pitch-staff-and-react-preview",
+      "report": "docs/reports/piano-curriculum-2026-11-06-20.md",
+      "testsPassed": 448,
+      "optionalReaderTestsPassed": 4,
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "systemImprovements": [
+        "Revision-scoped explicit spelling and selected-part projection preserves note IDs/time",
+        "Conventional clefs with local licensed Bravura; unsupported notes never form a shortened phrase",
+        "Actual strict TypeScript/React server rendering in a separate optional package",
+        "Keyboard, SVG labels, left/right finger data and 390px browser path verified",
+        "Main 570-record catalog, root dependency-free startup and main web export unchanged"
+      ]
+    },
+    {
+      "id": "first-reading-session-and-storage-contract",
+      "report": "docs/reports/piano-curriculum-2026-11-06-21.md",
+      "testsPassed": 470,
+      "newLessons": 0,
+      "systemImprovements": [
+        "pure pitch-reading attempt/exposure state machine",
+        "separate versioned history with write/readback before display",
+        "exclusive lock and fail-closed storage errors; no UI integration yet"
+      ]
+    },
+    {
+      "id": "bounded-reading-react-next-and-history-transfer",
+      "report": "docs/reports/piano-curriculum-2026-11-06-22.md",
+      "testsPassed": 490,
+      "optionalReaderTestsPassed": 6,
+      "optionalNextTestsPassed": 4,
+      "newLessons": 0,
+      "systemImprovements": [
+        "four locally unseen reading items per clef; published plan examples excluded",
+        "first-mode React DOM contains no named answers, fingers or MIDI attributes",
+        "separate history import/export with refusal of conflicting replacement",
+        "actual static Next.js routes, no old local APIs",
+        "visible expand action, persisted material view and accessible errors"
+      ]
+    },
+    {
+      "id": "three-finger-preparation-and-published-reading-exclusion",
+      "report": "docs/reports/piano-curriculum-2026-11-06-23.md",
+      "newLessons": 0,
+      "reviewedLessons": 2,
+      "reviewedFuturePlans": 2,
+      "newPlans": 0,
+      "testsPassed": 501,
+      "systemImprovements": [
+        "source audit of every built-in monophonic window",
+        "published pool is practice only; zero first items",
+        "keyboard practice variation; preserved v1 history",
+        "validated preparation-fragment bounds"
+      ]
+    },
+    {
+      "id": "versioned-preparation-and-read-only-legacy-progress",
+      "report": "docs/reports/piano-curriculum-2026-11-06-24.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 516,
+      "systemImprovements": [
+        "six edition/range/assessor-bound preparation requirements",
+        "replay real MIDI assessor; no summary-flag promotion",
+        "deduplicate copied observations; reject corrupt/future data",
+        "read-only exact raw legacy transfer inspection",
+        "strict TypeScript contracts and live coverage audit integration"
+      ]
+    },
+    {
+      "id": "full-preparation-midi-capture-and-recovery-ui",
+      "report": "docs/reports/piano-curriculum-2026-11-06-25.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 531,
+      "systemImprovements": [
+        "finalized full prerequisite MIDI snapshots",
+        "own Web Lock and versioned journal with readback",
+        "pending recovery export and idempotent retry",
+        "old raw progress included without normalization",
+        "no stale export or memory-mode JSON DOM"
+      ]
+    },
+    {
+      "id": "explicit-fragment-adaptation-and-scoped-journal",
+      "report": "docs/reports/piano-curriculum-2026-11-06-26.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "reviewedPlans": 2,
+      "testsPassed": 547,
+      "systemImprovements": [
+        "explicit project adaptation v1 at 56 BPM preserves five quarter-note attacks and source fingers",
+        "two separate range-scoped journals share the same transaction implementation",
+        "all four whole prerequisite keys and 570 music editions unchanged",
+        "strict TypeScript distinguishes fragment and whole histories",
+        "old UI export and memory exclusion browser regression; fragment capture/UI still pending"
+      ]
+    },
+    {
+      "id": "fragment-capture-and-combined-recovery-ui",
+      "report": "docs/reports/piano-curriculum-2026-11-06-27.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 560,
+      "systemImprovements": [
+        "explicit bounded fragment choice and frozen requirement/mode/tempo",
+        "final-release grading with separate persisted fragment readiness",
+        "combined v2 whole/fragment/legacy export",
+        "recovery retains ID conflicts and refuses stale local copies",
+        "memory DOM, keyboard disclosure, 390px and active-scope catalogue preservation verified"
+      ]
+    },
+    {
+      "id": "fresh-legacy-progress-writer-and-idempotent-recovery",
+      "report": "docs/reports/piano-curriculum-2026-11-06-28.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 573,
+      "systemImprovements": [
+        "reproduced stale-tab progress and private-field data loss before changes",
+        "fresh read under one cooperative lock for existing legacy key",
+        "actual assessment reducer plus versioned receipts; no duplicate on failed readback retry",
+        "confirmed-only pending summary and optional legacyRecovery in v2 export",
+        "stable keyboard disclosure, memory DOM exclusion, 390px and two real tabs verified"
+      ]
+    },
+    {
+      "id": "read-only-v1-v2-transfer-validation-and-preview",
+      "report": "docs/reports/piano-curriculum-2026-11-06-29.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 589,
+      "systemImprovements": [
+        "actual scoped MIDI replay and raw/structured journal equivalence",
+        "explicit v1 scopes and v2 complete/incomplete classification",
+        "old editions, private fields, receipts and legacy recovery stay separate from new MIDI credit",
+        "duplicate names and ID conflicts rejected without truncation",
+        "keyboard preview, result focus, memory exclusion and 390px verified; local export unchanged"
+      ]
+    },
+    {
+      "id": "recoverable-empty-identical-progress-import",
+      "report": "docs/reports/piano-curriculum-2026-11-06-30.md",
+      "newLessons": 0,
+      "reviewedLessons": 0,
+      "newPlans": 0,
+      "testsPassed": 611,
+      "systemImprovements": [
+        "explicit revalidated source/destination compare and instance preview ticket",
+        "fixed three shared locks and backup before any data write",
+        "readback checkpoints and retry preserving later user results",
+        "whole/fragment recovery, v1 fragment preservation and exact archive export",
+        "two native browser tabs, partial failure/new-tab recovery, conflict refusal, memory and 390px",
+        "portable pending archives visibly incomplete and cannot be written elsewhere"
+      ]
+    }
+  ],
+  "musicalCheckpoint": "docs/piano-curriculum-state.json",
+  "next": [
+    {
+      "priority": 1,
+      "id": "left-five-finger-preparation-transition-review",
+      "action": "Вернуться к левой пятипальцевой позиции: отдельно сверить course03-03 и course03-04, их переход к course03-05 после course03-02. Прочитать первичные нотные/методические материалы для движения 5–4–3–2–1 вверх и 1–2–3–4–5 вниз; проверить высоты, ритм, паузы, руку и подготовку указательного/большого. Сначала найти существующую подходящую подготовку своей руки; при подтверждённом отсутствии добавить один короткий мостик. Завершить 1–3 новых/исправленных микроурока с отдельной целью и переносом на новую фразу, построить маршрут генератором без смены ID/пользовательского порядка и проверить затронутый UI. Не продвигать шесть будущих планов и банк первых проб без их отдельной подготовки; физическая и независимая преподавательская проверки остаются отдельными."
+    },
+    {
+      "priority": 2,
+      "id": "reading-preparation-gate-and-unseen-bank",
+      "action": "После учебной партии связать допуск чтения с обоими scoped MIDI-журналами и шестью требованиями, не со старым summary. Новая первая проба остаётся недоступной при нулевом неопубликованном банке; готовить его и источники отдельной малой партией."
+    },
+    {
+      "priority": 3,
+      "id": "aural-item-response-contract",
+      "action": "Затем реализовать отдельный контракт неизвестного слухового задания: окно образца отделено от MIDI-ответа, известная опора объявлена, ответ фиксируется до раскрытия, показ/прослушивание учитывается в истории. Не объявлять автоматической проверкой слуха известный рисунок, пение, номера пальцев или задержку реакции."
+    },
+    {
+      "priority": 4,
+      "id": "explicit-progress-history-merge",
+      "action": "Отдельно подготовить проверяемое объединение различающихся историй и ручное разрешение конфликта/переносимого pending-архива; не заменять существующие данные автоматически."
+    }
+  ],
+  "excludedWriteRoots": [
+    "C:\\Users\\Alexander\\Documents\\web\\guitarjest"
+  ],
+  "forbiddenIncidentalActions": [
+    "commit",
+    "push",
+    "publish",
+    "domain-purchase",
+    "DNS",
+    "changes to other portal services"
+  ],
+  "lastReport": "docs/reports/piano-curriculum-2026-11-06-30.md",
+  "readerPreview": {
+    "version": "0.1.0",
+    "artifact": "dist/reader",
+    "build": "npm --prefix web-reader run build",
+    "preview": "npm --prefix web-reader run preview",
+    "lastTestedUrl": "http://127.0.0.1:4200",
+    "ownedQaClosed": true,
+    "react": "19.3.0",
+    "typescript": "5.8.3",
+    "runtimeScripts": 0,
+    "registeredLessons": 0,
+    "nextJsRouteBuilt": false,
+    "domainDeployed": false,
+    "lastBuildReport": "docs/reports/piano-curriculum-2026-11-06-30.md"
+  },
+  "firstReadingContract": {
+    "version": 1,
+    "sessionModule": "piano-reading-session.js",
+    "storageModule": "piano-reading-store.js",
+    "storageKey": "music-reading-piano-v1",
+    "scope": "pitch-order-only",
+    "executionVerified": false,
+    "uiConnected": true,
+    "realBrowserPersistenceTested": true,
+    "registeredLessons": 0,
+    "nextJsRouteBuilt": true,
+    "bankModule": "piano-reading-bank.js",
+    "controllerModule": "piano-reading-controller.js",
+    "midiModule": "piano-reading-midi.js",
+    "physicalMidiTested": false,
+    "nativeBlurVisibilityConfirmed": false,
+    "existingCatalogHistoryIntegrated": false,
+    "bankPolicyVersion": 2,
+    "publishedCatalogWindowsChecked": true,
+    "auditedCatalogRecords": 570,
+    "eligibleFirstItems": 0
+  },
+  "nextPreview": {
+    "version": "0.1.1",
+    "artifact": "dist/next",
+    "startFile": "START-READING-WEB.cmd",
+    "build": "npm --prefix web-app run build",
+    "preview": "npm --prefix web-app run preview",
+    "routes": [
+      "/",
+      "/reading/treble/",
+      "/reading/bass/"
+    ],
+    "next": "15.5.27",
+    "react": "19.3.0",
+    "typescript": "5.8.3",
+    "registeredLessons": 0,
+    "domainDeployed": false,
+    "ownedQaClosed": true,
+    "lastTestedUrl": "http://127.0.0.1:4204",
+    "lastBrowserReport": "docs/reports/piano-curriculum-2026-11-06-23.md",
+    "lastBuildReport": "docs/reports/piano-curriculum-2026-11-06-30.md"
+  },
+  "preparationContract": {
+    "version": 1,
+    "module": "piano-preparation.js",
+    "types": "piano-preparation.d.ts",
+    "documentation": "docs/PIANO_PREPARATION_CONTRACT.md",
+    "audit": "docs/piano-preparation-audit.json",
+    "compiledPlans": 2,
+    "requirements": 6,
+    "actualCaptureConnected": true,
+    "newEvidenceStorageConnected": true,
+    "readingGateUiConnected": false,
+    "readOnlyLegacyInspector": true,
+    "legacyProgressPromoted": false,
+    "registeredLessons": 0,
+    "captureModule": "piano-preparation-capture.js",
+    "storeModule": "piano-preparation-store.js",
+    "storageKey": "music-preparation-piano-v1",
+    "fullCaptureTargetIds": [
+      "course02-02",
+      "detail-p-release-01",
+      "course03-02",
+      "detail-p-release-02"
+    ],
+    "legacyRawExportConnected": true,
+    "importConnected": true,
+    "physicalMidiTested": false,
+    "nativeBeforeUnloadPromptConfirmed": false,
+    "fragmentProfile": "three-note-repeat-preparation-v1",
+    "fragmentTargetBpm": 56,
+    "fragmentSourceIds": [
+      "course02-06",
+      "course03-06"
+    ],
+    "fragmentStoreApiConnected": true,
+    "fragmentStorageKey": "music-preparation-fragments-piano-v1",
+    "fragmentCaptureUiConnected": true,
+    "fragmentExportConnected": true,
+    "fragmentImportConnected": true,
+    "fragmentSelectionModule": "piano-preparation-fragment.js",
+    "combinedExportSchemaVersion": 2,
+    "optionalLegacyRecoveryConnected": true,
+    "optionalLegacyRecoverySchemaVersion": 1,
+    "transferModule": "piano-preparation-transfer.js",
+    "transferTypes": "piano-preparation-transfer.d.ts",
+    "transferValidationUiConnected": true,
+    "supportedTransferSourceVersions": [
+      1,
+      2
+    ],
+    "transferPreviewCanWrite": false,
+    "destinationComparisonConnected": true,
+    "importModule": "piano-preparation-import.js",
+    "importTypes": "piano-preparation-import.d.ts",
+    "importPolicy": "empty-or-semantically-identical; empty-source-keeps-destination",
+    "importBackupKey": "music-preparation-transfer-backups-piano-v1",
+    "maximumBackupOperations": 8,
+    "maximumNestedArchiveDepth": 8,
+    "maximumArchiveRecords": 128,
+    "importRetryConnected": true,
+    "transferArchiveExportConnected": true,
+    "portablePendingArchiveBlocked": true
+  },
+  "progressPersistence": {
+    "module": "piano-progress-store.js",
+    "types": "piano-progress-store.d.ts",
+    "storageKey": "music-learning-piano-v1",
+    "lockName": "melodiajest:piano-progress-v1",
+    "metadataField": "melodiajestPersistence",
+    "metadataVersion": 1,
+    "maximumReceiptsPerRow": 2048,
+    "maximumCharacters": 2000000,
+    "currentWriterConnected": true,
+    "confirmedReadback": true,
+    "unsavedRecoveryExport": true,
+    "cooperativeOnly": true,
+    "oldLoadedTabsMustReload": true,
+    "importConnected": true,
+    "physicalMidiTested": false,
+    "nativeBeforeUnloadPromptConfirmed": false,
+    "report": "docs/reports/piano-curriculum-2026-11-06-28.md",
+    "readOnlyValidationConnected": true
+  }
+}
