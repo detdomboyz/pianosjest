@@ -1,0 +1,120 @@
+{
+  "checkedAt": "2026-11-08T10:48:09.578Z",
+  "scope": "isolated generated catalog and synthetic opaque memory;no personal origin data",
+  "cases": [
+    {
+      "name": "full-current-catalog-new-transaction-and-reopen",
+      "passed": true,
+      "milliseconds": 373,
+      "rawValuesExact": true,
+      "reopened": true,
+      "durability": "strict",
+      "completeCopy": false
+    },
+    {
+      "name": "edge-code-units-missing-and-all-observed-remain-incomplete",
+      "passed": true,
+      "milliseconds": 13,
+      "allSevenValuesExact": true,
+      "componentsObserved": 8,
+      "completeCopy": false
+    },
+    {
+      "name": "same-content-reuses-earliest-capture-without-a-new-slot",
+      "passed": true,
+      "milliseconds": 2,
+      "reused": true
+    },
+    {
+      "name": "concurrent-connections-reuse-the-same-record",
+      "passed": true,
+      "milliseconds": 2,
+      "connections": 2
+    },
+    {
+      "name": "native-abort-after-request-success-preserves-earlier-records",
+      "passed": true,
+      "milliseconds": 120,
+      "requestSuccessBeforeAbort": true,
+      "newRecordAbsent": true
+    },
+    {
+      "name": "injected-quota-native-abort-keeps-prior-copy",
+      "passed": true,
+      "milliseconds": 3,
+      "failureInjected": true,
+      "nativeRollbackVerified": true
+    },
+    {
+      "name": "completed-write-with-failed-readback-is-explicitly-unconfirmed",
+      "passed": true,
+      "milliseconds": 3,
+      "writeMayHaveCommitted": true,
+      "independentReadVerified": true
+    },
+    {
+      "name": "four-candidate-limit-never-evicts-the-previous-copy",
+      "passed": true,
+      "milliseconds": 119,
+      "preservedCandidates": 4
+    },
+    {
+      "name": "corrupt-record-is-rejected-without-overwrite",
+      "passed": true,
+      "milliseconds": 119,
+      "corruptRecordPreservedForReview": true
+    },
+    {
+      "name": "existing-undefined-record-is-not-reported-as-missing",
+      "passed": true,
+      "milliseconds": 3,
+      "missingDistinctFromCorrupt": true
+    },
+    {
+      "name": "unknown-schema-preserves-an-existing-sentinel",
+      "passed": true,
+      "milliseconds": 3,
+      "unknownSchemaUntouched": true
+    },
+    {
+      "name": "versionchange-closes-the-connection-without-data-migration",
+      "passed": true,
+      "milliseconds": 142,
+      "connectionClosed": true,
+      "oldDataExact": true
+    }
+  ],
+  "productionStoreOpened": false,
+  "completeCopy": false,
+  "globalWriterBarrierImplemented": false,
+  "ownerMemoryContractsValidated": false,
+  "persistencePermissionRequested": false,
+  "fixture": {
+    "catalogRecords": 578,
+    "learningLessons": 430,
+    "fullRawCodeUnits": 10105101
+  },
+  "outcome": "verified",
+  "cleanup": [
+    {
+      "name": "melodiajest-browser-checkpoints-v1-qa-20261108-17-6e2a8eab375647e083d6ab109fa085e2-main",
+      "removed": true
+    },
+    {
+      "name": "melodiajest-browser-checkpoints-v1-qa-20261108-17-6e2a8eab375647e083d6ab109fa085e2-schema",
+      "removed": true
+    }
+  ],
+  "ownedDatabasesRemoved": true,
+  "localStorageUnchanged": true,
+  "completedAt": "2026-11-08T10:48:10.956Z",
+  "mobile": {
+    "buttonHeight": 44,
+    "documentWidth": 390,
+    "width": 390
+  },
+  "consoleErrors": [],
+  "keyboardStartVerified": true,
+  "viewportReset": true,
+  "ownedTabClosed": true
+}

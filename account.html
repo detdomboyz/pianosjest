@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer"><meta name="color-scheme" content="dark">
+  <title>Моя музыка — MelodiaJest</title>
+  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="learning-game.css">
+  <script src="service-client.js" defer></script><script src="catalog-transfer.js" defer></script>
+  <script src="account.js" defer></script>
+</head>
+<body class="account-page">
+<a class="skip" href="#main">К содержимому</a>
+<header><a class="brand" href="/" translate="no">MelodiaJest</a><nav aria-label="Основное"><a href="/">Мой маршрут</a><a href="trainer.html?section=pieces">Произведения</a><a href="#public-music">Музыка сообщества</a><button type="button" id="logout" hidden>Выйти</button></nav></header>
+<main id="main">
+  <div class="intro"><div><h1>Моя музыка</h1><p>Собирай свои мелодии, играй и делись готовыми версиями.</p></div><p id="identity" class="identity">Проверяем вход…</p></div>
+  <p id="status" class="status" role="status" aria-live="polite" tabindex="-1"></p>
+  <button type="button" id="pending-export" hidden>Скачать неподтверждённые изменения</button>
+  <section id="auth" class="auth" aria-labelledby="auth-title" hidden>
+    <div class="auth-copy"><h2 id="auth-title">Сохрани своё музыкальное место</h2><p>В аккаунте — личные мелодии и настройки. Каждая новая мелодия сначала доступна только тебе.</p><p>Общий курс и опубликованную музыку можно открыть без регистрации.</p></div>
+    <div class="auth-forms"><nav aria-label="Вход в аккаунт"><button id="show-login" type="button" aria-pressed="true">Войти</button><button id="show-register" type="button" aria-pressed="false">Зарегистрироваться</button><button id="show-recover" type="button" aria-pressed="false">Восстановить доступ</button></nav>
+      <form id="auth-form"><h3 id="auth-form-title">Вход</h3>
+        <label>Логин<input id="username" name="username" autocomplete="username" spellcheck="false" autocapitalize="none" minlength="4" maxlength="32" pattern="[a-zA-Z0-9][a-zA-Z0-9_-]{3,31}" required aria-describedby="username-help"></label>
+        <small id="username-help">4–32 латинские буквы, цифры, _ или -.</small>
+        <label id="name-label" hidden>Имя для публикаций<input id="display-name" name="displayName" autocomplete="nickname" maxlength="60"></label>
+        <label id="recovery-label" hidden>Резервный код<input id="recovery-input" name="recoveryCode" autocomplete="off" spellcheck="false" autocapitalize="none" maxlength="43"></label>
+        <label><span id="password-label">Пароль</span><input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required aria-describedby="password-help"></label>
+        <small id="password-help">При регистрации — от 15 символов. Подойдёт длинная фраза.</small>
+        <p id="registration-note" hidden>После регистрации сохрани резервный код: он понадобится, если забудешь пароль. Восстановления по почте пока нет.</p>
+        <button class="primary" id="auth-submit" type="submit">Войти</button>
+      </form>
+    </div>
+  </section>
+  <section id="recovery-result" class="notice" aria-labelledby="recovery-title" hidden><h2 id="recovery-title">Сохрани резервный код</h2><p>Код показывается сейчас. Он заменит пароль при восстановлении доступа. Храни файл приватно.</p><label>Резервный код<input id="recovery-code" readonly autocomplete="off" spellcheck="false"></label><button type="button" id="download-recovery">Скачать резервный код</button><button type="button" id="recovery-done">Код сохранён</button></section>
+  <div id="private-workspace" hidden>
+    <nav class="workspace-nav" aria-label="Личный кабинет"><a href="#library">Мелодии</a><a href="#preferences">Настройки</a><a href="#feedback">Предложить исправление</a><a href="#security">Безопасность</a></nav>
+    <section id="library" aria-labelledby="library-title"><div class="section-head"><h2 id="library-title">Личные мелодии</h2><button type="button" id="new-melody">Добавить мелодию</button></div><p>Черновики видишь только ты. Публикация хранит отдельную версию — её обновляешь явно.</p><div id="melody-list" class="melody-list"></div></section>
+    <section id="composer" class="composer" aria-labelledby="composer-title" hidden><h2 id="composer-title">Новая мелодия</h2>
+      <form id="melody-form"><div class="fields"><label>Название<input id="melody-title" name="title" maxlength="200" required autocomplete="off"></label><label>Происхождение<select id="melody-origin" name="origin"><option value="original">Моя авторская музыка</option><option value="adaptation">Учебная адаптация</option><option value="public-domain">Общественное достояние</option></select></label></div>
+        <label>Описание<textarea id="melody-description" name="description" rows="3" maxlength="20000"></textarea></label>
+        <label>Ноты в раскладке Virtual Piano<textarea id="melody-pattern" name="pattern" class="notes" rows="3" maxlength="100000" required spellcheck="false" placeholder="Например: t y u…"></textarea></label>
+        <p class="help">Пробел разделяет действия, [tu] — одновременные ноты. У новой текстовой мелодии нет подтверждённого ритма; точный ритм и пальцы можно перенести из JSON каталога.</p>
+        <label id="replace-notes-label" class="check" hidden><input id="replace-notes" type="checkbox">Заменить ноты без прежнего ритма и аппликатуры. Предыдущая редакция останется в истории.</label>
+        <label>Источник и сведения об адаптации<textarea id="melody-source" name="source" rows="2" maxlength="2000"></textarea></label>
+        <details><summary>Перенести мелодию из каталога JSON</summary><p>Выбери локальную копию и одну запись. Ничего не отправится до нажатия «Сохранить личную мелодию».</p><label>Файл каталога<input id="catalog-file" type="file" accept=".json,application/json"></label><label id="import-choice-label" hidden>Запись<select id="import-choice"></select></label><button type="button" id="use-import" hidden>Вставить выбранную запись</button></details>
+        <div class="actions"><button class="primary" type="submit" id="save-melody">Сохранить личную мелодию</button><button type="button" id="export-draft">Скачать черновик JSON</button><button type="button" id="cancel-melody">Закрыть редактор</button></div>
+      </form>
+    </section>
+    <section id="preferences" aria-labelledby="preferences-title"><h2 id="preferences-title">Настройки обучения</h2><p><a class="text-link" href="/?settings=1">Порядок уроков и шкала оценок ↗</a></p><form id="preferences-form"><label>Описание урока<select id="material-mode" name="learningMaterialMode"><option value="compact">Кратко</option><option value="expanded">Развёрнуто</option><option value="hidden">Скрыто</option></select></label><p class="help">В проверке из памяти подсказки всегда скрыты. Остальные параметры можно настроить в тренажёре после входа.</p><button type="submit" class="primary">Сохранить настройки</button></form><p class="help">Полные MIDI-испытания, их результаты и опыт сохраняются в аккаунте. Прежняя история устройства и коротких подготовок остаётся в браузере и не переносится автоматически.</p></section>
+    <section id="feedback" aria-labelledby="feedback-title"><h2 id="feedback-title">Предложить исправление</h2><p>Опиши проблему и ожидаемый результат. Предложение попадёт в очередь проверки и не изменит общий курс автоматически.</p><form id="feedback-form"><label>Коротко о предложении<input id="feedback-title-input" name="title" minlength="3" maxlength="160" required autocomplete="off"></label><label>Страница или название урока<input id="feedback-target" name="target" maxlength="300" autocomplete="off" placeholder="Например: Соль мажор правой с паузой…"></label><label>Что исправить и почему<textarea id="feedback-body" name="body" rows="5" minlength="10" maxlength="10000" required></textarea></label><button class="primary" type="submit">Отправить предложение</button></form><div id="feedback-list"></div></section>
+    <section id="security" aria-labelledby="security-title"><h2 id="security-title">Безопасность</h2><p>Отдельный аккаунт MelodiaJest. Позже здесь появится связь с общим SSO; мелодии и настройки останутся у того же пользователя.</p><form id="password-form"><label>Текущий пароль<input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required></label><label>Новый пароль<input id="new-password" name="password" type="password" autocomplete="new-password" minlength="15" maxlength="128" required></label><button type="submit">Изменить пароль</button></form></section>
+  </div>
+  <section id="public-music" aria-labelledby="public-title"><h2 id="public-title">Музыка сообщества</h2><p>Версии, которые авторы явно открыли для всех.</p><div id="public-list" class="melody-list"></div><button type="button" id="more-public" hidden>Показать ещё</button></section>
+</main>
+<dialog id="publish-dialog" aria-labelledby="publish-title"><form id="publish-form"><h2 id="publish-title">Опубликовать мелодию для всех</h2><p>Общедоступными станут ноты, описание, музыкальные метаданные, источник и твоё имя для публикаций. Личные настройки и логин не публикуются.</p><details><summary>Проверить полный снимок публикации</summary><pre id="publication-preview"></pre></details><label>На каком основании можно публиковать эту музыку?<textarea id="publication-rights" rows="3" minlength="10" maxlength="2000" required></textarea></label><label class="check"><input id="publication-confirm" type="checkbox" required>У меня есть право публиковать эту музыку и описание.</label><p id="publish-status" role="status" aria-live="polite"></p><div class="actions"><button class="primary" type="submit">Опубликовать для всех</button><button type="button" id="cancel-publish">Отмена</button></div></form></dialog>
+</body></html>

@@ -1,4 +1,5 @@
 'use strict';
+const catalogCounts=require('./fixtures/piano-curriculum-counts.json');
 const test=require('node:test'),assert=require('node:assert/strict');
 const {loadApp}=require('./helpers/load-app.cjs'),A=require('../practice-assessment.js'),Adapter=require('../piano-catalog-adapter.js'),Catalog=require('../catalog-sections.js'),Transfer=require('../catalog-transfer.js');
 const copy=x=>JSON.parse(JSON.stringify(x));
@@ -6,7 +7,7 @@ const legacy=({themes,lessons})=>({version:2,savedAt:'2020-01-01T00:00:00.000Z',
 const personal=(id,themeId)=>({id,themeId,order:1,title:'Моя музыка',description:'Моё объяснение',contentKind:'piece',pattern:'t y',timeLimit:30,maxErrors:2,exam:false,handMode:'right',rhythm:{version:1,source:'manual',bpm:60,practiceBpm:60,timeSignature:{numerator:4,denominator:4},steps:[{startBeat:0,durationBeats:1,restBeforeBeats:0,measure:1,beatInMeasure:0,sourceStartMs:0,sourceDurationMs:1000},{startBeat:2,durationBeats:1,restBeforeBeats:1,measure:1,beatInMeasure:2,sourceStartMs:2000,sourceDurationMs:1000}]},fingeringSpec:{version:1,source:'manual',pattern:'t y',steps:[[{hand:'right',num:1}],[{hand:'right',num:2}]]},guide:{stage:'Моя редакция',setup:'Мои опоры',motion:'Моё движение',blind:'Мой образец',mastery:'Мой критерий'},learning:null,lessonReview:null});
 
 test('two genuinely fresh catalogs have identical theme IDs and all initial lesson-to-theme references',()=>{
- const a=loadApp(),b=loadApp(),first=copy(a.catalogSnapshot()),second=copy(b.catalogSnapshot());assert.deepEqual(first.themes,second.themes);assert.ok(JSON.stringify(first.lessons)===JSON.stringify(second.lessons),'Fresh lesson data or theme references differ');assert.equal(first.lessons.length,570);assert.equal(first.themes.length,94);assert.equal(Catalog.works('piano',a.lessons,a.themes).length,27);for(const[prefix,id,count]of [['fav-hachiko-v3-','builtin-theme-hachiko',7],['fav-new-soul-v5-','builtin-theme-new-soul',8]]){const items=first.lessons.filter(l=>l.id.startsWith(prefix));assert.equal(items.length,count);assert.ok(items.every(l=>l.themeId===id));}
+ const a=loadApp(),b=loadApp(),first=copy(a.catalogSnapshot()),second=copy(b.catalogSnapshot());assert.deepEqual(first.themes,second.themes);assert.ok(JSON.stringify(first.lessons)===JSON.stringify(second.lessons),'Fresh lesson data or theme references differ');assert.equal(first.lessons.length,catalogCounts.catalogRecords);assert.equal(first.themes.length,catalogCounts.themes);assert.equal(Catalog.works('piano',a.lessons,a.themes).length,27);for(const[prefix,id,count]of [['fav-hachiko-v3-','builtin-theme-hachiko',7],['fav-new-soul-v5-','builtin-theme-new-soul',8]]){const items=first.lessons.filter(l=>l.id.startsWith(prefix));assert.equal(items.length,count);assert.ok(items.every(l=>l.themeId===id));}
 });
 
 test('saved v7 arbitrary theme IDs, personal names, classification and reordered groups stay authoritative',()=>{

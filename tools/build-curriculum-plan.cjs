@@ -5,18 +5,20 @@ const {loadApp}=require('../tests/helpers/load-app.cjs');
 const {loadGuitarCourse}=require('./curriculum-inventory.cjs');
 const assessment=require('../practice-assessment.js');
 const ROOT=path.resolve(__dirname,'..');
-// Resolve after-dependencies independently of the physical catalogue order.
-// A mapped anchor may itself move, so finish that anchor before inserting its child.
+// Resolve display anchors and every required preparation independently of the
+// physical catalogue order. Finish all moving prerequisites before their child.
 function insertDetails(out,lessons,instrument){
   const pending=lessons.filter(l=>l.learning?.after),known=new Set(lessons.map(l=>l.id)),pendingIds=new Set(pending.map(l=>l.id));
-  for(const l of pending)if(!known.has(l.learning.after))throw Error('Missing preparation '+l.learning.after+' for '+l.id);
+  const dependencies=l=>[...new Set([l.learning.after,...(l.learning.requires||[])])];
+  for(const l of pending)for(const id of dependencies(l))if(!known.has(id))throw Error('Missing preparation '+id+' for '+l.id);
   while(pending.length){
     let progressed=false;
     for(let i=0;i<pending.length;){
       const l=pending[i],d=l.learning;
-      if(pendingIds.has(d.after)||!out.some(e=>e.id===d.after)){i++;continue;}
+      const required=dependencies(l);
+      if(required.some(id=>pendingIds.has(id)||!out.some(e=>e.id===id))){i++;continue;}
       const previousIndex=out.findIndex(e=>e.id===l.id);if(previousIndex>=0)out.splice(previousIndex,1);
-      const index=out.findIndex(e=>e.id===d.after),piano=instrument==='piano';
+      const index=Math.max(...required.map(id=>out.findIndex(e=>e.id===id))),piano=instrument==='piano';
       out.splice(index+1,0,{id:l.id,stage:d.stage,branch:d.branch||'common',fingerprint:piano?assessment.pianoSignature(l):assessment.guitarSignature(l),challenge:piano&&d.machineCheck==='piano-midi',preparation:d.requires});
       pending.splice(i,1);pendingIds.delete(l.id);progressed=true;
     }
@@ -27,7 +29,11 @@ function build(guitarRoot){
   const app=loadApp(),guitar=loadGuitarCourse(guitarRoot),piano=[],g=[];
   const add=(out,lesson,stage,branch='common')=>{
     if(out.some(e=>e.id===lesson.id))throw Error('Duplicate route '+lesson.id);
-    out.push({id:lesson.id,stage,branch,fingerprint:out===piano?assessment.pianoSignature(lesson):assessment.guitarSignature(lesson),challenge:out===piano&&Boolean(lesson.fingeringSpec&&lesson.learning?.machineCheck==='piano-midi')});
+    const entry={id:lesson.id,stage,branch,fingerprint:out===piano?assessment.pianoSignature(lesson):assessment.guitarSignature(lesson),challenge:out===piano&&Boolean(lesson.fingeringSpec&&lesson.learning?.machineCheck==='piano-midi')};
+    // A preparation requirement need not move an existing piano lesson out of
+    // its maintained stage position or couple a general skill to repertoire.
+    if(out===piano&&lesson.learning?.requires?.length)entry.preparation=[...lesson.learning.requires];
+    out.push(entry);
   };
   const ids=(course,from=1,to=8)=>Array.from({length:to-from+1},(_,i)=>`course${String(course).padStart(2,'0')}-${String(i+from).padStart(2,'0')}`);
   const p=(stage,list)=>list.forEach(id=>{const l=app.lessons.find(l=>l.id===id);if(!l)throw Error(id);add(piano,l,stage);});

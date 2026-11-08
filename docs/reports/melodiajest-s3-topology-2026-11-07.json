@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-11-07T03:18:53.998612+00:00",
+  "containers": [
+    {
+      "name": "libre-app-1",
+      "composeService": "app",
+      "relevantVariableNames": [
+        "LIBRE_OBJECT_STORAGE_ACCESS_KEY_ID",
+        "LIBRE_OBJECT_STORAGE_FORCE_PATH_STYLE",
+        "LIBRE_OBJECT_STORAGE_CACHE_DIR",
+        "LIBRE_OBJECT_STORAGE_PREFIX",
+        "LIBRE_OBJECT_STORAGE_MODE",
+        "LIBRE_OBJECT_STORAGE_EXTERNAL_READY",
+        "LIBRE_OBJECT_STORAGE_SECRET_ACCESS_KEY",
+        "LIBRE_OBJECT_STORAGE_DISK_CACHE_MIB",
+        "LIBRE_OBJECT_STORAGE_ENABLED",
+        "LIBRE_OBJECT_STORAGE_ENDPOINT",
+        "LIBRE_OBJECT_STORAGE_BUCKET",
+        "LIBRE_OBJECT_STORAGE_REGION"
+      ],
+      "topology": {
+        "LIBRE_OBJECT_STORAGE_PREFIX": "libreta/v1",
+        "LIBRE_OBJECT_STORAGE_MODE": "external",
+        "LIBRE_OBJECT_STORAGE_EXTERNAL_READY": "true",
+        "LIBRE_OBJECT_STORAGE_ENABLED": "true",
+        "LIBRE_OBJECT_STORAGE_ENDPOINT": {
+          "origin": "https://s3.ru-3.storage.selcloud.ru",
+          "hasPath": false,
+          "userinfoRemoved": false,
+          "queryRemoved": false
+        },
+        "LIBRE_OBJECT_STORAGE_BUCKET": "libreta-content-a7f39c",
+        "LIBRE_OBJECT_STORAGE_REGION": "ru-3"
+      }
+    },
+    {
+      "name": "diary-web-1",
+      "composeService": "web",
+      "relevantVariableNames": [],
+      "topology": {}
+    },
+    {
+      "name": "diary-bridge-1",
+      "composeService": "bridge",
+      "relevantVariableNames": [],
+      "topology": {}
+    },
+    {
+      "name": "diary-worker-1",
+      "composeService": "worker",
+      "relevantVariableNames": [],
+      "topology": {}
+    }
+  ],
+  "bucketRequests": 0,
+  "changed": false,
+  "backups": [
+    {
+      "app": "Libreta",
+      "config": "/opt/libre/deploy/vps/.env.backup",
+      "exists": true,
+      "effectiveComposeBackupEnvironmentVerified": true,
+      "relevantVariableNames": [
+        "AWS_ACCESS_KEY_ID",
+        "AWS_DEFAULT_REGION",
+        "AWS_SECRET_ACCESS_KEY",
+        "LIBRE_RESTIC_S3_BUCKET_LOOKUP",
+        "RESTIC_PASSWORD",
+        "RESTIC_REPOSITORY",
+        "SELECTEL_RESTIC_PASSWORD"
+      ],
+      "repository": {
+        "kind": "s3",
+        "endpoint": "https://s3.ru-3.storage.selcloud.ru",
+        "bucket": "libreta-backups-a7f39c",
+        "prefix": "database/v1",
+        "userinfoRemoved": false,
+        "queryRemoved": false
+      }
+    },
+    {
+      "app": "Praicer",
+      "config": "/opt/diary/deploy/production/.env.backup",
+      "exists": true,
+      "effectiveComposeBackupEnvironmentVerified": true,
+      "relevantVariableNames": [
+        "AWS_ACCESS_KEY_ID",
+        "AWS_DEFAULT_REGION",
+        "AWS_SECRET_ACCESS_KEY",
+        "RESTIC_PASSWORD",
+        "RESTIC_REPOSITORY"
+      ],
+      "repository": {
+        "kind": "s3",
+        "endpoint": "https://s3.cloud.ru",
+        "bucket": "libreta-backups-2026",
+        "prefix": "diary",
+        "userinfoRemoved": false,
+        "queryRemoved": false
+      }
+    }
+  ],
+  "sameBackupAccessKeyId": false
+}

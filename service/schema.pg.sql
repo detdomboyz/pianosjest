@@ -1,0 +1,41 @@
+-- Generated from the executed SQLite schema and game-schema.sql.
+BEGIN;
+      CREATE TABLE users(id TEXT PRIMARY KEY, username TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL, created_at BIGINT NOT NULL);
+      CREATE TABLE credentials(user_id TEXT PRIMARY KEY REFERENCES users(id), password_hash TEXT NOT NULL, recovery_hash TEXT NOT NULL, changed_at BIGINT NOT NULL);
+      CREATE TABLE identities(issuer TEXT NOT NULL, subject TEXT NOT NULL, user_id TEXT NOT NULL REFERENCES users(id), linked_at BIGINT NOT NULL, PRIMARY KEY(issuer,subject));
+      CREATE TABLE sessions(token_hash TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), created_at BIGINT NOT NULL, last_seen BIGINT NOT NULL, expires_at BIGINT NOT NULL);
+      CREATE INDEX sessions_user ON sessions(user_id);
+      CREATE TABLE objects(user_id TEXT NOT NULL REFERENCES users(id), kind TEXT NOT NULL CHECK(kind IN ('catalog','preferences')), revision BIGINT NOT NULL CHECK(revision>0), raw TEXT NOT NULL, digest TEXT NOT NULL, updated_at BIGINT NOT NULL, PRIMARY KEY(user_id,kind));
+      CREATE TABLE melodies(id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES users(id), revision BIGINT NOT NULL CHECK(revision>0), raw TEXT NOT NULL, created_at BIGINT NOT NULL, updated_at BIGINT NOT NULL);
+      CREATE INDEX melodies_owner ON melodies(owner_id,created_at);
+      CREATE TABLE melody_revisions(melody_id TEXT NOT NULL REFERENCES melodies(id), revision BIGINT NOT NULL, raw TEXT NOT NULL, created_at BIGINT NOT NULL, PRIMARY KEY(melody_id,revision));
+      CREATE TABLE publications(id TEXT PRIMARY KEY, melody_id TEXT NOT NULL UNIQUE REFERENCES melodies(id), owner_id TEXT NOT NULL REFERENCES users(id), revision BIGINT NOT NULL CHECK(revision>0), melody_revision BIGINT NOT NULL, raw TEXT NOT NULL, rights TEXT NOT NULL, created_at BIGINT NOT NULL, updated_at BIGINT NOT NULL, visible BIGINT NOT NULL CHECK(visible IN (0,1)));
+      CREATE INDEX publications_visible ON publications(visible,updated_at);
+      CREATE TABLE publication_revisions(publication_id TEXT NOT NULL REFERENCES publications(id), revision BIGINT NOT NULL, raw TEXT NOT NULL, rights TEXT NOT NULL, visible BIGINT NOT NULL, created_at BIGINT NOT NULL, PRIMARY KEY(publication_id,revision));
+      CREATE TABLE feedback(id TEXT PRIMARY KEY, owner_id TEXT NOT NULL REFERENCES users(id), title TEXT NOT NULL, body TEXT NOT NULL, target TEXT NOT NULL, status TEXT NOT NULL CHECK(status IN ('received','reviewing','resolved','declined')), created_at BIGINT NOT NULL);
+      CREATE INDEX feedback_owner ON feedback(owner_id,created_at);
+      CREATE TABLE rate_limits(bucket TEXT PRIMARY KEY, started_at BIGINT NOT NULL, attempts BIGINT NOT NULL);
+      CREATE TABLE operation_receipts(owner_id TEXT NOT NULL REFERENCES users(id), kind TEXT NOT NULL, operation_id TEXT NOT NULL, digest TEXT NOT NULL, result_id TEXT NOT NULL, created_at BIGINT NOT NULL, PRIMARY KEY(owner_id,kind,operation_id));
+
+CREATE TABLE IF NOT EXISTS service_metadata(app_key TEXT PRIMARY KEY CHECK(app_key='melodiajest'),schema_version BIGINT NOT NULL CHECK(schema_version=2));
+INSERT INTO service_metadata(app_key,schema_version) VALUES('melodiajest',2) ON CONFLICT(app_key) DO NOTHING;
+CREATE TABLE IF NOT EXISTS learning_preferences(user_id TEXT PRIMARY KEY REFERENCES users(id),course_mode TEXT NOT NULL DEFAULT 'sequential' CHECK(course_mode IN ('sequential','free')),rating_system TEXT NOT NULL DEFAULT 'ten' CHECK(rating_system IN ('ten','ten_decimal','hundred','five','three','two')),revision BIGINT NOT NULL DEFAULT 1,updated_at BIGINT NOT NULL);
+CREATE TABLE IF NOT EXISTS learning_attempts(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,edition_version TEXT NOT NULL,goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,mode TEXT NOT NULL CHECK(mode IN ('challenge','memory')),bpm BIGINT NOT NULL,nonce_hash TEXT NOT NULL,started_at BIGINT NOT NULL,expires_at BIGINT NOT NULL,submitted_at BIGINT,request_digest TEXT,result_raw TEXT,events_raw TEXT,status TEXT NOT NULL CHECK(status IN ('issued','passed','failed')),awarded_xp BIGINT NOT NULL DEFAULT 0 CHECK(awarded_xp>=0 AND awarded_xp<=100));
+CREATE INDEX IF NOT EXISTS learning_attempts_owner ON learning_attempts(owner_id,started_at,id);
+CREATE TABLE IF NOT EXISTS lesson_progress(owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,first_passed_at BIGINT NOT NULL,best_quality BIGINT NOT NULL CHECK(best_quality>=0 AND best_quality<=100),clean_attempts BIGINT NOT NULL,memory_passed_at BIGINT,updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,lesson_id,music_version));
+CREATE TABLE IF NOT EXISTS goal_experience(owner_id TEXT NOT NULL REFERENCES users(id),goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,best_xp BIGINT NOT NULL CHECK(best_xp>=0 AND best_xp<=100),updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,goal_key,policy_version));
+CREATE TABLE IF NOT EXISTS experience_events(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),attempt_id TEXT NOT NULL UNIQUE REFERENCES learning_attempts(id),goal_key TEXT NOT NULL,delta BIGINT NOT NULL CHECK(delta>0 AND delta<=100),created_at BIGINT NOT NULL);
+CREATE INDEX IF NOT EXISTS experience_events_owner ON experience_events(owner_id,created_at,id);
+CREATE TABLE IF NOT EXISTS portal_experience_outbox(owner_id TEXT NOT NULL REFERENCES users(id),goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,best_xp BIGINT NOT NULL CHECK(best_xp>=0 AND best_xp<=100),revision BIGINT NOT NULL,delivered_revision BIGINT NOT NULL DEFAULT 0,updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,goal_key,policy_version));
+CREATE TABLE IF NOT EXISTS portal_level_cache(owner_id TEXT PRIMARY KEY REFERENCES users(id),issuer TEXT NOT NULL,subject TEXT NOT NULL,total_xp BIGINT NOT NULL CHECK(total_xp>=0),level BIGINT NOT NULL CHECK(level>=1),checked_at BIGINT NOT NULL);
+CREATE TABLE IF NOT EXISTS lesson_ratings(owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,edition_version TEXT NOT NULL,system TEXT NOT NULL,raw_value TEXT NOT NULL,canonical_units BIGINT NOT NULL CHECK(canonical_units>=0 AND canonical_units<=10000),revision BIGINT NOT NULL,created_at BIGINT NOT NULL,updated_at BIGINT NOT NULL,active BIGINT NOT NULL DEFAULT 1 CHECK(active IN (0,1)),PRIMARY KEY(owner_id,lesson_id,edition_version));
+CREATE INDEX IF NOT EXISTS lesson_ratings_public ON lesson_ratings(lesson_id,edition_version);
+CREATE TABLE IF NOT EXISTS lesson_rating_revisions(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,edition_version TEXT NOT NULL,raw_value TEXT,canonical_units BIGINT,revision BIGINT NOT NULL,created_at BIGINT NOT NULL);
+CREATE TABLE IF NOT EXISTS discussion_comments(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),scope TEXT NOT NULL CHECK(scope IN ('global','lesson')),lesson_id TEXT NOT NULL,edition_version TEXT,parent_id TEXT REFERENCES discussion_comments(id),body TEXT NOT NULL,revision BIGINT NOT NULL,created_at BIGINT NOT NULL,updated_at BIGINT NOT NULL,deleted BIGINT NOT NULL DEFAULT 0 CHECK(deleted IN (0,1)),CHECK((scope='global' AND lesson_id='') OR (scope='lesson' AND length(lesson_id)>0)));
+CREATE INDEX IF NOT EXISTS discussion_comments_scope ON discussion_comments(scope,lesson_id,created_at,id);
+CREATE TABLE IF NOT EXISTS discussion_comment_revisions(id TEXT PRIMARY KEY,comment_id TEXT NOT NULL REFERENCES discussion_comments(id),owner_id TEXT NOT NULL REFERENCES users(id),body TEXT NOT NULL,revision BIGINT NOT NULL,deleted BIGINT NOT NULL CHECK(deleted IN (0,1)),created_at BIGINT NOT NULL);
+CREATE TABLE IF NOT EXISTS course_editions(lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,edition_version TEXT NOT NULL,plan_raw TEXT NOT NULL,PRIMARY KEY(lesson_id,music_version,edition_version));
+CREATE TABLE IF NOT EXISTS game_operation_receipts(owner_id TEXT NOT NULL REFERENCES users(id),operation_id TEXT NOT NULL,kind TEXT NOT NULL,digest TEXT NOT NULL,response_raw TEXT NOT NULL,created_at BIGINT NOT NULL,PRIMARY KEY(owner_id,operation_id));
+
+CREATE UNIQUE INDEX IF NOT EXISTS users_username_folded ON users(lower(username));
+COMMIT;

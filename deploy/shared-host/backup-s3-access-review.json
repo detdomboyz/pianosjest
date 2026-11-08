@@ -1,0 +1,113 @@
+{
+  "format": "melodiajest-s3-access-review-v1",
+  "readyForApply": false,
+  "endpoint": "https://s3.ru-3.storage.selcloud.ru",
+  "region": "ru-3",
+  "bucket": "libreta-backups-a7f39c",
+  "prefix": "melodiajest/backups/v1",
+  "requiredServiceRole": "s3.bucket.user",
+  "appendRulesTemplate": [
+    {
+      "Sid": "MelodiaJestBackupLocationV1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "<MELODIAJEST_SERVICE_USER_ID>"
+        ]
+      },
+      "Action": [
+        "s3:GetBucketLocation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::libreta-backups-a7f39c"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        }
+      }
+    },
+    {
+      "Sid": "MelodiaJestBackupListV1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "<MELODIAJEST_SERVICE_USER_ID>"
+        ]
+      },
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::libreta-backups-a7f39c"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        },
+        "StringLike": {
+          "s3:prefix": [
+            "melodiajest/backups/v1",
+            "melodiajest/backups/v1/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "MelodiaJestBackupObjectsV1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "<MELODIAJEST_SERVICE_USER_ID>"
+        ]
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:AbortMultipartUpload",
+        "s3:ListMultipartUploadParts"
+      ],
+      "Resource": [
+        "arn:aws:s3:::libreta-backups-a7f39c/melodiajest/backups/v1/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        }
+      }
+    },
+    {
+      "Sid": "MelodiaJestBackupLocksV1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "<MELODIAJEST_SERVICE_USER_ID>"
+        ]
+      },
+      "Action": [
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::libreta-backups-a7f39c/melodiajest/backups/v1/locks/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "true"
+        }
+      }
+    }
+  ],
+  "requiredBeforeApply": [
+    "real dedicated service-user ID and server key",
+    "owner-readable existing bucket policy and expected SHA",
+    "owner approval preserving current callers and rules",
+    "private bucket/access verification",
+    "encrypted worker and independent password copy"
+  ],
+  "notImplemented": [
+    "cloud changes",
+    "key creation",
+    "external backup",
+    "retention/prune"
+  ]
+}

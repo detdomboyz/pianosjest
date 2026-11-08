@@ -1,0 +1,234 @@
+{
+  "checkedAt": "2026-11-07T01:24:57.955834+00:00",
+  "status": "server-staged-verified-awaiting-shared-lock",
+  "publishedVersion": "23.5.37",
+  "preparedVersion": "23.5.38",
+  "transactionStarted": false,
+  "artifact": {
+    "archive": "dist\\melodiajest-23.5.38-20261107-38.tar.gz",
+    "bytes": 1965278,
+    "sha256": "12596a1443bc252ad17d2233a24155f5c2467dcebc8d982831021463a00b8e95",
+    "version": "23.5.38",
+    "webManifestSha256": "6a4a36d988c0ca9d716fe03b859d7a2363427562cc5ba76422ed86dfc78cd9cd",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 379,
+    "publicFiles": 28
+  },
+  "localRestore": {
+    "destination": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\tmp\\melodiajest-38-restore-vjhdlw1r\\restored",
+    "archiveSha256": "12596a1443bc252ad17d2233a24155f5c2467dcebc8d982831021463a00b8e95",
+    "version": "23.5.38",
+    "webManifestSha256": "6a4a36d988c0ca9d716fe03b859d7a2363427562cc5ba76422ed86dfc78cd9cd",
+    "filesVerified": 411,
+    "sourceSnapshotIncluded": true,
+    "restoreVerified": true,
+    "scope": "isolated file restoration; not S3, browser data, or container runtime"
+  },
+  "serverStagedVerification": {
+    "checkedAt": "2026-11-07T01:21:19.936069+00:00",
+    "archiveSha256": "12596a1443bc252ad17d2233a24155f5c2467dcebc8d982831021463a00b8e95",
+    "archiveBytes": 1965278,
+    "sourceFiles": 379,
+    "filesVerified": 411,
+    "serverFileRestoreVerified": true,
+    "version": "23.5.38",
+    "manifestSha256": "6a4a36d988c0ca9d716fe03b859d7a2363427562cc5ba76422ed86dfc78cd9cd",
+    "current": "releases/23.5.37-6be3c99922b4",
+    "updaterVersion": "23.5.37",
+    "updaterPhase": "committed",
+    "sharedLockHolders": [
+      {
+        "pid": 3532338,
+        "command": "python3",
+        "mode": "WRITE",
+        "path": "/run/lock/libre-deploy.lock"
+      }
+    ],
+    "holderElapsed": [
+      {
+        "pid": 3532338,
+        "elapsedSeconds": 648,
+        "command": "python3"
+      }
+    ]
+  },
+  "preflight": {
+    "checkedAt": "2026-11-07T01:16:19.306577+00:00",
+    "current": "releases/23.5.37-6be3c99922b4",
+    "disk": {
+      "total": 52762214400,
+      "used": 45465645056,
+      "free": 5124599808
+    },
+    "memory": {
+      "MemTotal": "4009860 kB",
+      "MemAvailable": "1760672 kB"
+    },
+    "public": {
+      "melodiajest.ru": {
+        "status": 200,
+        "url": "https://melodiajest.ru/"
+      },
+      "libreta.ru": {
+        "status": 200,
+        "url": "https://libreta.ru/"
+      },
+      "praicer.ru": {
+        "status": 200,
+        "url": "https://praicer.ru/guest?returnTo=%2F"
+      },
+      "grigorova.libreta.ru": {
+        "status": 200,
+        "url": "https://grigorova.libreta.ru/"
+      }
+    },
+    "backupReceipts": [
+      {
+        "name": "backup-20261107-01.json",
+        "modified": 1793996624.4602966
+      },
+      {
+        "name": "backup-20261107-02.json",
+        "modified": 1793999088.1951447
+      },
+      {
+        "name": "backup-policy.json",
+        "modified": 1794004147.843669
+      },
+      {
+        "name": "backup-tooling.json",
+        "modified": 1794004161.5197392
+      }
+    ],
+    "manifestSha256": "6be3c99922b40d702e3504c2f55d6850704606b2564f5e4c0f89665ca98ebef7",
+    "version": "23.5.37",
+    "assets": 27,
+    "container": {
+      "healthy": "healthy",
+      "service": "melodiajest-static",
+      "aliases": [
+        "melodiajest-web-1",
+        "melodiajest-static",
+        "melodiajest-web"
+      ],
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    },
+    "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+    "ownScheduledBackup": {
+      "last-backup-success.json": {
+        "ageSeconds": 1762,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": "snapshots/35a4e2e02351447d9efd9fcaffcae06a.json",
+        "snapshotId": null
+      },
+      "last-restore-success.json": {
+        "ageSeconds": 1751,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": "35a4e2e02351447d9efd9fcaffcae06a"
+      },
+      "last-backup-attempt.json": {
+        "ageSeconds": 1762,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "last-restore-attempt.json": {
+        "ageSeconds": 1751,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "health.json": {
+        "ageSeconds": 966,
+        "success": true,
+        "status": null,
+        "problems": [],
+        "snapshot": null,
+        "snapshotId": null
+      }
+    }
+  },
+  "lastLockObservation": {
+    "checkedAt": "2026-11-07T01:20:10.431955+00:00",
+    "locks": [
+      {
+        "pid": 3532338,
+        "command": "python3",
+        "mode": "WRITE",
+        "path": "/run/lock/libre-deploy.lock"
+      }
+    ],
+    "current": "releases/23.5.37-6be3c99922b4",
+    "updaterPhase": "committed",
+    "version": "23.5.37"
+  },
+  "scheduledHealth": {
+    "checkedAt": "2026-11-07T01:22:33.335226+00:00",
+    "timer": {
+      "NextElapseUSecRealtime": "Sat 2026-11-07 02:00:26 UTC",
+      "LastTriggerUSec": "Sat 2026-11-07 01:00:13 UTC"
+    },
+    "service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Sat 2026-11-07 01:00:13 UTC",
+      "ExecMainExitTimestamp": "Sat 2026-11-07 01:00:14 UTC",
+      "ExecMainStatus": "0"
+    },
+    "health": {
+      "agesSeconds": {
+        "backup": 796,
+        "restore": 786
+      },
+      "browserDataBackedUp": false,
+      "checkedAt": "2026-11-07T01:00:14.070864+00:00",
+      "independentExternalCopyVerified": false,
+      "problems": [],
+      "success": true
+    },
+    "sharedLockHolders": [
+      {
+        "pid": 3532338,
+        "command": "python3",
+        "mode": "WRITE",
+        "path": "/run/lock/libre-deploy.lock"
+      }
+    ],
+    "manualJobsStarted": false
+  },
+  "cleanup": {
+    "closedTabId": "89",
+    "ownedTabAbsent": true,
+    "userTab28Open": true,
+    "publicUiChanged": false,
+    "ownedPreviewPid": 36728,
+    "ownedPreviewPort": 63297,
+    "previewProcessAbsent": true,
+    "previewListenerClosed": true,
+    "viewportReset": true,
+    "checkedAt": "2026-11-07T01:23:19.329Z"
+  },
+  "quota": {
+    "checkedAt": "2026-11-07T01:24:53.740Z",
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "usedPercent": 74,
+    "remainingPercent": 26,
+    "windowDurationMins": 10080,
+    "resetsAt": 1794379031
+  },
+  "productionChanged": false,
+  "runtimeRestore38Verified": false,
+  "public38Verified": false,
+  "independentS3CopyVerified": false,
+  "resumeScript": "tmp/publish-melodiajest-23-5-38.py",
+  "report": "docs/reports/melodiajest-operations-2026-11-07-10.md"
+}

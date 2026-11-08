@@ -29,7 +29,7 @@
 .learning-preparations{padding:10px 0;border-bottom:1px solid #30455b}
 .learning-preparations p{margin:0 0 7px;color:var(--muted);font-size:12px}
 .learning-preparations>div{display:flex;flex-wrap:wrap;gap:7px}
-.learning-preparations button{max-width:100%;border:1px solid #30455b;border-radius:7px;padding:7px 10px;background:transparent;color:#a1e4e0;text-align:left;overflow-wrap:anywhere;touch-action:manipulation}
+.learning-preparations button{min-height:44px;max-width:100%;border:1px solid #30455b;border-radius:7px;padding:7px 10px;background:transparent;color:#a1e4e0;text-align:left;overflow-wrap:anywhere;touch-action:manipulation}
 .learning-preparations button:hover{background:#192d40;border-color:#78d6d1}
 .learning-preparations button:focus-visible,.lesson-name:focus-visible{outline:3px solid #78d6d1;outline-offset:3px}
 .learning-preview-button:focus-visible,.learning-collapse-button:focus-visible,.practice-toolbar select:focus-visible{outline:3px solid #78d6d1;outline-offset:3px}
@@ -57,3 +57,7 @@
 .preparation-scope select{flex:1 1 18rem;min-width:0;max-width:100%;min-height:44px}
 .preparation-scope p{margin:.4rem 0;font-size:.875rem;line-height:1.5;overflow-wrap:anywhere}
 .preparation-scope select:focus-visible{outline:2px solid #67dbea;outline-offset:3px}
+@media(max-width:1120px){
+  .layout>.sidebar.panel{height:auto;max-height:none}
+  .sidebar>.lessons{flex:0 1 auto;min-height:160px;max-height:360px}
+}

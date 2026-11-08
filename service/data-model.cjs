@@ -1,0 +1,5 @@
+'use strict';
+// Explicit ordering is shared by migration and data verification. Sessions and
+// throttling are compared during migration, but excluded from restored login.
+const TABLES=Object.freeze({users:'id',credentials:'user_id',identities:'issuer,subject',sessions:'token_hash',rate_limits:'bucket',objects:'user_id,kind',melodies:'id',melody_revisions:'melody_id,revision',publications:'id',publication_revisions:'publication_id,revision',feedback:'id',operation_receipts:'owner_id,kind,operation_id',learning_preferences:'user_id',course_editions:'lesson_id,music_version,edition_version',learning_attempts:'id',lesson_progress:'owner_id,lesson_id,music_version',goal_experience:'owner_id,goal_key,policy_version',experience_events:'id',portal_experience_outbox:'owner_id,goal_key,policy_version',portal_level_cache:'owner_id',lesson_ratings:'owner_id,lesson_id,edition_version',lesson_rating_revisions:'id',discussion_comments:'id',discussion_comment_revisions:'id',game_operation_receipts:'owner_id,operation_id'});
+module.exports={TABLES,VERSION:2};

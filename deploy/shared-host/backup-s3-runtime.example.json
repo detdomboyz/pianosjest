@@ -1,0 +1,12 @@
+{
+  "format": "melodiajest-s3-runtime-v2",
+  "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+  "credentialSource": "/opt/libre/deploy/vps/.env.backup",
+  "passwordFile": "/opt/melodiajest/ops/secrets/restic-password",
+  "region": "ru-3",
+  "image": "sha256:3ec2edd1174df69efd176ebb3e20c2f73ff32b6a4e4fe7ae7f32b7d94ebb13c1",
+  "resticBinary": "/opt/melodiajest/ops/tooling/restic-0.19.1-20d4142678d0d95e/restic",
+  "resticBinarySha256": "20d4142678d0d95ec11a4759def1b73fd9190abc9ca19e4b62d067c0b387e639",
+  "resticVersion": "0.19.1",
+  "credentialScope": "existing server backup key; IAM scope not narrowed by this runner"
+}

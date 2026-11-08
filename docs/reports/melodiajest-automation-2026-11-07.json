@@ -1,0 +1,129 @@
+{
+  "updatedOn": "2026-11-07",
+  "checkedAt": "2026-11-06T20:02:41.672257+00:00",
+  "automation": {
+    "id": "automation",
+    "name": "MelodiaJest — курс, хостинг, S3 и резервирование",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "sameTargetChat": true,
+    "sameSchedule": true,
+    "automationCount": 4,
+    "noDuplicates": true,
+    "otherAutomationsUnchanged": true,
+    "curriculumTailPreserved": true,
+    "promptSha256": "256d5014a0a01d867cecc98c30cc6be7954f8d4d19ca25b7b7430f4be10fc10a",
+    "updatedAt": 1793995056299,
+    "normalizedPromptSha256": "60fe5ac7ab45ee859fdec209b44f4a055970ab0dc10b85ca67e8ac972dd1e6c0",
+    "promptSource": "docs/MELODIAJEST_AUTOMATION_PROMPT.md"
+  },
+  "libretaReadOnlyInspection": {
+    "checkedAt": "2026-11-06T19:49:07.614124+00:00",
+    "timers": [
+      "Fri 2026-11-06 19:50:03 UTC      55s Fri 2026-11-06 19:45:33 UTC 3min 34s ago libre-watchdog.timer                   libre-watchdog.service",
+      "Fri 2026-11-06 19:53:05 UTC 3min 57s Fri 2026-11-06 19:48:05 UTC  1min 2s ago libre-illustration-assignment.timer    libre-illustration-assignment.service",
+      "Fri 2026-11-06 20:00:58 UTC    11min Fri 2026-11-06 19:00:51 UTC    48min ago libre-illustration-retention.timer     libre-illustration-retention.service",
+      "Fri 2026-11-06 22:00:15 UTC 2h 11min Thu 2026-11-05 22:00:10 UTC      21h ago libre-backup.timer                     libre-backup.service",
+      "Sat 2026-11-07 01:12:51 UTC 5h 23min Fri 2026-11-06 01:10:29 UTC      18h ago libre-storage-maintenance.timer        libre-storage-maintenance.service",
+      "Sat 2026-11-07 01:49:07 UTC       6h Fri 2026-11-06 01:48:17 UTC      18h ago libre-object-storage-maintenance.timer libre-object-storage-maintenance.service",
+      "Sat 2026-11-07 02:20:16 UTC       6h Fri 2026-11-06 02:20:26 UTC      17h ago libre-safety-registry.timer            libre-safety-registry.service",
+      "Sun 2026-11-08 04:30:15 UTC 1 day 8h Sun 2026-11-01 04:30:35 UTC   5 days ago libre-backup-check.timer               libre-backup-check.service",
+      "Sun 2026-11-08 05:33:07 UTC 1 day 9h Sun 2026-11-01 05:37:03 UTC   5 days ago libre-backup-restore-check.timer       libre-backup-restore-check.service"
+    ],
+    "journals": {
+      "/opt/libre/deploy/vps/state/last-success.json": {
+        "exists": true,
+        "modifiedAt": "2026-11-06T19:37:38.706325+00:00",
+        "fields": {
+          "database_sha256": "ff3347908f7938645642130fc054e8c16580b2a8a6ee1840dd3faf3642398eee"
+        },
+        "topLevelKeys": [
+          "remote_success_utc",
+          "local_dump",
+          "database_sha256",
+          "object_backup"
+        ]
+      },
+      "/opt/libre/state/storage-maintenance/latest.json": {
+        "exists": true,
+        "modifiedAt": "2026-11-06T01:10:29.617914+00:00",
+        "fields": {
+          "apply": true,
+          "success": false,
+          "freed_bytes": 0,
+          "low_disk": true,
+          "finished_utc": "2026-11-06T01:10:29.616942+00:00"
+        },
+        "topLevelKeys": [
+          "started_utc",
+          "apply",
+          "deleted_tags",
+          "skipped",
+          "success",
+          "disk_before",
+          "error",
+          "disk_after",
+          "freed_bytes",
+          "low_disk",
+          "finished_utc"
+        ]
+      },
+      "/opt/libre/state/storage-maintenance/restore-check.json": {
+        "exists": true,
+        "modifiedAt": "2026-11-01T05:40:14.282736+00:00",
+        "fields": {
+          "success": false,
+          "production_volumes": false,
+          "archive_bytes": 249164317,
+          "sha256": "0f6de074ce20d646addf49c4aba539f4fd1dc6987106188dd00bdfedb714357a",
+          "finished_utc": "2026-11-01T05:40:14.282227+00:00"
+        },
+        "topLevelKeys": [
+          "started_utc",
+          "success",
+          "network",
+          "production_volumes",
+          "archive_bytes",
+          "sha256",
+          "counts",
+          "error",
+          "finished_utc"
+        ]
+      }
+    },
+    "libretaObjectStorage": {
+      "LIBRE_OBJECT_STORAGE_ENABLED": "true",
+      "LIBRE_OBJECT_STORAGE_MODE": "external",
+      "LIBRE_OBJECT_STORAGE_REGION": "ru-3",
+      "LIBRE_OBJECT_STORAGE_ENDPOINT": "https://s3.ru-3.storage.selcloud.ru",
+      "applicationKeyPresent": true
+    },
+    "melodiajest": {
+      "timerUnits": "",
+      "healthy": true,
+      "service": "melodiajest-static",
+      "aliases": [
+        "melodiajest-web-1",
+        "melodiajest-static",
+        "melodiajest-web"
+      ]
+    }
+  },
+  "serverChangesInThisStage": false,
+  "s3ChangesInThisStage": false,
+  "newScheduledTasks": 0,
+  "curriculumRequirementsPreserved": true,
+  "projectPolicyVerification": {
+    "checkedAt": "2026-11-06T20:08:24.782124+00:00",
+    "sameExistingAutomation": true,
+    "sameChatAndTwentyMinuteSchedule": true,
+    "nativePromptMatchesProjectSource": true,
+    "curriculumTailPreserved": true,
+    "otherAutomationsUnchanged": true,
+    "noDuplicates": true,
+    "projectStatesConsistent": true,
+    "backupNotFalselyClaimedReady": true,
+    "courseCursorAndReleasePreserved": true,
+    "normalizedPromptSha256": "60fe5ac7ab45ee859fdec209b44f4a055970ab0dc10b85ca67e8ac972dd1e6c0"
+  }
+}

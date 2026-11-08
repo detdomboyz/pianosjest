@@ -13,21 +13,38 @@
       "stage": "p1",
       "branch": "common",
       "fingerprint": "73d2378a",
-      "challenge": true
+      "challenge": true,
+      "preparation": []
     },
     {
       "id": "course01-03",
       "stage": "p1",
       "branch": "common",
       "fingerprint": "688220a6",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course01-01"
+      ]
+    },
+    {
+      "id": "course01-05",
+      "stage": "p1",
+      "branch": "common",
+      "fingerprint": "a8570ed5",
+      "challenge": true,
+      "preparation": [
+        "course01-01"
+      ]
     },
     {
       "id": "course01-04",
       "stage": "p1",
       "branch": "common",
       "fingerprint": "356420d6",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course01-02"
+      ]
     },
     {
       "id": "detail-p-release-01",
@@ -40,48 +57,15 @@
       ]
     },
     {
-      "id": "detail-p-release-02",
-      "stage": "p1",
-      "branch": "common",
-      "fingerprint": "ae3ba34c",
-      "challenge": true,
-      "preparation": [
-        "course01-02"
-      ]
-    },
-    {
-      "id": "detail-p-release-03",
-      "stage": "p1",
-      "branch": "common",
-      "fingerprint": "18aae9a6",
-      "challenge": true,
-      "preparation": [
-        "detail-p-release-01"
-      ]
-    },
-    {
-      "id": "detail-p-release-04",
-      "stage": "p1",
-      "branch": "common",
-      "fingerprint": "86e2ca4b",
-      "challenge": true,
-      "preparation": [
-        "detail-p-release-02"
-      ]
-    },
-    {
-      "id": "course01-05",
-      "stage": "p1",
-      "branch": "common",
-      "fingerprint": "a8570ed5",
-      "challenge": true
-    },
-    {
       "id": "course04-01",
       "stage": "p2",
       "branch": "common",
       "fingerprint": "1caa7198",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course01-01",
+        "detail-p-release-01"
+      ]
     },
     {
       "id": "course04-02",
@@ -125,33 +109,33 @@
       ]
     },
     {
-      "id": "course02-01",
-      "stage": "p2",
+      "id": "detail-p-release-02",
+      "stage": "p1",
       "branch": "common",
-      "fingerprint": "5d2f8ce5",
-      "challenge": true
-    },
-    {
-      "id": "course02-02",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "b623c94b",
+      "fingerprint": "ae3ba34c",
       "challenge": true,
       "preparation": [
-        "course02-01",
+        "course01-02"
+      ]
+    },
+    {
+      "id": "detail-p-release-03",
+      "stage": "p1",
+      "branch": "common",
+      "fingerprint": "18aae9a6",
+      "challenge": true,
+      "preparation": [
         "detail-p-release-01"
       ]
     },
     {
-      "id": "course04-04",
-      "stage": "p2",
+      "id": "detail-p-release-04",
+      "stage": "p1",
       "branch": "common",
-      "fingerprint": "03cb8d3e",
+      "fingerprint": "86e2ca4b",
       "challenge": true,
       "preparation": [
-        "course04-03",
-        "course02-02",
-        "course04-02"
+        "detail-p-release-02"
       ]
     },
     {
@@ -159,7 +143,11 @@
       "stage": "p2",
       "branch": "common",
       "fingerprint": "0035c9a1",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course01-04",
+        "detail-p-release-04"
+      ]
     },
     {
       "id": "course03-02",
@@ -170,6 +158,120 @@
       "preparation": [
         "course03-01",
         "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "detail-p-left-upper-position-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "2479d89d",
+      "challenge": true,
+      "preparation": [
+        "course03-02",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "course03-03",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "680feb02",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-upper-position-01",
+        "course03-02"
+      ]
+    },
+    {
+      "id": "course03-04",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "1273c0c2",
+      "challenge": true,
+      "preparation": [
+        "course03-03",
+        "detail-p-left-upper-position-01"
+      ]
+    },
+    {
+      "id": "course03-05",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "5247cbfa",
+      "challenge": true,
+      "preparation": [
+        "course03-04",
+        "course03-03",
+        "detail-p-left-upper-position-01"
+      ]
+    },
+    {
+      "id": "course03-06",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "ff3e5665",
+      "challenge": true,
+      "preparation": [
+        "course03-05",
+        "detail-p-left-upper-position-01",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "course03-07",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "0e9ed8a3",
+      "challenge": true,
+      "preparation": [
+        "course03-06",
+        "course03-05",
+        "detail-p-left-upper-position-01"
+      ]
+    },
+    {
+      "id": "course03-08",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "23150801",
+      "challenge": true,
+      "preparation": [
+        "course03-07",
+        "course03-06",
+        "course03-05",
+        "detail-p-left-upper-position-01"
+      ]
+    },
+    {
+      "id": "detail-p-left-triple-pulse-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "ddc9e011",
+      "challenge": true,
+      "preparation": [
+        "course03-08",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "detail-p-cross-03",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "254e8502",
+      "challenge": true,
+      "preparation": [
+        "course03-08",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "detail-p-cross-04",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "14e87c82",
+      "challenge": true,
+      "preparation": [
+        "detail-p-cross-03"
       ]
     },
     {
@@ -212,82 +314,6 @@
       "preparation": [
         "detail-p-legato-03"
       ]
-    },
-    {
-      "id": "course04-05",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "c3f45176",
-      "challenge": true,
-      "preparation": [
-        "course02-02",
-        "course04-01"
-      ]
-    },
-    {
-      "id": "detail-p-rhythm-01",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "e664aca0",
-      "challenge": true,
-      "preparation": [
-        "course04-03"
-      ]
-    },
-    {
-      "id": "detail-p-rhythm-02",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "318b8d91",
-      "challenge": true,
-      "preparation": [
-        "detail-p-rhythm-01"
-      ]
-    },
-    {
-      "id": "detail-p-rhythm-03",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "b069d73d",
-      "challenge": true,
-      "preparation": [
-        "detail-p-rhythm-02"
-      ]
-    },
-    {
-      "id": "detail-p-rhythm-final-rest-01",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "e9742d40",
-      "challenge": true,
-      "preparation": [
-        "detail-p-rhythm-03",
-        "detail-p-release-01"
-      ]
-    },
-    {
-      "id": "detail-p-rhythm-04",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "0e308edd",
-      "challenge": true,
-      "preparation": [
-        "detail-p-rhythm-03"
-      ]
-    },
-    {
-      "id": "course02-03",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "eeb8149f",
-      "challenge": true
-    },
-    {
-      "id": "course03-03",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "680feb02",
-      "challenge": true
     },
     {
       "id": "detail-p-legato-pairs-03",
@@ -345,6 +371,87 @@
       ]
     },
     {
+      "id": "detail-p-staccato-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "f867d325",
+      "challenge": true,
+      "preparation": [
+        "course03-04",
+        "detail-p-legato-04"
+      ]
+    },
+    {
+      "id": "detail-p-staccato-02",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "ab8f7a76",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-01"
+      ]
+    },
+    {
+      "id": "detail-p-staccato-03",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "88108bdb",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-02"
+      ]
+    },
+    {
+      "id": "detail-p-staccato-04",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "461e77e9",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-03"
+      ]
+    },
+    {
+      "id": "course02-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "5d2f8ce5",
+      "challenge": true
+    },
+    {
+      "id": "course02-02",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "b623c94b",
+      "challenge": true,
+      "preparation": [
+        "course02-01",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-right-upper-position-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "37aa44c7",
+      "challenge": true,
+      "preparation": [
+        "course02-02",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "course02-03",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "eeb8149f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-right-upper-position-01",
+        "course02-02"
+      ]
+    },
+    {
       "id": "detail-p-legato-pairs-01",
       "stage": "p2",
       "branch": "common",
@@ -393,54 +500,10 @@
       "stage": "p2",
       "branch": "common",
       "fingerprint": "c315c54f",
-      "challenge": true
-    },
-    {
-      "id": "course03-04",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "1273c0c2",
-      "challenge": true
-    },
-    {
-      "id": "detail-p-staccato-01",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "f867d325",
       "challenge": true,
       "preparation": [
-        "course03-04",
-        "detail-p-legato-04"
-      ]
-    },
-    {
-      "id": "detail-p-staccato-02",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "ab8f7a76",
-      "challenge": true,
-      "preparation": [
-        "detail-p-staccato-01"
-      ]
-    },
-    {
-      "id": "detail-p-staccato-03",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "88108bdb",
-      "challenge": true,
-      "preparation": [
-        "detail-p-staccato-02"
-      ]
-    },
-    {
-      "id": "detail-p-staccato-04",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "461e77e9",
-      "challenge": true,
-      "preparation": [
-        "detail-p-staccato-03"
+        "course02-03",
+        "detail-p-right-upper-position-01"
       ]
     },
     {
@@ -448,66 +511,158 @@
       "stage": "p2",
       "branch": "common",
       "fingerprint": "fb8ee7e3",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course02-04",
+        "course02-03",
+        "detail-p-right-upper-position-01"
+      ]
     },
     {
-      "id": "course03-05",
-      "stage": "p2",
+      "id": "course04-07",
+      "stage": "p3",
       "branch": "common",
-      "fingerprint": "5247cbfa",
-      "challenge": true
+      "fingerprint": "3f362035",
+      "challenge": true,
+      "preparation": [
+        "course04-01",
+        "course02-05"
+      ]
     },
     {
       "id": "course02-06",
       "stage": "p2",
       "branch": "common",
       "fingerprint": "28c4e84b",
-      "challenge": true
-    },
-    {
-      "id": "course03-06",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "ff3e5665",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course02-05",
+        "detail-p-right-upper-position-01",
+        "detail-p-release-01"
+      ]
     },
     {
       "id": "course02-07",
       "stage": "p2",
       "branch": "common",
       "fingerprint": "f9908024",
-      "challenge": true
-    },
-    {
-      "id": "course03-07",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "0e9ed8a3",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course02-06",
+        "course02-05",
+        "detail-p-right-upper-position-01"
+      ]
     },
     {
       "id": "course02-08",
       "stage": "p2",
       "branch": "common",
       "fingerprint": "db25a49e",
-      "challenge": true
-    },
-    {
-      "id": "course03-08",
-      "stage": "p2",
-      "branch": "common",
-      "fingerprint": "23150801",
-      "challenge": true
-    },
-    {
-      "id": "detail-p-left-triple-pulse-01",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "ddc9e011",
       "challenge": true,
       "preparation": [
-        "course03-08",
-        "detail-p-release-02"
+        "course02-07",
+        "course02-06",
+        "course02-05",
+        "detail-p-right-upper-position-01"
+      ]
+    },
+    {
+      "id": "course01-06",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "59d644dd",
+      "challenge": true,
+      "preparation": [
+        "course01-01",
+        "course01-02",
+        "course02-08",
+        "course03-08"
+      ]
+    },
+    {
+      "id": "course01-07",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "4a15f477",
+      "challenge": true,
+      "preparation": [
+        "course01-06",
+        "course02-08",
+        "course03-08"
+      ]
+    },
+    {
+      "id": "detail-p-hands-01",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "fb848e49",
+      "challenge": true,
+      "preparation": [
+        "course01-07"
+      ]
+    },
+    {
+      "id": "detail-p-hands-02",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "4cdf584f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-hands-01"
+      ]
+    },
+    {
+      "id": "detail-p-hands-03",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "47383ac1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-hands-02"
+      ]
+    },
+    {
+      "id": "detail-p-hands-04",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "cfbc43a0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-hands-03"
+      ]
+    },
+    {
+      "id": "course01-08",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "3a490456",
+      "challenge": true,
+      "preparation": [
+        "course01-03",
+        "course01-04",
+        "course01-06",
+        "course01-07"
+      ]
+    },
+    {
+      "id": "detail-p-cross-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "adac62b3",
+      "challenge": true,
+      "preparation": [
+        "course02-08",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-cross-02",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "26b7f573",
+      "challenge": true,
+      "preparation": [
+        "detail-p-cross-01"
       ]
     },
     {
@@ -552,6 +707,150 @@
       "preparation": [
         "detail-p-dyads-03",
         "course03-08"
+      ]
+    },
+    {
+      "id": "course04-05",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "c3f45176",
+      "challenge": true,
+      "preparation": [
+        "course04-01",
+        "course02-02",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-rhythm-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "e664aca0",
+      "challenge": true,
+      "preparation": [
+        "course04-03"
+      ]
+    },
+    {
+      "id": "detail-p-rhythm-02",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "318b8d91",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-01"
+      ]
+    },
+    {
+      "id": "detail-p-rhythm-03",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "b069d73d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-02"
+      ]
+    },
+    {
+      "id": "detail-p-rhythm-final-rest-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "e9742d40",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-03",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-rhythm-04",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "0e308edd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-03"
+      ]
+    },
+    {
+      "id": "course04-06",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "8cea360f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-04",
+        "course02-05",
+        "course04-05"
+      ]
+    },
+    {
+      "id": "detail-p-dotted-quarter-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "056a6598",
+      "challenge": true,
+      "preparation": [
+        "course04-06",
+        "course04-02",
+        "course02-02"
+      ]
+    },
+    {
+      "id": "course09-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "1178a033",
+      "challenge": true,
+      "preparation": [
+        "detail-p-dotted-quarter-01",
+        "course02-05"
+      ]
+    },
+    {
+      "id": "course09-02",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "3faeba1e",
+      "challenge": true,
+      "preparation": [
+        "course09-01",
+        "course02-01"
+      ]
+    },
+    {
+      "id": "course09-07",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "a124d1c9",
+      "challenge": true,
+      "preparation": [
+        "course09-01",
+        "course09-02"
+      ]
+    },
+    {
+      "id": "course04-04",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "03cb8d3e",
+      "challenge": true,
+      "preparation": [
+        "course04-03",
+        "course02-02",
+        "course04-02"
+      ]
+    },
+    {
+      "id": "course04-08",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "de4b5be9",
+      "challenge": true,
+      "preparation": [
+        "course04-04",
+        "course04-06",
+        "course02-03"
       ]
     },
     {
@@ -681,6 +980,18 @@
       ]
     },
     {
+      "id": "detail-p-shifted-right-five-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "b3005446",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-03",
+        "detail-p-legato-pairs-01",
+        "detail-p-release-01"
+      ]
+    },
+    {
       "id": "detail-p-relocate-04",
       "stage": "p3",
       "branch": "common",
@@ -689,6 +1000,18 @@
       "preparation": [
         "detail-p-relocate-02",
         "course03-08"
+      ]
+    },
+    {
+      "id": "detail-p-shifted-left-five-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "2019c5db",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-04",
+        "detail-p-left-upper-position-01",
+        "detail-p-legato-pairs-04"
       ]
     },
     {
@@ -787,6 +1110,41 @@
       ]
     },
     {
+      "id": "detail-p-g-major-upper-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "83a787a7",
+      "challenge": true,
+      "preparation": [
+        "detail-p-right-upper-position-01",
+        "detail-p-black-03"
+      ]
+    },
+    {
+      "id": "detail-p-black-position-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "06be6163",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-03",
+        "detail-p-black-03",
+        "detail-p-legato-pairs-01"
+      ]
+    },
+    {
+      "id": "detail-p-black-position-right-02",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "fdfbe901",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-right-01",
+        "detail-p-right-upper-position-01",
+        "detail-p-black-03"
+      ]
+    },
+    {
       "id": "detail-p-black-04",
       "stage": "p3",
       "branch": "common",
@@ -794,6 +1152,41 @@
       "challenge": true,
       "preparation": [
         "detail-p-black-02"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-upper-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "485371af",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-upper-position-01",
+        "detail-p-black-04"
+      ]
+    },
+    {
+      "id": "detail-p-black-position-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "044e15be",
+      "challenge": true,
+      "preparation": [
+        "detail-p-shifted-left-five-01",
+        "detail-p-black-04",
+        "detail-p-legato-pairs-04"
+      ]
+    },
+    {
+      "id": "detail-p-black-position-left-02",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "93d7e76f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-left-01",
+        "detail-p-left-upper-position-01",
+        "detail-p-black-04"
       ]
     },
     {
@@ -811,155 +1204,63 @@
       "challenge": true
     },
     {
-      "id": "course04-06",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "8cea360f",
-      "challenge": true
-    },
-    {
-      "id": "detail-p-dotted-quarter-01",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "056a6598",
-      "challenge": true,
-      "preparation": [
-        "course04-06",
-        "course04-02",
-        "course02-02"
-      ]
-    },
-    {
-      "id": "course09-01",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "1178a033",
-      "challenge": true,
-      "preparation": [
-        "detail-p-dotted-quarter-01",
-        "course02-05"
-      ]
-    },
-    {
-      "id": "course09-02",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "3faeba1e",
-      "challenge": true,
-      "preparation": [
-        "course09-01",
-        "course02-01"
-      ]
-    },
-    {
-      "id": "course09-07",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "a124d1c9",
-      "challenge": true,
-      "preparation": [
-        "course09-01",
-        "course09-02"
-      ]
-    },
-    {
-      "id": "course04-08",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "de4b5be9",
-      "challenge": true,
-      "preparation": [
-        "course04-04",
-        "course04-06",
-        "course02-03"
-      ]
-    },
-    {
-      "id": "course04-07",
-      "stage": "p3",
-      "branch": "common",
-      "fingerprint": "3f362035",
-      "challenge": true
-    },
-    {
-      "id": "course01-06",
+      "id": "course07-01",
       "stage": "p4",
       "branch": "common",
-      "fingerprint": "59d644dd",
-      "challenge": true
-    },
-    {
-      "id": "course01-07",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "4a15f477",
-      "challenge": true,
-      "preparation": [
-        "course01-06",
-        "course02-08",
-        "course03-08"
-      ]
-    },
-    {
-      "id": "detail-p-hands-01",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "fb848e49",
-      "challenge": true,
-      "preparation": [
-        "course01-07"
-      ]
-    },
-    {
-      "id": "detail-p-hands-02",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "4cdf584f",
+      "fingerprint": "ca456c3a",
       "challenge": true,
       "preparation": [
         "detail-p-hands-01"
       ]
     },
     {
-      "id": "detail-p-hands-03",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "47383ac1",
-      "challenge": true,
-      "preparation": [
-        "detail-p-hands-02"
-      ]
-    },
-    {
-      "id": "detail-p-hands-04",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "cfbc43a0",
-      "challenge": true,
-      "preparation": [
-        "detail-p-hands-03"
-      ]
-    },
-    {
-      "id": "course01-08",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "3a490456",
-      "challenge": true
-    },
-    {
-      "id": "course07-01",
-      "stage": "p4",
-      "branch": "common",
-      "fingerprint": "ca456c3a",
-      "challenge": true
-    },
-    {
       "id": "course07-02",
       "stage": "p4",
       "branch": "common",
       "fingerprint": "2eea3a0e",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course07-01",
+        "course02-03",
+        "course03-03"
+      ]
+    },
+    {
+      "id": "course07-03",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "2ece0382",
+      "challenge": true,
+      "preparation": [
+        "course07-02",
+        "course01-07",
+        "course02-02",
+        "course03-02"
+      ]
+    },
+    {
+      "id": "course07-04",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "3c954317",
+      "challenge": true,
+      "preparation": [
+        "course07-03",
+        "course02-03",
+        "course03-03"
+      ]
+    },
+    {
+      "id": "course07-05",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "5676c46d",
+      "challenge": true,
+      "preparation": [
+        "course07-04",
+        "course02-03",
+        "course03-03"
+      ]
     },
     {
       "id": "course07-06",
@@ -986,71 +1287,68 @@
       ]
     },
     {
-      "id": "detail-p-cross-01",
+      "id": "detail-p-scale-03",
       "stage": "p5",
       "branch": "common",
-      "fingerprint": "adac62b3",
-      "challenge": true,
-      "preparation": [
-        "course09-06"
-      ]
-    },
-    {
-      "id": "detail-p-cross-02",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "26b7f573",
-      "challenge": true,
-      "preparation": [
-        "detail-p-cross-01"
-      ]
-    },
-    {
-      "id": "detail-p-cross-03",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "254e8502",
-      "challenge": true,
-      "preparation": [
-        "detail-p-cross-02"
-      ]
-    },
-    {
-      "id": "detail-p-cross-04",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "14e87c82",
+      "fingerprint": "dd9ee6d0",
       "challenge": true,
       "preparation": [
         "detail-p-cross-03"
       ]
     },
     {
-      "id": "course07-03",
-      "stage": "p4",
+      "id": "detail-p-scale-04",
+      "stage": "p5",
       "branch": "common",
-      "fingerprint": "2ece0382",
+      "fingerprint": "8c5bfd82",
       "challenge": true,
       "preparation": [
-        "course07-02",
-        "course01-07",
-        "course02-02",
-        "course03-02"
+        "detail-p-scale-03",
+        "detail-p-cross-04"
       ]
     },
     {
-      "id": "course07-04",
-      "stage": "p4",
+      "id": "detail-p-g-major-split-left-01",
+      "stage": "p5",
       "branch": "common",
-      "fingerprint": "5c13b6f3",
-      "challenge": true
+      "fingerprint": "ea7298f5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-scale-04",
+        "detail-p-g-major-upper-left-01"
+      ]
     },
     {
-      "id": "course07-05",
-      "stage": "p4",
+      "id": "detail-p-scale-01",
+      "stage": "p5",
       "branch": "common",
-      "fingerprint": "bd399ff9",
-      "challenge": true
+      "fingerprint": "2b73d202",
+      "challenge": true,
+      "preparation": [
+        "detail-p-cross-01"
+      ]
+    },
+    {
+      "id": "detail-p-scale-02",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "320ac304",
+      "challenge": true,
+      "preparation": [
+        "detail-p-scale-01",
+        "detail-p-cross-02"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-split-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "f5eaa2f1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-scale-02",
+        "detail-p-g-major-upper-right-01"
+      ]
     },
     {
       "id": "course06-03",
@@ -1081,47 +1379,6 @@
       "challenge": true
     },
     {
-      "id": "detail-p-scale-01",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "2b73d202",
-      "challenge": true,
-      "preparation": [
-        "course06-06",
-        "detail-p-cross-04"
-      ]
-    },
-    {
-      "id": "detail-p-scale-02",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "320ac304",
-      "challenge": true,
-      "preparation": [
-        "detail-p-scale-01"
-      ]
-    },
-    {
-      "id": "detail-p-scale-03",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "dd9ee6d0",
-      "challenge": true,
-      "preparation": [
-        "detail-p-scale-02"
-      ]
-    },
-    {
-      "id": "detail-p-scale-04",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "8c5bfd82",
-      "challenge": true,
-      "preparation": [
-        "detail-p-scale-03"
-      ]
-    },
-    {
       "id": "course06-07",
       "stage": "p5",
       "branch": "common",
@@ -1147,72 +1404,6 @@
       ]
     },
     {
-      "id": "detail-p-triads-02",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "d0fdd9a4",
-      "challenge": true,
-      "preparation": [
-        "course03-08",
-        "detail-p-release-04"
-      ]
-    },
-    {
-      "id": "detail-p-left-position-triad-01",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "13fc3fd5",
-      "challenge": true,
-      "preparation": [
-        "detail-p-triads-02",
-        "detail-p-relocate-04"
-      ]
-    },
-    {
-      "id": "detail-p-left-position-triad-02",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "146780c1",
-      "challenge": true,
-      "preparation": [
-        "detail-p-left-position-triad-01",
-        "detail-p-left-g-position-01"
-      ]
-    },
-    {
-      "id": "detail-p-triads-03",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "596d0695",
-      "challenge": true,
-      "preparation": [
-        "detail-p-triads-02"
-      ]
-    },
-    {
-      "id": "detail-p-triads-04",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "65b6d40d",
-      "challenge": true,
-      "preparation": [
-        "detail-p-triads-03"
-      ]
-    },
-    {
-      "id": "detail-p-minor-triads-01",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "14b73149",
-      "challenge": true,
-      "preparation": [
-        "detail-p-triads-04",
-        "detail-p-relocate-03",
-        "course04-02",
-        "detail-p-position-skips-02"
-      ]
-    },
-    {
       "id": "course08-01",
       "stage": "p5",
       "branch": "common",
@@ -1225,16 +1416,14 @@
       ]
     },
     {
-      "id": "detail-p-minor-triads-03",
+      "id": "detail-p-triads-02",
       "stage": "p5",
       "branch": "common",
-      "fingerprint": "87497977",
+      "fingerprint": "d0fdd9a4",
       "challenge": true,
       "preparation": [
-        "course08-01",
-        "detail-p-triads-04",
-        "detail-p-black-01",
-        "course04-07"
+        "course03-08",
+        "detail-p-release-04"
       ]
     },
     {
@@ -1275,6 +1464,21 @@
       ]
     },
     {
+      "id": "course07-08",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "88923ca5",
+      "challenge": true,
+      "preparation": [
+        "course07-02",
+        "course07-03",
+        "course07-06",
+        "course08-02",
+        "course07-07",
+        "course04-01"
+      ]
+    },
+    {
       "id": "detail-p-minor-triads-04",
       "stage": "p5",
       "branch": "common",
@@ -1287,6 +1491,28 @@
       ]
     },
     {
+      "id": "detail-p-left-position-triad-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "13fc3fd5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-relocate-04"
+      ]
+    },
+    {
+      "id": "detail-p-left-position-triad-02",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "146780c1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-position-triad-01",
+        "detail-p-left-g-position-01"
+      ]
+    },
+    {
       "id": "detail-p-minor-triads-02",
       "stage": "p5",
       "branch": "common",
@@ -1296,6 +1522,16 @@
         "course08-02",
         "detail-p-left-position-triad-02",
         "detail-p-position-skips-05"
+      ]
+    },
+    {
+      "id": "detail-p-triads-03",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "596d0695",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02"
       ]
     },
     {
@@ -1324,6 +1560,42 @@
       ]
     },
     {
+      "id": "detail-p-triads-04",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "65b6d40d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-03"
+      ]
+    },
+    {
+      "id": "detail-p-minor-triads-03",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "87497977",
+      "challenge": true,
+      "preparation": [
+        "course08-01",
+        "detail-p-triads-04",
+        "detail-p-black-01",
+        "course04-07"
+      ]
+    },
+    {
+      "id": "detail-p-minor-triads-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "14b73149",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-04",
+        "detail-p-relocate-03",
+        "course04-02",
+        "detail-p-position-skips-02"
+      ]
+    },
+    {
       "id": "detail-p-chordmove-01",
       "stage": "p5",
       "branch": "common",
@@ -1342,16 +1614,6 @@
       "challenge": true,
       "preparation": [
         "detail-p-chordmove-01"
-      ]
-    },
-    {
-      "id": "detail-p-chordmove-03",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "a0b99713",
-      "challenge": true,
-      "preparation": [
-        "detail-p-chordmove-02"
       ]
     },
     {
@@ -1391,18 +1653,27 @@
       ]
     },
     {
-      "id": "course07-08",
-      "stage": "p5",
-      "branch": "common",
-      "fingerprint": "76707091",
-      "challenge": true
-    },
-    {
       "id": "course08-08",
       "stage": "p5",
       "branch": "common",
-      "fingerprint": "d60dd8c8",
-      "challenge": true
+      "fingerprint": "47d05a52",
+      "challenge": true,
+      "preparation": [
+        "course08-05",
+        "course08-06",
+        "course08-07",
+        "course04-01"
+      ]
+    },
+    {
+      "id": "detail-p-chordmove-03",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "a0b99713",
+      "challenge": true,
+      "preparation": [
+        "detail-p-chordmove-02"
+      ]
     },
     {
       "id": "course09-08",
@@ -1416,21 +1687,39 @@
       "stage": "p6",
       "branch": "common",
       "fingerprint": "b1df57a2",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course02-05",
+        "course02-07",
+        "course04-01"
+      ]
     },
     {
       "id": "course10-02",
       "stage": "p6",
       "branch": "common",
       "fingerprint": "c31e5666",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "course03-05",
+        "course03-07",
+        "course04-01"
+      ]
     },
     {
       "id": "course10-03",
       "stage": "p6",
       "branch": "common",
       "fingerprint": "1a6c1c01",
-      "challenge": true
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-03",
+        "detail-p-relocate-04",
+        "course10-01",
+        "course10-02",
+        "detail-p-shifted-right-five-01",
+        "detail-p-shifted-left-five-01"
+      ]
     },
     {
       "id": "course10-04",
@@ -1486,8 +1775,14 @@
       "id": "course10-05",
       "stage": "p6",
       "branch": "common",
-      "fingerprint": "6757a4d9",
-      "challenge": true
+      "fingerprint": "a9f2218d",
+      "challenge": true,
+      "preparation": [
+        "course07-02",
+        "course07-04",
+        "course10-01",
+        "course10-02"
+      ]
     },
     {
       "id": "course10-06",
@@ -1505,8 +1800,14 @@
       "id": "course10-07",
       "stage": "p6",
       "branch": "common",
-      "fingerprint": "315ae320",
-      "challenge": true
+      "fingerprint": "62272d6b",
+      "challenge": true,
+      "preparation": [
+        "course09-01",
+        "course09-02",
+        "course09-07",
+        "course10-01"
+      ]
     },
     {
       "id": "course10-08",

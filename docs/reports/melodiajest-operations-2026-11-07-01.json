@@ -1,0 +1,143 @@
+{
+  "checkedAt": "2026-11-06T20:23:44.460584+00:00",
+  "publishedVersion": "23.5.33",
+  "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+  "liveBackup": {
+    "archive": "/opt/melodiajest/ops/backups/melodiajest-live-20261107-01.tar.gz",
+    "bytes": 292549,
+    "sha256": "da1496a24ba41142fbc6807f61c842fe116b0e2616203ce5e0cc14878b830529",
+    "version": "23.5.33",
+    "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "sourceSnapshotIncluded": false,
+    "sourceFiles": 0,
+    "publicFiles": 28
+  },
+  "liveFileRestore": {
+    "destination": "/opt/melodiajest/ops/archive-stage-20261107-01/restored-live",
+    "archiveSha256": "da1496a24ba41142fbc6807f61c842fe116b0e2616203ce5e0cc14878b830529",
+    "version": "23.5.33",
+    "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "filesVerified": 32,
+    "sourceSnapshotIncluded": false,
+    "restoreVerified": true,
+    "scope": "isolated file restoration; not S3, browser data, or container runtime"
+  },
+  "checkoutBackup": {
+    "path": "/opt/melodiajest/ops/backups/melodiajest-checkout-20261107-01.tar.gz",
+    "sha256": "09b72b818c10063f2532f9fc3e722dc63490948c1c49544ce0a36e30ac963d5c",
+    "bytes": 1625563,
+    "sourceFiles": 320
+  },
+  "checkoutFileRestore": {
+    "destination": "/opt/melodiajest/ops/archive-stage-20261107-01/restored-checkout",
+    "archiveSha256": "09b72b818c10063f2532f9fc3e722dc63490948c1c49544ce0a36e30ac963d5c",
+    "version": "23.5.33",
+    "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "filesVerified": 352,
+    "sourceSnapshotIncluded": true,
+    "restoreVerified": true,
+    "scope": "isolated file restoration; not S3, browser data, or container runtime"
+  },
+  "nginxRestore": {
+    "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+    "publicFilesVerified": [
+      "audio-transcriber.js",
+      "beginner-fingering.js",
+      "catalog-sections.css",
+      "catalog-sections.js",
+      "catalog-transfer.js",
+      "chopin-theme.js",
+      "curriculum-plan.js",
+      "curriculum.js",
+      "fingering.js",
+      "index.html",
+      "lesson-development.js",
+      "lesson-quality.js",
+      "lesson-review-baseline.js",
+      "music-document.js",
+      "piano-catalog-adapter.js",
+      "piano-learning-ui.css",
+      "piano-learning-ui.js",
+      "piano-lesson-development.js",
+      "piano-preparation-capture.js",
+      "piano-preparation-fragment.js",
+      "piano-preparation-import.js",
+      "piano-preparation-store.js",
+      "piano-preparation-transfer.js",
+      "piano-preparation.js",
+      "piano-progress-store.js",
+      "practice-assessment.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "blockedPaths": {
+      "/server.cjs": 404,
+      "/trainer-content.json": 404,
+      "/.env": 404,
+      "/api/content": 404,
+      "/api/midi-keyboard/launch": 404
+    },
+    "network": "none",
+    "publicPorts": false,
+    "productionMounts": false
+  },
+  "linuxSourceLinkRejections": 2,
+  "publicBefore": {
+    "melodiajest.ru": 200,
+    "libreta.ru": 200,
+    "praicer.ru": 200,
+    "grigorova.libreta.ru": 200
+  },
+  "publicAfter": {
+    "melodiajest.ru": 200,
+    "libreta.ru": 200,
+    "praicer.ru": 200,
+    "grigorova.libreta.ru": 200
+  },
+  "productionContainerUnchanged": true,
+  "currentUnchanged": true,
+  "caddyUnchanged": true,
+  "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+  "s3Configured": false,
+  "encryptionConfigured": false,
+  "scheduledBackupConfigured": false,
+  "downloadedLiveRestore": {
+    "destination": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\tmp\\melodiajest-downloaded-restore-20261107-01",
+    "archiveSha256": "da1496a24ba41142fbc6807f61c842fe116b0e2616203ce5e0cc14878b830529",
+    "version": "23.5.33",
+    "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "filesVerified": 32,
+    "sourceSnapshotIncluded": false,
+    "restoreVerified": true,
+    "scope": "isolated file restoration; not S3, browser data, or container runtime"
+  },
+  "downloadedLiveBackup": {
+    "path": "dist\\backups\\melodiajest-live-20261107-01.tar.gz",
+    "sha256": "da1496a24ba41142fbc6807f61c842fe116b0e2616203ce5e0cc14878b830529",
+    "bytes": 292549
+  },
+  "restoreContainerRemoved": true,
+  "tests": {
+    "npmPassed": 637,
+    "npmFailed": 0,
+    "pythonRun": 22,
+    "pythonPassed": 21,
+    "windowsSymlinkSkipped": 1,
+    "linuxRealSourceLinkRejections": 2
+  },
+  "webReleaseChanged": false,
+  "newLessons": 0,
+  "teacherReviewedAdded": 0,
+  "skills": {
+    "applied": [
+      "find-skills"
+    ],
+    "cliSearch": "failed-EACCES-no-install",
+    "fallback": "official catalog, primary-repository web search and Python/Docker docs",
+    "newPackagesInstalled": false
+  },
+  "projectStateVerified": true,
+  "publicAssetsUnchangedVerified": true,
+  "checkoutMusicalSourceBytesPreserved": true,
+  "diffCheckPassed": true
+}

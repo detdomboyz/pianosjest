@@ -1,0 +1,315 @@
+{
+  "checkedAt": "2026-11-06T19:37:19.007516+00:00",
+  "server": "135.106.217.27",
+  "release": "23.5.33",
+  "domainRegisteredByUserOn": "2026-11-06",
+  "initialStaging": {
+    "version": "23.5.33",
+    "archiveSha256": "059c063f8064041a6eb8f8ebc753b992db90581dd14ff467ba6652441c900f59",
+    "path": "/opt/melodiajest/releases/23.5.33",
+    "current": "releases/23.5.33",
+    "container": "melodiajest-web-1",
+    "containerIp": "172.18.0.6",
+    "healthy": true,
+    "publicPorts": false,
+    "publicCaddyActivated": false,
+    "caddyUnchanged": true,
+    "caddySha256": "9b14fac4211d6b30a0d09afff0195a653419c95d0853826fa91b7e72ac3a8065",
+    "caddyInode": 131363,
+    "assets": 27,
+    "nginxImageDigests": [
+      "nginx@sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    ],
+    "privateRoutes": {
+      "/api/content": 404,
+      "/api/midi-keyboard/launch": 404,
+      "/api/midi-bridge/events": 404,
+      "/server.cjs": 404,
+      "/trainer-content.json": 404,
+      "/.env": 404
+    },
+    "publicChecks": {
+      "libreta.ru": {
+        "status": 200,
+        "url": "https://libreta.ru"
+      },
+      "praicer.ru": {
+        "status": 200,
+        "url": "https://praicer.ru/guest?returnTo=%2F"
+      },
+      "grigorova.libreta.ru": {
+        "status": 200,
+        "url": "https://grigorova.libreta.ru"
+      }
+    },
+    "dns": [
+      {
+        "name": "melodiajest.ru",
+        "type": "NS",
+        "status": 3,
+        "answers": []
+      },
+      {
+        "name": "melodiajest.ru",
+        "type": "A",
+        "status": 3,
+        "answers": []
+      },
+      {
+        "name": "www.melodiajest.ru",
+        "type": "A",
+        "status": 3,
+        "answers": []
+      }
+    ]
+  },
+  "finalService": {
+    "service": "melodiajest-static",
+    "container": "melodiajest-web-1",
+    "aliases": [
+      "melodiajest-web-1",
+      "melodiajest-static",
+      "melodiajest-web"
+    ],
+    "healthy": true,
+    "neighbors": {
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "diaryWebResolvesToItsOwnBackend": true,
+    "configSha256": "4e2ddd466af85f27cb58ebb829a4d70d204dce2ec3dbd9cb39cccfebcb8c54ba"
+  },
+  "caddy": {
+    "caddyConfigured": true,
+    "beforeSha256": "9b14fac4211d6b30a0d09afff0195a653419c95d0853826fa91b7e72ac3a8065",
+    "afterSha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+    "inodePreserved": true,
+    "backup": "/opt/melodiajest/ops/Caddyfile.before-20261106T191930Z",
+    "candidate": "/opt/melodiajest/ops/Caddyfile.candidate-20261106T191930Z",
+    "existingRoutesPreserved": 3,
+    "addedRoutes": 2,
+    "http": {
+      "melodiajest.ru": {
+        "status": 308,
+        "location": "https://melodiajest.ru/release-check?keep=1"
+      },
+      "www.melodiajest.ru": {
+        "status": 308,
+        "location": "https://www.melodiajest.ru/release-check?keep=1"
+      }
+    },
+    "tls": {
+      "melodiajest.ru": {
+        "verified": false,
+        "error": "[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)"
+      },
+      "www.melodiajest.ru": {
+        "verified": false,
+        "error": "[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)"
+      }
+    },
+    "neighbors": {
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "dns": [
+      {
+        "name": "melodiajest.ru",
+        "type": "NS",
+        "status": 3,
+        "answers": []
+      },
+      {
+        "name": "melodiajest.ru",
+        "type": "A",
+        "status": 3,
+        "answers": []
+      },
+      {
+        "name": "www.melodiajest.ru",
+        "type": "A",
+        "status": 3,
+        "answers": []
+      }
+    ]
+  },
+  "publicHttpsVerified": true,
+  "browserQa": {
+    "lessons": 423,
+    "works": 27,
+    "fragments": 148,
+    "consoleErrors": 0,
+    "screenshot": "docs/qa/melodiajest-public-2026-11-07.png",
+    "initialCheckViaTemporarySshTunnel": true,
+    "publicUrl": "https://melodiajest.ru/",
+    "wwwRedirectVerified": true,
+    "publicBrowserVerified": true,
+    "ownedTabsClosed": true,
+    "temporaryTunnelClosed": true
+  },
+  "authoritativeDnsText": "SELECTEL_ZONE NS melodiajest.ru 0 Server:\t\ta.ns.selectel.ru\nAddress:\t188.68.203.1:53\n\nmelodiajest.ru\tnameserver = c.ns.selectel.ru\nmelodiajest.ru\tnameserver = b.ns.selectel.ru\nmelodiajest.ru\tnameserver = d.ns.selectel.ru\nmelodiajest.ru\tnameserver = a.ns.selectel.ru \nSELECTEL_ZONE A melodiajest.ru 0 Server:\t\ta.ns.selectel.ru\nAddress:\t188.68.203.1:53\n\nName:\tmelodiajest.ru\nAddress: 135.106.217.27 \nSELECTEL_ZONE CNAME www.melodiajest.ru 0 Server:\t\ta.ns.selectel.ru\nAddress:\t188.68.203.1:53\n\nwww.melodiajest.ru\tcanonical name = melodiajest.ru",
+  "finalVerification": {
+    "checkedAt": "2026-11-06T19:31:32.641101+00:00",
+    "containerHealthy": true,
+    "service": "melodiajest-static",
+    "aliases": [
+      "melodiajest-web-1",
+      "melodiajest-static",
+      "melodiajest-web"
+    ],
+    "publicPorts": false,
+    "caddySourceAndMountMatch": true,
+    "neighbors": {
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "dns": [
+      {
+        "name": "melodiajest.ru",
+        "type": "NS",
+        "status": 0,
+        "answers": [
+          {
+            "name": "melodiajest.ru.",
+            "type": 2,
+            "TTL": 3600,
+            "data": "a.ns.selectel.ru."
+          },
+          {
+            "name": "melodiajest.ru.",
+            "type": 2,
+            "TTL": 3600,
+            "data": "d.ns.selectel.ru."
+          },
+          {
+            "name": "melodiajest.ru.",
+            "type": 2,
+            "TTL": 3600,
+            "data": "c.ns.selectel.ru."
+          },
+          {
+            "name": "melodiajest.ru.",
+            "type": 2,
+            "TTL": 3600,
+            "data": "b.ns.selectel.ru."
+          }
+        ]
+      },
+      {
+        "name": "melodiajest.ru",
+        "type": "A",
+        "status": 0,
+        "answers": [
+          {
+            "name": "melodiajest.ru.",
+            "type": 1,
+            "TTL": 300,
+            "data": "135.106.217.27"
+          }
+        ]
+      },
+      {
+        "name": "www.melodiajest.ru",
+        "type": "A",
+        "status": 0,
+        "answers": [
+          {
+            "name": "www.melodiajest.ru.",
+            "type": 5,
+            "TTL": 300,
+            "data": "melodiajest.ru."
+          },
+          {
+            "name": "melodiajest.ru.",
+            "type": 1,
+            "TTL": 300,
+            "data": "135.106.217.27"
+          }
+        ]
+      }
+    ],
+    "https": {
+      "melodiajest.ru": {
+        "certificateVerified": true,
+        "expires": "Feb  4 18:24:22 2027 GMT"
+      },
+      "www.melodiajest.ru": {
+        "certificateVerified": true,
+        "expires": "Feb  4 18:24:23 2027 GMT"
+      }
+    },
+    "version": "23.5.33"
+  },
+  "publicVerification": {
+    "checkedAt": "2026-11-06T19:33:56.435317+00:00",
+    "rootUrl": "https://melodiajest.ru",
+    "rootStatus": 200,
+    "version": "23.5.33",
+    "httpsCertificateVerified": true,
+    "assetHashesVerified": [
+      "index.html",
+      "chopin-theme.js",
+      "audio-transcriber.js",
+      "fingering.js",
+      "beginner-fingering.js",
+      "practice-assessment.js",
+      "piano-progress-store.js",
+      "piano-preparation.js",
+      "piano-preparation-store.js",
+      "piano-preparation-fragment.js",
+      "piano-preparation-capture.js",
+      "piano-preparation-transfer.js",
+      "piano-preparation-import.js",
+      "curriculum.js",
+      "curriculum-plan.js",
+      "catalog-sections.js",
+      "lesson-review-baseline.js",
+      "lesson-quality.js",
+      "lesson-development.js",
+      "piano-lesson-development.js",
+      "piano-learning-ui.js",
+      "catalog-transfer.js",
+      "music-document.js",
+      "piano-catalog-adapter.js",
+      "catalog-sections.css",
+      "piano-learning-ui.css",
+      "web-runtime.js"
+    ],
+    "redirects": {
+      "http://melodiajest.ru/piano-learning-ui.js?release-check=1": {
+        "status": 308,
+        "location": "https://melodiajest.ru/piano-learning-ui.js?release-check=1"
+      },
+      "https://www.melodiajest.ru/piano-learning-ui.js?release-check=1": {
+        "status": 301,
+        "location": "https://melodiajest.ru/piano-learning-ui.js?release-check=1"
+      }
+    },
+    "blockedPaths": {
+      "/api/content": 404,
+      "/api/midi-keyboard/launch": 404,
+      "/api/midi-bridge/events": 404,
+      "/server.cjs": 404,
+      "/trainer-content.json": 404,
+      "/.env": 404,
+      "/%2e%2e%2fserver.cjs": 400
+    },
+    "postStatuses": {
+      "/": 405,
+      "/api/content": 404,
+      "/api/midi-keyboard/launch": 404
+    },
+    "contentType": "text/html",
+    "cacheControl": "no-cache",
+    "nosniff": "nosniff"
+  },
+  "regression": {
+    "fullPassed": 636,
+    "fullFailed": 0,
+    "durationMs": 289369.7328,
+    "targetedPassed": 5
+  }
+}

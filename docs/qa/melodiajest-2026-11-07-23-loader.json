@@ -1,0 +1,125 @@
+{
+  "version": "23.5.43",
+  "scope": "isolated transport/cache and native IDB preservation; production writers and browser merge not connected",
+  "checkedAt": "2026-11-07T09:21:19.089Z",
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "name": "native-fetch-crypto-shared-validator",
+      "passed": true,
+      "detail": {
+        "requests": 2,
+        "networkBytes": 120013,
+        "cacheHits": 0,
+        "cacheReadFailures": 0,
+        "cacheWriteFailures": 0,
+        "verifiedFiles": 2
+      }
+    },
+    {
+      "name": "native-cache-reuse-no-fetch",
+      "passed": true,
+      "detail": {
+        "requests": 0,
+        "networkBytes": 0,
+        "cacheHits": 2,
+        "cacheReadFailures": 0,
+        "cacheWriteFailures": 0,
+        "verifiedFiles": 2
+      }
+    },
+    {
+      "name": "corrupt-part-keeps-working-catalog",
+      "passed": true,
+      "detail": {
+        "code": "INTEGRITY",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "stale-manifest-keeps-working-catalog",
+      "passed": true,
+      "detail": {
+        "code": "INTEGRITY",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "http-503-keeps-working-catalog",
+      "passed": true,
+      "detail": {
+        "code": "HTTP",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "actual-closed-network-keeps-working-catalog",
+      "passed": true,
+      "detail": {
+        "code": "NETWORK",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "native-redirect-is-refused",
+      "passed": true,
+      "detail": {
+        "code": "NETWORK",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "wrong-mime-keeps-working-catalog",
+      "passed": true,
+      "detail": {
+        "code": "HTTP",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "stale-source-refused-before-fetch",
+      "passed": true,
+      "detail": {
+        "requests": 0
+      }
+    },
+    {
+      "name": "native-abort-refused-before-fetch",
+      "passed": true,
+      "detail": {
+        "code": "ABORTED",
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "corrupt-native-cache-fails-and-explicit-reload-repairs",
+      "passed": true,
+      "detail": {
+        "requests": 2,
+        "workingRevisionUnchanged": true
+      }
+    },
+    {
+      "name": "private-record-order-and-pin-remain-in-native-idb",
+      "passed": true,
+      "detail": {
+        "revision": 1,
+        "privateRecordPreserved": true
+      }
+    }
+  ],
+  "cleanup": {
+    "cacheRemoved": true,
+    "databaseRemoved": true
+  },
+  "mobile": {
+    "ariaLive": "polite",
+    "buttonHeight": 44,
+    "pageWidth": 376,
+    "status": "Проверено: 12 из 12",
+    "viewportWidth": 390
+  },
+  "mouseAndEnterVerified": true,
+  "twoProductionTabsTested": false
+}

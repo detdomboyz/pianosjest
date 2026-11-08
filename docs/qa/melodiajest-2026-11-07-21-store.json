@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-11-07T08:12:08.138Z",
+  "format": "melodiajest-indexeddb-package-qa-v1",
+  "tests": 12,
+  "passed": 12,
+  "failed": 0,
+  "realIndexedDB": true,
+  "actualOfflinePlannerFixture": true,
+  "realDiskExhaustionTested": false,
+  "quotaFailureInjected": true,
+  "networkDecoderConnected": false,
+  "productionApplicationConnected": false,
+  "publicVersion": "23.5.42",
+  "legacyStorageUnchanged": true,
+  "qaDatabaseNames": [
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-base",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-race",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-opaque",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-abort",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-quota",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-future",
+    "melodiajest-piano-packages-v1-qa-21-763e971c-daf-source"
+  ],
+  "results": [
+    {
+      "name": "01 — каталог и источник подтверждены после complete",
+      "passed": true
+    },
+    {
+      "name": "02 — обновление и предыдущая копия записаны вместе",
+      "passed": true
+    },
+    {
+      "name": "03 — новое соединение читает подтверждённую версию",
+      "passed": true
+    },
+    {
+      "name": "04 — повтор того же плана не создаёт новую редакцию",
+      "passed": true
+    },
+    {
+      "name": "05 — устаревший план второй вкладки сохраняет позднюю правку",
+      "passed": true
+    },
+    {
+      "name": "06 — конкурирующие транзакции одного store дают одного победителя",
+      "passed": true
+    },
+    {
+      "name": "07 — копия входа и непрозрачный план защищены от подмены",
+      "passed": true
+    },
+    {
+      "name": "08 — настоящий abort после первой put отменяет все записи",
+      "passed": true
+    },
+    {
+      "name": "09 — внедрённый QuotaExceededError сохраняет current и previous",
+      "passed": true
+    },
+    {
+      "name": "10 — повреждённое состояние экспортируется без сброса",
+      "passed": true
+    },
+    {
+      "name": "11 — более старая версия и другой pin того же выпуска отклоняются",
+      "passed": true
+    },
+    {
+      "name": "12 — старый каталог, прогресс и настройки остаются побайтно прежними",
+      "passed": true
+    }
+  ],
+  "mobile": {
+    "buttonHeight": 68,
+    "buttonWidth": 343.67999267578125,
+    "height": 844,
+    "pageWidth": 376,
+    "status": "12 из 12 проверок пройдены. Рабочая версия сохранена.",
+    "width": 390
+  },
+  "consoleErrors": [],
+  "screenshot": "docs/qa/melodiajest-2026-11-07-21-store.png",
+  "ownedTabClosed": true,
+  "viewportRestored": true
+}

@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-11-07T12:43:45.784Z",
+  "format": "melodiajest-controller-qa-v1",
+  "tests": 11,
+  "passed": 11,
+  "failed": 0,
+  "realIndexedDB": true,
+  "realVerifiedLoader": true,
+  "realSharedPlanner": true,
+  "nativeConnectionRace": true,
+  "quotaFailureInjected": true,
+  "realDiskExhaustionTested": false,
+  "explicitPendingRecoveryVerified": true,
+  "actualBrowserTabClosureTested": false,
+  "legacyMigrationImplemented": false,
+  "productionApplicationConnected": false,
+  "publicVersion": "23.5.46",
+  "legacyStorageUnchanged": true,
+  "results": [
+    {
+      "name": "01 — проверенные части и полный каталог подтверждены после commit",
+      "passed": true
+    },
+    {
+      "name": "02 — общая запись сохраняет ноты, ритм, пальцы, порядок и аннотации",
+      "passed": true
+    },
+    {
+      "name": "03 — обновление через реальный planner и повтор сохраняют одну квитанцию",
+      "passed": true
+    },
+    {
+      "name": "04 — поздняя правка во время digest делает предложение устаревшим",
+      "passed": true
+    },
+    {
+      "name": "05 — две очередные правки одного снимка не теряют первую",
+      "passed": true
+    },
+    {
+      "name": "06 — два настоящих соединения сохраняют одного победителя",
+      "passed": true
+    },
+    {
+      "name": "07 — quota после stage сохраняет рабочую версию и полный черновик",
+      "passed": true
+    },
+    {
+      "name": "08 — закрытие после stage оставляет явное восстановление",
+      "passed": true
+    },
+    {
+      "name": "09 — чужой token и копия снимка не дают права записи",
+      "passed": true
+    },
+    {
+      "name": "10 — ошибка наблюдателя не отменяет уже подтверждённую запись",
+      "passed": true
+    },
+    {
+      "name": "11 — пустое восстановление не создаёт запись и не меняет старое хранение",
+      "passed": true
+    }
+  ],
+  "qaDatabasesDeleted": true,
+  "ui": {
+    "activation": "Enter",
+    "width": 390,
+    "height": 844,
+    "documentWidth": 376,
+    "horizontalOverflow": false,
+    "semanticLiveStatus": true
+  },
+  "ownedTabsClosed": true,
+  "viewportReset": true
+}

@@ -11,6 +11,16 @@ const ROOT=path.resolve(__dirname,'..');
 const OUT=fs.mkdtempSync(path.join(ROOT,'tmp','web-release-test-'));
 const CONTENT_KEY='piano-blind-trainer-content-v20';
 
+test('shared-host service names cannot shadow another portal app through automatic Compose DNS aliases',()=>{
+  const config=fs.readFileSync(path.join(ROOT,'deploy/shared-host/compose.yaml'),'utf8');
+  const services=config.split(/^services:\s*$/m)[1].split(/^networks:\s*$/m)[0];
+  const names=[...services.matchAll(/^  ([a-zA-Z0-9_-]+):\s*$/gm)].map(m=>m[1]);
+  assert.ok(names.length>0);assert.ok(names.every(name=>name.startsWith('melodiajest-')),'Compose automatically advertises every service name, even with explicit network aliases');
+  assert.match(services,/container_name: melodiajest-/);
+  const aliases=[...services.matchAll(/aliases:\s*\[([^\]]*)\]/g)].flatMap(m=>m[1].split(',').map(s=>s.trim().replace(/^['"]|['"]$/g,'')));
+  assert.ok(aliases.every(name=>!['web','app','gateway','db'].includes(name)));
+});
+
 test('public export contains only declared browser assets, never personal/native/server files',()=>{
   const release=buildWeb({outDir:OUT});
   assert.equal(release.storage,'browser');assert.equal(release.nativeCompanion,false);
@@ -32,6 +42,12 @@ test('static preview rejects API mutations, native launch, source files and enco
   for(const url of ['/','/piano-learning-ui.js','/web-runtime.js'])assert.equal((await fetch(base+url)).status,200);
   for(const url of ['/api/content','/api/midi-keyboard/launch','/api/midi-bridge/events','/server.cjs','/trainer-content.json','/%2e%2e%2fserver.cjs'])assert.equal((await fetch(base+url)).status,404,url);
   for(const url of ['/api/content','/api/midi-keyboard/launch','/'])assert.equal((await fetch(base+url,{method:'POST',body:'{}'})).status,405,url);
+});
+test('service export builds its course hub and trainer from their canonical sources without a second music algorithm',()=>{
+  const exported=buildWeb({outDir:OUT,service:true});assert.equal(exported.gameVersion,1);assert.equal(exported.personalProgress,'database-and-versioned-browser-history');assert.deepEqual(exported.sourceEntries,{'index.html':'learn.html','trainer.html':'index.html'});
+  assert.equal(fs.readFileSync(path.join(OUT,'index.html'),'utf8'),fs.readFileSync(path.join(ROOT,'learn.html'),'utf8'));
+  const original=fs.readFileSync(path.join(ROOT,'index.html'),'utf8').replace('<script src="chopin-theme.js">','<script src="web-runtime.js"></script>\n<script src="chopin-theme.js">');assert.equal(fs.readFileSync(path.join(OUT,'trainer.html'),'utf8'),original);
+  assert.match(fs.readFileSync(path.join(OUT,'web-runtime.js'),'utf8'),/serviceVersion:1,gameVersion:1/);
 });
 
 test('actual web app saves/loads private edits without calling any server API or native bridge',async()=>{

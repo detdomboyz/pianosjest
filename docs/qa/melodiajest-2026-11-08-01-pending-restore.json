@@ -1,0 +1,112 @@
+{
+  "format": "melodiajest-pending-restore-qa-v1",
+  "checkedAt": "2026-11-07T19:22:48.372Z",
+  "tests": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "name": "01 — подготовка возвращения ничего не записывает",
+      "passed": true
+    },
+    {
+      "name": "02 — возвращается только pending, архив и рабочие слоты прежние",
+      "passed": true
+    },
+    {
+      "name": "03 — повтор не пишет вторую правку",
+      "passed": true
+    },
+    {
+      "name": "04 — чужое и JSON-разрешение не вызывают запись",
+      "passed": true
+    },
+    {
+      "name": "05 — новое соединение экспортирует оба полных экземпляра",
+      "passed": true
+    },
+    {
+      "name": "06 — активация требует отдельного prepareRecovery и commitRecovery",
+      "passed": true
+    },
+    {
+      "name": "07 — CAS замечает изменение каждого рабочего слота",
+      "passed": true
+    },
+    {
+      "name": "08 — заменённый или удалённый архив не возвращается",
+      "passed": true
+    },
+    {
+      "name": "09 — новый pending после подготовки не перезаписывается",
+      "passed": true
+    },
+    {
+      "name": "10 — null и undefined pending блокируют уже подготовку",
+      "passed": true
+    },
+    {
+      "name": "11 — два соединения возвращают один и тот же pending",
+      "passed": true
+    },
+    {
+      "name": "12 — конкурентный stage и restore не затирают друг друга",
+      "passed": true
+    },
+    {
+      "name": "13 — native abort сохраняет архив без нового pending",
+      "passed": true
+    },
+    {
+      "name": "14 — native quota не сообщает возвращение успешным",
+      "passed": true
+    },
+    {
+      "name": "15 — stale, future и чужие архивы остаются для экспорта",
+      "passed": true
+    },
+    {
+      "name": "16 — начальный pending возвращается без создания current",
+      "passed": true
+    },
+    {
+      "name": "17 — уже применённая правка возобновляется без повторной ротации",
+      "passed": true
+    },
+    {
+      "name": "18 — localStorage origin не изменялся",
+      "passed": true
+    }
+  ],
+  "realIndexedDB": true,
+  "opaqueTwoStepRestore": true,
+  "restoreChangesOnlyPending": true,
+  "archiveRetained": true,
+  "workingSlotsUnchangedByRestore": true,
+  "occupiedNullUndefinedProtected": true,
+  "realTwoConnectionsRace": true,
+  "realTwoTabsRace": false,
+  "restoreActivatesCatalog": false,
+  "separateExplicitRecoveryCommitTested": true,
+  "syntheticCatalogActivationBySeparateCommit": true,
+  "productionActivationPerformed": false,
+  "productionApplicationConnected": false,
+  "recoveryFileImported": false,
+  "realUserCatalogCopied": false,
+  "publicVersion": "23.5.51",
+  "localStorageUnchanged": true,
+  "qaDatabasesDeleted": true,
+  "ui": {
+    "enterStarted": true,
+    "mobile": {
+      "buttonHeight": 44,
+      "clientWidth": 376,
+      "focusVisible": true,
+      "scrollWidth": 376,
+      "statusLive": "polite",
+      "width": 390
+    },
+    "screenshotViewport": "default after reset",
+    "qaTabClosed": true
+  }
+}

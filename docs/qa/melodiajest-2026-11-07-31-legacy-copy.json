@@ -1,0 +1,178 @@
+{
+  "checkedAt": "2026-11-07T13:59:46.544Z",
+  "format": "melodiajest-legacy-copy-qa-v1",
+  "tests": 13,
+  "passed": 13,
+  "failed": 0,
+  "realIndexedDB": true,
+  "exactUtf16UnitsVerified": true,
+  "missingAndEmptyDistinct": true,
+  "atomicCapacityVerified": true,
+  "portableSyntheticReadbackVerified": true,
+  "quotaFailureInjected": true,
+  "realDiskExhaustionTested": false,
+  "legacySourceWrittenByModule": false,
+  "productionApplicationConnected": false,
+  "realUserCatalogCopied": false,
+  "independentBrowserBackupCreated": false,
+  "publicVersion": "23.5.47",
+  "results": [
+    {
+      "name": "01 — отсутствующий и пустой ключ сохраняются разными копиями",
+      "passed": true
+    },
+    {
+      "name": "02 — исходная повреждённая строка сохранена до изменения источника",
+      "passed": true
+    },
+    {
+      "name": "03 — одиночные суррогаты, символы и NUL проходят точный цикл",
+      "passed": true
+    },
+    {
+      "name": "04 — повтор после переоткрытия не перезаписывает дату и копию",
+      "passed": true
+    },
+    {
+      "name": "05 — ёмкость ограничена без удаления прежних копий",
+      "passed": true
+    },
+    {
+      "name": "06 — два соединения не дублируют одинаковый исходник",
+      "passed": true
+    },
+    {
+      "name": "07 — гонка за четвёртое место сохраняет лимит и прежние строки",
+      "passed": true
+    },
+    {
+      "name": "08 — настоящий abort отменяет первую add целиком",
+      "passed": true
+    },
+    {
+      "name": "09 — внедрённая quota не оставляет частичную копию",
+      "passed": true
+    },
+    {
+      "name": "10 — повреждённая контрольная сумма обнаруживается без ремонта",
+      "passed": true
+    },
+    {
+      "name": "11 — неизвестная редакция экспортируется без сброса",
+      "passed": true
+    },
+    {
+      "name": "12 — экспорт восстанавливает исходную строку в отдельной тестовой БД",
+      "passed": true
+    },
+    {
+      "name": "13 — прогресс и настройки остаются побайтно прежними",
+      "passed": true
+    }
+  ],
+  "qaDatabasesDeleted": true,
+  "mobileRun": {
+    "checkedAt": "2026-11-07T14:00:36.040Z",
+    "format": "melodiajest-legacy-copy-qa-v1",
+    "tests": 13,
+    "passed": 13,
+    "failed": 0,
+    "realIndexedDB": true,
+    "exactUtf16UnitsVerified": true,
+    "missingAndEmptyDistinct": true,
+    "atomicCapacityVerified": true,
+    "portableSyntheticReadbackVerified": true,
+    "quotaFailureInjected": true,
+    "realDiskExhaustionTested": false,
+    "legacySourceWrittenByModule": false,
+    "productionApplicationConnected": false,
+    "realUserCatalogCopied": false,
+    "independentBrowserBackupCreated": false,
+    "publicVersion": "23.5.47",
+    "results": [
+      {
+        "name": "01 — отсутствующий и пустой ключ сохраняются разными копиями",
+        "passed": true
+      },
+      {
+        "name": "02 — исходная повреждённая строка сохранена до изменения источника",
+        "passed": true
+      },
+      {
+        "name": "03 — одиночные суррогаты, символы и NUL проходят точный цикл",
+        "passed": true
+      },
+      {
+        "name": "04 — повтор после переоткрытия не перезаписывает дату и копию",
+        "passed": true
+      },
+      {
+        "name": "05 — ёмкость ограничена без удаления прежних копий",
+        "passed": true
+      },
+      {
+        "name": "06 — два соединения не дублируют одинаковый исходник",
+        "passed": true
+      },
+      {
+        "name": "07 — гонка за четвёртое место сохраняет лимит и прежние строки",
+        "passed": true
+      },
+      {
+        "name": "08 — настоящий abort отменяет первую add целиком",
+        "passed": true
+      },
+      {
+        "name": "09 — внедрённая quota не оставляет частичную копию",
+        "passed": true
+      },
+      {
+        "name": "10 — повреждённая контрольная сумма обнаруживается без ремонта",
+        "passed": true
+      },
+      {
+        "name": "11 — неизвестная редакция экспортируется без сброса",
+        "passed": true
+      },
+      {
+        "name": "12 — экспорт восстанавливает исходную строку в отдельной тестовой БД",
+        "passed": true
+      },
+      {
+        "name": "13 — прогресс и настройки остаются побайтно прежними",
+        "passed": true
+      }
+    ],
+    "qaDatabasesDeleted": true
+  },
+  "actualTabClosureRecoveryVerified": true,
+  "actualTabClosure": {
+    "saved": {
+      "phase": "saved",
+      "database": "melodiajest-legacy-catalog-v1-qa-31-reopen-23aa8cab-a60e-4483-9ccb-d4732876b10c",
+      "id": "26124f2d97bd1dbc8df1479dab79e2f80af0642dfb9c88d3c4e83f9e88239a11",
+      "rawCodeUnits": 39,
+      "sourceUnchanged": true
+    },
+    "reopened": {
+      "checkedAt": "2026-11-07T14:00:16.340Z",
+      "phase": "read-after-reopen",
+      "database": "melodiajest-legacy-catalog-v1-qa-31-reopen-23aa8cab-a60e-4483-9ccb-d4732876b10c",
+      "exactRawReadback": true,
+      "sourceUnchanged": true,
+      "portableRawPreserved": true,
+      "qaDatabaseDeleted": true,
+      "productionConnected": false
+    }
+  },
+  "responsive": {
+    "documentWidth": 376,
+    "runButtonHeight": 44,
+    "statusRole": "status",
+    "width": 390
+  },
+  "keyboardEnterVerified": true,
+  "keyboardSpaceVerified": true,
+  "ownedTabsClosed": true,
+  "viewportReset": true
+}

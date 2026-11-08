@@ -1,0 +1,117 @@
+{
+  "format": "melodiajest-recovery-import-qa-v1",
+  "checkedAt": "2026-11-08T00:18:26.927Z",
+  "tests": 20,
+  "passed": 19,
+  "failed": 2,
+  "results": [
+    {
+      "name": "01 — native File и подготовка не создают рабочий каталог",
+      "passed": true
+    },
+    {
+      "name": "02 — отдельный commit атомарно возвращает каталог, квитанцию и архив",
+      "passed": true
+    },
+    {
+      "name": "03 — живое разрешение повторяется без второй записи",
+      "passed": true
+    },
+    {
+      "name": "04 — reopen и полный повторный экспорт совпадают побайтно",
+      "passed": true
+    },
+    {
+      "name": "05 — импорт не возобновляет pending из архива",
+      "passed": true
+    },
+    {
+      "name": "06 — только отдельное возобновление применяет следующую редакцию",
+      "passed": true
+    },
+    {
+      "name": "07 — файл с pending сохраняет черновик без автоматического применения",
+      "passed": true
+    },
+    {
+      "name": "08 — previous и устаревший архив сохраняются без отката",
+      "passed": true
+    },
+    {
+      "name": "09 — future pending и архив остаются приватным JSON",
+      "passed": true
+    },
+    {
+      "name": "10 — занятые null, undefined и неизвестные ключи защищены",
+      "passed": true
+    },
+    {
+      "name": "11 — CAS замечает любую запись после подготовки",
+      "passed": true
+    },
+    {
+      "name": "12 — два настоящих соединения импортируют одну копию",
+      "passed": true
+    },
+    {
+      "name": "13 — две разные копии не смешиваются при гонке",
+      "passed": true
+    },
+    {
+      "name": "14 — обычный writer и импорт не затирают друг друга",
+      "passed": true
+    },
+    {
+      "name": "15 — native abort после add откатывает все слоты",
+      "passed": true
+    },
+    {
+      "name": "16 — внедрённый quota после второго add не сообщает успех",
+      "passed": true
+    },
+    {
+      "name": "17 — чужие, JSON и закрытые разрешения не пишут данные",
+      "passed": true
+    },
+    {
+      "name": "18 — подтверждённый token не восстанавливает очищенную после него базу",
+      "passed": true
+    },
+    {
+      "name": "19 — явный null архива сохраняется, чужой или дублированный файл отвергается",
+      "passed": false,
+      "code": 8,
+      "message": "Failed to execute 'transaction' on 'IDBDatabase': One of the specified object stores was not found."
+    },
+    {
+      "name": "20 — localStorage origin и отдельный прогресс не изменялись",
+      "passed": true
+    }
+  ],
+  "realIndexedDB": true,
+  "nativeFileTextRead": true,
+  "realFilePickerTested": false,
+  "emptyDestinationOnly": true,
+  "addOnlyAtomicImport": true,
+  "sameNameDatabaseRequired": true,
+  "opaqueTwoStepImport": true,
+  "workingCatalogRestoredByExplicitImport": true,
+  "pendingAutomaticallyResumed": false,
+  "exactReopenedExportVerified": true,
+  "sourceCoreNullMeansMissing": true,
+  "archiveNullPresencePreserved": true,
+  "occupiedNullUndefinedProtected": true,
+  "realTwoConnectionsRace": true,
+  "realTwoTabsRace": false,
+  "injectedQuotaTested": true,
+  "physicalDiskFullTested": false,
+  "hardwarePowerLossTested": false,
+  "productionApplicationConnected": false,
+  "productionActivationPerformed": false,
+  "realUserDataCopied": false,
+  "separateMidiProgressIncluded": false,
+  "midiSettingsIncluded": false,
+  "localStorageUnchanged": true,
+  "fixtureFileBytes": 541407,
+  "qaDatabasesDeleted": false
+}

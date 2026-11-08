@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-11-07T10:39:42.088Z",
+  "format": "melodiajest-browser-three-way-planner-qa-v1",
+  "tests": 11,
+  "passed": 11,
+  "failed": 0,
+  "realIndexedDB": true,
+  "realWebCrypto": true,
+  "realFetch": true,
+  "sharedNodePolicyParity": true,
+  "actualLoaderPlannerStorePipeline": true,
+  "separateConnectionsLateWriteVerified": true,
+  "separateTabsLateWriteVerified": true,
+  "peerClientId": "12bb97ea-7052-4317-93d2-8bb4196f1f51",
+  "legacySentinelsUnchanged": true,
+  "productionApplicationConnected": false,
+  "legacyWritersMigrated": false,
+  "syntheticReleases": [
+    "23.5.44",
+    "23.5.45"
+  ],
+  "publicVersion": "23.5.44",
+  "results": [
+    {
+      "name": "01 — проверенный загрузчик и общий алгоритм дают то же предложение, что Node",
+      "passed": true
+    },
+    {
+      "name": "02 — сериализованная копия не становится проверенным пакетом или планом",
+      "passed": true
+    },
+    {
+      "name": "03 — ноты, пальцы, личный порядок и дополнительное произведение сохранены",
+      "passed": true
+    },
+    {
+      "name": "04 — личная редакция и удаление блокируют всё обновление",
+      "passed": true
+    },
+    {
+      "name": "05 — изменение во время SHA256 требует повторной подготовки",
+      "passed": true
+    },
+    {
+      "name": "06 — старый источник и смена каталога отклоняются; дата экспорта не мешает",
+      "passed": true
+    },
+    {
+      "name": "07 — loader → предложение → атомарный store сохраняет current, previous и квитанцию",
+      "passed": true
+    },
+    {
+      "name": "08 — поздняя запись второго соединения сохраняется при отказе устаревшего commit",
+      "passed": true
+    },
+    {
+      "name": "09 — отказ сети и повреждённая часть не меняют рабочую копию",
+      "passed": true
+    },
+    {
+      "name": "10 — отказ digest и подготовка оставляют прежние progress/UI/legacy записи",
+      "passed": true
+    },
+    {
+      "name": "11 — настоящая вторая вкладка сохраняет позднюю правку перед устаревшим commit",
+      "passed": true
+    }
+  ],
+  "qaCleanup": [
+    {
+      "name": "melodiajest-piano-packages-v1-qa-25-9aa184da-dcf-main",
+      "deleted": true
+    },
+    {
+      "name": "melodiajest-piano-packages-v1-qa-25-9aa184da-dcf-late",
+      "deleted": true
+    },
+    {
+      "name": "melodiajest-piano-packages-v1-qa-25-9aa184da-dcf-peer",
+      "deleted": true
+    }
+  ],
+  "qaDatabasesRemoved": true,
+  "nativeTabIds": [
+    "16",
+    "17"
+  ],
+  "peerObserved": {
+    "clientId": "12bb97ea-7052-4317-93d2-8bb4196f1f51",
+    "revision": 2,
+    "status": "committed"
+  },
+  "keyboardRepeated": true,
+  "mobile": {
+    "ariaLive": "polite",
+    "buttonHeight": 44,
+    "clientWidth": 376,
+    "documentWidth": 376,
+    "focusOutline": "2.56px",
+    "height": 844,
+    "width": 390
+  },
+  "mouseVerified": true,
+  "screenshot": "docs/qa/melodiajest-2026-11-07-25-planner.png",
+  "finishedAt": "2026-11-07T10:40:40.009Z",
+  "harnessNotes": [
+    "Initial click timed out before execution; ready state verified, then one explicit retry passed.",
+    "Viewport capability resizes the selected tab; main viewport was measured at 390 after peer cleanup."
+  ],
+  "ownedTabsClosed": true,
+  "viewportReset": true
+}

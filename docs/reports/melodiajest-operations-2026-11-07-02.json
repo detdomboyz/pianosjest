@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-11-06T20:46:38.652129+00:00",
+  "linuxTests": 25,
+  "linuxSkipped": 0,
+  "productionPlan": {
+    "archiveSha256": "da1496a24ba41142fbc6807f61c842fe116b0e2616203ce5e0cc14878b830529",
+    "changed": false,
+    "infrastructure": {
+      "caddyInode": 131363,
+      "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+      "configs": {
+        "Caddyfile.fragment": "f8b24b89a7a973689d0ee987fedb7f1526bb6ed36ec28b1325aca9f2d61b0f8c",
+        "compose.yaml": "4e2ddd466af85f27cb58ebb829a4d70d204dce2ec3dbd9cb39cccfebcb8c54ba",
+        "nginx.conf": "0cc003f7f81ee2be48de6e25e08449166f1dc1642b37431b2b0235b905175375"
+      },
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    },
+    "new": "releases/23.5.33",
+    "newSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "old": "releases/23.5.33",
+    "oldPrevious": null,
+    "oldSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "version": "23.5.33"
+  },
+  "realNginxTransition": {
+    "updatePhase": "committed",
+    "explicitRollbackPhase": "committed",
+    "postSwitchFailurePhase": "rolled-back",
+    "sameArtifactPhase": "unchanged",
+    "sameArtifactDidNotRecreateContainer": true,
+    "oldManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+    "candidateManifestSha256": "95267e33aeba0fa787a0ccd57e22fbe046c6d00f8db0734ebf5947e4b058548e",
+    "candidateVersion": "23.5.34",
+    "candidatePublished": false,
+    "publicFilesPerVerification": 28,
+    "actualNginxVerifications": [
+      "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+      "95267e33aeba0fa787a0ccd57e22fbe046c6d00f8db0734ebf5947e4b058548e",
+      "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd",
+      "95267e33aeba0fa787a0ccd57e22fbe046c6d00f8db0734ebf5947e4b058548e",
+      "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd"
+    ],
+    "network": "none",
+    "productionMounts": false,
+    "temporaryContainerRemoved": true
+  },
+  "productionContainerUnchanged": true,
+  "productionCurrentUnchanged": true,
+  "caddyUnchanged": true,
+  "publicStatuses": {
+    "melodiajest.ru": 200,
+    "libreta.ru": 200,
+    "praicer.ru": 200,
+    "grigorova.libreta.ru": 200
+  },
+  "toolFiles": {
+    "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+    "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+    "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+    "tests/web_update_test.py": "44ef8ca800a8f5e7aaba2cbdecab84f0ae24d669239f68a0482b2c1b9c116403"
+  },
+  "serverToolDirectory": "/opt/melodiajest/ops/update-check-20261107-02/deploy/shared-host",
+  "npmTestsPassed": 638,
+  "windowsConfigurationTestsPassed": 7,
+  "windowsPosixSkipped": 18,
+  "newLessons": 0,
+  "publicVersion": "23.5.33",
+  "tooling": {
+    "status": "waiting-for-shared-deployment-lock",
+    "permanentPlacementVerified": false,
+    "sourceCopyRestoreVerified": false,
+    "holderObserved": {
+      "pid": 3321571,
+      "command": "python3",
+      "path": "/run/lock/libre-deploy.lock"
+    },
+    "resumeScript": "tmp/promote-melodiajest-updater-02.py",
+    "uploadSha256Verified": true,
+    "restoreNotYetRun": true,
+    "uploadReusedOnRetry": true,
+    "placementAttemptsDeferred": 2
+  },
+  "preparedSelectedSourceSnapshot": {
+    "archive": "dist\\melodiajest-checkout-20261107-02.tar.gz",
+    "bytes": 1642940,
+    "publicFiles": 28,
+    "sha256": "911532b52a1563babb87bdd6d1fca283129a601aa525d4d87155708befa84de4",
+    "sourceFiles": 325,
+    "sourceSnapshotIncluded": true,
+    "version": "23.5.33",
+    "webManifestSha256": "15c94a486b7d18f65dddadb1999849b651355f850c5f93faa30e07ec30e531cd"
+  },
+  "diffCheckPassed": true
+}

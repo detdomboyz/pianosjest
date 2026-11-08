@@ -1,0 +1,14 @@
+import * as R from '../../lesson-rating';
+import * as E from '../../portal-experience';
+import * as Learning from '../../learning-client';
+import type {Client} from '../../service-client';
+import type {Course,Grade,LearningState} from '../../game-service';
+declare const client:Client,course:Course,state:LearningState,grade:Grade;
+const scale:R.System=state.preferences.ratingSystem;
+const zero:R.SavedRating|null=R.record(scale,0);
+const display:string=R.format(scale,R.valueFor(zero,scale));
+const step:E.Level=E.level(state.experience.musicXp);
+const controller=Learning.create({client,locks:navigator.locks,requireLocks:true});
+void controller.start(course.lessons[0],'challenge');
+const earned:number=grade.xp.earned;
+void [display,step,earned,controller.status().ready];

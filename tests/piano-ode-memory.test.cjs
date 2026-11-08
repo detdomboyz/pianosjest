@@ -43,7 +43,7 @@ test('guarded combined-edition migration keeps private edits, JSON and previous-
 
 test('a memory repetition is linked to its existing goal and its instructions require truly hidden cues',()=>{
  const l=app.lessons.find(l=>l.id===id);assert.equal(l.learning.sameGoalAs,'course09-02');assert.equal(l.learning.after,'course09-02');assert.deepEqual(copy(l.learning.requires),['course09-01','course09-02']);assert.match(l.guide.blind,/скрыты все учебные подсказки/);assert.doesNotMatch(l.description,/Оставь только подсказку пальца/);
- const report=Coverage.build(),group=report.sameGoalGroups.find(g=>g.primaryId==='course09-02');assert.deepEqual(group,{primaryId:'course09-02',lessonIds:['course09-02',id]});assert.equal(report.counts.goalGroupUpperBound,report.counts.implementedLearningLessons-report.counts.explicitSameGoalVariants-report.counts.explicitCheckpoints);
+ const report=Coverage.build(),group=report.sameGoalGroups.find(g=>g.primaryId==='course09-02');assert.deepEqual(group,{primaryId:'course09-02',lessonIds:['course09-02',id,'course10-07']});assert.equal(report.counts.goalGroupUpperBound,report.counts.implementedLearningLessons-report.counts.explicitSameGoalVariants-report.counts.explicitCheckpoints);
  app.state.lesson=l;app.state.attemptMode='memory';app.state.learningMaterialMode='expanded';assert.equal(app.learningMaterialHtml(),'');assert.doesNotMatch(app.currentNoteHtml(),/E4|D4|палец/);assert.match(app.learningContractHtml(),/id="memory-assistance-status"[^>]+role="status"[^>]+aria-live="polite"/);assert.doesNotMatch(app.learningContractHtml(),/использована подсказка/);app.state.attemptMode='practice';
 });
 

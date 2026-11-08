@@ -59,7 +59,13 @@
     .error-screen{margin:20px;padding:16px;border-radius:16px;background:rgba(251,113,133,.14);border:1px solid rgba(251,113,133,.45);white-space:pre-wrap}
     @media(max-width:1120px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:360px;max-height:360px}.training-top{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.actions{justify-content:flex-start}.stats{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:700px){.form-grid{grid-template-columns:1fr}.field.wide,.check-field.wide{grid-column:auto}.media-options{grid-template-columns:1fr}.catalog-buttons{grid-template-columns:1fr}.editor-modal{padding:14px}.stats{grid-template-columns:1fr 1fr}.lesson-guide-grid{grid-template-columns:1fr}.lesson-guide-head{align-items:flex-start;flex-direction:column}}
-  </style>
+    .catalog-save-notice{margin:0 0 16px;padding:16px;background:#111f30;border:1px solid #d8b57c;border-radius:12px;color:#f4f7fb;overflow-wrap:anywhere;}
+  .catalog-save-notice[hidden]{display:none;}
+  .catalog-save-notice p{margin:0 0 12px;max-width:76ch;line-height:1.6;}
+  .catalog-save-notice .controls{display:flex;flex-wrap:wrap;gap:10px;}
+  .catalog-save-notice button{min-height:44px;white-space:normal;text-align:left;}
+  .catalog-save-notice button:focus-visible,#catalog-save-status:focus-visible{outline:3px solid #78d6d1;outline-offset:3px;}
+</style>
 </head>
 <body>
 <div id="app" class="app"></div>
@@ -86,12 +92,34 @@
 <script src="piano-lesson-development.js"></script>
 <script src="piano-learning-ui.js"></script>
 <script src="catalog-transfer.js"></script>
+<script src="service-client.js"></script>
+<script src="catalog-personalization.js"></script>
+<script src="learning-client.js"></script>
+<script src="piano-game-player.js"></script>
+<link rel="stylesheet" href="learning-game.css">
 <link rel="stylesheet" href="catalog-sections.css">
 <link rel="stylesheet" href="piano-learning-ui.css">
 <script>
 (function(){
   const WEB_RUNTIME=window.PBT_RUNTIME?.mode==='web';
   'use strict';
+  let applicationBrowserStorage;try{applicationBrowserStorage=globalThis.localStorage;}catch{applicationBrowserStorage={getItem(){throw Error('STORAGE_UNAVAILABLE');},setItem(){throw Error('STORAGE_UNAVAILABLE');}};}
+  let serviceCatalogReady=false,serviceAccountInvalidated=false;
+  let serviceBaseCatalog=null,serviceCatalogRaw=null,serviceCourseOriginal=null,gamePlayer=null;
+  function serviceCourseRequested(query){return query.get('challenge')==='1'||/^[a-f0-9-]{36}$/.test(query.get('attempt')||'');}
+  const serviceClient=window.PBT_RUNTIME?.serviceVersion===1?window.MelodiaService.create({fetch:window.fetch.bind(window),storage:applicationBrowserStorage,locks:navigator.locks,channelFactory:typeof BroadcastChannel==='function'?()=>new BroadcastChannel('melodiajest-auth-v1'):null,onStatus:status=>{const node=document.getElementById('service-account-status');if(node)node.textContent=status.notice||'';gamePlayer?.mount();},onAccountChange:handleServiceAccountChange}):null;
+  const localStorage=serviceClient?serviceClient.storage:applicationBrowserStorage;
+  const serviceTemporaryLessons=new Set(),serviceTemporaryThemes=new Set();
+  function handleServiceAccountChange(){
+    gamePlayer?.invalidateAccount();
+    serviceAccountInvalidated=true;render();stopPlayback();for(const midi of activeSounds.keys())stopSound(midi);
+    const previous=state.selectedInput;if(previous){state.selectedInput=null;try{previous.onmidimessage=null;void Promise.resolve(previous.close?.()).catch(()=>{});}catch{}}
+    if(state.timer){clearInterval(state.timer);state.timer=null;}if(state.endingTimer!==null){clearTimeout(state.endingTimer);state.endingTimer=null;}
+    state.started=false;state.awaitingRelease=false;state.awaitingEnding=false;state.attemptObservationInterrupted=true;state.active.clear();render();
+  }
+  function serviceCanCustomize(){const current=serviceClient?.status();return !serviceClient||Boolean(current.user&&!current.locked&&serviceCatalogReady);}
+  function serviceRequireCustomization(){if(serviceCanCustomize())return true;state.message='Войди в аккаунт, чтобы менять личный каталог и сохранять настройки.';state.messageType='bad';render();return false;}
+  function serviceAccountHtml(){if(!serviceClient)return '';const current=serviceClient.status();return '<section class="catalog-save-notice" aria-label="Аккаунт"><a class="btn secondary" href="account.html">'+(current.user&&!current.locked?'Моя музыка и аккаунт':'Войти / Зарегистрироваться')+'</a> <span>'+(current.user&&!current.locked?escapeHtml(current.user.displayName)+' · музыкальный аккаунт':'Гость · личные изменения доступны после входа')+'</span>'+(serviceCatalogRaw&&state.attemptMode!=='memory'?'<button type="button" class="btn secondary" id="service-personal-export">Скачать личные правки JSON</button>':'')+'<p id="service-account-status" role="status" aria-live="polite">'+escapeHtml(current.notice||'')+'</p></section>';}
   const FULL_DIAGNOSTICS_REQUESTED=new URLSearchParams(location.search).get('diagnostics')==='full';
   const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
   const WHITE_PCS = new Set([0,2,4,5,7,9,11]);
@@ -1101,6 +1129,9 @@ W - k 6 j s`);
   const CONTENT_STORAGE_KEY='piano-blind-trainer-catalog-v1';
   let themes=[];
   let saveSerial=0;
+  let catalogSaveRecord=null;
+  let catalogFileQueue=Promise.resolve();
+  let catalogFileJobs=0;
   let catalogMigrationPending=false;
   let catalogDrag={type:'',id:''};
 
@@ -1211,8 +1242,8 @@ W - k 6 j s`);
     return {
       version:7,
       savedAt:new Date().toISOString(),
-      themes:themes.map(theme=>({id:theme.id,name:theme.name,order:theme.order,contentKind:window.MusicCatalog.validKind(theme.contentKind)})),
-      lessons:lessons.map(lesson=>({
+      themes:themes.filter(theme=>!serviceTemporaryThemes.has(theme.id)).map(theme=>({id:theme.id,name:theme.name,order:theme.order,contentKind:window.MusicCatalog.validKind(theme.contentKind)})),
+      lessons:lessons.filter(lesson=>!serviceTemporaryLessons.has(lesson.id)).map(lesson=>({
         id:lesson.id,themeId:lesson.themeId,order:lesson.order,title:lesson.title,description:lesson.description,contentKind:window.MusicCatalog.validKind(lesson.contentKind)||(window.MusicCatalog.sectionOf('piano',lesson,themes)==='pieces'?'piece':'exercise'),
         pattern:lesson.pattern,timeLimit:lesson.timeLimit,maxErrors:lesson.maxErrors,exam:Boolean(lesson.exam),fingeringPlan:hasValidStoredFingering(lesson)?serializeFingeringPlan(lesson.fingeringPlan):null,
         rhythm:lesson.rhythm===undefined?undefined:serializeLessonRhythm(lesson.rhythm,lesson.steps.length),handMode:lesson.handMode||undefined,fingeringSpec:lesson.fingeringSpec,curriculumStage:Number(lesson.curriculumStage)||null,guide:normalizeLessonGuide(lesson.guide),learning:lesson.learning||null,lessonReview:lesson.lessonReview||null
@@ -1356,6 +1387,17 @@ W - k 6 j s`);
   async function loadCatalog(){
     let snapshot=null;
     let loadedFrom='';
+    if(serviceClient){
+      serviceBaseCatalog=JSON.parse(JSON.stringify(catalogSnapshot()));
+      const courseQuery=new URLSearchParams(location.search);if(serviceCourseRequested(courseQuery))serviceCourseOriginal=lessons.find(item=>item.id===courseQuery.get("lesson"))||null;
+      try{const current=serviceClient.status();if(current.user&&!current.locked){const saved=await serviceClient.getObject('catalog');serviceCatalogRaw=saved.raw;if(saved.raw){const value=JSON.parse(saved.raw);if(value.kind===window.CatalogPersonalization.KIND){const merged=window.CatalogPersonalization.apply(serviceBaseCatalog,value);if(!merged.ok)throw Error('Личные правки конфликтуют с новой редакцией курса. Они сохранены на сервере; скачай их JSON перед разрешением конфликта.');snapshot=merged.snapshot;}else snapshot=value;loadedFrom='аккаунта';}serviceCatalogReady=true;}}
+      catch(error){state.message=error.message;state.messageType='bad';}
+      catalogMigrationPending=false;
+      if(snapshot&&applyCatalogSnapshot(snapshot))state.contentStatus='Личный каталог загружен из аккаунта';else state.contentStatus='Встроенный каталог';
+      state.lesson=lessons.find(lesson=>lesson.id===state.lesson.id)||lessons[0];
+      if(catalogMigrationPending&&serviceCanCustomize()){catalogMigrationPending=false;await saveCatalog();}
+      return;
+    }
     if(!WEB_RUNTIME)try{
       const response=await fetch('/api/content',{cache:'no-store'});
       if(response.ok){
@@ -1379,23 +1421,93 @@ W - k 6 j s`);
     }
   }
 
-  async function saveCatalog(){
-    const serial=++saveSerial;
-    const snapshot=catalogSnapshot();
-    let browserSaved=false;
-    try{ localStorage.setItem(CONTENT_STORAGE_KEY,JSON.stringify(snapshot));browserSaved=true; }catch(error){ console.warn(error); }
-    if(WEB_RUNTIME){state.contentStatus=browserSaved?'Сохранено в этом браузере · экспортируй для переноса':'Сохранение недоступно: сделай экспорт перед закрытием';render();return;}
-    state.contentStatus='Сохранение…';
-    render();
-    try{
-      const response=await fetch('/api/content',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(snapshot)});
-      if(response.status===404){ if(serial===saveSerial){ state.contentStatus='Сохранено только в браузере'; render(); } return; }
-      if(!response.ok){ const data=await response.json().catch(()=>({})); throw new Error(data.error||('HTTP '+response.status)); }
-      if(serial===saveSerial){ state.contentStatus='Сохранено в trainer-content.json'; render(); }
-    }catch(error){
-      console.error(error);
-      if(serial===saveSerial){ state.contentStatus='Сохранено только в браузере'; render(); }
+  // One browser writer for every catalog save and import. Keep the exact failed
+  // candidate in memory; neither an error nor a download marks it as saved.
+  function persistBrowserCatalog(raw){
+    let previousRaw;
+    try{previousRaw=localStorage.getItem(CONTENT_STORAGE_KEY);}catch{return {status:'failed',code:'STORAGE_READ_FAILED'};}
+    try{localStorage.setItem(CONTENT_STORAGE_KEY,raw);}catch{return {status:'failed',code:'STORAGE_WRITE_FAILED',previousRaw};}
+    try{if(localStorage.getItem(CONTENT_STORAGE_KEY)!==raw)return {status:'unconfirmed',code:'SAVE_NOT_CONFIRMED',previousRaw};}
+    catch{return {status:'unconfirmed',code:'SAVE_NOT_CONFIRMED',previousRaw};}
+    return {status:'saved',code:null,previousRaw};
+  }
+  function catalogSaveSnapshot(){
+    const record=catalogSaveRecord;
+    const pending=Boolean(record&&!record.browserSaved&&!record.fileSaved),filePending=Boolean(record&&(!WEB_RUNTIME||serviceClient)&&!record.fileSaved);
+    return {pending,filePending,needsUnloadGuard:pending||filePending,saving:catalogFileJobs>0,generation:record?.serial||0,browserSaved:Boolean(record?.browserSaved),fileSaved:Boolean(record?.fileSaved),browserCode:record?.browserResult.code||null,fileStatus:record?.fileStatus||null};
+  }
+  function catalogSaveNoticeMessage(){
+    const saved=catalogSaveSnapshot();
+    if(serviceClient)return '<strong>Сервис ещё не подтвердил сохранение каталога.</strong> Сохрани JSON, оставь страницу открытой и повтори сохранение после восстановления доступа.';
+    return saved.browserSaved?'<strong>Локальный файл ещё не сохранён.</strong> Изменения подтверждены в браузере, но при запуске первым загружается файл. Дождись его записи, повтори сохранение или скачай JSON.':'<strong>Каталог ещё не сохранён.</strong> Изменения доступны на этой странице. Оставь её открытой, повтори сохранение или скачай JSON.';
+  }
+  function catalogSaveNoticeHtml(){
+    const saved=catalogSaveSnapshot();
+    if(!saved.needsUnloadGuard)return '';
+    return '<p role="status" aria-live="polite">'+catalogSaveNoticeMessage()+'</p><div class="controls"><button id="catalog-save-retry" class="btn secondary" type="button" '+(saved.saving?'disabled':'')+'>'+(saved.saving?'Сохранение…':'Повторить сохранение каталога')+'</button><button id="catalog-pending-export" class="btn secondary" type="button">Скачать каталог JSON</button></div>';
+  }
+  function bindCatalogSaveActions(){
+    const retry=document.getElementById('catalog-save-retry');if(retry)retry.onclick=retryCatalogSave;
+    const exportButton=document.getElementById('catalog-pending-export');if(exportButton)exportButton.onclick=downloadCatalog;
+  }
+  function updateCatalogSaveFeedback(){
+    const record=catalogSaveRecord;if(!record)return;
+    if(serviceClient)state.contentStatus=record.fileSaved?'Каталог сохранён в аккаунте':record.fileStatus==='queued'||record.fileStatus==='writing'?'Сохранение каталога в аккаунт…':'Нет подтверждения сервиса · скачай JSON';
+    else if(record.fileStatus==='queued'||record.fileStatus==='writing')state.contentStatus=record.browserSaved?'Сохранено в браузере · запись в файл…':'Сохранение… Оставь страницу открытой';
+    else if(record.fileSaved)state.contentStatus=record.browserSaved?'Сохранено в trainer-content.json':'Сохранено в trainer-content.json · копия браузера недоступна';
+    else if(record.browserSaved)state.contentStatus=WEB_RUNTIME?'Сохранено в этом браузере · экспортируй для переноса':'Сохранено только в браузере · экспортируй для переноса';
+    else state.contentStatus='Сохранение недоступно: повтори сохранение или экспортируй каталог';
+    const pill=document.getElementById('catalog-save-status');
+    if(pill){pill.textContent=state.contentStatus;pill.className='pill save-state '+(catalogSaveSnapshot().needsUnloadGuard||!record.browserSaved||record.fileStatus==='failed'?'warn':'good');}
+    const notice=document.getElementById('catalog-save-notice');
+    if(notice){
+      const pending=catalogSaveSnapshot().needsUnloadGuard,focused=notice.contains?.(document.activeElement);
+      notice.hidden=!pending;
+      if(pending&&notice.querySelector?.('#catalog-save-retry')){
+        const message=notice.querySelector('[role="status"]');if(message&&message.innerHTML!==catalogSaveNoticeMessage())message.innerHTML=catalogSaveNoticeMessage();
+        const retry=notice.querySelector('#catalog-save-retry');retry.disabled=catalogSaveSnapshot().saving;retry.textContent=retry.disabled?'Сохранение…':'Повторить сохранение каталога';
+      }else notice.innerHTML=catalogSaveNoticeHtml();
+      bindCatalogSaveActions();
+      if(!pending&&focused)pill?.focus?.({preventScroll:true});
     }
+  }
+  function saveCatalogCandidate(raw,browserResult=persistBrowserCatalog(raw)){
+    if(serviceClient){
+      const record={serial:++saveSerial,raw,browserResult,browserSaved:browserResult.status==='saved',fileSaved:false,fileStatus:'queued'};catalogSaveRecord=record;
+      catalogFileJobs++;updateCatalogSaveFeedback();
+      const job=catalogFileQueue.then(async()=>{record.fileStatus='writing';try{serviceClient.requireUser();const expected=JSON.parse(raw),personal=window.CatalogPersonalization.create(serviceBaseCatalog,expected,{baseRelease:window.PBT_RUNTIME.version});const before=window.CatalogPersonalization.apply(serviceBaseCatalog,personal);if(!before.ok||!window.CatalogPersonalization.equivalent(before.snapshot,expected))throw Error('Личные правки не удалось восстановить без изменений. Скачай полный JSON.');const saved=await serviceClient.saveObject('catalog',JSON.stringify(personal));const readback=window.CatalogPersonalization.apply(serviceBaseCatalog,JSON.parse(saved.raw));if(!readback.ok||!window.CatalogPersonalization.equivalent(readback.snapshot,expected))throw Error('Восстановление каталога после записи не подтверждено. Скачай полный JSON.');serviceCatalogRaw=saved.raw;record.fileSaved=true;record.fileStatus='saved';}catch(error){record.fileStatus='failed';state.message=error.message;state.messageType='bad';}finally{catalogFileJobs--;if(record===catalogSaveRecord)updateCatalogSaveFeedback();}return {status:record.fileSaved?'saved':'unsaved',browserSaved:record.browserSaved,fileSaved:record.fileSaved,browserCode:record.browserResult.code};});
+      catalogFileQueue=job.catch(()=>{});return job;
+    }
+    const record={serial:++saveSerial,raw,browserResult,browserSaved:browserResult.status==='saved',fileSaved:false,fileStatus:WEB_RUNTIME?'not-used':'queued'};
+    catalogSaveRecord=record;
+    const result=()=>({status:record.browserSaved||record.fileSaved?'saved':'unsaved',browserSaved:record.browserSaved,fileSaved:record.fileSaved,browserCode:record.browserResult.code});
+    if(WEB_RUNTIME){updateCatalogSaveFeedback();return Promise.resolve(result());}
+    catalogFileJobs++;updateCatalogSaveFeedback();
+    // Serialize this page's PUT and its readback together. Another tab/server
+    // client is not covered by this queue; a whole-application barrier is future work.
+    const job=catalogFileQueue.then(async()=>{
+      record.fileStatus='writing';if(record===catalogSaveRecord)updateCatalogSaveFeedback();
+      try{
+        const response=await fetch('/api/content',{method:'PUT',headers:{'Content-Type':'application/json'},body:raw});
+        if(!response.ok)throw Error('CATALOG_FILE_WRITE_FAILED');
+        const readback=await fetch('/api/content',{cache:'no-store'});
+        if(!readback.ok||JSON.stringify((await readback.json()).catalog)!==raw)throw Error('CATALOG_FILE_NOT_CONFIRMED');
+        record.fileSaved=true;record.fileStatus='saved';
+      }catch{record.fileStatus='failed';}
+      finally{catalogFileJobs--;if(record===catalogSaveRecord)updateCatalogSaveFeedback();}
+      return result();
+    });
+    catalogFileQueue=job.catch(()=>{});return job;
+  }
+  function saveCatalog(){
+    if(!serviceRequireCustomization())return Promise.resolve({status:'unsaved',code:'SIGN_IN_REQUIRED'});
+    const job=saveCatalogCandidate(JSON.stringify(catalogSnapshot()));render();return job;
+  }
+  async function retryCatalogSave(){
+    if(catalogFileJobs)return catalogFileQueue;
+    if(!catalogSaveSnapshot().needsUnloadGuard)return catalogSaveSnapshot();
+    const result=await saveCatalogCandidate(catalogSaveRecord.raw);
+    return result;
   }
 
   function catalogExportText(){return window.CatalogTransfer.write(catalogSnapshot());}
@@ -1405,21 +1517,25 @@ W - k 6 j s`);
     document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   async function importCatalogText(text,confirmReplace=snapshot=>confirm('Заменить текущий каталог копией из '+snapshot.lessons.length+' записей? Сначала скачай текущую копию. История прогресса и настройки устройства сохранятся.')){
+    if(!serviceRequireCustomization())return false;
+    if(catalogSaveSnapshot().needsUnloadGuard||catalogFileJobs){state.message='Сначала дождись подтверждения сохранения текущего каталога. При ошибке повтори сохранение; JSON доступен для резервной копии.';state.messageType='bad';render();return false;}
     let incoming;
     try{incoming=window.CatalogTransfer.read(text,pattern=>parsePattern(pattern).steps.length>0);}catch(error){state.message=error.message;state.messageType='bad';render();return false;}
     if(!confirmReplace(incoming))return false;
-    const previous=catalogSnapshot(),selectedId=state.lesson.id;
+    const previous=catalogSnapshot(),selectedId=state.lesson.id;let raw,browserResult;
     try{
       if(!applyCatalogSnapshot(incoming))throw Error('В копии нет доступных уроков.');
-      // Persist before committing the UI. localStorage.setItem is atomic on failure.
-      localStorage.setItem(CONTENT_STORAGE_KEY,JSON.stringify(catalogSnapshot()));
+      raw=JSON.stringify(catalogSnapshot());browserResult=persistBrowserCatalog(raw);
+      // A throwing setItem leaves its old value intact. After a successful write
+      // with uncertain readback, keep the imported model/pending for export/retry.
+      if(browserResult.status==='failed')throw Error('Не удалось записать копию в браузер.');
     }catch(error){
       applyCatalogSnapshot(previous);state.lesson=lessons.find(l=>l.id===selectedId)||lessons[0];
       state.message='Импорт не выполнен: '+error.message;state.messageType='bad';render();return false;
     }
     clearCatalogNotes();resetLessonState(true);restoreCatalogSelection();
-    if(WEB_RUNTIME)state.contentStatus='Каталог из копии сохранён в этом браузере';else await saveCatalog();
-    state.message='Каталог открыт из копии. Прогресс и настройки этого устройства сохранены; копия каталога их не переносит.';state.messageType='good';render();return true;
+    const saved=await saveCatalogCandidate(raw,browserResult);
+    state.message=saved.status==='saved'?'Каталог открыт из копии. Прогресс и настройки этого устройства сохранены; копия каталога их не переносит.':'Каталог открыт, но сохранение не подтверждено. Оставь страницу открытой: повтори сохранение или скачай каталог JSON.';state.messageType=saved.status==='saved'?'good':'bad';render();return saved.status==='saved';
   }
 
   function clearCatalogDragClasses(){
@@ -1569,6 +1685,7 @@ W - k 6 j s`);
 
 
   function openMidiConverter(){
+    if(!serviceRequireCustomization())return;
     saveUiScroll();
     state.editor={kind:'midi',fileName:'',mediaType:'',result:'',rhythm:null,progress:0,summary:'Выбери MIDI, MP3 или MP4. MIDI даст точные ноты и ритм; для аудио будет создан распознанный черновик, который можно проверить перед сохранением.',chordWindow:35,octaveShift:0,autoFit:true,audioBpm:90,audioNumerator:4,audioDenominator:4,audioSensitivity:.62,audioPolyphony:4,audioMinimumNoteMs:110};
     render();
@@ -1784,8 +1901,11 @@ W - k 6 j s`);
     render();
   }
 
-  function openThemeEditor(themeId=null){ saveSidebarScroll(); state.editor={kind:'theme',id:themeId}; render(); }
+  function openThemeEditor(themeId=null){ if(!serviceRequireCustomization())return;saveSidebarScroll(); state.editor={kind:'theme',id:themeId}; render(); }
   function openLessonEditor(lessonId=null,themeId=null){
+    if(serviceCourseOriginal&&state.lesson===serviceCourseOriginal&&!lessons.includes(state.lesson)){state.message="Это исходная учебная редакция для испытания. Личная версия сохранена: выбери её в каталоге для редактирования.";state.messageType="warn";render();return;}
+    if(!serviceRequireCustomization())return;
+    if(serviceTemporaryLessons.has(lessonId)){state.message='Эта мелодия открыта для игры. Её личную редакцию меняют в разделе «Моя музыка». Для опубликованной версии создай собственную копию.';state.messageType='';render();return;}
     if(state.attemptMode==='memory'&&state.started&&!state.completed)state.attemptAssisted=true;
     saveSidebarScroll();
     state.editor={kind:'lesson',id:lessonId,themeId:themeId||(state.contentSection==='pieces'?'__new_work__':(state.lesson&&state.lesson.themeId)||themes[0].id)};
@@ -1838,6 +1958,7 @@ W - k 6 j s`);
   }
 
   function saveThemeFromEditor(){
+    if(!serviceRequireCustomization())return;
     const nameInput=document.getElementById('editor-theme-name');
     const orderInput=document.getElementById('editor-theme-order');
     const name=cleanThemeName(nameInput&&nameInput.value);
@@ -1849,12 +1970,13 @@ W - k 6 j s`);
     else{ theme={id:uid('theme'),name,order:themes.length+1,contentKind}; themes.push(theme); }
     moveThemeTo(theme.id,requested);
     state.editor=null;
-    state.message='Тема «'+theme.name+'» сохранена и перемещена на позицию '+theme.order+'.';
+    state.message='Тема «'+theme.name+'» изменена и перемещена на позицию '+theme.order+'.';
     state.messageType='good';
     saveCatalog();
   }
 
   function saveLessonFromEditor(){
+    if(!serviceRequireCustomization())return;
     const titleInput=document.getElementById('editor-lesson-title');
     const patternInput=document.getElementById('editor-lesson-pattern');
     const themeInput=document.getElementById('editor-lesson-theme');
@@ -1902,7 +2024,7 @@ W - k 6 j s`);
     state.editor=null;
     state.sidebarFollowPending=true;
     resetLessonState(true);
-    state.message='Урок «'+lesson.title+'» сохранён.';
+    state.message='Изменения урока «'+lesson.title+'» применены на этой странице.';
     state.messageType='good';
     saveCatalog();
   }
@@ -2013,7 +2135,7 @@ W - k 6 j s`);
       }));
     }catch(error){ console.warn('Не удалось сохранить настройки интерфейса',error); }
   }
-  loadUiPreferences();
+  if(!serviceClient)loadUiPreferences();
   function currentStep(){ return state.sectionEmpty||state.stepIndex>=visibleStepCount()?null:state.lesson.steps[state.stepIndex]; }
   function scoreProgressIndex(){const index=state.playbackVisualActive?Math.min(state.playbackIndex,Math.max(0,visibleStepCount()-1)):state.stepIndex;return activePreparationFragment()?Math.min(index,visibleStepCount()-1):index;}
   function lessonRhythm(lesson=state.lesson){const rhythm=lesson?normalizeLessonRhythm(lesson.rhythm,lesson.steps.length):null;return rhythm&&lesson===state.lesson&&activePreparationFragment()?{...rhythm,steps:rhythm.steps.slice(0,visibleStepCount())}:rhythm;}
@@ -2108,7 +2230,7 @@ W - k 6 j s`);
   }
   function setPracticeRange(start=0,full=false){clearCatalogNotes();state.rangeLesson=state.lesson.id;state.rangeStart=start;state.rangeFull=full;resetLessonState();render();}
   function practiceFragmentHtml(){const r=practiceRange();if(!r.size)return '';return '<section class="practice-fragment"><b>'+(r.partial?'Фрагмент упражнения '+(r.start+1)+'–'+r.end:'Упражнение целиком')+'</b> / '+window.PianoLearningUI.actionCountText(r.total)+'. Короткий фрагмент помогает сначала освоить движение.<br><button data-practice-start="'+Math.max(0,r.start-r.size)+'">Предыдущий фрагмент</button><button data-practice-start="'+(r.end<r.total?r.end:0)+'">'+(r.end<r.total?'Следующий фрагмент':'Первый фрагмент')+'</button><button id="practice-full">Играть целиком</button></section>';}
-  function resetLessonState(keepMessage=false){ state.preparationAttempt=null;if(state.preparationSelection&&window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key!==state.preparationSelection.requirement.key)state.preparationSelection=null;stopPlayback(false); if(state.timer){clearInterval(state.timer);state.timer=null;} if(state.endingTimer!==null){clearTimeout(state.endingTimer);state.endingTimer=null;} state.awaitingEnding=false;state.stepIndex=practiceRange().start;state.started=false;state.completed=false;state.passed=false;state.attemptEvents=[];state.attemptBpm=0;state.attemptMidiSource='';state.attemptObservationInterrupted=false;state.attemptAssisted=false;state.awaitingRelease=false;state.assessment=null;state.errors=0;state.rhythmErrors=0;state.rhythmStartAt=0;state.rhythmBeatMs=0;state.rhythmLastOffsetMs=0;state.elapsed=0;state.startAt=0;state.timeExceeded=false;state.matchedChord=new Set(); state.playbackIndex=practiceRange().start; state.playbackBpm=lessonBpm(state.lesson); state.scoreScroll=0; state.scoreScrollLeft=0; state.scoreFollowPending=true; state.message=keepMessage?state.message:(state.contentSection==='pieces'?'Фрагмент':'Урок')+' сброшен. Нажми первую правильную клавишу, чтобы стартовать.'; state.messageType=''; }
+  function resetLessonState(keepMessage=false){ gamePlayer?.resetLocal();state.preparationAttempt=null;if(state.preparationSelection&&window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key!==state.preparationSelection.requirement.key)state.preparationSelection=null;stopPlayback(false); if(state.timer){clearInterval(state.timer);state.timer=null;} if(state.endingTimer!==null){clearTimeout(state.endingTimer);state.endingTimer=null;} state.awaitingEnding=false;state.stepIndex=practiceRange().start;state.started=false;state.completed=false;state.passed=false;state.attemptEvents=[];state.attemptBpm=0;state.attemptMidiSource='';state.attemptObservationInterrupted=false;state.attemptAssisted=false;state.awaitingRelease=false;state.assessment=null;state.errors=0;state.rhythmErrors=0;state.rhythmStartAt=0;state.rhythmBeatMs=0;state.rhythmLastOffsetMs=0;state.elapsed=0;state.startAt=0;state.timeExceeded=false;state.matchedChord=new Set(); state.playbackIndex=practiceRange().start; state.playbackBpm=lessonBpm(state.lesson); state.scoreScroll=0; state.scoreScrollLeft=0; state.scoreFollowPending=true; state.message=keepMessage?state.message:(state.contentSection==='pieces'?'Фрагмент':'Урок')+' сброшен. Нажми первую правильную клавишу, чтобы стартовать.'; state.messageType=''; }
   function resetLesson(keepMessage=false){ saveSidebarScroll(); resetLessonState(keepMessage); render(); }
   const CATALOG_WORKSPACE_KEY='music-catalog-workspace-piano-v1';
   function sectionOf(lesson){return window.MusicCatalog.sectionOf('piano',lesson,themes);}
@@ -2202,7 +2324,7 @@ W - k 6 j s`);
     catch{state.preparationExportNotice='Не удалось подготовить копию. Оставь страницу открытой и повтори экспорт.';}
     finally{state.preparationExportBusy=false;render();if(canExposePreparationExport())document.getElementById('preparation-export-text')?.focus?.();}
   }
-  window.addEventListener('beforeunload',event=>{if(preparationCapture.snapshot().pendingCount||fragmentCapture.snapshot().pendingCount||legacyProgressStore.snapshot().pendingCount||preparationImportStore.snapshot().pending){event.preventDefault();event.returnValue='';}});
+  window.addEventListener('beforeunload',event=>{if(serviceClient?.status().pending||catalogSaveSnapshot().needsUnloadGuard||preparationCapture.snapshot().pendingCount||fragmentCapture.snapshot().pendingCount||legacyProgressStore.snapshot().pendingCount||preparationImportStore.snapshot().pending){event.preventDefault();event.returnValue='';}});
 
   function curriculumEntry(){return window.MusicCurriculum.entry(window.MUSIC_CURRICULUM_PLAN,'piano',state.lesson.id);}
   function challengeEligible(){const fragment=activePreparationFragment();if(fragment)return window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key===fragment.requirement.key;const e=curriculumEntry();return state.contentSection==='learning'&&Boolean(e&&e.challenge&&e.fingerprint===window.PracticeAssessment.pianoSignature(state.lesson)&&lessonRhythm()&&state.lesson.fingeringSpec);}
@@ -2234,6 +2356,7 @@ W - k 6 j s`);
     state.endingTimer=setTimeout(check,Math.max(0,ending.endAt-performance.now()));
   }
   function completeLesson(){
+    if(serviceAccountInvalidated)return;
     if(state.completed)return;
     const ending=attemptEndingWindow();if(ending.required&&ending.valid&&!ending.ready)return;
     checkEndingObservation();
@@ -2263,6 +2386,14 @@ W - k 6 j s`);
     state.message=result.clean?'Чистая MIDI-попытка: ноты, пульс, длительности и паузы. '+progress.cleanTakes+' чистых повторов. '+(progress.retained?'Есть повтор из памяти через сутки.':progress.ready?'Повтори из памяти завтра.':'Цель: 3 чистых повтора, один из памяти.'):result.reasons.join('. ')+'. Попробуй ещё раз в практике, затем вернись к челленджу.';
     state.message+=' Пальцы, свободу рук и качество звука проверь самостоятельно или с педагогом.';state.messageType=result.clean?'good':'warn';
     if(result.clean&&state.contentSection==='learning')void preparationCapture.capture(state.lesson,{full:!practiceRange().partial,mode:state.attemptMode,bpm:state.attemptBpm,observedUntil:performance.now(),assisted:state.attemptAssisted,observationInterrupted:state.attemptObservationInterrupted,timedOut:state.timeExceeded,errors:state.errors,events:state.attemptEvents});
+    if(gamePlayer?.active()){
+      const finishingLesson=state.lesson,finishingEvents=state.attemptEvents;
+      state.passed=false;state.message='Запись проверяется на сервере. Дождись подтверждения результата и опыта.';state.messageType='warn';
+      void gamePlayer.complete({events:finishingEvents,observedAt:performance.now(),interrupted:state.attemptAssisted||state.attemptObservationInterrupted||state.timeExceeded||state.errors>0||practiceRange().partial||state.attemptBpm!==lessonBpm(state.lesson)}).then(saved=>{
+        if(saved&&state.lesson===finishingLesson&&state.attemptEvents===finishingEvents){state.passed=saved.passed;state.message=saved.passed?'Чистая попытка сохранена в аккаунте. +'+saved.xp.earned+' XP.':'Результат сохранён. '+(saved.assessment?.reasons||[]).join('. ');state.messageType=saved.passed?'good':'warn';render();}
+      }).catch(error=>{if(state.lesson===finishingLesson&&state.attemptEvents===finishingEvents){state.message=error.message+' Ожидающая запись доступна над нотами.';state.messageType='bad';render();}});
+    }
+
   }
   function learningContractHtml(details=false){
     const entry=curriculumEntry(),originalStage=entry&&window.MusicCurriculum.stages[entry.stage],stage=entry?.stage==='p9'?{...originalStage,title:'Прикладные учебные этюды',goal:'Сборка учебной фразы из знакомых движений, затем связки и полное упражнение'}:originalStage,eligible=challengeEligible();
@@ -2280,6 +2411,7 @@ W - k 6 j s`);
   }
   function lessonTitle(){return state.attemptMode==='memory'?'Игра из памяти':activePreparationFragment()?.title||state.lesson.title;}
   function setAttemptMode(value){
+    if(serviceClient&&!serviceClient.status().user&&value!=='practice'){state.message='Войди, чтобы сохранять проверенные результаты и играть из памяти. Пока доступна свободная практика.';state.messageType='';render();return;}
     const next=['practice','challenge','memory'].includes(value)?value:'practice';
     clearCatalogNotes();state.attemptMode=next!=='practice'&&!challengeEligible()?'practice':next;
     resetLessonState(true);state.rhythmCheck=state.attemptMode!=='practice';
@@ -2337,13 +2469,13 @@ W - k 6 j s`);
     if(!hasMidiCombo(CONTROL_RESTART) && !hasMidiCombo(CONTROL_NEXT)) state.controlLock=false;
   }
   function handleCorrect(){ const rhythmResult=checkCurrentRhythm(); startTimer(); saveScoreScroll(); state.matchedChord=new Set(); state.stepIndex++; state.scoreFollowPending=true; if(state.stepIndex>=practiceRange().end){const ending=attemptEndingWindow();if(state.attemptMode!=='practice'||ending.required){state.awaitingRelease=true;state.message='Додержи последний звук и отпусти клавиши.'+(ending.required?' Затем сохрани конечную паузу до завершения фразы.':' Зачёт проверит длительность.');state.messageType='warn';scheduleAttemptEnding();}else completeLesson();} else { const st=currentStep(); if(rhythmResult.wrong){ const direction=rhythmResult.offsetMs<0?'слишком рано':'слишком поздно'; state.message='Клавиши верны, но ритм: '+direction+' на '+Math.abs(Math.round(rhythmResult.offsetMs))+' мс. Дальше: '+stepLabel(st); state.messageType='warn'; } else { state.message = st.type==='chord' ? 'Верно. Дальше аккорд: '+stepLabel(st) : 'Верно. Дальше: '+stepLabel(st)+' = '+noteName(stepMidiList(st)[0]); state.messageType='good'; } } render(); }
-  function handleNoteOn(midi, sourceKey=''){ if(typeof midi!=='number') return; maybeCompleteEnding();if(!state.completed&&!state.active.has(midi)){if(!state.attemptBpm){state.attemptBpm=state.playbackBpm||lessonBpm(state.lesson);state.attemptMidiSource=sourceKey;if(activePreparationFragment())state.preparationAttempt=Object.freeze({...activePreparationFragment(),mode:state.attemptMode,bpm:state.attemptBpm});}state.attemptEvents.push({type:'on',midi,at:performance.now(),source:sourceKey.startsWith('midi')?'midi':'manual'});} if(state.playbackVisualActive) stopPlayback(false); state.active.add(midi); playSound(midi); if(checkMidiControlCombo()) return; const st=currentStep(); if(!st || state.completed||state.awaitingRelease){ renderKeyboardOnly(); return; } const expected=stepMidiList(st); if(st.type==='chord'){
+  function handleNoteOn(midi, sourceKey=''){ if(serviceAccountInvalidated||typeof midi!=='number') return; maybeCompleteEnding();if(!state.completed&&!state.active.has(midi)){if(!state.attemptBpm){state.attemptBpm=state.playbackBpm||lessonBpm(state.lesson);state.attemptMidiSource=sourceKey;if(activePreparationFragment())state.preparationAttempt=Object.freeze({...activePreparationFragment(),mode:state.attemptMode,bpm:state.attemptBpm});}state.attemptEvents.push({type:'on',midi,at:performance.now(),source:sourceKey.startsWith('midi')?'midi':'manual'});} if(state.playbackVisualActive) stopPlayback(false); state.active.add(midi); playSound(midi); if(checkMidiControlCombo()) return; const st=currentStep(); if(!st || state.completed||state.awaitingRelease){ renderKeyboardOnly(); return; } const expected=stepMidiList(st); if(st.type==='chord'){
       if(expected.includes(midi)){ startTimer(); state.matchedChord.add(midi); const all=expected.every(m=>state.active.has(m)); if(all) handleCorrect(); else { state.message='Аккорд: удерживай ещё '+expected.filter(m=>!state.active.has(m)).map(noteName).join(', '); state.messageType='warn'; renderMessageAndStats(); renderKeyboardOnly(); } }
       else { addError('Лишняя клавиша: '+noteName(midi)+'. Нужно: '+st.raw); render(); }
     } else {
       if(expected[0]===midi) handleCorrect(); else { addError('Не та клавиша: '+noteName(midi)+'. Нужно: '+noteName(expected[0])+' / '+keyLabel(st.key)); render(); }
     }}
-  function handleNoteOff(midi){ if(!state.completed&&state.attemptEvents.length)state.attemptEvents.push({type:'off',midi,at:performance.now()});state.active.delete(midi);state.matchedChord.delete(midi);if(state.awaitingRelease&&state.active.size===0){state.awaitingRelease=false;if(state.awaitingEnding&&!attemptEndingWindow().ready){state.message='Сохраняй тишину до конца фразы; результат появится после полной паузы.';state.messageType='warn';}else completeLesson();render();} maybeCompleteEnding();stopSound(midi); releaseMidiControlLock(); renderKeyboardOnly(); }
+  function handleNoteOff(midi){ if(serviceAccountInvalidated){state.active.delete(midi);stopSound(midi);return;} if(!state.completed&&state.attemptEvents.length)state.attemptEvents.push({type:'off',midi,at:performance.now()});state.active.delete(midi);state.matchedChord.delete(midi);if(state.awaitingRelease&&state.active.size===0){state.awaitingRelease=false;if(state.awaitingEnding&&!attemptEndingWindow().ready){state.message='Сохраняй тишину до конца фразы; результат появится после полной паузы.';state.messageType='warn';}else completeLesson();render();} maybeCompleteEnding();stopSound(midi); releaseMidiControlLock(); renderKeyboardOnly(); }
   function renderMessageAndStats(){ if(state.attemptMode==='memory'&&!state.completed)state.message='Играй из памяти; оценка появится после фразы.';const f=document.getElementById('feedback'); if(f){ f.className='feedback '+(state.messageType||''); f.textContent=state.message; } updateLiveStats(); const soft=document.getElementById('soft-fail-pill'); if(soft) soft.className='pill '+(isSoftFailed()?'bad':'good'), soft.textContent=attemptStatusText(); }
   function renderKeyboardOnly(){ if(state.attemptMode==='memory')return; const p=document.getElementById('keyboard-root'); if(p){ p.innerHTML=keyboardHtml(); bindKeyMouseHandlers(); } }
 
@@ -2648,6 +2780,7 @@ W - k 6 j s`);
     return {ok:issues.length===0,lessonsChecked,notesChecked,fingeringNotesChecked,issues};
   }
   function calculateCurrentFingering(){
+    if(!serviceRequireCustomization())return;
     try{
       const plan=buildFingeringPlan(state.lesson); state.lesson.fingeringPlan=plan; state.lesson._autoFingeringPlan=plan;
       state.fingeringAudit=fingeringSelfCheck(state.lesson);
@@ -2679,10 +2812,10 @@ W - k 6 j s`);
     if(state.awaitingEnding)return '<div class="target-scroll"><div class="big-next">Тишина</div><p class="hint">Сохраняй пульс до конца конечной паузы. Результат ещё не готов.</p></div>';
     const st=currentStep(); if(!st) return '<div class="target-scroll"><div class="big-next">Готово</div><p class="hint">Урок завершён.</p></div>';
     const mids=stepMidiList(st),rhythm=lessonRhythm(),timing=rhythm&&rhythm.steps[state.stepIndex],timingView=rhythmTimingForDisplay(rhythm,state.stepIndex),restMs=timingView.restMs,durationMs=timingView.durationMs;
-    const durationView=window.PianoLearningUI.rhythmDurationView(timing?.durationBeats);
+    const durationView=window.PianoLearningUI.rhythmDurationView(timing?.durationBeats),restView=window.PianoLearningUI.rhythmDurationView(timing?.restBeforeBeats);
     const fixedTempoNotice=timingView.bpm!==(state.playbackBpm||lessonBpm(state.lesson))?`<br>В этой попытке держи ${timingView.bpm} BPM. Чтобы сменить темп зачёта, начни заново и выбери BPM.`:'';
-    const timingHtml=timing?`<p class="hint"><b>Ритм:</b> такт ${timing.measure}, доля ${Math.round((timing.beatInMeasure+1)*100)/100}; ${escapeHtml(durationView.label)} (${durationView.named?escapeHtml(durationView.beatsText)+', ':''}${rhythmMsLabel(durationMs)})${(timing.restBeforeBeats>.03||restMs>35)?`; перед нотой пауза ${Math.round(timing.restBeforeBeats*100)/100} доли / ${rhythmMsLabel(restMs)}`:''}.<br>${state.rhythmCheck?'Проверка включена: ранние и поздние нажатия считаются отдельно.':'Проверка выключена: сейчас важны только правильные клавиши.'}${fixedTempoNotice}</p>`:'';
-    const repeatNotice=window.PianoLearningUI.repeatedNoteHtml(mids,state.stepIndex>0?stepMidiList(state.lesson.steps[state.stepIndex-1]):[]);
+    const timingHtml=timing?`<p class="hint"><b>Ритм:</b> такт ${timing.measure}, доля ${Math.round((timing.beatInMeasure+1)*100)/100}; ${escapeHtml(durationView.label)} (${durationView.named?escapeHtml(durationView.beatsText)+', ':''}${rhythmMsLabel(durationMs)})${(timing.restBeforeBeats>.03||restMs>35)?`; перед нотой пауза: ${restView.valid?escapeHtml(restView.beatsText)+' / ':''}${rhythmMsLabel(restMs)}`:''}.<br>${state.rhythmCheck?'Проверка включена: ранние и поздние нажатия считаются отдельно.':'Проверка выключена: сейчас важны только правильные клавиши.'}${fixedTempoNotice}</p>`:'';
+    const repeatNotice=window.PianoLearningUI.repeatedNoteHtml(mids,state.stepIndex>0?stepMidiList(state.lesson.steps[state.stepIndex-1]):[],state.lesson.learning?.repeatSilenceCue==='beat-gap-v1'?timing?.restBeforeBeats:undefined);
     const dottedNotice=window.PianoLearningUI.dottedQuarterHtml(timing?.durationBeats,rhythm?.timeSignature?.denominator);
     const wholeNotice=window.PianoLearningUI.wholeNoteHtml(timing?.durationBeats,rhythm?.timeSignature?.numerator,rhythm?.timeSignature?.denominator);
     const positionNotice=state.showFingers?window.PianoLearningUI.positionChangeHtml(state.lesson.learning?.positionCues,state.stepIndex):'';
@@ -2748,7 +2881,7 @@ W - k 6 j s`);
     const groups=filteredCatalog();
     const dragEnabled=state.contentSection==='learning'&&!state.guidedPath&&!state.lessonFilter.trim();
     const dragTitle=dragEnabled?'Перетащить мышкой':'Очисти поиск, чтобы менять порядок';
-    let html='<div class="sidebar panel"><div class="sidebar-head"><h2>'+(state.contentSection==='pieces'?'Произведения':'Уроки и темы')+'</h2><label '+(state.contentSection==='pieces'?'hidden':'')+'><input id="guided-path" type="checkbox" '+(state.guidedPath?'checked':'')+'> Учебный маршрут по навыкам</label><div class="catalog-buttons"><button id="add-theme" type="button">'+(state.contentSection==='pieces'?'+ Новое произведение':'+ Новая тема')+'</button><button id="add-lesson" type="button">'+(state.contentSection==='pieces'?'+ Новый фрагмент':'+ Новый урок')+'</button><button id="open-midi-converter" class="wide" type="button">Импорт MIDI / аудио</button></div><details class="catalog-backup"><summary>Перенос каталога</summary><p>JSON хранит ноты, порядок, аппликатуру и описания. Прогресс и настройки устройства в эту копию не входят.</p><button type="button" id="export-catalog">Скачать JSON</button><label for="import-catalog">Открыть копию JSON<input id="import-catalog" type="file" accept=".json,application/json"></label></details><div class="lesson-filter"><input id="lesson-search" placeholder="'+(state.contentSection==='pieces'?'Поиск произведения или фрагмента':'Поиск урока или темы')+'" value="'+escapeHtml(state.lessonFilter)+'"></div><div class="sidebar-tools"><label class="follow-toggle" title="Когда включено, выбранный/следующий урок автоматически держится примерно в середине списка"><input id="follow-lessons" type="checkbox" '+(state.sidebarFollow?'checked':'')+'> <span><b>Автослежение</b><br>держать выбранный '+(state.contentSection==='pieces'?'фрагмент':'урок')+' по центру</span></label></div><div class="drag-tip">'+(state.contentSection==='pieces'?'Здесь фрагменты и полные версии произведений. Учебный курс находится в разделе «Обучение».':state.guidedPath?'Учебный маршрут сохраняет порядок навыков. Для редактирования порядка выключи маршрут.':'<b>⠿ Перетаскивание:</b> темы двигаются целиком, уроки — внутри темы или в другую тему.'+(dragEnabled?'':' Очисти строку поиска, чтобы включить.'))+'</div></div><div class="lessons">';
+    let html='<div class="sidebar panel"><div class="sidebar-head"><h2>'+(state.contentSection==='pieces'?'Произведения':'Уроки и темы')+'</h2><label '+(state.contentSection==='pieces'?'hidden':'')+'><input id="guided-path" type="checkbox" '+(state.guidedPath?'checked':'')+'> Учебный маршрут по навыкам</label><div class="catalog-buttons"><button id="add-theme" type="button">'+(state.contentSection==='pieces'?'+ Новое произведение':'+ Новая тема')+'</button><button id="add-lesson" type="button">'+(state.contentSection==='pieces'?'+ Новый фрагмент':'+ Новый урок')+'</button><button id="open-midi-converter" class="wide" type="button">Импорт MIDI / аудио</button></div><details class="catalog-backup"><summary>Перенос каталога</summary><p>JSON хранит ноты, порядок, аппликатуру и описания. Прогресс и настройки устройства в эту копию не входят.</p><button type="button" id="export-catalog">Скачать JSON</button><label for="import-catalog">Открыть копию JSON<input id="import-catalog" type="file" accept=".json,application/json"></label></details><div class="lesson-filter"><input id="lesson-search" aria-label="'+(state.contentSection==='pieces'?'Поиск произведения или фрагмента':'Поиск урока или темы')+'" placeholder="'+(state.contentSection==='pieces'?'Поиск произведения или фрагмента':'Поиск урока или темы')+'" value="'+escapeHtml(state.lessonFilter)+'"></div><div class="sidebar-tools"><label class="follow-toggle" title="Когда включено, выбранный/следующий урок автоматически держится примерно в середине списка"><input id="follow-lessons" type="checkbox" '+(state.sidebarFollow?'checked':'')+'> <span><b>Автослежение</b><br>держать выбранный '+(state.contentSection==='pieces'?'фрагмент':'урок')+' по центру</span></label></div><div class="drag-tip">'+(state.contentSection==='pieces'?'Здесь фрагменты и полные версии произведений. Учебный курс находится в разделе «Обучение».':state.guidedPath?'Учебный маршрут сохраняет порядок навыков. Для редактирования порядка выключи маршрут.':'<b>⠿ Перетаскивание:</b> темы двигаются целиком, уроки — внутри темы или в другую тему.'+(dragEnabled?'':' Очисти строку поиска, чтобы включить.'))+'</div></div><div class="lessons">';
     for(const group of groups){
       html+=`<section class="theme-group" data-theme-group="${escapeHtml(group.theme.id)}"><div class="theme-row"><button class="drag-handle theme-drag" type="button" draggable="${dragEnabled}" data-drag-theme="${escapeHtml(group.theme.id)}" title="${dragTitle}" aria-label="Перетащить тему">⠿</button><div class="theme-title">${escapeHtml(state.guidedPath||state.contentSection==='pieces'?group.theme.name:themeLabel(group.theme))}</div><button ${group.theme.synthetic||state.guidedPath&&state.contentSection==='learning'?'hidden':''} class="theme-edit" type="button" data-edit-theme="${escapeHtml(group.theme.id)}" title="Редактировать тему">✎</button></div><div class="theme-lessons" data-theme-lessons="${escapeHtml(group.theme.id)}">`;
       if(!group.lessons.length) html+='<div class="empty-theme">В этой теме пока нет уроков. Сюда можно перетащить урок или нажать «+ Новый урок».</div>';
@@ -2805,7 +2938,8 @@ W - k 6 j s`);
   }
 
   function render(){
-    const visible=sectionLessons();state.sectionEmpty=!visible.length;if(!state.sectionEmpty&&!visible.some(l=>l.id===state.lesson.id))restoreCatalogSelection();
+    if(serviceAccountInvalidated){app.innerHTML='<div class="error-screen"><b>Аккаунт или сессия изменились.</b><p>Личные данные этой вкладки не передаются другому пользователю. Войди заново в прежний аккаунт для продолжения.</p><a href="account.html">Открыть вход</a></div>';return;}
+    const visible=sectionLessons();state.sectionEmpty=!visible.length&&state.lesson!==serviceCourseOriginal;if(!state.sectionEmpty&&!visible.some(l=>l.id===state.lesson.id)&&state.lesson!==serviceCourseOriginal)restoreCatalogSelection();
     if(state.sectionEmpty){app.innerHTML=catalogNavigationHtml()+'<div class="layout">'+sidebarHtml()+'<main class="main panel"><div class="catalog-empty"><h2>'+(state.contentSection==='pieces'?'Пока нет произведений':'Пока нет упражнений')+'</h2><p>Добавь материал в этот раздел или переключись в другой. Ноты и результаты остальных разделов сохранены.</p></div></main></div>'+editorModalHtml();bindAfterRender();return;}
     if(state.attemptMode==='memory'&&!state.completed)state.message='Играй из памяти; оценка появится после фразы.';
     saveUiScroll();
@@ -2813,8 +2947,9 @@ W - k 6 j s`);
     const statusClass=state.completed?(state.passed?'good':'bad'):(isSoftFailed()?'bad':state.started?'warn':'good');
     const contentClass=state.contentStatus.includes('только')?'warn':state.contentStatus.includes('Сохранение')?'warn':'good';
     const rhythmAvailable=Boolean(lessonRhythm());
-    app.innerHTML=`
-      <div class="topbar"><div class="brand"><h1 translate="no">MelodiaJest</h1><p>От первого движения к музыке. Пианино, слух и свободная игра.</p></div><div class="status-row"><span class="pill ${state.midiBridgeConnected||state.midiDevices.length?'good':'warn'}">${escapeHtml(state.midiStatus)}</span><span id="soft-fail-pill" class="pill ${isSoftFailed()?'bad':'good'}">${attemptStatusText()}</span>${state.contentSection==='learning'&&state.curriculumAudit?`<span id="curriculum-audit-status" class="pill ${state.curriculumAudit.ok?'good':'bad'}" data-lessons="${state.curriculumAudit.lessonsChecked}" data-notes="${state.curriculumAudit.notesChecked}" data-fingering-notes="${state.curriculumAudit.fingeringNotesChecked}" data-issues="${state.curriculumAudit.issues.length}" title="${escapeHtml(state.curriculumAudit.issues.slice(0,5).join('; '))}">Курс 1–10: ${state.curriculumAudit.ok?'структура корректна':'есть ошибки'}${state.curriculumAudit.fingeringNotesChecked?' · назначений '+state.curriculumAudit.fingeringNotesChecked:''}</span>`:''}<span class="pill">${state.contentSection==='pieces'?'Произведений: '+window.MusicCatalog.works('piano',lessons,themes).length:'Учебных тем: '+new Set(visible.map(l=>l.themeId)).size}</span><span class="pill">${state.contentSection==='pieces'?'Фрагментов':'Упражнений'}: ${visible.length}</span><span class="pill ${contentClass} save-state" title="${WEB_RUNTIME?'Личные изменения хранятся в этом браузере; экспорт перенесёт их на другое устройство':'Изменения редактора сохраняются рядом с проектом'}">${escapeHtml(state.contentStatus)}</span></div></div>
+    app.innerHTML=serviceAccountHtml()+`
+      <div class="topbar"><div class="brand"><h1 translate="no">MelodiaJest</h1><p>От первого движения к музыке. Пианино, слух и свободная игра.</p></div><div class="status-row"><span class="pill ${state.midiBridgeConnected||state.midiDevices.length?'good':'warn'}">${escapeHtml(state.midiStatus)}</span><span id="soft-fail-pill" class="pill ${isSoftFailed()?'bad':'good'}">${attemptStatusText()}</span>${state.contentSection==='learning'&&state.curriculumAudit?`<span id="curriculum-audit-status" class="pill ${state.curriculumAudit.ok?'good':'bad'}" data-lessons="${state.curriculumAudit.lessonsChecked}" data-notes="${state.curriculumAudit.notesChecked}" data-fingering-notes="${state.curriculumAudit.fingeringNotesChecked}" data-issues="${state.curriculumAudit.issues.length}" title="${escapeHtml(state.curriculumAudit.issues.slice(0,5).join('; '))}">Курс 1–10: ${state.curriculumAudit.ok?'структура корректна':'есть ошибки'}${state.curriculumAudit.fingeringNotesChecked?' · назначений '+state.curriculumAudit.fingeringNotesChecked:''}</span>`:''}<span class="pill">${state.contentSection==='pieces'?'Произведений: '+window.MusicCatalog.works('piano',lessons,themes).length:'Учебных тем: '+new Set(visible.map(l=>l.themeId)).size}</span><span class="pill">${state.contentSection==='pieces'?'Фрагментов':'Упражнений'}: ${visible.length}</span><span id="catalog-save-status" tabindex="-1" class="pill ${contentClass} save-state" title="${serviceClient?'Личный каталог сохраняется в аккаунте после подтверждения сервера. Полные испытания сохраняются в аккаунте; прежняя история устройства остаётся отдельно.':WEB_RUNTIME?'Личные изменения хранятся в этом браузере; экспорт перенесёт их на другое устройство':'Изменения редактора сохраняются рядом с проектом'}">${escapeHtml(state.contentStatus)}</span></div></div>
+      <section id="catalog-save-notice" class="catalog-save-notice" aria-label="Сохранение каталога" ${catalogSaveSnapshot().needsUnloadGuard?'':'hidden'}>${catalogSaveNoticeHtml()}</section>
       ${catalogNavigationHtml()}<div class="layout">${sidebarHtml()}<main class="main panel">
         <section class="hero"><div><h2 class="lesson-name" tabindex="-1">${escapeHtml(lessonTitle())}</h2><p class="description">${state.attemptMode==='memory'?'Воспроизведи подготовленную фразу без нот и подсказок.':state.contentSection==='pieces'?escapeHtml(state.lesson.description):''}</p></div><div class="actions"><button class="btn primary" id="reset-btn" title="Горячая клавиша F2">Начать заново <kbd>F2</kbd></button><button class="btn secondary" id="next-btn" title="Горячая клавиша F3">${state.contentSection==='pieces'?'Следующий фрагмент':'Следующий урок'} <kbd>F3</kbd></button>${WEB_RUNTIME?'':`<button class="btn secondary" id="midi-keyboard-launch" type="button" title="Windows-режим печати: Ctrl+Z, Alt+Tab, прокручиваемые настройки, сброс параметров и подвижная экранная подсказка">Пианино → клавиатура ПК</button>`}<button class="btn secondary" id="edit-current" type="button">${state.contentSection==='pieces'?'Редактировать фрагмент':'Редактировать урок'}</button><button class="btn secondary" id="sound-btn" title="Горячая клавиша F4">${state.soundOn?'Выключить звук':'Включить звук'} <kbd>F4</kbd></button></div></section>
         ${(state.contentSection==='pieces'?piecePracticeHtml():learningContractHtml()+learningMaterialHtml()+practiceFragmentHtml())+preparationLogHtml()}
@@ -2830,6 +2965,13 @@ W - k 6 j s`);
     bindAfterRender();
   }
   function bindAfterRender(){
+    gamePlayer?.mount();
+    const personalExport=document.getElementById('service-personal-export');if(personalExport)personalExport.onclick=()=>{if(!serviceCatalogRaw)return;const url=URL.createObjectURL(new Blob([serviceCatalogRaw],{type:'application/json'})),link=document.createElement('a');link.href=url;link.download='melodiajest-personal-catalog-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+    if(serviceClient&&!serviceCanCustomize()){
+      for(const control of document.querySelectorAll('#add-theme,#add-lesson,#edit-current,#open-midi-converter,#import-catalog,[data-edit-theme],[data-edit-lesson],.drag-handle,.keyboard-settings input,.keyboard-settings select,.keyboard-settings button')){control.disabled=true;control.title='Войди, чтобы настроить тренажёр под себя';control.setAttribute('aria-describedby','service-account-status');if(control.draggable)control.draggable=false;}
+      if(!serviceClient.status().user)for(const control of document.querySelectorAll('#attempt-mode option[value="challenge"],#attempt-mode option[value="memory"],#start-memory-check')){control.disabled=true;control.title='Войди, чтобы сохранять проверенные результаты';}
+    }
+    bindCatalogSaveActions();
     const scope=document.getElementById('preparation-scope');if(scope)scope.onchange=e=>setPreparationScope(e.target.value);
     const preparationPanel=document.getElementById('preparation-panel');if(preparationPanel){preparationPanel.ontoggle=()=>{if(document.getElementById('preparation-panel')===preparationPanel)state.preparationPanelOpen=preparationPanel.open;};const summary=preparationPanel.querySelector?.('summary');if(summary)summary.onclick=()=>{state.preparationPanelOpen=!preparationPanel.open;};}
     const preparationExport=document.getElementById('preparation-export');if(preparationExport)preparationExport.onclick=preparePreparationExport;
@@ -2939,7 +3081,27 @@ W - k 6 j s`);
   let keyboardResizeTimer=null;
   window.addEventListener('resize',()=>{ syncSideCardHeight(); if(state.keyWidthMode==='auto'){ clearTimeout(keyboardResizeTimer); keyboardResizeTimer=setTimeout(()=>{state.keyWidthInitialized=false;autoFitKeyboardWidth(false);},120); } });
   window.addEventListener('error', e=>{ app.innerHTML='<div class="error-screen"><b>Ошибка приложения:</b>\n'+escapeHtml(e.message||e.error||e)+'</div>'; });
+  async function loadServicePracticeMelody(){
+    if(!serviceClient)return false;
+    const query=new URLSearchParams(location.search),privateId=query.get('privateMelody'),publicId=query.get('publication');
+    if(!privateId&&!publicId)return false;
+    if(privateId&&publicId)throw Error('Выбери одну мелодию для открытия.');
+    const id=privateId||publicId;
+    if(!/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(id))throw Error('Некорректная ссылка на мелодию.');
+    const result=await serviceClient.api(privateId?'/library/'+id:'/publications/'+id,{publicRequest:!privateId});
+    const raw=result.data.entry,lessonId='service-'+(privateId?'private-':'public-')+id,themeId='service-theme-'+id;
+    const item=makeLesson(lessonId,'Моя музыка',String(raw.title),String(raw.description),String(raw.pattern),Math.max(1,Number(raw.timeLimit)||90),Boolean(raw.exam));
+    item.themeId=themeId;item.order=1;item.contentKind='piece';item.maxErrors=Math.max(1,Number(raw.maxErrors)||3);
+    if(Object.prototype.hasOwnProperty.call(raw,'rhythm'))item.rhythm=normalizeLessonRhythm(raw.rhythm,item.steps.length);
+    if(['left','right','split','auto'].includes(raw.handMode))item.handMode=raw.handMode;
+    item.fingeringSpec=raw.fingeringSpec;item.fingeringPlan=normalizeStoredFingeringPlan(raw.fingeringPlan,item);
+    item.description+=(privateId?'\nЛичная мелодия.':'\nПубликация пользователя: '+String(result.author)+'.')+' Источник: '+String(result.data.source||'авторская музыка')+'.';
+    themes.push({id:themeId,name:String(raw.title),order:themes.length+1,contentKind:'piece'});lessons.push(item);
+    serviceTemporaryLessons.add(lessonId);serviceTemporaryThemes.add(themeId);state.lesson=item;state.contentSection='pieces';state.sectionEmpty=false;state.stepIndex=0;state.practiceStart=0;state.message=privateId?'Открыта личная мелодия. Редактор и публикация находятся в «Моей музыке».':'Открыта пользовательская публикация для практики.';
+    return true;
+  }
   async function boot(){
+    if(serviceClient){try{await serviceClient.init();loadUiPreferences();}catch(error){state.message=error.message;state.messageType='bad';}}
     loadCatalogWorkspace();
     loadLearningProgress();
     void legacyProgressStore.refresh();void preparationImportStore.readArchive();
@@ -2949,7 +3111,18 @@ W - k 6 j s`);
     state.playbackBpm=lessonBpm(state.lesson);
     render();
     await loadCatalog();
-    restoreCatalogSelection();
+    let servicePractice=false;try{servicePractice=await loadServicePracticeMelody();}catch(error){state.message=error.message;state.messageType='bad';}
+    if(!servicePractice){
+      restoreCatalogSelection();const query=new URLSearchParams(location.search),requested=(serviceCourseRequested(query)&&serviceCourseOriginal)||lessons.find(item=>item.id===query.get('lesson'));
+      if(query.get('section')==='pieces')setContentSection('pieces');
+      if(requested){selectLesson(requested.id);if(serviceCourseRequested(query)&&serviceCourseOriginal){state.lesson=serviceCourseOriginal;state.contentSection='learning';state.sectionEmpty=false;resetLessonState(true);}}
+    }
+    if(serviceClient&&window.PBT_RUNTIME?.gameVersion===1&&window.PianoGamePlayer){
+      gamePlayer=window.PianoGamePlayer.create({client:serviceClient,
+        readTrainer:()=>({lessonId:state.lesson.id,fingerprint:window.PracticeAssessment.pianoSignature(state.lesson),mode:state.attemptMode,completed:state.completed,midiConnected:Boolean(state.selectedInput)}),
+        prepareTrainer:attempt=>{clearCatalogNotes();state.preparationSelection=null;state.preparationAttempt=null;state.rangeFull=true;state.rangeLesson=state.lesson.id;state.rangeStart=0;setAttemptMode(attempt.mode);state.playbackBpm=attempt.bpm;state.message='Серверная попытка открыта. Сыграй фразу на MIDI-пианино.';render();},render});
+      try{await gamePlayer.load();}catch(error){state.message='Маршрут временно недоступен: '+error.message;state.messageType='warn';}
+    }
     state.playbackBpm=lessonBpm(state.lesson);
     state.fingeringAudit=fingeringSelfCheck(state.lesson);
     state.curriculumAudit=auditBeginnerCurriculum(FULL_DIAGNOSTICS_REQUESTED);
@@ -2957,6 +3130,7 @@ W - k 6 j s`);
     console.log('Beginner curriculum audit:',state.curriculumAudit);
     render();
   }
+  if(serviceClient)document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')void serviceClient.checkSession();});
   window.PBT_RUN_DIAGNOSTICS=(includeFingering=true)=>auditBeginnerCurriculum(Boolean(includeFingering));
   window.PBT_TEST_API={
     lessonIds:()=>lessons.map(lesson=>lesson.id),

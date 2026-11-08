@@ -1,0 +1,425 @@
+{
+  "format": "melodiajest-browser-writer-inventory-v1",
+  "checkedAt": "2026-11-08T06:26:36.798769+00:00",
+  "status": "catalog-save-path-deployed-and-verified-global-coordination-pending",
+  "publicVersion": "23.5.56",
+  "sourceArchiveSha256": "ea401bd03ff7163e4df6ae0a26391d6351c7ae7bd6ab005b9be0e5b7e85118a3",
+  "webManifestSha256": "a6321428f3c011f22b3514f30d0a91bff00a072d61af92012d5c07125ed52467",
+  "sourcePins": {
+    "index.html": {
+      "sha256": "079cd64440fd395187aac3562f66892e9002711010269047fd85e4422f40091a",
+      "bytes": 365724
+    },
+    "catalog-sections.js": {
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec",
+      "bytes": 3301
+    },
+    "catalog-transfer.js": {
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+      "bytes": 4081
+    },
+    "piano-progress-store.js": {
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14",
+      "bytes": 7961
+    },
+    "piano-preparation-store.js": {
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73",
+      "bytes": 4635
+    },
+    "piano-preparation-capture.js": {
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18",
+      "bytes": 5869
+    },
+    "piano-preparation-import.js": {
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b",
+      "bytes": 10721
+    },
+    "piano-preparation-transfer.js": {
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526",
+      "bytes": 9525
+    },
+    "piano-lesson-package-store.js": {
+      "sha256": "ee3180acd3d5b2a12c5fd515b64c780d7b7537e89d67351886d3ef6e673be7f2",
+      "bytes": 28003
+    },
+    "piano-lesson-package-controller.js": {
+      "sha256": "ef5ecf47ce58572fbc1390f9838bcbf2ef4863765beb4ff7c587a68bbdde1aaf",
+      "bytes": 12845
+    },
+    "server.cjs": {
+      "sha256": "606f5c965397472467a43478639c8a1600f5e452f2b8813d43b5582a913ea8c8",
+      "bytes": 17839
+    }
+  },
+  "dataFamilies": [
+    {
+      "id": "catalog",
+      "kind": "localStorage",
+      "key": "piano-blind-trainer-catalog-v1",
+      "status": "public-active",
+      "writer": "persistBrowserCatalog via saveCatalogCandidate; import shares this writer",
+      "contents": "v7themes,lessons,notation/rhythm/fingers,classifications,orders,teaching editions",
+      "lock": null,
+      "readBackConfirmed": true,
+      "exports": [
+        "catalog JSON"
+      ],
+      "source": {
+        "file": "index.html",
+        "line": 1107,
+        "anchor": "const CONTENT_STORAGE_KEY="
+      }
+    },
+    {
+      "id": "ui-preferences",
+      "kind": "localStorage",
+      "key": "piano-blind-trainer-ui-v20",
+      "status": "public-active",
+      "writer": "saveUiPreferences",
+      "contents": "Keyboard width/labels/visibility,rhythm check,blind view,learning material view;unknown existing fields spread first",
+      "lock": null,
+      "exports": [],
+      "source": {
+        "file": "index.html",
+        "line": 2062,
+        "anchor": "const UI_STORAGE_KEY="
+      }
+    },
+    {
+      "id": "workspace",
+      "kind": "localStorage",
+      "key": "music-catalog-workspace-piano-v1",
+      "status": "public-active",
+      "writer": "rememberCatalogSelection -> MusicCatalog.saveState",
+      "contents": "Learning/pieces section and selected IDs",
+      "lock": null,
+      "exports": [],
+      "source": {
+        "file": "index.html",
+        "line": 2186,
+        "anchor": "const CATALOG_WORKSPACE_KEY="
+      }
+    },
+    {
+      "id": "legacy-midi-progress",
+      "kind": "localStorage",
+      "key": "music-learning-piano-v1",
+      "status": "public-active",
+      "writer": "PianoProgressStore.record/retry;PianoPreparationImport.apply",
+      "contents": "Per-lesson/version practice history,receipts,archived musical versions",
+      "lock": "melodiajest:piano-progress-v1",
+      "readBackConfirmed": true,
+      "exports": [
+        "preparation/progress JSON v2"
+      ],
+      "source": {
+        "file": "piano-progress-store.js",
+        "line": 3,
+        "anchor": "const STORAGE_KEY="
+      }
+    },
+    {
+      "id": "whole-preparation",
+      "kind": "localStorage",
+      "key": "music-preparation-piano-v1",
+      "status": "public-active",
+      "writer": "PianoPreparationStore whole;PianoPreparationImport.apply",
+      "contents": "Scoped requirements and stored whole-lesson MIDI attempts",
+      "lock": "melodiajest:piano-preparation-v1",
+      "readBackConfirmed": true,
+      "exports": [
+        "preparation/progress JSON v2"
+      ],
+      "source": {
+        "file": "piano-preparation-store.js",
+        "line": 4,
+        "anchor": "const whole="
+      }
+    },
+    {
+      "id": "fragment-preparation",
+      "kind": "localStorage",
+      "key": "music-preparation-fragments-piano-v1",
+      "status": "public-active",
+      "writer": "PianoPreparationStore fragments;PianoPreparationImport.apply",
+      "contents": "Scoped fragments and MIDI attempts",
+      "lock": "melodiajest:piano-preparation-fragments-v1",
+      "readBackConfirmed": true,
+      "exports": [
+        "preparation/progress JSON v2"
+      ],
+      "source": {
+        "file": "piano-preparation-store.js",
+        "line": 5,
+        "anchor": "const fragment="
+      }
+    },
+    {
+      "id": "progress-transfer-archive",
+      "kind": "localStorage",
+      "key": "music-preparation-transfer-backups-piano-v1",
+      "status": "public-active",
+      "writer": "PianoPreparationImport.apply journal phases",
+      "contents": "Prepared/applied transfer operations and source backups;not a catalog backup",
+      "locks": [
+        "melodiajest:piano-progress-v1",
+        "melodiajest:piano-preparation-v1",
+        "melodiajest:piano-preparation-fragments-v1"
+      ],
+      "readBackConfirmed": true,
+      "exports": [
+        "progress JSON transferArchive when present/unavailable"
+      ],
+      "source": {
+        "file": "piano-preparation-import.js",
+        "line": 3,
+        "anchor": "const STORAGE_KEY="
+      }
+    },
+    {
+      "id": "package-store",
+      "kind": "IndexedDB",
+      "key": "melodiajest-piano-packages-v1 / slots",
+      "status": "isolated-not-connected-to-public-app",
+      "writer": "PianoLessonPackageStore/Controller",
+      "contents": "current,previous,receipt,pending,pendingArchive for supported package/catalog state",
+      "exports": [
+        "isolated package recovery-v2"
+      ],
+      "source": {
+        "file": "piano-lesson-package-store.js",
+        "line": 5,
+        "anchor": "const VERSION=1,DATABASE="
+      }
+    }
+  ],
+  "catalogEntryPoints": [
+    {
+      "id": "loadCatalog",
+      "location": {
+        "file": "index.html",
+        "line": 1365,
+        "anchor": "function loadCatalog("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "importCatalogText",
+      "location": {
+        "file": "index.html",
+        "line": 1477,
+        "anchor": "function importCatalogText("
+      },
+      "target": "saveCatalogCandidate",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "finishThemeDrag",
+      "location": {
+        "file": "index.html",
+        "line": 1502,
+        "anchor": "function finishThemeDrag("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "finishLessonDrag",
+      "location": {
+        "file": "index.html",
+        "line": 1516,
+        "anchor": "function finishLessonDrag("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "saveThemeFromEditor",
+      "location": {
+        "file": "index.html",
+        "line": 1913,
+        "anchor": "function saveThemeFromEditor("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "saveLessonFromEditor",
+      "location": {
+        "file": "index.html",
+        "line": 1930,
+        "anchor": "function saveLessonFromEditor("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "deleteThemeFromEditor",
+      "location": {
+        "file": "index.html",
+        "line": 1983,
+        "anchor": "function deleteThemeFromEditor("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "deleteLessonFromEditor",
+      "location": {
+        "file": "index.html",
+        "line": 2001,
+        "anchor": "function deleteLessonFromEditor("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    },
+    {
+      "id": "calculateCurrentFingering",
+      "location": {
+        "file": "index.html",
+        "line": 2723,
+        "anchor": "function calculateCurrentFingering("
+      },
+      "target": "saveCatalog",
+      "extraDirectCatalogWrite": false
+    }
+  ],
+  "publicSetItemCandidates": [
+    {
+      "file": "index.html",
+      "line": 1396,
+      "column": 9,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "index.html",
+      "line": 2082,
+      "column": 7,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "index.html",
+      "line": 2215,
+      "column": 74,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "index.html",
+      "line": 2220,
+      "column": 127,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "index.html",
+      "line": 2224,
+      "column": 117,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "index.html",
+      "line": 2228,
+      "column": 139,
+      "spelling": "localStorage.setItem("
+    },
+    {
+      "file": "piano-progress-store.js",
+      "line": 46,
+      "column": 141,
+      "spelling": "storage.setItem("
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "line": 26,
+      "column": 147,
+      "spelling": "storage.setItem("
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "line": 47,
+      "column": 96,
+      "spelling": "storage.setItem("
+    },
+    {
+      "file": "catalog-sections.js",
+      "line": 25,
+      "column": 45,
+      "spelling": "storage.setItem("
+    }
+  ],
+  "publicCandidateFileCount": 5,
+  "catalogSaveCallSiteCount": 8,
+  "directCatalogImportWriteCount": 0,
+  "existingProgressMultiLockOrder": [
+    "melodiajest:piano-progress-v1",
+    "melodiajest:piano-preparation-v1",
+    "melodiajest:piano-preparation-fragments-v1"
+  ],
+  "sourceRuntimeFilesVerified": 317,
+  "publicBytesVerified": 28,
+  "inspectionScope": "Manual review of known public persistence paths and lexical setItem candidate search pinned to unchanged source. Not AST/static proof of arbitrary indirect writes or cross-tab serializability.",
+  "inMemoryRecoveryDomains": [
+    "legacyProgressStore pending/baseRaw/draftRaw",
+    "whole capture pending/recent/jobs",
+    "fragment capture pending/recent/jobs",
+    "prepared progress transfer and sourceRaw",
+    "editor MIDI/audio/rhythm/fingering draft",
+    "catalogSaveRecord exact latest raw and previousRaw; page memory only"
+  ],
+  "unserializedRuntimeCapabilities": [
+    "MIDI permissions/connections/selected input handle",
+    "AudioContext,active notes,playback",
+    "native Windows bridge and system-key endpoints"
+  ],
+  "productionActivationPerformed": false,
+  "newRecoveryFormatImplemented": false,
+  "wholeApplicationAtomicSnapshotImplemented": false,
+  "nextImplementation": "Coordinate catalog with separate progress journals and all tabs before package-store activation; preserve unsupported schemas and all pending. First measure oversized full-catalog persistence and prepare a lossless contract before changing storage.",
+  "primarySources": [
+    {
+      "url": "https://html.spec.whatwg.org/multipage/webstorage.html",
+      "section": "12.1 and12.2.1",
+      "checkedOn": "2026-11-08",
+      "supports": "Shared state can race across windows;setItem may throw and storage event is not a cooperative writer lock"
+    },
+    {
+      "url": "https://w3c.github.io/web-locks/",
+      "section": "Introduction,request,5.1Deadlocks",
+      "checkedOn": "2026-11-08",
+      "supports": "Only participating same-resource locks coordinate;multiple locks require consistent acquisition order"
+    }
+  ],
+  "previousVerifiedPublicVersion": "23.5.55",
+  "sourceArchiveStatus": "published-source-checkpoint-verified-final-docs-excluded",
+  "catalogSaveImplementation": {
+    "browserWriter": {
+      "file": "index.html",
+      "line": 1393,
+      "anchor": "function persistBrowserCatalog("
+    },
+    "candidateWriter": {
+      "file": "index.html",
+      "line": 1439,
+      "anchor": "function saveCatalogCandidate("
+    },
+    "status": {
+      "file": "index.html",
+      "line": 1401,
+      "anchor": "function catalogSaveSnapshot("
+    },
+    "retry": {
+      "file": "index.html",
+      "line": 1464,
+      "anchor": "function retryCatalogSave("
+    },
+    "unloadGuard": "catalogSaveSnapshot().needsUnloadGuard plus existing independent progress guards",
+    "browserReadback": true,
+    "localPutAndGetSerializedWithinPage": true,
+    "interTabOrServerWideAtomicity": false,
+    "pendingPersistence": "memory of this page only",
+    "newRecoveryFormat": false,
+    "deployed": true,
+    "report": "docs/reports/melodiajest-operations-2026-11-08-10.md",
+    "testsPassed": 987
+  }
+}

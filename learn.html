@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark"><meta name="referrer" content="no-referrer">
+  <title>Твой следующий звук — MelodiaJest</title>
+  <meta name="description" content="Короткие уроки на настоящем пианино. Играй, проходи музыкальные испытания и собирай свою музыку.">
+  <link rel="stylesheet" href="learning-game.css">
+  <script src="web-runtime.js" defer></script><script src="service-client.js" defer></script>
+  <script src="lesson-rating.js" defer></script><script src="portal-experience.js" defer></script>
+  <script src="learning-game.js" defer></script>
+</head>
+<body class="campus">
+<a class="skip-link" href="#main">К содержимому</a>
+<header class="site-head">
+  <a class="melodia-brand" href="/" translate="no"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M6 25V9h6v10h5V6h6v19h5V13"/></svg><span>Melodia<span class="brand-light">Jest</span></span></a>
+  <nav aria-label="Основные разделы"><a href="#course" id="nav-course" aria-current="page">Обучение</a><a href="trainer.html?section=pieces">Произведения</a><a href="#community" id="nav-community">Сообщество</a></nav>
+  <a href="account.html" class="account-link" id="account-link">Войти <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <p id="page-status" class="page-status" role="status" aria-live="polite"></p>
+  <section id="course-view" aria-label="Мой курс">
+    <section class="course-hero">
+      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> Пианино · настоящая практика</p>
+        <h1>Твой следующий<br><em>звук.</em></h1><p class="hero-lead">Большая музыка начинается с маленького движения.<br class="wide-break"> Одна фраза, ровный пульс — и ещё один шаг вперёд.</p>
+        <div class="hero-actions"><a id="continue-link" class="primary-action" href="trainer.html">Начать играть <span aria-hidden="true">↗</span></a><button type="button" class="quiet-action" id="settings-open">Настроить обучение <span aria-hidden="true">⚙</span></button></div>
+        <p class="hero-foot" id="hero-foot">Короткие занятия на 3–5 минут. Возвращайся после перерыва.</p>
+      </div>
+      <div class="hero-instrument" aria-hidden="true"><div class="staff-orbit"><span></span><span></span><span></span><span></span><span></span><i class="floating-note note-a">♪</i><i class="floating-note note-b">♩</i><i class="floating-note note-c">♫</i></div>
+        <div class="piano-object"><div class="piano-top"><span>PLAY A LITTLE. GROW A LITTLE.</span><b>MJ / 01</b></div><div class="piano-keys"><i></i><i class="black-after"></i><i class="black-after"></i><i></i><i class="black-after active-key"></i><i class="black-after"></i><i class="black-after"></i><i></i><i class="black-after"></i><i class="black-after"></i><i></i><i></i></div><div class="piano-lip"></div></div><span class="instrument-caption">Каждая нота имеет значение.</span>
+      </div>
+    </section>
+    <section class="journey-strip" aria-label="Прогресс обучения">
+      <div class="level-seal"><span id="level-kind">XP</span><strong id="music-level">♪</strong></div>
+      <div class="experience-block"><div class="experience-label"><strong id="xp-heading">Твоя музыкальная история</strong><span id="xp-total">Войди, чтобы сохранять шаги</span></div><progress id="xp-progress" max="100" value="0" aria-label="Опыт до следующего уровня"></progress><p id="xp-caption">Прогресс и опыт будут храниться в аккаунте.</p></div>
+      <div class="journey-count"><strong id="completed-count">—</strong><span id="completed-caption">шагов пройдено</span></div><button type="button" class="icon-action" id="history-open" aria-label="Открыть историю попыток" title="История попыток"><span class="history-label">История игры</span><span aria-hidden="true">↗</span></button>
+    </section>
+    <div class="course-layout">
+      <aside class="course-index"><p class="eyebrow">ТВОЙ МАРШРУТ</p><h2>Навык за<br>навыком.</h2><p id="mode-description">По порядку: каждый шаг готовит следующий.</p><label class="field-label" for="chapter-select">Глава курса</label><select id="chapter-select" aria-controls="route-list"><option>Загружаем маршрут…</option></select><div class="course-facts"><span id="course-count">Проверяем каталог</span><p>XP начисляется за подтверждённое исполнение. Скорость сверх цели не даёт бонуса.</p></div><a class="text-link" href="trainer.html">Открыть тренажёр <span aria-hidden="true">↗</span></a></aside>
+      <section class="route-section" aria-labelledby="chapter-title"><div class="section-top"><div><p class="eyebrow" id="chapter-number">ПЕРВАЯ ФРАЗА</p><h2 id="chapter-title">Ориентиры и первые звуки</h2></div><span class="route-legend"><i aria-hidden="true"></i> твой следующий шаг</span></div><ol id="route-list" class="music-route" aria-label="Шаги главы"></ol><button type="button" id="route-more" class="quiet-action" hidden>Показать следующие шаги</button><p class="route-footnote">Один чистый дубль открывает следующий шаг. Устойчивый навык проверяй повторами, игрой из памяти и возвращением через сутки.</p></section>
+    </div>
+  </section>
+  <section id="community-view" hidden aria-labelledby="community-title"><div class="community-heading"><p class="eyebrow">МУЗЫКА ОБЪЕДИНЯЕТ</p><h1 id="community-title">Есть что<br><em>обсудить.</em></h1><p class="hero-lead">Вопросы о практике, маленькие открытия и идеи для курса.</p><a href="account.html#public-music" class="text-link">Мелодии сообщества ↗</a></div><div class="discussion-layout"><section><h2>Общее обсуждение</h2><div id="global-comments" class="comments-list"></div><button type="button" id="global-more" class="quiet-action" hidden>Ещё комментарии</button></section><aside><form id="global-comment-form" class="comment-form"><label for="global-comment-body">Что у тебя получилось сегодня?</label><textarea id="global-comment-body" maxlength="4000" rows="5" placeholder="Расскажи или задай вопрос" required></textarea><button type="submit" class="primary-action">Отправить</button><p class="form-note" id="global-comment-note">Для комментария нужно войти в аккаунт.</p></form><a class="text-link" href="account.html#feedback">Предложить исправление сервиса ↗</a></aside></div></section>
+</main>
+<footer class="site-foot"><a class="melodia-wordmark" href="/" translate="no">MelodiaJest</a><span>Меньше спешки. Больше музыки.</span><a href="account.html">Моя музыка и аккаунт ↗</a></footer>
+<dialog id="settings-dialog" class="melodia-dialog"><div class="dialog-head"><h2>В своём ритме</h2><button type="button" data-close="settings-dialog" class="close-action" aria-label="Закрыть настройки">×</button></div><form id="settings-form"><fieldset><legend>Порядок обучения</legend><label class="choice-row"><input type="radio" name="courseMode" value="sequential" checked><span><strong>Шаг за шагом</strong><small>Стандартный режим. Следующий урок открывается после прохождения предыдущего.</small></span></label><label class="choice-row"><input type="radio" name="courseMode" value="free"><span><strong>Свободный маршрут</strong><small>Самостоятельно выбирай подготовленные испытания и возвращайся к нужным навыкам.</small></span></label></fieldset><label class="field-label" for="rating-system">Твоя шкала оценок уроков</label><select id="rating-system" name="ratingSystem"></select><p class="form-note">Средняя оценка урока всегда показывается с дробью по шкале 0–10. Смена шкалы сохраняет твою исходную оценку.</p><p id="settings-status" role="status"></p><button type="submit" class="primary-action">Сохранить настройки</button></form></dialog>
+<dialog id="lesson-dialog" class="melodia-dialog lesson-dialog"><div class="dialog-head"><p class="eyebrow">КАРТОЧКА УРОКА</p><button type="button" data-close="lesson-dialog" class="close-action" aria-label="Закрыть урок">×</button></div><h2 id="detail-title"></h2><p id="detail-goal"></p><div class="detail-actions"><a id="detail-play" class="primary-action" href="trainer.html">Играть ↗</a><p id="detail-state"></p></div><section class="rating-section" aria-labelledby="rating-title"><div><h3 id="rating-title">Как тебе урок?</h3><p id="detail-average"></p></div><form id="rating-form"><label for="rating-value">Твоя оценка</label><span id="rating-input-wrap"></span><div class="small-actions"><button type="submit" class="small-action">Сохранить оценку</button><button type="button" id="rating-remove" class="quiet-action">Убрать оценку</button></div></form></section><p id="lesson-social-status" role="status"></p><h3>Обсуждение урока</h3><div id="lesson-comments" class="comments-list"></div><button type="button" id="lesson-comments-more" class="quiet-action" hidden>Ещё комментарии</button><form id="lesson-comment-form" class="comment-form"><label for="lesson-comment-body">Твой комментарий</label><textarea id="lesson-comment-body" maxlength="4000" rows="3" required></textarea><button type="submit" class="small-action">Отправить</button></form></dialog>
+<dialog id="history-dialog" class="melodia-dialog"><div class="dialog-head"><h2>История игры</h2><button type="button" data-close="history-dialog" class="close-action" aria-label="Закрыть историю">×</button></div><p class="form-note">Последние 50 попыток. Результаты прежних музыкальных редакций сохраняются отдельно.</p><div id="history-list"></div></dialog>
+</body></html>

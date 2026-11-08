@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-11-07T11:45:31.429Z",
+  "format": "melodiajest-indexeddb-package-qa-v1",
+  "tests": 24,
+  "passed": 24,
+  "failed": 0,
+  "realIndexedDB": true,
+  "actualOfflinePlannerFixture": true,
+  "realDiskExhaustionTested": false,
+  "quotaFailureInjected": true,
+  "durablePendingRecoveryVerified": true,
+  "networkDecoderConnected": false,
+  "productionApplicationConnected": false,
+  "publicVersion": "23.5.45",
+  "legacyStorageUnchanged": true,
+  "qaDatabaseNames": [
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-base",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-race",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-opaque",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-abort",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-quota",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-future",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-source",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-pending",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-reopen",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-blocked",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-stage-race",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-pending-abort",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-pending-quota",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-stage-quota",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-stale-pending",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-future-pending",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-missing-pending",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-recovered-replay",
+    "melodiajest-piano-packages-v1-qa-27-9f10f352-dad-initial-pending"
+  ],
+  "results": [
+    {
+      "name": "01 — каталог и источник подтверждены после complete",
+      "passed": true
+    },
+    {
+      "name": "02 — обновление и предыдущая копия записаны вместе",
+      "passed": true
+    },
+    {
+      "name": "03 — новое соединение читает подтверждённую версию",
+      "passed": true
+    },
+    {
+      "name": "04 — повтор того же плана не создаёт новую редакцию",
+      "passed": true
+    },
+    {
+      "name": "05 — устаревший план второй вкладки сохраняет позднюю правку",
+      "passed": true
+    },
+    {
+      "name": "06 — конкурирующие транзакции одного store дают одного победителя",
+      "passed": true
+    },
+    {
+      "name": "07 — копия входа и непрозрачный план защищены от подмены",
+      "passed": true
+    },
+    {
+      "name": "08 — настоящий abort после первой put отменяет все записи",
+      "passed": true
+    },
+    {
+      "name": "09 — внедрённый QuotaExceededError сохраняет current и previous",
+      "passed": true
+    },
+    {
+      "name": "10 — повреждённое состояние экспортируется без сброса",
+      "passed": true
+    },
+    {
+      "name": "11 — более старая версия и другой pin того же выпуска отклоняются",
+      "passed": true
+    },
+    {
+      "name": "12 — старый каталог, прогресс и настройки остаются побайтно прежними",
+      "passed": true
+    },
+    {
+      "name": "13 — черновик подтверждён отдельно, рабочая версия и квитанция прежние",
+      "passed": true
+    },
+    {
+      "name": "14 — закрытое соединение восстановлено, pending потреблён вместе с current",
+      "passed": true
+    },
+    {
+      "name": "15 — другой writer не перезаписывает незавершённую редакцию",
+      "passed": true
+    },
+    {
+      "name": "16 — гонка двух соединений оставляет ровно один черновик",
+      "passed": true
+    },
+    {
+      "name": "17 — abort при commit сохраняет current и полный pending",
+      "passed": true
+    },
+    {
+      "name": "18 — quota при commit сохраняет current и полный pending",
+      "passed": true
+    },
+    {
+      "name": "19 — quota при stage не оставляет частичный черновик",
+      "passed": true
+    },
+    {
+      "name": "20 — поздняя несовместимая версия сохраняется вместе с pending",
+      "passed": true
+    },
+    {
+      "name": "21 — будущий pending экспортируется без удаления и блокирует запись",
+      "passed": true
+    },
+    {
+      "name": "22 — исчезнувший pending не применяется по восстановленному токену",
+      "passed": true
+    },
+    {
+      "name": "23 — потерянный ответ после commit не вращает previous повторно",
+      "passed": true
+    },
+    {
+      "name": "24 — начальный pending восстанавливается без подмены личных данных",
+      "passed": true
+    }
+  ],
+  "qaDatabasesDeleted": true,
+  "tabClosureRecovery": {
+    "checkedAt": "2026-11-07T11:48:04.423Z",
+    "phase": "recovered",
+    "database": "melodiajest-piano-packages-v1-qa-27-reload-3321540d-4899-46b6-9d75-1e540b4253b7",
+    "currentRevision": 2,
+    "previousRevision": 1,
+    "pendingConsumed": true,
+    "allFixtureFieldsPreserved": true,
+    "qaDatabaseDeleted": true,
+    "productionConnected": false,
+    "staged": {
+      "phase": "staged",
+      "database": "melodiajest-piano-packages-v1-qa-27-reload-3321540d-4899-46b6-9d75-1e540b4253b7",
+      "currentRevision": 1,
+      "pendingDurable": true
+    },
+    "oldTabId": "20",
+    "reopenedTabId": "21",
+    "actualTabClosedAndReopened": true,
+    "confirmedByEnter": true
+  },
+  "mobile": {
+    "buttonHeights": [
+      68,
+      44,
+      44
+    ],
+    "clientWidth": 376,
+    "documentWidth": 376,
+    "height": 844,
+    "width": 390
+  },
+  "screenshot": "docs/qa/melodiajest-2026-11-07-27-pending.png",
+  "viewportReset": true,
+  "ownedTabsClosed": true
+}

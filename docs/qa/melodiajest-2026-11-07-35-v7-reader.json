@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-11-07T16:23:10.353Z",
+  "format": "melodiajest-current-v7-reader-qa-v1",
+  "tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "realIndexedDB": true,
+  "realCurrentAppExportVerified": true,
+  "realCatalogCounts": {
+    "themes": 96,
+    "lessons": 572,
+    "bytes": 5642261
+  },
+  "verifiedPackageScope": "synthetic QA pin; not a public-delivery assertion",
+  "rawCopyReadbackBeforeAdapter": true,
+  "duplicatePropertiesRefused": true,
+  "unsafeNumericTokensRefused": true,
+  "privateFieldsAndUtf16Preserved": true,
+  "activationPerformed": false,
+  "productionApplicationConnected": false,
+  "realUserCatalogCopied": false,
+  "localStorageUnchanged": true,
+  "publicVersion": "23.5.49",
+  "results": [
+    {
+      "name": "01 — полный экспорт приложения сохраняет все поля после raw-copy/readback",
+      "passed": true
+    },
+    {
+      "name": "02 — личные поля, редакции, порядок и произведение не нормализуются",
+      "passed": true
+    },
+    {
+      "name": "03 — повторяющиеся JSON-поля останавливают разбор и оставляют точный исходник",
+      "passed": true
+    },
+    {
+      "name": "04 — неоднозначные числа не округляются в подготовленном каталоге",
+      "passed": true
+    },
+    {
+      "name": "05 — старый, будущий и отсутствующий источник не заменяются шаблоном",
+      "passed": true
+    },
+    {
+      "name": "06 — неизвестный envelope, повтор ID и отсутствующая тема остаются для разбора",
+      "passed": true
+    },
+    {
+      "name": "07 — строковые скобки, повтор имён в разных объектах и UTF-16 сохраняются",
+      "passed": true
+    },
+    {
+      "name": "08 — поздняя правка источника запрещает экспорт настоящего адаптера",
+      "passed": true
+    },
+    {
+      "name": "09 — существующий current не заменяется адаптером",
+      "passed": true
+    },
+    {
+      "name": "10 — все ключи localStorage остались прежними",
+      "passed": true
+    }
+  ],
+  "qaDatabasesDeleted": true,
+  "interface": {
+    "desktop": {
+      "buttonHeight": 44,
+      "focused": "run",
+      "outline": "solid",
+      "statusLive": "polite",
+      "statusRole": "status"
+    },
+    "mobile": {
+      "buttonHeight": 44,
+      "focused": "run",
+      "outline": "solid",
+      "scrollWidth": 376,
+      "width": 390
+    },
+    "keyboardEnterVerified": true
+  },
+  "defaultControllerAdapterVerified": true,
+  "cleanup": {
+    "viewportReset": true,
+    "qaTabClosed": true
+  }
+}

@@ -1,7 +1,10 @@
 name: melodiajest
 
 services:
-  web:
+  # Compose also publishes the service key as a DNS alias on external networks.
+  # Generic names such as web/app/gateway can shadow other portal services.
+  melodiajest-static:
+    container_name: melodiajest-web-1
     # Reuse the official image already present on the shared host.
     # Record its digest with each release; updating the image is a separate step.
     image: nginx:stable-alpine
@@ -21,6 +24,9 @@ services:
       # Recreate ONLY this service after switching the current symlink.
       - ../current:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      # Only the API socket directory is visible; account databases and secrets
+      # stay outside the container and outside the public release tree.
+      - /run/melodiajest-account:/run/melodiajest-account:ro
     expose: ["8080"]
     networks:
       edge:

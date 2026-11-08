@@ -63,7 +63,7 @@ test('actual MIDI route waits for the final release and does not award a new cho
 });
 
 test('catalog JSON preserves new music and personalized explanations without registering duplicates',async()=>{
-  const a=loadApp({web:true,events:true,storage:{getItem:()=>null,setItem(){}}});const ids=expectations.map(e=>e.id);
+  const a=loadApp({web:true,events:true,storage:require('./helpers/memory-storage.cjs').createMemoryStorage()});const ids=expectations.map(e=>e.id);
   const before=ids.map(id=>A.pianoSignature(a.lessons.find(l=>l.id===id)));const l=a.lessons.find(l=>l.id===ids[1]);l.title='Моя левая F-форма';l.learning.practiceSteps[0]='Моя подготовка';
   const total=a.lessons.length;assert.equal(await a.importCatalogText(a.catalogExportText(),()=>true),true);
   assert.equal(a.lessons.length,total);assert.equal(a.installReviewedLessons(),false);assert.equal(a.lessons.find(item=>item.id===l.id).title,'Моя левая F-форма');assert.equal(a.lessons.find(item=>item.id===l.id).learning.practiceSteps[0],'Моя подготовка');

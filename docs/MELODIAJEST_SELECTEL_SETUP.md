@@ -2,6 +2,8 @@
 
 Проверено 6 ноября 2026 года. Это инструкция для отдельного этапа публикации. Покупка, оплата, изменение DNS и применение серверной конфигурации при её подготовке не выполнялись.
 
+**Обновление 7 ноября:** выпуск 23.5.33 работает на **https://melodiajest.ru/**, www перенаправляется на основной домен. Делегирование и доверенные HTTPS-сертификаты проверены, сервис `melodiajest-static` healthy. Первая установка 4–6 выполнена, финальные проверки шага 7 завершены. Подробности, резервная копия и исправленный конфликт имени Docker `web`: [отчёт](reports/melodiajest-server-2026-11-07.md).
+
 ## Что уже работает на сервере
 
 По исходникам Libreta (`libre/deploy/vps`) и Praicer (`diary/deploy/production`), публичному DNS и чтению сервера по SSH:
@@ -59,7 +61,7 @@ Resolve-DnsName www.melodiajest.ru -Type A
 Resolve-DnsName melodiajest.ru -Type NS
 ```
 
-Оба имени должны приводить к `135.106.217.27`; для `www` допустим промежуточный CNAME. До этого шага новый маршрут Caddy не включаем.
+Оба имени должны приводить к `135.106.217.27`; для `www` допустим промежуточный CNAME. Готовность публичного HTTPS подтверждается после появления этих записей. Для купленного домена с проверенными записями на авторитетном сервере маршрут Caddy можно подготовить заранее с отдельного разрешения; выпуск сертификата тогда ожидает распространения DNS.
 
 ## 3. Собрать выпуск на компьютере
 
@@ -76,7 +78,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Архивация не прошла' }
 Get-FileHash $archive -Algorithm SHA256
 ```
 
-На момент подготовки версия — **23.5.30**, в веб-каталоге 27 разрешённых ресурсов и `web-release.json`. При последующем выпуске используй фактическую версию. Архивируем только `dist/web`; ни корень проекта, ни личный каталог не добавляем. Перед публикацией нового изменённого кода выполняются применимые проверки из `AGENTS.md`; готовый результат партии 30 описан в `docs/reports/piano-curriculum-2026-11-06-30.md`.
+На момент подготовки версия — **23.5.33**, в веб-каталоге 27 разрешённых ресурсов и `web-release.json`. При последующем выпуске используй фактическую версию. Архивируем только `dist/web`; ни корень проекта, ни личный каталог не добавляем. Перед публикацией нового изменённого кода выполняются применимые проверки из `AGENTS.md`; готовый результат партии 33 описан в `docs/reports/piano-curriculum-2026-11-06-33.md`.
 
 До смены адреса экспортируй **каталог** в старом приложении, а затем отдельно **прогресс / подготовки** из журнала. Сохрани оба JSON-файла на компьютере. Данные `localhost` автоматически на домен не переедут.
 
@@ -107,7 +109,7 @@ ssh @sshOptions "root@$serverAddress"
 Дальше команды в **SSH на Linux**, не в PowerShell. Это блок **первого** запуска: повторная установка на существующий `current` остановится. Версию замени, если собран другой выпуск. Сначала сравни SHA256 архива с выводом PowerShell:
 
 ```bash
-sha256sum /opt/melodiajest/incoming/melodiajest-web-23.5.30.tar.gz
+sha256sum /opt/melodiajest/incoming/melodiajest-web-23.5.33.tar.gz
 ```
 
 Если совпало:
@@ -115,7 +117,7 @@ sha256sum /opt/melodiajest/incoming/melodiajest-web-23.5.30.tar.gz
 ```bash
 bash <<'MELODIA_FIRST_RELEASE'
 set -euo pipefail
-release=23.5.30
+release=23.5.33
 base=/opt/melodiajest
 test ! -e "$base/current"
 test ! -L "$base/current"
@@ -151,9 +153,9 @@ install -m 644 "$base/incoming/Caddyfile.fragment" "$base/deploy/Caddyfile.fragm
 ln -s "releases/$release" "$base/current"
 cd "$base/deploy"
 docker compose config --quiet
-docker compose run --rm --no-deps web -t
-docker compose up -d --wait web
-docker compose exec -T web wget -q -O /dev/null http://127.0.0.1:8080/
+docker compose run --rm --no-deps melodiajest-static -t
+docker compose up -d --wait melodiajest-static
+docker compose exec -T melodiajest-static wget -q -O /dev/null http://127.0.0.1:8080/
 docker exec libre-caddy-1 wget -q -O /dev/null http://melodiajest-web:8080/
 docker compose ps
 MELODIA_FIRST_RELEASE
@@ -165,7 +167,7 @@ MELODIA_FIRST_RELEASE
 
 ## 6. Добавить домен в существующий Caddy
 
-В новом фрагменте уже есть `melodiajest.ru` и перенаправление `www` на основной адрес. Перед применением повторно проверь публичный DNS. Не устанавливаем второй Caddy на порты 80/443 и не пересоздаём стек Libreta.
+В новом фрагменте уже есть `melodiajest.ru` и перенаправление `www` на основной адрес. Перед применением проверь DNS и зафиксируй его фактическую готовность: сертификату нужны доступные публичные записи. Второй Caddy и пересоздание всего стека Libreta не требуются. Если обнаружена старая привязка файла по inode, нужен отдельный проверенный этап обновления только контейнера Caddy с сохранением образа и томов сертификатов; простой reload старого смонтированного файла использовать нельзя.
 
 Следующий блок сохраняет все имеющиеся маршруты, проверяет кандидата, записывает конфиг **в существующий файл** и делает reload только Caddy. Это необходимо из-за одиночного bind mount: замена файла через `mv` может оставить контейнер на старом inode.
 
@@ -238,7 +240,7 @@ curl.exe -I https://praicer.ru/
 Для нового выпуска: снова собрать на компьютере, загрузить новый архив, проверить SHA256 и manifest, распаковать в **новый** `/opt/melodiajest/releases/ВЕРСИЯ`. Сохранить прежнюю цель `readlink /opt/melodiajest/current`. После проверки новой папки переключить существующую ссылку `current` и выполнить из `/opt/melodiajest/deploy`:
 
 ```bash
-docker compose up -d --force-recreate --no-deps --wait web
+docker compose up -d --force-recreate --no-deps --wait melodiajest-static
 ```
 
 Пересоздаётся только контейнер MelodiaJest: Docker разрешает symlink bind mount при создании контейнера, поэтому одного переключения ссылки недостаточно. Для отката вернуть `current` на **сохранённую предыдущую** папку и выполнить ту же команду. Общий Caddy при обычном обновлении файлов не меняется. Новое содержимое `web-release.json` и браузерный smoke test подтверждают переключение. Стабильные имена ресурсов требуют перезагрузки уже открытых старых вкладок.

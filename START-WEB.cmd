@@ -1,6 +1,6 @@
 @echo off
 cd /d "%~dp0"
-call npm run build:web
+call npm run build:web:offline
 if errorlevel 1 goto :failed
 echo Open http://127.0.0.1:4173 in your browser.
 echo Personal edits stay in that browser. Export your catalog to transfer it.

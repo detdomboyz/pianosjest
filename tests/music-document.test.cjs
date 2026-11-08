@@ -1,4 +1,5 @@
 'use strict';
+const catalogCounts=require('./fixtures/piano-curriculum-counts.json');
 const test=require('node:test'),assert=require('node:assert/strict'),A=require('../practice-assessment.js'),Music=require('../music-document.js'),Adapter=require('../piano-catalog-adapter.js'),{loadApp}=require('./helpers/load-app.cjs');
 const copy=x=>JSON.parse(JSON.stringify(x)),app=loadApp();
 const basic=()=>({schemaVersion:1,id:'score',revision:'r1',timeUnit:'quarter',bpm:60,parts:[{id:'p'}],notes:[{id:'n1',partId:'p',pitch:{kind:'midi',value:48},span:{kind:'known',start:0,duration:4}},{id:'n2',partId:'p',pitch:{kind:'midi',value:64},span:{kind:'known',start:1/3,duration:1/3}}]});
@@ -8,7 +9,7 @@ test('shipped parser preserves chord order, quick attacks, unknown symbols and i
 });
 
 test('every current catalog entry roundtrips exact JSON with all source instructions, plans, rhythm and order',()=>{
- const snapshot=copy(app.catalogSnapshot()),before=copy(snapshot),roundtrip=Adapter.roundTripCatalog(snapshot);assert.deepEqual(roundtrip,before);assert.deepEqual(snapshot,before);assert.equal(roundtrip.lessons.length,570);assert.notEqual(roundtrip,snapshot);for(const entry of snapshot.lessons){const doc=Adapter.project(entry);assert.equal(Music.validate(doc.music).valid,true);assert.equal(doc.music.revision,'piano-catalog-v7:'+A.pianoSignature(entry));assert.equal(doc.music.notes.length,app.parsePattern(entry.pattern).steps.reduce((n,s)=>n+s.keys.length,0));}roundtrip.lessons[0].title='Личная правка';assert.notEqual(snapshot.lessons[0].title,'Личная правка');
+ const snapshot=copy(app.catalogSnapshot()),before=copy(snapshot),roundtrip=Adapter.roundTripCatalog(snapshot);assert.deepEqual(roundtrip,before);assert.deepEqual(snapshot,before);assert.equal(roundtrip.lessons.length,catalogCounts.catalogRecords);assert.notEqual(roundtrip,snapshot);for(const entry of snapshot.lessons){const doc=Adapter.project(entry);assert.equal(Music.validate(doc.music).valid,true);assert.equal(doc.music.revision,'piano-catalog-v7:'+A.pianoSignature(entry));assert.equal(doc.music.notes.length,app.parsePattern(entry.pattern).steps.reduce((n,s)=>n+s.keys.length,0));}roundtrip.lessons[0].title='Личная правка';assert.notEqual(snapshot.lessons[0].title,'Личная правка');
 });
 
 test('common document retains simultaneous independent releases and unquantized triplet values',()=>{

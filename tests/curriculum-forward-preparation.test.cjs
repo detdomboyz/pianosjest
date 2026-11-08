@@ -13,6 +13,21 @@ test('an existing anchor is moved to its final position before inserting an earl
  insertDetails(route,lessons,'piano');assert.deepEqual(route.map(e=>e.id),['root','parent','child','unrelated']);assert.equal(new Set(route.map(e=>e.id)).size,4);
 });
 
+test('a child waits for an additional moving prerequisite on a different display branch',()=>{
+ const child=lesson('child','parent');child.learning.requires=['parent','side'];
+ const lessons=[lesson('root'),child,lesson('anchor'),lesson('parent','root'),lesson('side','anchor')],before=JSON.stringify(lessons),route=[{id:'root'},{id:'anchor'},{id:'parent'}];
+ insertDetails(route,lessons,'piano');
+ assert.deepEqual(route.map(e=>e.id),['root','parent','anchor','side','child']);
+ assert.deepEqual(route.at(-1).preparation,['parent','side']);assert.equal(JSON.stringify(lessons),before);
+});
+
+test('missing secondary prerequisites and requires-only cycles fail even when display anchors exist',()=>{
+ const missing=lesson('child','root');missing.learning.requires=['root','missing'];
+ assert.throws(()=>insertDetails([{id:'root'}],[lesson('root'),missing],'piano'),/Missing preparation missing for child/);
+ const a=lesson('a','root'),b=lesson('b','root');a.learning.requires=['b'];b.learning.requires=['a'];
+ assert.throws(()=>insertDetails([{id:'root'}],[lesson('root'),a,b],'piano'),/cycle/);
+});
+
 test('missing anchors, self references and cycles fail explicitly instead of looping or silently appending lessons',()=>{
  assert.throws(()=>insertDetails([{id:'root'}],[lesson('root'),lesson('a','missing')],'piano'),/Missing preparation missing for a/);
  assert.throws(()=>insertDetails([],[lesson('a','a')],'piano'),/cycle/);

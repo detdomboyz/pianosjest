@@ -1,0 +1,121 @@
+{
+  "batch": "2026-11-08-06",
+  "checkedAt": "2026-11-08T08:49:24.526373+00:00",
+  "candidateVersion": "23.5.58",
+  "publishedVersion": "23.5.58",
+  "status": "deployed-and-verified",
+  "lessonIds": [
+    "detail-p-cross-01",
+    "detail-p-cross-02",
+    "detail-p-cross-03",
+    "detail-p-cross-04"
+  ],
+  "newLessons": 0,
+  "reviewedLessons": 4,
+  "testsPassed": 1008,
+  "targetedTestsPassed": 28,
+  "newRegressionTests": 9,
+  "catalogRecords": 578,
+  "learningRecords": 430,
+  "structuredProvenance": 129,
+  "explicitSameGoalVariants": 10,
+  "goalGroupUpperBound": 413,
+  "teacherReviewed": 0,
+  "legacyProvenanceStillToReview": 301,
+  "preservedMusicAndGrades": 578,
+  "preservedOtherCompleteEditions": 574,
+  "baselineSha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030",
+  "browserVerified": true,
+  "publicReleaseChanged": false,
+  "serverOrS3Changed": true,
+  "protectedLocalCheckpoints": 14,
+  "browserBlockers": [
+    "IAB new-tab attachment timed out twice;inventory remained empty",
+    "Computer Use stopped native Yandex because URL policy enforcement is unsupported"
+  ],
+  "nextStep": "Supported-browser QA for four cards and preparations;then separate verified updater/public/backup/restore phase",
+  "artifactStatus": "local-and-private-vps-file-restored",
+  "candidateArtifact": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\melodiajest-23.5.58-20261108-58-candidate.tar.gz",
+    "bytes": 3643670,
+    "sha256": "7c5ec44834c932d924ab4ce7a09307f1a3d16695ac6ca418ac1f1b5a1380928d",
+    "version": "23.5.58",
+    "webManifestSha256": "77f71239be7755ec12b617701f505a7429eae3eba78262e733e7383190f81a65",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 702,
+    "publicFiles": 28
+  },
+  "coldSourceTestsPassed": 22,
+  "localRestore": {
+    "destination": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\tmp\\melodiajest-58-candidate-restore-okqndxnv\\restored",
+    "archiveSha256": "7c5ec44834c932d924ab4ce7a09307f1a3d16695ac6ca418ac1f1b5a1380928d",
+    "version": "23.5.58",
+    "webManifestSha256": "77f71239be7755ec12b617701f505a7429eae3eba78262e733e7383190f81a65",
+    "filesVerified": 734,
+    "sourceSnapshotIncluded": true,
+    "restoreVerified": true,
+    "scope": "isolated file restoration; not S3, browser data, or container runtime",
+    "restoredSourceTestsPassed": 22,
+    "temporaryRestoreRemoved": true,
+    "browserVerified": false,
+    "publicationPerformed": false
+  },
+  "vpsCopy": {
+    "checkedAt": "2026-11-08T08:47:32.606519+00:00",
+    "candidateVersion": "23.5.58",
+    "publishedVersion": "23.5.57",
+    "archive": "/opt/melodiajest/ops/candidate-23.5.58-7c5ec44834c9/selected-checkout.tar.gz",
+    "sha256": "7c5ec44834c932d924ab4ce7a09307f1a3d16695ac6ca418ac1f1b5a1380928d",
+    "bytes": 3643670,
+    "webManifestSha256": "77f71239be7755ec12b617701f505a7429eae3eba78262e733e7383190f81a65",
+    "sourceFiles": 702,
+    "nondocSourceFiles": 325,
+    "filesRestored": 734,
+    "fileReadbackVerified": true,
+    "isolatedFileRestoreVerified": true,
+    "temporaryRestoreRemoved": true,
+    "archiveCreated": true,
+    "productionChanged": false,
+    "browserVerified": false,
+    "s3CopyCreated": false,
+    "s3ProfileSha256": "40aef295a325e9fbbda0823db2a8e753f3b3d9dd6075e18770d3d06b1c5e7e3f",
+    "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+    "symlinksBefore": {
+      "current": "releases/23.5.57-36c4c0bc62ce",
+      "previous": "releases/23.5.56-a6321428f3c0"
+    },
+    "symlinksAfter": {
+      "current": "releases/23.5.57-36c4c0bc62ce",
+      "previous": "releases/23.5.56-a6321428f3c0"
+    },
+    "neighborsBefore": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "neighborsAfter": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "diskFreeBefore": 2464223232,
+    "sharedAndOwnLocksUsed": true,
+    "scope": "Private VPS file copy and isolated file restoration; no deployment, container runtime restoration or independent encrypted S3 proof"
+  },
+  "ownPrivateServerFilesChanged": true,
+  "productionChanged": false,
+  "s3Changed": false,
+  "independentS3CopyForCandidateVerified": true,
+  "sourceSnapshotScope": "Selected locally verified checkout before final copy receipts and documentation updates. All325 selected nondoc source files and28 public files match current checkout/build exactly. Later state/report/operations-guide edits are excluded from this immutable archive.",
+  "followup": {
+    "report": "docs/reports/melodiajest-operations-2026-11-08-14.md",
+    "publishedVersion": "23.5.58",
+    "status": "deployed-browser-verified-server-and-s3-cold-restored",
+    "externalSnapshotId": "ec28c249f78c6cf1d214d60a07dbc0e36bfc7e63bb0de80d7f99fef833e2bc90"
+  },
+  "publicationStatus": "deployed-and-verified",
+  "publicationReport": "docs/reports/melodiajest-operations-2026-11-08-14.md",
+  "publishedAndVerifiedAt": "2026-11-08T09:14:35.412289+00:00"
+}

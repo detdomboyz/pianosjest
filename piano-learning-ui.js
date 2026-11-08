@@ -50,12 +50,18 @@
     const mode=normalizeMode(value);
     return '<label class="learning-view-choice" for="learning-material-mode">Разбор <select id="learning-material-mode" name="learningMaterialMode" aria-label="Вид учебного разбора"'+(memory?' disabled title="В попытке из памяти подсказки скрыты"':'')+'>'+MODES.map((m,i)=>'<option value="'+m+'"'+(mode===m?' selected':'')+'>'+['Кратко','Развёрнуто','Скрыто'][i]+'</option>').join('')+'</select></label>';
   }
+  // The saved55 reference contained a space and returns404; the verified USU
+  // publication is Level1.pdf. Resolve only that known legacy anchor at render
+  // time so personal catalog editions and grading fingerprints stay untouched.
+  function knownReferenceLinks(html){
+    return html.replaceAll('href="https://www.usu.edu/ycpiano/files/Level 1.pdf"','href="https://www.usu.edu/ycpiano/files/Level1.pdf"');
+  }
   // renderBody is deliberately lazy: hidden/compact modes do not construct long lesson HTML.
   function materialHtml({mode,memory=false,preview='',renderBody}){
     mode=normalizeMode(mode);
     if(memory||mode==='hidden') return '';
     if(mode==='compact') return '<section class="piano-learning-card" aria-label="Краткий разбор урока"><button type="button" id="learning-material-toggle" class="learning-preview-button" data-learning-material-toggle aria-expanded="false" aria-controls="learning-material-body"><span class="learning-preview-text">'+escapeHtml(preview||'Разбери короткую группу медленно, затем соедини фразу. Открой подготовку и рекомендации к уроку.')+'</span><span class="learning-disclosure-label">Развернуть разбор <span aria-hidden="true">↗</span></span></button><div id="learning-material-body" hidden></div></section>';
-    return '<section class="piano-learning-card is-expanded" aria-label="Полный разбор урока"><button type="button" id="learning-material-toggle" class="learning-collapse-button" data-learning-material-toggle aria-expanded="true" aria-controls="learning-material-body">Свернуть разбор <span aria-hidden="true">↑</span></button><div class="learning-material-body" id="learning-material-body">'+renderBody()+'</div></section>';
+    return '<section class="piano-learning-card is-expanded" aria-label="Полный разбор урока"><button type="button" id="learning-material-toggle" class="learning-collapse-button" data-learning-material-toggle aria-expanded="true" aria-controls="learning-material-body">Свернуть разбор <span aria-hidden="true">↑</span></button><div class="learning-material-body" id="learning-material-body">'+knownReferenceLinks(renderBody())+'</div></section>';
   }
   // Reuse the existing, escaped shared presenter without changing the guitar contract.
   function unwrapMaterial(html){return html.replace(/^<details class="learning-material"><summary>[^<]*<\/summary>/,'').replace(/<\/details>$/,'');}
@@ -63,8 +69,9 @@
     if(!items.length)return '';
     return '<nav class="learning-preparations" aria-label="Подготовка к уроку"><p>Открыть подготовительный урок</p><div>'+items.map(item=>'<button type="button" data-learning-prerequisite="'+escapeHtml(item.id)+'">'+escapeHtml(item.title)+'</button>').join('')+'</div></nav>';
   }
-  function repeatedNoteHtml(currentMidis,previousMidis){
+  function repeatedNoteHtml(currentMidis,previousMidis,silenceBeats){
     if(currentMidis.length!==1||previousMidis.length!==1||currentMidis[0]!==previousMidis[0])return '';
+    if(typeof silenceBeats==='number'&&Number.isFinite(silenceBeats)&&silenceBeats>0)return '<p class="hint repeated-note-hint"><b>Повтор после тишины:</b> отпусти клавишу, выдержи тишину ('+escapeHtml(rhythmDurationView(silenceBeats).beatsText)+') и нажми её заново. Удержание не заменяет паузу или новую атаку.</p>';
     return '<p class="hint repeated-note-hint"><b>Повтор звука:</b> отпусти клавишу и нажми заново. Удержание не заменяет новый звук.</p>';
   }
   function sameGoalHtml(item){

@@ -1,4 +1,5 @@
 'use strict';
+const catalogCounts=require('./fixtures/piano-curriculum-counts.json');
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
 const {validatePlannedLessons}=require('../tools/piano-lesson-plan.cjs'),Coverage=require('../tools/piano-skill-coverage.cjs'),{loadApp}=require('./helpers/load-app.cjs');
 const copy=x=>JSON.parse(JSON.stringify(x)),backlog=JSON.parse(fs.readFileSync('docs/piano-lesson-backlog.json','utf8')),ledger=JSON.parse(fs.readFileSync('docs/piano-curriculum-sources.json','utf8')),app=loadApp(),plans=backlog.lessons,ids=['detail-p-ear-direction-01','detail-p-ear-echo-01','detail-p-read-treble-01','detail-p-read-bass-01'];
@@ -12,7 +13,7 @@ test('reading preparations use three-note positions and explicitly gated repeate
 });
 
 test('coverage consumes six future plans without registering them or increasing implementation/review counters',()=>{
- const r=Coverage.build();assert.equal(r.counts.plannedFutureLessons,6);assert.equal(r.counts.implementedLearningLessons,422);assert.equal(r.counts.checkedMidiRouteLessons,158);assert.equal(r.counts.withStructuredProvenance,82);assert.equal(r.counts.independentTeacherReviewed,0);assert.equal(r.counts.verifiedDistinctGoalCount,null);assert.deepEqual(r.domains.find(d=>d.id==='ear-transfer').plannedLessonIds,ids);assert.ok(ids.every(id=>!app.lessons.some(l=>l.id===id)));assert.ok(plans.every(l=>!app.lessons.some(row=>row.id===l.id)));
+ const r=Coverage.build();assert.equal(r.counts.plannedFutureLessons,catalogCounts.plannedFutureLessons);assert.equal(r.counts.implementedLearningLessons,catalogCounts.implementedLearningLessons);assert.equal(r.counts.checkedMidiRouteLessons,catalogCounts.checkedMidiRouteLessons);assert.equal(r.counts.withStructuredProvenance,catalogCounts.withStructuredProvenance);assert.equal(r.counts.independentTeacherReviewed,catalogCounts.independentTeacherReviewed);assert.equal(r.counts.verifiedDistinctGoalCount,null);assert.deepEqual(r.domains.find(d=>d.id==='ear-transfer').plannedLessonIds,ids);assert.ok(ids.every(id=>!app.lessons.some(l=>l.id===id)));assert.ok(plans.every(l=>!app.lessons.some(row=>row.id===l.id)));
 });
 
 test('future reading fragments keep their explicit 56 BPM adaptation and cannot fall back silently to parent tempo',()=>{

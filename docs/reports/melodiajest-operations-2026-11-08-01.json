@@ -1,0 +1,2795 @@
+{
+  "id": "2026-11-08-01",
+  "checkedAt": "2026-11-07T19:37:07.788582+00:00",
+  "status": "locally-verified-and-independently-restored",
+  "publicVersion": "23.5.51",
+  "publicReleaseChanged": false,
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "module": "piano-lesson-package-store.js",
+  "controller": "piano-lesson-package-controller.js",
+  "guide": "docs/PENDING_RESTORE_CONTRACT.md",
+  "publicArtifact": {
+    "checkedAt": "2026-11-07T19:30:22.405226+00:00",
+    "fullNpm": {
+      "tests": 920,
+      "pass": 920,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 490346.7372
+    },
+    "targetedNode": {
+      "tests": 39,
+      "pass": 39,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 14720.5059
+    },
+    "typeScript": "5.8.3 strict noEmit",
+    "typeErrors": 0,
+    "version": "23.5.51",
+    "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+    "publicFilesCompared": 28,
+    "actualBuilderReproducesCurrentPublishedArtifact": true,
+    "productionChanged": false
+  },
+  "verification": {
+    "fullNpmPassed": 920,
+    "fullNpmFailed": 0,
+    "fullNpmSkipped": 0,
+    "durationMs": 490346.7372,
+    "targetedNodeTestsPassed": 39,
+    "newNodeTestsPassed": 10,
+    "nativeIndexedDbCasesPassed": 18,
+    "typeScript": "5.8.3 strict noEmit",
+    "typeErrors": 0,
+    "coldRestoredSourceTestsPassed": 10,
+    "musicalAuditsRepeated": false,
+    "musicalAuditsNotRepeatedReason": "Music, route, fingering, assessment and all public bytes unchanged; full regression passed and all 28 public bytes reproduced."
+  },
+  "browser": {
+    "format": "melodiajest-pending-restore-qa-v1",
+    "checkedAt": "2026-11-07T19:22:48.372Z",
+    "tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "results": [
+      {
+        "name": "01 — подготовка возвращения ничего не записывает",
+        "passed": true
+      },
+      {
+        "name": "02 — возвращается только pending, архив и рабочие слоты прежние",
+        "passed": true
+      },
+      {
+        "name": "03 — повтор не пишет вторую правку",
+        "passed": true
+      },
+      {
+        "name": "04 — чужое и JSON-разрешение не вызывают запись",
+        "passed": true
+      },
+      {
+        "name": "05 — новое соединение экспортирует оба полных экземпляра",
+        "passed": true
+      },
+      {
+        "name": "06 — активация требует отдельного prepareRecovery и commitRecovery",
+        "passed": true
+      },
+      {
+        "name": "07 — CAS замечает изменение каждого рабочего слота",
+        "passed": true
+      },
+      {
+        "name": "08 — заменённый или удалённый архив не возвращается",
+        "passed": true
+      },
+      {
+        "name": "09 — новый pending после подготовки не перезаписывается",
+        "passed": true
+      },
+      {
+        "name": "10 — null и undefined pending блокируют уже подготовку",
+        "passed": true
+      },
+      {
+        "name": "11 — два соединения возвращают один и тот же pending",
+        "passed": true
+      },
+      {
+        "name": "12 — конкурентный stage и restore не затирают друг друга",
+        "passed": true
+      },
+      {
+        "name": "13 — native abort сохраняет архив без нового pending",
+        "passed": true
+      },
+      {
+        "name": "14 — native quota не сообщает возвращение успешным",
+        "passed": true
+      },
+      {
+        "name": "15 — stale, future и чужие архивы остаются для экспорта",
+        "passed": true
+      },
+      {
+        "name": "16 — начальный pending возвращается без создания current",
+        "passed": true
+      },
+      {
+        "name": "17 — уже применённая правка возобновляется без повторной ротации",
+        "passed": true
+      },
+      {
+        "name": "18 — localStorage origin не изменялся",
+        "passed": true
+      }
+    ],
+    "realIndexedDB": true,
+    "opaqueTwoStepRestore": true,
+    "restoreChangesOnlyPending": true,
+    "archiveRetained": true,
+    "workingSlotsUnchangedByRestore": true,
+    "occupiedNullUndefinedProtected": true,
+    "realTwoConnectionsRace": true,
+    "realTwoTabsRace": false,
+    "restoreActivatesCatalog": false,
+    "separateExplicitRecoveryCommitTested": true,
+    "syntheticCatalogActivationBySeparateCommit": true,
+    "productionActivationPerformed": false,
+    "productionApplicationConnected": false,
+    "recoveryFileImported": false,
+    "realUserCatalogCopied": false,
+    "publicVersion": "23.5.51",
+    "localStorageUnchanged": true,
+    "qaDatabasesDeleted": true,
+    "ui": {
+      "enterStarted": true,
+      "mobile": {
+        "buttonHeight": 44,
+        "clientWidth": 376,
+        "focusVisible": true,
+        "scrollWidth": 376,
+        "statusLive": "polite",
+        "width": 390
+      },
+      "screenshotViewport": "default after reset",
+      "qaTabClosed": true
+    }
+  },
+  "beforePreflight": {
+    "checkedAt": "2026-11-07T19:06:33.403124+00:00",
+    "current": "releases/23.5.51-6f96b3fc06dd",
+    "disk": {
+      "total": 52762214400,
+      "used": 47341424640,
+      "free": 3248820224
+    },
+    "memory": {
+      "MemTotal": "4009860 kB",
+      "MemAvailable": "2091372 kB"
+    },
+    "public": {
+      "melodiajest.ru": {
+        "status": 200,
+        "url": "https://melodiajest.ru/"
+      },
+      "libreta.ru": {
+        "status": 200,
+        "url": "https://libreta.ru/"
+      },
+      "praicer.ru": {
+        "status": 200,
+        "url": "https://praicer.ru/guest?returnTo=%2F"
+      },
+      "grigorova.libreta.ru": {
+        "status": 200,
+        "url": "https://grigorova.libreta.ru/"
+      }
+    },
+    "backupReceipts": [
+      {
+        "name": "backup-20261107-01.json",
+        "modified": 1793996624.4602966
+      },
+      {
+        "name": "backup-20261107-02.json",
+        "modified": 1793999088.1951447
+      },
+      {
+        "name": "backup-policy.json",
+        "modified": 1794004147.843669
+      },
+      {
+        "name": "backup-tooling.json",
+        "modified": 1794004161.5197392
+      },
+      {
+        "name": "s3-backup.json",
+        "modified": 1794077888.901173
+      }
+    ],
+    "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+    "version": "23.5.51",
+    "assets": 27,
+    "container": {
+      "healthy": "healthy",
+      "service": "melodiajest-static",
+      "aliases": [
+        "melodiajest-web-1",
+        "melodiajest-static",
+        "melodiajest-web"
+      ],
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    },
+    "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+    "ownScheduledBackup": {
+      "last-backup-success.json": {
+        "ageSeconds": 506,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": "snapshots/96bdd7f7f0e5473ea04fc5f4d3a954ca.json",
+        "snapshotId": null
+      },
+      "last-restore-success.json": {
+        "ageSeconds": 472,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca"
+      },
+      "last-backup-attempt.json": {
+        "ageSeconds": 506,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "last-restore-attempt.json": {
+        "ageSeconds": 472,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "health.json": {
+        "ageSeconds": 355,
+        "success": true,
+        "status": null,
+        "problems": [],
+        "snapshot": null,
+        "snapshotId": null
+      }
+    },
+    "ownExternalS3": {
+      "transport": {
+        "last-backup-success.json": {
+          "checkedAt": "2026-11-07T18:58:13.100845+00:00",
+          "ageSeconds": 501,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": false,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-success.json": {
+          "checkedAt": "2026-11-07T18:58:58.591767+00:00",
+          "ageSeconds": 455,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-attempt.json": {
+          "checkedAt": "2026-11-07T18:58:58.624403+00:00",
+          "ageSeconds": 455,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        }
+      },
+      "scheduled": {
+        "last-success.json": {
+          "checkedAt": "2026-11-07T18:58:58.633740+00:00",
+          "ageSeconds": 455,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-check-success.json": {
+          "checkedAt": "2026-11-07T18:58:58.633740+00:00",
+          "ageSeconds": 455,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-success.json": {
+          "checkedAt": "2026-11-07T18:58:58.591767+00:00",
+          "ageSeconds": 455,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-attempt.json": {
+          "checkedAt": "2026-11-07T18:58:58.637061+00:00",
+          "ageSeconds": 455,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "last-backup-attempt.json": {
+          "checkedAt": "2026-11-07T18:58:13.108873+00:00",
+          "ageSeconds": 501,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-attempt.json": {
+          "checkedAt": "2026-11-07T18:58:58.632506+00:00",
+          "ageSeconds": 455,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "health.json": {
+          "checkedAt": "2026-11-07T19:00:39.327666+00:00",
+          "ageSeconds": 354,
+          "success": true,
+          "status": null,
+          "problems": [],
+          "snapshotId": null,
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": 0
+        }
+      }
+    }
+  },
+  "afterPreflight": {
+    "checkedAt": "2026-11-07T19:36:35.082043+00:00",
+    "current": "releases/23.5.51-6f96b3fc06dd",
+    "disk": {
+      "total": 52762214400,
+      "used": 48950579200,
+      "free": 1639665664
+    },
+    "memory": {
+      "MemTotal": "4009860 kB",
+      "MemAvailable": "1657196 kB"
+    },
+    "public": {
+      "melodiajest.ru": {
+        "status": 200,
+        "url": "https://melodiajest.ru/"
+      },
+      "libreta.ru": {
+        "status": 200,
+        "url": "https://libreta.ru/"
+      },
+      "praicer.ru": {
+        "status": 200,
+        "url": "https://praicer.ru/guest?returnTo=%2F"
+      },
+      "grigorova.libreta.ru": {
+        "status": 200,
+        "url": "https://grigorova.libreta.ru/"
+      }
+    },
+    "backupReceipts": [
+      {
+        "name": "backup-20261107-01.json",
+        "modified": 1793996624.4602966
+      },
+      {
+        "name": "backup-20261107-02.json",
+        "modified": 1793999088.1951447
+      },
+      {
+        "name": "backup-policy.json",
+        "modified": 1794004147.843669
+      },
+      {
+        "name": "backup-tooling.json",
+        "modified": 1794004161.5197392
+      },
+      {
+        "name": "s3-backup.json",
+        "modified": 1794080105.8343182
+      }
+    ],
+    "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+    "version": "23.5.51",
+    "assets": 27,
+    "container": {
+      "healthy": "healthy",
+      "service": "melodiajest-static",
+      "aliases": [
+        "melodiajest-web-1",
+        "melodiajest-static",
+        "melodiajest-web"
+      ],
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    },
+    "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+    "ownScheduledBackup": {
+      "last-backup-success.json": {
+        "ageSeconds": 91,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": "snapshots/9cd83c96d327419993c5b7492a27ada3.json",
+        "snapshotId": null
+      },
+      "last-restore-success.json": {
+        "ageSeconds": 2273,
+        "success": true,
+        "status": null,
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca"
+      },
+      "last-backup-attempt.json": {
+        "ageSeconds": 91,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "last-restore-attempt.json": {
+        "ageSeconds": 2273,
+        "success": null,
+        "status": "success",
+        "problems": null,
+        "snapshot": null,
+        "snapshotId": null
+      },
+      "health.json": {
+        "ageSeconds": 18,
+        "success": true,
+        "status": null,
+        "problems": [],
+        "snapshot": null,
+        "snapshotId": null
+      }
+    },
+    "ownExternalS3": {
+      "transport": {
+        "last-backup-success.json": {
+          "checkedAt": "2026-11-07T19:35:09.717277+00:00",
+          "ageSeconds": 86,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": false,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-success.json": {
+          "checkedAt": "2026-11-07T19:35:33.332393+00:00",
+          "ageSeconds": 62,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-attempt.json": {
+          "checkedAt": "2026-11-07T19:35:33.362770+00:00",
+          "ageSeconds": 62,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        }
+      },
+      "scheduled": {
+        "last-success.json": {
+          "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+          "ageSeconds": 62,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-check-success.json": {
+          "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+          "ageSeconds": 62,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-success.json": {
+          "checkedAt": "2026-11-07T19:35:33.332393+00:00",
+          "ageSeconds": 62,
+          "success": true,
+          "status": null,
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": null
+        },
+        "last-attempt.json": {
+          "checkedAt": "2026-11-07T19:35:33.374521+00:00",
+          "ageSeconds": 62,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "last-backup-attempt.json": {
+          "checkedAt": "2026-11-07T19:35:09.724889+00:00",
+          "ageSeconds": 86,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "last-restore-attempt.json": {
+          "checkedAt": "2026-11-07T19:35:33.370494+00:00",
+          "ageSeconds": 62,
+          "success": null,
+          "status": "success",
+          "problems": null,
+          "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "independentExternalCopyVerified": null,
+          "s3RequestsThisCheck": null
+        },
+        "health.json": {
+          "checkedAt": "2026-11-07T19:36:17.990472+00:00",
+          "ageSeconds": 18,
+          "success": true,
+          "status": null,
+          "problems": [],
+          "snapshotId": null,
+          "independentExternalCopyVerified": true,
+          "s3RequestsThisCheck": 0
+        }
+      }
+    }
+  },
+  "prechangeBackup": {
+    "checkedAt": "2026-11-07T19:10:48.955628+00:00",
+    "sourceSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+    "nonDocumentationFilesVerified": 292,
+    "localRestorePassed": true,
+    "independentColdRestoreReport": "docs/reports/melodiajest-operations-2026-11-07-38.md",
+    "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+    "sameHashNoNewFullCopy": true
+  },
+  "developmentBackup": {
+    "local": {
+      "checkedAt": "2026-11-07T19:30:52.580650+00:00",
+      "packed": {
+        "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\backups\\melodiajest-development-23.5.51-20261108-01.tar.gz",
+        "bytes": 2920604,
+        "sha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "version": "23.5.51",
+        "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "sourceSnapshotIncluded": true,
+        "sourceFiles": 611,
+        "publicFiles": 28
+      },
+      "localRestore": {
+        "destination": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\tmp\\melodiajest-20261108-01-development-5e8jz_jc\\restored",
+        "archiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "version": "23.5.51",
+        "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "filesVerified": 643,
+        "sourceSnapshotIncluded": true,
+        "restoreVerified": true,
+        "scope": "isolated file restoration; not S3, browser data, or container runtime"
+      },
+      "newModuleTestsFromRestoredSource": {
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0
+      },
+      "requiredNewSources": [
+        "piano-lesson-package-store.js",
+        "piano-lesson-package-store.d.ts",
+        "piano-lesson-package-controller.js",
+        "piano-lesson-package-controller.d.ts",
+        "piano-pending-restore.typecheck.ts",
+        "tests/piano-pending-restore.test.cjs",
+        "tools/qa-piano-pending-restore.cjs",
+        "tools/qa/piano-pending-restore-suite.js",
+        "docs/PENDING_RESTORE_CONTRACT.md"
+      ],
+      "temporaryRestoreRemoved": true,
+      "sourceSecretsIncluded": false,
+      "productionChanged": false,
+      "scope": "development source checkpoint with unchanged current web/config; separate from published source and private browser state"
+    },
+    "server": {
+      "checkedAt": "2026-11-07T19:34:29.743281+00:00",
+      "archive": "/opt/melodiajest/ops/development-source-0f4b30f85ca4/selected-checkout.tar.gz",
+      "sha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+      "bytes": 2920604,
+      "sourceFiles": 611,
+      "filesVerified": 643,
+      "fileRestoreVerified": true,
+      "productionChanged": false,
+      "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+      "beforeSites": {
+        "melodiajest.ru": 200,
+        "libreta.ru": 200,
+        "praicer.ru": 200,
+        "grigorova.libreta.ru": 200
+      },
+      "afterSites": {
+        "melodiajest.ru": 200,
+        "libreta.ru": 200,
+        "praicer.ru": 200,
+        "grigorova.libreta.ru": 200
+      },
+      "sharedAndOwnPermanentLocksUsed": true,
+      "temporaryRestoreRemoved": true,
+      "scope": "private development checkpoint, separate from published retained artifact and daily server snapshot; no S3 or browser data"
+    }
+  },
+  "developmentVerificationAttempts": {
+    "sourceArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "localColdRestore": {
+      "sourceFiles": 611,
+      "archiveFiles": 643,
+      "newTestsPassed": 10
+    },
+    "serverCopyAttempts": [
+      {
+        "attempt": 1,
+        "status": "uploaded-verification-lock-busy",
+        "reason": "Permanent updater operation_locks refused because another deployment/maintenance operation holds a lock",
+        "publicReleaseChanged": false,
+        "foreignOperationInterrupted": false
+      },
+      {
+        "attempt": 2,
+        "status": "uploaded-verification-lock-busy",
+        "reason": "Same permanent shared lock busy; owner arguments and foreign data not read",
+        "publicReleaseChanged": false,
+        "foreignOperationInterrupted": false
+      },
+      {
+        "attempt": 3,
+        "status": "verified-under-permanent-locks",
+        "checkedAt": "2026-11-07T19:34:29.743281+00:00",
+        "filesVerified": 643,
+        "publicReleaseChanged": false
+      }
+    ],
+    "newFullCopyCreatedForRetry": false,
+    "sharedLockBypassed": false,
+    "lockWaitResolved": true
+  },
+  "schedulePinChange": {
+    "checkedAt": "2026-11-07T19:34:43.494335+00:00",
+    "status": "profile-pin-updated",
+    "stage": "/opt/melodiajest/ops/s3-pin-0f4b30f85ca473eb",
+    "sourceSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "oldSourceSha256": "2e448605dacf024382882cb796b470f6449990f4b9e7f631fe7032caa1f4f47e",
+    "oldProfileSha256": "20f9590642a98aee1f4f712d505ee76f1b4093b9872f3e14c9ee0fe24765a053",
+    "newProfileSha256": "7f65f1d1986e23519f5be87322373b09e85c826b778cd0bbde9307c64064edc1",
+    "baseline": "/opt/melodiajest/ops/s3-pin-0f4b30f85ca473eb/before.json",
+    "baselineFileRestoreVerified": true,
+    "scheduleControlsFileRestoreVerified": 20,
+    "profileFieldsChanged": [
+      "developmentArchiveSha256",
+      "developmentWebManifestSha256"
+    ],
+    "changedFiles": [
+      "/opt/melodiajest/ops/s3-schedule.json"
+    ],
+    "baseUnitFilesUnchanged": 6,
+    "ownDropinsUnchanged": 3,
+    "newTimersCreated": 0,
+    "daemonReloadInvoked": false,
+    "actualRollbackForThisChangeExecuted": false,
+    "sharedAndOwnPermanentLocksUsed": true,
+    "scheduleWorkerLockUsed": true,
+    "beforeSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "afterSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "publicReleaseChanged": false,
+    "caddyChanged": false
+  },
+  "serviceBackup": {
+    "serverReceipts": {
+      "last-backup-success.json": {
+        "checkedAt": "2026-11-07T19:35:04.125259+00:00",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "sha256": "bbbf7aa01c8eeb3267632e647ef18aab5a1ad9b5e9e7cfd7af882967cb9ba296",
+        "snapshot": "snapshots/9cd83c96d327419993c5b7492a27ada3.json",
+        "success": true
+      },
+      "last-restore-success.json": {
+        "checkedAt": "2026-11-07T18:58:42.214328+00:00",
+        "controlsRestored": 12,
+        "entries": {
+          "current": {
+            "files": {
+              "sources": {
+                "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-sources",
+                "filesVerified": 633,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              },
+              "web": {
+                "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              }
+            },
+            "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          },
+          "previous": {
+            "files": {
+              "sources": {
+                "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-sources",
+                "filesVerified": 618,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              },
+              "web": {
+                "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              }
+            },
+            "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          }
+        },
+        "isolated": true,
+        "s3Verified": false,
+        "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+        "success": true
+      },
+      "last-backup-attempt.json": {
+        "checkedAt": "2026-11-07T19:35:04.131097+00:00",
+        "status": "success"
+      },
+      "last-restore-attempt.json": {
+        "checkedAt": "2026-11-07T18:58:42.217829+00:00",
+        "status": "success"
+      },
+      "health.json": {
+        "agesSeconds": {
+          "backup": 152,
+          "restore": 117
+        },
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:00:39.059056+00:00",
+        "independentExternalCopyVerified": false,
+        "problems": [],
+        "success": true
+      }
+    },
+    "scheduleConfiguration": {
+      "developmentArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+      "developmentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+      "enabled": true,
+      "files": {
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "format": "melodiajest-s3-schedule-v1",
+      "passwordCopySha256": "b4d2279edc421e66977a8e7c5e05382bc44400eb9837be56933ab16f230c3dce",
+      "tooling": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe"
+    },
+    "toolingReceipt": {
+      "afterSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "beforeSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "checkedAt": "2026-11-07T06:49:01.591244+00:00",
+      "files": {
+        "deploy/shared-host/backup-s3-runtime.example.json": "941276775df014f0eebd00c367dbbba993c94d91f5b8871f248f4b8e7488087c",
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "linuxContractPassed": 34,
+      "productionChanged": false,
+      "s3Requests": 0,
+      "stage": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe",
+      "windowsOnlySkipped": 1
+    },
+    "temporaryRestoreRemoved": true,
+    "checkedAt": "2026-11-07T19:35:33.583358+00:00",
+    "step": "backup",
+    "service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Sat 2026-11-07 19:35:01 UTC",
+      "ExecMainExitTimestamp": "Sat 2026-11-07 19:35:04 UTC",
+      "ExecMainStatus": "0",
+      "ExecStartPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe/deploy/shared-host/backup_s3_schedule.py backup ; ignore_errors=no ; start_time=[Sat 2026-11-07 19:35:04 UTC] ; stop_time=[Sat 2026-11-07 19:35:33 UTC] ; pid=302882 ; code=exited ; status=0 }",
+      "ActiveState": "inactive"
+    },
+    "origin": "manual real systemd service start",
+    "nativeDailyExternalTriggerObserved": false,
+    "receipts": {
+      "last-success": {
+        "backupCreatedAt": "2026-11-07T19:35:09.717277+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+        "checkoutSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true
+      },
+      "last-check-success": {
+        "backupCreatedAt": "2026-11-07T19:35:09.717277+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+        "checkoutSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true
+      },
+      "last-attempt": {
+        "checkedAt": "2026-11-07T19:35:33.374521+00:00",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-backup-attempt": {
+        "checkedAt": "2026-11-07T19:35:09.724889+00:00",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-restore-attempt": {
+        "checkedAt": "2026-11-07T19:35:33.370494+00:00",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-backup-success": {
+        "anonymousConfigReadStatus": 403,
+        "billingMeasured": false,
+        "calls": [
+          {
+            "billingMeasured": false,
+            "cpuSystemSeconds": 0.117,
+            "cpuUserSeconds": 0.403,
+            "credentialsInArgv": false,
+            "elapsedSeconds": 1.983,
+            "error": null,
+            "exitCode": 0,
+            "operation": "backup",
+            "peakChildRssKiB": 76756,
+            "productionInputsMounted": false,
+            "result": [
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "data_added": 3126714,
+                "data_added_packed": 2989322,
+                "files_changed": 16,
+                "files_new": 1,
+                "files_unmodified": 0,
+                "message_type": "summary",
+                "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+                "total_bytes_processed": 19697843,
+                "total_duration": 1.819029348,
+                "total_files_processed": 17
+              }
+            ],
+            "s3HttpRequestCount": null
+          }
+        ],
+        "checkedAt": "2026-11-07T19:35:09.717277+00:00",
+        "independentExternalCopyVerified": false,
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "restorePending": true,
+        "s3HttpRequestCount": null,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true,
+        "summary": {
+          "data_added": 3126714,
+          "data_added_packed": 2989322,
+          "files_changed": 16,
+          "files_new": 1,
+          "files_unmodified": 0,
+          "message_type": "summary",
+          "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "total_bytes_processed": 19697843,
+          "total_duration": 1.819029348,
+          "total_files_processed": 17
+        },
+        "work": "payload-981a58f768078c4f"
+      },
+      "last-restore-success": {
+        "billingMeasured": false,
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.332393+00:00",
+        "checkoutRestore": {
+          "archiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/checkout-cold-e768df039729",
+          "filesVerified": 643,
+          "restoreVerified": true,
+          "scope": "isolated file restoration; not S3, browser data, or container runtime",
+          "sourceSnapshotIncluded": true,
+          "version": "23.5.51",
+          "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+        },
+        "independentExternalCopyVerified": true,
+        "originalPayloadTemporarilyUnavailable": true,
+        "passwordReadFromVpsFile": true,
+        "passwordRecoveredFromIndependentCopy": false,
+        "payloadFilesVerified": 17,
+        "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+        "productionInputsMounted": false,
+        "publishedRestore": {
+          "checkedAt": "2026-11-07T19:35:31.072405+00:00",
+          "coldRestore": true,
+          "controlsRestored": 12,
+          "entries": {
+            "current": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-sources",
+                  "filesVerified": 633,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                },
+                "web": {
+                  "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                }
+              },
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            },
+            "previous": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-sources",
+                  "filesVerified": 618,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                },
+                "web": {
+                  "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                }
+              },
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            }
+          },
+          "independentExternalCopyVerified": false,
+          "isolated": true,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "productionInputsUsed": false,
+          "s3Verified": false,
+          "snapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "success": true
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "resticRestore": {
+          "billingMeasured": false,
+          "cpuSystemSeconds": 0.102,
+          "cpuUserSeconds": 0.419,
+          "credentialsInArgv": false,
+          "elapsedSeconds": 1.516,
+          "error": null,
+          "exitCode": 0,
+          "operation": "restore",
+          "peakChildRssKiB": 68300,
+          "productionInputsMounted": false,
+          "result": [
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 4013836,
+              "files_restored": 8,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 6234182,
+              "files_restored": 9,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 10131810,
+              "files_restored": 14,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 18213227,
+              "files_restored": 16,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 19697843,
+              "files_restored": 23,
+              "message_type": "summary",
+              "total_bytes": 19697843,
+              "total_files": 23
+            }
+          ],
+          "s3HttpRequestCount": null
+        },
+        "runtimeBinaryRecoveredAndVerified": true,
+        "s3HttpRequestCount": null,
+        "scheduleControlsRestored": 20,
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true,
+        "temporaryRestoreRemoved": true
+      },
+      "health": {
+        "agesSeconds": {
+          "coverageCheck": 101,
+          "externalRestore": 101
+        },
+        "backupCreatedAt": "2026-11-07T18:58:13.100845+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:00:39.327666+00:00",
+        "independentExternalCopyVerified": true,
+        "problems": [],
+        "s3RequestsThisCheck": 0,
+        "scheduledExternalBackup": true,
+        "success": true
+      }
+    },
+    "existingTimers": {
+      "backup": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 01:41:22 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 01:39:35 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "restore-check": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 04:15:57 UTC",
+        "LastTriggerUSec": "",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "backup-health": {
+        "NextElapseUSecRealtime": "Sat 2026-11-07 20:01:56 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 19:00:38 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      }
+    },
+    "beforeSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "afterSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "freeDiskBefore": 1666715648,
+    "freeDiskAfter": 1639677952,
+    "remainingOwnTransientContainers": [],
+    "unchangedRemoteReceipts": false,
+    "productionReleaseChanged": false,
+    "newTimersCreated": 0
+  },
+  "serviceHealth": {
+    "serverReceipts": {
+      "last-backup-success.json": {
+        "checkedAt": "2026-11-07T19:35:04.125259+00:00",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "sha256": "bbbf7aa01c8eeb3267632e647ef18aab5a1ad9b5e9e7cfd7af882967cb9ba296",
+        "snapshot": "snapshots/9cd83c96d327419993c5b7492a27ada3.json",
+        "success": true
+      },
+      "last-restore-success.json": {
+        "checkedAt": "2026-11-07T18:58:42.214328+00:00",
+        "controlsRestored": 12,
+        "entries": {
+          "current": {
+            "files": {
+              "sources": {
+                "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-sources",
+                "filesVerified": 633,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              },
+              "web": {
+                "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              }
+            },
+            "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          },
+          "previous": {
+            "files": {
+              "sources": {
+                "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-sources",
+                "filesVerified": 618,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              },
+              "web": {
+                "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              }
+            },
+            "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          }
+        },
+        "isolated": true,
+        "s3Verified": false,
+        "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+        "success": true
+      },
+      "last-backup-attempt.json": {
+        "checkedAt": "2026-11-07T19:35:04.131097+00:00",
+        "status": "success"
+      },
+      "last-restore-attempt.json": {
+        "checkedAt": "2026-11-07T18:58:42.217829+00:00",
+        "status": "success"
+      },
+      "health.json": {
+        "agesSeconds": {
+          "backup": 74,
+          "restore": 2255
+        },
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:36:17.696908+00:00",
+        "independentExternalCopyVerified": false,
+        "problems": [],
+        "success": true
+      }
+    },
+    "scheduleConfiguration": {
+      "developmentArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+      "developmentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+      "enabled": true,
+      "files": {
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "format": "melodiajest-s3-schedule-v1",
+      "passwordCopySha256": "b4d2279edc421e66977a8e7c5e05382bc44400eb9837be56933ab16f230c3dce",
+      "tooling": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe"
+    },
+    "toolingReceipt": {
+      "afterSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "beforeSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "checkedAt": "2026-11-07T06:49:01.591244+00:00",
+      "files": {
+        "deploy/shared-host/backup-s3-runtime.example.json": "941276775df014f0eebd00c367dbbba993c94d91f5b8871f248f4b8e7488087c",
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "linuxContractPassed": 34,
+      "productionChanged": false,
+      "s3Requests": 0,
+      "stage": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe",
+      "windowsOnlySkipped": 1
+    },
+    "temporaryRestoreRemoved": true,
+    "checkedAt": "2026-11-07T19:36:18.202333+00:00",
+    "step": "health",
+    "service": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Sat 2026-11-07 19:36:17 UTC",
+      "ExecMainExitTimestamp": "Sat 2026-11-07 19:36:17 UTC",
+      "ExecMainStatus": "0",
+      "ExecStartPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe/deploy/shared-host/backup_s3_schedule.py health ; ignore_errors=no ; start_time=[Sat 2026-11-07 19:36:17 UTC] ; stop_time=[Sat 2026-11-07 19:36:18 UTC] ; pid=306072 ; code=exited ; status=0 }",
+      "ActiveState": "inactive"
+    },
+    "origin": "manual real systemd service start",
+    "nativeDailyExternalTriggerObserved": false,
+    "receipts": {
+      "last-success": {
+        "backupCreatedAt": "2026-11-07T19:35:09.717277+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+        "checkoutSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true
+      },
+      "last-check-success": {
+        "backupCreatedAt": "2026-11-07T19:35:09.717277+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.371697+00:00",
+        "checkoutSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true
+      },
+      "last-attempt": {
+        "checkedAt": "2026-11-07T19:35:33.374521+00:00",
+        "coverage": "99a386b405066eabad0e659530de6875b2f22407a87000d6393895bbfc20d569",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-backup-attempt": {
+        "checkedAt": "2026-11-07T19:35:09.724889+00:00",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-restore-attempt": {
+        "checkedAt": "2026-11-07T19:35:33.370494+00:00",
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "status": "success"
+      },
+      "last-backup-success": {
+        "anonymousConfigReadStatus": 403,
+        "billingMeasured": false,
+        "calls": [
+          {
+            "billingMeasured": false,
+            "cpuSystemSeconds": 0.117,
+            "cpuUserSeconds": 0.403,
+            "credentialsInArgv": false,
+            "elapsedSeconds": 1.983,
+            "error": null,
+            "exitCode": 0,
+            "operation": "backup",
+            "peakChildRssKiB": 76756,
+            "productionInputsMounted": false,
+            "result": [
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19697843,
+                "total_files": 17
+              },
+              {
+                "data_added": 3126714,
+                "data_added_packed": 2989322,
+                "files_changed": 16,
+                "files_new": 1,
+                "files_unmodified": 0,
+                "message_type": "summary",
+                "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+                "total_bytes_processed": 19697843,
+                "total_duration": 1.819029348,
+                "total_files_processed": 17
+              }
+            ],
+            "s3HttpRequestCount": null
+          }
+        ],
+        "checkedAt": "2026-11-07T19:35:09.717277+00:00",
+        "independentExternalCopyVerified": false,
+        "prepared": {
+          "bytes": 19697843,
+          "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+          "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+          "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "reused": false,
+          "work": "payload-981a58f768078c4f"
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "restorePending": true,
+        "s3HttpRequestCount": null,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true,
+        "summary": {
+          "data_added": 3126714,
+          "data_added_packed": 2989322,
+          "files_changed": 16,
+          "files_new": 1,
+          "files_unmodified": 0,
+          "message_type": "summary",
+          "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+          "total_bytes_processed": 19697843,
+          "total_duration": 1.819029348,
+          "total_files_processed": 17
+        },
+        "work": "payload-981a58f768078c4f"
+      },
+      "last-restore-success": {
+        "billingMeasured": false,
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:35:33.332393+00:00",
+        "checkoutRestore": {
+          "archiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+          "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/checkout-cold-e768df039729",
+          "filesVerified": 643,
+          "restoreVerified": true,
+          "scope": "isolated file restoration; not S3, browser data, or container runtime",
+          "sourceSnapshotIncluded": true,
+          "version": "23.5.51",
+          "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+        },
+        "independentExternalCopyVerified": true,
+        "originalPayloadTemporarilyUnavailable": true,
+        "passwordReadFromVpsFile": true,
+        "passwordRecoveredFromIndependentCopy": false,
+        "payloadFilesVerified": 17,
+        "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+        "productionInputsMounted": false,
+        "publishedRestore": {
+          "checkedAt": "2026-11-07T19:35:31.072405+00:00",
+          "coldRestore": true,
+          "controlsRestored": 12,
+          "entries": {
+            "current": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-sources",
+                  "filesVerified": 633,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                },
+                "web": {
+                  "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                }
+              },
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            },
+            "previous": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-sources",
+                  "filesVerified": 618,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                },
+                "web": {
+                  "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                }
+              },
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            }
+          },
+          "independentExternalCopyVerified": false,
+          "isolated": true,
+          "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+          "productionInputsUsed": false,
+          "s3Verified": false,
+          "snapshotId": "9cd83c96d327419993c5b7492a27ada3",
+          "success": true
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "resticRestore": {
+          "billingMeasured": false,
+          "cpuSystemSeconds": 0.102,
+          "cpuUserSeconds": 0.419,
+          "credentialsInArgv": false,
+          "elapsedSeconds": 1.516,
+          "error": null,
+          "exitCode": 0,
+          "operation": "restore",
+          "peakChildRssKiB": 68300,
+          "productionInputsMounted": false,
+          "result": [
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 4013836,
+              "files_restored": 8,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 6234182,
+              "files_restored": 9,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 10131810,
+              "files_restored": 14,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 18213227,
+              "files_restored": 16,
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 19697843,
+              "files_restored": 23,
+              "message_type": "summary",
+              "total_bytes": 19697843,
+              "total_files": 23
+            }
+          ],
+          "s3HttpRequestCount": null
+        },
+        "runtimeBinaryRecoveredAndVerified": true,
+        "s3HttpRequestCount": null,
+        "scheduleControlsRestored": 20,
+        "scheduledExternalBackup": true,
+        "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "success": true,
+        "temporaryRestoreRemoved": true
+      },
+      "health": {
+        "agesSeconds": {
+          "coverageCheck": 45,
+          "externalRestore": 45
+        },
+        "backupCreatedAt": "2026-11-07T19:35:09.717277+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:36:17.990472+00:00",
+        "independentExternalCopyVerified": true,
+        "problems": [],
+        "s3RequestsThisCheck": 0,
+        "scheduledExternalBackup": true,
+        "success": true
+      }
+    },
+    "existingTimers": {
+      "backup": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 01:41:22 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 01:39:35 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "restore-check": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 04:15:57 UTC",
+        "LastTriggerUSec": "",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "backup-health": {
+        "NextElapseUSecRealtime": "Sat 2026-11-07 20:00:26 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 19:00:38 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      }
+    },
+    "beforeSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "afterSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "freeDiskBefore": 1639677952,
+    "freeDiskAfter": 1639669760,
+    "remainingOwnTransientContainers": [],
+    "unchangedRemoteReceipts": true,
+    "productionReleaseChanged": false,
+    "newTimersCreated": 0
+  },
+  "nativeHourlyHealthObservation": {
+    "serverReceipts": {
+      "last-backup-success.json": {
+        "checkedAt": "2026-11-07T18:58:07.307610+00:00",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "sha256": "3179b241fd8753b6ee616681bfd1013a4cbbdab6590513009f7e5c43e3cfbf51",
+        "snapshot": "snapshots/96bdd7f7f0e5473ea04fc5f4d3a954ca.json",
+        "success": true
+      },
+      "last-restore-success.json": {
+        "checkedAt": "2026-11-07T18:58:42.214328+00:00",
+        "controlsRestored": 12,
+        "entries": {
+          "current": {
+            "files": {
+              "sources": {
+                "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-sources",
+                "filesVerified": 633,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              },
+              "web": {
+                "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/current-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              }
+            },
+            "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          },
+          "previous": {
+            "files": {
+              "sources": {
+                "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-sources",
+                "filesVerified": 618,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              },
+              "web": {
+                "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                "destination": "/opt/melodiajest/ops/server-backups/work/restore-qknp9kj5/previous-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              }
+            },
+            "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          }
+        },
+        "isolated": true,
+        "s3Verified": false,
+        "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+        "success": true
+      },
+      "last-backup-attempt.json": {
+        "checkedAt": "2026-11-07T18:58:07.314087+00:00",
+        "status": "success"
+      },
+      "last-restore-attempt.json": {
+        "checkedAt": "2026-11-07T18:58:42.217829+00:00",
+        "status": "success"
+      },
+      "health.json": {
+        "agesSeconds": {
+          "backup": 152,
+          "restore": 117
+        },
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:00:39.059056+00:00",
+        "independentExternalCopyVerified": false,
+        "problems": [],
+        "success": true
+      }
+    },
+    "scheduleConfiguration": {
+      "developmentArchiveSha256": "2e448605dacf024382882cb796b470f6449990f4b9e7f631fe7032caa1f4f47e",
+      "developmentWebManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+      "enabled": true,
+      "files": {
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "format": "melodiajest-s3-schedule-v1",
+      "passwordCopySha256": "b4d2279edc421e66977a8e7c5e05382bc44400eb9837be56933ab16f230c3dce",
+      "tooling": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe"
+    },
+    "toolingReceipt": {
+      "afterSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "beforeSites": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "melodiajest.ru": 200,
+        "praicer.ru": 200
+      },
+      "checkedAt": "2026-11-07T06:49:01.591244+00:00",
+      "files": {
+        "deploy/shared-host/backup-s3-runtime.example.json": "941276775df014f0eebd00c367dbbba993c94d91f5b8871f248f4b8e7488087c",
+        "deploy/shared-host/backup_replica.py": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2",
+        "deploy/shared-host/backup_s3_job.py": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b",
+        "deploy/shared-host/backup_s3_runtime.py": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31",
+        "deploy/shared-host/backup_s3_schedule.py": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf",
+        "deploy/shared-host/backup_units.py": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38",
+        "deploy/shared-host/public-assets.json": "48ee0bb6463bcb50c86ef76e65502d59443626e37268e2930e1ee338dfbfed98",
+        "deploy/shared-host/release_artifact.py": "0db230acc5935fa193aa6fd1b4d58ec47959519ee3b0fefcc7a82fdfe4b10183",
+        "deploy/shared-host/release_backup.py": "1da159b14c690f71930fc46bd342b6703b622daf0914cf7231736717409b7b5e",
+        "deploy/shared-host/release_update.py": "b02f78cb98d15fcd94d2bdaefd4cb2873e014085c7f2170e53934342089fb7f3",
+        "tests/backup_s3_runtime_test.py": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f",
+        "tests/backup_s3_schedule_test.py": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd",
+        "tools/melodiajest_secret.py": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+      },
+      "linuxContractPassed": 34,
+      "productionChanged": false,
+      "s3Requests": 0,
+      "stage": "/opt/melodiajest/ops/tooling/s3-f832ae3aa2ed85fe",
+      "windowsOnlySkipped": 1
+    },
+    "temporaryRestoreRemoved": true,
+    "checkedAt": "2026-11-07T19:26:54.206372+00:00",
+    "step": "inspect",
+    "service": null,
+    "observedHealthService": {
+      "Result": "success",
+      "ExecMainStartTimestamp": "Sat 2026-11-07 19:00:38 UTC",
+      "ExecMainExitTimestamp": "Sat 2026-11-07 19:00:39 UTC",
+      "ExecMainStatus": "0",
+      "InvocationID": "51b86c0798ed4808bd98db5959cbd886"
+    },
+    "origin": "read-only post-hourly inspection",
+    "nativeDailyExternalTriggerObserved": false,
+    "receipts": {
+      "last-success": {
+        "backupCreatedAt": "2026-11-07T18:58:13.100845+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T18:58:58.633740+00:00",
+        "checkoutSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+        "coverage": "02b0c7acf866ebb8c4e186ea09f2db7e74d0252a23a7621258828783474836d3",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19676038,
+          "checkedAt": "2026-11-07T18:58:08.899944+00:00",
+          "checkoutArchiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "11519309178f73c8731c8f4baa6f19871512eb63e57e310bf98b8f5f2b6944a3",
+          "payloadManifestSha256": "610de9640f66a938a4644f531a974a4c40aac31f55613c1bc12d1444807a3200",
+          "publishedSnapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+          "reused": false,
+          "work": "payload-7b45c950218ddcb3"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "success": true
+      },
+      "last-check-success": {
+        "backupCreatedAt": "2026-11-07T18:58:13.100845+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T18:58:58.633740+00:00",
+        "checkoutSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+        "coverage": "02b0c7acf866ebb8c4e186ea09f2db7e74d0252a23a7621258828783474836d3",
+        "currentManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "independentExternalCopyVerified": true,
+        "passwordRecoverySource": "server-owned-file",
+        "prepared": {
+          "bytes": 19676038,
+          "checkedAt": "2026-11-07T18:58:08.899944+00:00",
+          "checkoutArchiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "11519309178f73c8731c8f4baa6f19871512eb63e57e310bf98b8f5f2b6944a3",
+          "payloadManifestSha256": "610de9640f66a938a4644f531a974a4c40aac31f55613c1bc12d1444807a3200",
+          "publishedSnapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+          "reused": false,
+          "work": "payload-7b45c950218ddcb3"
+        },
+        "previousManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+        "scheduledExternalBackup": true,
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "success": true
+      },
+      "last-attempt": {
+        "checkedAt": "2026-11-07T18:58:58.637061+00:00",
+        "coverage": "02b0c7acf866ebb8c4e186ea09f2db7e74d0252a23a7621258828783474836d3",
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "status": "success"
+      },
+      "last-backup-attempt": {
+        "checkedAt": "2026-11-07T18:58:13.108873+00:00",
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "status": "success"
+      },
+      "last-restore-attempt": {
+        "checkedAt": "2026-11-07T18:58:58.632506+00:00",
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "status": "success"
+      },
+      "last-backup-success": {
+        "anonymousConfigReadStatus": 403,
+        "billingMeasured": false,
+        "calls": [
+          {
+            "billingMeasured": false,
+            "cpuSystemSeconds": 0.124,
+            "cpuUserSeconds": 0.388,
+            "credentialsInArgv": false,
+            "elapsedSeconds": 2.475,
+            "error": null,
+            "exitCode": 0,
+            "operation": "backup",
+            "peakChildRssKiB": 78096,
+            "productionInputsMounted": false,
+            "result": [
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "message_type": "status",
+                "total_bytes": 19676038,
+                "total_files": 17
+              },
+              {
+                "data_added": 3250781,
+                "data_added_packed": 3242261,
+                "files_changed": 14,
+                "files_new": 3,
+                "files_unmodified": 0,
+                "message_type": "summary",
+                "snapshot_id": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+                "total_bytes_processed": 19676038,
+                "total_duration": 2.300893742,
+                "total_files_processed": 17
+              }
+            ],
+            "s3HttpRequestCount": null
+          }
+        ],
+        "checkedAt": "2026-11-07T18:58:13.100845+00:00",
+        "independentExternalCopyVerified": false,
+        "prepared": {
+          "bytes": 19676038,
+          "checkedAt": "2026-11-07T18:58:08.899944+00:00",
+          "checkoutArchiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+          "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+          "files": 17,
+          "kitManifestSha256": "11519309178f73c8731c8f4baa6f19871512eb63e57e310bf98b8f5f2b6944a3",
+          "payloadManifestSha256": "610de9640f66a938a4644f531a974a4c40aac31f55613c1bc12d1444807a3200",
+          "publishedSnapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+          "reused": false,
+          "work": "payload-7b45c950218ddcb3"
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "restorePending": true,
+        "s3HttpRequestCount": null,
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "success": true,
+        "summary": {
+          "data_added": 3250781,
+          "data_added_packed": 3242261,
+          "files_changed": 14,
+          "files_new": 3,
+          "files_unmodified": 0,
+          "message_type": "summary",
+          "snapshot_id": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+          "total_bytes_processed": 19676038,
+          "total_duration": 2.300893742,
+          "total_files_processed": 17
+        },
+        "work": "payload-7b45c950218ddcb3"
+      },
+      "last-restore-success": {
+        "billingMeasured": false,
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T18:58:58.591767+00:00",
+        "checkoutRestore": {
+          "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+          "destination": "/opt/melodiajest/ops/external-work/payload-7b45c950218ddcb3/checkout-cold-9d1707dd00f0",
+          "filesVerified": 633,
+          "restoreVerified": true,
+          "scope": "isolated file restoration; not S3, browser data, or container runtime",
+          "sourceSnapshotIncluded": true,
+          "version": "23.5.51",
+          "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+        },
+        "independentExternalCopyVerified": true,
+        "originalPayloadTemporarilyUnavailable": true,
+        "passwordReadFromVpsFile": true,
+        "passwordRecoveredFromIndependentCopy": false,
+        "payloadFilesVerified": 17,
+        "payloadManifestSha256": "610de9640f66a938a4644f531a974a4c40aac31f55613c1bc12d1444807a3200",
+        "productionInputsMounted": false,
+        "publishedRestore": {
+          "checkedAt": "2026-11-07T18:58:56.777306+00:00",
+          "coldRestore": true,
+          "controlsRestored": 12,
+          "entries": {
+            "current": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-7b45c950218ddcb3/runtime-cold-9d1707dd00f0/ops/server-backups/work/restore-0m4ihvfu/current-sources",
+                  "filesVerified": 633,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                },
+                "web": {
+                  "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-7b45c950218ddcb3/runtime-cold-9d1707dd00f0/ops/server-backups/work/restore-0m4ihvfu/current-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.51",
+                  "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+                }
+              },
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            },
+            "previous": {
+              "files": {
+                "sources": {
+                  "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-7b45c950218ddcb3/runtime-cold-9d1707dd00f0/ops/server-backups/work/restore-0m4ihvfu/previous-sources",
+                  "filesVerified": 618,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": true,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                },
+                "web": {
+                  "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                  "destination": "/opt/melodiajest/ops/external-work/payload-7b45c950218ddcb3/runtime-cold-9d1707dd00f0/ops/server-backups/work/restore-0m4ihvfu/previous-web",
+                  "filesVerified": 32,
+                  "restoreVerified": true,
+                  "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                  "sourceSnapshotIncluded": false,
+                  "version": "23.5.50",
+                  "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+                }
+              },
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "runtime": {
+                "healthy": true,
+                "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+                "network": "none",
+                "publicFilesVerified": 28,
+                "publicPorts": false
+              }
+            }
+          },
+          "independentExternalCopyVerified": false,
+          "isolated": true,
+          "kitManifestSha256": "11519309178f73c8731c8f4baa6f19871512eb63e57e310bf98b8f5f2b6944a3",
+          "productionInputsUsed": false,
+          "s3Verified": false,
+          "snapshotId": "96bdd7f7f0e5473ea04fc5f4d3a954ca",
+          "success": true
+        },
+        "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+        "resticRestore": {
+          "billingMeasured": false,
+          "cpuSystemSeconds": 0.103,
+          "cpuUserSeconds": 0.399,
+          "credentialsInArgv": false,
+          "elapsedSeconds": 1.63,
+          "error": null,
+          "exitCode": 0,
+          "operation": "restore",
+          "peakChildRssKiB": 66200,
+          "productionInputsMounted": false,
+          "result": [
+            {
+              "bytes_restored": 678,
+              "files_restored": 1,
+              "message_type": "status",
+              "total_bytes": 19676038,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 4526457,
+              "files_restored": 11,
+              "message_type": "status",
+              "total_bytes": 19676038,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 14940194,
+              "files_restored": 13,
+              "message_type": "status",
+              "total_bytes": 19676038,
+              "total_files": 23
+            },
+            {
+              "bytes_restored": 19676038,
+              "files_restored": 23,
+              "message_type": "summary",
+              "total_bytes": 19676038,
+              "total_files": 23
+            }
+          ],
+          "s3HttpRequestCount": null
+        },
+        "runtimeBinaryRecoveredAndVerified": true,
+        "s3HttpRequestCount": null,
+        "scheduleControlsRestored": 20,
+        "scheduledExternalBackup": true,
+        "snapshotId": "393b41711f953714cb03c42ae96ce6deeb0ad3899ddae0ed13c9efab12006872",
+        "success": true,
+        "temporaryRestoreRemoved": true
+      },
+      "health": {
+        "agesSeconds": {
+          "coverageCheck": 101,
+          "externalRestore": 101
+        },
+        "backupCreatedAt": "2026-11-07T18:58:13.100845+00:00",
+        "browserDataBackedUp": false,
+        "checkedAt": "2026-11-07T19:00:39.327666+00:00",
+        "independentExternalCopyVerified": true,
+        "problems": [],
+        "s3RequestsThisCheck": 0,
+        "scheduledExternalBackup": true,
+        "success": true
+      }
+    },
+    "existingTimers": {
+      "backup": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 01:39:30 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 01:39:35 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "restore-check": {
+        "NextElapseUSecRealtime": "Sun 2026-11-08 04:15:57 UTC",
+        "LastTriggerUSec": "",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      },
+      "backup-health": {
+        "NextElapseUSecRealtime": "Sat 2026-11-07 20:01:56 UTC",
+        "LastTriggerUSec": "Sat 2026-11-07 19:00:38 UTC",
+        "ActiveState": "active",
+        "UnitFileState": "enabled"
+      }
+    },
+    "beforeSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "afterSites": {
+      "melodiajest.ru": 200,
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "freeDiskBefore": 2457321472,
+    "freeDiskAfter": 2457292800,
+    "remainingOwnTransientContainers": [],
+    "unchangedRemoteReceipts": true,
+    "productionReleaseChanged": false,
+    "newTimersCreated": 0
+  },
+  "nativeTimerProofUpdated": true,
+  "externalTransport": {
+    "last-backup-success.json": {
+      "anonymousConfigReadStatus": 403,
+      "billingMeasured": false,
+      "calls": [
+        {
+          "billingMeasured": false,
+          "cpuSystemSeconds": 0.117,
+          "cpuUserSeconds": 0.403,
+          "credentialsInArgv": false,
+          "elapsedSeconds": 1.983,
+          "error": null,
+          "exitCode": 0,
+          "operation": "backup",
+          "peakChildRssKiB": 76756,
+          "productionInputsMounted": false,
+          "result": [
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "message_type": "status",
+              "total_bytes": 19697843,
+              "total_files": 17
+            },
+            {
+              "data_added": 3126714,
+              "data_added_packed": 2989322,
+              "files_changed": 16,
+              "files_new": 1,
+              "files_unmodified": 0,
+              "message_type": "summary",
+              "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+              "total_bytes_processed": 19697843,
+              "total_duration": 1.819029348,
+              "total_files_processed": 17
+            }
+          ],
+          "s3HttpRequestCount": null
+        }
+      ],
+      "checkedAt": "2026-11-07T19:35:09.717277+00:00",
+      "independentExternalCopyVerified": false,
+      "prepared": {
+        "bytes": 19697843,
+        "checkedAt": "2026-11-07T19:35:05.833544+00:00",
+        "checkoutArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "currentWebManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+        "files": 17,
+        "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+        "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+        "publishedSnapshotId": "9cd83c96d327419993c5b7492a27ada3",
+        "reused": false,
+        "work": "payload-981a58f768078c4f"
+      },
+      "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+      "restorePending": true,
+      "s3HttpRequestCount": null,
+      "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+      "success": true,
+      "summary": {
+        "data_added": 3126714,
+        "data_added_packed": 2989322,
+        "files_changed": 16,
+        "files_new": 1,
+        "files_unmodified": 0,
+        "message_type": "summary",
+        "snapshot_id": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+        "total_bytes_processed": 19697843,
+        "total_duration": 1.819029348,
+        "total_files_processed": 17
+      },
+      "work": "payload-981a58f768078c4f"
+    },
+    "last-restore-success.json": {
+      "billingMeasured": false,
+      "browserDataBackedUp": false,
+      "checkedAt": "2026-11-07T19:35:33.332393+00:00",
+      "checkoutRestore": {
+        "archiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+        "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/checkout-cold-e768df039729",
+        "filesVerified": 643,
+        "restoreVerified": true,
+        "scope": "isolated file restoration; not S3, browser data, or container runtime",
+        "sourceSnapshotIncluded": true,
+        "version": "23.5.51",
+        "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+      },
+      "independentExternalCopyVerified": true,
+      "originalPayloadTemporarilyUnavailable": true,
+      "passwordReadFromVpsFile": true,
+      "passwordRecoveredFromIndependentCopy": false,
+      "payloadFilesVerified": 17,
+      "payloadManifestSha256": "4837bb2048c543130f60f0115161f21fc3d5ec1b90d4f8e29c49c5575cf7a7e0",
+      "productionInputsMounted": false,
+      "publishedRestore": {
+        "checkedAt": "2026-11-07T19:35:31.072405+00:00",
+        "coldRestore": true,
+        "controlsRestored": 12,
+        "entries": {
+          "current": {
+            "files": {
+              "sources": {
+                "archiveSha256": "3b30b9429a83f357782107e16384601d69b48122f3b2423b496507314829a848",
+                "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-sources",
+                "filesVerified": 633,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              },
+              "web": {
+                "archiveSha256": "cb90bdb09f7237d102917328436a0adfef7c9c1b88039af1ae711b1a8804c186",
+                "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/current-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.51",
+                "webManifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353"
+              }
+            },
+            "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "6f96b3fc06dd40880e7e2c13df7d2b856705ffb80aa8d4f59c3d9fb546224353",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          },
+          "previous": {
+            "files": {
+              "sources": {
+                "archiveSha256": "2a0c984d9e7dc69e707e512c44594dd2fd344056ed2f1e05511938097c45a9a0",
+                "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-sources",
+                "filesVerified": 618,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": true,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              },
+              "web": {
+                "archiveSha256": "3c33e4f70965d59c77a3f8ef040749c2e1a9700fc99e1a8f63ed507f794f00cd",
+                "destination": "/opt/melodiajest/ops/external-work/payload-981a58f768078c4f/runtime-cold-e768df039729/ops/server-backups/work/restore-9hbsc2ai/previous-web",
+                "filesVerified": 32,
+                "restoreVerified": true,
+                "scope": "isolated file restoration; not S3, browser data, or container runtime",
+                "sourceSnapshotIncluded": false,
+                "version": "23.5.50",
+                "webManifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7"
+              }
+            },
+            "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+            "runtime": {
+              "healthy": true,
+              "manifestSha256": "954814cb2fa981d021ac49a5480e5708f9e07ed8017ddc885ad8b112431b80b7",
+              "network": "none",
+              "publicFilesVerified": 28,
+              "publicPorts": false
+            }
+          }
+        },
+        "independentExternalCopyVerified": false,
+        "isolated": true,
+        "kitManifestSha256": "3056564a4db6ab840e54cc9eef0155763bccf48b624eaaee51fca34ab6013f78",
+        "productionInputsUsed": false,
+        "s3Verified": false,
+        "snapshotId": "9cd83c96d327419993c5b7492a27ada3",
+        "success": true
+      },
+      "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+      "resticRestore": {
+        "billingMeasured": false,
+        "cpuSystemSeconds": 0.102,
+        "cpuUserSeconds": 0.419,
+        "credentialsInArgv": false,
+        "elapsedSeconds": 1.516,
+        "error": null,
+        "exitCode": 0,
+        "operation": "restore",
+        "peakChildRssKiB": 68300,
+        "productionInputsMounted": false,
+        "result": [
+          {
+            "message_type": "status",
+            "total_bytes": 19697843,
+            "total_files": 23
+          },
+          {
+            "bytes_restored": 4013836,
+            "files_restored": 8,
+            "message_type": "status",
+            "total_bytes": 19697843,
+            "total_files": 23
+          },
+          {
+            "bytes_restored": 6234182,
+            "files_restored": 9,
+            "message_type": "status",
+            "total_bytes": 19697843,
+            "total_files": 23
+          },
+          {
+            "bytes_restored": 10131810,
+            "files_restored": 14,
+            "message_type": "status",
+            "total_bytes": 19697843,
+            "total_files": 23
+          },
+          {
+            "bytes_restored": 18213227,
+            "files_restored": 16,
+            "message_type": "status",
+            "total_bytes": 19697843,
+            "total_files": 23
+          },
+          {
+            "bytes_restored": 19697843,
+            "files_restored": 23,
+            "message_type": "summary",
+            "total_bytes": 19697843,
+            "total_files": 23
+          }
+        ],
+        "s3HttpRequestCount": null
+      },
+      "runtimeBinaryRecoveredAndVerified": true,
+      "s3HttpRequestCount": null,
+      "scheduleControlsRestored": 20,
+      "scheduledExternalBackup": true,
+      "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+      "success": true,
+      "temporaryRestoreRemoved": true
+    },
+    "last-attempt.json": {
+      "checkedAt": "2026-11-07T19:35:33.362770+00:00",
+      "snapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+      "status": "success",
+      "work": "payload-981a58f768078c4f"
+    }
+  },
+  "s3Accounting": {
+    "programInitiatedBucketListRequests": 0,
+    "programInitiatedHeadPerOldObject": 0,
+    "anonymousConfigGetRequests": 1,
+    "anonymousConfigStatuses": [
+      403
+    ],
+    "resticCommands": [
+      "backup",
+      "restore"
+    ],
+    "resticHttpRequests": null,
+    "resticInternalListRequests": null,
+    "providerBillingMeasured": false,
+    "payloadFiles": 17,
+    "payloadBytes": 19697843,
+    "dataAddedPackedBytes": 2989322,
+    "healthS3Requests": 0
+  },
+  "quota": {
+    "checkedAt": "2026-11-07T19:37:02.192Z",
+    "source": "get_usage_limits",
+    "limitId": "codex",
+    "windowDurationMins": 10080,
+    "usedPercent": 7,
+    "remainingPercent": 93,
+    "resetsAt": 1794668871,
+    "ordinaryUsageAllowed": true,
+    "secondary": null,
+    "individualLimit": null,
+    "spendControlReached": false,
+    "policy": "until-exhausted",
+    "reservePercent": 0
+  },
+  "localPreviewCleanup": {
+    "checkedAt": "2026-11-07T19:24:37.4613275Z",
+    "pid": 53796,
+    "port": 63349,
+    "exactCommandVerified": true,
+    "nativeOwnerVerified": true,
+    "terminationReturnValue": 0,
+    "remainingListeners": 0
+  },
+  "independentExternalCopyVerified": true,
+  "externalSnapshotId": "4e5b5b573a230a6b7840e079b604b39272258d64df892f4a7dd44a7c273adce3",
+  "limitations": [
+    "Isolated same-database pending restore; no recovery-file import, archive clearance/rotation or production writer migration",
+    "Restore changes only pending; separate explicit synthetic recovery commits were tested, no production activation",
+    "Future/stale/unsupported archives remain preserved for private export",
+    "Same-origin archive is not an independent private browser backup",
+    "Two native connections were tested, not two tabs, real disk exhaustion or power loss",
+    "Native hourly trigger/service/fresh receipts observed before manual starts; daily/weekly external triggers remain unobserved",
+    "Scheduled restore reads VPS password; independent DPAPI recovery remains a separate phase-18 proof",
+    "Final receipts and documentation postdate selected source checkpoint; private browser progress excluded",
+    "No retention/prune, bucket/IAM or delivery change; complete HTTP accounting and billing unknown"
+  ],
+  "sourceConsistency": {
+    "checkedAt": "2026-11-07T19:31:50.575970+00:00",
+    "sourceArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "nonDocumentationSourceFilesMatchArchive": 296,
+    "changedNonDocumentationFiles": [
+      "piano-lesson-package-controller.d.ts",
+      "piano-lesson-package-controller.js",
+      "piano-lesson-package-store.d.ts",
+      "piano-lesson-package-store.js",
+      "piano-pending-restore.typecheck.ts",
+      "tests/piano-pending-restore.test.cjs",
+      "tools/qa-piano-pending-restore.cjs",
+      "tools/qa/piano-pending-restore-suite.js"
+    ],
+    "historicalFixturesPreserved": 45,
+    "immutableBaselinePreserved": true,
+    "musicalAndGuitarSourcesPreserved": true,
+    "legacyReaderAndCopyPreserved": true,
+    "all28PublishedArtifactBytesMatchLocalBuild": true,
+    "scopedAddedSourceLinesChecked": 202,
+    "scopedWhitespaceErrors": [],
+    "gitMetadataUsed": false
+  },
+  "finalConsistency": {
+    "checkedAt": "2026-11-07T19:38:50.317639+00:00",
+    "sourceArchiveSha256": "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "nonDocumentationSourceFilesMatchArchive": 296,
+    "changedNonDocumentationFiles": [
+      "piano-lesson-package-controller.d.ts",
+      "piano-lesson-package-controller.js",
+      "piano-lesson-package-store.d.ts",
+      "piano-lesson-package-store.js",
+      "piano-pending-restore.typecheck.ts",
+      "tests/piano-pending-restore.test.cjs",
+      "tools/qa-piano-pending-restore.cjs",
+      "tools/qa/piano-pending-restore-suite.js"
+    ],
+    "historicalFixturesPreserved": 45,
+    "immutableBaselinePreserved": true,
+    "musicalAndGuitarSourcesPreserved": true,
+    "legacyReaderAndCopyPreserved": true,
+    "all28PublishedArtifactBytesMatchLocalBuild": true,
+    "scopedAddedSourceLinesChecked": 202,
+    "scopedWhitespaceErrors": [],
+    "gitMetadataUsed": false,
+    "stateQueueAndReceiptsConsistent": true,
+    "scopedAddedLinesChecked": 3429,
+    "ownQaPid": 53796,
+    "ownQaPort": 63349,
+    "ownQaCommandVerifiedAndTerminatedViaCim": true,
+    "ownQaPortClosed": true,
+    "privateBackupExcludesBrowserData": true,
+    "publicReleaseChanged": false
+  }
+}

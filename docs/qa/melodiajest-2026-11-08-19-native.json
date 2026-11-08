@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-11-08T12:08:50.944Z",
+  "cases": [
+    {
+      "name": "full-confirmed-journal-captured-without-storage-io-and-stored-incomplete",
+      "passed": true,
+      "milliseconds": 215,
+      "candidateId": "54606cb37f18712bb175bfb6f16ac4d1632e642793501880295a6da131e8df9f",
+      "ownerPending": 0,
+      "completeCopy": false,
+      "durability": "strict",
+      "confirmedRows": 168
+    },
+    {
+      "name": "native-writer-lock-refuses-active-capture-and-then-preserves-operation",
+      "passed": true,
+      "milliseconds": 218,
+      "candidateId": "3cb9e87343bebaa6e18c696aae81d0d6f48354adecfd85f354d256e3012d2e70",
+      "ownerPending": 0,
+      "completeCopy": false,
+      "durability": "strict",
+      "activeCaptureRefused": true
+    },
+    {
+      "name": "failed-write-keeps-pending-base-draft-and-native-readback-after-reopen",
+      "passed": true,
+      "milliseconds": 309,
+      "candidateId": "259a8ad94a0eeac6ac1640847d1a8406ecd4465dd47e856717e40e7767d0d707",
+      "ownerPending": 1,
+      "completeCopy": false,
+      "durability": "strict",
+      "reopenedReadbackExact": true,
+      "baseAndDraftPreserved": true
+    },
+    {
+      "name": "exact-retry-invalidates-currency-but-keeps-the-stored-historical-pending",
+      "passed": true,
+      "milliseconds": 290,
+      "candidateId": "7336ff9341dbeba7a275831ff325bc984b30ebec47fdcc5b1fae9b443f00a502",
+      "ownerPending": 0,
+      "completeCopy": false,
+      "durability": "strict",
+      "historicalPendingRetained": true,
+      "oneOwnerCurrencyOnly": true
+    }
+  ],
+  "completeCopy": false,
+  "globalWriterBarrierImplemented": false,
+  "productionOwnerReplaced": false,
+  "personalBrowserDataRead": false,
+  "nativeWebLocksUsed": true,
+  "nativeIndexedDbUsed": true,
+  "fixture": {
+    "catalogRecords": 580,
+    "legacyRecords": 168
+  },
+  "success": true,
+  "recordsStored": 4,
+  "ownDatabaseRemoved": true,
+  "ownDatabasesRemaining": 0,
+  "consoleErrors": [],
+  "origin": "http://127.0.0.1:63364",
+  "ownedQaClosed": true
+}

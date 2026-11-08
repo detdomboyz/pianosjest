@@ -39,7 +39,8 @@ export function materialHtml(options: {
 }): string;
 export function unwrapMaterial(html: string): string;
 export function preparationHtml(items: readonly { id: string; title: string }[]): string;
-export function repeatedNoteHtml(currentMidis: readonly number[], previousMidis: readonly number[]): string;
+/** silenceBeats is opt-in editorial context, not notation inferred from an articulation gap. */
+export function repeatedNoteHtml(currentMidis: readonly number[], previousMidis: readonly number[], silenceBeats?: number): string;
 export function sameGoalHtml(item: { id: string; title: string } | null | undefined): string;
 /** Explicit multi-skill checkpoint; this does not certify a new independent goal. */
 export function checkpointHtml(role: unknown): string;

@@ -1,0 +1,17 @@
+{
+  "name": "melodiajest-account-service",
+  "version": "0.2.0",
+  "private": true,
+  "dataSchemaVersion": 2,
+  "apiVersion": 1,
+  "engines": {
+    "node": ">=24.22.2 <25"
+  },
+  "scripts": {
+    "start": "node --preserve-symlinks --preserve-symlinks-main server.cjs",
+    "test": "node --preserve-symlinks --preserve-symlinks-main --test \"tests/*.test.cjs\""
+  },
+  "dependencies": {
+    "pg": "8.23.1"
+  }
+}

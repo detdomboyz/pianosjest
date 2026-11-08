@@ -1,0 +1,111 @@
+{
+  "format": "melodiajest-pending-archive-qa-v1",
+  "checkedAt": "2026-11-07T17:47:36.219Z",
+  "tests": 16,
+  "passed": 16,
+  "failed": 0,
+  "results": [
+    {
+      "name": "01 — подготовка архива ничего не записывает",
+      "passed": true
+    },
+    {
+      "name": "02 — архив и удаление pending атомарны, рабочие слоты прежние",
+      "passed": true
+    },
+    {
+      "name": "03 — повтор не удаляет новый pending; обычная запись сохраняет архив",
+      "passed": true
+    },
+    {
+      "name": "04 — закрытие соединения и экспорт v2 сохраняют полный архив",
+      "passed": true
+    },
+    {
+      "name": "05 — stale pending сохраняется отдельно от более нового current",
+      "passed": true
+    },
+    {
+      "name": "06 — будущая JSON-запись сохраняется без адаптации или активации",
+      "passed": true
+    },
+    {
+      "name": "07 — архивирование не исправляет будущий current",
+      "passed": true
+    },
+    {
+      "name": "08 — CAS проверяет каждый из четырёх слотов перед записью",
+      "passed": true
+    },
+    {
+      "name": "09 — два соединения не перезаписывают один архив",
+      "passed": true
+    },
+    {
+      "name": "10 — native abort откатывает и копию, и удаление",
+      "passed": true
+    },
+    {
+      "name": "11 — native quota не сообщает архив готовым",
+      "passed": true
+    },
+    {
+      "name": "12 — неизвестный, null и undefined архив не заменяются",
+      "passed": true
+    },
+    {
+      "name": "13 — не-JSON поля и отрицательный ноль сохраняются при отказе",
+      "passed": true
+    },
+    {
+      "name": "14 — чужие и JSON-копии разрешений не вызывают архивирование",
+      "passed": true
+    },
+    {
+      "name": "15 — начальный pending архивируется без создания current",
+      "passed": true
+    },
+    {
+      "name": "16 — localStorage origin остался прежним",
+      "passed": true
+    }
+  ],
+  "realIndexedDB": true,
+  "atomicArchiveAndPendingChange": true,
+  "workingSlotsUnchangedByArchive": true,
+  "staleAndFutureJsonPreserved": true,
+  "opaqueTwoStepController": true,
+  "archiveCapacity": 1,
+  "archiveOverwriteAllowed": false,
+  "recoveryV2Verified": true,
+  "ordinaryWritesPreserveArchive": true,
+  "realTwoConnectionsRace": true,
+  "realTwoTabsRace": false,
+  "activationPerformed": false,
+  "productionApplicationConnected": false,
+  "realUserCatalogCopied": false,
+  "publicVersion": "23.5.50",
+  "localStorageUnchanged": true,
+  "qaDatabasesDeleted": true,
+  "ui": {
+    "buttonHeight": 44,
+    "keyboardFocus": true,
+    "layoutWidth": 376,
+    "requestedViewport": 390,
+    "scrollWidth": 376,
+    "statusLive": "polite"
+  },
+  "consoleErrors": 0,
+  "cleanup": {
+    "qaTabClosed": true,
+    "viewportReset": true,
+    "qaPid": 49488,
+    "remainingPreviewListeners": 0
+  },
+  "screenshot": {
+    "path": "docs/qa/melodiajest-2026-11-07-37-pending-archive.png",
+    "viewport": "default after reset",
+    "mobileScreenshotApiFailed": true,
+    "mobileDomVerificationPassed": true
+  }
+}

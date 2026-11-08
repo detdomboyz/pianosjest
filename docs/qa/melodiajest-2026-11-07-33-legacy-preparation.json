@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-11-07T15:07:01.328Z",
+  "format": "melodiajest-legacy-preparation-qa-v1",
+  "tests": 12,
+  "passed": 12,
+  "failed": 0,
+  "realIndexedDB": true,
+  "sourceRevalidated": true,
+  "strictCopyBeforeDecodeVerified": true,
+  "explicitPrivateDraftExportVerified": true,
+  "activationPerformed": false,
+  "productionApplicationConnected": false,
+  "realUserCatalogCopied": false,
+  "allBrowserLocalStorageUnchanged": true,
+  "quotaFailureInjected": true,
+  "realDiskExhaustionTested": false,
+  "publicVersion": "23.5.48",
+  "results": [
+    {
+      "name": "01 — разбор после durable commit и точного readback",
+      "passed": true
+    },
+    {
+      "name": "02 — источник изменился во время записи: разбор запрещён",
+      "passed": true
+    },
+    {
+      "name": "03 — поздняя правка отзывает экспорт даже после возврата строки",
+      "passed": true
+    },
+    {
+      "name": "04 — изменяющий источник адаптер не выдаёт черновик",
+      "passed": true
+    },
+    {
+      "name": "05 — отсутствие и повреждённая строка сохраняются без ремонта",
+      "passed": true
+    },
+    {
+      "name": "06 — заполненный архив не удаляется ради подготовки",
+      "passed": true
+    },
+    {
+      "name": "07 — abort: нет частичной копии и разбора",
+      "passed": true
+    },
+    {
+      "name": "08 — quota: нет частичной копии и разбора",
+      "passed": true
+    },
+    {
+      "name": "09 — существующий v7 не заменяется",
+      "passed": true
+    },
+    {
+      "name": "10 — поддельные и чужие разрешения не экспортируются",
+      "passed": true
+    },
+    {
+      "name": "11 — закрытие во время записи блокирует поздний разбор",
+      "passed": true
+    },
+    {
+      "name": "12 — весь localStorage остался прежним",
+      "passed": true
+    }
+  ],
+  "qaDatabasesDeleted": true,
+  "interface": {
+    "buttonHeight": 44,
+    "focusOutline": "none",
+    "focused": "",
+    "scrollWidth": 376,
+    "statusLive": "polite",
+    "statusRole": "status",
+    "width": 390,
+    "keyboardEnterVerified": true,
+    "viewportReset": true,
+    "qaTabClosed": true
+  }
+}
