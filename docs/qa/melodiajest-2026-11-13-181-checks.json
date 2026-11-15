@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-11-13T18:08:09.469421+00:00",
+  "checks": {
+    "firstRed": {
+      "path": "tmp/melodiajest-181-target-red.log",
+      "sha256": "7639fc0e72ac1232b3a32ef0f1fe0311dcf08089bc04f08370952846aaf10a68",
+      "totals": {
+        "tests": 10,
+        "pass": 1,
+        "fail": 9,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 4247.9416
+      }
+    },
+    "targeted": {
+      "path": "tmp/melodiajest-181-target-green.log",
+      "sha256": "b0330df2920a783bf7b6d7972633fb21c525ab24f6fa66b9805069fc654e17de",
+      "totals": {
+        "tests": 50,
+        "pass": 50,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 44376.1547
+      }
+    },
+    "service": {
+      "path": "tmp/melodiajest-181-service.log",
+      "sha256": "74cd386cbed6b9d221d12fc2d0a30e13da7163acebaef5ce072c5015ab4a9974",
+      "totals": {
+        "tests": 60,
+        "pass": 53,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 7,
+        "todo": 0,
+        "duration_ms": 19016.3896
+      }
+    },
+    "full": {
+      "path": "tmp/melodiajest-181-npm.log",
+      "sha256": "9752a1fa014a3c71ca298625425fff9aee125ca421668557dade59b4f64c32f5",
+      "totals": {
+        "tests": 1834,
+        "pass": 1834,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 789830.3495
+      }
+    },
+    "audits": {
+      "lessons": {
+        "path": "tmp/melodiajest-181-audit-lessons.log",
+        "exitCode": 0,
+        "sha256": "4107116111f5eb4ccefa39227f5f8d87a32763280ae601c7aad96f4bd193fe39",
+        "seconds": 4.297
+      },
+      "fingering": {
+        "path": "tmp/melodiajest-181-audit-fingering.log",
+        "exitCode": 0,
+        "sha256": "e667e02571ca953d5c0d574ab8301c89ea15b4a2bc6ae0d67b3ec3dd71d3d650",
+        "seconds": 10.281
+      },
+      "curriculum": {
+        "path": "tmp/melodiajest-181-audit-curriculum.log",
+        "exitCode": 0,
+        "sha256": "15cba3a1020a7f2e7c94962c03912d6e7ddbd64409b0806f2ecb84494acb54d7",
+        "seconds": 12.36
+      },
+      "piano-coverage": {
+        "path": "tmp/melodiajest-181-audit-piano-coverage.log",
+        "exitCode": 0,
+        "sha256": "f2ca940f198afec0c10ce58bd4c722e9c2adf1f9400a5129a8748afca2dcd18f",
+        "seconds": 2.39
+      }
+    }
+  },
+  "newTestDevelopment": {
+    "checkedAt": "2026-11-13T17:46:27.738885+00:00",
+    "newTestFile": "tests/piano-asymmetric-thumb-paired.test.cjs",
+    "newTestSha256": "1d7d82b225ba9a7ad360c16b18934978e030585ec41b772473623a64834cda20",
+    "newFixtureSha256": "6b2e5f364280917915cc4f82a70c3beaf5e48f4bc6def6877647a41a72053c00",
+    "redPath": "tmp/melodiajest-181-target-red.log",
+    "redSha256": "7639fc0e72ac1232b3a32ef0f1fe0311dcf08089bc04f08370952846aaf10a68",
+    "redBeforeImplementation": true,
+    "firstRedPassed": 1,
+    "firstRedFailed": 9,
+    "wholeNewTestExactAfterFirstRed": true,
+    "newFixtureExactAfterFirstRed": true,
+    "scaffoldCorrections": 0,
+    "routePredicateChangedAfterFirstRed": false,
+    "musicalAssertionsRemovedOrRelaxed": false,
+    "historicalTestFilesChanged": 0,
+    "firstTargetPassed": 50,
+    "firstTargetFailed": 0,
+    "firstTargetDurationMs": 44376.1547,
+    "firstTargetLog": "tmp/melodiajest-181-target-green.log",
+    "firstTargetLogSha256": "b0330df2920a783bf7b6d7972633fb21c525ab24f6fa66b9805069fc654e17de",
+    "targetSuiteInvocations": 1,
+    "nextMetadataVerifiedBeforeFirstTarget": true,
+    "actualAppNextVerifiedBeforeFirstTarget": true,
+    "incomingEdgeVerifiedBeforeFirstTarget": true,
+    "protectedHistoricalNextPaths": 8
+  },
+  "browserReport": "docs/qa/melodiajest-2026-11-13-181-browser.json",
+  "runtimeFilesFrozen": 599,
+  "oldRuntimeFiles": 597,
+  "changedOldRuntime": [
+    "curriculum-plan.js",
+    "package.json",
+    "piano-lesson-development.js",
+    "service/course-registry.json",
+    "tests/fixtures/piano-curriculum-counts.json"
+  ],
+  "fullOnce": true,
+  "newTestExactAfterFirstRed": true,
+  "newFixtureExactAfterFirstRed": true,
+  "newTestScaffoldCorrections": 0,
+  "historicalTestFilesChanged": 0,
+  "sourceEntriesBefore": 93,
+  "sourceEntriesAfter": 94,
+  "newSourceEntries": 1,
+  "sourceApplications": 7,
+  "freshApplications": 4,
+  "freshPrimaryDocuments": 3,
+  "previousRulesReused": 3,
+  "manualPgStarts": 0,
+  "s3Requests": 0,
+  "deployed": false
+}

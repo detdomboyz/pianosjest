@@ -12,7 +12,7 @@
       if(!client.status().user){root.location.href='account.html';return;}
       if(capture.status().pending){notice='Есть предыдущая запись. Проверь сохранение или отмени незавершённую попытку.';mount();return;}
       if(!readTrainer().midiConnected)throw Error('Подключи MIDI-пианино для испытания. Виртуальные клавиши доступны для предварительного разбора.');
-      const row=current(),trainer=readTrainer();if(!row?.challengeReady)throw Error('Этот материал пока доступен для практики.');if(row.gradeFingerprint!==trainer.fingerprint)throw Error('В личной редакции изменены ноты или учебные параметры. Для XP открой исходный урок из маршрута.');
+      const row=current(),trainer=readTrainer();if(trainer.openResponse===true||!row?.challengeReady)throw Error('Этот материал пока доступен для практики.');if(row.gradeFingerprint!==trainer.fingerprint)throw Error('В личной редакции изменены ноты или учебные параметры. Для XP открой исходный урок из маршрута.');
       preparing=true;notice='Открываем попытку на сервере…';mount();
       try{const attempt=await capture.start(row,trainer.mode==='memory'?'memory':'challenge');result=null;prepareTrainer(attempt);notice='Готово. Первая нота запускает пульс. После фразы дождись сохранения.';}
       finally{preparing=false;mount();}
@@ -26,7 +26,7 @@
     async function recover(){const restored=await capture.recover();if(restored?.result){result=restored.result;focusResult=true;notice='Сохранение подтверждено сервером.';learning=await client.api('/learning/state');}else if(restored?.expired){notice='Срок попытки закончился; сервер подтвердил, что результата нет. Можно скачать запись и отменить попытку.';}else if(restored?.attempt){const t=readTrainer();if(restored.attempt.lessonId===t.lessonId&&restored.attempt.gradeFingerprint===t.fingerprint){preparing=true;try{prepareTrainer(restored.attempt);}finally{preparing=false;}notice='Попытка восстановлена. Начни фразу сначала.';}else notice='Незавершённая попытка относится к другому уроку. Можно отменить её.';}mount();}
     function exportCopy(){const text=capture.exportPending(),url=URL.createObjectURL(new Blob([text],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='melodiajest-private-attempt.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
     function panelHtml(){
-      const t=readTrainer(),row=current(),pending=capture.status().pending,working=preparing||capture.status().busy,blind=t.mode==='memory'&&!t.completed;
+      const t=readTrainer(),row=current(),pending=capture.status().pending,working=preparing||capture.status().busy,blind=t.mode==='memory'&&!t.completed,openResponse=t.openResponse===true;
       let html='<a class="player-course-return" href="/">← К моему маршруту</a>';
       if(result&&result.lessonId===t.lessonId){
         const xp=result.xp,metrics=result.metrics,passed=result.passed;
@@ -38,10 +38,10 @@
         const next=learning?learning.nextLessonId:result.nextLessonId;if(passed&&next)html+='<a class="primary-action" href="trainer.html?lesson='+encodeURIComponent(next)+'&challenge=1">Продолжить маршрут ↗</a>';
         html+='<button type="button" class="small-action" id="game-try-again">Сыграть ещё раз</button><a href="/?lessonDiscussion='+encodeURIComponent(t.lessonId)+'">Оценить и обсудить урок ↗</a></div></section>';
       }else if(row){
-        html+='<section class="game-status-panel" aria-label="Серверное испытание"><div><h2>'+(blind?'Игра из памяти':row.challengeReady?'Играй. Получай опыт. Расти.':'Практика нового навыка')+'</h2><p>'+escape(notice||(row.challengeReady?readTrainer().midiConnected?'Открой попытку: результат и опыт сохранятся в аккаунте.':'Подключи MIDI-пианино для испытания. Виртуальные клавиши — для разбора.':'Для этого материала ещё готовится автоматическая проверка.'))+'</p></div>';
-        if(row.challengeReady&&!active())html+='<button type="button" class="'+(readTrainer().midiConnected?'primary-action':'small-action')+'" id="game-start" '+(working||pending||client.status().user&&!readTrainer().midiConnected?'disabled':'')+'>'+(client.status().user?'Начать испытание':'Войти для испытания')+'</button>';
+        html+='<section class="game-status-panel" aria-label="Серверное испытание"><div><h2>'+(openResponse?'Свой музыкальный ответ':blind?'Игра из памяти':row.challengeReady?'Играй. Получай опыт. Расти.':'Практика нового навыка')+'</h2><p>'+escape(notice||(openResponse?'Придумай свой ответ и сверь пульс, окончание и удобство самостоятельно. Автоматического зачёта здесь нет.':row.challengeReady?readTrainer().midiConnected?'Открой попытку: результат и опыт сохранятся в аккаунте.':'Подключи MIDI-пианино для испытания. Виртуальные клавиши — для разбора.':'Для этого материала ещё готовится автоматическая проверка.'))+'</p></div>';
+        if(row.challengeReady&&!openResponse&&!active())html+='<button type="button" class="'+(readTrainer().midiConnected?'primary-action':'small-action')+'" id="game-start" '+(working||pending||client.status().user&&!readTrainer().midiConnected?'disabled':'')+'>'+(client.status().user?'Начать испытание':'Войти для испытания')+'</button>';
         if(active())html+='<span class="form-note">'+(blind?'Запись из памяти готова':'Серверная попытка открыта')+'</span>';
-        if(!blind&&row.gradeFingerprint!==t.fingerprint)html+='<a href="trainer.html?lesson='+encodeURIComponent(t.lessonId)+'&challenge=1">Открыть исходную учебную редакцию ↗</a>';
+        if(!blind&&!openResponse&&row.gradeFingerprint!==t.fingerprint)html+='<a href="trainer.html?lesson='+encodeURIComponent(t.lessonId)+'&challenge=1">Открыть исходную учебную редакцию ↗</a>';
         html+='</section>';
       }
       if(pending&&!active())html+='<section class="game-status-panel"><div><h2>Есть незавершённая запись</h2><p>'+escape(notice||'Проверь результат до новой попытки. Смена аккаунта не переносит запись другому пользователю.')+'</p></div><div class="small-actions"><button type="button" id="game-recover" class="small-action" '+(working?'disabled':'')+'>Проверить / восстановить</button><button type="button" id="game-export" class="quiet-action">Скачать запись</button>'+(pending.kind!=='submitting'||pending.expiredConfirmed?'<button type="button" id="game-cancel" class="quiet-action" '+(working?'disabled':'')+'>Отменить попытку</button>':'')+'</div></section>';
@@ -57,6 +57,16 @@
       const account=document.querySelector('#app > .catalog-save-notice'),status=client.status();if(account)account.hidden=!status.pending&&!status.locked&&(!status.notice||status.notice==='Сохранено в аккаунте');
       let settings=document.getElementById('player-advanced');if(!settings){settings=document.createElement('details');settings.id='player-advanced';settings.className='player-advanced';settings.open=advancedOpen;settings.innerHTML='<summary>Звук, MIDI и внешний вид тренажёра</summary>';settings.ontoggle=()=>{advancedOpen=settings.open;};for(const section of Array.from(main.children).filter(child=>child.matches('section.box')))settings.append(section);main.append(settings);}
       let node=document.getElementById('game-player-root');if(!node){node=document.createElement('div');node.id='game-player-root';main.prepend(node);}node.innerHTML=panelHtml();
+      // Keep the existing live region and aria-describedby target in the visible
+      // player, outside the legacy account panel that may be hidden after saving.
+      const accountStatus=document.getElementById('service-account-status');
+      if(accountStatus){
+        accountStatus.classList.add('player-account-status');accountStatus.setAttribute('aria-atomic','true');
+        accountStatus.setAttribute('data-state',status.locked?'locked':status.pending?'pending':status.notice==='Сохранено в аккаунте'?'saved':'info');
+        const message=status.notice||(status.user?'Настройки и личные правки сохраняются в аккаунте.':'Гость. Вид разбора сохраняется в этом браузере. Войди в аккаунт, чтобы сохранять остальные настройки, личные правки и результаты испытаний.');
+        if(accountStatus.textContent!==message)accountStatus.textContent=message;
+        if(accountStatus.parentNode!==main||node.nextSibling!==accountStatus)main.insertBefore(accountStatus,node.nextSibling);
+      }
       if(!readTrainer().midiConnected&&!readTrainer().completed){const target=node.querySelector('.game-status-panel');if(target&&!document.getElementById('game-midi-connect')){const button=document.createElement('button');button.type='button';button.id='game-midi-connect';button.className='primary-action';button.textContent='Подключить MIDI';target.append(button);button.onclick=()=>document.getElementById('midi-btn')?.click();}}
       function bind(id,fn){const button=document.getElementById(id);if(button)button.onclick=()=>void Promise.resolve().then(fn).catch(error=>{notice=error.message;mount();});}
       bind('game-start',start);bind('game-try-again',async()=>{result=null;await start();});bind('game-recover',recover);bind('game-export',exportCopy);bind('game-cancel',async()=>{const saved=await capture.cancel();if(saved?.result){result=saved.result;focusResult=true;}notice=saved?.result?.passed?'Результат уже был сохранён сервером.':'Незавершённая попытка отменена.';mount();});

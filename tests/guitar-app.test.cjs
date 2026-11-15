@@ -4,8 +4,8 @@ const {loadGuitarApp}=require('./helpers/load-guitar-app.cjs');
 // During a sibling-folder update this can point at the exact staged artifacts.
 const root=process.env.GUITAR_TEST_ROOT||path.resolve(__dirname,'../../guitarjest');
 const available=fs.existsSync(path.join(root,'practice-assessment.js'));
-test('shared unchanged contracts stay identical while piano data can evolve independently',{skip:!available},()=>{
-  for(const name of ['curriculum.js','guitar-curriculum-quality.js','catalog-sections.js','catalog-sections.css','lesson-quality.js','lesson-review-baseline.js','lesson-quality-apply.js'])assert.equal(fs.readFileSync(path.join(root,name),'utf8'),fs.readFileSync(path.resolve(__dirname,'..',name),'utf8'),name+' is out of sync');
+test('shared contracts preserve guitar behavior while piano navigation can evolve independently',{skip:!available},()=>{
+  for(const name of ['guitar-curriculum-quality.js','catalog-sections.js','catalog-sections.css','lesson-quality.js','lesson-review-baseline.js','lesson-quality-apply.js'])assert.equal(fs.readFileSync(path.join(root,name),'utf8'),fs.readFileSync(path.resolve(__dirname,'..',name),'utf8'),name+' is out of sync');
   const vm=require('node:vm'),readPlan=file=>{const c={};vm.runInNewContext(fs.readFileSync(file,'utf8'),c);return JSON.parse(JSON.stringify(c.MUSIC_CURRICULUM_PLAN));};
   const pianoPlan=readPlan(path.resolve(__dirname,'../curriculum-plan.js')),guitarPlan=readPlan(path.join(root,'curriculum-plan.js'));
   assert.deepEqual(pianoPlan.guitar,guitarPlan.guitar,'piano-only work changed guitar routing or fingerprints');
@@ -14,6 +14,22 @@ test('shared unchanged contracts stay identical while piano data can evolve inde
   const {loadGuitarCourse}=require('../tools/curriculum-inventory.cjs'),portable=loadGuitarCourse(root,{correct:false}),native=loadGuitarCourse(root);
   require('../guitar-curriculum-quality.js').correctBuiltins(portable);require('../lesson-quality.js').repairGuitar(portable,require('../lesson-review-baseline.js'));ours.registerGuitar(portable);
   assert.deepEqual(JSON.parse(JSON.stringify(portable)),JSON.parse(JSON.stringify(native)),'shared extension changed actual guitar data');
+  const currentCurriculum=require('../curriculum.js'),legacyCurriculum=require(path.join(root,'curriculum.js')),data=native.lessons;
+  const guitarStages=api=>Object.fromEntries(Object.entries(api.stages).filter(([id])=>/^g[0-9]+$/.test(id)));
+  function sameGuitarContract(api){
+    for(const key of ['entry','route','next'])assert.equal(typeof api[key],'function',key);
+    assert.deepEqual(guitarStages(api),guitarStages(legacyCurriculum),'guitar stage metadata changed');
+    for(const lessons of [data,data.slice(1),[]]){
+      const expectedRoute=legacyCurriculum.route(pianoPlan,'guitar',lessons),actualRoute=api.route(pianoPlan,'guitar',lessons);assert.equal(actualRoute.length,expectedRoute.length);for(let i=0;i<actualRoute.length;i++)assert.equal(actualRoute[i],expectedRoute[i],'guitar route identity '+i);
+      for(const id of [...pianoPlan.guitar.map(e=>e.id),'unknown-personal-id']){assert.deepEqual(api.entry(pianoPlan,'guitar',id),legacyCurriculum.entry(pianoPlan,'guitar',id),'entry '+id);assert.equal(api.next(pianoPlan,'guitar',lessons,id),legacyCurriculum.next(pianoPlan,'guitar',lessons,id),'next '+id);}
+    }
+    assert.deepEqual(api.route(null,'guitar',data),[]);assert.equal(api.entry(null,'guitar','unknown'),null);assert.equal(api.next(null,'guitar',data,'unknown'),null);
+  }
+  const beforeInputs=JSON.stringify({pianoPlan,data});sameGuitarContract(currentCurriculum);assert.equal(JSON.stringify({pianoPlan,data}),beforeInputs,'compatibility check mutated route or notes');
+  assert.throws(()=>sameGuitarContract({...currentCurriculum,next:()=>({id:'wrong-guitar-target'})}));
+  assert.throws(()=>sameGuitarContract({...currentCurriculum,route:()=>[]}));
+  assert.throws(()=>sameGuitarContract({...currentCurriculum,stages:{...currentCurriculum.stages,g1:{...currentCurriculum.stages.g1,title:'wrong-guitar-stage'}}}));
+
 });
 
 test('piano timing extension preserves real guitar signatures, assessment and progress contracts',{skip:!available},()=>{

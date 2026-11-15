@@ -1,0 +1,116 @@
+{
+  "verified": true,
+  "checkedAt": "2026-11-14T11:25:37.793182+00:00",
+  "original199FullStillFailed": true,
+  "current200FullPassed": true,
+  "full": {
+    "startedAt": "2026-11-14T11:04:15.402262+00:00",
+    "status": "completed",
+    "ownerPid": 18280,
+    "log": "tmp/melodiajest-200-npm.log",
+    "expectedTests": 2064,
+    "attempt": 1,
+    "mainNodeVersion": "v20.15.1",
+    "mainNodePath": "C:/Program Files/nodejs/node.exe",
+    "command": "npm.cmd test",
+    "otherOwnedHeavyJobsFinished": true,
+    "previewStoppedBeforeStart": true,
+    "timeoutNotRaised": true,
+    "concurrencyNotRaised": true,
+    "browserVerificationPending": false,
+    "exitCode": 0,
+    "endedAt": "2026-11-14T11:20:19.137163+00:00",
+    "wallSeconds": 963.734,
+    "totals": {
+      "tests": 2064,
+      "pass": 2064,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 963187.5624
+    },
+    "testsPassed": 2064,
+    "logSha256": "214b376ad57cb30990e496d4175ecb246a3d9292bafdac837150215cf2575e04",
+    "runtimeExactAtEnd": true
+  },
+  "target": {
+    "startedAt": "2026-11-14T11:02:41.538866+00:00",
+    "endedAt": "2026-11-14T11:03:01.580352+00:00",
+    "exitCode": 0,
+    "files": [
+      "tests/artifact-profile.test.cjs",
+      "tests/artifact-legacy-game.test.cjs",
+      "tests/account-deployment.test.cjs",
+      "tests/web-operations.test.cjs",
+      "tests/web-update.test.cjs",
+      "tests/web-backup.test.cjs"
+    ],
+    "totals": {
+      "tests": 6,
+      "pass": 6,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 19972.6472
+    },
+    "path": "tmp/melodiajest-200-target-final.log",
+    "sha256": "8ebc11d75dde507155c220ee48185a75d3281784f2907b73d99b60e30153044a",
+    "newTestsExactFirstRed": true,
+    "full199FailureUnchanged": true,
+    "timeoutsAndConcurrencyUnchanged": true,
+    "serverOrS3Requests": 0
+  },
+  "profileRed": {
+    "checkedAt": "2026-11-14T10:47:55.917103+00:00",
+    "firstRed": {
+      "invocation": 1,
+      "tests": 6,
+      "passed": 3,
+      "failed": 3,
+      "durationSeconds": 1.103,
+      "output": "tool transcript only;complete raw first output not separately saved"
+    },
+    "capturedRed": {
+      "invocation": 2,
+      "tests": 6,
+      "passed": 3,
+      "failed": 3,
+      "path": "tmp/melodiajest-200-profile-red-captured.log",
+      "sha256": "6ec8218303870c9ade1c3832047802eefedb34c4f08b2916b54e55ec28a72ec7"
+    },
+    "redInvocations": 2,
+    "reasonForSecondRed": "Preserve a complete trace after first direct tool output was not captured to a file.",
+    "newTestFilesSha256": {
+      "tests/artifact-profile.test.cjs": "97637660a7aab5b5a0a68d37660b34785a79c24968f145e668830915ee55a676",
+      "tests/artifact_profile_test.py": "f69343645ff962ae75d7cf2d27d266dc4a794333b32de8cdf02c4a8e379872d4"
+    },
+    "newTestsExactSinceFirstRed": true,
+    "assertionsRemovedOrRelaxed": false,
+    "productionChangedSinceFirstRed": false,
+    "historicalTestsChanged": false,
+    "full199FailureRemainsFailed": true
+  },
+  "legacyRed": {
+    "checkedAt": "2026-11-14T11:00:37.056638+00:00",
+    "firstRedTests": 4,
+    "firstRedPassed": 2,
+    "firstRedErrors": 2,
+    "firstRedPath": "tmp/melodiajest-200-legacy-red.log",
+    "firstRedSha256": "403ac873938e8cce09bb09257979452b938e9c4efdd82e4b556a3d77188fe955",
+    "firstRedPythonExitCodeNotSeparatelyCaptured": true,
+    "newTestFilesSha256": {
+      "tests/artifact-legacy-game.test.cjs": "5085359e2fecdea88592f8e7d6e861a688398754a88eed9059cdded042bcc523",
+      "tests/artifact_legacy_game_test.py": "b2e5ed15c0013245abec7660ae48c813af665764f700fbb6d52a1d7334c42d86",
+      "tests/fixtures/artifact-public99-100-profile-v1.json": "2e2d9d97f5a653a15ba365e9401baf433fa6353ad869b0c71d936a8d09803ce5"
+    },
+    "newTestsExactAfterFirstRed": true,
+    "historicalTestsChanged": false,
+    "assertionsRelaxed": false,
+    "oldProfileTestsRemainExact": true
+  },
+  "localSourceCopy": "docs/qa/melodiajest-2026-11-14-200-local-source-copy.json",
+  "localEvidenceCopy": "docs/qa/melodiajest-2026-11-14-200-local-evidence-copy.json",
+  "consistency": "docs/qa/melodiajest-2026-11-14-200-consistency.json"
+}

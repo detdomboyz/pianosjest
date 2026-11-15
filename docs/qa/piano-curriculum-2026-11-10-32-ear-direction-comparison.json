@@ -1,0 +1,343 @@
+{
+  "kind": "source-only-existing-known-card-versus-existing-direction-proposal",
+  "phase": "92",
+  "batch": "2026-11-10-32",
+  "checkedAt": "2026-11-10T15:00:53.651653+00:00",
+  "status": "planned-versus-implemented-boundaries-confirmed-no-change",
+  "existingCard": {
+    "id": "detail-p-hearing-01",
+    "source": "docs/qa/piano-curriculum-2026-11-10-31-known-ear-review.json",
+    "sourceSha256": "a200cdbaa7e0c9a280065c4a266557ea93aa6c61405996605764e7f55f183761",
+    "registryFile": "service/course-registry.json",
+    "registrySha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "rowReusedExactly": true,
+    "gradeFingerprint": "f4ba5fc5",
+    "musicVersion": "16767216711078687d9dac5d210c90c4c53d989f6bfbcae812121f4a17ff182c",
+    "editionVersion": "66ffac0b4ab707faf38e1e0aa492680477c51fa23d01cf668e16db1f2d203c65",
+    "challengeReadyLabelOnly": true
+  },
+  "existingProposal": {
+    "file": "docs/piano-skill-coverage.json",
+    "sourceFileSha256AtRead": "015795c7630cb4960468b03f52cadc289ba0229e6cbe40d3b8fe9a14dd08d5f7",
+    "jsonPointer": "/plannedLessons/2",
+    "snapshot": {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-direction-01",
+      "title": "Слух: второй звук выше, ниже или тот же",
+      "goalKey": "ear.direction.up-down-same",
+      "goal": "После неизвестной заранее пары звуков определить только направление: выше, ниже или та же высота. Не угадывать название ноты и не выдавать знакомую пару за распознавание.",
+      "after": "course02-03",
+      "requires": [
+        "course01-03",
+        "course02-03"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64
+      ],
+      "targetFingers": [
+        1,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Услышать отношение второго звука к первому до поиска клавиши; двигательная подготовка уже освоена отдельно.",
+      "application": "Следить за направлением мелодии при подборе и замечать, изменился ли звук.",
+      "distinctFrom": "detail-p-hearing-01..04 заранее называют обе ноты и дают фиксированный рисунок; course10-* повторяют знакомую музыку. Здесь ответ неизвестен до прослушивания, а движение вверх/вниз/повтор — три исхода одной цели, не три урока.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "pitch-direction",
+        "response": "direction-choice",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Будущий результат только по явно измеренному ответу; одно угадывание не доказывает устойчивого навыка."
+      },
+      "responseChoices": [
+        {
+          "id": "up",
+          "label": "Выше"
+        },
+        {
+          "id": "down",
+          "label": "Ниже"
+        },
+        {
+          "id": "same",
+          "label": "Та же высота"
+        }
+      ],
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64,
+          65,
+          67
+        ],
+        "events": 2,
+        "sampling": "По классам направления; без повторной выдачи уже открытой пары. Разные темпы не создают новых целей.",
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "separate-ear-choice-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно найди C4–G4 правой 1–5. В учебных примерах послушай C4–E4 (выше), E4–C4 (ниже) и D4–D4 (та же высота). После пары сделай паузу и скажи отношение; затем при желании проверь клавиши. Это открытые примеры, они не входят в будущую первую проверку.",
+        "Медленно: заранее объясни три кнопки ответа. Нажми «Слушать задание»; два звука идут по очереди. До ответа не показывать клавиши, названия, пальцы, нотную запись и ответ в доступном имени кнопки. Не требуется абсолютный слух, громкость и высота — разные признаки.",
+        "Блок 3–5 минут: несколько разных пар с отдыхом; ответ зафиксировать до раскрытия. Прослушивание, повтор или подсказку учитывать отдельно. После раскрытия можно правой проверить высоты и пальцы. После перерыва нужна другая пара; при исчерпании неизвестных примеров остаётся практика."
+      ],
+      "selfCheck": [
+        "Отвечаю о направлении, а не о громкости, интервале в полутонах или названии.",
+        "Второй одинаковый звук имеет отдельную атаку, а не является продолжением первого.",
+        "До своего ответа не видел и не открывал решение; знакомый или подсказанный элемент помечен как практика.",
+        "Мышь/клавиатура фиксируют выбор; MIDI не доказывает, что направление услышано, и не измеряет пальцы."
+      ],
+      "typicalErrors": [
+        "Спутать тихий звук с низким.",
+        "Выучить порядок вариантов или смотреть на подсвеченную клавишу вместо слушания."
+      ],
+      "hearingModel": "Два последовательных тона с одинаковым тембром и уровнем: относительное направление, включая новый повтор той же высоты.",
+      "transfer": {
+        "goal": "Новая пара с другим первым звуком: E4–D4, ответ «ниже»; её названия раскрываются после ответа. Это опубликованный пример переноса, будущий неизвестный банк должен его исключать.",
+        "notes": [
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          }
+        ],
+        "expectedDirection": "down"
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    "snapshotSha256": "ad78770bfb70b4990b5ce15cfe83a1e69625905b4c075c1e0a495dd43f57200c",
+    "entireMutableQueueFileNotClaimedUnchanged": true,
+    "presentInRegistry": false
+  },
+  "comparison": {
+    "knownCardStage": "p3",
+    "plannedDirectionStage": "p2",
+    "stageOrderDoesNotMakePlanImplemented": true,
+    "knownGoalKey": "detail-p-hearing-01",
+    "plannedGoalKey": "ear.direction.up-down-same",
+    "sameGoalKeys": false,
+    "knownCardSteps": [
+      {
+        "midis": [
+          60
+        ],
+        "startBeat": 0,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          64
+        ],
+        "startBeat": 1,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          60
+        ],
+        "startBeat": 2,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          64
+        ],
+        "startBeat": 3,
+        "durationBeats": 0.85
+      }
+    ],
+    "plannedDemonstrationNotes": [
+      {
+        "midi": 60,
+        "hand": "right",
+        "finger": 1,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 64,
+        "hand": "right",
+        "finger": 3,
+        "startBeat": 1,
+        "durationBeats": 1
+      }
+    ],
+    "plannedTransferNotes": [
+      {
+        "midi": 64,
+        "hand": "right",
+        "finger": 3,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 1,
+        "durationBeats": 1
+      }
+    ],
+    "plannedDisclosedPracticeExamplesRead": [
+      {
+        "declaredPair": "C4-E4",
+        "declaredAnswer": "up",
+        "purpose": "disclosed practice example"
+      },
+      {
+        "declaredPair": "E4-C4",
+        "declaredAnswer": "down",
+        "purpose": "disclosed practice example"
+      },
+      {
+        "declaredPair": "D4-D4",
+        "declaredAnswer": "same",
+        "purpose": "disclosed practice example with two attacks"
+      }
+    ],
+    "plannedDirectionOutcomesAreOneGoal": true,
+    "plannedUnknownPoolNotEnumeratedOrGenerated": true,
+    "publishedTransferNotAnUnknownTest": true,
+    "plannedMeterAndProfileAbsentNotFabricated": true
+  },
+  "sourceReuse": {
+    "sourceId": "giml-audiation-familiar-memory-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "giml-audiation-familiar-memory-2026-11-10",
+      "author": "The Gordon Institute for Music Learning (GIML);institutional page,no individual byline established",
+      "title": "Audiation — Music Learning Theory",
+      "url": "https://giml.org/mlt/audiation/",
+      "resourceType": "primary-institutional-pedagogical-method-explanation",
+      "edition": "Institutional web page;publication/update date not established",
+      "section": "Audiation;Types of Audiation rows1,4;Stages of Audiation introductory qualification",
+      "verifiedOn": "2026-11-10",
+      "evidence": "Audiation involves hearing and comprehending beyond immediate sound;aural perception and audiation are distinguished. Familiar as well as unfamiliar music can be audiated;recalling and performing familiar music from memory is one listed type.",
+      "application": "Context for one existing known-third imagery card,not a new independent ear-test protocol or endorsement of project exercise.",
+      "limits": "This is an institutional account of MLT,not evidence Gordon personally authored this page or taught this exercise. Listening,singing or pressing specified keys alone do not establish the described comprehension. No projectBPM,durations,fingers,take count or novelty-validation rule is prescribed.",
+      "lessonIds": [
+        "detail-p-hearing-01"
+      ]
+    },
+    "sourceBaseSha256": "3afe45d5d9c3961ac354d1585e4e19a319ada3f0b2cee1d89e3d311268cfac46",
+    "evidenceReusedFrom": "91",
+    "freshReadInCurrentBatch": false,
+    "newSourceAudioOrHtmlFetches": 0,
+    "application": "Contrast useful disclosed imagery/memory practice with one project-specific planned direction response;GIML does not prescribe the novelty/reveal/56BPM/time controls or certify audiation."
+  },
+  "claimContexts": [
+    {
+      "claim": "answer-kind",
+      "observedInPlan": "Choice up/down/same,not note name or major-third label.",
+      "limit": "Three outcomes of one existing planned goal,not three new lessons;no actual response recorded."
+    },
+    {
+      "claim": "demonstration",
+      "observedInPlan": "C4-E4,E4-C4,D4-D4 are disclosed practice;targetC4-E4 is not an unknown assessment item.",
+      "limit": "Text/notes only,no sound or image was generated/played."
+    },
+    {
+      "claim": "transfer",
+      "observedInPlan": "E4-D4/down is a published transfer example;future unknown pool must exclude it.",
+      "limit": "Not a newly created stimulus or evidence of transfer performance."
+    },
+    {
+      "claim": "exposure-and-reveal",
+      "observedInPlan": "First exposure,tracking,response before reveal,assisted/repeated practice-only are requested.",
+      "limit": "Requested metadata does not implement exposure history,hiding,response storage or a bank.Outside familiarity remains unknown."
+    },
+    {
+      "claim": "source-attribution",
+      "observedInPlan": "3-5min/56BPM/nextday,novelty and response controls are project choices.",
+      "limit": "GIML91 permits meaningful familiar and unfamiliar audiation;it does not mandate these projecttest rules or establish a human mental state."
+    },
+    {
+      "claim": "implemented-status",
+      "observedInPlan": "Direction plan absent inregistry,assessmentStatusnot-implemented;known-third exists with MIDI-ready label.",
+      "limit": "No proposed ear goal counted in450/1000;knownchallengeReady does not certify independent ear recognition."
+    }
+  ],
+  "sourceOnlyNoRuntimeOrProtocolImplementation": true,
+  "assessmentAndReviewCallbacksInvoked": false,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "actualHumanEarMemoryOrResponseObserved": false,
+  "newActionableWordingMismatches": 0,
+  "proposalPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "newSourceEntries": 0,
+  "newAccessNotes": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newAssessmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "humanSessionsObserved": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "independentEarAssessmentReady": false
+}

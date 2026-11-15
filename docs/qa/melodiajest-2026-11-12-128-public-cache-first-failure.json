@@ -1,0 +1,17 @@
+{
+  "phase": "2026-11-12-128",
+  "publicVersion": "23.5.96",
+  "status": "public-cache-optimization-blocked-by-own-nginx-header-override",
+  "firstProbe": "tmp/verify-course-conditional-public-128.py",
+  "firstProbeOutcome": "Stopped after manifest and first course response cache-header assertion; initial response headers were not persisted. Not a successful nine-request probe.",
+  "boundedDiagnostic": "docs/qa/melodiajest-2026-11-12-128-public-cache-diagnostic.json",
+  "diagnosticStatus": 200,
+  "observedCacheControl": "private, no-store",
+  "observedWeakETag": true,
+  "confirmedConfiguration": "deploy/shared-host/nginx.conf: proxy_hide_header Cache-Control followed by unconditional private,no-store",
+  "runtimeReleaseInstalled": true,
+  "ordinaryCourseReadingBroken": false,
+  "nativeBrowserCacheOnPublic96ClaimedVerified": false,
+  "published96ArchiveRepacked": false,
+  "correctiveScope": "Test actual own Nginx in isolation,then narrow fail-closed course GET200/304 cache policy;retain all private/auth/error defaults. Own config revision outside immutable128b sourcecut;no Caddy,API,data or browser-file change."
+}

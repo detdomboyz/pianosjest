@@ -1,0 +1,31 @@
+# Курс пианино — исследование25, 10 ноября2026
+
+Ограниченная попытка проверить печатные пальцы в одном издании BWV779 завершена без доступа к целевому такту. Нотная проверка не выполнена. Каталог сообщает редакцию Carl Czerny/C.F. Peters, plate2748, но файл перенаправляет на verification interstitial. Цифры пальцев остаются неизвестными: отсутствие доступа не означает отсутствие цифр и не подтверждает1→3 или альтернативу.
+
+## Что удалось прочитать
+
+В [каталоге IMSLP](https://imslp.org/wiki/15_Inventions,_BWV_772-786_(Bach,_Johann_Sebastian)) выбран ровно один файл, IMSLP63611: Compositions pour le Pianoforte, Livre7, pp.12–28, C.F. Peters, Leipzig, n.d.(ca.1840), plate2748; редактор указан Carl Czerny,17PDFpages/2.55MB. Это метаданные каталога. Титульный лист, дата, редакторские указания и цифры в самом скане не подтверждены. Другие редакции после ограничения не подбирались.
+
+Цель неизменна: BWV779, такт3, нижний C4→D4, индексы3/4 из сохранённого контекста24. [Прежняя запись24](../qa/piano-curriculum-2026-11-10-24-bwv779-context.json) переиспользована по SHA; её PDF/LY/images заново не читались и не менялись. В текущей попытке нет нового свидетельства о нотах, пальцах, штрихах, темпе, авторстве аппликатуры или обучении у Баха.
+
+## Точная граница доступа
+
+[ImagefromIndex63611](https://imslp.org/wiki/Special:ImagefromIndex/63611) вернул friendlyredirect с требованием JavaScript. [Страница файла](https://imslp.org/wiki/File:PMLP03267-Bach_Oeves_Complets_Peters_Liv_7_BWV_772-786_2748.pdf) вернула friendlytest с Start Verification, а не PDF. Текст Bot Check Passed в полученном шаблоне не доказывает прохождения проверки нашей сессией. Start Verification/CAPTCHA не нажимались, cookies/User-Agent не подменялись, прямой URL PDF не угадывался и после interstitial не повторялся. Ссылка на библиотечную коллекцию Lodz дала timeout; открытый previewURL вернулся, но его пиксели не читались/не скачивались и не использовались как свидетельство такта3.
+
+Это ограничение чтения внешнего источника, не отказ MelodiaJest и не automatic approval rejection. Покупка/доступ/подтверждение от пользователя не требуются для продолжения разрешённого исследования. Автоматический повтор этой ссылки в очередь не поставлен. Нельзя утверждать ни «в редакции цифр нет», ни «Черни назначил1→3», ни иной конкретный палец. Primary-score verification отсутствует; нового первичного источника в entries не добавлено.
+
+[Запись попытки](../qa/piano-curriculum-2026-11-10-25-fingering-access.json) и [проверки записи](../qa/piano-curriculum-2026-11-10-25-access-checks.json):helper1запуск/1принят по сохранению unknown/границ, не тест нот/пальцев. Source entries70 неизменны,1accessNote и1explicitreuseMutopia83;0fresh verified primary-score applications. PDF/images/download/visualreads0; PDFskill в84 не применялся, UI/React/браузер/устройства/assessment/fullbuilder/loader не менялись/не запускались. Доступность каждой редакции не является методической оценкой её качества.
+
+## Сохранённое состояние и эксплуатация
+
+Новых уроков/целей/ID/планов0.450/186MIDI/153происхождения/13контролей/10вариантов/427только верхняя граница/teacher0/verifiedDistinctnull/4F/6future/2C-плана прежние. Четыре ручные карточки22/23 остаются unobserved, не дают prepcredit/lessoncredit/XP. F4/voicev2/matcher/validator gap открыт, automaticGradeReady/canEnterGradedRoutefalse. C-кандидаты/history20 документальны, executionAllowed=false/proposedEditorialCutoverReady=false/notpublicationReady. Manualfragment73 не зарегистрирован/безXP.
+
+[HTTPS](../qa/melodiajest-2026-11-10-84-observation.json)12:19:57UTC healthy78/API2c0…/course334…/schema2; этот publicobserver сначала переиспользовал83read12:01(ещёhourly11). Затем отдельное [read-only чтение квитанций84](../qa/melodiajest-2026-11-10-84-native-receipts.json)12:22:05.934885UTC подтвердило actualhourly12:01:45/58173eede67e46deac659725f3776578/success0/inactive, timer/journal/обе полные квитанции. Base/external checkedAt12:01:45.330140/.639660; original s3RequestsThisCheck0/adapternormalizeds3RequestsThisHealthCheck0. Это healthcounter, не полный биллинг; неизвестная стоимость не0. Чтение83 в12:01 ещё наблюдало11 и сохранено в истории, не подменено12.
+
+PGdaily02:12/37f62…/8summaryfields/старыйrestore9ноября16:15/newSnapshotfalse прежние. Прогноз11ноября02:13:25 ещё не actual. Один новый SSHread, новыхbackup/restore/S3/архивов/серверныхизменений0. Ни дневная сверка, ни hourly health не новая копия или restore. PDF40380 не повторялся/не обходился. Native90used/10remaining/10080min/ordinaryAllowedtrue/spendControlfalse/reserve0.
+
+Source59 не покрывает документы60–84. [Финальная сверка](../qa/melodiajest-2026-11-10-84-consistency.json) сохраняет457runtime/exact79/7защищённых групп/14operations.local*/61–83/старые музыкальные курсоры; [автоматизация](../qa/melodiajest-2026-11-10-84-automation.json) та же ACTIVE20min/чат. Ноты/пальцы/route/registry/grade/XP/issued/outbox/прогресс/79 неизменны,79не перепакован/не опубликован, ресурсный вопрос не повторялся.
+
+Следующий малый этап — source-only сверить openTransfer прежних4F-контрактов с одним первичным педагогическим источником по чтению слиста:отделить знакомую моторную/слуховую/ручную пробу от чтения нового материала. Прочитать реальные поля65/67/68/69 и source,указать границы утверждений без новогоурока/цели/ID/плана/обязательногоэкзамена или оценщика;знакомая гамма/BWV779 не независимый тест слуха/чтения. ОдноизданиеCzerny/Peters2748 в84 недоступно:не повторятьblockedPDF/verification/поискдругихредакций автоматически;цифрыunknown,неabsent/не1→3. Manual22/23 только подготовлены/human sessions0/teacher0/нетMIDI-зачёта/XP;F4shared65/voicev2/matcher/validator gap открыт,automaticGradeReady/canEnterGradedRoutefalse. Не писатьmatcher/validator/параллельныйоценщик/мигратор,не расширять2octaves/swing/descent/не подменятьlegatoнаstandard. C-кандидаты/history20 документальны,executionAllowed=false/proposedEditorialCutoverReady=false/notpublicationReady;71/72/77/78 границы прежние. 79точныйлокальный/замороженный,не менять/переупаковывать/публиковать;ресурсныйответполучен,не спрашивать/покупать/resize/переносить/чистить. Та же ACTIVE20min автоматизация/чат/checkout,последовательно/без параллельных изменений;PDF40380 не обходить/observer80 не повторять.
+
+Эксплуатация — [этап84](melodiajest-operations-2026-11-10-84.md).

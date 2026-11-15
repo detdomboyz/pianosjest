@@ -1,0 +1,265 @@
+{
+  "checkedAt": "2026-11-13T23:19:38.289921+00:00",
+  "checks": {
+    "red": {
+      "path": "tmp/melodiajest-187-target-red.log",
+      "sha256": "db3ac32f356fe96401eb761e3c96e3105076552d24c9c731aab17a3440c2fc66",
+      "totals": {
+        "tests": 8,
+        "pass": 1,
+        "fail": 7,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 4318.6445
+      }
+    },
+    "targetInitial": {
+      "path": "tmp/melodiajest-187-target-green.log",
+      "sha256": "a27e49dc97e7a933dc87ed7f6a3cdbe3c07ff005a2ff197f9a2649eed459af07",
+      "totals": {
+        "tests": 43,
+        "pass": 41,
+        "fail": 2,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 24776.225
+      }
+    },
+    "cardRecheck": {
+      "path": "tmp/melodiajest-187-target-card-recheck.log",
+      "sha256": "3d06e2a79937f76db9d428db15a55c5f5366dd25997110a7eed0dc8e64c18bae",
+      "totals": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 5637.2136
+      }
+    },
+    "sourceRecheck": {
+      "path": "tmp/melodiajest-187-target-source-recheck.log",
+      "sha256": "efdffdf12769064d7a4dad809feef5e78098dfa75d4d3d5b62afc316c7f5c567",
+      "totals": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 5563.9107
+      }
+    },
+    "service": {
+      "path": "tmp/melodiajest-187-service.log",
+      "sha256": "7bd81ce59949af535aa324920be71742f31a286aac650e781de70df37b94c729",
+      "totals": {
+        "tests": 60,
+        "pass": 53,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 7,
+        "todo": 0,
+        "duration_ms": 18413.3925
+      }
+    },
+    "full": {
+      "path": "tmp/melodiajest-187-npm.log",
+      "sha256": "536be641fb8cbadf37ae8b51318661f7ad03e2ee4fbd1e224b15a2d7096d0284",
+      "totals": {
+        "tests": 1892,
+        "pass": 1892,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 805650.7473
+      }
+    },
+    "runtimeRecheck": {
+      "path": "docs/qa/melodiajest-2026-11-14-187-runtime-recheck.json",
+      "sha256": "d773f478a90818bf7e4fb692a03e7c9acff17b3508c297cbfdc514affe7be03e",
+      "nativeRedirectedLog": false,
+      "observedToolReceipt": {
+        "evidenceSource": "Observed exec tool return in this conversation;not a redirected native process log.No healthy rerun was made to create a log.",
+        "command": "node --preserve-symlinks --preserve-symlinks-main --test --test-reporter=tap --test-name-pattern=\"^every bundled lesson belongs to exactly one named learning stage$\" tests/curriculum.test.cjs",
+        "runtime": "Node20.15.1",
+        "nodePath": "C:/Program Files/nodejs/node.exe",
+        "exitCode": 0,
+        "totals": {
+          "tests": 19,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 18,
+          "durationMs": 3345.5789
+        },
+        "skipsAreNameFilteredNotPlatform": true,
+        "testName": "every bundled lesson belongs to exactly one named learning stage",
+        "initialOtherRuntime": "Node24.22.2",
+        "initialMismatch": {
+          "id": "t31-l03",
+          "planFingerprint": "fe90488c",
+          "computedFingerprint": "00246364"
+        },
+        "guitarCodeDataPlanTestsChanged": false,
+        "crossRuntimeNumericCauseNotEstablished": true,
+        "notClaimedNode24GuitarCompatible": true
+      }
+    },
+    "corpusRecheck": {
+      "path": "tmp/melodiajest-187-target-corpus-recheck.log",
+      "sha256": "a6b7a73235dd60b61d00fa2e9505e7488a593f5410e6842e55b416176e2af1a4",
+      "totals": {
+        "tests": 8,
+        "pass": 2,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 6,
+        "todo": 0,
+        "duration_ms": 6101.1212
+      }
+    },
+    "freshAudits": {
+      "audit-lessons": {
+        "name": "audit-lessons",
+        "path": "tmp/melodiajest-187-audit-lessons.log",
+        "exitCode": 0,
+        "seconds": 4.312,
+        "sha256": "c60ec61c307254a7a8f39f299accb9018e1a35331a29ef643b7053c6b2d668bc"
+      },
+      "audit-curriculum": {
+        "name": "audit-curriculum",
+        "path": "tmp/melodiajest-187-audit-curriculum.log",
+        "exitCode": 0,
+        "seconds": 13.093,
+        "sha256": "0bd9efb264295d88e2cff5aad7bfc92e15dedc4c345327e74f25ae7796009491"
+      }
+    },
+    "reusedAudits": {
+      "fingering": {
+        "path": "tmp/melodiajest-186-audit-fingering.log",
+        "sha256": "b0eb5dc413d35a88ae240f510bc9935746539b359545f488ac26fb1da83f2b67",
+        "fromPhase": 186,
+        "reusedForExactMusicalInputs": true,
+        "freshRunIn187": false
+      },
+      "piano-coverage": {
+        "path": "tmp/melodiajest-186-audit-piano-coverage.log",
+        "sha256": "f69da104f7906fed069b9592388ca1de18df9cb1b089bcbeda4406079c1e7a35",
+        "fromPhase": 186,
+        "reusedForExactMusicalInputs": true,
+        "freshRunIn187": false
+      }
+    }
+  },
+  "newTestDevelopment": {
+    "checkedAt": "2026-11-13T22:19:44.333813+00:00",
+    "newTestFile": "tests/piano-paired-descent-route-guide.test.cjs",
+    "newTestSha256": "67257975d58babe935f3be3c10868c75802f9ef000ddc162a4d0faf5c05b9e39",
+    "newFixtureSha256": "3071c3ed143e0893acf98ff13587a13d4f30ffa89172fdca7981718fdccb879a",
+    "redPath": "tmp/melodiajest-187-target-red.log",
+    "redSha256": "db3ac32f356fe96401eb761e3c96e3105076552d24c9c731aab17a3440c2fc66",
+    "redBeforeImplementation": true,
+    "firstRedPassed": 1,
+    "firstRedFailed": 7,
+    "wholeNewTestExactAfterFirstRed": false,
+    "newFixtureExactAfterFirstRed": true,
+    "scaffoldCorrections": 1,
+    "historicalTestFilesChanged": 0,
+    "musicalAssertionsRemovedOrRelaxed": false,
+    "newLearningRecords": 0,
+    "newIndependentGoals": 0,
+    "correctedLearningRecords": 1,
+    "firstRedTestPath": "tmp/melodiajest-187-test-at-first-red.cjs",
+    "firstRedTestSha256": "8f932c19db4c16b6a24a1b445d646430022ff3415653768f0cd654eb0ad1f14d",
+    "wholeNewTestExactAfterScaffoldCorrection": false,
+    "scaffoldCorrection": "Added events:true to new web catalogue-exchange fixture,matching the existing real DOM/event harness;all assertions retained.",
+    "appChangedForScaffoldCorrection": false,
+    "initialTargetPassed": 41,
+    "initialTargetFailed": 2,
+    "initialTargetDurationMs": 24776.225,
+    "targetRuntimeAssemblyCorrection": 1,
+    "initialTargetRuntime": "Node24.22.2",
+    "projectLocalRuntime": "Node20.15.1",
+    "guitarPlanOrTestsChanged": false,
+    "healthy41Repeated": false,
+    "finalUniqueTargetCasesPassed": 43,
+    "postImplementationCaseExecutions": 48,
+    "targetSuiteInvocations": 5,
+    "cardRecheckPassed": 1,
+    "runtimeRecheckPassed": 1,
+    "runtimeRecheckFilteredSkips": 18,
+    "beforeSourceContractTestPath": "tmp/melodiajest-187-test-before-source-contract.cjs",
+    "beforeSourceContractTestSha256": "3c0f18c1c8b88cbd3cb3ad9a811b4a1058110e7294030be569d857d707e57de6",
+    "sourceContractCorrection": 1,
+    "sourceContractCorrectionReason": "Protect the original95 cores and all existing applications while allowing later batches and new cores to append;positive append and negative old-core/old-application checks added. The previous blanket full-ledger hash was green but would block the next lesson.",
+    "wholeNewTestExactAfterFinalContractCorrection": false,
+    "fixtureChangedForSourceContract": false,
+    "appChangedForSourceContract": false,
+    "sourceCaseRecheckPending": false,
+    "sourceCaseRecheckPassed": 1,
+    "sourceContractCaseRecheckedBecauseContractChanged": true,
+    "unaffectedHealthy40Repeated": false,
+    "testLineEndingsRestoredToFirstRed": true,
+    "sourceCaseRanBeforeLineEndingRestore": true,
+    "semanticStatementsUnchangedByLineEndingRestore": true,
+    "corpusGrowthContractCorrection": 1,
+    "postFullTestContractCorrection": 1,
+    "fullTestFileChangedAfterFullRun": true,
+    "applicationUnchangedAfterFullRun": true,
+    "otherSixNewCasesUnchangedAfterFull": true,
+    "fullSuiteCoversFinalTestFileByteForByte": false,
+    "finalCasesCoveredByFullAndFocused": true,
+    "corpusGrowthContractReport": "docs/qa/melodiajest-2026-11-14-187-corpus-growth-contract.json",
+    "beforeCorpusGrowthTestPath": "tmp/melodiajest-187-test-before-corpus-growth.cjs",
+    "beforeCorpusGrowthTestSha256": "522117738f963bddaf0aae1d4002f7608b938feec7abff96cafa41f70a659606",
+    "wholeNewTestExactAfterCorpusGrowthCorrection": true,
+    "corpusGrowthRecheckPassed": 2,
+    "corpusGrowthRecheckFilteredSkips": 6,
+    "filteredSkips": 24,
+    "unaffectedHealthy39Repeated": false
+  },
+  "browserReport": "docs/qa/melodiajest-2026-11-14-187-browser.json",
+  "runtimeFilesFrozen": 613,
+  "oldRuntimeFiles": 611,
+  "changedOldRuntime": [
+    "package.json",
+    "piano-lesson-development.js",
+    "service/course-registry.json"
+  ],
+  "fullOnce": true,
+  "fullSuiteAttempts": 1,
+  "fullPassInvocations": 1,
+  "fullTestFileChangedAfterFullRun": true,
+  "applicationUnchangedAfterFullRun": true,
+  "fullSuiteCoversFinalTestFileByteForByte": false,
+  "finalCasesCoveredByFullAndFocused": true,
+  "postFullFocusedPassed": 2,
+  "postFullFilteredSkips": 6,
+  "targetInvocations": 5,
+  "targetUniqueCases": 43,
+  "postImplementationCaseExecutions": 48,
+  "targetNameFilteredSkips": 24,
+  "servicePlatformSkips": 7,
+  "newTestExactAfterFirstRed": false,
+  "newFixtureExactAfterFirstRed": true,
+  "newTestScaffoldCorrections": 1,
+  "sourceContractCorrection": 1,
+  "corpusGrowthContractCorrection": 1,
+  "targetRuntimeAssemblyCorrection": 1,
+  "historicalTestFilesChanged": 0,
+  "sourceEntriesBefore": 95,
+  "sourceEntriesAfter": 95,
+  "newSourceEntries": 0,
+  "sourceApplications": 0,
+  "freshApplications": 0,
+  "freshPrimaryDocumentsApplied": 0,
+  "primaryDocumentsReadForDeferredCandidate": 4,
+  "manualPgStarts": 0,
+  "s3Requests": 0,
+  "serverMutations": 0,
+  "deployed": false
+}

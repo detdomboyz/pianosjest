@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-14T10:47:55.917103+00:00",
+  "firstRed": {
+    "invocation": 1,
+    "tests": 6,
+    "passed": 3,
+    "failed": 3,
+    "durationSeconds": 1.103,
+    "output": "tool transcript only;complete raw first output not separately saved"
+  },
+  "capturedRed": {
+    "invocation": 2,
+    "tests": 6,
+    "passed": 3,
+    "failed": 3,
+    "path": "tmp/melodiajest-200-profile-red-captured.log",
+    "sha256": "6ec8218303870c9ade1c3832047802eefedb34c4f08b2916b54e55ec28a72ec7"
+  },
+  "redInvocations": 2,
+  "reasonForSecondRed": "Preserve a complete trace after first direct tool output was not captured to a file.",
+  "newTestFilesSha256": {
+    "tests/artifact-profile.test.cjs": "97637660a7aab5b5a0a68d37660b34785a79c24968f145e668830915ee55a676",
+    "tests/artifact_profile_test.py": "f69343645ff962ae75d7cf2d27d266dc4a794333b32de8cdf02c4a8e379872d4"
+  },
+  "newTestsExactSinceFirstRed": true,
+  "assertionsRemovedOrRelaxed": false,
+  "productionChangedSinceFirstRed": false,
+  "historicalTestsChanged": false,
+  "full199FailureRemainsFailed": true
+}

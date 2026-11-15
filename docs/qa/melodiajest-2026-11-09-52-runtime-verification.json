@@ -1,0 +1,1103 @@
+{
+  "kind": "melodiajest-one-runtime-copy-read-only-verification",
+  "startedAt": "2026-11-09T14:25:53.902557+00:00",
+  "checkedAt": "2026-11-09T14:26:11.074255+00:00",
+  "target": "/opt/melodiajest/ops/account-stage-21-03be786f085e/runtime",
+  "canonicalPreserved": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048",
+  "targetFiles": {
+    "node": {
+      "device": 2049,
+      "inode": 176947,
+      "bytes": 126881248,
+      "allocatedBytes": 126885888,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0,
+      "links": 1,
+      "mtimeNs": 1794153048779038525,
+      "ctimeNs": 1794153048874039007
+    },
+    "LICENSE": {
+      "device": 2049,
+      "inode": 176948,
+      "bytes": 157609,
+      "allocatedBytes": 159744,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "links": 1,
+      "mtimeNs": 1794153049582042596,
+      "ctimeNs": 1794153049582042596
+    },
+    "runtime.json": {
+      "device": 2049,
+      "inode": 176949,
+      "bytes": 491,
+      "allocatedBytes": 4096,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "links": 1,
+      "mtimeNs": 1794153049588042626,
+      "ctimeNs": 1794153049588042626
+    }
+  },
+  "targetFileContentsVerified": {
+    "node": {
+      "sha256": "904a6d3484241d466989f9df9ba3aab822b1496191bdb28230eb491a55c32a52",
+      "bytes": 126881248,
+      "everyByteEqualToPinnedArchive": true
+    },
+    "LICENSE": {
+      "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace",
+      "bytes": 157609,
+      "everyByteEqualToPinnedArchive": true
+    },
+    "runtime.json": {
+      "sha256": "cc6b777f95697b5d6cdce4a76bd769ea3060977a92ceb2d74f70d826add1330b",
+      "bytes": 491,
+      "everyByteEqualToRegeneratedManifest": true
+    }
+  },
+  "installedVerifierFilesMatched": {
+    "service/deployment.py": "51c7c11b00b4005a1eb2ebb6947ad4016cd8ead4b011bbb6fa20654df9e53fef",
+    "service/runtime.json": "c7943cd8d2d70616c23b116b3cabd91d0efbdfaf604ed64ed828b3123fc16f22",
+    "deploy/shared-host/release_artifact.py": "67eb9e75faf7692450aa37538d414784a5c84378e916c3a0e10ec0715c17a55d"
+  },
+  "productionVerifierAcceptedBothCopies": true,
+  "canonicalManifestEqualsCandidate": true,
+  "archive": {
+    "path": "/opt/melodiajest/ops/account-stage-21-03be786f085e/node.tar.xz",
+    "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+    "bytes": 32039312,
+    "metadata": {
+      "device": 2049,
+      "inode": 176107,
+      "bytes": 32039312,
+      "allocatedBytes": 32043008,
+      "mode": 384,
+      "uid": 0,
+      "gid": 0,
+      "links": 1,
+      "mtimeNs": 1794153038941988660,
+      "ctimeNs": 1794153116810383386
+    }
+  },
+  "activeArchive": {
+    "path": "/opt/melodiajest/ops/account-stage-21-0efdc441ee74/node.tar.xz",
+    "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+    "bytes": 32039312,
+    "metadata": {
+      "device": 2049,
+      "inode": 178802,
+      "bytes": 32039312,
+      "allocatedBytes": 32047104,
+      "mode": 384,
+      "uid": 0,
+      "gid": 0,
+      "links": 1,
+      "mtimeNs": 1794153955355633794,
+      "ctimeNs": 1794153956218638152
+    }
+  },
+  "archiveAndBinaryPins": {
+    "version": "v24.22.2",
+    "source": "https://nodejs.org/dist/v24.22.2/",
+    "linuxArchive": "node-v24.22.2-linux-x64.tar.xz",
+    "linuxArchiveSha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+    "linuxBinarySha256": "904a6d3484241d466989f9df9ba3aab822b1496191bdb28230eb491a55c32a52",
+    "windowsArchive": "node-v24.22.2-win-x64.zip",
+    "windowsArchiveSha256": "ca1bff5d8ead13c9f2ea404a176db46bd430704d5b5113734049fa365e7799e2",
+    "windowsBinarySha256": "1c331340fa6cac5e4294725959070a143fa0507195a78ad77eed7943f719aac9",
+    "systemRuntimeReplaced": false
+  },
+  "signatureVerificationClaimed": false,
+  "controlsBefore": {
+    "ops/account-profile.json": {
+      "sha256": "bc98f7005c348102127a188473a2a533c9a946314d0070163726a46b2a234159",
+      "metadata": {
+        "device": 2049,
+        "inode": 11642,
+        "bytes": 1721,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231002187991415,
+        "ctimeNs": 1794231002188991420
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/postgres-preparation-profile.json": {
+      "sha256": "25c5c26df45e951ee4c1d61c429a4ecac5a65a4a91d69097ea726a13e268d474",
+      "metadata": {
+        "device": 2049,
+        "inode": 75968,
+        "bytes": 1228,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794167004048770745,
+        "ctimeNs": 1794167004049770750
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-update.json": {
+      "sha256": "eb69b04e5975592c69163f81c4272c0cc10fdc3cb784274ec4e5d44d2f0a438d",
+      "metadata": {
+        "device": 2049,
+        "inode": 76021,
+        "bytes": 1258,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231002184991398,
+        "ctimeNs": 1794231002186991409
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/update-state.json": {
+      "sha256": "bf6e44cdcfd2cc102b4cc6f2a2ebb3d49853bc3355a9ffb3837951e558a12c76",
+      "metadata": {
+        "device": 2049,
+        "inode": 34672,
+        "bytes": 1817,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231062036316237,
+        "ctimeNs": 1794231062037316243
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/s3-schedule.json": {
+      "sha256": "1727109023787645e5b92afc87e00479fd80fea5fa53a1f286afae7dd0d3fbf3",
+      "metadata": {
+        "device": 2049,
+        "inode": 35156,
+        "bytes": 1771,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794176937997108612,
+        "ctimeNs": 1794176937998108618
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-attempt.json": {
+      "sha256": "43ca0409c22cd2b1de4ad00ef49eca635f5adff79dabbcf608db479262d08780",
+      "metadata": {
+        "device": 2049,
+        "inode": 74836,
+        "bytes": 199,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132981701289,
+        "ctimeNs": 1794231132982701295
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-backup-success.json": {
+      "sha256": "843475f46d8c5b21f0e16cab4f8e29fc41568559cb254ee618aa156dc3298065",
+      "metadata": {
+        "device": 2049,
+        "inode": 73856,
+        "bytes": 3011,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231072539373242,
+        "ctimeNs": 1794231072539373242
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-restore-success.json": {
+      "sha256": "0012b38ccfb836aaf1ad459d819d683a1373c13dd2f5ae6e09d8536688364831",
+      "metadata": {
+        "device": 2049,
+        "inode": 74934,
+        "bytes": 6441,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132980701284,
+        "ctimeNs": 1794231132980701284
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/pending.json": {
+      "sha256": "ef271bb48a8e1c79645c5adf50464f9d6df631988f183a39be26b2cd8c297922",
+      "metadata": {
+        "device": 2049,
+        "inode": 73855,
+        "bytes": 4200,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231072542373258,
+        "ctimeNs": 1794231072542373258
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-attempt.json": {
+      "sha256": "3ea9bfe18de098a2115fe4a1ec3eb76f1a114066ed84436952a8adc0f0ab9711",
+      "metadata": {
+        "device": 2049,
+        "inode": 69039,
+        "bytes": 243,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132993701354,
+        "ctimeNs": 1794231132993701354
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-success.json": {
+      "sha256": "67c6dcacfa75ecadc4aae2b71ca214d9c6283f9fd54b2cbaf056b664a0cf466e",
+      "metadata": {
+        "device": 2049,
+        "inode": 71693,
+        "bytes": 1358,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132990701338,
+        "ctimeNs": 1794231132991701343
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-restore-success.json": {
+      "sha256": "0012b38ccfb836aaf1ad459d819d683a1373c13dd2f5ae6e09d8536688364831",
+      "metadata": {
+        "device": 2049,
+        "inode": 74967,
+        "bytes": 6441,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132987701322,
+        "ctimeNs": 1794231132988701327
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-postgres-backups/latest-success.json": {
+      "sha256": "bff9222756eacb87773a1db57bd953493abced4106737954607788ee23cc15fa",
+      "metadata": {
+        "device": 2049,
+        "inode": 148190,
+        "bytes": 12979,
+        "allocatedBytes": 16384,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231050899255793,
+        "ctimeNs": 1794231050900255798
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-postgres-backups/latest-attempt.json": {
+      "sha256": "bff9222756eacb87773a1db57bd953493abced4106737954607788ee23cc15fa",
+      "metadata": {
+        "device": 2049,
+        "inode": 200673,
+        "bytes": 12979,
+        "allocatedBytes": 16384,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231050901255804,
+        "ctimeNs": 1794231050902255809
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/server-backups/health.json": {
+      "sha256": "2fb395fc4d7b141c9fae0f050152499006f69c651326e7fc4d7e3d16c333c538",
+      "metadata": {
+        "device": 2049,
+        "inode": 76027,
+        "bytes": 914,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794232911818948022,
+        "ctimeNs": 1794232911819948027
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/health.json": {
+      "sha256": "89e9799bb6df5f9f60ca7906cc889e76c192d7db84c0c7a14896b93bb96c978e",
+      "metadata": {
+        "device": 2049,
+        "inode": 76036,
+        "bytes": 992,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794232912099949473,
+        "ctimeNs": 1794232912101949483
+      },
+      "candidateReferenceFields": []
+    }
+  },
+  "controlsAfter": {
+    "ops/account-profile.json": {
+      "sha256": "bc98f7005c348102127a188473a2a533c9a946314d0070163726a46b2a234159",
+      "metadata": {
+        "device": 2049,
+        "inode": 11642,
+        "bytes": 1721,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231002187991415,
+        "ctimeNs": 1794231002188991420
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/postgres-preparation-profile.json": {
+      "sha256": "25c5c26df45e951ee4c1d61c429a4ecac5a65a4a91d69097ea726a13e268d474",
+      "metadata": {
+        "device": 2049,
+        "inode": 75968,
+        "bytes": 1228,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794167004048770745,
+        "ctimeNs": 1794167004049770750
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-update.json": {
+      "sha256": "eb69b04e5975592c69163f81c4272c0cc10fdc3cb784274ec4e5d44d2f0a438d",
+      "metadata": {
+        "device": 2049,
+        "inode": 76021,
+        "bytes": 1258,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231002184991398,
+        "ctimeNs": 1794231002186991409
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/update-state.json": {
+      "sha256": "bf6e44cdcfd2cc102b4cc6f2a2ebb3d49853bc3355a9ffb3837951e558a12c76",
+      "metadata": {
+        "device": 2049,
+        "inode": 34672,
+        "bytes": 1817,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231062036316237,
+        "ctimeNs": 1794231062037316243
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/s3-schedule.json": {
+      "sha256": "1727109023787645e5b92afc87e00479fd80fea5fa53a1f286afae7dd0d3fbf3",
+      "metadata": {
+        "device": 2049,
+        "inode": 35156,
+        "bytes": 1771,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794176937997108612,
+        "ctimeNs": 1794176937998108618
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-attempt.json": {
+      "sha256": "43ca0409c22cd2b1de4ad00ef49eca635f5adff79dabbcf608db479262d08780",
+      "metadata": {
+        "device": 2049,
+        "inode": 74836,
+        "bytes": 199,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132981701289,
+        "ctimeNs": 1794231132982701295
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-backup-success.json": {
+      "sha256": "843475f46d8c5b21f0e16cab4f8e29fc41568559cb254ee618aa156dc3298065",
+      "metadata": {
+        "device": 2049,
+        "inode": 73856,
+        "bytes": 3011,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231072539373242,
+        "ctimeNs": 1794231072539373242
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/last-restore-success.json": {
+      "sha256": "0012b38ccfb836aaf1ad459d819d683a1373c13dd2f5ae6e09d8536688364831",
+      "metadata": {
+        "device": 2049,
+        "inode": 74934,
+        "bytes": 6441,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132980701284,
+        "ctimeNs": 1794231132980701284
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/pending.json": {
+      "sha256": "ef271bb48a8e1c79645c5adf50464f9d6df631988f183a39be26b2cd8c297922",
+      "metadata": {
+        "device": 2049,
+        "inode": 73855,
+        "bytes": 4200,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231072542373258,
+        "ctimeNs": 1794231072542373258
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-attempt.json": {
+      "sha256": "3ea9bfe18de098a2115fe4a1ec3eb76f1a114066ed84436952a8adc0f0ab9711",
+      "metadata": {
+        "device": 2049,
+        "inode": 69039,
+        "bytes": 243,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132993701354,
+        "ctimeNs": 1794231132993701354
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-success.json": {
+      "sha256": "67c6dcacfa75ecadc4aae2b71ca214d9c6283f9fd54b2cbaf056b664a0cf466e",
+      "metadata": {
+        "device": 2049,
+        "inode": 71693,
+        "bytes": 1358,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132990701338,
+        "ctimeNs": 1794231132991701343
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/last-restore-success.json": {
+      "sha256": "0012b38ccfb836aaf1ad459d819d683a1373c13dd2f5ae6e09d8536688364831",
+      "metadata": {
+        "device": 2049,
+        "inode": 74967,
+        "bytes": 6441,
+        "allocatedBytes": 8192,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231132987701322,
+        "ctimeNs": 1794231132988701327
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-postgres-backups/latest-success.json": {
+      "sha256": "bff9222756eacb87773a1db57bd953493abced4106737954607788ee23cc15fa",
+      "metadata": {
+        "device": 2049,
+        "inode": 148190,
+        "bytes": 12979,
+        "allocatedBytes": 16384,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231050899255793,
+        "ctimeNs": 1794231050900255798
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/account-postgres-backups/latest-attempt.json": {
+      "sha256": "bff9222756eacb87773a1db57bd953493abced4106737954607788ee23cc15fa",
+      "metadata": {
+        "device": 2049,
+        "inode": 200673,
+        "bytes": 12979,
+        "allocatedBytes": 16384,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794231050901255804,
+        "ctimeNs": 1794231050902255809
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/server-backups/health.json": {
+      "sha256": "2fb395fc4d7b141c9fae0f050152499006f69c651326e7fc4d7e3d16c333c538",
+      "metadata": {
+        "device": 2049,
+        "inode": 76027,
+        "bytes": 914,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794232911818948022,
+        "ctimeNs": 1794232911819948027
+      },
+      "candidateReferenceFields": []
+    },
+    "ops/external-s3/scheduled/health.json": {
+      "sha256": "89e9799bb6df5f9f60ca7906cc889e76c192d7db84c0c7a14896b93bb96c978e",
+      "metadata": {
+        "device": 2049,
+        "inode": 76036,
+        "bytes": 992,
+        "allocatedBytes": 4096,
+        "mode": 384,
+        "uid": 0,
+        "gid": 0,
+        "links": 1,
+        "mtimeNs": 1794232912099949473,
+        "ctimeNs": 1794232912101949483
+      },
+      "candidateReferenceFields": []
+    }
+  },
+  "pointersBefore": {
+    "current": "releases/23.5.77-dfe4860f6242",
+    "previous": "releases/23.5.76-4d85da38a2c1",
+    "account-service/current": "releases/23.5.77-5ff25a1df85eebc3",
+    "account-service/previous": "releases/23.5.76-de50ec44843d8a9e"
+  },
+  "pointersAfter": {
+    "current": "releases/23.5.77-dfe4860f6242",
+    "previous": "releases/23.5.76-4d85da38a2c1",
+    "account-service/current": "releases/23.5.77-5ff25a1df85eebc3",
+    "account-service/previous": "releases/23.5.76-de50ec44843d8a9e"
+  },
+  "units": {
+    "melodiajest-account-backup.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-account-backup.service",
+          "sha256": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+          "metadata": {
+            "device": 2049,
+            "inode": 69049,
+            "bytes": 970,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794206134058727055,
+            "ctimeNs": 1794206134058727055
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "f135925524384678b42c8c2471ff35dcd090146d23b7f5a2b7d72badb3469909"
+    },
+    "melodiajest-account.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-account.service",
+          "sha256": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+          "metadata": {
+            "device": 2049,
+            "inode": 75815,
+            "bytes": 1548,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794167290746200519,
+            "ctimeNs": 1794167290747200524
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "d816dc65e57882736cba7f0a0962e7b8096c32b2b88a3c27a5630f8ea8073d07"
+    },
+    "melodiajest-backup-health.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-backup-health.service",
+          "sha256": "6f66b696d4613eab86b207dd40c17e61cfae7accae4a9a58825de775c48b3c47",
+          "metadata": {
+            "device": 2049,
+            "inode": 75804,
+            "bytes": 797,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937989108572,
+            "ctimeNs": 1794176937990108577
+          }
+        },
+        {
+          "path": "/etc/systemd/system/melodiajest-backup-health.service.d/20-external-s3.conf",
+          "sha256": "144a51189eafc662b531f7cecfb17d15cb6668247d0c9aa3daedbb876cd390f3",
+          "metadata": {
+            "device": 2049,
+            "inode": 35154,
+            "bytes": 141,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937995108602,
+            "ctimeNs": 1794176937996108607
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "82b95128b50faa86d390d93c57f7dbf7c4f1821a673c8af0bd2de67d34171e7a"
+    },
+    "melodiajest-backup.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-backup.service",
+          "sha256": "cbfbc9b03463c8485065ab42dbcb8273d6755c1ac62e71ca1ca7b3c18b63fc0a",
+          "metadata": {
+            "device": 2049,
+            "inode": 75979,
+            "bytes": 828,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937985108552,
+            "ctimeNs": 1794176937986108557
+          }
+        },
+        {
+          "path": "/etc/systemd/system/melodiajest-backup.service.d/20-external-s3.conf",
+          "sha256": "109b352004b8bd96c5f29576b87269618734bc14f097507843c5a7af2789f028",
+          "metadata": {
+            "device": 2049,
+            "inode": 75814,
+            "bytes": 141,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937992108587,
+            "ctimeNs": 1794176937992108587
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "b7fd41c97513eb766610ea4222ef910feeb8cc08b64e8234ad018eef41903ac6"
+    },
+    "melodiajest-postgres.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-postgres.service",
+          "sha256": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+          "metadata": {
+            "device": 2049,
+            "inode": 75952,
+            "bytes": 870,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794167479185147270,
+            "ctimeNs": 1794167479185147270
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "5f4f6106fdb6cd613774c22f8b15e2ba49e0e7a08a0d709d5bc50bbba2ec06c6"
+    },
+    "melodiajest-restore-check.service": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-restore-check.service",
+          "sha256": "173a50e82f32fa470db0153ae2f8afe6c999f02aa409713e7e77f77789d2ff2e",
+          "metadata": {
+            "device": 2049,
+            "inode": 75950,
+            "bytes": 840,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937988108567,
+            "ctimeNs": 1794176937988108567
+          }
+        },
+        {
+          "path": "/etc/systemd/system/melodiajest-restore-check.service.d/20-external-s3.conf",
+          "sha256": "fcf47ddf7cf127b0bfbeb831882d03fba663bc7641820357d2cebcd58e9d29c7",
+          "metadata": {
+            "device": 2049,
+            "inode": 75954,
+            "bytes": 148,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794176937993108592,
+            "ctimeNs": 1794176937993108592
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "bb07deceb0bca017e3a91a0f2eff487feb7671539306d651dc091ca6b424b1c4"
+    },
+    "melodiajest-account-backup.timer": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-account-backup.timer",
+          "sha256": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+          "metadata": {
+            "device": 2049,
+            "inode": 75949,
+            "bytes": 231,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794153412772883655,
+            "ctimeNs": 1794153412773883660
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "871efc2787441f817a06894716b5a2ff3580bd8fe317e1b20d4ace69d3feaad7"
+    },
+    "melodiajest-backup-health.timer": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-backup-health.timer",
+          "sha256": "6e2bcc6b373edfd6b57e9e26fa50aa1eed58c9a4cdccac4ecdfb0248aecf81e3",
+          "metadata": {
+            "device": 2049,
+            "inode": 35159,
+            "bytes": 194,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794004147847668843,
+            "ctimeNs": 1794004147848668848
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "f084795c91d03bf72fda25e25d45567d30ac3bbb1cc4701e1adc377bbd4d7ae6"
+    },
+    "melodiajest-backup.timer": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-backup.timer",
+          "sha256": "f7bf21192ac7d9d625b554e98ea747959566e8cad6b9157d3696468515ea7287",
+          "metadata": {
+            "device": 2049,
+            "inode": 35155,
+            "bytes": 193,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794004147845668832,
+            "ctimeNs": 1794004147845668832
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "198f7417805ca960f50b094e48009887f675839c2066c43e171fe4a0028e4726"
+    },
+    "melodiajest-restore-check.timer": {
+      "referencesCandidate": [],
+      "sourceFiles": [
+        {
+          "path": "/etc/systemd/system/melodiajest-restore-check.timer",
+          "sha256": "8873d329c85dfb45cf957d2048c4cc18dedb76f1485b0d82e2044e931a723c87",
+          "metadata": {
+            "device": 2049,
+            "inode": 35157,
+            "bytes": 211,
+            "allocatedBytes": 4096,
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "links": 1,
+            "mtimeNs": 1794004147846668838,
+            "ctimeNs": 1794004147847668843
+          }
+        }
+      ],
+      "effectiveFieldsSha256": "4cbd281bf7b88de507d52c171803bfe39722b446d3d522768544ba7b3a517974"
+    }
+  },
+  "containers": {
+    "melodiajest-web-1": {
+      "pid": 2470118,
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/melodiajest-account",
+          "Destination": "/run/melodiajest-account",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/opt/melodiajest/deploy/nginx.conf",
+          "Destination": "/etc/nginx/nginx.conf",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/opt/melodiajest/current",
+          "Destination": "/usr/share/nginx/html",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "candidateMountReferences": [],
+      "controlGroup": "/system.slice/docker-e799ffa19e6a441fd72f26fd6d81d9e9788f5b59c5cca2de09ba9fd04d58cd9c.scope"
+    },
+    "melodiajest-postgres-1": {
+      "pid": 1484403,
+      "image": "sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/opt/melodiajest/deploy/postgres-config",
+          "Destination": "/etc/melodiajest-postgres",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/melodiajest-postgres",
+          "Destination": "/run/melodiajest-postgres",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/opt/melodiajest/ops/secrets/postgres-bootstrap",
+          "Destination": "/run/secrets/melodiajest-bootstrap",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/opt/melodiajest/postgres-data",
+          "Destination": "/var/lib/postgresql",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": "rprivate"
+        }
+      ],
+      "candidateMountReferences": [],
+      "controlGroup": "/system.slice/docker-5c0b3afec57457ea5cfa73aa571ee4ec77a6b247dc01f7489daeb15bbee9a34a.scope"
+    }
+  },
+  "ownProcesses": [
+    {
+      "pid": 1484403,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 9
+    },
+    {
+      "pid": 1484706,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 288
+    },
+    {
+      "pid": 1484707,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 19
+    },
+    {
+      "pid": 1484708,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 7
+    },
+    {
+      "pid": 1484709,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 7
+    },
+    {
+      "pid": 1484710,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 6
+    },
+    {
+      "pid": 1484712,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 7
+    },
+    {
+      "pid": 1484713,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 7
+    },
+    {
+      "pid": 1484714,
+      "executable": "/usr/lib/postgresql/18/bin/postgres",
+      "cwd": "/var/lib/postgresql/18/docker",
+      "candidateReferences": [],
+      "fdCount": 7
+    },
+    {
+      "pid": 2467932,
+      "executable": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048/node",
+      "cwd": "/opt/melodiajest/account-service/releases/23.5.77-5ff25a1df85eebc3",
+      "candidateReferences": [],
+      "fdCount": 22
+    },
+    {
+      "pid": 2470118,
+      "executable": "/usr/sbin/nginx",
+      "cwd": "/",
+      "candidateReferences": [],
+      "fdCount": 8
+    },
+    {
+      "pid": 2470152,
+      "executable": "/usr/sbin/nginx",
+      "cwd": "/",
+      "candidateReferences": [],
+      "fdCount": 10
+    }
+  ],
+  "candidateReferences": {
+    "controls": {},
+    "units": {},
+    "containers": {},
+    "processes": {}
+  },
+  "noActiveReferencesWithinObservedScope": true,
+  "processesDisappearedDuringRead": 0,
+  "estimatedExclusiveRegularFileAllocatedBytes": 127049728,
+  "directoryAllocatedBytes": 4096,
+  "freeBytes": 982609920,
+  "projectedFreeIfAllAttributedFileBlocksReleased": 1109659648,
+  "prepareMinimumFreeBytes": 1048576000,
+  "postgresRecoveryMinimumFreeBytes": 838860800,
+  "sharedAndOwnReadLocksHeld": true,
+  "locksWereExistingAndUnmodified": true,
+  "readOnly": true,
+  "deletionPlan": false,
+  "deletedFiles": 0,
+  "freedBytesByThisObservation": 0,
+  "s3Requests": 0,
+  "nodeExecuted": false,
+  "databaseOpened": false,
+  "limitations": [
+    "documented current controls,units,containers and their live cgroups only;not every historical file reference",
+    "no public signature revalidation;existing pinned archive and ELF identities reused",
+    "non-atomic filesystem/process observation;fresh verification required before any future action",
+    "exclusive inode allocation is attribution,not a guarantee of reclaimed filesystem bytes",
+    "candidate exceeds old64MiB payload/staging executors;they must not be expanded or reused for it"
+  ]
+}

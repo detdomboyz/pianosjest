@@ -48,6 +48,7 @@
 | --- | --- | ---: | ---: | --- | --- |
 | course03-01 | Пальцы 5–4: C–D | 8 | 56 | MIDI-челлендж | сначала course01-04; сначала detail-p-release-04 |
 | course03-02 | Пальцы 5–4–3: C–D–E | 10 | 58 | MIDI-челлендж | сначала course03-01; сначала detail-p-release-02 |
+| detail-p-left-eighth-pairs-01 | Левая: две ровные восьмые на «два-и» | 10 | 48 | MIDI-челлендж | сначала course03-02; сначала course04-01; сначала detail-p-release-02 |
 | detail-p-left-upper-position-01 | Левая: ми–фа–соль пальцами 3–2–1 | 10 | 52 | MIDI-челлендж | сначала course03-02; сначала detail-p-release-02 |
 | course03-03 | Пять пальцев вверх | 10 | 58 | MIDI-челлендж | сначала detail-p-left-upper-position-01; сначала course03-02 |
 | course03-04 | Пять пальцев вниз | 10 | 58 | MIDI-челлендж | сначала course03-03; сначала detail-p-left-upper-position-01 |
@@ -72,15 +73,18 @@
 
 | ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
 | --- | --- | ---: | ---: | --- | --- |
-| detail-p-legato-01 | Правая: соединить C4 и D4 | 6 | 56 | MIDI-челлендж | сначала course03-02; сначала detail-p-release-04 |
+| detail-p-legato-01 | Правая: соединить C4 и D4 | 6 | 56 | MIDI-челлендж | сначала course01-03; сначала detail-p-release-03 |
 | detail-p-legato-02 | Левая: соединить C3 и D3 | 6 | 56 | MIDI-челлендж | сначала detail-p-legato-01 |
-| detail-p-legato-03 | Правая: дуга из трёх нот | 5 | 56 | MIDI-челлендж | сначала detail-p-legato-02 |
+| detail-p-legato-03 | Правая: дуга из трёх нот | 5 | 56 | MIDI-челлендж | сначала detail-p-legato-01 |
 | detail-p-legato-04 | Левая: дуга из трёх нот | 5 | 56 | MIDI-челлендж | сначала detail-p-legato-03 |
 | detail-p-legato-pairs-03 | Левая: передача 3–2 на E3–F3 | 4 | 52 | MIDI-челлендж | сначала detail-p-legato-04; сначала course03-03 |
 | detail-p-legato-pairs-04 | Левая: передача 2–1 на F3–G3 | 4 | 52 | MIDI-челлендж | сначала detail-p-legato-pairs-03; сначала course03-03 |
 | detail-p-position-skips-03 | Левая: C3–E3 пальцами 5–3 | 4 | 52 | MIDI-челлендж | сначала course03-03; сначала detail-p-legato-04 |
+| detail-p-improv-three-key-answer-left-01 | Левая: свой басовый ответ к C3 | 8 | 48 | Практика | сначала detail-p-legato-04; сначала detail-p-position-skips-03; сначала course04-01; сначала detail-p-release-02 |
 | detail-p-position-skips-04 | Левая: D3–F3 пальцами 4–2 | 4 | 52 | MIDI-челлендж | сначала detail-p-position-skips-03; сначала detail-p-legato-pairs-03 |
+| detail-p-improv-rhythm-choice-left-01 | Левая: выбери долю для двух восьмых | 9 | 48 | Практика | сначала detail-p-left-eighth-pairs-01; сначала detail-p-improv-three-key-answer-left-01; сначала detail-p-release-02 |
 | detail-p-position-skips-05 | Левая: E3–G3 пальцами 3–1 | 4 | 52 | MIDI-челлендж | сначала detail-p-position-skips-04; сначала detail-p-legato-pairs-04 |
+| detail-p-improv-quarter-rest-choice-left-01 | Левая: выбери долю тишины в ответе | 7 | 48 | Практика | сначала course01-02; сначала course03-02; сначала detail-p-improv-three-key-answer-left-01; сначала detail-p-release-02 |
 | detail-p-staccato-01 | Правая: короткое C4 | 4 | 56 | MIDI-челлендж | сначала course03-04; сначала detail-p-legato-04 |
 | detail-p-staccato-02 | Левая: короткое C3 | 4 | 56 | MIDI-челлендж | сначала detail-p-staccato-01 |
 | detail-p-staccato-03 | Правая: короткие соседние ноты | 5 | 56 | MIDI-челлендж | сначала detail-p-staccato-02 |
@@ -95,6 +99,7 @@
 | detail-p-position-skips-02 | Правая: E4–G4 пальцами 3–5 | 4 | 52 | MIDI-челлендж | сначала detail-p-position-skips-01; сначала detail-p-legato-pairs-02 |
 | course02-04 | Пять пальцев вниз | 10 | 60 | MIDI-челлендж | сначала course02-03; сначала detail-p-right-upper-position-01 |
 | course02-05 | Вверх и вниз без остановки | 18 | 64 | MIDI-челлендж | сначала course02-04; сначала course02-03; сначала detail-p-right-upper-position-01 |
+| detail-p-staccato-right-outer-01 | Правая: короткие соль–фа–ми | 5 | 48 | MIDI-челлендж | сначала detail-p-staccato-03; сначала detail-p-right-upper-position-01; сначала course02-04 |
 
 ### 3. Простые мелодии и перенос позиции
 
@@ -112,6 +117,7 @@
 | --- | --- | ---: | ---: | --- | --- |
 | course02-06 | Соседние пары | 16 | 62 | MIDI-челлендж | сначала course02-05; сначала detail-p-right-upper-position-01; сначала detail-p-release-01 |
 | course02-07 | Шаги и скачки C–E–G | 9 | 62 | MIDI-челлендж | сначала course02-06; сначала course02-05; сначала detail-p-right-upper-position-01 |
+| detail-p-improv-three-key-answer-right-01 | Правая: свой ответ из C4–D4–E4 | 8 | 48 | Практика | сначала course02-02; сначала course02-07; сначала course04-01; сначала detail-p-release-01 |
 | course02-08 | Мини-экзамен правой руки | 18 | 66 | MIDI-челлендж | сначала course02-07; сначала course02-06; сначала course02-05; сначала detail-p-right-upper-position-01 |
 
 ### 4. Согласование рук
@@ -127,6 +133,14 @@
 | detail-p-hands-03 | Противоположное движение двух рук | 10 | 56 | MIDI-челлендж | сначала detail-p-hands-02 |
 | detail-p-hands-04 | Бас и ответ правой руки | 8 | 56 | MIDI-челлендж | сначала detail-p-hands-03 |
 | course01-08 | Проверка ориентиров без взгляда | 10 | 58 | MIDI-челлендж | сначала course01-03; сначала course01-04; сначала course01-06; сначала course01-07 |
+
+### 2. Пять пальцев и простой пульс
+
+Соседние ноты, возврат, повтор и пауза без смещения кисти.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
+| detail-p-improv-quarter-rest-choice-right-01 | Правая: выбери долю тишины в ответе | 7 | 48 | Практика | сначала course01-01; сначала course02-02; сначала detail-p-improv-three-key-answer-right-01; сначала detail-p-release-01 |
 
 ### 3. Простые мелодии и перенос позиции
 
@@ -161,7 +175,21 @@
 | ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
 | --- | --- | ---: | ---: | --- | --- |
 | course04-06 | Восьмые парами | 16 | 60 | MIDI-челлендж | сначала detail-p-rhythm-04; сначала course02-05; сначала course04-05 |
+| detail-p-improv-rhythm-choice-right-01 | Правая: выбери долю для двух восьмых | 9 | 48 | Практика | сначала course04-06; сначала detail-p-improv-three-key-answer-right-01; сначала course02-02; сначала detail-p-release-01 |
+| detail-p-eighth-rest-offbeat-right-01 | Правая: вступление после восьмой паузы | 8 | 48 | MIDI-челлендж | сначала detail-p-rhythm-04; сначала course04-05; сначала course02-02 |
+| detail-p-eighth-rest-repeat-right-01 | Правая: повтор до после восьмой паузы | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-offbeat-right-01; сначала detail-p-release-01 |
+| detail-p-eighth-rest-thumb-middle-right-01 | Правая: смена 1→3 на ми после паузы | 4 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-repeat-right-01; сначала course02-02 |
+| detail-p-eighth-rest-middle-thumb-right-01 | Правая: смена 3→1 на ми перед подъёмом | 4 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-thumb-middle-right-01; сначала course02-02 |
+| detail-p-syncopation-hold-right-01 | Правая: синкопа через «три» | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-offbeat-right-01; сначала course04-02 |
+| detail-p-barline-hold-right-01 | Правая: удержание через тактовую черту | 7 | 48 | MIDI-челлендж | сначала detail-p-syncopation-hold-right-01; сначала course04-02 |
+| detail-p-eighth-rest-offbeat-left-01 | Левая: пауза на «три», вступление на «три-и» | 8 | 48 | MIDI-челлендж | сначала course03-02; сначала detail-p-release-02; сначала detail-p-rhythm-04; сначала course04-05 |
+| detail-p-dotted-quarter-eighth-rest-left-01 | Левая: мизинец отпускает на «два-и» | 6 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-offbeat-left-01; сначала course03-02; сначала detail-p-release-02 |
+| detail-p-eighth-rest-repeat-left-01 | Левая: повтор ре после восьмой паузы | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-offbeat-left-01; сначала detail-p-release-02 |
+| detail-p-eighth-rest-thumb-middle-left-01 | Левая: смена 1→3 на до после паузы | 4 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-repeat-left-01; сначала detail-p-left-upper-position-01 |
+| detail-p-syncopation-hold-left-01 | Левая: синкопа через «четыре» | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-offbeat-left-01; сначала detail-p-left-half-01 |
+| detail-p-barline-hold-left-01 | Левая: безымянный держит через тактовую черту | 7 | 48 | MIDI-челлендж | сначала detail-p-syncopation-hold-left-01; сначала detail-p-left-half-01 |
 | detail-p-dotted-quarter-01 | Правая: полторы доли и восьмая | 6 | 48 | MIDI-челлендж | сначала course04-06; сначала course04-02; сначала course02-02 |
+| detail-p-dotted-quarter-eighth-rest-right-01 | Правая: полторы доли, затем полдоли тишины | 6 | 48 | MIDI-челлендж | сначала detail-p-dotted-quarter-01; сначала detail-p-eighth-rest-offbeat-right-01; сначала course02-02 |
 | course09-01 | Ода к радости · фраза 1 | 15 | 64 | MIDI-челлендж | сначала detail-p-dotted-quarter-01; сначала course02-05 |
 | course09-02 | Ода к радости · продолжение | 15 | 64 | MIDI-челлендж | сначала course09-01; сначала course02-01 |
 | course09-07 | Из памяти: Ода к радости | 30 | 66 | MIDI-челлендж | сначала course09-01; сначала course09-02 |
@@ -190,15 +218,19 @@
 | course05-06 | Перенос правой позиции C → G | 10 | 56 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | course05-07 | Перенос левой позиции C → F | 10 | 54 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | detail-p-relocate-01 | Правая: большой палец C4 → G4 | 4 | 56 | MIDI-челлендж | сначала course02-08; сначала detail-p-release-01 |
+| detail-p-right-lower-b-position-01 | Правая: B3–F4 с си под большим | 10 | 52 | MIDI-челлендж | сначала course02-04; сначала detail-p-right-upper-position-01; сначала detail-p-relocate-01 |
+| detail-p-eighth-rest-ring-little-right-01 | Правая: фа 4→5 перед спуском к си | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-repeat-right-01; сначала detail-p-right-upper-position-01; сначала detail-p-right-lower-b-position-01 |
 | detail-p-position-return-01 | Правая: к A4 и обратно без растяжения | 5 | 48 | MIDI-челлендж | сначала detail-p-relocate-01; сначала detail-p-legato-pairs-02; сначала course04-02 |
 | course09-03 | Twinkle · две фразы | 14 | 60 | MIDI-челлендж | сначала detail-p-position-return-01; сначала course02-02; сначала course05-06 |
 | course09-04 | Mary Had a Little Lamb | 26 | 64 | MIDI-челлендж | сначала course04-03; сначала course02-02; сначала detail-p-position-skips-02; сначала course05-06 |
+| detail-p-a-minor-third-thumb-prep-right-01 | Правая: C4–D4 пальцами 3→1 в ля миноре | 9 | 44 | MIDI-челлендж | сначала detail-p-relocate-01; сначала detail-p-cross-01; сначала course02-08 |
 | detail-p-relocate-02 | Левая: мизинец C3 → F3 | 4 | 56 | MIDI-челлендж | сначала course03-08; сначала detail-p-release-02 |
 | detail-p-relocate-03 | Правая: новая опора G4–B4–D5 | 5 | 56 | MIDI-челлендж | сначала detail-p-relocate-01; сначала course02-08 |
 | detail-p-shifted-right-five-01 | Правая: G4 после мизинца — большим | 10 | 56 | MIDI-челлендж | сначала detail-p-relocate-03; сначала detail-p-legato-pairs-01; сначала detail-p-release-01 |
 | detail-p-relocate-04 | Левая: новая опора F3–A3–C4 | 5 | 56 | MIDI-челлендж | сначала detail-p-relocate-02; сначала course03-08 |
 | detail-p-shifted-left-five-01 | Левая: F3–C4 с белой си | 10 | 56 | MIDI-челлендж | сначала detail-p-relocate-04; сначала detail-p-left-upper-position-01; сначала detail-p-legato-pairs-04 |
 | detail-p-left-g-position-01 | Левая: G3–B3–D4 вокруг среднего до | 5 | 48 | MIDI-челлендж | сначала detail-p-relocate-04; сначала detail-p-position-skips-05 |
+| detail-p-eighth-rest-middle-ring-left-g-01 | Левая: ля 3→4 перед подъёмом к ре | 5 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-thumb-middle-left-01; сначала detail-p-shifted-left-five-01; сначала detail-p-left-g-position-01 |
 | course05-08 | Экзамен ориентирования на ощупь | 16 | 60 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | detail-p-black-01 | Правая: группа из двух чёрных | 4 | 56 | MIDI-челлендж | сначала course02-08; сначала detail-p-release-03 |
 | detail-p-hearing-01 | Большая терция C4–E4 | 4 | 56 | MIDI-челлендж | сначала course05-03; сначала course02-03; сначала course04-01 |
@@ -209,13 +241,26 @@
 | detail-p-black-03 | Правая: группа из трёх чёрных | 5 | 56 | MIDI-челлендж | сначала detail-p-black-01 |
 | detail-p-g-major-upper-right-01 | Правая: F♯4 безымянным между E4 и G4 | 5 | 48 | MIDI-челлендж | сначала detail-p-right-upper-position-01; сначала detail-p-black-03 |
 | detail-p-black-position-right-01 | Правая: F♯4 средним в D-позиции | 14 | 52 | MIDI-челлендж | сначала detail-p-relocate-03; сначала detail-p-black-03; сначала detail-p-legato-pairs-01 |
+| detail-p-eighth-rest-ring-middle-right-01 | Правая: фа 4→3 перед подъёмом к ля | 4 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-thumb-middle-right-01; сначала detail-p-right-upper-position-01; сначала detail-p-black-position-right-01 |
 | detail-p-black-position-right-02 | Правая: B♭4 безымянным в F-позиции | 14 | 52 | MIDI-челлендж | сначала detail-p-black-position-right-01; сначала detail-p-right-upper-position-01; сначала detail-p-black-03 |
+| detail-p-f-major-fourth-thumb-prep-right-01 | Правая: B♭4 → C5 через тихую долю | 8 | 44 | MIDI-челлендж | сначала detail-p-black-position-right-02; сначала detail-p-cross-01 |
+| detail-p-f-major-fourth-thumb-connected-right-01 | Правая: связный 4→1 на B♭4–C5 | 8 | 44 | MIDI-челлендж | сначала detail-p-f-major-fourth-thumb-prep-right-01 |
+| detail-p-f-major-thumb-fourth-prep-right-01 | Правая: C5 → B♭4 через тихую долю | 8 | 44 | MIDI-челлендж | сначала detail-p-f-major-fourth-thumb-connected-right-01; сначала detail-p-cross-02 |
+| detail-p-f-major-thumb-fourth-connected-right-01 | Правая: связный 1→4 на C5–B♭4 | 8 | 44 | MIDI-челлендж | сначала detail-p-f-major-thumb-fourth-prep-right-01 |
+| detail-p-d-major-thumb-third-connected-right-01 | Правая: связный G4/1 → F♯4/3 и возврат к D4 | 8 | 44 | MIDI-челлендж | сначала detail-p-cross-02; сначала detail-p-black-position-right-01; сначала detail-p-f-major-thumb-fourth-connected-right-01 |
+| detail-p-f-major-descent-checkpoint-right-01 | Контроль: фа мажор правой вниз F5–F4 | 8 | 44 | MIDI-челлендж | сначала detail-p-f-major-thumb-fourth-connected-right-01 |
+| detail-p-f-major-ascent-checkpoint-right-01 | Контроль: фа мажор правой вверх F4–F5 | 8 | 44 | MIDI-челлендж | сначала detail-p-f-major-fourth-thumb-connected-right-01 |
 | detail-p-black-04 | Левая: три чёрные сверху вниз | 5 | 56 | MIDI-челлендж | сначала detail-p-black-02 |
 | detail-p-g-major-upper-left-01 | Левая: F♯3 указательным между E3 и G3 | 5 | 48 | MIDI-челлендж | сначала detail-p-left-upper-position-01; сначала detail-p-black-04 |
 | detail-p-black-position-left-01 | Левая: B♭3 указательным в F-позиции | 14 | 52 | MIDI-челлендж | сначала detail-p-shifted-left-five-01; сначала detail-p-black-04; сначала detail-p-legato-pairs-04 |
 | detail-p-black-position-left-02 | Левая: F♯3 средним в D-позиции | 14 | 52 | MIDI-челлендж | сначала detail-p-black-position-left-01; сначала detail-p-left-upper-position-01; сначала detail-p-black-04 |
+| detail-p-eighth-rest-middle-thumb-left-d-01 | Левая: ля 3→1 перед спуском к ре | 6 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-thumb-middle-left-01; сначала detail-p-black-position-left-02; сначала detail-p-shifted-left-five-01 |
 | course06-01 | Правая: пальцы 4–5 | 10 | 56 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
+| detail-p-bflat-thumb-second-descent-right-01 | Правая: C4/1→B♭3/2 после D4/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-d-major-thumb-third-connected-right-01 |
+| detail-p-bflat-thumb-second-terminal-left-01 | Левая: A3/1→B♭3/2 после G3/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-legato-pairs-04; сначала detail-p-black-position-left-01; сначала detail-p-cross-03 |
 | course06-02 | Левая: пальцы 5–4 | 10 | 54 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
+| detail-p-bflat-second-thumb-right-01 | Правая: B♭3/2→C4/1, начало с чёрной | 3 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-cross-01 |
+| detail-p-bflat-thumb-fourth-left-01 | Левая: D3/1→E♭3/4 после C3/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-black-02; сначала detail-p-cross-03 |
 
 ### 4. Согласование рук
 
@@ -226,9 +271,13 @@
 | course07-01 | C левой и правой по очереди | 8 | 56 | MIDI-челлендж | сначала detail-p-hands-01 |
 | course07-02 | Зеркальная лесенка по очереди | 10 | 58 | MIDI-челлендж | сначала course07-01; сначала course02-03; сначала course03-03 |
 | course07-03 | Пары C–D–E одновременно | 10 | 54 | MIDI-челлендж | сначала course07-02; сначала course01-07; сначала course02-02; сначала course03-02 |
+| detail-p-eighth-rest-repeat-paired-01 | Две руки: повтор после восьмой паузы | 8 | 48 | MIDI-челлендж | сначала detail-p-eighth-rest-repeat-right-01; сначала detail-p-eighth-rest-repeat-left-01; сначала course01-07 |
 | course07-04 | Пять пар одновременно | 20 | 54 | MIDI-челлендж | сначала course07-03; сначала course02-03; сначала course03-03 |
+| detail-p-staccato-paired-01 | Две руки: короткое до вместе | 8 | 48 | MIDI-челлендж | сначала detail-p-staccato-01; сначала detail-p-staccato-02; сначала course01-07; сначала detail-p-eighth-rest-repeat-paired-01 |
 | course07-05 | Противоположное движение | 18 | 52 | MIDI-челлендж | сначала course07-04; сначала course02-03; сначала course03-03 |
+| detail-p-staccato-moving-paired-01 | Две руки: короткая дуга C–D–E | 10 | 48 | MIDI-челлендж | сначала detail-p-staccato-03; сначала detail-p-staccato-04; сначала course07-03; сначала detail-p-staccato-paired-01 |
 | course07-06 | Левая опора, правая фраза | 12 | 58 | MIDI-челлендж | сначала course07-02; сначала course02-08; сначала course03-01; сначала course04-01 |
+| detail-p-staccato-contrary-paired-01 | Две руки: коротко навстречу и обратно | 10 | 48 | MIDI-челлендж | сначала detail-p-staccato-04; сначала detail-p-staccato-right-outer-01; сначала course07-05; сначала detail-p-staccato-moving-paired-01 |
 | course09-06 | Мелодия с басовыми ответами | 15 | 58 | MIDI-челлендж | сначала course07-06; сначала course04-02 |
 
 ### 5. Гамма, арпеджио и трезвучие
@@ -239,10 +288,38 @@
 | --- | --- | ---: | ---: | --- | --- |
 | detail-p-scale-03 | Левая: 5 + 3 ноты гаммы | 8 | 56 | MIDI-челлендж | сначала detail-p-cross-03 |
 | detail-p-scale-04 | Левая: гамма вверх и обратно | 15 | 48 | MIDI-челлендж | сначала detail-p-scale-03; сначала detail-p-cross-04 |
+
+### 3. Простые мелодии и перенос позиции
+
+Короткие знакомые фразы, отдельно каждой рукой; переносить кисть после отпускания.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
+| detail-p-f-major-descent-checkpoint-left-01 | Контроль: фа мажор левой вниз F4–F3 | 8 | 44 | MIDI-челлендж | сначала detail-p-black-position-left-01; сначала detail-p-scale-04 |
+| detail-p-f-major-ascent-checkpoint-left-01 | Контроль: фа мажор левой вверх F3–F4 | 8 | 44 | MIDI-челлендж | сначала detail-p-black-position-left-01; сначала detail-p-scale-04 |
+
+### 5. Гамма, арпеджио и трезвучие
+
+Подкладывание, поворот кисти и компактный аккорд после освоения позиции.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
 | detail-p-g-major-split-left-01 | Соль мажор левой: 5 + 3 с паузой | 8 | 48 | MIDI-челлендж | сначала detail-p-scale-04; сначала detail-p-g-major-upper-left-01 |
+| detail-p-g-major-continuous-left-01 | Соль мажор левой: переход без остановки | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-split-left-01; сначала detail-p-scale-04 |
+| detail-p-d-major-ascent-left-01 | Ре мажор левой: F♯3 и C♯4, D3–D4 | 8 | 44 | MIDI-челлендж | сначала detail-p-black-position-left-02; сначала detail-p-g-major-upper-left-01; сначала detail-p-black-02; сначала detail-p-cross-03; сначала detail-p-g-major-continuous-left-01 |
+| detail-p-g-major-descent-split-left-01 | Соль мажор левой: спуск 3 + 5 с паузой | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-continuous-left-01; сначала detail-p-cross-04 |
+| detail-p-g-major-descent-continuous-left-01 | Соль мажор левой: непрерывный спуск | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-descent-split-left-01; сначала detail-p-scale-04 |
+| detail-p-d-major-descent-left-01 | Ре мажор левой вниз: C♯4 и F♯3, D4–D3 | 8 | 44 | MIDI-челлендж | сначала detail-p-d-major-ascent-left-01; сначала detail-p-g-major-descent-continuous-left-01; сначала detail-p-cross-04 |
+| detail-p-g-major-roundtrip-left-01 | Проверка: Соль мажор левой вверх и обратно | 15 | 48 | MIDI-челлендж | сначала detail-p-g-major-continuous-left-01; сначала detail-p-g-major-descent-continuous-left-01 |
 | detail-p-scale-01 | Правая: 3 + 5 нот гаммы | 8 | 56 | MIDI-челлендж | сначала detail-p-cross-01 |
 | detail-p-scale-02 | Правая: гамма вверх и обратно | 15 | 48 | MIDI-челлендж | сначала detail-p-scale-01; сначала detail-p-cross-02 |
 | detail-p-g-major-split-right-01 | Соль мажор правой: 3 + 5 с паузой | 8 | 48 | MIDI-челлендж | сначала detail-p-scale-02; сначала detail-p-g-major-upper-right-01 |
+| detail-p-g-major-continuous-right-01 | Соль мажор правой: переход без остановки | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-split-right-01; сначала detail-p-scale-02 |
+| detail-p-d-major-ascent-right-01 | Ре мажор правой: F♯4 и C♯5, D4–D5 | 8 | 44 | MIDI-челлендж | сначала detail-p-black-position-right-01; сначала detail-p-g-major-upper-right-01; сначала detail-p-black-01; сначала detail-p-f-major-fourth-thumb-connected-right-01; сначала detail-p-g-major-continuous-right-01 |
+| detail-p-g-major-descent-split-right-01 | Соль мажор правой: спуск 5 + 3 с паузой | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-continuous-right-01; сначала detail-p-cross-02 |
+| detail-p-g-major-descent-continuous-right-01 | Соль мажор правой: непрерывный спуск | 8 | 48 | MIDI-челлендж | сначала detail-p-g-major-descent-split-right-01; сначала detail-p-scale-02 |
+| detail-p-d-major-descent-right-01 | Ре мажор правой вниз: C♯5 и F♯4, D5–D4 | 8 | 44 | MIDI-челлендж | сначала detail-p-d-major-thumb-third-connected-right-01; сначала detail-p-d-major-ascent-right-01; сначала detail-p-g-major-descent-continuous-right-01 |
+| detail-p-g-major-roundtrip-right-01 | Проверка: Соль мажор правой вверх и обратно | 15 | 48 | MIDI-челлендж | сначала detail-p-g-major-continuous-right-01; сначала detail-p-g-major-descent-continuous-right-01 |
 | course06-03 | Правая: гамма C4–C5 | 8 | 56 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | course06-04 | Правая: гамма C5–C4 | 8 | 56 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | course06-05 | Левая: гамма C3–C4 | 8 | 54 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
@@ -251,28 +328,79 @@
 | course06-08 | Экзамен: гаммы и арпеджио | 20 | 60 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
 | detail-p-triads-01 | Правая: собрать C major | 6 | 56 | MIDI-челлендж | сначала course06-08; сначала detail-p-black-04 |
 | course08-01 | C major правой: C–E–G | 12 | 50 | MIDI-челлендж | сначала detail-p-triads-01; сначала course02-08; сначала course04-02 |
+| detail-p-c-first-inversion-shape-right-01 | Правая: первое обращение C major по звукам | 4 | 44 | MIDI-челлендж | сначала detail-p-triads-01; сначала course08-01 |
+| detail-p-c-first-inversion-block-right-01 | Правая: первое обращение C major вместе | 12 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-shape-right-01; сначала course08-01 |
+| detail-p-c-second-inversion-shape-right-01 | Правая: второе обращение C major по звукам | 4 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-block-right-01; сначала detail-p-relocate-03 |
+| detail-p-c-second-inversion-block-right-01 | Правая: второе обращение C major вместе | 12 | 44 | MIDI-челлендж | сначала detail-p-c-second-inversion-shape-right-01; сначала detail-p-c-first-inversion-block-right-01 |
+| detail-p-c-first-second-inversion-right-01 | Правая: первое → второе обращение C major | 12 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-block-right-01; сначала detail-p-c-second-inversion-block-right-01; сначала detail-p-relocate-03 |
+| detail-p-c-root-first-inversion-right-01 | Правая: C major → первое обращение | 12 | 44 | MIDI-челлендж | сначала course08-01; сначала detail-p-c-first-inversion-block-right-01; сначала detail-p-relocate-01 |
 | detail-p-triads-02 | Левая: собрать C major | 6 | 56 | MIDI-челлендж | сначала course03-08; сначала detail-p-release-04 |
 | course08-02 | C major левой: C–E–G | 12 | 50 | MIDI-челлендж | сначала detail-p-triads-02; сначала course03-08; сначала detail-p-left-half-01 |
 | course07-07 | Басовый аккорд + правая нота | 16 | 52 | MIDI-челлендж | сначала course08-02; сначала course07-06; сначала course04-02 |
 | course08-07 | Левый аккорд + правая мелодия | 18 | 54 | MIDI-челлендж | сначала course07-06; сначала course07-07; сначала course08-02; сначала course04-01 |
 | course07-08 | Экзамен двух рук | 18 | 58 | MIDI-челлендж | сначала course07-02; сначала course07-03; сначала course07-06; сначала course08-02; сначала course07-07; сначала course04-01 |
 | detail-p-minor-triads-04 | Левая: C major → C minor | 12 | 52 | MIDI-челлендж | сначала course08-02; сначала detail-p-black-02; сначала detail-p-left-triple-pulse-01 |
+| detail-p-c-first-inversion-shape-left-01 | Левая: первое обращение C major по звукам | 4 | 44 | MIDI-челлендж | сначала detail-p-triads-02; сначала course08-02 |
+| detail-p-c-first-inversion-block-left-01 | Левая: первое обращение C major вместе | 12 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-shape-left-01; сначала course08-02 |
+| detail-p-c-second-inversion-shape-left-01 | Левая: второе обращение C major по звукам | 4 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-block-left-01; сначала detail-p-relocate-02 |
+| detail-p-c-second-inversion-block-left-01 | Левая: второе обращение C major вместе | 12 | 44 | MIDI-челлендж | сначала detail-p-c-second-inversion-shape-left-01; сначала detail-p-c-first-inversion-block-left-01 |
+| detail-p-c-first-second-inversion-left-01 | Левая: первое → второе обращение C major | 12 | 44 | MIDI-челлендж | сначала detail-p-c-first-inversion-block-left-01; сначала detail-p-c-second-inversion-block-left-01; сначала detail-p-relocate-02 |
+| detail-p-c-root-first-inversion-left-01 | Левая: C major → первое обращение | 12 | 44 | MIDI-челлендж | сначала course08-02; сначала detail-p-c-first-inversion-block-left-01; сначала detail-p-relocate-02 |
 | detail-p-left-position-triad-01 | Левая: собрать F major из трёх звуков | 6 | 48 | MIDI-челлендж | сначала detail-p-triads-02; сначала detail-p-relocate-04 |
 | detail-p-left-position-triad-02 | Левая: собрать G major из трёх звуков | 6 | 48 | MIDI-челлендж | сначала detail-p-left-position-triad-01; сначала detail-p-left-g-position-01 |
 | detail-p-minor-triads-02 | Левая: собрать A minor | 12 | 52 | MIDI-челлендж | сначала course08-02; сначала detail-p-left-position-triad-02; сначала detail-p-position-skips-05 |
+| detail-p-a-natural-minor-ascent-left-01 | Ля минор левой: натуральная октава A2–A3 | 8 | 44 | MIDI-челлендж | сначала detail-p-cross-03; сначала detail-p-scale-04; сначала detail-p-minor-triads-02 |
+| detail-p-a-harmonic-minor-upper-left-01 | Левая: верх гармонического ля минора | 4 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-left-01; сначала detail-p-d-major-ascent-left-01 |
+| detail-p-e-natural-minor-ascent-left-01 | Ми минор левой: F♯3 четвёртым, октава E3–E4 | 8 | 44 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-left-01; сначала detail-p-black-04; сначала detail-p-cross-03 |
+| detail-p-e-major-thumb-third-connected-left-01 | Левая: B3/1 → C♯4/3 и окончание к E4 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-left-01; сначала detail-p-d-major-ascent-left-01; сначала detail-p-black-04; сначала detail-p-cross-03 |
+| detail-p-a-natural-minor-descent-left-01 | Ля минор левой: натуральный спуск A3–A2 | 8 | 44 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-left-01; сначала detail-p-cross-04; сначала detail-p-scale-04 |
+| detail-p-e-major-lower-connected-left-01 | Левая: E3–B3 через F♯3/4 и G♯3/3 | 10 | 48 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-left-01; сначала detail-p-black-04; сначала detail-p-d-major-ascent-left-01 |
+| detail-p-e-natural-minor-descent-left-01 | Ми минор левой: спуск E4–E3 через F♯3 | 8 | 44 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-left-01; сначала detail-p-a-natural-minor-descent-left-01; сначала detail-p-cross-04 |
+| detail-p-e-major-ascent-left-01 | Ми мажор левой: четыре диеза, E3–E4 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-left-01; сначала detail-p-d-major-ascent-left-01; сначала detail-p-black-04; сначала detail-p-e-major-lower-connected-left-01; сначала detail-p-e-major-thumb-third-connected-left-01 |
 | detail-p-triads-03 | Правая: собрать F major | 6 | 56 | MIDI-челлендж | сначала detail-p-triads-02 |
+| detail-p-e-major-upper-descent-left-01 | Левая вниз: E4–B3 и C♯4/3 → B3/1 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-major-ascent-left-01; сначала detail-p-e-natural-minor-descent-left-01; сначала detail-p-d-major-descent-left-01; сначала detail-p-cross-04 |
 | course08-03 | F major правой: F–A–C | 12 | 50 | MIDI-челлендж | сначала course08-01; сначала detail-p-triads-03; сначала detail-p-relocate-01; сначала course04-02 |
+| detail-p-e-major-lower-descent-left-01 | Левая вниз: B3–E3 через G♯3/3 и F♯3/4 | 10 | 48 | MIDI-челлендж | сначала detail-p-e-major-ascent-left-01; сначала detail-p-e-natural-minor-descent-left-01; сначала detail-p-black-04 |
 | course08-04 | G major правой: G–B–D | 12 | 50 | MIDI-челлендж | сначала course08-03; сначала detail-p-relocate-03; сначала course04-02 |
+| detail-p-e-major-descent-left-01 | Ми мажор левой вниз: четыре диеза, E4–E3 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-major-ascent-left-01; сначала detail-p-e-natural-minor-descent-left-01; сначала detail-p-e-major-upper-descent-left-01; сначала detail-p-e-major-lower-descent-left-01 |
 | detail-p-triads-04 | Правая: собрать C minor | 6 | 56 | MIDI-челлендж | сначала detail-p-triads-03 |
 | detail-p-minor-triads-03 | Правая: C major → C minor | 12 | 52 | MIDI-челлендж | сначала course08-01; сначала detail-p-triads-04; сначала detail-p-black-01; сначала course04-07 |
 | detail-p-minor-triads-01 | Правая: собрать A minor | 12 | 52 | MIDI-челлендж | сначала detail-p-triads-04; сначала detail-p-relocate-03; сначала course04-02; сначала detail-p-position-skips-02 |
+| detail-p-a-natural-minor-ascent-right-01 | Ля минор правой: натуральная октава A3–A4 | 8 | 44 | MIDI-челлендж | сначала detail-p-a-minor-third-thumb-prep-right-01; сначала detail-p-scale-02; сначала detail-p-minor-triads-01 |
+| detail-p-a-harmonic-minor-upper-right-01 | Правая: верх гармонического ля минора | 4 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-right-01; сначала detail-p-d-major-ascent-right-01 |
+| detail-p-e-natural-minor-ascent-right-01 | Ми минор правой: F♯4 вторым, октава E4–E5 | 8 | 44 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-right-01; сначала detail-p-black-03; сначала detail-p-cross-01 |
+| detail-p-a-harmonic-minor-ascent-right-01 | Ля минор правой: гармоническая октава A3–A4 | 8 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-right-01; сначала detail-p-a-harmonic-minor-upper-right-01 |
+| detail-p-a-harmonic-minor-ascent-left-01 | Ля минор левой: гармоническая октава A2–A3 | 8 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-left-01; сначала detail-p-a-harmonic-minor-upper-left-01 |
+| detail-p-e-major-ascent-right-01 | Ми мажор правой: четыре диеза, E4–E5 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-right-01; сначала detail-p-black-03; сначала detail-p-d-major-ascent-right-01 |
+| detail-p-a-natural-minor-descent-right-01 | Ля минор правой: натуральный спуск A4–A3 | 8 | 44 | MIDI-челлендж | сначала detail-p-a-natural-minor-ascent-right-01; сначала detail-p-cross-02; сначала detail-p-scale-02 |
+| detail-p-a-harmonic-minor-upper-descent-right-01 | Правая вниз: A4–G♯4–F4–E4 | 4 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-descent-right-01; сначала detail-p-a-harmonic-minor-ascent-right-01 |
+| detail-p-a-harmonic-minor-upper-descent-left-01 | Левая вниз: A3–G♯3–F3–E3 | 4 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-descent-left-01; сначала detail-p-a-harmonic-minor-ascent-left-01 |
+| detail-p-e-natural-minor-descent-right-01 | Ми минор правой: спуск E5–E4 через F♯4 | 8 | 44 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-right-01; сначала detail-p-a-natural-minor-descent-right-01; сначала detail-p-cross-02 |
+| detail-p-a-harmonic-minor-descent-right-01 | Ля минор правой: гармонический спуск A4–A3 | 8 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-descent-right-01; сначала detail-p-a-harmonic-minor-upper-descent-right-01 |
+| detail-p-a-harmonic-minor-descent-left-01 | Ля минор левой: гармонический спуск A3–A2 | 8 | 40 | MIDI-челлендж | сначала detail-p-a-natural-minor-descent-left-01; сначала detail-p-a-harmonic-minor-upper-descent-left-01 |
+| detail-p-e-major-descent-right-01 | Ми мажор правой вниз: четыре диеза, E5–E4 | 8 | 48 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01; сначала detail-p-d-major-descent-right-01; сначала detail-p-e-natural-minor-descent-right-01 |
 | detail-p-chordmove-01 | Правая: C major → F major с паузой | 12 | 56 | MIDI-челлендж | сначала course08-04; сначала detail-p-triads-04 |
+| detail-p-e-major-paired-preparation-01 | Две руки: E–F♯–G♯ с отпусканием | 12 | 48 | MIDI-челлендж | сначала course07-03; сначала detail-p-e-major-ascent-right-01; сначала detail-p-e-major-ascent-left-01 |
 | detail-p-chordmove-02 | Правая: F major → G major с паузой | 12 | 56 | MIDI-челлендж | сначала detail-p-chordmove-01 |
+| detail-p-e-major-asymmetric-thumb-paired-01 | Две руки: G♯–A–B с большим правой | 12 | 48 | MIDI-челлендж | сначала detail-p-e-major-paired-preparation-01; сначала detail-p-e-major-ascent-right-01; сначала detail-p-e-major-ascent-left-01 |
 | course08-05 | Смена C–F–G–C | 12 | 52 | MIDI-челлендж | сначала course08-03; сначала course08-04; сначала detail-p-chordmove-01; сначала detail-p-chordmove-02; сначала course04-07 |
+| detail-p-d-natural-minor-ascent-right-01 | Ре минор правой: B♭4 третьим, октава D4–D5 | 8 | 40 | MIDI-челлендж | сначала detail-p-d-major-ascent-right-01; сначала detail-p-e-natural-minor-ascent-right-01; сначала detail-p-black-position-right-01 |
+| detail-p-d-natural-minor-ascent-left-01 | Ре минор левой: A3/1→B♭3/3, октава D3–D4 | 8 | 40 | MIDI-челлендж | сначала detail-p-d-major-ascent-left-01; сначала detail-p-e-major-thumb-third-connected-left-01 |
 | detail-p-chordmove-04 | Правая: C–F–G–C | 12 | 56 | MIDI-челлендж | сначала course08-05 |
 | course08-06 | Разложенные аккорды | 18 | 56 | MIDI-челлендж | сначала course08-05; сначала course04-05; сначала course04-06 |
 | course08-08 | Экзамен аккордов | 27 | 56 | MIDI-челлендж | сначала course08-05; сначала course08-06; сначала course08-07; сначала course04-01 |
+| detail-p-e-harmonic-minor-ascent-right-01 | Ми минор правой: гармонический E4–E5 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-right-01; сначала detail-p-e-major-ascent-right-01 |
+| detail-p-e-harmonic-minor-ascent-left-01 | Ми минор левой: гармонический E3–E4 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-natural-minor-ascent-left-01; сначала detail-p-e-major-ascent-left-01 |
 | detail-p-chordmove-03 | Левая: C major → F major с паузой | 12 | 56 | MIDI-челлендж | сначала detail-p-chordmove-02 |
+| detail-p-c-f-common-bass-left-01 | Левая: C → F → C с общей нижней опорой | 15 | 44 | MIDI-челлендж | сначала detail-p-triads-02; сначала detail-p-chordmove-03; сначала detail-p-c-second-inversion-block-left-01; сначала detail-p-c-first-second-inversion-left-01 |
+| detail-p-g-natural-minor-ascent-right-01 | Соль минор правой: B♭3/3→C4/1 и E♭4/3, G3–G4 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-major-continuous-right-01; сначала detail-p-d-natural-minor-ascent-right-01; сначала detail-p-d-major-ascent-right-01 |
+| detail-p-g-natural-minor-ascent-left-01 | Соль минор левой: B♭2/3 и D3/1→E♭3/3, G2–G3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-major-continuous-left-01; сначала detail-p-d-natural-minor-ascent-left-01; сначала detail-p-d-major-ascent-left-01 |
+| detail-p-c-g7-common-tone-left-01 | Левая: C → G7/B → C через тишину | 15 | 44 | MIDI-челлендж | сначала detail-p-triads-02; сначала detail-p-c-f-common-bass-left-01; сначала detail-p-relocate-02 |
+| detail-p-d-natural-minor-descent-right-01 | Ре минор правой: B♭4 третьим, спуск D5–D4 | 8 | 40 | MIDI-челлендж | сначала detail-p-d-natural-minor-ascent-right-01; сначала detail-p-d-major-descent-right-01; сначала detail-p-e-natural-minor-descent-right-01 |
+| detail-p-d-natural-minor-descent-left-01 | Ре минор левой: B♭3/3→A3/1, спуск D4–D3 | 8 | 40 | MIDI-челлендж | сначала detail-p-d-natural-minor-ascent-left-01; сначала detail-p-d-major-descent-left-01; сначала detail-p-e-major-upper-descent-left-01 |
+| detail-p-c-direct-cadence-left-01 | Левая: C → F/C → G7/B → C | 12 | 44 | MIDI-челлендж | сначала detail-p-c-f-common-bass-left-01; сначала detail-p-c-g7-common-tone-left-01; сначала detail-p-relocate-02 |
+| detail-p-e-harmonic-minor-descent-right-01 | Ми минор правой: гармонический спуск E5–E4 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-natural-minor-descent-right-01; сначала detail-p-e-harmonic-minor-ascent-right-01 |
+| detail-p-e-harmonic-minor-descent-left-01 | Ми минор левой: гармонический спуск E4–E3 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-natural-minor-descent-left-01; сначала detail-p-e-harmonic-minor-ascent-left-01 |
 
 ### 6. Закрепление начального курса
 
@@ -281,17 +409,49 @@
 | ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
 | --- | --- | ---: | ---: | --- | --- |
 | course09-08 | Экзамен первых мелодий | 21 | 66 | MIDI-челлендж | Машинных замечаний нет; редактура педагогом впереди |
+
+### 5. Гамма, арпеджио и трезвучие
+
+Подкладывание, поворот кисти и компактный аккорд после освоения позиции.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
+| detail-p-e-major-asymmetric-cross-paired-left-01 | Две руки: B–C♯–D♯ с переходом левой | 12 | 48 | MIDI-челлендж | сначала detail-p-e-major-asymmetric-thumb-paired-01; сначала detail-p-e-major-thumb-third-connected-left-01; сначала detail-p-e-major-ascent-right-01 |
+
+### 6. Закрепление начального курса
+
+Соединить знакомые движения; повторить без подсказок и на следующий день.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
 | course10-01 | Правая позиция вслепую | 14 | 66 | MIDI-челлендж | сначала course02-05; сначала course02-07; сначала course04-01 |
+| detail-p-g-natural-minor-descent-right-01 | Соль минор правой: C4/1→B♭3/3, спуск G4–G3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-right-01; сначала detail-p-d-natural-minor-descent-right-01; сначала detail-p-d-major-descent-right-01 |
+| detail-p-g-natural-minor-descent-left-01 | Соль минор левой: E♭3/3→D3/1, спуск G3–G2 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-left-01; сначала detail-p-d-natural-minor-descent-left-01; сначала detail-p-d-major-descent-left-01 |
 | course10-02 | Левая позиция вслепую | 14 | 62 | MIDI-челлендж | сначала course03-05; сначала course03-07; сначала course04-01 |
+| detail-p-g-harmonic-minor-ascent-right-01 | Гармонический соль минор правой: E♭4/3→F♯4/4→G4/5 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-right-01; сначала detail-p-e-major-ascent-right-01; сначала detail-p-e-harmonic-minor-ascent-right-01 |
+| detail-p-g-harmonic-minor-ascent-left-01 | Гармонический соль минор левой: E♭3/3→F♯3/2→G3/1 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-left-01; сначала detail-p-e-major-ascent-left-01; сначала detail-p-e-harmonic-minor-ascent-left-01 |
 | course10-03 | Переносы рук вслепую | 20 | 58 | MIDI-челлендж | сначала detail-p-relocate-03; сначала detail-p-relocate-04; сначала course10-01; сначала course10-02; сначала detail-p-shifted-right-five-01; сначала detail-p-shifted-left-five-01 |
+| detail-p-g-harmonic-minor-descent-right-01 | Гармонический соль минор вниз правой: F♯4/4→E♭4/3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-descent-right-01; сначала detail-p-g-harmonic-minor-ascent-right-01; сначала detail-p-e-major-descent-right-01; сначала detail-p-e-harmonic-minor-descent-right-01 |
+| detail-p-g-harmonic-minor-descent-left-01 | Гармонический соль минор вниз левой: F♯3/2→E♭3/3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-descent-left-01; сначала detail-p-g-harmonic-minor-ascent-left-01; сначала detail-p-e-major-descent-left-01; сначала detail-p-e-harmonic-minor-descent-left-01 |
 | course10-04 | Ритм вслепую | 12 | 66 | MIDI-челлендж | сначала course04-08 |
+| detail-p-g-melodic-minor-ascent-right-01 | Мелодический соль минор правой: B♭3/3 и E4/3→F♯4/4 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-major-continuous-right-01; сначала detail-p-g-harmonic-minor-ascent-right-01 |
+| detail-p-g-melodic-minor-ascent-left-01 | Мелодический соль минор левой: B♭2/3 и D3/1→E3/3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-major-continuous-left-01; сначала detail-p-g-harmonic-minor-ascent-left-01 |
 | detail-p-transfer-01 | Правая: перенести трёхнотную фигуру | 6 | 56 | MIDI-челлендж | сначала course10-04 |
+| detail-p-e-major-connected-paired-ascent-01 | Ми мажор двумя руками: два перехода без пауз | 16 | 48 | MIDI-челлендж | сначала detail-p-e-major-paired-preparation-01; сначала detail-p-e-major-asymmetric-thumb-paired-01; сначала detail-p-e-major-asymmetric-cross-paired-left-01; сначала detail-p-e-major-ascent-right-01; сначала detail-p-e-major-ascent-left-01 |
 | detail-p-transfer-02 | Левая: перенести трёхнотную фигуру | 6 | 56 | MIDI-челлендж | сначала detail-p-transfer-01 |
+| detail-p-e-major-asymmetric-thumb-paired-left-descent-01 | Две руки: C♯–B–A с большим левой вниз | 12 | 48 | MIDI-челлендж | сначала detail-p-e-major-descent-left-01; сначала detail-p-e-major-descent-right-01; сначала detail-p-e-major-paired-preparation-01 |
 | detail-p-transfer-03 | Правая: повторная нота разными пальцами | 4 | 56 | MIDI-челлендж | сначала detail-p-transfer-02 |
+| detail-p-bflat-major-ascent-right-01 | Си-бемоль мажор правой: группы 1+3+4, B♭3–B♭4 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-second-thumb-right-01; сначала detail-p-g-natural-minor-ascent-right-01; сначала detail-p-f-major-fourth-thumb-connected-right-01 |
+| detail-p-bflat-fourth-third-left-01 | Левая: E♭3/4→F3/3 после D3/1 | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-thumb-fourth-left-01; сначала detail-p-g-major-continuous-left-01 |
 | detail-p-transfer-04 | Левая: повторная нота разными пальцами | 4 | 56 | MIDI-челлендж | сначала detail-p-transfer-03 |
+| detail-p-e-major-asymmetric-cross-paired-right-descent-01 | Две руки: B–A–G♯ с переходом правой вниз | 12 | 48 | MIDI-челлендж | сначала detail-p-e-major-asymmetric-cross-paired-left-01; сначала detail-p-e-major-descent-right-01; сначала detail-p-e-major-descent-left-01 |
 | course10-05 | Две руки вслепую | 16 | 58 | MIDI-челлендж | сначала course07-02; сначала course07-04; сначала course10-01; сначала course10-02 |
+| detail-p-bflat-major-descent-right-01 | Си-бемоль мажор правой: спуск 4+3+1, B♭4–B♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-f-major-thumb-fourth-connected-right-01; сначала detail-p-g-natural-minor-descent-right-01; сначала detail-p-bflat-thumb-second-descent-right-01 |
+| detail-p-bflat-major-ascent-left-01 | Си-бемоль мажор левой: группы 3+4+1, B♭2–B♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-left-01; сначала detail-p-bflat-fourth-third-left-01; сначала detail-p-bflat-thumb-second-terminal-left-01 |
 | course10-06 | Аккорды вслепую | 15 | 54 | MIDI-челлендж | сначала course08-05; сначала course08-02; сначала detail-p-left-triple-pulse-01 |
+| detail-p-bflat-second-thumb-descent-left-01 | Левая: B♭3/2→A3/1 перед G3/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-black-position-left-01; сначала detail-p-d-natural-minor-descent-left-01 |
 | course10-07 | Мелодия вслепую | 30 | 68 | MIDI-челлендж | сначала course09-01; сначала course09-02; сначала course09-07; сначала course10-01 |
+| detail-p-e-major-connected-paired-descent-01 | Ми мажор двумя руками: связный спуск | 16 | 48 | MIDI-челлендж | сначала detail-p-e-major-asymmetric-cross-paired-right-descent-01; сначала detail-p-e-major-asymmetric-thumb-paired-left-descent-01 |
 | course10-08 | Финальный экзамен 1–10 | 30 | 64 | MIDI-челлендж | сначала course07-03; сначала course08-07; сначала course08-01; сначала course04-04 |
 
 ### Расширение техники · дополнительная практика
@@ -300,6 +460,17 @@
 
 | ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
 | --- | --- | ---: | ---: | --- | --- |
+| detail-p-eflat-middle-descent-right-01 | Правая вниз: B♭4–A♭4–G4–F4 под 4–3–2–1 | 4 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-g-natural-minor-descent-right-01 |
+| detail-p-eflat-major-descent-right-01 | Ми-бемоль мажор правой вниз: 3+4+1, E♭5–E♭4 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-descent-right-01; сначала detail-p-f-major-thumb-fourth-connected-right-01; сначала detail-p-eflat-middle-descent-right-01; сначала detail-p-bflat-major-descent-right-01 |
+| detail-p-eflat-white-black-pair-right-01 | Правая: G4–A♭4–B♭4, белая и две чёрные | 3 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-bflat-major-ascent-right-01 |
+| detail-p-eflat-upper-exit-right-01 | Правая: после B♭4/4–C5/1 прийти к E♭5/3 | 4 | 40 | MIDI-челлендж | сначала detail-p-f-major-fourth-thumb-connected-right-01; сначала detail-p-g-natural-minor-ascent-right-01 |
+| detail-p-eflat-major-ascent-right-01 | Ми-бемоль мажор правой: 1+4+3, E♭4–E♭5 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-second-thumb-right-01; сначала detail-p-eflat-white-black-pair-right-01; сначала detail-p-eflat-upper-exit-right-01 |
+| detail-p-bflat-third-fourth-descent-left-01 | Левая: F3/3→E♭3/4 после G3/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-d-natural-minor-descent-left-01; сначала detail-p-bflat-fourth-third-left-01 |
+| detail-p-bflat-fourth-thumb-descent-left-01 | Левая: E♭3/4→D3/1 после F3/3 | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-third-fourth-descent-left-01; сначала detail-p-g-natural-minor-descent-left-01 |
+| detail-p-bflat-major-descent-left-01 | Си-бемоль мажор левой: спуск 1+4+3, B♭3–B♭2 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-second-thumb-descent-left-01; сначала detail-p-bflat-fourth-thumb-descent-left-01; сначала detail-p-d-natural-minor-descent-left-01; сначала detail-p-g-natural-minor-descent-left-01 |
+| detail-p-b-major-lower-combination-left-01 | Левая: B2–C♯3–D♯3 пальцами 4–3–2 | 3 | 40 | MIDI-челлендж | сначала detail-p-d-major-ascent-left-01; сначала detail-p-e-major-ascent-left-01 |
+| detail-p-b-major-thumb-fourth-left-01 | Левая: E3/1 → F♯3/4 через целый тон | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-thumb-fourth-left-01; сначала detail-p-e-major-ascent-left-01 |
+| detail-p-b-major-ascent-left-01 | Си мажор левой: группы 4+4, B2–B3 | 8 | 40 | MIDI-челлендж | сначала detail-p-b-major-lower-combination-left-01; сначала detail-p-b-major-thumb-fourth-left-01; сначала detail-p-e-major-ascent-left-01 |
 | oct201--2 | Семь ступеней C2–B2 | 65 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct202--2 | Через одну | 60 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct203--2 | Диезы C2 | 48 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |

@@ -14,6 +14,80 @@ function performance(row,{source='midi',jitter=0}={}){
   return {events,observedUntil:Math.max(events.at(-1).at,((row.ending?.endBeat||0)-row.steps[0].startBeat)*beat+100)+10,observationInterrupted:false};
 }
 async function take(game,owner,row,{now=1000,mode='challenge',...options}={}){const input=startInput(row,mode),started=await game.start(owner,input,now),data={nonce:input.nonce,...performance(row,options)},result=await game.submit(owner,started.id,data,now+Math.ceil(data.observedUntil));return {input,started,data,result};}
+
+test('connected F-major goal rejects the paused trace and awards only its own bounded improvement',async t=>{
+ const {game,a}=await setup(t),stopped=game.registry.lesson('detail-p-f-major-fourth-thumb-prep-right-01'),connected=game.registry.lesson('detail-p-f-major-fourth-thumb-connected-right-01');
+ await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);assert.notEqual(stopped.goalKey,connected.goalKey);
+ assert.equal((await take(game,a,stopped,{now:10000})).result.xp.earned,100);
+ const input=startInput(connected),started=await game.start(a,input,60000),bad={nonce:input.nonce,...performance(stopped)},failed=await game.submit(a,started.id,bad,80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ const clean=await take(game,a,connected,{now:100000});assert.equal(clean.result.passed,true);assert.equal(clean.result.xp.earned,100);assert.equal((await take(game,a,connected,{now:130000})).result.xp.earned,0);assert.equal((await game.state(a)).experience.musicXp,200);
+});
+
+test('two prerequisite-only revisions keep old attempts,progress and XP while rejecting stale editions',async t=>{
+ const {game,a,store}=await setup(t),before=require('../../tests/fixtures/piano-before-right-legato-preparation-v1.json');
+ await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ for(const [i,id] of Object.keys(before.targets).entries()){
+  const current=game.registry.lesson(id),old=before.server.targetRows[id];assert.equal(current.musicVersion,old.musicVersion);assert.notEqual(current.editionVersion,old.editionVersion);
+  game.registry.byId.set(id,old);const first=await take(game,a,old,{now:10000+i*100000});assert.equal(first.result.passed,true);assert.equal(first.result.xp.earned,100);
+  game.registry.byId.set(id,current);assert.ok((await game.state(a)).progress.some(p=>p.lessonId===id&&p.musicVersion===old.musicVersion));
+  await assert.rejects(()=>game.start(a,startInput(old),30000+i*100000),{code:'LESSON_CHANGED'});
+  const second=await take(game,a,current,{now:40000+i*100000});assert.equal(second.result.passed,true);assert.equal(second.result.xp.earned,0);
+  assert.equal((await store.statement('SELECT count(*) AS n FROM course_editions WHERE lesson_id=? AND music_version=?').get(id,current.musicVersion)).n,2);
+  const history=(await game.history(a)).items.filter(x=>x.lessonId===id);assert.equal(history.length,2);assert.ok(history.some(x=>x.editionVersion===old.editionVersion));assert.ok(history.some(x=>x.editionVersion===current.editionVersion));
+ }
+ assert.equal((await game.state(a)).experience.musicXp,200);
+});
+test('upper readiness text revision preserves old progress,immutable attempts and one-time XP',async t=>{
+ const {game,a,store}=await setup(t),before=require('../../tests/fixtures/piano-before-f-upper-readiness-v1.json'),old=before.server.targetRow,current=game.registry.lesson(old.id);
+ assert.equal(current.musicVersion,old.musicVersion);assert.equal(current.goalKey,old.goalKey);assert.notEqual(current.editionVersion,old.editionVersion);
+ await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ game.registry.byId.set(old.id,old);const first=await take(game,a,old,{now:10000});assert.equal(first.result.passed,true);assert.equal(first.result.xp.earned,100);
+ game.registry.byId.set(old.id,current);assert.ok((await game.state(a)).progress.some(p=>p.lessonId===old.id&&p.musicVersion===old.musicVersion));await assert.rejects(()=>game.start(a,startInput(old),40000),{code:'LESSON_CHANGED'});
+ const second=await take(game,a,current,{now:60000});assert.equal(second.result.passed,true);assert.equal(second.result.xp.earned,0);assert.equal((await game.state(a)).experience.musicXp,100);
+ assert.equal((await store.statement('SELECT count(*) AS n FROM course_editions WHERE lesson_id=? AND music_version=?').get(old.id,old.musicVersion)).n,2);
+ const history=(await game.history(a)).items.filter(x=>x.lessonId===old.id);assert.equal(history.length,2);assert.ok(history.some(x=>x.editionVersion===old.editionVersion));assert.ok(history.some(x=>x.editionVersion===current.editionVersion));
+});
+test('F-major ascent checkpoint keeps separate progress and awards bounded musicXP only once',async t=>{
+ const {game,a}=await setup(t),prep=game.registry.lesson('detail-p-f-major-fourth-thumb-connected-right-01'),control=game.registry.lesson('detail-p-f-major-ascent-checkpoint-right-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.equal((await take(game,a,prep,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===control.id),false);assert.notEqual(prep.musicVersion,control.musicVersion);
+ const input=startInput(control),started=await game.start(a,input,50000),bad={nonce:input.nonce,...performance(prep)};assert.equal((await game.submit(a,started.id,bad,80000)).passed,false);
+ const clean=await take(game,a,control,{now:100000});assert.equal(clean.result.passed,true);assert.equal(clean.result.xp.earned,100);assert.equal((await take(game,a,control,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);
+});
+test('reverse F-major fourth preparation rejects forward credit and keeps one-time XP and owner isolation',async t=>{
+ const {game,a,b}=await setup(t),forward=game.registry.lesson('detail-p-f-major-fourth-thumb-connected-right-01'),reverse=game.registry.lesson('detail-p-f-major-thumb-fourth-prep-right-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.equal((await take(game,a,forward,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===reverse.id),false);assert.notEqual(forward.musicVersion,reverse.musicVersion);assert.notEqual(forward.goalKey,reverse.goalKey);
+ const input=startInput(reverse),started=await game.start(a,input,50000),bad={nonce:input.nonce,...performance(forward)};const failed=await game.submit(a,started.id,bad,80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ assert.equal((await take(game,a,reverse,{now:100000})).result.xp.earned,100);assert.equal((await take(game,a,reverse,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);assert.equal((await game.state(b)).progress.some(p=>p.lessonId===reverse.id),false);
+});
+
+test('connected reverse F-major task rejects paused credit and grants its own bounded XP without new portal level',async t=>{
+ const {game,a,b}=await setup(t),paused=game.registry.lesson('detail-p-f-major-thumb-fourth-prep-right-01'),connected=game.registry.lesson('detail-p-f-major-thumb-fourth-connected-right-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.equal((await take(game,a,paused,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===connected.id),false);assert.notEqual(paused.musicVersion,connected.musicVersion);assert.notEqual(paused.goalKey,connected.goalKey);
+ const input=startInput(connected),started=await game.start(a,input,50000),bad={nonce:input.nonce,...performance(paused)};const failed=await game.submit(a,started.id,bad,80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ assert.equal((await take(game,a,connected,{now:100000})).result.xp.earned,100);assert.equal((await take(game,a,connected,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);assert.equal((await game.state(b)).progress.some(p=>p.lessonId===connected.id),false);
+});
+
+test('F-major descent checkpoint rejects preparation credit and keeps separate bounded XP and owner isolation',async t=>{
+ const {game,a,b}=await setup(t),prep=game.registry.lesson('detail-p-f-major-thumb-fourth-connected-right-01'),control=game.registry.lesson('detail-p-f-major-descent-checkpoint-right-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.equal((await take(game,a,prep,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===control.id),false);assert.notEqual(prep.musicVersion,control.musicVersion);assert.equal(control.goalKey,control.id);
+ const input=startInput(control),started=await game.start(a,input,50000),bad={nonce:input.nonce,...performance(prep)};const failed=await game.submit(a,started.id,bad,80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ assert.equal((await take(game,a,control,{now:100000})).result.xp.earned,100);assert.equal((await take(game,a,control,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);assert.equal((await game.state(b)).progress.some(p=>p.lessonId===control.id),false);
+});
+
+test('F-major left ascent keeps own preparations,right progress and repeated XP separate',async t=>{
+ const {game,a,b}=await setup(t),prep=game.registry.lesson('detail-p-black-position-left-01'),control=game.registry.lesson('detail-p-f-major-ascent-checkpoint-left-01'),right=game.registry.lesson('detail-p-f-major-ascent-checkpoint-right-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.deepEqual(control.requires,['detail-p-black-position-left-01','detail-p-scale-04']);assert.equal((await take(game,a,prep,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===control.id),false);assert.notEqual(prep.musicVersion,control.musicVersion);assert.equal(control.goalKey,control.id);
+ const input=startInput(control),started=await game.start(a,input,50000),failed=await game.submit(a,started.id,{nonce:input.nonce,...performance(right)},80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ assert.equal((await take(game,a,control,{now:100000})).result.xp.earned,100);assert.equal((await take(game,a,control,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);assert.equal(state.progress.some(p=>p.lessonId===right.id),false);assert.equal((await game.state(b)).progress.some(p=>p.lessonId===control.id),false);
+});
+
+test('F-major left descent keeps own preparations,right progress and repeated XP separate',async t=>{
+ const {game,a,b}=await setup(t),prep=game.registry.lesson('detail-p-black-position-left-01'),control=game.registry.lesson('detail-p-f-major-descent-checkpoint-left-01'),right=game.registry.lesson('detail-p-f-major-ascent-checkpoint-left-01');await game.savePreferences(a,{courseMode:'free',ratingSystem:'ten',expectedRevision:0,operationId:randomUUID()},1000);
+ assert.deepEqual(control.requires,['detail-p-black-position-left-01','detail-p-scale-04']);assert.equal((await take(game,a,prep,{now:10000})).result.xp.earned,100);assert.equal((await game.state(a)).progress.some(p=>p.lessonId===control.id),false);assert.notEqual(prep.musicVersion,control.musicVersion);assert.equal(control.goalKey,control.id);
+ const input=startInput(control),started=await game.start(a,input,50000),failed=await game.submit(a,started.id,{nonce:input.nonce,...performance(right)},80000);assert.equal(failed.passed,false);assert.equal(failed.xp.earned,0);
+ assert.equal((await take(game,a,control,{now:100000})).result.xp.earned,100);assert.equal((await take(game,a,control,{now:130000})).result.xp.earned,0);const state=await game.state(a);assert.equal(state.experience.musicXp,200);assert.equal(state.experience.portal.level,null);assert.equal(state.progress.some(p=>p.lessonId===right.id),false);assert.equal((await game.state(b)).progress.some(p=>p.lessonId===control.id),false);
+});
+
 test('default sequential route rejects skips, awards authoritative XP once and opens the next step',async t=>{
   const {game,a,b}=await setup(t),first=registry.lesson(registry.course.route[0]),second=registry.lesson(registry.course.route[1]);
   assert.deepEqual(await game.preferences(a),{courseMode:'sequential',ratingSystem:'ten',revision:0});

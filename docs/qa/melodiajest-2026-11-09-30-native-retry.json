@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-11-09T02:29:13.141490+00:00",
+  "status": "native-automatic-retry-verified-first-direct-attempt-remains-failed",
+  "unit": {
+    "RestartUSec": "15min",
+    "Result": "success",
+    "NRestarts": "1",
+    "ExecMainStartTimestamp": "Mon 2026-11-09 02:27:57 UTC",
+    "ExecMainExitTimestamp": "Mon 2026-11-09 02:28:03 UTC",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "InvocationID": "099ef603200f4540a2df4d6f52771779"
+  },
+  "journal": [
+    {
+      "__REALTIME_TIMESTAMP": "1794190370844309",
+      "MESSAGE": "Starting melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery...",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794190377313743",
+      "MESSAGE": "{\"status\": \"failed\", \"errorType\": \"BlockingIOError\", \"message\": \"[Errno 11] Resource temporarily unavailable\"}",
+      "_SYSTEMD_INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794190377366361",
+      "MESSAGE": "melodiajest-account-backup.service: Main process exited, code=exited, status=1/FAILURE",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794190377368853",
+      "MESSAGE": "melodiajest-account-backup.service: Failed with result 'exit-code'.",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794190377371691",
+      "MESSAGE": "Failed to start melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery.",
+      "JOB_RESULT": "failed",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794190377371809",
+      "MESSAGE": "melodiajest-account-backup.service: Consumed 2.172s CPU time.",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191277584047",
+      "MESSAGE": "melodiajest-account-backup.service: Scheduled restart job, restart counter is at 1.",
+      "INVOCATION_ID": "822808d3d0b94515b10af998b1c85146"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191277595394",
+      "MESSAGE": "Starting melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery...",
+      "INVOCATION_ID": "099ef603200f4540a2df4d6f52771779"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191283616357",
+      "MESSAGE": "{\"billingMeasured\": false, \"checkedAt\": \"2026-11-09T02:28:03.611407+00:00\", \"filesVerified\": 23, \"newSnapshotCreated\": false, \"payloadBytes\": 198061771, \"restore\": {\"apiHealth\": \"ok\", \"daemonLayerReusePossible\": true, \"dataDigestMatched\": true, \"ddlDenied\": true, \"forgedOwnerDenied\": true, \"imageBlobsVerified\": 20, \"network\": \"none\", \"nodeFromRestoredArchive\": true, \"pgDependenciesFromRestoredArchive\": true, \"postgresImageImported\": true, \"privateWriteReadback\": true, \"productionDataUsed\": false, \"productionVolumesMounted\": false, \"restoredSessionsRevoked\": true, \"sourceSha256\": \"4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb\", \"syntheticMidiDeviceUsed\": false, \"twoUsersRegistered\": true, \"wrongPasswordDenied\": true}, \"snapshot\": \"ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1\", \"status\": \"verified\"}",
+      "_SYSTEMD_INVOCATION_ID": "099ef603200f4540a2df4d6f52771779"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191283636431",
+      "MESSAGE": "melodiajest-account-backup.service: Deactivated successfully.",
+      "INVOCATION_ID": "099ef603200f4540a2df4d6f52771779"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191283637885",
+      "MESSAGE": "Finished melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery.",
+      "JOB_RESULT": "done",
+      "INVOCATION_ID": "099ef603200f4540a2df4d6f52771779"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794191283638035",
+      "MESSAGE": "melodiajest-account-backup.service: Consumed 3.256s CPU time.",
+      "INVOCATION_ID": "099ef603200f4540a2df4d6f52771779"
+    }
+  ],
+  "account": {
+    "status": "verified",
+    "checkedAt": "2026-11-09T02:28:03.611407+00:00",
+    "restoredAt": "2026-11-09T01:05:47.229087+00:00",
+    "dataComparedAt": "2026-11-09T02:28:03.611426+00:00",
+    "sourceSha256": "4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb",
+    "dataDigest": "9553ea2ebb8e2720d5a25f0959bffd48adce86c97997c37d5486ac3deabf4ddb",
+    "snapshot": "ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1",
+    "newSnapshotCreated": false
+  },
+  "firstAttemptInvocationId": "822808d3d0b94515b10af998b1c85146",
+  "timerLastTrigger": "2026-11-09T02:12:50+00:00",
+  "automaticRetryInvocationId": "099ef603200f4540a2df4d6f52771779",
+  "matched15MinuteBackoff": true,
+  "newIndependentRestorePerformed": false,
+  "backupStartedByObservation": false,
+  "startBudgetForTwoStarts": {
+    "checkedAt": "2026-11-09T02:29:13.116864+00:00",
+    "unit": "melodiajest-account-backup.service",
+    "allowed": false,
+    "recentStarts": [
+      "2026-11-09T01:03:39.714125+00:00",
+      "2026-11-09T01:04:55.242520+00:00",
+      "2026-11-09T02:12:50.844309+00:00",
+      "2026-11-09T02:27:57.595394+00:00"
+    ],
+    "plannedStarts": 2,
+    "burst": 4,
+    "windowSeconds": 7200,
+    "marginSeconds": 10,
+    "notBefore": "2026-11-09T03:05:05.242520+00:00",
+    "conservativeJournalSnapshot": true,
+    "reservation": false,
+    "systemdCounterRead": false,
+    "mutationsPerformed": false,
+    "nativeLimits": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStartTimestamp": "Mon 2026-11-09 02:27:57 UTC",
+      "StartLimitIntervalUSec": "2h",
+      "StartLimitBurst": "4"
+    }
+  }
+}

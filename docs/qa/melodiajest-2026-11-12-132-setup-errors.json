@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "kind": "isolated-delay-exceeded-client-timeout",
+      "result": "The first QA response delay was 45000 ms, above the unchanged 15000 ms service-client timeout. A player-root wait timed out in this setup.",
+      "action": "Preserved the observation in 132-first-45s-setup.json without claiming a successful pending-load reproduction. Reproduced old99 and verified candidate100 with a 12000 ms response delay and request/selection/response timestamps."
+    },
+    {
+      "kind": "public-dom-measurement-harness",
+      "result": "The read-only DOM evaluator did not expose parseFloat. The failed initializer created no pub132Mobile binding, so one subsequent assignment also failed.",
+      "action": "Created the binding from raw DOM geometry/CSS strings; measured the actual learning-preview-text span separately. No page mutation or product fix was needed."
+    }
+  ],
+  "firstAndOnlyFull132Passed": true,
+  "threeNewTestsUnchangedAfterRed": true,
+  "historical14FileExact": true,
+  "testAssertionsWeakened": false,
+  "setupFailuresClaimedAsProductionFailures": false,
+  "autoReviewRejections": 0
+}

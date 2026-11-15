@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto'),vm=require('node:vm');
 const {loadApp}=require('./helpers/load-app.cjs'),A=require('../practice-assessment.js'),fixture=require('./fixtures/piano-before-g-major-upper-v1.json');
-const app=loadApp(),copy=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const app=loadApp(),copy=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(require('./helpers/piano-right-legato-history.cjs').project(x))).digest('hex');
 const ids=['detail-p-g-major-upper-right-01','detail-p-g-major-upper-left-01'],units=ids.map(id=>app.lessons.find(l=>l.id===id));
 function events(l,mode='clean'){
  const beat=60000/l.rhythm.practiceBpm,out=[];
@@ -10,7 +10,7 @@ function events(l,mode='clean'){
  return out.sort((a,b)=>a.at-b.at||(a.type==='off'?-1:1));
 }
 
-test('two new upper groups preserve all578 complete records, musical grades, order, themes, baseline and guitar',()=>{
+test('two new upper groups preserve all578 complete historical records, musical grades, order, themes, baseline and guitar',()=>{
  const oldIds=new Set(fixture.catalog.map(l=>l.id)),cohort=app.lessons.filter(l=>oldIds.has(l.id)||ids.includes(l.id));assert.equal(cohort.length,fixture.catalog.length+ids.length);assert.equal(app.lessons.length,require('./fixtures/piano-curriculum-counts.json').catalogRecords);assert.deepEqual(copy(cohort.filter(l=>!oldIds.has(l.id)).map(l=>l.id)),ids);assert.deepEqual(copy(app.lessons.filter(l=>oldIds.has(l.id)).map(l=>l.id)),fixture.catalog.map(l=>l.id));
  for(const old of fixture.catalog){const l=app.lessons.find(x=>x.id===old.id);assert.equal(hash(l),old.fullRecordSha256,old.id);assert.equal(hash({steps:l.steps,rhythm:l.rhythm,fingeringSpec:l.fingeringSpec,contentKind:l.contentKind}),old.musicSha256);assert.equal(A.pianoSignature(l),old.grade);assert.equal(l.order,old.order);assert.equal(l.themeId,old.themeId);}
  assert.deepEqual(copy(app.themes.filter(t=>fixture.themes.some(x=>x.id===t.id))),fixture.themes);assert.equal(app.themes.length,require('./fixtures/piano-curriculum-counts.json').themes);assert.equal(crypto.createHash('sha256').update(fs.readFileSync('lesson-review-baseline.js')).digest('hex'),fixture.protectedBaselineSha256);const c={};vm.runInNewContext(fs.readFileSync('curriculum-plan.js','utf8'),c);assert.equal(hash(c.MUSIC_CURRICULUM_PLAN.guitar),fixture.guitarRouteSha256);

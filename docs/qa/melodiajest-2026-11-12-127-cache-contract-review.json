@@ -1,0 +1,58 @@
+{
+  "kind": "read-only-source-contract-review",
+  "checkedOn": "2026-11-12",
+  "release": "23.5.95",
+  "observed": {
+    "courseContainsPublicMutableAggregateRatings": true,
+    "contentShaCoversRegistryNotRatingTable": true,
+    "courseUnauthenticatedBeforePrivateRoutes": true,
+    "publicCourseOmitsSteps": true,
+    "genericApiResponsePrivateNoStore": true,
+    "genericClientFetchCacheNoStore": true,
+    "courseClientUsesGenericApi": true
+  },
+  "futureProposalImplemented": false,
+  "futureContract": "Opt in only exact anonymous public GET /course in client and server;validator covers the complete current response including rating,never the registry SHA alone. Keep private/auth/error routes no-store and all grade/XP/user-data contracts unchanged. No rating memoization or stale/offline course fallback.",
+  "files": [
+    {
+      "path": "service/server.cjs",
+      "sha256": "a7f581730c6c24cb248be4d3154504e6f4a3d43bc6159e41376b266d166be108",
+      "reviewedLines": [
+        54,
+        62
+      ]
+    },
+    {
+      "path": "service/game.cjs",
+      "sha256": "4495bac063360eacc5f3644c158e1a780b01bc6fcb7211575c40b9501c2b95c6",
+      "reviewedLines": [
+        43,
+        46
+      ]
+    },
+    {
+      "path": "service/course.cjs",
+      "sha256": "207a3d83f643b24c46e00efb926da44af3d560a27552f27041c1ffcbd8106ed6",
+      "reviewedLines": [
+        4,
+        10
+      ]
+    },
+    {
+      "path": "service-client.js",
+      "sha256": "c724727b8923cf761051d3b610d677ffd3cd1e171838c298c676651788d97e51",
+      "reviewedLines": [
+        14,
+        20
+      ]
+    },
+    {
+      "path": "piano-game-player.js",
+      "sha256": "3e08d1790116b3bc8b3329d810127cebd6211f7311e5d837e9b8a4776a347c77",
+      "reviewedLines": [
+        8,
+        10
+      ]
+    }
+  ]
+}

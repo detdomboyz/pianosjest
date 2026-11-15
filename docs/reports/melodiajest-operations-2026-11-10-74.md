@@ -1,0 +1,21 @@
+# MelodiaJest — этап74, 10 ноября2026
+
+Завершено [исследование15](piano-curriculum-2026-11-10-15.md):8 синтетических сценариев точного detail-p-hands-03 × текущая/документальная timingPrecisionv2.16 direct/service сравнений совпали; различие200мс последних окончаний current пропускает, копияv2 отвергает для обеих рук. Одновременные+200мс укладываются в действующие duration-допуски обеих политик. Это проверенный baseline предложения, не внедрение. Новых уроков/планов0, exact79 локальный.
+
+[QA наблюдения](../qa/melodiajest-2026-11-10-74-observation.json): публичные HTTPS GET **08:59:09.8593085UTC** — web23.5.78/statusok, API/source2c0af582e1055d802262f248d3a88a7d7a2dc11ed9453d3212116ef8dbc944aa/course334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee/schema2. Весь каталог/архивы не скачивались.
+
+Свежие [knownreceipts74](../qa/melodiajest-2026-11-10-74-native-receipts.json) прочитаны **09:02:40.691647UTC**:3 фиксированных файла,4 собственных units и журналы текущих InvocationID. Actual hourly09:01:34–35 /b15916b7a42b4c08ab3c591e86938c62/success0/inactive. Timer/journal/обе полные квитанции совпали; checkedAt09:01:35.086412/.363290. Оригинальное s3RequestsThisCheck=0 нормализовано адаптером, null не0;0 только для этого health, не полный биллинг, неизвестная стоимость не0. Серверных записей, service-start, S3-запросов от read нет.
+
+ActualPGdaily78 прежний:10ноября02:12:10–16 /37f62fa14b204978bf015373496344f9/success0/timer.8 полей summary совпали с receipt, stdout не полная квитанция. newSnapshotCreated=false/verified/07222f7c…/23files/202181413B; restoredAt9ноября16:15:21.593234 прежний, dataComparedAt10ноября02:12:16.205169 — свежая сверка. Прогноз11ноября02:13:25 ещё не actual. Это не новый backup/restore. StartLimit4/2h/journal не reset/повышали/обходили, natural production-lock refusal нового worker не наблюдался.
+
+Native quota на входе/перед metadata: ordinaryUsageAllowed=true/spendControlReached=false, недельное10080мин окно used83/остаток17%, resetsAt1794668871. Until-exhausted/reserve0 сохранена; точный бюджет задачи и аппаратное отсечение0 не обещаются. Кредитов/сбросов/API-обхода нет.
+
+[Пробы](../qa/piano-curriculum-2026-11-10-15-contrary-release-probes.json) / [границы](../qa/piano-curriculum-2026-11-10-15-release-baseline-contract.json):1 запуск,16 direct +16 service grade calls, суммарно32 core-вызова для8×2 ситуаций;8 eventsInput. TimeLimit20/standard/0.85/56BPM/ноты/пальцы взяты из реестра, ending не добавлен. Копия v2 и её новые hash не сохранены. Нет второго оценщика, БД/issued/XP/outbox пути или настоящего устройства. Реальный MIDI/звук/пальцы/педагог не проверены; предполагаемая редакция не получила готовность cutover.
+
+Новых уроков/целей/ID/редакционных планов0,66 источников/0 новых/2 свежих применения.450/186/153/13/10/427только верхняя граница/teacher0/verifiedDistinctnull,4F/6future/2 C-плана прежние. Manual fragment73 не зарегистрирован/не MIDI-ready/без XP; Fvoicev2/matcher/validator не внедрены/F4gap открыт. SameGoalAs/route/прогресс/старые награды и планы сохранены.
+
+[Согласованность](../qa/melodiajest-2026-11-10-74-consistency.json):457 frozen runtime/test, exact artifact79 a4209ac8…/6986732B,7 защищённых групп/все14 operations.local*, прежние контракты/счётчики. Новых архивов/backup/restore/серверных изменений0; source59 LOCAL925b02bd…/7235706B не покрывает документы60–74. Copy45/Node/workerkit/F7/PG/static/currentprevious/Caddy сохранены, ресурсы59 не переизмерялись/не выдаются за свежие.79 не изменён/не переупакован/не опубликован/не productionReady, ресурсный ответ3 получен/не повторялся.
+
+Первое сохранение metadata остановлено своей сверкой до записи state/матрицы/prompt: проекция истории источников добавляла пустое applications там, где поле прежде отсутствовало. [Непринятая точка](../qa/melodiajest-2026-11-10-74-metadata-first-attempt.json) сохранена; состояние73 и защищённые хеши перечитаны и совпали. Исправлена только проекция document-helper, assessment не повторялся.
+
+Та же ACTIVE automation /20мин /чат — [native-sync QA](../qa/melodiajest-2026-11-10-74-automation.json). Далее — source-only редакционный кандидат плана03 с точными before/after hash, пятью строками/полным разбором и ручной подготовкой, без runtime-применения/нового prerequisite полного96/слиянияXP. npm/аудиты/browser/build/упаковка прежнего SHA не повторялись.

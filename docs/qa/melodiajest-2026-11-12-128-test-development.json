@@ -1,0 +1,50 @@
+{
+  "checkedOn": "2026-11-12",
+  "initialClientLog": "tmp/melodiajest-128-client-before-vm-normalization.log",
+  "initialHttpSpecLog": "tmp/melodiajest-128-http-before-spec.log",
+  "vmNormalization": "Initial eighth client case compared VM and host arrays with deepStrictEqual;all610 full-record SHA and theme JSON already matched. Normalize only the VM array realm through JSON before comparing exactly the same fields. Runtime/client/server were unchanged. Final red below is after this test setup correction. No expected cache/error/privacy assertion changed.",
+  "tests": [
+    {
+      "path": "tests/public-course-cache-client.test.cjs",
+      "sha256BeforeImplementation": "e975a340908a2457f70b0884d9b49e125fa3eb7ccad3684631dd207d9a7e08fe",
+      "redLog": "tmp/melodiajest-128-client-before.log",
+      "totals": {
+        "tests": 8,
+        "pass": 6,
+        "fail": 2,
+        "skipped": 0
+      },
+      "after": {
+        "path": "tmp/melodiajest-128-client-after.log",
+        "totals": {
+          "tests": 8,
+          "pass": 8,
+          "fail": 0,
+          "skipped": 0
+        }
+      },
+      "unchangedAfterFinalPreimplementationRed": true
+    },
+    {
+      "path": "service/tests/course-cache.test.cjs",
+      "sha256BeforeImplementation": "0b4802cd559709dcd0cf71daf3458b2364290356367123751a492b2a7f627fa9",
+      "redLog": "tmp/melodiajest-128-http-before.log",
+      "totals": {
+        "tests": 8,
+        "pass": 2,
+        "fail": 6,
+        "skipped": 0
+      },
+      "after": {
+        "path": "tmp/melodiajest-128-http-after.log",
+        "totals": {
+          "tests": 8,
+          "pass": 8,
+          "fail": 0,
+          "skipped": 0
+        }
+      },
+      "unchangedAfterFinalPreimplementationRed": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-12T13:09:48.828871+00:00",
+  "status": "four-completed-own-qa-payloads-retired-guards-preserved",
+  "targets": [
+    "/opt/melodiajest/ops/course-123-167ee43e3405/isolated-candidate-payload-v2",
+    "/opt/melodiajest/ops/course-124-343b89dc91ea/isolated-candidate-payload-v2",
+    "/opt/melodiajest/ops/course-125-628719f1a8c0/isolated-candidate-payload-v2",
+    "/opt/melodiajest/ops/course-126-94da99ce855d/isolated-candidate-payload-v2"
+  ],
+  "coreSha256": "7eb5542362147fe46cc10064a5e0f47e4cf8feb521fd68d504ea5c9216973478",
+  "testsPassed": 10,
+  "testsSha256": "0774c6b3e52924ee1a0111fe69b9f042089a8d0a4af2b88001b4b9a416ef4b6d",
+  "protectedHashes": {
+    "/opt/melodiajest/ops/account-profile.json": "140631fd41e53784e845be2f660bf9de34ff12fc0f4997ab06871ed908c3da47",
+    "/opt/melodiajest/ops/s3-schedule.json": "1727109023787645e5b92afc87e00479fd80fea5fa53a1f286afae7dd0d3fbf3",
+    "/opt/melodiajest/ops/account-postgres-backups/latest-success.json": "58626f796eb07ba3062b9a1be660ba3c5f2fd7394a178a9190aff5a52c2a6992",
+    "/opt/melodiajest/ops/account-postgres-backups/latest-attempt.json": "58626f796eb07ba3062b9a1be660ba3c5f2fd7394a178a9190aff5a52c2a6992",
+    "/opt/melodiajest/ops/account-postgres-backups/verified-26dc116d663c44fbba85180eb8300739/account-payload.json": "b6bfa06204160b20bfe1aaf13cf47c9c1ebdd56e032046df2a30f58024f8b299",
+    "/opt/melodiajest/current/web-release.json": "8f02cdfef1a8ebb68bb74cfab2c87027941cedeec12418d6eabc6a1a575335c1",
+    "/opt/melodiajest/previous/web-release.json": "8e9ad96ba013b6592b2605a5d7e44224de29770f964d4a38728ff9de1544b83d",
+    "/opt/melodiajest/account-service/current/backend.json": "c2c8e8b148b6d63b204f1b8fdc3fcf460b327d4d721806e8e55c939b66468d04",
+    "/opt/melodiajest/account-service/previous/backend.json": "8ec31922953bc0e31cb4b69ddbf5158e878000ef7746dfe6412be4445f248740",
+    "/opt/melodiajest/ops/course-132-d4087bb957e7/release.tar.gz": "d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3",
+    "/opt/melodiajest/ops/course-131-fe7de9e12697/release.tar.gz": "fe7de9e12697a5a87a43dacdd32fa3d87517d05df9e35438cdee8e9713edac77",
+    "/etc/systemd/system/melodiajest-restore-check.timer": "8873d329c85dfb45cf957d2048c4cc18dedb76f1485b0d82e2044e931a723c87",
+    "/etc/systemd/system/melodiajest-account-backup.timer": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+    "/etc/systemd/system/melodiajest-backup.timer": "f7bf21192ac7d9d625b554e98ea747959566e8cad6b9157d3696468515ea7287",
+    "/etc/systemd/system/melodiajest-backup-health.timer": "6e2bcc6b373edfd6b57e9e26fa50aa1eed58c9a4cdccac4ecdfb0248aecf81e3"
+  },
+  "dryRun": {
+    "dryRun": true,
+    "targetCount": 4,
+    "regularFiles": 96,
+    "recursiveGlobDeleteUsed": false
+  },
+  "freeBefore": 966500352,
+  "noProductionOrBackupPayloadsTargeted": true,
+  "finishedAt": "2026-11-12T13:09:56.177073+00:00",
+  "removed": {
+    "dryRun": false,
+    "targetCount": 4,
+    "regularFiles": 96,
+    "recursiveGlobDeleteUsed": false
+  },
+  "freeAfter": 1172889600,
+  "protectedHashCount": 15,
+  "protectedHashesExact": true,
+  "caddyConfigsNeighborsUnchanged": true,
+  "current": "releases/23.5.100-8f02cdfef1a8",
+  "previous": "releases/23.5.99-8e9ad96ba013",
+  "latestPgSnapshot": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+  "serviceStarts": 0,
+  "s3Requests": 0,
+  "productionDataRestored": false,
+  "archivesSourcesReceiptsRetained": true,
+  "sharedAndOwnLocksUsed": true,
+  "dockerPruneUsed": false,
+  "nativeLimitsChanged": false
+}

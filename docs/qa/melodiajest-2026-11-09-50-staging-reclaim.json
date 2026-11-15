@@ -1,0 +1,127 @@
+{
+  "phase": "2026-11-09-50",
+  "result": {
+    "kind": "bounded-staging-restore-reclaim",
+    "checkedAt": "2026-11-09T13:24:54.234068+00:00",
+    "planSha256": "b5267fbc9c1ab7130595b575d03851dac335500ed9f0b0179b471b3369f726b7",
+    "scriptScope": "only exact obsolete restored workspaces;kept archives/current/previous/live data/backups excluded",
+    "execute": true,
+    "removedTargets": [
+      "/opt/melodiajest/ops/course-43-e942e0791008/restored",
+      "/opt/melodiajest/ops/course-41-204443534f2f/restored"
+    ],
+    "attemptedTargets": [
+      "/opt/melodiajest/ops/course-43-e942e0791008/restored",
+      "/opt/melodiajest/ops/course-41-204443534f2f/restored"
+    ],
+    "removedFileCount": 1944,
+    "removedUniqueAllocatedFileBytes": 62382080,
+    "freeBytesBefore": 1036480512,
+    "pgWorkerStarted": false,
+    "limitsChanged": false,
+    "s3Requests": 0,
+    "dataMigrationPerformed": false,
+    "keptArchives": [
+      {
+        "path": "/opt/melodiajest/ops/course-43-e942e0791008/release.tar.gz",
+        "sha256": "e942e0791008e05b42f6eedc734b5dec0a4e3675ab15944bef59d1a9e960abe8"
+      },
+      {
+        "path": "/opt/melodiajest/ops/course-41-204443534f2f/release.tar.gz",
+        "sha256": "204443534f2f953dbf8229efecace1b1c131acea82c769c17734bc3ecfb02ed8"
+      }
+    ],
+    "freeBytesAfter": 1099100160,
+    "currentPreviousUnchanged": true,
+    "controlBytesAndInodesUnchanged": true,
+    "prepareMinimumFreeBytes": 1048576000,
+    "prepareFreeGatePassed": true,
+    "executorSourceSha256": "6f698062bf8eb37e6fe24a5bd9681b37613f6dc591c51112019cf63b2b8f9438",
+    "isolatedTestsPassed": 8
+  },
+  "isolated": {
+    "passed": 8,
+    "sourceSha256": "6f698062bf8eb37e6fe24a5bd9681b37613f6dc591c51112019cf63b2b8f9438",
+    "network": "none",
+    "productionVolumesMounted": false,
+    "rootFilesystemReadOnly": true,
+    "nonrootUid": 65534,
+    "testStdout": "",
+    "testStderr": "test_changed_archive_is_refused (__main__.ReclaimTests.test_changed_archive_is_refused) ... ok\ntest_changed_or_referencing_live_control (__main__.ReclaimTests.test_changed_or_referencing_live_control) ... ok\ntest_dry_run_preserves_all (__main__.ReclaimTests.test_dry_run_preserves_all) ... ok\ntest_execute_keeps_archives_controls_and_pointers (__main__.ReclaimTests.test_execute_keeps_archives_controls_and_pointers) ... ok\ntest_limits_duplicates_and_unknown_targets (__main__.ReclaimTests.test_limits_duplicates_and_unknown_targets) ... ok\ntest_stale_and_forged_plans (__main__.ReclaimTests.test_stale_and_forged_plans) ... ok\ntest_symlink_and_protected_pointer_are_refused (__main__.ReclaimTests.test_symlink_and_protected_pointer_are_refused) ... ok\ntest_unknown_file_and_changed_private_mode (__main__.ReclaimTests.test_unknown_file_and_changed_private_mode) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.202s\n\nOK\n",
+    "newDependenciesInstalled": false
+  },
+  "freshPlan": {
+    "checkedAt": "2026-11-09T13:24:35.859098+00:00",
+    "kind": "bounded-obsolete-staging-restore-read-only-plan",
+    "candidates": [
+      {
+        "target": "/opt/melodiajest/ops/course-43-e942e0791008/restored",
+        "keptArchive": "/opt/melodiajest/ops/course-43-e942e0791008/release.tar.gz",
+        "archiveSha256": "e942e0791008e05b42f6eedc734b5dec0a4e3675ab15944bef59d1a9e960abe8",
+        "archiveBytes": 5866209,
+        "restoredFiles": 978,
+        "logicalBytes": 29691375,
+        "uniqueAllocatedFileBytes": 31813632,
+        "fileIndexSha256": "7b8c69a3ef687fd454bb4e5e7dc888b23c2e0811a14f0e7c0edfb34e43a77b88",
+        "allBytesMatchKeptArchive": true,
+        "privateRestoreMode0600Verified": true,
+        "unknownFiles": 0,
+        "liveControlReferences": 0,
+        "currentPreviousOverlap": false
+      },
+      {
+        "target": "/opt/melodiajest/ops/course-41-204443534f2f/restored",
+        "keptArchive": "/opt/melodiajest/ops/course-41-204443534f2f/release.tar.gz",
+        "archiveSha256": "204443534f2f953dbf8229efecace1b1c131acea82c769c17734bc3ecfb02ed8",
+        "archiveBytes": 5651305,
+        "restoredFiles": 966,
+        "logicalBytes": 28470852,
+        "uniqueAllocatedFileBytes": 30568448,
+        "fileIndexSha256": "d6c8d0503fbbdae43f10b0e44403e6ab8cd4fd0ec7db8677e333e93b7cf0b281",
+        "allBytesMatchKeptArchive": true,
+        "privateRestoreMode0600Verified": true,
+        "unknownFiles": 0,
+        "liveControlReferences": 0,
+        "currentPreviousOverlap": false
+      }
+    ],
+    "rejected": [],
+    "freeBytes": 1036488704,
+    "prepareMinimumFreeBytes": 1048576000,
+    "uniqueAllocatedFileBytes": 62382080,
+    "maxTargets": 2,
+    "maxAllocatedBytes": 67108864,
+    "pointers": {
+      "/opt/melodiajest/current": "releases/23.5.76-4d85da38a2c1",
+      "/opt/melodiajest/previous": "releases/23.5.75-96033bba77a2",
+      "/opt/melodiajest/account-service/current": "releases/23.5.76-de50ec44843d8a9e",
+      "/opt/melodiajest/account-service/previous": "releases/23.5.75-f2ae9037ffd261c7"
+    },
+    "controlSha256": {
+      "/opt/melodiajest/ops/account-profile.json": "ed65ab23052d83bf03f74e45e305c5050613181339d6f223ae32a498780415ba",
+      "/opt/melodiajest/ops/s3-schedule.json": "1727109023787645e5b92afc87e00479fd80fea5fa53a1f286afae7dd0d3fbf3",
+      "/opt/libre/deploy/vps/Caddyfile": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+      "/etc/systemd/system/melodiajest-account-backup.service": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+      "/etc/systemd/system/melodiajest-restore-check.service": "173a50e82f32fa470db0153ae2f8afe6c999f02aa409713e7e77f77789d2ff2e",
+      "/etc/systemd/system/melodiajest-account.service": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+      "/etc/systemd/system/melodiajest-backup-health.service": "6f66b696d4613eab86b207dd40c17e61cfae7accae4a9a58825de775c48b3c47",
+      "/etc/systemd/system/melodiajest-postgres.service": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+      "/etc/systemd/system/melodiajest-backup.service": "cbfbc9b03463c8485065ab42dbcb8273d6755c1ac62e71ca1ca7b3c18b63fc0a",
+      "/etc/systemd/system/melodiajest-restore-check.timer": "8873d329c85dfb45cf957d2048c4cc18dedb76f1485b0d82e2044e931a723c87",
+      "/etc/systemd/system/melodiajest-account-backup.timer": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+      "/etc/systemd/system/melodiajest-backup.timer": "f7bf21192ac7d9d625b554e98ea747959566e8cad6b9157d3696468515ea7287",
+      "/etc/systemd/system/melodiajest-backup-health.timer": "6e2bcc6b373edfd6b57e9e26fa50aa1eed58c9a4cdccac4ecdfb0248aecf81e3",
+      "/etc/systemd/system/melodiajest-backup-health.service.d/20-external-s3.conf": "144a51189eafc662b531f7cecfb17d15cb6668247d0c9aa3daedbb876cd390f3",
+      "/etc/systemd/system/melodiajest-restore-check.service.d/20-external-s3.conf": "fcf47ddf7cf127b0bfbeb831882d03fba663bc7641820357d2cebcd58e9d29c7",
+      "/etc/systemd/system/melodiajest-backup.service.d/20-external-s3.conf": "109b352004b8bd96c5f29576b87269618734bc14f097507843c5a7af2789f028"
+    },
+    "archiveDeletionPlanned": false,
+    "productionReleaseDataOrBackupDeletionPlanned": false,
+    "deleteOrMovePerformed": false,
+    "freshCompareAndSharedLocksRequiredAtExecution": true,
+    "validForSeconds": 900,
+    "planSha256": "b5267fbc9c1ab7130595b575d03851dac335500ed9f0b0179b471b3369f726b7"
+  },
+  "candidateArtifactChanged": false,
+  "newLearningRecords": 0
+}

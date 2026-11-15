@@ -3,6 +3,7 @@
 // This does not edit notes, the curriculum route, or the immutable baseline.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {loadApp}=require('../tests/helpers/load-app.cjs'),Assessment=require('../practice-assessment.js');
+const OpenResponse=require('../piano-open-response.js');
 const ROOT=path.resolve(__dirname,'..');
 const {hash}=require('../service/canonical.cjs');
 function build(){
@@ -13,7 +14,7 @@ function build(){
   for(const e of plan){
     const lesson=byId.get(e.id);if(!lesson||!learningIds.has(lesson.id))continue;
     const rhythm=app.normalizeLessonRhythm(lesson.rhythm,lesson.steps.length);app.setTestLesson(lesson);
-    const ready=Boolean(e.challenge&&e.fingerprint===Assessment.pianoSignature(lesson)&&rhythm&&lesson.fingeringSpec);
+    const ready=Boolean(!OpenResponse.declared(lesson)&&e.challenge&&e.fingerprint===Assessment.pianoSignature(lesson)&&rhythm&&lesson.fingeringSpec);
     const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};
     const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});
     const steps=ready?rhythm.steps.map((step,index)=>({midis:Array.from(app.stepMidiList(lesson.steps[index])),startBeat:step.startBeat,durationBeats:step.durationBeats})):null;

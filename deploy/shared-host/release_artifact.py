@@ -27,12 +27,17 @@ LEGACY_ASSETS = frozenset({
     'piano-learning-ui.js', 'catalog-transfer.js', 'music-document.js', 'piano-catalog-adapter.js',
     'catalog-sections.css', 'piano-learning-ui.css'})
 ACCOUNT_ASSETS = LEGACY_ASSETS | {'service-client.js', 'catalog-personalization.js', 'account.html', 'account.js', 'account.css'}
-ASSET_PROFILES = (LEGACY_ASSETS, ACCOUNT_ASSETS, ASSETS)
+# Complete game profile of published99/100, before the open-response module.
+LEGACY_GAME_ASSETS = ACCOUNT_ASSETS | frozenset({'learning-game.js', 'portal-experience.js', 'learning-client.js', 'learning-game.css', 'piano-game-player.js', 'trainer.html', 'lesson-rating.js'})
+GAME_ASSET_PROFILES = (LEGACY_GAME_ASSETS, ASSETS)
+ASSET_PROFILES = (LEGACY_ASSETS, ACCOUNT_ASSETS, LEGACY_GAME_ASSETS, ASSETS)
 CONFIG = frozenset({'compose.yaml', 'nginx.conf', 'Caddyfile.fragment'})
 MAX_FILE = 16 * 1024 * 1024
 MAX_TOTAL = 128 * 1024 * 1024
 MAX_FILES = 4096
 FORBIDDEN = frozenset({'trainer-content.json', 'midi-keyboard-settings.ini', '.env', '.git', '.aws'})
+SOURCE_PROFILE = 'application-course-reports-v1'
+EXCLUDED_EVIDENCE_ROOTS = ('docs/qa',)
 
 
 class ArtifactError(ValueError):
@@ -105,7 +110,7 @@ def verify_web(files):
     if manifest.get('storage') == 'account':
         require(manifest.get('serviceVersion') == 1, 'Unprepared account API profile')
         if manifest.get('gameVersion') == 1:
-            require(profile == ASSETS and manifest.get('personalProgress') == 'database-and-versioned-browser-history' and manifest.get('sourceEntries') == {'index.html':'learn.html','trainer.html':'index.html'}, 'Unprepared game web profile')
+            require(profile in GAME_ASSET_PROFILES and manifest.get('personalProgress') == 'database-and-versioned-browser-history' and manifest.get('sourceEntries') == {'index.html':'learn.html','trainer.html':'index.html'}, 'Unprepared game web profile')
             runtime = "window.PBT_RUNTIME=Object.freeze({mode:'web',storage:'account',serviceVersion:1,gameVersion:1,version:" + json.dumps(manifest['version']) + "});\n"
         else:
             require(profile == ACCOUNT_ASSETS and manifest.get('gameVersion') is None and manifest.get('personalProgress') == 'account-scoped-browser', 'Unprepared account web profile')
@@ -148,7 +153,9 @@ def collect_sources(checkout):
             selected = source_allowed(name)
         except ArtifactError:
             selected = False
-        if selected:
+        # Historical QA evidence is retained separately. Keep source_allowed()
+        # unchanged so earlier verified archives with QA still restore.
+        if selected and not any(name.startswith(prefix + '/') for prefix in EXCLUDED_EVIDENCE_ROOTS):
             result[name] = regular_bytes(checkout, name)
     return result
 
@@ -162,8 +169,12 @@ def pack(web, configs, output, checkout=None):
     require(len(entries) < MAX_FILES and sum(map(len, entries.values())) <= MAX_TOTAL, 'Bundle limit exceeded')
     meta = {'format': 'melodiajest-artifact-v1', 'version': verify_web(public)['version'],
             'webManifestSha256': sha256(public['web-release.json']), 'sourceSnapshotIncluded': bool(sources),
+            'sourceProfile': SOURCE_PROFILE if sources else None,
+            'excludedEvidenceRoots': list(EXCLUDED_EVIDENCE_ROOTS) if sources else [],
             'files': {name: descriptor(data) for name, data in sorted(entries.items())}}
     entries['bundle.json'] = (json.dumps(meta, sort_keys=True, indent=2) + '\n').encode()
+    require(len(entries['bundle.json']) <= MAX_FILE and len(entries) <= MAX_FILES
+            and sum(map(len, entries.values())) <= MAX_TOTAL, 'Bundle limit exceeded')
     output = Path(output)
     require(not output.exists() and not output.is_symlink(), 'Archive already exists')
     # Exclusive creation never replaces an earlier known-good copy.
@@ -179,7 +190,8 @@ def pack(web, configs, output, checkout=None):
     verified = read_bundle(output, digest)[1]
     return {'archive': str(output), **descriptor(output.read_bytes()), 'version': verified['version'],
             'webManifestSha256': verified['webManifestSha256'], 'sourceSnapshotIncluded': bool(sources),
-            'sourceFiles': len(sources), 'publicFiles': len(public)}
+            'sourceFiles': len(sources), 'publicFiles': len(public),
+            'sourceProfile': meta['sourceProfile'], 'excludedEvidenceRoots': meta['excludedEvidenceRoots']}
 
 
 def read_bundle(archive, expected_sha256):
@@ -221,6 +233,12 @@ def read_bundle(archive, expected_sha256):
     require(meta.get('version') == manifest['version'] and meta.get('webManifestSha256') == sha256(public['web-release.json']), 'Bundle identity mismatch')
     has_sources = any(name.startswith('source/') for name in files)
     require(meta.get('sourceSnapshotIncluded') is has_sources, 'Source coverage mismatch')
+    if 'sourceProfile' in meta:
+        require(meta['sourceProfile'] == (SOURCE_PROFILE if has_sources else None)
+                and meta.get('excludedEvidenceRoots') == (list(EXCLUDED_EVIDENCE_ROOTS) if has_sources else []),
+                'Source profile mismatch')
+        require(not any(name.startswith('source/' + prefix + '/') for name in files
+                        for prefix in EXCLUDED_EVIDENCE_ROOTS), 'Source profile includes excluded evidence')
     return files, meta
 
 

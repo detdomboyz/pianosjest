@@ -1,0 +1,54 @@
+{
+  "kind": "actual-game-branch-probes-with-synthetic-owned-query-spy",
+  "phase": "71",
+  "checkedAt": "2026-11-10T08:02:47.749Z",
+  "scenarios": [
+    {
+      "name": "start-identical-retry-same-edition",
+      "result": "owned prior receipt returned",
+      "queries": 1,
+      "passed": true
+    },
+    {
+      "name": "start-identical-old-retry-after-proposed-edition-change",
+      "result": {
+        "code": "LESSON_CHANGED",
+        "status": 409
+      },
+      "queries": 0,
+      "receiptAvailableButLookupUnreached": true,
+      "expectedCurrentBehaviorObserved": true,
+      "futureCompatibilityGapNotFixed": true
+    },
+    {
+      "name": "submit-identical-result-replay-after-expiry-and-new-edition",
+      "result": "saved original result returned",
+      "passed": true,
+      "newAwardComputed": false
+    },
+    {
+      "name": "submit-changed-payload-after-result",
+      "result": {
+        "code": "ATTEMPT_SUBMITTED",
+        "status": 409
+      },
+      "passed": true,
+      "newAwardComputed": false
+    }
+  ],
+  "scope": {
+    "actualGameFunctions": true,
+    "newServiceBranchScenarios": 4,
+    "realDatabaseOpened": false,
+    "transactionIsolationTested": false,
+    "liveAccountUsed": false,
+    "actualGraderCalled": false,
+    "gameTablesWritten": false,
+    "xpAwardOrOutboxWritten": false,
+    "appCodeChanged": false
+  },
+  "limits": [
+    "The query spy contains only synthetic owned receipts. It is not a database/store implementation.",
+    "Changed-edition start behavior is a future-cutover risk demonstration, not a reported live user failure."
+  ]
+}

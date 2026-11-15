@@ -1,0 +1,835 @@
+{
+  "kind": "source-only-proposed-expected-note-link-contract",
+  "version": 1,
+  "phase": "2026-11-10-66",
+  "proposalId": "research-p-f-major-bimanual-right-cross-01",
+  "status": "documented-not-implemented",
+  "implemented": false,
+  "automaticGradeReady": false,
+  "canEnterGradedRoute": false,
+  "newLesson": false,
+  "exampleStatus": "unregistered-shape-only-not-persisted-music-version",
+  "proposedLearningFields": {
+    "assessmentRequirements": [
+      "expected-note-links-v1"
+    ],
+    "expectedNoteLinks": {
+      "version": 1,
+      "sourceBinding": {
+        "kind": "legacy-piano-steps-v1",
+        "lessonId": "research-p-f-major-bimanual-right-cross-01",
+        "sha256": "7d8202c16f5cab5bf1d2c371da8fffd2f8cb6351e4aa6b6561aa71258ba2beb5"
+      },
+      "policy": "piano-voice-legato-v1",
+      "notes": [
+        {
+          "id": "f0l",
+          "stepIndex": 0,
+          "noteIndex": 0,
+          "midi": 58
+        },
+        {
+          "id": "f0r",
+          "stepIndex": 0,
+          "noteIndex": 1,
+          "midi": 70
+        },
+        {
+          "id": "f1l",
+          "stepIndex": 1,
+          "noteIndex": 0,
+          "midi": 60
+        },
+        {
+          "id": "f1r",
+          "stepIndex": 1,
+          "noteIndex": 1,
+          "midi": 72
+        },
+        {
+          "id": "f2l",
+          "stepIndex": 2,
+          "noteIndex": 0,
+          "midi": 58
+        },
+        {
+          "id": "f2r",
+          "stepIndex": 2,
+          "noteIndex": 1,
+          "midi": 70
+        },
+        {
+          "id": "f3l",
+          "stepIndex": 3,
+          "noteIndex": 0,
+          "midi": 60
+        },
+        {
+          "id": "f3r",
+          "stepIndex": 3,
+          "noteIndex": 1,
+          "midi": 72
+        }
+      ],
+      "voices": [
+        {
+          "id": "lower-line",
+          "noteIds": [
+            "f0l",
+            "f1l",
+            "f2l",
+            "f3l"
+          ],
+          "transitions": [
+            {
+              "from": "f0l",
+              "to": "f1l",
+              "kind": "legato"
+            },
+            {
+              "from": "f1l",
+              "to": "f2l",
+              "kind": "rest",
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "from": "f2l",
+              "to": "f3l",
+              "kind": "legato"
+            }
+          ]
+        },
+        {
+          "id": "upper-line",
+          "noteIds": [
+            "f0r",
+            "f1r",
+            "f2r",
+            "f3r"
+          ],
+          "transitions": [
+            {
+              "from": "f0r",
+              "to": "f1r",
+              "kind": "legato"
+            },
+            {
+              "from": "f1r",
+              "to": "f2r",
+              "kind": "rest",
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "from": "f2r",
+              "to": "f3r",
+              "kind": "legato"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "proposedPlanNoteIds": [
+    [
+      "f0l",
+      "f0r"
+    ],
+    [
+      "f1l",
+      "f1r"
+    ],
+    [
+      "f2l",
+      "f2r"
+    ],
+    [
+      "f3l",
+      "f3r"
+    ]
+  ],
+  "proposedGradeContract": "piano-note-links-v1",
+  "proposedAssessorArgument": "expectedNoteLinks",
+  "actualProjectionMappingFromFixture": [
+    {
+      "authoredNoteId": "f0l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",0,0]",
+      "stepIndex": 0,
+      "noteIndex": 0,
+      "midi": 58,
+      "span": {
+        "kind": "known",
+        "start": 0,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f0r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",0,1]",
+      "stepIndex": 0,
+      "noteIndex": 1,
+      "midi": 70,
+      "span": {
+        "kind": "known",
+        "start": 0,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f1l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",1,0]",
+      "stepIndex": 1,
+      "noteIndex": 0,
+      "midi": 60,
+      "span": {
+        "kind": "known",
+        "start": 1,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f1r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",1,1]",
+      "stepIndex": 1,
+      "noteIndex": 1,
+      "midi": 72,
+      "span": {
+        "kind": "known",
+        "start": 1,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f2l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",2,0]",
+      "stepIndex": 2,
+      "noteIndex": 0,
+      "midi": 58,
+      "span": {
+        "kind": "known",
+        "start": 4,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f2r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",2,1]",
+      "stepIndex": 2,
+      "noteIndex": 1,
+      "midi": 70,
+      "span": {
+        "kind": "known",
+        "start": 4,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f3l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",3,0]",
+      "stepIndex": 3,
+      "noteIndex": 0,
+      "midi": 60,
+      "span": {
+        "kind": "known",
+        "start": 5,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f3r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",3,1]",
+      "stepIndex": 3,
+      "noteIndex": 1,
+      "midi": 72,
+      "span": {
+        "kind": "known",
+        "start": 5,
+        "duration": 1
+      }
+    }
+  ],
+  "actualConsumers": [
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "anchors": [
+        {
+          "needle": "function pianoSignature",
+          "line": 10,
+          "excerpt": "  function pianoSignature(lesson){return signature({pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,...(lesson.learning?.ending!==undefined?{ending:lesson.learning.ending}:{})});}"
+        },
+        {
+          "needle": "const expected=steps.flatMap",
+          "line": 44,
+          "excerpt": "    const expected=steps.flatMap((s,i)=>s.midis.map(midi=>({midi,step:i,start:s.startBeat,duration:s.durationBeats})));"
+        },
+        {
+          "needle": "if(profile==='legato')",
+          "line": 83,
+          "excerpt": "    if(profile==='legato')for(let i=1;i<steps.length;i++){"
+        },
+        {
+          "needle": "function record(previous",
+          "line": 107,
+          "excerpt": "  function record(previous,{instrument,lessonId,fingerprint,mode,clean,now=Date.now()}){"
+        }
+      ]
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+      "anchors": [
+        {
+          "needle": "revision='piano-catalog-v7:'",
+          "line": 43,
+          "excerpt": "    const source=clone(entry),parsed=parsePattern(source.pattern),revision='piano-catalog-v7:'+Assessment.pianoSignature(source),partId=JSON.stringify(['piano',source.id,'part']),warnings=[],notes=[],assignments=[];"
+        },
+        {
+          "needle": "const noteId=JSON.stringify",
+          "line": 53,
+          "excerpt": "        const noteId=JSON.stringify(['piano',source.id,revision,i,j]);"
+        },
+        {
+          "needle": "function restore(projection)",
+          "line": 63,
+          "excerpt": "  function restore(projection){"
+        }
+      ]
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+      "anchors": [
+        {
+          "needle": "const learning=lesson.learning",
+          "line": 22,
+          "excerpt": "      const learning=lesson.learning;if(learning==null)continue;"
+        },
+        {
+          "needle": "return data;",
+          "line": 30,
+          "excerpt": "    return data;"
+        }
+      ]
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+      "anchors": [
+        {
+          "needle": "const VERSION=1",
+          "line": 3,
+          "excerpt": "  const VERSION=1,object=v=>Boolean(v&&typeof v==='object'&&!Array.isArray(v)),id=v=>typeof v==='string'&&v.length>0;"
+        },
+        {
+          "needle": "notes.has(note.id)",
+          "line": 15,
+          "excerpt": "      if(!id(note.id)||notes.has(note.id))fail('NOTE_ID',path+'.id');else notes.add(note.id);"
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9",
+      "anchors": [
+        {
+          "needle": "learning:lesson.learning||null",
+          "line": 1249,
+          "excerpt": "        rhythm:lesson.rhythm===undefined?undefined:serializeLessonRhythm(lesson.rhythm,lesson.steps.length),handMode:lesson.handMode||undefined,fingeringSpec:lesson.fingeringSpec,curriculumStage:Number(lesson.curriculumStage)||null,guide:normalizeLessonGuide(lesson.guide),learning:lesson.learning||null,lessonReview:lesson.lessonReview||null"
+        },
+        {
+          "needle": "function challengeEligible()",
+          "line": 2330,
+          "excerpt": "  function challengeEligible(){const fragment=activePreparationFragment();if(fragment)return window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key===fragment.requirement.key;const e=curriculumEntry();return state.contentSection==='learning'&&Boolean(e&&e.challenge&&e.fingerprint===window.PracticeAssessment.pianoSignature(state.lesson)&&lessonRhythm()&&state.lesson.fingeringSpec);}"
+        },
+        {
+          "needle": "const result=window.PracticeAssessment.assessPiano",
+          "line": 2380,
+          "excerpt": "    const result=window.PracticeAssessment.assessPiano({steps:rhythm?rhythm.steps.map((t,i)=>({midis:stepMidiList(state.lesson.steps[i]),startBeat:t.startBeat,durationBeats:t.durationBeats})):[],events:state.attemptEvents,bpm:state.attemptBpm,targetBpm:lessonBpm(state.lesson),errors:state.errors,timedOut:state.timeExceeded,supported:challengeEligible()&&!state.attemptAssisted,mode:state.attemptMode,profile:state.lesson.learning?.articulation,timingPrecision:state.lesson.learning?.timingPrecision,ending:state.lesson.learning?.ending,observedUntil:performance.now(),observationInterrupted:state.attemptObservationInterrupted});"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-curriculum-plan.cjs",
+      "sha256": "855a6dac920974aefc266428d0aa90bc9e37e8ffbc033f0514f8c9c3525cf6a9",
+      "anchors": [
+        {
+          "needle": "fingerprint:out===piano?assessment.pianoSignature",
+          "line": 32,
+          "excerpt": "    const entry={id:lesson.id,stage,branch,fingerprint:out===piano?assessment.pianoSignature(lesson):assessment.guitarSignature(lesson),challenge:out===piano&&Boolean(lesson.fingeringSpec&&lesson.learning?.machineCheck==='piano-midi')};"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "needle": "const ready=Boolean",
+          "line": 16,
+          "excerpt": "    const ready=Boolean(e.challenge&&e.fingerprint===Assessment.pianoSignature(lesson)&&rhythm&&lesson.fingeringSpec);"
+        },
+        {
+          "needle": "const body={pattern",
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "needle": "const musicVersion=hash(body)",
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        },
+        {
+          "needle": "const steps=ready?",
+          "line": 19,
+          "excerpt": "    const steps=ready?rhythm.steps.map((step,index)=>({midis:Array.from(app.stepMidiList(lesson.steps[index])),startBeat:step.startBeat,durationBeats:step.durationBeats})):null;"
+        }
+      ]
+    },
+    {
+      "file": "service/canonical.cjs",
+      "sha256": "c59128bdc692274b5052204634e400007b9dde34361fd037b583f35f18881a0f",
+      "anchors": [
+        {
+          "needle": "function canonical(value)",
+          "line": 3,
+          "excerpt": "function canonical(value){"
+        },
+        {
+          "needle": "const hash=value=>",
+          "line": 7,
+          "excerpt": "const hash=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');"
+        }
+      ]
+    },
+    {
+      "file": "service/course.cjs",
+      "sha256": "207a3d83f643b24c46e00efb926da44af3d560a27552f27041c1ffcbd8106ed6",
+      "anchors": [
+        {
+          "needle": "function loadCourse(filename",
+          "line": 4,
+          "excerpt": "function loadCourse(filename=path.join(__dirname,'course-registry.json')){"
+        },
+        {
+          "needle": "publicLesson(row)",
+          "line": 9,
+          "excerpt": "  return {course,byId,lesson(id){const row=byId.get(id);check(row,404,'LESSON_NOT_FOUND','Урок не найден.');return row;},publicLesson(row){const {steps,...metadata}=row;return metadata;}};"
+        }
+      ]
+    },
+    {
+      "file": "service/game-grade.cjs",
+      "sha256": "ab328af357e1a9c1f84b59ac321b01537728d89ee51d21ad064eb2f91feb3f22",
+      "anchors": [
+        {
+          "needle": "const assessment=Assessment.assessPiano",
+          "line": 15,
+          "excerpt": "  const assessment=Assessment.assessPiano({steps:plan.steps,events,bpm:plan.bpm,targetBpm:plan.bpm,mode,profile:plan.profile,timingPrecision:plan.timingPrecision,ending:plan.ending,observedUntil,observationInterrupted:interrupted});"
+        },
+        {
+          "needle": "const matched=expected.map",
+          "line": 21,
+          "excerpt": "  const matched=expected.map(item=>({...item,actual:queues.get(item.midi)?.shift()}));"
+        }
+      ]
+    },
+    {
+      "file": "service/game.cjs",
+      "sha256": "4495bac063360eacc5f3644c158e1a780b01bc6fcb7211575c40b9501c2b95c6",
+      "anchors": [
+        {
+          "needle": "INSERT INTO course_editions",
+          "line": 59,
+          "excerpt": "      await q('INSERT INTO course_editions VALUES(?,?,?,?) ON CONFLICT(lesson_id,music_version,edition_version) DO NOTHING').run(row.id,row.musicVersion,row.editionVersion,JSON.stringify(row));"
+        },
+        {
+          "needle": "SELECT plan_raw FROM course_editions",
+          "line": 76,
+          "excerpt": "      const saved=await q('SELECT plan_raw FROM course_editions WHERE lesson_id=? AND music_version=? AND edition_version=?').get(row.lesson_id,row.music_version,row.edition_version);check(saved,500,'EDITION_MISSING','Не найдена редакция попытки.');"
+        },
+        {
+          "needle": "const plan=JSON.parse(saved.plan_raw)",
+          "line": 77,
+          "excerpt": "      const plan=JSON.parse(saved.plan_raw),graded=grade(plan,events,row.mode,input.observedUntil,input.observationInterrupted),clean=graded.assessment.clean;"
+        },
+        {
+          "needle": "oldGoal=await",
+          "line": 78,
+          "excerpt": "      const wanted=Experience.award({clean,quality:graded.quality}),oldGoal=await q('SELECT MAX(best_xp) AS best FROM goal_experience WHERE owner_id=? AND goal_key=?').get(owner,row.goal_key),reward=Experience.improvement(oldGoal?.best||0,wanted);"
+        }
+      ]
+    },
+    {
+      "file": "piano-game-player.js",
+      "sha256": "406384e9300453f4614e22b907f4b7888726bcb99814eb89d135c7b978837c16",
+      "anchors": [
+        {
+          "needle": "async function start()",
+          "line": 11,
+          "excerpt": "    async function start(){"
+        },
+        {
+          "needle": "gradeFingerprint!==trainer.fingerprint",
+          "line": 15,
+          "excerpt": "      const row=current(),trainer=readTrainer();if(!row?.challengeReady)throw Error('Этот материал пока доступен для практики.');if(row.gradeFingerprint!==trainer.fingerprint)throw Error('В личной редакции изменены ноты или учебные параметры. Для XP открой исходный урок из маршрута.');"
+        },
+        {
+          "needle": "gradeFingerprint===t.fingerprint",
+          "line": 9,
+          "excerpt": "    function active(){const saved=capture.status().pending,t=readTrainer();return capture.status().ready&&saved?.attempt.lessonId===t.lessonId&&saved.attempt.gradeFingerprint===t.fingerprint;}"
+        }
+      ]
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14",
+      "anchors": [
+        {
+          "needle": "function validOperation",
+          "line": 7,
+          "excerpt": " function validOperation(op,now){return integer(now)&&object(op)&&typeof op.id==='string'&&op.id.trim()&&op.id.length<=256&&typeof op.lessonId==='string'&&op.lessonId.trim()&&op.lessonId.length<=200&&!['__proto__','constructor','prototype'].includes(op.lessonId)&&/^[a-f0-9]{8}$/.test(op.fingerprint||'')&&['challenge','memory'].includes(op.mode)&&typeof op.clean==='boolean'&&integer(op.at)&&op.at<=now;}"
+        },
+        {
+          "needle": "result=Assessment.record(row",
+          "line": 24,
+          "excerpt": "  }else result=Assessment.record(row,{instrument:'piano',lessonId:op.lessonId,fingerprint:op.fingerprint,mode:op.mode,clean:op.clean,now:op.at});"
+        }
+      ]
+    }
+  ],
+  "sourceBindingRule": {
+    "algorithm": "service/canonical.cjs:hash over exact legacy musical body expression, excluding new requirements/links",
+    "currentBodyExpression": "{pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit}",
+    "exampleOnlySha256": "7d8202c16f5cab5bf1d2c371da8fffd2f8cb6351e4aa6b6561aa71258ba2beb5",
+    "mustRecomputeFromFinalActualNormalizedLesson": true,
+    "neverHashProjectionNoteIdsIntoTheirOwnFingerprint": true
+  },
+  "validationPlan": [
+    "Known exact version, policy, capability and exact field schema; unknown required metadata cannot fall through as legacy.",
+    "Bounded unique authored IDs, no reserved keys, bijection with all expected note positions; MIDI and base source hash must match.",
+    "Exactly one ordered line per note, complete adjacent transition coverage, no branches/cycles/cross-line/self/backward/skip edges.",
+    "Legato only at equal expected end/start with changed pitch; rest windows derived exactly from source notes; no automatic repair.",
+    "All layers validate: catalog import, curriculum plan, canonical builder/loadCourse, browser eligibility, server issued plan, common assessor."
+  ],
+  "supportBoundaryProposedV1": {
+    "voices": 2,
+    "minSteps": 2,
+    "maxSteps": 32,
+    "maxExpectedNotes": 64,
+    "timeUnit": "quarter",
+    "durationBeatsPerNote": 1,
+    "integerBeatBoundaries": true,
+    "synchronousOneNotePerVoice": true,
+    "disjointPitchSetsBetweenVoices": true,
+    "unsupported": [
+      "same-pitch-legato",
+      "ties",
+      "pedal-proof",
+      "finger-substitution-on-held-note",
+      "held-polyphony",
+      "shared-MIDI-between-voices",
+      "unknown-time",
+      "unpitched",
+      "frequency"
+    ]
+  },
+  "legacyCompatibilityPlan": [
+    "Conditionally include new requirements/links in pianoSignature and musicVersion only when present; absent legacy bytes/hash/Assessment.VERSION1 unchanged.",
+    "Serialize canonical noteIds and validated links into browser/server common assessor arguments; share the consuming algorithm, do not implement another grader.",
+    "Record explicit new gradeContract in saved plan; old saved plan_raw must retain absent-contract behavior, code is not frozen merely by saving data.",
+    "Preserve old result_raw, digest, XP, goal_key, policy_version and progress; no retroactive grade or sameGoalAs migration.",
+    "Existing private attempt event payload remains nonce/events/observedUntil/observationInterrupted; use server-owned saved canonical links."
+  ],
+  "restScope": "Two explicit notated2–4 breaks skip legato links; no new strict rest or final-silence grade claimed.",
+  "midiScope": "Only NoteOn/Off retention boundary proxy; no physical voice/hand/finger, acoustic legato, pedal-off or comfort proof.",
+  "numericPolicy": "Reuse existing project legato gap min(90ms,beat*.12), overlap min(100ms,beat*.15); no relaxed tolerances or attribution to source authors.",
+  "futureAcceptanceCases": [
+    {
+      "id": "exact-two-lines",
+      "scenario": "Valid source-bound eight notes and four legato edges; both actual lines continuous within the unchanged project allowances.",
+      "expected": "accept",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "notated-middle-rest",
+      "scenario": "Keep explicit rest2–4; do not join step1 to step2, do not claim a new strict silence assessment.",
+      "expected": "accept",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "left-gap110",
+      "scenario": "Only lower line releases110ms early at44BPM; correct other metrics.",
+      "expected": "reject-legato",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "right-gap110",
+      "scenario": "Only upper line releases110ms early at44BPM.",
+      "expected": "reject-legato",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "both-gap200",
+      "scenario": "Both lines release200ms early; current65 clean must become rejected for the new capability only.",
+      "expected": "reject-legato",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "both-overlap150",
+      "scenario": "Both old pitches extend150ms over next pitches at44BPM.",
+      "expected": "reject-legato",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "late-onset200",
+      "scenario": "One line attacks200ms late.",
+      "expected": "retain-onset-or-chord-rejection",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unequal-release200",
+      "scenario": "One line releases200ms before the other, with future explicit v2 if chosen.",
+      "expected": "retain-v2-release-rejection",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "duration-gap400",
+      "scenario": "Both notes shorten400ms.",
+      "expected": "retain-duration-rejection",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "duplicate-id",
+      "scenario": "Repeated authored note ID or reserved key.",
+      "expected": "reject-schema",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "missing-note-ref",
+      "scenario": "Transition or line names absent note.",
+      "expected": "reject-schema",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "bad-locator",
+      "scenario": "Out-of-range, fractional, duplicated or unmapped stepIndex/noteIndex.",
+      "expected": "reject-binding",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "wrong-midi",
+      "scenario": "Located pitch differs from declared MIDI.",
+      "expected": "reject-binding",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "stale-body",
+      "scenario": "Source body or sourceBinding SHA changed.",
+      "expected": "reject-binding",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "uncovered-note",
+      "scenario": "One expected note has no authored identity or no line.",
+      "expected": "reject-coverage",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "duplicated-line-membership",
+      "scenario": "Same expected note belongs to both voices.",
+      "expected": "reject-coverage",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "missing-transition",
+      "scenario": "Drop one required neighbouring legato or rest transition.",
+      "expected": "reject-coverage",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "cross-line-transition",
+      "scenario": "Join lower note to upper voice.",
+      "expected": "reject-voice-boundary",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "backward-or-cycle",
+      "scenario": "Backwards, self, branch or cyclic edge.",
+      "expected": "reject-order",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "skip-neighbour",
+      "scenario": "Connect across another expected note in the same line.",
+      "expected": "reject-order",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "legato-over-rest",
+      "scenario": "Use legato across expected2–4 rest.",
+      "expected": "reject-expected-boundary",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "incorrect-rest-window",
+      "scenario": "Rest boundaries differ from preceding release/next onset.",
+      "expected": "reject-expected-boundary",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unknown-version",
+      "scenario": "Unknown expectedNoteLinks version/policy.",
+      "expected": "unsupported-no-clean",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "required-without-body",
+      "scenario": "Required capability present but links absent or malformed.",
+      "expected": "unsupported-no-legacy-fallback",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unknown-required-capability",
+      "scenario": "Unknown required capability marker.",
+      "expected": "unsupported-no-clean",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "same-pitch-legato",
+      "scenario": "A requested legato edge repeats MIDI pitch instead of changing it.",
+      "expected": "unsupported-not-a-tie",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "overlapping-voice-pitches",
+      "scenario": "Same MIDI is used by both voices, even at different steps.",
+      "expected": "unsupported-v1",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "held-or-polyphonic-line",
+      "scenario": "Independent held duration, chord in a voice, frequency/unpitched or unknown time.",
+      "expected": "unsupported-v1",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "pedal-or-tie-claim",
+      "scenario": "Plan requires pedal/tie proof while current event transport carries only on/off.",
+      "expected": "unsupported-no-sound-or-pedal-proof",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "interrupt-or-assisted",
+      "scenario": "Non-MIDI, help, interruption or incomplete observation.",
+      "expected": "retain-existing-failure",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "new-fields-in-hash",
+      "scenario": "Changing a link/requirement/policy/binding changes new musicVersion and fingerprint.",
+      "expected": "invalidate-new-edition-only",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "absent-fields-hash",
+      "scenario": "All new fields absent; retain exact existing hashes and Assessment.VERSION1.",
+      "expected": "legacy-identical",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "projection-mapping",
+      "scenario": "Map authored IDs to current projection notes after final fingerprint; no fingerprint-derived ID inside hashed source links.",
+      "expected": "no-hash-cycle",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "catalog-roundtrip",
+      "scenario": "Preserve validated contract and original notes/fingers/order through save/export/import.",
+      "expected": "no-silent-repair",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unknown-import",
+      "scenario": "Unknown imported contract remains intact for visible-limitation practice; no challenge.",
+      "expected": "preserve-no-grade",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "old-issued-plan",
+      "scenario": "Old issued attempt reads saved old plan and absent-contract branch of future real grader.",
+      "expected": "legacy-result-identical",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "new-issued-plan",
+      "scenario": "New issued attempt uses saved canonical links/gradeContract, never client-supplied links.",
+      "expected": "canonical-required",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "submit-idempotency",
+      "scenario": "Resubmit identical events after reconnect; previous result/digest/XP returned.",
+      "expected": "no-double-xp",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "historical-progression",
+      "scenario": "Old local fingerprint archived; server old music progress/results/ratings remain.",
+      "expected": "preserve-history-no-migration",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "goal-policy-separation",
+      "scenario": "New musical links do not change sameGoalAs/goalKey/XP policyVersion by themselves.",
+      "expected": "no-unapproved-xp-rewrite",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "cached-client",
+      "scenario": "Old trainer hash or missing capability prevents starting/recovering new unsupported plan; preserve pending export.",
+      "expected": "no-quiet-downgrade",
+      "status": "planned-not-executed"
+    }
+  ],
+  "actualChecksThisStage": {
+    "realMetadataPathExperiment": true,
+    "newPerformanceAssessmentProbes": 0,
+    "futureGradeCasesExecuted": 0,
+    "original16Probes65ReusedWithoutRerun": true,
+    "appGraderImplemented": false,
+    "appValidatorImplemented": false
+  },
+  "limits": [
+    "No new grade implementation or physical/pedagogical validation.",
+    "Fixture source hash is not a persisted lesson version.",
+    "Source59 does not cover documents60–66."
+  ],
+  "researchReview": {
+    "id": "2026-11-10-07",
+    "phase": "2026-11-10-66",
+    "status": "completed-source-contract-not-implemented",
+    "report": "docs/reports/piano-curriculum-2026-11-10-07.md",
+    "qa": "docs/qa/piano-curriculum-2026-11-10-07-consumer-trace.json",
+    "contract": "docs/qa/piano-curriculum-2026-11-10-07-voice-link-contract.json",
+    "proposalId": "research-p-f-major-bimanual-right-cross-01",
+    "actualConsumerFilesTraced": 13,
+    "realMetadataPathExperiment": true,
+    "newSyntheticPerformanceProbes": 0,
+    "futureAcceptanceCasesPlanned": 41,
+    "futureAcceptanceCasesExecuted": 0,
+    "expectedLocalNoteIds": 8,
+    "proposedLegatoLinks": 4,
+    "explicitNotatedRestBreaks": 2,
+    "automaticGradeReady": false,
+    "canEnterGradedRoute": false,
+    "newLearningRecords": 0,
+    "newImplementedIndependentGoals": 0,
+    "newResearchLessonProposals": 0,
+    "newEditorialPlans": 0,
+    "pendingEditorialPlansTotal": 2,
+    "teacherReviewed": false
+  },
+  "nextAction": "Исследование66 завершено: source-only контракт явных ожидаемых нот/линий и совместимости сохранён; новые learning-поля сейчас сохраняются, но не входят в fingerprint/musicVersion/оценщик; adapter ID зависит от fingerprint. 8 локальных ID/4 legato-связи/2 нотированных разрыва, версия/валидация/общий реальный assessor/старые saved plan_raw и XP описаны, НЕ внедрены. Следующий малый source-only этап — контракт второй F-пары research-p-f-major-bimanual-left-cross-01: C4+C5→D4+D5/LH1→3/RH1→2, свои короткие предпосылки по реальным ID, объяснение/слуховой ориентир/перенос и ограничение автопроверки; сначала пригодный имеющийся материал, без обязательной полной гаммы. 79 точный локальный/замороженный по варианту3, не менять/паковать/публиковать; не повторять ресурсный вопрос/не покупать/не чистить. Двуручный legato пока не подтверждается, новый оценщик не писать в79. 4F/6future/2редакционных плана и450/186/153/13/10/427верхняя граница/teacher0/verifiedDistinctnull прежние. Продолжать после лёгких HTTPS/knownreceipts/native quota; не повторять прежние тяжёлые проверки."
+}

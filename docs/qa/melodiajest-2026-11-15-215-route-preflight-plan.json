@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-11-15T02:05:55.733Z",
+  "planningOnly": true,
+  "phase": 215,
+  "syntheticRouteProbeOnly": true,
+  "actualCompleteGeneratorUsed": true,
+  "actualInsertionCodeUnchanged": true,
+  "newLessonDefinitionsRegistered": false,
+  "sourceOrPedagogyValidatedByThisProbe": false,
+  "rootProductFilesChanged": 0,
+  "newSourceApplications": 0,
+  "rejectedPrior214PlanAnchor": "detail-p-bflat-major-descent-left-01",
+  "rejectionReason": "Prior214afterLHfull proposal and first215course10-08/common probe would change protected oldLHfullNext because complete dependency ordering resolves the oldgroup after the syntheticRHgroup. Use existing stage+branch scope, preserve all267oldNext;firstfailedprobe preserved.",
+  "priorSyntheticProbeAttempts": 1,
+  "priorFailedProbe": "tmp/probe-eflat-optional-head-215.cjs",
+  "actualCurrentNextImplementationChanged": false,
+  "selectedDisplayAnchor": "course10-08",
+  "selectedStage": "p7",
+  "selectedBranch": "eflat-right-ascent",
+  "main295Unchanged": true,
+  "mainExamTerminal": true,
+  "old84MainNextExact": true,
+  "old267OptionalNextExact": true,
+  "allOldPlanEntriesExact": true,
+  "oldRelativeCatalogueOrderPreserved": true,
+  "oldAnchorHint": "course08-06",
+  "next": null,
+  "newOptionalChain": [
+    "detail-p-eflat-white-black-pair-right-01",
+    "detail-p-eflat-upper-exit-right-01",
+    "detail-p-eflat-major-ascent-right-01"
+  ],
+  "newOptionalTransitions": 2,
+  "newOptionalTerminalCases": 1,
+  "syntheticCases": [
+    {
+      "id": "detail-p-eflat-white-black-pair-right-01",
+      "pattern": "o O P",
+      "after": "course10-08",
+      "requires": [
+        "detail-p-black-03",
+        "detail-p-bflat-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-upper-exit-right-01",
+      "pattern": "P s d D",
+      "after": "detail-p-eflat-white-black-pair-right-01",
+      "requires": [
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-g-natural-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-major-ascent-right-01",
+      "pattern": "Y i o O P s d D",
+      "after": "detail-p-eflat-upper-exit-right-01",
+      "requires": [
+        "detail-p-bflat-second-thumb-right-01",
+        "detail-p-eflat-white-black-pair-right-01",
+        "detail-p-eflat-upper-exit-right-01"
+      ]
+    }
+  ],
+  "historicalTestLogicChangesRequired": 0
+}

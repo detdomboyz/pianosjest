@@ -114,7 +114,12 @@ class Backups(unittest.TestCase):
 
     def make_edition(self,name,version):
         web=self.base/'releases'/name;shutil.copytree(self.fixture,web)
-        manifest=json.loads((web/'web-release.json').read_bytes());manifest['version']=version
+        manifest=json.loads((web/'web-release.json').read_bytes());original_version=manifest['version'];manifest['version']=version
+        if manifest.get('storage')=='account':
+            runtime=web/'web-runtime.js';raw=runtime.read_bytes();needle=json.dumps(original_version).encode()
+            self.assertEqual(raw.count(needle),1)
+            raw=raw.replace(needle,json.dumps(version).encode());runtime.write_bytes(raw)
+            manifest['files']['web-runtime.js']=artifact.descriptor(raw)
         (web/'web-release.json').write_bytes(backup.encoded(manifest))
         archive=self.base/'ops/artifacts'/(name+'.tar.gz')
         result=artifact.pack(web,self.base/'deploy',archive,self.source)
@@ -132,7 +137,7 @@ class Backups(unittest.TestCase):
         result=backup.json_file(self.home/'last-restore-success.json')
         self.assertEqual(result['controlsRestored'],12);self.assertEqual(len(self.runtime.checked),2)
         for role in ['current','previous']:
-            self.assertEqual(result['entries'][role]['runtime']['publicFilesVerified'],28)
+            self.assertEqual(result['entries'][role]['runtime']['publicFilesVerified'],len(artifact.read_web(self.fixture)))
             self.assertTrue(result['entries'][role]['files']['sources']['sourceSnapshotIncluded'])
             archive,_=backup.read_blob(self.home,'blobs',saved['entries'][role]['sources'],'.tar.gz')
             files,_=artifact.read_bundle(archive,saved['entries'][role]['sources']['sha256'])

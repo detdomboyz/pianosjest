@@ -1,0 +1,198 @@
+{
+  "kind": "source-only-contrary-release-baseline-boundary",
+  "documentVersion": 1,
+  "phase": "2026-11-10-74",
+  "batch": "2026-11-10-15",
+  "lessonId": "detail-p-hands-03",
+  "editorialPlanId": "2026-11-10-03",
+  "status": "baseline-verified-hypothetical-profile-not-implemented",
+  "currentCanonical": {
+    "id": "detail-p-hands-03",
+    "title": "Противоположное движение двух рук",
+    "description": "Из C3/C4: левая идёт вниз B2–A2 пальцами 2–3 от большого на C3; правая вверх D4–E4 пальцами 2–3.",
+    "stage": "p4",
+    "stageTitle": "4. Согласование рук",
+    "optional": false,
+    "goal": "Из C3/C4: левая идёт вниз B2–A2 пальцами 2–3 от большого на C3; правая вверх D4–E4 пальцами 2–3.",
+    "requires": [
+      "detail-p-hands-02"
+    ],
+    "goalKey": "detail-p-hands-03",
+    "challengeReady": true,
+    "gradeFingerprint": "47383ac1",
+    "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+    "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce",
+    "bpm": 56,
+    "timeLimit": 20,
+    "steps": [
+      {
+        "midis": [
+          48,
+          60
+        ],
+        "startBeat": 0,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          47,
+          62
+        ],
+        "startBeat": 1,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          45,
+          64
+        ],
+        "startBeat": 2,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          47,
+          62
+        ],
+        "startBeat": 3,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          48,
+          60
+        ],
+        "startBeat": 4,
+        "durationBeats": 0.85
+      }
+    ],
+    "profile": "standard"
+  },
+  "hypotheticalTimingOnlyVersion": {
+    "fingerprint": "59fcadd5",
+    "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+    "editionVersion": "e27d2c3604143bb6604594acf54de37e1488e1c5df8f151a4495932797589f46",
+    "persisted": false
+  },
+  "scenarioResults": [
+    {
+      "scenario": "exact",
+      "currentClean": true,
+      "hypotheticalV2Clean": true
+    },
+    {
+      "scenario": "left-final-off-plus200",
+      "currentClean": true,
+      "hypotheticalV2Clean": false
+    },
+    {
+      "scenario": "right-final-off-plus200",
+      "currentClean": true,
+      "hypotheticalV2Clean": false
+    },
+    {
+      "scenario": "both-final-offs-plus200",
+      "currentClean": true,
+      "hypotheticalV2Clean": true
+    },
+    {
+      "scenario": "left-middle-onset-plus200",
+      "currentClean": false,
+      "hypotheticalV2Clean": false
+    },
+    {
+      "scenario": "left-final-duration-plus400",
+      "currentClean": false,
+      "hypotheticalV2Clean": false
+    },
+    {
+      "scenario": "missing-left-middle",
+      "currentClean": false,
+      "hypotheticalV2Clean": false
+    },
+    {
+      "scenario": "wrong-left-middle",
+      "currentClean": false,
+      "hypotheticalV2Clean": false
+    }
+  ],
+  "probeQa": "docs/qa/piano-curriculum-2026-11-10-15-contrary-release-probes.json",
+  "logicalScenarios": 8,
+  "directAndServiceComparisons": 16,
+  "allAssessmentsExactlyEqual": true,
+  "policyGeometry": {
+    "beatMs": 1071.4285714285713,
+    "durationMs": 910.7142857142856,
+    "standardDurationToleranceMs": 273.21428571428567,
+    "v2DurationToleranceMs": 235.7142857142857,
+    "commonReleaseAllowanceMs": 120,
+    "nominalEndBeat": 4.85,
+    "sourceTimeLimitSeconds": 20,
+    "illustrativeCurrentPolicyMathOnly": true
+  },
+  "observedCurrentReleaseGap": {
+    "scenario": "one final voice200ms later",
+    "bothSideControlsClean": true,
+    "isolatedToThisExactEdition": true
+  },
+  "hypotheticalV2Boundary": {
+    "bothOneSideCasesRejected": true,
+    "releaseErrors": 1,
+    "durationErrorsInTheseCases": 0,
+    "alsoUsesDifferentIndividualDurationTolerance": true,
+    "equalLate200msBothNotesRejected": false,
+    "endingSilenceAdded": false
+  },
+  "hypotheticalTimingPrecisionImplemented": false,
+  "proposedEditorialCutoverReady": false,
+  "futureEditorialCutoverCasesExecuted": 0,
+  "notesFingeringsRouteXpOrSourceEndingChanged": false,
+  "oldIssuedAttemptsResultsProgressAndAwardsPreserved": true,
+  "sameGoalAsApplied": false,
+  "manualFragment73Registered": false,
+  "fVoiceV2Implemented": false,
+  "fSupportGapResolved": false,
+  "blockedPublicationRequirements": [
+    "Issued/replay and XP compatibility from71/72 remain unimplemented.",
+    "Preserve old musical versions/results and pass scoped regressions plus required release checks before any future runtime change.",
+    "Exact79 remains local and frozen by explicit choice."
+  ],
+  "nextPreparedArtifact": "Source-only editorial candidate manifest with exact before/after identities; not runtime application.",
+  "realMidiObserved": false,
+  "physicalFingersOrSoundVerified": false,
+  "teacherReviewed": false,
+  "newLearningRecords": 0,
+  "newIndependentGoals": 0,
+  "newEditorialPlans": 0,
+  "researchReview": {
+    "id": "2026-11-10-15",
+    "phase": "2026-11-10-74",
+    "status": "completed-source-contrary-release-baseline-not-implemented",
+    "report": "docs/reports/piano-curriculum-2026-11-10-15.md",
+    "qa": "docs/qa/piano-curriculum-2026-11-10-15-contrary-release-probes.json",
+    "contract": "docs/qa/piano-curriculum-2026-11-10-15-release-baseline-contract.json",
+    "editorialPlanId": "2026-11-10-03",
+    "lessonId": "detail-p-hands-03",
+    "logicalScenarios": 8,
+    "directAndServiceComparisons": 16,
+    "directCoreCalls": 16,
+    "serviceGraderCalls": 16,
+    "totalCoreInvocations": 32,
+    "allAssessmentsExactlyEqual": true,
+    "probeLaunches": 1,
+    "currentOneSide200msReleaseAccepted": true,
+    "hypotheticalV2OneSide200msRejected": true,
+    "equal200msBothReleasesStillAccepted": true,
+    "hypotheticalProfilePersisted": false,
+    "proposedEditorialCutoverReady": false,
+    "newCatalogLoaderRuns": 0,
+    "newFullBuilderRuns": 0,
+    "newLearningRecords": 0,
+    "newImplementedIndependentGoals": 0,
+    "newResearchLessonProposals": 0,
+    "newEditorialPlans": 0,
+    "pendingEditorialPlansTotal": 2,
+    "teacherReviewed": false,
+    "realMidiObserved": false
+  }
+}

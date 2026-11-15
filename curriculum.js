@@ -23,6 +23,6 @@
   };
   function entry(plan,instrument,id){return plan?.[instrument]?.find(e=>e.id===id)||null;}
   function route(plan,instrument,lessons){const byId=new Map(lessons.map(l=>[l.id,l]));return (plan?.[instrument]||[]).filter(e=>!stages[e.stage]?.optional).map(e=>byId.get(e.id)).filter(Boolean);}
-  function next(plan,instrument,lessons,id){const path=route(plan,instrument,lessons),index=path.findIndex(l=>l.id===id);return index>=0?path[index+1]||null:path[0]||null;}
+  function next(plan,instrument,lessons,id){const current=instrument==='piano'?entry(plan,instrument,id):null;let path;if(stages[current?.stage]?.optional){const byId=new Map(lessons.map(l=>[l.id,l]));if(!byId.has(id))return null;path=(plan?.[instrument]||[]).filter(e=>e.stage===current.stage&&(e.branch||'common')===(current.branch||'common')).map(e=>byId.get(e.id)).filter(Boolean);}else path=route(plan,instrument,lessons);const index=path.findIndex(l=>l.id===id);return index>=0?path[index+1]||null:path[0]||null;}
   return {stages,entry,route,next};
 });

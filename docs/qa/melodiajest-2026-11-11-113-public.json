@@ -1,0 +1,136 @@
+{
+  "checkedAt": "2026-11-11T06:27:08.420474+00:00",
+  "publicVersion": "23.5.82",
+  "manifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6",
+  "publicFilesPreviouslyHashVerified": 40,
+  "redirects": {
+    "http": {
+      "status": 308,
+      "location": "https://melodiajest.ru/"
+    },
+    "www": {
+      "status": 301,
+      "location": "https://melodiajest.ru/"
+    }
+  },
+  "certificates": {
+    "melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:22 2027 GMT"
+    },
+    "www.melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:23 2027 GMT"
+    }
+  },
+  "forbiddenPaths": {
+    "/server.cjs": 404,
+    "/trainer-content.json": 404,
+    "/.git/config": 404,
+    "/.env": 404,
+    "/service/server.cjs": 404,
+    "/service/course-registry.json": 404,
+    "/api/content": 404,
+    "/api/launch-app": 404
+  },
+  "api": {
+    "status": "ok",
+    "engine": "postgres",
+    "implementationSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+    "databaseSchemaVersion": 2,
+    "courseSha256": "7fad6740b5a3c982b287c2b2f96308e1a22baa1ef95e6006aa962362105b81e9"
+  },
+  "staticAliases": [
+    "melodiajest-web-1",
+    "melodiajest-static",
+    "melodiajest-web"
+  ],
+  "staticService": "melodiajest-static",
+  "current": "releases/23.5.82-dd2c38830edf",
+  "previous": "releases/23.5.81-0d8f84dfdf4d",
+  "health": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 89,
+        "independentRestore": 89,
+        "lastAttempt": 89
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-11T06:24:43.310780+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-11T06:24:43.310774+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "60d11b550a5f5fa830b9d2d1b7585316862e8af7f5d22763c925dee338d7960f",
+      "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 1,
+      "externalRestore": 1
+    },
+    "backupCreatedAt": "2026-11-11T06:25:08.282839+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-11T06:26:12.519469+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  },
+  "hourlyService": {
+    "Result": "success",
+    "ExecMainStartTimestamp": "Wed 2026-11-11 06:26:12 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-11-11 06:26:12 UTC",
+    "ExecMainStatus": "0",
+    "InvocationID": "fe6e53d2aeab48828049868a17eee4ff"
+  },
+  "hourlyTimer": {
+    "NextElapseUSecRealtime": "Wed 2026-11-11 07:00:03 UTC",
+    "LastTriggerUSec": "Wed 2026-11-11 06:01:55 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "accountTimer": {
+    "NextElapseUSecRealtime": "Thu 2026-11-12 02:12:42 UTC",
+    "LastTriggerUSec": "Wed 2026-11-11 02:14:35 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "resources": {
+    "freeDiskBytes": 6277165056,
+    "api": {
+      "MemoryCurrent": "24334336",
+      "MemoryPeak": "57569280",
+      "CPUUsageNSec": "948636000"
+    },
+    "containers": [
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-web-1",
+        "ID": "38db3847e904",
+        "MemPerc": "3.59%",
+        "MemUsage": "2.301MiB / 64MiB",
+        "Name": "melodiajest-web-1",
+        "NetIO": "25.2kB / 2.13MB",
+        "PIDs": "2"
+      },
+      {
+        "BlockIO": "64.3MB / 157MB",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-postgres-1",
+        "ID": "5c0b3afec574",
+        "MemPerc": "4.11%",
+        "MemUsage": "21.02MiB / 512MiB",
+        "Name": "melodiajest-postgres-1",
+        "NetIO": "0B / 0B",
+        "PIDs": "10"
+      }
+    ],
+    "loadTest": false
+  },
+  "billingMeasured": false
+}

@@ -1,0 +1,364 @@
+{
+  "kind": "source-only-real-consumer-metadata-trace",
+  "phase": "66",
+  "checkedAt": "2026-11-10T06:16:57.672Z",
+  "fixtureStatus": "Unregistered synthetic shape, not a lesson or performed MIDI attempt; no timeLimit or v2 added.",
+  "fixture": {
+    "id": "research-p-f-major-bimanual-right-cross-01",
+    "themeId": "research-only",
+    "title": "Две руки: B♭–C, правое 4→1",
+    "description": "Unregistered source-only shape fixture.",
+    "pattern": "[EP] [ts] [EP] [ts]",
+    "rhythm": {
+      "version": 1,
+      "source": "phase66-unregistered-fixture",
+      "bpm": 44,
+      "practiceBpm": 44,
+      "timeSignature": {
+        "numerator": 4,
+        "denominator": 4
+      },
+      "steps": [
+        {
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "startBeat": 4,
+          "durationBeats": 1
+        },
+        {
+          "startBeat": 5,
+          "durationBeats": 1
+        }
+      ]
+    },
+    "fingeringSpec": {
+      "pattern": "[EP] [ts] [EP] [ts]",
+      "steps": [
+        [
+          {
+            "midi": 58,
+            "hand": "left",
+            "num": 2
+          },
+          {
+            "midi": 70,
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "midi": 60,
+            "hand": "left",
+            "num": 1
+          },
+          {
+            "midi": 72,
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "midi": 58,
+            "hand": "left",
+            "num": 2
+          },
+          {
+            "midi": 70,
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "midi": 60,
+            "hand": "left",
+            "num": 1
+          },
+          {
+            "midi": 72,
+            "hand": "right",
+            "num": 1
+          }
+        ]
+      ]
+    },
+    "handMode": "both",
+    "learning": {
+      "articulation": "legato"
+    }
+  },
+  "proposedLearningFields": {
+    "articulation": "legato",
+    "assessmentRequirements": [
+      "expected-note-links-v1"
+    ],
+    "expectedNoteLinks": {
+      "version": 1,
+      "sourceBinding": {
+        "kind": "legacy-piano-steps-v1",
+        "lessonId": "research-p-f-major-bimanual-right-cross-01",
+        "sha256": "7d8202c16f5cab5bf1d2c371da8fffd2f8cb6351e4aa6b6561aa71258ba2beb5"
+      },
+      "policy": "piano-voice-legato-v1",
+      "notes": [
+        {
+          "id": "f0l",
+          "stepIndex": 0,
+          "noteIndex": 0,
+          "midi": 58
+        },
+        {
+          "id": "f0r",
+          "stepIndex": 0,
+          "noteIndex": 1,
+          "midi": 70
+        },
+        {
+          "id": "f1l",
+          "stepIndex": 1,
+          "noteIndex": 0,
+          "midi": 60
+        },
+        {
+          "id": "f1r",
+          "stepIndex": 1,
+          "noteIndex": 1,
+          "midi": 72
+        },
+        {
+          "id": "f2l",
+          "stepIndex": 2,
+          "noteIndex": 0,
+          "midi": 58
+        },
+        {
+          "id": "f2r",
+          "stepIndex": 2,
+          "noteIndex": 1,
+          "midi": 70
+        },
+        {
+          "id": "f3l",
+          "stepIndex": 3,
+          "noteIndex": 0,
+          "midi": 60
+        },
+        {
+          "id": "f3r",
+          "stepIndex": 3,
+          "noteIndex": 1,
+          "midi": 72
+        }
+      ],
+      "voices": [
+        {
+          "id": "lower-line",
+          "noteIds": [
+            "f0l",
+            "f1l",
+            "f2l",
+            "f3l"
+          ],
+          "transitions": [
+            {
+              "from": "f0l",
+              "to": "f1l",
+              "kind": "legato"
+            },
+            {
+              "from": "f1l",
+              "to": "f2l",
+              "kind": "rest",
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "from": "f2l",
+              "to": "f3l",
+              "kind": "legato"
+            }
+          ]
+        },
+        {
+          "id": "upper-line",
+          "noteIds": [
+            "f0r",
+            "f1r",
+            "f2r",
+            "f3r"
+          ],
+          "transitions": [
+            {
+              "from": "f0r",
+              "to": "f1r",
+              "kind": "legato"
+            },
+            {
+              "from": "f1r",
+              "to": "f2r",
+              "kind": "rest",
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "from": "f2r",
+              "to": "f3r",
+              "kind": "legato"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "proposedPlanNoteIds": [
+    [
+      "f0l",
+      "f0r"
+    ],
+    [
+      "f1l",
+      "f1r"
+    ],
+    [
+      "f2l",
+      "f2r"
+    ],
+    [
+      "f3l",
+      "f3r"
+    ]
+  ],
+  "bodyExpressionFromCurrentBuilder": "{pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit}",
+  "baseFingerprint": "4b875877",
+  "changedFingerprint": "4b875877",
+  "baseMusicSha256": "7d8202c16f5cab5bf1d2c371da8fffd2f8cb6351e4aa6b6561aa71258ba2beb5",
+  "changedMusicSha256": "7d8202c16f5cab5bf1d2c371da8fffd2f8cb6351e4aa6b6561aa71258ba2beb5",
+  "baseEdition": "b7b678d927dd89b5c8a40a287276498e9745bd271b3f743b6b89e7ee1e1b9fed",
+  "changedEdition": "7111ea552dd89ddd44498c29075fba11036ea575f73f9d2724cefaa85be8ce17",
+  "currentProjectionRevision": "piano-catalog-v7:4b875877",
+  "actualMapping": [
+    {
+      "authoredNoteId": "f0l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",0,0]",
+      "stepIndex": 0,
+      "noteIndex": 0,
+      "midi": 58,
+      "span": {
+        "kind": "known",
+        "start": 0,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f0r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",0,1]",
+      "stepIndex": 0,
+      "noteIndex": 1,
+      "midi": 70,
+      "span": {
+        "kind": "known",
+        "start": 0,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f1l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",1,0]",
+      "stepIndex": 1,
+      "noteIndex": 0,
+      "midi": 60,
+      "span": {
+        "kind": "known",
+        "start": 1,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f1r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",1,1]",
+      "stepIndex": 1,
+      "noteIndex": 1,
+      "midi": 72,
+      "span": {
+        "kind": "known",
+        "start": 1,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f2l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",2,0]",
+      "stepIndex": 2,
+      "noteIndex": 0,
+      "midi": 58,
+      "span": {
+        "kind": "known",
+        "start": 4,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f2r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",2,1]",
+      "stepIndex": 2,
+      "noteIndex": 1,
+      "midi": 70,
+      "span": {
+        "kind": "known",
+        "start": 4,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f3l",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",3,0]",
+      "stepIndex": 3,
+      "noteIndex": 0,
+      "midi": 60,
+      "span": {
+        "kind": "known",
+        "start": 5,
+        "duration": 1
+      }
+    },
+    {
+      "authoredNoteId": "f3r",
+      "currentProjectionNoteId": "[\"piano\",\"research-p-f-major-bimanual-right-cross-01\",\"piano-catalog-v7:4b875877\",3,1]",
+      "stepIndex": 3,
+      "noteIndex": 1,
+      "midi": 72,
+      "span": {
+        "kind": "known",
+        "start": 5,
+        "duration": 1
+      }
+    }
+  ],
+  "findings": {
+    "newLearningFieldsIgnoredByCurrentPianoSignature": true,
+    "newLearningFieldsIgnoredByCurrentMusicBody": true,
+    "currentEditionChanges": true,
+    "currentProjectionNoteIdsContainFingerprint": true,
+    "currentProjectionNoteIdsUnchangedForOnlyNewFields": true,
+    "adapterRoundTripPreservesUnknownLearningFields": true,
+    "catalogTransferPreservesButDoesNotValidateNewFields": true,
+    "currentAssessorReceivesNewFields": false,
+    "currentlySupportedGradeCapability": false
+  },
+  "checks": {
+    "metadataOnly": true,
+    "assessmentsRun": 0,
+    "courseBuildsRun": 0,
+    "fullCourseScans": 0,
+    "userDataAccessed": false,
+    "appFilesWritten": false
+  }
+}

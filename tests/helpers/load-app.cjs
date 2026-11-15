@@ -10,14 +10,14 @@ const ROOT = path.resolve(__dirname, '../..');
 function loadApp(options={}) {
   const appRoot=path.resolve(options.appRoot||ROOT);
   const context = vm.createContext({
-    console, URLSearchParams, TextEncoder, setTimeout:options.timers?.setTimeout||setTimeout, clearTimeout:options.timers?.clearTimeout||clearTimeout, setInterval:options.timers?.setInterval||setInterval, clearInterval:options.timers?.clearInterval||clearInterval,
-    performance:{now:()=>options.clock?.now??Date.now()},
-    location: { search: '', protocol:'http:' }, navigator: {locks:options.locks}, fetch:options.fetch, EventSource:options.EventSource,
-    document: { getElementById: id => options.elements?.[id]||{}, querySelector: selector => options.selectors?.[selector]||null, addEventListener() {} },
+    console:options.console||console, URL, URLSearchParams, TextEncoder, setTimeout:options.timers?.setTimeout||setTimeout, clearTimeout:options.timers?.clearTimeout||clearTimeout, setInterval:options.timers?.setInterval||setInterval, clearInterval:options.timers?.clearInterval||clearInterval,
+    performance:{now:()=>options.clock?.now??Date.now()},requestAnimationFrame:options.requestAnimationFrame,
+    location: options.location||{ search: options.search||'', protocol:'http:' }, navigator: {locks:options.locks}, fetch:options.fetch, EventSource:options.EventSource,
+    document: options.document||{ getElementById: id => options.elements?.[id]||{}, querySelector: selector => options.selectors?.[selector]||null, addEventListener() {} },
     localStorage: options.storage||{ getItem: () => null, setItem() { throw new Error('Tests must not write user storage'); } },
-    window: { addEventListener:options.onWindowEvent||(()=>{}), PBT_RUNTIME:options.web?{mode:'web'}:undefined, EventSource:options.EventSource, AudioContext:options.AudioContext }
+    window: { addEventListener:options.onWindowEvent||(()=>{}), history:options.history, PBT_RUNTIME:options.serviceClient?{mode:'web',serviceVersion:1,...(options.gamePlayer?{gameVersion:1}:{})}:options.web?{mode:'web'}:undefined, PianoGamePlayer:options.gamePlayer, MelodiaService:{create:()=>options.serviceClient},fetch:options.fetch||(()=>{throw Error('Unexpected network request');}), EventSource:options.EventSource, AudioContext:options.AudioContext }
   });
-  for (const filename of ['chopin-theme.js', 'fingering.js', 'beginner-fingering.js','practice-assessment.js','music-document.js','piano-catalog-adapter.js','piano-progress-store.js','piano-preparation.js','piano-preparation-store.js','piano-preparation-fragment.js','piano-preparation-capture.js','piano-preparation-transfer.js','piano-preparation-import.js','curriculum.js','curriculum-plan.js','catalog-sections.js','lesson-review-baseline.js','lesson-quality.js','lesson-development.js','piano-lesson-development.js','piano-learning-ui.js','catalog-transfer.js']) {
+  for (const filename of ['chopin-theme.js', 'fingering.js', 'beginner-fingering.js','practice-assessment.js','piano-open-response.js','music-document.js','piano-catalog-adapter.js','piano-progress-store.js','piano-preparation.js','piano-preparation-store.js','piano-preparation-fragment.js','piano-preparation-capture.js','piano-preparation-transfer.js','piano-preparation-import.js','curriculum.js','curriculum-plan.js','catalog-sections.js','lesson-review-baseline.js','lesson-quality.js','lesson-development.js','piano-lesson-development.js','piano-learning-ui.js','catalog-transfer.js','catalog-personalization.js']) {
     if (fs.existsSync(path.join(appRoot, filename))) {
       vm.runInContext(fs.readFileSync(path.join(appRoot, filename), 'utf8'), context, { filename });
     }
@@ -26,18 +26,18 @@ function loadApp(options={}) {
   let source = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1];
   if(options.unreviewed)source=source.replace('  installReviewedLessons();','  /* Frozen pre-review catalogue for migration regression tests. */');
   const exportCode = `globalThis.testApp = {
-    lessons, themes, BEGINNER_CURRICULUM, KEY_MAP, state, makeLesson, parsePattern, installReviewedLessons, normalizeLessonRhythm, normalizeLessonGuide, lessonSpacesBefore,
+    lessons, themes, BEGINNER_CURRICULUM, KEY_MAP, state, makeLesson, parsePattern, installReviewedLessons, normalizeLessonRhythm, normalizeLessonGuide, lessonSpacesBefore,boot,
     buildFingeringPlan, ensureFingeringPlan, fingeringSignature, serializeFingeringPlan,
     normalizeStoredFingeringPlan, fingeringSelfCheck, auditBeginnerCurriculum,
     lessonHandMode, fingerLayoutReachCost, fingerHint, stepMidiList, phraseGap,
     catalogSnapshot, applyCatalogSnapshot, challengeEligible, completeLesson, handleNoteOn, handleNoteOff,
     resetLessonState, practiceRange, setPracticeRange, practiceFragmentHtml, checkCurrentRhythm, loadLearningProgress, learningContractHtml, filteredCatalog, nextLesson,previewSoundDurationMs,openLessonEditor,
     setContentSection,selectLesson,sectionLessons,loadCatalogWorkspace,restoreCatalogSelection,catalogNavigationHtml,piecePracticeHtml,rememberCatalogSelection,
-    loadUiPreferences,saveUiPreferences,learningMaterialHtml,setLearningMaterialMode,
+    loadUiPreferences,saveUiPreferences,learningMaterialHtml,setLearningMaterialMode,bindLearningMaterialControls,restoreSidebarPosition,autoFitKeyboardWidth,
     loadCatalog,saveCatalog,connectMidiBridgeEvents,launchMidiKeyboardProgram,selectMidiInput,refreshMidiDevices,
     catalogSaveSnapshot,retryCatalogSave,catalogSaveNoticeHtml,persistBrowserCatalog,
     catalogExportText,importCatalogText,legacyProgressStore,preparationCapture,fragmentCapture,setPreparationScope,activePreparationFragment,visibleStepCount,preparationScopeHtml,preparationLogHtml,preparePreparationExport,canExposePreparationExport,inspectPreparationImport,preparationInspectionHtml,preparationInspectionText,preparationImportStore,comparePreparationImport,applyPreparationImport,restorePreparationImportSource,canApplyPreparationImport,preparationImportResultText,
-    lessonTitle,sidebarHtml,setAttemptMode,setBlindMode,startMemoryCheck,currentNoteHtml,octaveChipsHtml,startPlayback,stopPlayback,pausePlayback,playbackTick,playbackDurations,playPreviewMidi,renderPlaybackOnly,scoreViewHtml,changePracticeBpm,attemptEndingWindow,maybeCompleteEnding,lessonStatusText,
+    lessonTitle,sidebarHtml,bindAfterRender,handleServiceAccountChange,setAttemptMode,setBlindMode,startMemoryCheck,currentNoteHtml,octaveChipsHtml,startPlayback,stopPlayback,pausePlayback,playbackTick,playbackDurations,playPreviewMidi,renderPlaybackOnly,scoreViewHtml,changePracticeBpm,attemptEndingWindow,maybeCompleteEnding,lessonStatusText,
     setTestLesson:lesson=>{state.lesson=lesson;resetLessonState();}
   };`;
   // The explicit marker makes unexpected startup changes fail loudly.

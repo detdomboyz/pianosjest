@@ -1,0 +1,52 @@
+{
+  "kind": "source-only-research-observation",
+  "phase": "2026-11-10-69",
+  "recordedAt": "2026-11-10T07:18:17.566Z",
+  "public": {
+    "checkedAt": "2026-11-10T07:09:16.8453870+00:00",
+    "version": "23.5.78",
+    "status": "ok",
+    "implementationSha256": "2c0af582e1055d802262f248d3a88a7d7a2dc11ed9453d3212116ef8dbc944aa",
+    "courseSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee",
+    "databaseSchemaVersion": 2,
+    "healthUrl": "https://melodiajest.ru/api/service/v1/health"
+  },
+  "quota": {
+    "start": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 80,
+      "remainingPercent": 20,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "beforeMetadata": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 81,
+      "remainingPercent": 19,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "policy": "until-exhausted;reserve0"
+  },
+  "knownReceipts": {
+    "qa": "docs/qa/melodiajest-2026-11-10-69-native-receipts.json",
+    "observedAt": "2026-11-10T07:09:18.251719+00:00",
+    "reobservedInPhase69": true,
+    "hourlyInvocationId": "9af42fa836d5400485c6aeecd30ab7a8",
+    "hourlyStart": "Tue 2026-11-10 07:01:35 UTC",
+    "hourlyEnd": "Tue 2026-11-10 07:01:35 UTC",
+    "bothFullReceiptsMatchedJournal": true,
+    "pgJournalSummaryMatchedAllEightReceiptFields": true,
+    "healthS3Requests": 0,
+    "pgNewSnapshotCreated": false,
+    "pgRestoredAt": "2026-11-09T16:15:21.593234+00:00",
+    "pgDataComparedAt": "2026-11-10T02:12:16.205169+00:00",
+    "reason": "Fresh read of3known receipts/4own units/bounded invocation journals. New hourly07:01 observed; PGdaily retains its actual restore/comparison timestamps. No operations started."
+  },
+  "newBackupCreated": false,
+  "newRestorePerformed": false,
+  "serverMutationsPerformed": false,
+  "s3RequestsInitiatedInPhase": 0
+}

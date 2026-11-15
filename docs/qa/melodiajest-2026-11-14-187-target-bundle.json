@@ -1,0 +1,146 @@
+{
+  "initial": {
+    "files": [
+      "tests/piano-paired-descent-route-guide.test.cjs",
+      "tests/piano-connected-paired-descent.test.cjs",
+      "tests/curriculum.test.cjs",
+      "tests/piano-coordinated-timing.test.cjs"
+    ],
+    "allFilesExisted": true,
+    "exitCode": 1,
+    "totals": {
+      "tests": 43,
+      "pass": 41,
+      "fail": 2,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 24776.225
+    },
+    "log": "tmp/melodiajest-187-target-green.log",
+    "sha256": "a27e49dc97e7a933dc87ed7f6a3cdbe3c07ff005a2ff197f9a2649eed459af07"
+  },
+  "cardRecheck": {
+    "exitCode": 0,
+    "totals": {
+      "tests": 1,
+      "pass": 1,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 5637.2136
+    },
+    "path": "tmp/melodiajest-187-target-card-recheck.log",
+    "sha256": "3d06e2a79937f76db9d428db15a55c5f5366dd25997110a7eed0dc8e64c18bae",
+    "onlyPreviouslyFailedCardCase": true,
+    "runtime": "Node24.22.2"
+  },
+  "runtimeRecheck": {
+    "evidenceSource": "Observed exec tool return in this conversation;not a redirected native process log.No healthy rerun was made to create a log.",
+    "command": "node --preserve-symlinks --preserve-symlinks-main --test --test-reporter=tap --test-name-pattern=\"^every bundled lesson belongs to exactly one named learning stage$\" tests/curriculum.test.cjs",
+    "runtime": "Node20.15.1",
+    "nodePath": "C:/Program Files/nodejs/node.exe",
+    "exitCode": 0,
+    "totals": {
+      "tests": 19,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 18,
+      "durationMs": 3345.5789
+    },
+    "skipsAreNameFilteredNotPlatform": true,
+    "testName": "every bundled lesson belongs to exactly one named learning stage",
+    "initialOtherRuntime": "Node24.22.2",
+    "initialMismatch": {
+      "id": "t31-l03",
+      "planFingerprint": "fe90488c",
+      "computedFingerprint": "00246364"
+    },
+    "guitarCodeDataPlanTestsChanged": false,
+    "crossRuntimeNumericCauseNotEstablished": true,
+    "notClaimedNode24GuitarCompatible": true
+  },
+  "runtimeRecheckHasRedirectedLog": false,
+  "uniqueCases": 43,
+  "finalUniqueCasesPassed": 43,
+  "postImplementationCaseExecutions": 48,
+  "targetSuiteInvocations": 5,
+  "initialFailureCount": 2,
+  "initialRuntime": "Node24.22.2",
+  "projectLocalRuntime": "Node20.15.1",
+  "filteredSkips": 24,
+  "platformSkips": 0,
+  "notOne43PassInvocation": true,
+  "notClaimedNode24GuitarCompatible": true,
+  "wholeNewTestExactFirstRed": false,
+  "newFixtureExactFirstRed": true,
+  "scaffoldCorrections": 1,
+  "targetRuntimeAssemblyCorrection": 1,
+  "oldTestFilesChanged": 0,
+  "appChangedForScaffoldCorrection": false,
+  "sourceRecheck": {
+    "exitCode": 0,
+    "totals": {
+      "tests": 1,
+      "pass": 1,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 5563.9107
+    },
+    "path": "tmp/melodiajest-187-target-source-recheck.log",
+    "sha256": "efdffdf12769064d7a4dad809feef5e78098dfa75d4d3d5b62afc316c7f5c567",
+    "onlyChangedSourceContractCase": true,
+    "runtime": "Node24.22.2"
+  },
+  "sourceContractCorrection": 1,
+  "sourceContractCaseRecheckedBecauseContractChanged": true,
+  "healthy41RepeatedBeforeSourceContractCorrection": false,
+  "unaffectedHealthy40Repeated": false,
+  "corpusGrowthContractCorrection": 1,
+  "postFullTestContractCorrection": 1,
+  "fullTestFileChangedAfterFullRun": true,
+  "applicationUnchangedAfterFullRun": true,
+  "otherSixNewCasesUnchangedAfterFull": true,
+  "fullSuiteCoversFinalTestFileByteForByte": false,
+  "finalCasesCoveredByFullAndFocused": true,
+  "corpusGrowthContractReport": "docs/qa/melodiajest-2026-11-14-187-corpus-growth-contract.json",
+  "corpusGrowthRecheck": {
+    "startedAt": "2026-11-13T23:02:05.704162+00:00",
+    "endedAt": "2026-11-13T23:02:11.869036+00:00",
+    "wallSeconds": 6.165,
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-reporter=tap",
+      "--test-name-pattern=^(all666 other full records|canonical changes only this editorial edition)",
+      "tests/piano-paired-descent-route-guide.test.cjs"
+    ],
+    "runtime": "v20.15.1",
+    "exitCode": 0,
+    "path": "tmp/melodiajest-187-target-corpus-recheck.log",
+    "sha256": "a6b7a73235dd60b61d00fa2e9505e7488a593f5410e6842e55b416176e2af1a4",
+    "totals": {
+      "tests": 8,
+      "pass": 2,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 6,
+      "todo": 0,
+      "duration_ms": 6101.1212
+    },
+    "recheckedCases": [
+      1,
+      8
+    ],
+    "nameFilteredSkipsNotPlatform": 6,
+    "fullSuiteRepeated": false,
+    "applicationChanged": false
+  },
+  "unaffectedHealthy39Repeated": false,
+  "healthyRepeatScope": "Outside the mandatory full suite;cases1 and8 rechecked because their contract changed after full completion."
+}

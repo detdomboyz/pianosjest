@@ -1,0 +1,799 @@
+{
+  "checkedAt": "2026-11-11T06:24:54.941327+00:00",
+  "status": "published-and-account-static-independent-restores-verified",
+  "version": "23.5.82",
+  "operationsPhase": "2026-11-11-113",
+  "musicalBatch": null,
+  "newLessonsThisOperationsPhase": 0,
+  "newLessons": 0,
+  "reviewedLessons": 0,
+  "newLearningRecordCount": 0,
+  "newIndependentGoalCount": 0,
+  "newCheckpointCount": 0,
+  "artifactSha256": "f7918e913d8f31e7a77663c2b7c3a01dc1abe822ccefa2aa836fd2ca52306566",
+  "webManifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6",
+  "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+  "courseSha256": "7fad6740b5a3c982b287c2b2f96308e1a22baa1ef95e6006aa962362105b81e9",
+  "apiPointer": "releases/23.5.82-f7918e913d8f31e7",
+  "previousApiPointer": "releases/23.5.81-9b69c0c1706ae676",
+  "webUpdate": {
+    "archiveSha256": "f7918e913d8f31e7a77663c2b7c3a01dc1abe822ccefa2aa836fd2ca52306566",
+    "backup": {
+      "archive": "/opt/melodiajest/ops/backups/before-update-e97bb82f54f644708eef7bea191c56fe.tar.gz",
+      "bytes": 432929,
+      "publicFiles": 40,
+      "sha256": "6c9fb2cde7e522e4133278189c586ac6896ca8383e6070dbc98d9f63eaa4d638",
+      "sourceFiles": 0,
+      "sourceSnapshotIncluded": false,
+      "version": "23.5.81",
+      "webManifestSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0"
+    },
+    "backupFileRestoreVerified": true,
+    "changed": true,
+    "guard": {
+      "caddyInode": 131363,
+      "caddySha256": "7f0e235d16f9dcaf2ac0649d5fb9c2b99af845ffe95684584ed0386cfbaf2813",
+      "configs": {
+        "Caddyfile.fragment": "f8b24b89a7a973689d0ee987fedb7f1526bb6ed36ec28b1325aca9f2d61b0f8c",
+        "compose.yaml": "b2ebd72a3f61727a4b32c8fe45bdcd58960589f263fbfae0ead417e0b141bb99",
+        "nginx.conf": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2"
+      },
+      "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b"
+    },
+    "id": "e97bb82f54f644708eef7bea191c56fe",
+    "new": "releases/23.5.82-dd2c38830edf",
+    "newSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6",
+    "old": "releases/23.5.81-0d8f84dfdf4d",
+    "oldPrevious": "releases/23.5.80-bdec976c0c8d",
+    "oldSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0",
+    "phase": "committed",
+    "retainedArchive": "/opt/melodiajest/ops/artifacts/f7918e913d8f31e7a77663c2b7c3a01dc1abe822ccefa2aa836fd2ca52306566.tar.gz",
+    "verification": {
+      "caddyUnchanged": true,
+      "healthy": true,
+      "neighbors": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "praicer.ru": 200
+      },
+      "publicFilesVerified": 40
+    },
+    "version": "23.5.82"
+  },
+  "apiUpdate": {
+    "kind": "melodiajest-account-update",
+    "version": 1,
+    "id": "a2d06ceffa904754bf47a4d6f869dd0b",
+    "old": "releases/23.5.81-9b69c0c1706ae676",
+    "new": "releases/23.5.82-f7918e913d8f31e7",
+    "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+    "status": "committed",
+    "dataRestorePerformed": false,
+    "health": {
+      "engine": "postgres",
+      "databaseSchemaVersion": 2,
+      "status": "ok",
+      "serviceVersion": 1,
+      "schemaVersion": 1,
+      "contracts": {
+        "catalog-transfer.js": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "catalog-personalization.js": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b",
+        "music-document.js": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "piano-catalog-adapter.js": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+      },
+      "implementationSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+      "registrationEnabled": true,
+      "maintenanceReadOnly": false,
+      "courseSha256": "7fad6740b5a3c982b287c2b2f96308e1a22baa1ef95e6006aa962362105b81e9"
+    }
+  },
+  "prePublicationAccountSnapshot": "60d11b550a5f5fa830b9d2d1b7585316862e8af7f5d22763c925dee338d7960f",
+  "dataMigrationPerformed": false,
+  "newTimersCreated": 0,
+  "caddyAndTimersUnchanged": true,
+  "developmentPinPreserved": true,
+  "postReleaseVerifiedAt": "2026-11-11T06:26:12.716712+00:00",
+  "accountCopy": {
+    "billingMeasured": false,
+    "checkedAt": "2026-11-11T06:24:43.310723+00:00",
+    "copyCreatedAt": "2026-11-11T06:24:09.291417+00:00",
+    "copyMetrics": {
+      "billingMeasured": false,
+      "cpuSystemSeconds": 0.229,
+      "cpuUserSeconds": 1.813,
+      "credentialsInArgv": false,
+      "elapsedSeconds": 5.918,
+      "error": null,
+      "exitCode": 0,
+      "operation": "backup",
+      "peakChildRssKiB": 89332,
+      "productionInputsMounted": false,
+      "result": [
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 24
+        },
+        {
+          "data_added": 8369968,
+          "data_added_packed": 8301621,
+          "files_changed": 0,
+          "files_new": 24,
+          "files_unmodified": 0,
+          "message_type": "summary",
+          "snapshot_id": "60d11b550a5f5fa830b9d2d1b7585316862e8af7f5d22763c925dee338d7960f",
+          "total_bytes_processed": 205321657,
+          "total_duration": 5.82618538,
+          "total_files_processed": 24
+        }
+      ],
+      "s3HttpRequestCount": null
+    },
+    "dataComparedAt": "2026-11-11T06:24:43.310780+00:00",
+    "dataDigest": "9553ea2ebb8e2720d5a25f0959bffd48adce86c97997c37d5486ac3deabf4ddb",
+    "filesVerified": 23,
+    "fingerprint": "f2901fb01acd80c0b06a847f8a48429f942dd8ceabd6205a488af77172807083",
+    "kind": "melodiajest-postgres-protection",
+    "localPayload": "/opt/melodiajest/ops/account-postgres-backups/verified-f096ca991cf2443fa74d7a2d54937b0f",
+    "newSnapshotCreated": true,
+    "payloadBytes": 205317703,
+    "restore": {
+      "apiHealth": "ok",
+      "daemonLayerReusePossible": true,
+      "dataDigestMatched": true,
+      "ddlDenied": true,
+      "forgedOwnerDenied": true,
+      "imageBlobsVerified": 20,
+      "network": "none",
+      "nodeFromRestoredArchive": true,
+      "pgDependenciesFromRestoredArchive": true,
+      "postgresImageImported": true,
+      "privateWriteReadback": true,
+      "productionDataUsed": false,
+      "productionVolumesMounted": false,
+      "restoredSessionsRevoked": true,
+      "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+      "syntheticMidiDeviceUsed": false,
+      "twoUsersRegistered": true,
+      "wrongPasswordDenied": true
+    },
+    "restoreMetrics": {
+      "billingMeasured": false,
+      "cpuSystemSeconds": 0.628,
+      "cpuUserSeconds": 2.335,
+      "credentialsInArgv": false,
+      "elapsedSeconds": 6.452,
+      "error": null,
+      "exitCode": 0,
+      "operation": "restore",
+      "peakChildRssKiB": 214164,
+      "productionInputsMounted": false,
+      "result": [
+        {
+          "bytes_restored": 4655,
+          "files_restored": 4,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 5341049,
+          "files_restored": 11,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 10387528,
+          "files_restored": 12,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 10387528,
+          "files_restored": 12,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 12852536,
+          "files_restored": 12,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 22342636,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 26491561,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 35330443,
+          "files_restored": 20,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 43386955,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 46914599,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 51841519,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 60045223,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 64594811,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 70819416,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 77475191,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 82490581,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 87510469,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 93089613,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 95606752,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 102776396,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 108650479,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 113375683,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 117516826,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 122112590,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 127929437,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 136911698,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 144231157,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 149915100,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 158328334,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 160584758,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 165680700,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 175358973,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 182430947,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 192621850,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 200137647,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 205321657,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 205321657,
+          "files_restored": 28,
+          "message_type": "summary",
+          "total_bytes": 205321657,
+          "total_files": 28
+        }
+      ],
+      "s3HttpRequestCount": null
+    },
+    "restoredAt": "2026-11-11T06:24:43.310774+00:00",
+    "retention": "latest three verified own local payloads; immutable local image hard-links; no external deletion",
+    "snapshot": "60d11b550a5f5fa830b9d2d1b7585316862e8af7f5d22763c925dee338d7960f",
+    "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+    "standby": false,
+    "status": "verified",
+    "version": 2
+  },
+  "externalSnapshot": "85ac2fcaf4c78eaca9fce7bb09237fcdd6d9303ed60279c573b1795e74503216",
+  "externalRestore": {
+    "billingMeasured": false,
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-11T06:26:11.912069+00:00",
+    "checkoutRestore": {
+      "archiveSha256": "f7918e913d8f31e7a77663c2b7c3a01dc1abe822ccefa2aa836fd2ca52306566",
+      "destination": "/opt/melodiajest/ops/external-work/payload-9c648b30058c5474/checkout-cold-b43ef435038c",
+      "filesVerified": 1475,
+      "restoreVerified": true,
+      "scope": "isolated file restoration; not S3, browser data, or container runtime",
+      "sourceSnapshotIncluded": true,
+      "version": "23.5.82",
+      "webManifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6"
+    },
+    "independentExternalCopyVerified": true,
+    "originalPayloadTemporarilyUnavailable": true,
+    "passwordReadFromVpsFile": true,
+    "passwordRecoveredFromIndependentCopy": false,
+    "payloadFilesVerified": 17,
+    "payloadManifestSha256": "5d71f5ab07c302d60c30671f58976fea28faf7eca6cf54260bb236b0ab480878",
+    "productionInputsMounted": false,
+    "publishedRestore": {
+      "checkedAt": "2026-11-11T06:26:10.230827+00:00",
+      "coldRestore": true,
+      "controlsRestored": 12,
+      "entries": {
+        "current": {
+          "files": {
+            "sources": {
+              "archiveSha256": "f7918e913d8f31e7a77663c2b7c3a01dc1abe822ccefa2aa836fd2ca52306566",
+              "destination": "/opt/melodiajest/ops/external-work/payload-9c648b30058c5474/runtime-cold-b43ef435038c/ops/server-backups/work/restore-xn88nwkp/current-sources",
+              "filesVerified": 1475,
+              "restoreVerified": true,
+              "scope": "isolated file restoration; not S3, browser data, or container runtime",
+              "sourceSnapshotIncluded": true,
+              "version": "23.5.82",
+              "webManifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6"
+            },
+            "web": {
+              "archiveSha256": "dff4300f72cdfb066b18cf1660df4f779986b8182c14537b1a1b9a0e6cf18d4c",
+              "destination": "/opt/melodiajest/ops/external-work/payload-9c648b30058c5474/runtime-cold-b43ef435038c/ops/server-backups/work/restore-xn88nwkp/current-web",
+              "filesVerified": 44,
+              "restoreVerified": true,
+              "scope": "isolated file restoration; not S3, browser data, or container runtime",
+              "sourceSnapshotIncluded": false,
+              "version": "23.5.82",
+              "webManifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6"
+            }
+          },
+          "manifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6",
+          "runtime": {
+            "healthy": true,
+            "manifestSha256": "dd2c38830edfd7a75de915e8134564e21a2426ac29c1d114afe7584c6e4bb8f6",
+            "network": "none",
+            "publicFilesVerified": 40,
+            "publicPorts": false
+          }
+        },
+        "previous": {
+          "files": {
+            "sources": {
+              "archiveSha256": "9b69c0c1706ae67653b114e6985d2e1e4be730757685e14906267241c2807b2f",
+              "destination": "/opt/melodiajest/ops/external-work/payload-9c648b30058c5474/runtime-cold-b43ef435038c/ops/server-backups/work/restore-xn88nwkp/previous-sources",
+              "filesVerified": 1463,
+              "restoreVerified": true,
+              "scope": "isolated file restoration; not S3, browser data, or container runtime",
+              "sourceSnapshotIncluded": true,
+              "version": "23.5.81",
+              "webManifestSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0"
+            },
+            "web": {
+              "archiveSha256": "6c9fb2cde7e522e4133278189c586ac6896ca8383e6070dbc98d9f63eaa4d638",
+              "destination": "/opt/melodiajest/ops/external-work/payload-9c648b30058c5474/runtime-cold-b43ef435038c/ops/server-backups/work/restore-xn88nwkp/previous-web",
+              "filesVerified": 44,
+              "restoreVerified": true,
+              "scope": "isolated file restoration; not S3, browser data, or container runtime",
+              "sourceSnapshotIncluded": false,
+              "version": "23.5.81",
+              "webManifestSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0"
+            }
+          },
+          "manifestSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0",
+          "runtime": {
+            "healthy": true,
+            "manifestSha256": "0d8f84dfdf4de395b6751aa6df4a8943cdd2090f423516ac5a92c76f461712f0",
+            "network": "none",
+            "publicFilesVerified": 40,
+            "publicPorts": false
+          }
+        }
+      },
+      "independentExternalCopyVerified": false,
+      "isolated": true,
+      "kitManifestSha256": "8a8b4d0d672ca40c5120a9358ba6ae450cd291cf2521074aab9745733d8d07c7",
+      "productionInputsUsed": false,
+      "s3Verified": false,
+      "snapshotId": "754dafa906794d568e246ff8d61fbf32",
+      "success": true
+    },
+    "repository": "s3:https://s3.ru-3.storage.selcloud.ru/libreta-backups-a7f39c/melodiajest/backups/v1",
+    "resticRestore": {
+      "billingMeasured": false,
+      "cpuSystemSeconds": 0.154,
+      "cpuUserSeconds": 0.582,
+      "credentialsInArgv": false,
+      "elapsedSeconds": 1.989,
+      "error": null,
+      "exitCode": 0,
+      "operation": "restore",
+      "peakChildRssKiB": 81404,
+      "productionInputsMounted": false,
+      "result": [
+        {
+          "bytes_restored": 873163,
+          "files_restored": 7,
+          "message_type": "status",
+          "total_bytes": 36188494,
+          "total_files": 23
+        },
+        {
+          "bytes_restored": 1205282,
+          "files_restored": 11,
+          "message_type": "status",
+          "total_bytes": 36188494,
+          "total_files": 23
+        },
+        {
+          "bytes_restored": 4816698,
+          "files_restored": 11,
+          "message_type": "status",
+          "total_bytes": 36188494,
+          "total_files": 23
+        },
+        {
+          "bytes_restored": 16483271,
+          "files_restored": 13,
+          "message_type": "status",
+          "total_bytes": 36188494,
+          "total_files": 23
+        },
+        {
+          "bytes_restored": 25033714,
+          "files_restored": 14,
+          "message_type": "status",
+          "total_bytes": 36188494,
+          "total_files": 23
+        },
+        {
+          "bytes_restored": 36188494,
+          "files_restored": 23,
+          "message_type": "summary",
+          "total_bytes": 36188494,
+          "total_files": 23
+        }
+      ],
+      "s3HttpRequestCount": null
+    },
+    "runtimeBinaryRecoveredAndVerified": true,
+    "s3HttpRequestCount": null,
+    "scheduleControlsRestored": 20,
+    "scheduledExternalBackup": true,
+    "snapshotId": "85ac2fcaf4c78eaca9fce7bb09237fcdd6d9303ed60279c573b1795e74503216",
+    "success": true,
+    "temporaryRestoreRemoved": true
+  },
+  "health": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 89,
+        "independentRestore": 89,
+        "lastAttempt": 89
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-11T06:24:43.310780+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-11T06:24:43.310774+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "60d11b550a5f5fa830b9d2d1b7585316862e8af7f5d22763c925dee338d7960f",
+      "sourceSha256": "fc78168b87714790685bce0a5a3ecc96206cc257df23d33a2e015fa7c0293955",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 1,
+      "externalRestore": 1
+    },
+    "backupCreatedAt": "2026-11-11T06:25:08.282839+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-11T06:26:12.519469+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  }
+}

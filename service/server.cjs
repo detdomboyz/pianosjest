@@ -51,12 +51,55 @@ async function createService(input) {
     const cookieName = options.development ? 'melodiajest-dev-session' : '__Host-melodiajest-session';
     const dummyHash = await S.hashPassword(crypto.randomBytes(24).toString('base64url'));
     let authJobs = 0, bodyJobs = 0;
-    function send(res, status, data, extra = {}) {
-        const raw = Buffer.from(JSON.stringify(data) + '\n');
-        res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': raw.length,
+    const jsonHeaders = Object.freeze({ 'Content-Type': 'application/json; charset=utf-8',
             'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
-            'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'", ...extra });
+            'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'" });
+    function sendBytes(res, status, raw, extra = {}) {
+        res.writeHead(status, { ...jsonHeaders, 'Content-Length': raw.length, ...extra });
         res.end(raw);
+    }
+    function send(res, status, data, extra = {}) {
+        return sendBytes(res, status, Buffer.from(JSON.stringify(data) + '\n'), extra);
+    }
+    function matchesCourseValidator(value, digest) {
+        if (typeof value !== 'string' || value.length > 4096) return false;
+        if (/^[\t ]*\*[\t ]*$/.test(value)) return true;
+        let at = 0, matched = false;
+        const ows = () => { while (value[at] === ' ' || value[at] === '\t') at++; };
+        while (at < value.length) {
+            ows();
+            if (value[at] === ',') { at++; continue; }
+            if (at === value.length) break;
+            if (value.slice(at, at + 2) === 'W/') at += 2;
+            if (value[at++] !== '"') return false;
+            const start = at;
+            while (at < value.length && value[at] !== '"') {
+                const code = value.charCodeAt(at);
+                // etagc: visible characters except quote,plus obs-text.
+                // A comma inside an opaque tag is not a list separator.
+                if (code < 0x21 || code === 0x7f || code > 0xff) return false;
+                at++;
+            }
+            if (at === value.length) return false;
+            matched = value.slice(start, at) === digest || matched;
+            at++; ows();
+            if (at < value.length && value[at++] !== ',') return false;
+        }
+        // Validate the entire field before accepting any matching member.
+        return matched;
+    }
+    function sendCourse(req, res, data) {
+        // Includes current public rating aggregates as well as the registry.
+        // course.contentSha256 alone does not cover those mutable ratings.
+        const raw = Buffer.from(JSON.stringify(data) + '\n');
+        const digest = crypto.createHash('sha256').update(raw).digest('hex');
+        const headers = { 'Cache-Control': 'public, no-cache', ETag: 'W/"' + digest + '"', Vary: 'Accept-Encoding' };
+        if (matchesCourseValidator(req.headers['if-none-match'], digest)) {
+            res.writeHead(304, { ...jsonHeaders, ...headers });
+            res.end();
+            return;
+        }
+        return sendBytes(res, 200, raw, headers);
     }
     function cookie(raw, expires = false) {
         return `${cookieName}=${raw || ''}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${expires ? 0 : 7 * 86400}${options.development ? '' : '; Secure'}`;
@@ -154,7 +197,7 @@ async function createService(input) {
             (await store.newSession(raw, null, now()));
             return send(res, 200, sessionResult(null, raw), { 'Set-Cookie': cookie(raw) });
         }
-        if(req.method==='GET'&&route==='/course')return send(res,200,await game.publicCourse());
+        if(req.method==='GET'&&route==='/course')return sendCourse(req,res,await game.publicCourse());
         if(req.method==='GET'&&route==='/comments'){
             const auth=await authenticate(req),cursor=url.searchParams.get('cursor')||'';S.check(cursor.length<=512,400,'PAGE','Некорректная страница.');
             return send(res,200,await game.comments(url.searchParams.get('scope')||'global',url.searchParams.get('lessonId')||'',cursor,auth.user?.id));

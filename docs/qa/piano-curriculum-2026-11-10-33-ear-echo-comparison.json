@@ -1,0 +1,389 @@
+{
+  "kind": "source-only-existing-ear-echo-proposal-versus-known-card-and-direction",
+  "phase": "93",
+  "batch": "2026-11-10-33",
+  "checkedAt": "2026-11-10T15:21:13.989869+00:00",
+  "status": "existing-echo-plan-boundaries-confirmed-no-readiness-change",
+  "existingCard": {
+    "id": "detail-p-hearing-01",
+    "source": "docs/qa/piano-curriculum-2026-11-10-31-known-ear-review.json",
+    "sourceSha256": "a200cdbaa7e0c9a280065c4a266557ea93aa6c61405996605764e7f55f183761",
+    "registryFile": "service/course-registry.json",
+    "registrySha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "rowReusedExactly": true,
+    "gradeFingerprint": "f4ba5fc5",
+    "musicVersion": "16767216711078687d9dac5d210c90c4c53d989f6bfbcae812121f4a17ff182c",
+    "editionVersion": "66ffac0b4ab707faf38e1e0aa492680477c51fa23d01cf668e16db1f2d203c65"
+  },
+  "existingProposal": {
+    "file": "docs/piano-skill-coverage.json",
+    "sourceFileSha256AtRead": "1c825a180962b277d516ad0f2ac4f6e404d79868f2650f342d348fd729ca424c",
+    "jsonPointer": "/plannedLessons/3",
+    "snapshot": {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-needs-protocol-implementation-and-independent-musical-review",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-ear-echo-01",
+      "title": "Слух: короткое эхо в C–D–E",
+      "goalKey": "ear.echo.known-anchor-four-events",
+      "goal": "После неизвестной заранее четырёхзвучной фразы в C4–D4–E4 воспроизвести порядок высот правой рукой, получив C4 как известную начальную опору. Это подбор от опоры, не проверка абсолютного слуха.",
+      "after": "detail-p-ear-direction-01",
+      "requires": [
+        "detail-p-ear-direction-01",
+        "course02-03",
+        "detail-p-release-01"
+      ],
+      "hand": "right",
+      "targetMidis": [
+        60,
+        64,
+        62,
+        60
+      ],
+      "targetFingers": [
+        1,
+        3,
+        2,
+        1
+      ],
+      "targetNotes": [
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 60,
+          "hand": "right",
+          "finger": 1,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Удержать короткий слуховой образ целиком и перевести его в уже подготовленные клавиши после окончания образца.",
+      "application": "Подобрать короткий мотив от заданной первой ноты и сравнить свой результат с услышанным.",
+      "distinctFrom": "Фиксированные интервалы detail-p-hearing-* и память course10-* известны заранее. Здесь опора C4 известна, продолжение скрыто; правильный ответ нельзя получить из заголовка. Новые варианты этой одной задачи не считаются отдельными уроками.",
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "melody-playback",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "История сервиса отражает только показанные и прослушанные здесь задания; прежнее знакомство вне приложения неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Порядок высот и число атак после окончания образца; не оценивать пение, пальцы, художественное качество или задержку первой реакции как слух."
+      },
+      "itemPool": {
+        "midis": [
+          60,
+          62,
+          64
+        ],
+        "events": 4,
+        "firstMidi": 60,
+        "atLeastOnePitchChange": true,
+        "examplesArePracticeOnly": true,
+        "sampling": "Разные продолжения от C4 без повторной выдачи уже открытого элемента."
+      },
+      "requiresModel": [
+        "unrevealed-audio-item-and-response-state",
+        "item-exposure-history",
+        "reference-audio-and-response-time-separated",
+        "separate-ear-playback-progress"
+      ],
+      "practiceSteps": [
+        "Подготовка: отдельно сыграй C4–D4–E4 правой 1–2–3. Послушай опору C4, затем открытый образец C4–E4–D4–C4 пальцами 1–3–2–1. Представь или пропой фразу, затем проверь на инструменте. Данная демонстрация известна и не является независимым испытанием.",
+        "Медленно: перед неизвестным элементом можно услышать и найти только начальную C4. Затем слушай всю фразу без клавишных и нотных подсказок; вход исполнителя разрешается после окончания образца. Старт реакции не задаёт музыкальный уровень; события звукового образца и ответа нельзя смешивать.",
+        "Блок 3–5 минут: одна короткая фраза, спокойная попытка, раскрытие и сравнение после ответа, отдых. Дополнительное прослушивание учитывается как помощь; повтор этого элемента — практика. На следующий день выбирается другая не открытая здесь фраза."
+      ],
+      "selfCheck": [
+        "Первая C4 известна, продолжение вспоминаю по слуховому образу, а не по названию карточки.",
+        "Число атак и порядок высот совпали; повтор одной высоты нажимается заново.",
+        "Сначала закончил слушать, затем начал ответ; звуковой образец не попал в мои MIDI-события.",
+        "MIDI-порядок не доказывает пение, пальцы и точный ритм; эти проверки не заявлены выполненными."
+      ],
+      "typicalErrors": [
+        "Начать подыгрывать до окончания неизвестного образца.",
+        "Заменить услышанную фразу знакомым C–D–E или подсмотреть ноты до ответа."
+      ],
+      "hearingModel": "Четыре одинаковые длительности в пределах трёх известных высот; внимание к изменению направления и возврату к C4.",
+      "transfer": {
+        "goal": "Другой четырёхзвучный рисунок C4–D4–E4–D4 пальцами 1–2–3–2. Это отдельная опубликованная демонстрация переноса; в будущий неизвестный банк не включать.",
+        "notes": [
+          {
+            "midi": 60,
+            "hand": "right",
+            "finger": 1,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 64,
+            "hand": "right",
+            "finger": 3,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 62,
+            "hand": "right",
+            "finger": 2,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "rcm-ear-training-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md"
+    },
+    "snapshotSha256": "4b8f32cc5dfc6edbf8f2ef8661f4ee726b417961a4edcedf88e025c7b6b86039",
+    "entireMutableQueueFileNotClaimedUnchanged": true,
+    "presentInRegistry": false
+  },
+  "priorDirectionComparison": {
+    "file": "docs/qa/piano-curriculum-2026-11-10-32-ear-direction-comparison.json",
+    "sha256": "72e133a4c58ddbd61be0c636f33d7de95153dbcc56df9d4135366e0b7ec95d83",
+    "unchangedDirectionPlanSha256": "ad78770bfb70b4990b5ce15cfe83a1e69625905b4c075c1e0a495dd43f57200c",
+    "stillUnimplemented": true
+  },
+  "comparison": {
+    "knownGoalKey": "detail-p-hearing-01",
+    "directionGoalKey": "ear.direction.up-down-same",
+    "echoGoalKey": "ear.echo.known-anchor-four-events",
+    "existingImplementedCards": 1,
+    "existingUnimplementedProposalsInContext": 2,
+    "knownCardSteps": [
+      {
+        "midis": [
+          60
+        ],
+        "startBeat": 0,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          64
+        ],
+        "startBeat": 1,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          60
+        ],
+        "startBeat": 2,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          64
+        ],
+        "startBeat": 3,
+        "durationBeats": 0.85
+      }
+    ],
+    "plannedEchoDemoNotes": [
+      {
+        "midi": 60,
+        "hand": "right",
+        "finger": 1,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 64,
+        "hand": "right",
+        "finger": 3,
+        "startBeat": 1,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 2,
+        "durationBeats": 1
+      },
+      {
+        "midi": 60,
+        "hand": "right",
+        "finger": 1,
+        "startBeat": 3,
+        "durationBeats": 1
+      }
+    ],
+    "plannedEchoTransferNotes": [
+      {
+        "midi": 60,
+        "hand": "right",
+        "finger": 1,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 1,
+        "durationBeats": 1
+      },
+      {
+        "midi": 64,
+        "hand": "right",
+        "finger": 3,
+        "startBeat": 2,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 3,
+        "durationBeats": 1
+      }
+    ],
+    "knownAnchorMidi": 60,
+    "directionResponse": "direction-choice",
+    "echoResponse": "midi-pitch-sequence",
+    "plannedEchoResponseEvents": 4,
+    "referenceModelOnsetsQuarterBeats": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "referenceModelOnsetsNotResponseLatencyOrExactRhythmProtocol": true,
+    "publishedDemoAndTransferNotUnknownItems": true,
+    "unknownBankNotEnumeratedOrGenerated": true,
+    "plannedMeterAndProfileAbsentNotFabricated": true,
+    "unimplementedPrerequisiteDoesNotCreateAvailableRoute": true
+  },
+  "sourceReuse": {
+    "sourceId": "giml-audiation-familiar-memory-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "giml-audiation-familiar-memory-2026-11-10",
+      "author": "The Gordon Institute for Music Learning (GIML);institutional page,no individual byline established",
+      "title": "Audiation — Music Learning Theory",
+      "url": "https://giml.org/mlt/audiation/",
+      "resourceType": "primary-institutional-pedagogical-method-explanation",
+      "edition": "Institutional web page;publication/update date not established",
+      "section": "Audiation;Types of Audiation rows1,4;Stages of Audiation introductory qualification",
+      "verifiedOn": "2026-11-10",
+      "evidence": "Audiation involves hearing and comprehending beyond immediate sound;aural perception and audiation are distinguished. Familiar as well as unfamiliar music can be audiated;recalling and performing familiar music from memory is one listed type.",
+      "application": "Context for one existing known-third imagery card,not a new independent ear-test protocol or endorsement of project exercise.",
+      "limits": "This is an institutional account of MLT,not evidence Gordon personally authored this page or taught this exercise. Listening,singing or pressing specified keys alone do not establish the described comprehension. No projectBPM,durations,fingers,take count or novelty-validation rule is prescribed.",
+      "lessonIds": [
+        "detail-p-hearing-01"
+      ]
+    },
+    "sourceBaseSha256": "3afe45d5d9c3961ac354d1585e4e19a319ada3f0b2cee1d89e3d311268cfac46",
+    "evidenceReusedFrom": "91",
+    "freshReadInCurrentBatch": false,
+    "newSourceAudioOrHtmlFetches": 0,
+    "application": "Echo after a model is distinguished from direction choice and known-phrase memory;institutional audiation concepts do not prescribe this project protocol or validate human comprehension."
+  },
+  "claimContexts": [
+    {
+      "claim": "response-goal",
+      "observed": "Echo requests a four-attack pitch sequence after hearing,not up/down/same choice or fixed known-third playback.",
+      "limit": "One existing proposed goal;length alone is not its distinction and variants do not add lessons."
+    },
+    {
+      "claim": "known-anchor",
+      "observed": "C4 is disclosed as first reference;continuation inC4-D4-E4 is intended to be hidden.",
+      "limit": "Not absolute-pitch testing;unknown continuation is a proposed condition,not observed learner novelty."
+    },
+    {
+      "claim": "disclosed-examples",
+      "observed": "C4-E4-D4-C4/1-3-2-1 and transferC4-D4-E4-D4/1-2-3-2 are already published.",
+      "limit": "Both excluded from future unknown assessment;no new stimulus or bank generated/played."
+    },
+    {
+      "claim": "reference-response-separation",
+      "observed": "Listen to whole model;perform only after its end;referenceaudio and response time requested separately.",
+      "limit": "No audio/MIDI boundary implementation,capture or test;demoonsets0-3/quarters are not measured response timing."
+    },
+    {
+      "claim": "midi-scope",
+      "observed": "Requested scoring counts attacks and pitch order after model.",
+      "limit": "MIDI events alone do not prove listening,novelty,comprehension,fingers,singing,exactrhythm or artistic quality;first-response latency is not hearing skill."
+    },
+    {
+      "claim": "implementation-and-source",
+      "observed": "Echo and prerequisite direction both not implemented;GIML91 reused.",
+      "limit": "Requested exposure/reveal/response fields are not a running system;projectBPM/3-5min/nextday/novelty rules are notGIMLrequirements."
+    }
+  ],
+  "newActionableWordingMismatches": 0,
+  "proposalPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "actualHumanEarMemoryOrResponseObserved": false,
+  "newSourceEntries": 0,
+  "newAccessNotes": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newApplicationExecutions": 0,
+  "newAssessmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "humanSessionsObserved": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "independentEarAssessmentReady": false
+}

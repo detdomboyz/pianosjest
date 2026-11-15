@@ -1,0 +1,34 @@
+# Курс пианино — исследование35, 10 ноября2026
+
+Прочитана одна прежняя detail-p-read-bass-01 и сопоставлена с точным неизменным treble34snapshot. Рука,регистр,пальцы,ключ,добавочные линейки и подготовка проверены как собственные поля басового плана. Ничего автоматически не переносилось. Нового акционного расхождения нет;обе reading-заготовки остаются not-implemented/вне registry,6future не входят в450/минимум1000. Новыхуроков/целей/ID/планов/стимулов/банков/протоколов0.
+
+[Сверка35](../qa/piano-curriculum-2026-11-10-35-bass-reading-comparison.json):точныйsnapshot/JSONPointer/valueSHA bass,QA34SHA/treblesnapshotSHA,registryabsence. WholecoveragefileSHA — at-read история изменяемой очереди,не заявление её неизменности.
+
+| Поле | Bass:прочитано отдельно | Treble34:переиспользовано |
+| --- | --- | --- |
+| Target/рука |C3–D3–D3–E3/48,50,50,52/левая |C4–D4–D4–E4/60,62,62,64/правая |
+| Пальцы |5,4,4,3 |1,2,2,3 |
+| Ключ/anchor |Bass,F3=53/position6 |Treble,G4=67/position2 |
+| Позиции target |3,4,4,5;все безledger |−2,−1,−1,0;C4ledger |
+| Подготовка |course03-02/release02,fragment03-06/0…4 |course02-02/release01,fragment02-06/0…4 |
+| Источник/адаптацияBPM |60→56 |62→56 |
+
+Оба target имеют сходный относительный C–D–D–E рисунок и onsets0…3/четверти56BPM;разность уже записанных высот−12 — наблюдаемое отношение данных. Автотранспозиция,новая аранжировка,назначение пальцев формулой и перенос зачёта не выполнялись. Сходство контура не доказывает перенос навыка человека или независимую педагогическую аттестацию. Ключ сам по себе не назначает руку;левая задана явно и не требует предварительного прохождения правойreading-карточки.
+
+В плане басовые C3/D3/E3 занимают3/4/5 diatonic-half-space от нижней линейки:второй промежуток/третья линейка/третий промежуток. Это прочитанные символические декларации,не свежая первичная нотная редакция/renderer/pixels. Новый render/звук не создавались. ПовторD3/4 требует новой атаки;старыйtransfer C3–C3–D3–E3/LH5,5,4,3 также раскрыт и не является неизвестным банком. Profile/timeSignature отсутствуют,не скопированы из другого задания.
+
+Ownfragment course03-06window0…4 сохраняет C–D–D–E–E и пальцы левой4/3 для повторов,адаптация56/source60;это отдельная подготовка,не обязательный полныйsourceexam. Старые Nov6 API/fragment/bankfinding/сведения о холсте не повторялись и не объявлены новым интегрированным readinggate,глобальным аудитом или browserDOM. Их исходная ограниченная область сохраняется.
+
+Scoring обоих планов — соответствие видимых нотных позиций порядку сыгранных высот,с паузами для называния. Стан остаётся видимым,а prioraudio/QWERTY/pitchlabels/next-keyaids предполагается убрать до ответа. Непрерывность ритма/скорость реакции/пальцы/слух/память не зачтены. Accessibletextnaming — отдельная практика,не доказанное визуальное чтение. Requestedexposure/reveal/renderer/response/grade не подтверждают работу этих путей. Текущий publishedpool помеченpractice-only;реальные familiarity иnovelty/reading/ear/memory/response человека не наблюдались.
+
+MichaelClark,[§14Sight-Reading](https://openbooks.library.baylor.edu/pianobasics/chapter/sight-reading/) явно переиспользован из26/85 поsourcebase иQA,без freshHTML/image/PDF/audio. Preview/count/slowpulse и различие первого прохода/последующей практики не задают наш untimedpitchпротокол/56BPM/3–5min/nextday/формальныйnoveltyaudit. Изученная фраза остаётся практикой,но новымfirst-read не объявляется.72sourceentries/0новых/1reuseapplication/accessnotesсохранены.
+
+[Проверки35](../qa/piano-curriculum-2026-11-10-35-bass-reading-checks.json):1helper/1принят,8contexts/1bass/1reusedtreble/3basspositiondeclarations+Fanchor/4targetevents/1transfer/1prepfragment. Это документная сверка,не новые acceptancecases или исполнение. Новыхapplication/assessment/fragmentAPI/fullbuilder/loader/browser/device/notationrender0,human0/teacher0/XP0.450/186MIDI/153происхождения/13контролей/10вариантов/427верхняя граница/verifiedDistinctnull/4F/6future/2C/F4gap/manualcards/Cpayloads/history20 прежние.
+
+[HTTPS95](../qa/melodiajest-2026-11-10-95-observation.json)16:00:21UTChealthy78/API2c0…/course334…/schema2;knownreceipts93read15:19:35/actualhourly15:02:35/56771c…поSHAreuse/новогоSSHнет/actual16непроверялся. PGdaily02:12/37f62…/8summaryfields/старыйrestore9ноября16:15/newSnapshotfalseпрежние. НовыхS3/backup/restore/архивов/серверныхизменений0,healthcounterнеbilling/unknowncostне0;blockedBaylor88/IMSLP84/ABRSM80неповторялись.
+
+Native96used/4remaining/ordinarytrue/spendfalse/10080min/reserve0. Source59 не покрывает документы60–95. [Финальная сверка](../qa/melodiajest-2026-11-10-95-consistency.json) сохраняет457runtime/exact79/7защищённых групп/14operations.local*/контракты61–94/музыкальные курсоры/grade/XP/issued/outbox/прогресс. [Та же автоматизация](../qa/melodiajest-2026-11-10-95-automation.json)ACTIVE20min/чат,OpenAI Docs88workflowreused/Find-skills60каталогсохранён/UI-React-PDFнавыкинетребовались/пакетов0.79не переупакован/не опубликован,ресурсный вопрос не повторялся. DONT_NOTIFY:готовность и сервис неакционно неизменны.
+
+Следующий малый этап — ограниченное read-only эксплуатационное наблюдение одного фиксированного publicasset /piano-learning-ui.js. После nativequota/лёгкойHTTPS/knownreceipts по необходимости выполнить не более двух GET этого asset:Accept-Encoding identity иgzip. Записать статус/Content-Encoding/Cache-Control/ETag/Vary/байты/SHA;еслиgzipреальноотдан,ограниченнораспаковать и сравнитьdecodedSHA сidentity. Лимиткаждоготела/decoded262144B,беззапускаJS/безповторапослеотказа/безcachebust. Не менятьконфиги/код,незагружатькаталог/архивы,неHEAD/LIST/S3обход,небраузерныйbenchmark. Размерbody/сжатиеодногоресурса неTLSwire/полныйбиллинг/ускорениепользователя/S3польза;ETagнеSHA. Это эксплуатационный этап,не новыйурок/цель/план/проверкачтения. Coursecheckpoint35/шестьfuture/обаreadingplansnotimplemented;oldbank/fragmentAPIсвидетельстваисторические. Фактическиеfamiliarity/novelty/reading/ear/memoryчеловека ненаблюдались. Fbar3/15толькоpitchcontext/пальцыне напечатаны/F4shared65/voicev2/matcher/validatorgapоткрыт/4manualcards22/23notobserved/human0/teacher0/XP0. C75/76/history20 неизменны/executionAllowed=false/proposedEditorialCutoverReady=false/notpublicationReady;87индекс10группopen/5plannedgroups20/10/16/12/10каждаяexecuted0,безсуммы. BaylorC40388/CzernyPetersverification84/ABRSMPDF40380/observer80неавтоповторять/необходить;manualC73−12незарегистрирован/неMIDI-ready/безXP/безавтотранспозиции. Не писатьmatcher/validator/writer/migrator и не исполнятьregister/review/fullbuilder/browser;75/76/78/79неповторятьбезновойпричины. 79точныйлокальный/замороженный,не менять/переупаковывать/публиковать;ресурсныйответполучен,не спрашивать/покупать/resize/переносить/чистить. Та жеACTIVE20minавтоматизация/чат/checkout,последовательно/безпараллельныхизменений.
+
+Эксплуатация — [этап95](melodiajest-operations-2026-11-10-95.md).

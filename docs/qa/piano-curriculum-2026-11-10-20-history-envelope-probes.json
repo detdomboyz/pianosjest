@@ -1,0 +1,348 @@
+{
+  "kind": "source-only-history-envelope-identity-observations",
+  "phase": "79",
+  "batch": "2026-11-10-20",
+  "checkedAt": "2026-11-10T10:44:21.450Z",
+  "status": "passed",
+  "sourceTrace": [
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f",
+      "anchors": [
+        {
+          "line": 653,
+          "excerpt": "  function instructionFingerprint(lesson){"
+        },
+        {
+          "line": 799,
+          "excerpt": "      if(lesson?.contentKind!=='exercise'||!review||Object.keys(review).length!==3||review.id!=='early-legato-v1'||review.sourceFingerprint!==rule.original||review.reviewedFingerprint!==rule.fingerprint||instructionFingerprint(lesson)!==rule.fingerprint||Assessment.pianoSignature(lesson)!==rule.grade||Assessment.signature(lesson.steps)!==rule.steps)continue;"
+        },
+        {
+          "line": 244,
+          "excerpt": "    const previousInstruction=JSON.parse(JSON.stringify({guide:lesson.guide,learning}));"
+        },
+        {
+          "line": 254,
+          "excerpt": "    learning.contentReview={id:'f-major-upper-readiness-v1',sourceFingerprint:'0660dc2d',previousAssessmentFingerprint:'a78402d1',previousInstruction,reviewedFingerprint:instructionFingerprint(lesson)};"
+        },
+        {
+          "line": 828,
+          "excerpt": "      lesson.learning.contentReview={id:'early-release-v2',sourceFingerprint:rule.fingerprint,reviewedFingerprint:instructionFingerprint(lesson),previous:JSON.parse(JSON.stringify(previous))};changed++;"
+        }
+      ]
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "anchors": [
+        {
+          "line": 9,
+          "excerpt": "  function mark(l,sourceFingerprint,fingerprint){l.lessonReview={version:VERSION,scope:'instruction-and-data-review; not a teacher performance certificate',sourceFingerprint,reviewedFingerprint:fingerprint(l)};}"
+        },
+        {
+          "line": 8,
+          "excerpt": "  function allowed(l,b,fingerprint){const entry=b?.[l.id];if(!entry)return false;const now=fingerprint(l);return now===entry.fingerprint&&!(l.lessonReview?.version===VERSION&&l.lessonReview.reviewedFingerprint===now);}"
+        }
+      ]
+    },
+    {
+      "file": "catalog-personalization.js",
+      "sha256": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b",
+      "anchors": [
+        {
+          "line": 11,
+          "excerpt": "  function safe(value,depth=0){assert(depth<=40,'PERSONAL_CATALOG_DEPTH');if(value&&typeof value==='object')for(const k of Object.keys(value)){assert(!reserved.has(k),'PERSONAL_CATALOG_FIELD');safe(value[k],depth+1);}}"
+        },
+        {
+          "line": 34,
+          "excerpt": "    assert(new TextEncoder().encode(JSON.stringify(value)).length<=MAX_BYTES,'PERSONAL_CATALOG_SIZE');safe(value);"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        }
+      ]
+    }
+  ],
+  "sourceDependenciesMatched": [
+    {
+      "file": "chopin-theme.js",
+      "sha256": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4"
+    },
+    {
+      "file": "fingering.js",
+      "sha256": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    {
+      "file": "beginner-fingering.js",
+      "sha256": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f"
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14"
+    },
+    {
+      "file": "piano-preparation.js",
+      "sha256": "4816f1da8b607f9c4bb1c215abfb373ea549f8b0ffcc5f5077bfbb51c7b454a6"
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73"
+    },
+    {
+      "file": "piano-preparation-fragment.js",
+      "sha256": "da913adafeaad325d3dedf7c13b201a5dbba91a43d77e2cbe1d6f4f317fd1278"
+    },
+    {
+      "file": "piano-preparation-capture.js",
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18"
+    },
+    {
+      "file": "piano-preparation-transfer.js",
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526"
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b"
+    },
+    {
+      "file": "curriculum.js",
+      "sha256": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a"
+    },
+    {
+      "file": "curriculum-plan.js",
+      "sha256": "7b6672eab1bcfc6f357fb3539308f945535d5872621e35e8c981ebd5ff7d1460"
+    },
+    {
+      "file": "catalog-sections.js",
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec"
+    },
+    {
+      "file": "lesson-review-baseline.js",
+      "sha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030"
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2"
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f"
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235"
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9"
+    },
+    {
+      "file": "tests/helpers/load-app.cjs",
+      "sha256": "94dca15b5ae63378ca2ce285d828ad501ad3c32a153c28f9fc80c460c52447f1"
+    }
+  ],
+  "reusedRoundtripQa": "docs/qa/piano-curriculum-2026-11-10-19-v7-roundtrip-probes.json",
+  "reusedRoundtripQaSha256": "29876330ec14d183242e4065cb0a4553cb2b1724e583c24ccdb4b3d8416e1d43",
+  "counts": {
+    "existingCandidateBindings": 2,
+    "documentaryHistoryEnvelopes": 2,
+    "historySnapshotsPerEnvelope": 1,
+    "stageTriples": 6,
+    "stageBindings": 18,
+    "metadataVariants": 12,
+    "serializeLessonRhythm": 6,
+    "normalizeLessonRhythm": 12,
+    "normalizeLessonGuide": 12,
+    "selectedProjectionCalls": 6,
+    "selectedRestoreCalls": 6,
+    "actualMidiAssessmentOrGraderCalls": 0,
+    "summaryReducerCalls": 0,
+    "personalOverlayCalls": 0,
+    "fullBuilderRuns": 0,
+    "fullLoaderRuns": 0,
+    "registerOrReviewCalls": 0,
+    "casMatcherOrMigratorCalls": 0,
+    "writerCalls": 0,
+    "storageWrites": 0,
+    "databaseWrites": 0
+  },
+  "envelopeMeasurements": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "bytes": 3004,
+      "depth": 4,
+      "envelopeSha256": "8c692d3b8df72d1244218247afa391548aa4e879b3b58d7051e37433f897c178",
+      "documentaryReviewedVersions": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "1c725e77fdae54f7006c4943e0ff21d47df86809b0c7e44c2ae59cf5361aeb9f"
+      }
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "bytes": 2957,
+      "depth": 4,
+      "envelopeSha256": "126fdbb49b4945b5e61ba9210a8a7b41d5040f37b4182a2d4d4be51e49c1960d",
+      "documentaryReviewedVersions": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "94c60c21c415b25dfc132546310488f889dbaa3c77cedb4e51177feab0e246ff"
+      }
+    }
+  ],
+  "metadataObservations": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "exact-json-copy",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "1c725e77fdae54f7006c4943e0ff21d47df86809b0c7e44c2ae59cf5361aeb9f",
+      "exactDocumentaryEditionUnchanged": true,
+      "markerSha256": "8c692d3b8df72d1244218247afa391548aa4e879b3b58d7051e37433f897c178",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "wrong-marker-id",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "1f58c922c45be0f925b633eae161ea8a7f190c6ec8399350738edf300de69b93",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "aa28378c468b9a1f9ed81f53d1ca088bff7d6c201d7f4e6f4e2a75a680bb597a",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "changed-previous-instruction",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "d29f41d9f00c7b641c840bcf1c77fefc7df536bd6bf77c1489efe3fc9798c7d4",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "aad2f03dd1528cae77c7e631f11dad70fec1bea331a86797f4c196e0d75bbcc7",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "unknown-marker-field",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "26000e72edaeed4d85bf6199ad6b81985ed9b2b604594718170e20e75707b8f9",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "0ae7a0c8ef5b6a98a20a93ece1aaa809076d10715bf9f52667d8890b7b56cc7c",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "missing-marker",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": null,
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "name": "other-lesson-marker",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "1bfdbef2bbfb943ac8d0acadd0f60959613611303ce8f87169090532b5a5e9c8",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "126fdbb49b4945b5e61ba9210a8a7b41d5040f37b4182a2d4d4be51e49c1960d",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "exact-json-copy",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "94c60c21c415b25dfc132546310488f889dbaa3c77cedb4e51177feab0e246ff",
+      "exactDocumentaryEditionUnchanged": true,
+      "markerSha256": "126fdbb49b4945b5e61ba9210a8a7b41d5040f37b4182a2d4d4be51e49c1960d",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "wrong-marker-id",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "fcf9033507a87a467a5e6bb61fc4a4c011597d91851713e7097966aa785cc361",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "956b5bf8720688f343d6d685a7aba2628a1a9aaac7cf73c758770ce038e952d5",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "changed-previous-instruction",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "bd520fb3cf3f0bb482ae2cbf57ad8240c8fa2ec7fad62be461718d914ca82d44",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "ecc7bacff41eca75685b88266c4e6b3014142d8437db9ae9ead92fe4d8c2f1f6",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "unknown-marker-field",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "2a637a5408560da721f3d2c6563f7cf65f31d64db610f2327f45626ae5e0f14e",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "0c6de650e5977e77e78fbeee67a653d1062b905a5107ed7821a448c883614902",
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "missing-marker",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": null,
+      "eligibilityOrApplyDecisionExecuted": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "name": "other-lesson-marker",
+      "assessmentAndMusicUnchanged": true,
+      "instructionFingerprintUnchanged": true,
+      "editionVersion": "52bd503ef08dac9cb25bb67027d867e5f3ab9c31da3c8dd3fd33f242654d257c",
+      "exactDocumentaryEditionUnchanged": false,
+      "markerSha256": "8c692d3b8df72d1244218247afa391548aa4e879b3b58d7051e37433f897c178",
+      "eligibilityOrApplyDecisionExecuted": false
+    }
+  ],
+  "executionAllowed": false,
+  "proposedEditorialCutoverReady": false
+}

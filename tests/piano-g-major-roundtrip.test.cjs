@@ -1,0 +1,59 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
+const {loadApp}=require('./helpers/load-app.cjs'),A=require('../practice-assessment.js'),G=require('../service/game-grade.cjs'),fixture=require('./fixtures/piano-before-g-major-roundtrip-v1.json');
+const app=loadApp(),copy=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(require('./helpers/piano-right-legato-history.cjs').project(x))).digest('hex');
+const ids=['detail-p-g-major-roundtrip-right-01','detail-p-g-major-roundtrip-left-01'],units=ids.map(id=>app.lessons.find(l=>l.id===id));
+const midis=[[55,57,59,60,62,64,66,67,66,64,62,60,59,57,55],[43,45,47,48,50,52,54,55,54,52,50,48,47,45,43]];
+const fingers=[[1,2,3,1,2,3,4,5,4,3,2,1,3,2,1],[5,4,3,2,1,3,2,1,2,3,1,2,3,4,5]];
+function take(l,mode='clean'){
+ const beat=60000/48,out=[];
+ l.rhythm.steps.forEach((s,i)=>{
+  let midi=app.stepMidiList(l.steps[i])[0],shift=mode==='pause-at-top'&&i>=8?1:mode==='rush-turn'&&i>=8?-.5:0,duration=s.durationBeats;
+  if(mode==='natural-f'&&[6,8].includes(i))midi--;
+  if(mode==='wrong-octave'&&i===0)midi+=12;
+  if(mode==='repeat-top'&&i===8)midi=app.stepMidiList(l.steps[7])[0];
+  if(mode==='quarter-last'&&i===14)duration=1;
+  if(mode==='early-last'&&i===14)duration=.2;
+  if(mode==='gap'&&i===7)duration=.2;
+  if(mode==='overlap'&&i===7)duration=1.8;
+  out.push({type:'on',source:mode==='keyboard'?'keyboard':'midi',midi,at:1000+(s.startBeat+shift)*beat},{type:'off',source:mode==='keyboard'?'keyboard':'midi',midi,at:1000+(s.startBeat+shift+duration)*beat});
+ });return out.sort((a,b)=>a.at-b.at||(a.type==='off'?-1:1));
+}
+test('two explicit controls preserve all588 old complete historical records, their order, baseline and guitar route',()=>{
+ assert.equal(app.lessons.length,require('./fixtures/piano-curriculum-counts.json').catalogRecords);const oldIds=new Set(fixture.catalog.map(l=>l.id)),cohort=new Set([...oldIds,...ids]);assert.deepEqual(copy(app.lessons.filter(l=>cohort.has(l.id)&&!oldIds.has(l.id)).map(l=>l.id)),ids);
+ assert.deepEqual(copy(app.lessons.filter(l=>oldIds.has(l.id)).map(l=>l.id)),fixture.catalog.map(l=>l.id));
+ for(const old of fixture.catalog){const l=app.lessons.find(x=>x.id===old.id);assert.equal(hash(l),old.fullRecordSha256,old.id);assert.equal(A.pianoSignature(l),old.grade,old.id);assert.equal(l.order,old.order);assert.equal(l.themeId,old.themeId);}
+ assert.equal(app.themes.length,require('./fixtures/piano-curriculum-counts.json').themes);assert.deepEqual(copy(app.themes.filter(t=>fixture.themes.some(x=>x.id===t.id))),fixture.themes);
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync('lesson-review-baseline.js')).digest('hex'),fixture.protectedBaselineSha256);
+ const c={};vm.runInNewContext(fs.readFileSync('curriculum-plan.js','utf8'),c);assert.equal(hash(c.MUSIC_CURRICULUM_PLAN.guitar),fixture.guitarRouteSha256);assert.deepEqual(copy(c.MUSIC_CURRICULUM_PLAN.piano.map(l=>l.id).filter(id=>oldIds.has(id))),fixture.pianoRoute);
+});
+test('the Faber adaptation has one apex, correct hand fingers,14 quarters and a final half in16 beats',()=>{
+ for(const[i,l]of units.entries()){assert.ok(l);assert.deepEqual(copy(l.steps.map(app.stepMidiList)),midis[i].map(m=>[m]));assert.deepEqual(copy(l.fingeringSpec.steps.map(s=>s.map(n=>[n.hand,n.num]))),fingers[i].map(n=>[[i?'left':'right',n]]));assert.equal(l.handMode,i?'left':'right');assert.equal(l.rhythm.practiceBpm,48);assert.equal(l.learning.articulation,'legato');assert.deepEqual(copy(l.rhythm.steps.map(s=>[s.startBeat,s.durationBeats,s.restBeforeBeats])),midis[i].map((m,j)=>[j,j===14?2:1,0]));assert.equal(l.steps.filter(s=>app.stepMidiList(s)[0]===midis[i][7]).length,1);assert.equal(l.rhythm.steps.at(-1).startBeat+l.rhythm.steps.at(-1).durationBeats,16);assert.equal(app.challengeEligible(l),true);for(const old of fixture.catalog){const row=app.lessons.find(x=>x.id===old.id);assert.notDeepEqual(copy(row.steps.map(app.stepMidiList)),midis[i].map(m=>[m]),old.id);}}
+});
+test('actual grader rejects repeated apex, delayed turn, F-natural, lost octave and shortened ending',()=>{
+ for(const l of units){const plan={steps:l.rhythm.steps.map((s,i)=>({...s,midis:app.stepMidiList(l.steps[i])})),bpm:48,targetBpm:48,profile:'legato'};assert.equal(A.assessPiano({...plan,events:take(l)}).clean,true);for(const mode of ['pause-at-top','rush-turn','repeat-top','natural-f','wrong-octave','quarter-last','early-last','gap','overlap','keyboard'])assert.equal(A.assessPiano({...plan,events:take(l,mode)}).clean,false,l.id+' '+mode);}
+});
+test('real MIDI handlers require the half-note release and keep each control edition independent',async()=>{
+ for(const l of units){const clock={now:5000},a=loadApp({events:true,clock,storage:require('./helpers/memory-storage.cjs').createMemoryStorage(),locks:{request:async(n,o,fn)=>fn({name:n})}});a.setTestLesson(a.lessons.find(x=>x.id===l.id));a.state.attemptMode='challenge';const events=take(l);for(const[i,e]of events.entries()){clock.now=5000+e.at-1000;if(e.type==='on')a.handleNoteOn(e.midi,'midi');else{if(i===events.length-1)assert.equal(a.state.completed,false);a.handleNoteOff(e.midi);}}assert.equal(a.state.passed,true,l.id);assert.equal(a.state.learningProgress[l.id].fingerprint,A.pianoSignature(l));for(const id of [...ids,...l.learning.requires].filter(id=>id!==l.id))assert.equal(Object.hasOwn(a.state.learningProgress,id),false);await a.legacyProgressStore.settled();a.resetLessonState();}
+});
+test('each control follows both own-hand continuous directions and has no other-hand or piece prerequisite',()=>{
+ const c={};vm.runInNewContext(fs.readFileSync('curriculum-plan.js','utf8'),c);const route=c.MUSIC_CURRICULUM_PLAN.piano.map(l=>l.id);
+ for(const[i,l]of units.entries()){const hand=i?'left':'right';assert.deepEqual(copy(l.learning.requires),['detail-p-g-major-continuous-'+hand+'-01','detail-p-g-major-descent-continuous-'+hand+'-01']);assert.equal(l.learning.stage,'p5');assert.equal(l.learning.coverageDomain,'major-scales');const seen=new Set(),walk=id=>{if(seen.has(id))return;seen.add(id);const p=app.lessons.find(x=>x.id===id);assert.ok(p,id);assert.notEqual(p.contentKind,'piece');for(const r of p.learning?.requires||[])walk(r);};for(const id of l.learning.requires){assert.ok(route.indexOf(id)<route.indexOf(l.id));walk(id);}for(const id of seen)assert.ok(!(i?/^(course02-|detail-p-right-|detail-p-g-major-.*right|detail-p-scale-0[12]|detail-p-cross-0[12]|detail-p-release-0[13]|detail-p-black-0[13])/:/^(course03-|detail-p-left-|detail-p-g-major-.*left|detail-p-scale-0[34]|detail-p-cross-0[34]|detail-p-release-0[24]|detail-p-black-0[24])/).test(id),l.id+' requires other hand '+id);assert.equal(route.filter(id=>id===l.id).length,1);}
+});
+test('cards identify composite control, real source rhythm, hearing limits, transfer and delayed return',()=>{
+ const ledger=require('../docs/piano-curriculum-sources.json');for(const[i,l]of units.entries()){assert.equal(l.learning.practiceSteps.length,5);assert.equal(l.learning.selfCheck.length,5);for(const id of l.learning.sourceEvidenceIds)assert.ok(ledger.entries.find(e=>e.id===id)?.applications.some(x=>x.batch==='2026-11-09-04'&&x.verifiedOn==='2026-11-09'&&x.lessonIds.includes(l.id)),id);app.state.lesson=l;app.state.attemptMode='practice';app.state.learningMaterialMode='expanded';const html=app.learningMaterialHtml();for(const text of ['Faber','у 16','Открытая проба','48 BPM','на следующий день','половинная','составной контроль',i?'регистр':'на октаву вниз'])assert.ok(html.toLowerCase().includes(text.toLowerCase()),l.id+' '+text);for(const mode of ['compact','expanded','hidden']){app.state.attemptMode='memory';app.state.learningMaterialMode=mode;assert.equal(app.learningMaterialHtml(),'');}}
+});
+test('personal notes, classification, instructions and order survive reinstall and export/import',async()=>{
+ const a=loadApp({web:true,events:true,storage:require('./helpers/memory-storage.cjs').createMemoryStorage()});for(const[i,id]of ids.entries()){const l=a.lessons.find(x=>x.id===id);l.title+=' personal';l.contentKind='piece';l.order=2-i;l.learning.practiceSteps[0]='personal';l.guide.setup='personal';l.pattern=l.pattern.replace(/^\S+/,'y');l.steps=a.parsePattern(l.pattern).steps;}const selected=()=>ids.map(id=>copy(a.lessons.find(x=>x.id===id))),before=selected();a.installReviewedLessons();assert.deepEqual(selected(),before);assert.equal(await a.importCatalogText(a.catalogExportText(),()=>true),true);for(const[i,l]of selected().entries()){assert.equal(l.contentKind,'piece');assert.equal(l.order,2-i);assert.equal(l.guide.setup,'personal');assert.equal(l.learning.practiceSteps[0],'personal');assert.deepEqual(l.steps,before[i].steps);assert.equal(a.lessons.filter(x=>x.id===l.id).length,1);}
+});
+test('server registry preserves440 historical editions and grades the actual15-note checkpoint trace',()=>{
+ const course=require('../service/course-registry.json'),built=require('../tools/build-service-curriculum.cjs').build();assert.deepEqual(course,copy(built));assert.equal(course.counts.learning,require('./fixtures/piano-curriculum-counts.json').implementedLearningLessons);assert.equal(course.counts.graded,require('./fixtures/piano-curriculum-counts.json').checkedMidiRouteLessons);assert.equal(crypto.createHash('sha256').update(fs.readFileSync('service/schema.pg.sql')).digest('hex'),fixture.server.schemaSha256);for(const old of fixture.server.lessons)assert.equal(hash(course.lessons.find(l=>l.id===old.id)),old.fullRecordSha256,old.id);assert.deepEqual(course.route.filter(id=>fixture.server.route.includes(id)),fixture.server.route);
+ for(const l of units){const row=course.lessons.find(x=>x.id===l.id),events=take(l),until=events.at(-1).at;assert.equal(row.gradeFingerprint,A.pianoSignature(l));assert.equal(row.challengeReady,true);const result=G.grade(row,G.eventsInput(events,until),'challenge',until,false);assert.equal(result.assessment.clean,true);assert.equal(result.quality,100);for(const mode of ['quarter-last','pause-at-top','repeat-top']){const wrong=take(l,mode),end=wrong.at(-1).at;assert.equal(G.grade(row,G.eventsInput(wrong,end),'challenge',end,false).assessment.clean,false,mode);}}
+});
+test('two checkpoint-only controls do not increase independent-goal upper bound',()=>{
+ const tool=require('../tools/piano-skill-coverage.cjs'),r=tool.build();for(const l of units){assert.equal(l.learning.goalCounting,'checkpoint-only');assert.equal(l.learning.sameGoalAs,undefined);assert.ok(r.checkpointLessonIds.includes(l.id));}assert.equal(tool.goalAccounting(r.lessons.filter(x=>fixture.catalog.some(old=>old.id===x.id)||ids.includes(x.id))).explicitCheckpoints,9);assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>fixture.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10);assert.equal(r.counts.goalGroupUpperBound,require('./fixtures/piano-curriculum-counts.json').goalGroupUpperBound);assert.equal(r.counts.verifiedDistinctGoalCount,null);assert.equal(r.counts.independentTeacherReviewed,0);
+ const without=r.lessons.filter(l=>!ids.includes(l.id));assert.equal(tool.goalAccounting(without).goalGroupUpperBound,r.counts.goalGroupUpperBound);
+});
+test('current aggregate counts agree with the shared fixture while the previous cohort stays frozen',()=>{
+ const c=require('../tools/piano-skill-coverage.cjs').build().counts,expected=require('./fixtures/piano-curriculum-counts.json');for(const k of ['implementedLearningLessons','checkedMidiRouteLessons','withStructuredProvenance','individuallyMappedToDomain','explicitSameGoalVariants','explicitCheckpoints','goalGroupUpperBound','plannedFutureLessons','independentTeacherReviewed','verifiedDistinctGoalCount'])assert.equal(c[k],expected[k],k);
+});

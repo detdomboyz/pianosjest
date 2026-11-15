@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-11-13T09:41:34.085294+00:00",
+  "redPath": "tmp/melodiajest-169-target-red.log",
+  "redSha256": "6b019a930c7fd359a17bf0d9c1dda22311a7c20e3031f7367b3897ba6f4d1af0",
+  "redPassed": 1,
+  "redFailed": 7,
+  "redDurationMs": 4437.3996,
+  "redBeforeImplementation": true,
+  "newTestSha256": "4606a30d6bca9afd56b3e312cf853701af6e9035678c3af7cd45564f83576b7f",
+  "newFixtureSha256": "68c66058160e679e6f115314dea974ce9b604ce7f142d2fe38a3e54746017231",
+  "wholeNewTestExactAfterFirstRed": false,
+  "historicalTestFilesChanged": 0,
+  "scaffoldCorrections": 1,
+  "musicalAssertionsRemovedOrRelaxed": false,
+  "firstRedSourceCopy": "tmp/left-rhythm-choice-169-first-red-test.cjs",
+  "firstRedNewTestSha256": "14877d171b20a76feca23bfcca3e270831d9feb413ece762520ab781683f65cb",
+  "updatedAt": "2026-11-13T09:43:56.180253+00:00",
+  "routeContractCorrections": 1,
+  "firstTargetPassed": 38,
+  "firstTargetFailed": 3,
+  "firstTargetPath": "tmp/melodiajest-169-target-green.log",
+  "firstTargetSha256": "32ba16da402e00d5d01d251feaab1fc36646a68dc2ec9d3e1cfaae9c50c5a851",
+  "corrections": [
+    "New-test adapter global MIDI replacement accidentally changed 60000ms/min to48000. Restored independent physical unit60000 in both sound-duration terms;app tempo path unchanged.",
+    "Original insertion afterLH165 broke its historical immediate Next toposition-skips04. New lesson now afterposition-skips04,nextposition-skips05;all old route test assertions retained. New-test expected anchor follows this corrected display contract.",
+    "Card prose now says Затем после перерыва / А на следующий день;retained all card assertions rather than removing delayed-return checks."
+  ]
+}

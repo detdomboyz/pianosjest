@@ -1,0 +1,236 @@
+{
+  "kind": "source-only-manual-preparation-fragment-contract",
+  "documentVersion": 1,
+  "phase": "2026-11-10-73",
+  "batch": "2026-11-10-14",
+  "editorialPlanId": "2026-11-10-03",
+  "preparationSelectionId": "2026-11-10-04",
+  "status": "manual-only-source-contract-not-implemented",
+  "sourceId": "detail-p-shifted-left-five-01",
+  "targetId": "detail-p-hands-03",
+  "sourceBinding": {
+    "id": "detail-p-shifted-left-five-01",
+    "fingerprint": "2019c5db",
+    "musicVersion": "7899a0882a51a7280b6b209e01ac464b851cb1a07a63cbfdfd74f9770638b2df",
+    "editionVersion": "56704964713c117169d383f657984e545cac6154aca9f774eda5ddcc59fdcf44"
+  },
+  "sourceWindowInclusiveZeroBased": {
+    "firstStep": 2,
+    "lastStep": 4
+  },
+  "sourceBpmInformational": 56,
+  "sourceArticulation": "legato",
+  "manualPitchChange": {
+    "kind": "explicit-manual-octave-down",
+    "semitones": -12,
+    "isCurrentCompilerField": false
+  },
+  "manualMapping": [
+    {
+      "sourceStepIndexZeroBased": 2,
+      "sourceMidi": 60,
+      "manualMidi": 48,
+      "leftFinger": 1,
+      "sourceStartBeat": 2,
+      "localStartBeat": 0,
+      "durationBeats": 1
+    },
+    {
+      "sourceStepIndexZeroBased": 3,
+      "sourceMidi": 59,
+      "manualMidi": 47,
+      "leftFinger": 2,
+      "sourceStartBeat": 3,
+      "localStartBeat": 1,
+      "durationBeats": 1
+    },
+    {
+      "sourceStepIndexZeroBased": 4,
+      "sourceMidi": 57,
+      "manualMidi": 45,
+      "leftFinger": 3,
+      "sourceStartBeat": 4,
+      "localStartBeat": 2,
+      "durationBeats": 1
+    }
+  ],
+  "manualTiming": {
+    "sourceOriginBeat": 2,
+    "localOriginBeat": 0,
+    "sourceEndBeat": 5,
+    "endBeat": 3,
+    "releaseCount": "четыре",
+    "sourceWholePauseExcluded": [
+      5,
+      7
+    ],
+    "endingSilenceAssessed": false,
+    "automaticTargetBpm": null
+  },
+  "fiveLineDraft": [
+    "Отпусти прежний левый5 на C3; после отпускания приготовь на C3 большой1. Правая отдыхает, педаль не нужна.",
+    "Сыграй C3–B2–A2 пальцами1–2–3: полутон вниз, затем тон. Это выбранные три ноты источника на октаву ниже.",
+    "Три четверти на «раз–два–три», на «четыре» отпусти A2. Темп удобный, движение без зажатия.",
+    "Представь нисходящую линию; проговори названия или пропой в удобном регистре. Знакомая фраза не независимый слуховой тест.",
+    "После отдыха снова приготовь C3 большим, затем соединяй с правой линией короткой карточки. Ручная проба не даёт зачёт/XP."
+  ],
+  "fullDraftInReport": "docs/reports/piano-curriculum-2026-11-10-14.md",
+  "draftImplementedInUi": false,
+  "newLessonIdCreated": false,
+  "currentV1Findings": {
+    "sourceWindowCompileSupported": true,
+    "sourceAbsoluteStartsRetained": [
+      2,
+      3,
+      4
+    ],
+    "coreUsesRelativeExpectedStart": true,
+    "registeredBrowserPathForSource": false,
+    "currentFragmentTargets": [
+      "course02-06",
+      "course03-06"
+    ],
+    "extraTransposeFieldIgnored": true,
+    "unknownTransformKeyEqualToTempoOnly": true,
+    "automaticPitchChangeSupported": false,
+    "compileRequiresBuildsWholeRequirementNotCurriculumPrerequisite": true,
+    "selectedSingleFragmentCanBeSeparateContract": true,
+    "sourceAndTargetPrepareReturnNull": true,
+    "sourceTransferCurrentRequirementsCount": 0,
+    "captureAppendCalls": 0,
+    "browserNonzeroRangePlaybackObserved": false,
+    "fixedCurrentCaptions": "5notes/56BPM for existing two profiles only"
+  },
+  "automaticTransposeReady": false,
+  "canGrantPreparationCredit": false,
+  "canGrantLessonCredit": false,
+  "canAwardXp": false,
+  "keepSourceWholeAsMandatoryPrerequisite": false,
+  "keepFullMainAsMandatoryExam": false,
+  "fingerIdentityOrComfortProvenByMidi": false,
+  "knownPhraseIsIndependentEarTest": false,
+  "preserve": [
+    "original source/target notes and ID",
+    "both musical editions",
+    "user fingering/order/progress",
+    "whole/fragment/legacy journals and private exports",
+    "two C-family award/issued contracts",
+    "existing registered v1 fragment identities",
+    "all F proposals and support boundaries",
+    "exact local79 and public78"
+  ],
+  "futureCases": [
+    {
+      "id": "legacy-v1-keys",
+      "scenario": "Existing two registered fragments retain exact v1 keys, source notes, tempo and histories.",
+      "expected": "legacy-identical",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unknown-transform",
+      "scenario": "New required pitch-transform/version unknown to a consumer must not degrade to tempo-only or source-pitch grade.",
+      "expected": "unsupported-no-credit",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "exact-minus12",
+      "scenario": "Explicit -12 maps60/59/57 to48/47/45 with MIDI bounds, no modulo12 and no silent octave substitution.",
+      "expected": "exact-mapping",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "source-binding",
+      "scenario": "Changed source fingerprint/musicVersion/window invalidates only the adapted requirement, retaining old evidence.",
+      "expected": "version-isolated",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "identity-rebase",
+      "scenario": "Mapping and local time origin have their own identity; stale keys fail and old v1 records are not reinterpreted.",
+      "expected": "no-stale-grade",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "single-consumed-view",
+      "scenario": "Expected notes, keyboard, notation, playback and capture all use the same verified mapping and origin.",
+      "expected": "consumer-consistency",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "range-no-prefix",
+      "scenario": "Window2..4 executes exactly three notes, excludes source0/1 and whole pause5..7; local end3.",
+      "expected": "exact-three-notes",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "manual-no-credit",
+      "scenario": "Manual prose/checkmark/assisted practice never creates MIDI evidence, lesson progress or XP.",
+      "expected": "no-credit",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "whole-fragment-isolation",
+      "scenario": "Fragment evidence stays in its scope; source whole96 and main125 do not become mandatory or passed.",
+      "expected": "scope-preserved",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "accurate-copy",
+      "scenario": "Future labels and five-line/full text reflect three notes/range/tempo; do not reuse fixed5notes/56BPM captions.",
+      "expected": "explicit-user-choice",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "private-transfer",
+      "scenario": "Exports/imports preserve source binding/version and unsupported annotations without converting them into current readiness.",
+      "expected": "preserve-history",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "no-server-xp-sideeffect",
+      "scenario": "Local preparation capture/import/retry cannot call server family XP or alter existing issued attempts/portal outbox.",
+      "expected": "no-award-sideeffect",
+      "status": "planned-not-executed"
+    }
+  ],
+  "futureCasesExecuted": 0,
+  "actualProbesQa": "docs/qa/piano-curriculum-2026-11-10-14-fragment-probes.json",
+  "firstRejectedProbeQa": "docs/qa/piano-curriculum-2026-11-10-14-probes-first-attempt.json",
+  "newLearningRecords": 0,
+  "newIndependentGoals": 0,
+  "newEditorialPlans": 0,
+  "realMidiObserved": false,
+  "physicalFingersOrSoundVerified": false,
+  "teacherReviewed": false,
+  "researchReview": {
+    "id": "2026-11-10-14",
+    "phase": "2026-11-10-73",
+    "status": "completed-source-manual-fragment-contract-not-implemented",
+    "report": "docs/reports/piano-curriculum-2026-11-10-14.md",
+    "qa": "docs/qa/piano-curriculum-2026-11-10-14-fragment-probes.json",
+    "contract": "docs/qa/piano-curriculum-2026-11-10-14-manual-fragment-contract.json",
+    "editorialPlanId": "2026-11-10-03",
+    "sourceId": "detail-p-shifted-left-five-01",
+    "targetId": "detail-p-hands-03",
+    "acceptedCompilerCalls": 6,
+    "acceptedLogicalSyntheticCoreControls": 2,
+    "acceptedCaptureCalls": 3,
+    "probeLaunches": 2,
+    "acceptedProbeLaunches": 1,
+    "totalCoreInvocationsIncludingRejected": 4,
+    "automaticTransposeReady": false,
+    "manualCreditGranted": false,
+    "captureStoreAppendCalls": 0,
+    "futureCasesPlanned": 12,
+    "futureCasesExecuted": 0,
+    "newCatalogLoaderRuns": 0,
+    "newFullBuilderRuns": 0,
+    "newLearningRecords": 0,
+    "newImplementedIndependentGoals": 0,
+    "newResearchLessonProposals": 0,
+    "newEditorialPlans": 0,
+    "pendingEditorialPlansTotal": 2,
+    "sourceOrTargetChanged": false,
+    "teacherReviewed": false
+  }
+}

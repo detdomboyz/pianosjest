@@ -1,0 +1,217 @@
+{
+  "checkedAt": "2026-11-12T05:50:52.795Z",
+  "candidateVersion": "23.5.96",
+  "publicVersionAtCheck": "23.5.95",
+  "verified": true,
+  "realNativeBrowserHttpCache": true,
+  "manuallyInjectedValidators": false,
+  "applicationResponseCacheAdded": false,
+  "scope": "One standalone visible QA harness using the exact current service-client.js and actual API with isolated SQLite/synthetic rating;native HTTP-cache request and rendered response paired. Identity loopback response only,not production gzip/HTTP2 latency or whole trainer UI.",
+  "productionDataUsed": false,
+  "productionVolumesMounted": false,
+  "realMidiAudioOrPrivateBrowserDataUsed": false,
+  "cases": [
+    {
+      "case": "first",
+      "status": "Запрос 1: курс получен",
+      "result": "{\"request\":1,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":null}"
+    },
+    {
+      "case": "unchanged-repeat",
+      "status": "Запрос 2: курс получен",
+      "result": "{\"request\":2,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":null}"
+    },
+    {
+      "case": "changed-rating-same-course-sha",
+      "status": "Запрос 3: курс получен",
+      "result": "{\"request\":3,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":{\"canonical\":80,\"decimalTen\":8,\"count\":1}}"
+    },
+    {
+      "case": "unchanged-new-rating",
+      "status": "Запрос 4: курс получен",
+      "result": "{\"request\":4,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":{\"canonical\":80,\"decimalTen\":8,\"count\":1}}"
+    },
+    {
+      "case": "upstream503",
+      "status": "Запрос 5: ошибка TEMPORARILY_UNAVAILABLE",
+      "result": "Сервис временно недоступен. Сохрани свой вариант и повтори позже."
+    },
+    {
+      "case": "closed-local-connection",
+      "status": "Запрос 6: ошибка TypeError",
+      "result": "Failed to fetch"
+    },
+    {
+      "case": "recovery-rating-removed",
+      "status": "Запрос 7: курс получен",
+      "result": "{\"request\":7,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":null}"
+    },
+    {
+      "case": "recovery-repeat",
+      "status": "Запрос 8: курс получен",
+      "result": "{\"request\":8,\"courseSha\":\"41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49\",\"lessons\":462,\"firstLessonId\":\"course01-01\",\"rating\":null}"
+    }
+  ],
+  "serverLog": {
+    "sdkSha256": "d3182c08cb515d797f3c9dcb468e77edafee5bdca0f24d7edde2fe93bf04a286",
+    "apiSourceSha256": "2686c5ef8c29df6025906d53e33f33c82b153be84493bc8edeaa68e511363efb",
+    "productionDataUsed": false,
+    "productionVolumesMounted": false,
+    "courseSha256": "41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49",
+    "rows": [
+      {
+        "request": 1,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": null,
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": null,
+        "outage": false,
+        "networkClose": false,
+        "status": 200,
+        "etag": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 450178
+      },
+      {
+        "request": 2,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": null,
+        "outage": false,
+        "networkClose": false,
+        "status": 304,
+        "etag": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 0
+      },
+      {
+        "request": 3,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": 8,
+        "outage": false,
+        "networkClose": false,
+        "status": 200,
+        "etag": "W/\"d663358b4b842ecf85cd0d641570cbf3e68fe04cb2db41461bec3c23940ffbec\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 450215
+      },
+      {
+        "request": 4,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": "W/\"d663358b4b842ecf85cd0d641570cbf3e68fe04cb2db41461bec3c23940ffbec\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": 8,
+        "outage": false,
+        "networkClose": false,
+        "status": 304,
+        "etag": "W/\"d663358b4b842ecf85cd0d641570cbf3e68fe04cb2db41461bec3c23940ffbec\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 0
+      },
+      {
+        "request": 5,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": "W/\"d663358b4b842ecf85cd0d641570cbf3e68fe04cb2db41461bec3c23940ffbec\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": 8,
+        "outage": true,
+        "networkClose": false,
+        "status": 503,
+        "etag": null,
+        "cacheControl": "private, no-store",
+        "bodyBytes": 178
+      },
+      {
+        "request": 6,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": null,
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": 8,
+        "outage": false,
+        "networkClose": true,
+        "status": "connection-closed",
+        "bodyBytes": 0
+      },
+      {
+        "request": 7,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": null,
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": null,
+        "outage": false,
+        "networkClose": false,
+        "status": 200,
+        "etag": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 450178
+      },
+      {
+        "request": 8,
+        "method": "GET",
+        "path": "/api/service/v1/course",
+        "ifNoneMatch": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "desiredRating": null,
+        "outage": false,
+        "networkClose": false,
+        "status": 304,
+        "etag": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+        "cacheControl": "public, no-cache",
+        "bodyBytes": 0
+      }
+    ]
+  },
+  "statusSequence": [
+    200,
+    304,
+    200,
+    304,
+    503,
+    "connection-closed",
+    200,
+    304
+  ],
+  "allPublicRequestsAnonymous": true,
+  "courseShaStayedSameWithRating": true,
+  "syntheticUpstreamFailureAndClosedConnection": true,
+  "errorsReturnedInsteadOfStaleCourse": true,
+  "images": [
+    {
+      "path": "docs/qa/melodiajest-2026-11-12-128-cache-browser.jpg",
+      "bytes": 45084,
+      "sha256": "3c8ba76491ff73535ac0607fdd64e9cc64ab341e3111338e71455afc39139a42",
+      "providerPixelsUnchanged": true,
+      "independentlyOpenedAndViewed": true,
+      "independentViewMethod": "functions.view_image local file;CUA emitImage preview tile not used as visual proof"
+    }
+  ],
+  "cleanup": {
+    "temporaryTab": "13",
+    "temporaryTabClosed": true,
+    "ownPreviewPid": 18192,
+    "ownPreviewPort": 64780,
+    "ownBackendLoopbackPort": 63822,
+    "previewStopPending": false,
+    "viewportReset": true,
+    "ownPreviewStopped": true,
+    "ownPreviewAndBackendPidStopped": 18192
+  }
+}

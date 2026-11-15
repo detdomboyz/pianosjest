@@ -1,0 +1,2759 @@
+{
+  "kind": "actual-short-contrary-current-and-hypothetical-release-baseline",
+  "phase": "2026-11-10-74",
+  "checkedAt": "2026-11-10T09:01:51.560Z",
+  "lessonId": "detail-p-hands-03",
+  "sourceSnapshot": {
+    "qa": "docs/qa/piano-curriculum-2026-11-10-03-c-motion.json",
+    "sha256": "55779a960d0464529739527f0a9e43d9e9c9754e10cc5bbd00e0d086fe68a3b4",
+    "actualLoaderReadAt": "2026-11-10T04:46:04.287Z"
+  },
+  "sourceDependenciesMatched": [
+    {
+      "file": "chopin-theme.js",
+      "sha256": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4"
+    },
+    {
+      "file": "fingering.js",
+      "sha256": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    {
+      "file": "beginner-fingering.js",
+      "sha256": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f"
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14"
+    },
+    {
+      "file": "piano-preparation.js",
+      "sha256": "4816f1da8b607f9c4bb1c215abfb373ea549f8b0ffcc5f5077bfbb51c7b454a6"
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73"
+    },
+    {
+      "file": "piano-preparation-fragment.js",
+      "sha256": "da913adafeaad325d3dedf7c13b201a5dbba91a43d77e2cbe1d6f4f317fd1278"
+    },
+    {
+      "file": "piano-preparation-capture.js",
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18"
+    },
+    {
+      "file": "piano-preparation-transfer.js",
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526"
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b"
+    },
+    {
+      "file": "curriculum.js",
+      "sha256": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a"
+    },
+    {
+      "file": "curriculum-plan.js",
+      "sha256": "7b6672eab1bcfc6f357fb3539308f945535d5872621e35e8c981ebd5ff7d1460"
+    },
+    {
+      "file": "catalog-sections.js",
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec"
+    },
+    {
+      "file": "lesson-review-baseline.js",
+      "sha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030"
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2"
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f"
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235"
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9"
+    },
+    {
+      "file": "tests/helpers/load-app.cjs",
+      "sha256": "94dca15b5ae63378ca2ce285d828ad501ad3c32a153c28f9fc80c460c52447f1"
+    }
+  ],
+  "sourceTrace": [
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "anchors": [
+        {
+          "line": 10,
+          "excerpt": "  function pianoSignature(lesson){return signature({pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,...(lesson.learning?.ending!==undefined?{ending:lesson.learning.ending}:{})});}"
+        },
+        {
+          "line": 73,
+          "excerpt": "      const durationTolerance=beatBoundary?Math.max(130,Math.min(duration*.30,beatMs*.22)):Math.max(130,duration*.30);"
+        },
+        {
+          "line": 80,
+          "excerpt": "      if(timingPrecision==='beat-boundary-v2'&&chord.length>1&&chord.every(e=>e.off!==null)&&Math.max(...chord.map(e=>e.off))-Math.min(...chord.map(e=>e.off))>120)releaseErrors++;"
+        },
+        {
+          "line": 49,
+          "excerpt": "    const anchor=first.length?Math.min(...first):NaN,start=steps[0]?.startBeat||0;"
+        }
+      ]
+    },
+    {
+      "file": "service/game-grade.cjs",
+      "sha256": "ab328af357e1a9c1f84b59ac321b01537728d89ee51d21ad064eb2f91feb3f22",
+      "anchors": [
+        {
+          "line": 4,
+          "excerpt": "function eventsInput(value,observedUntil){"
+        },
+        {
+          "line": 14,
+          "excerpt": "function grade(plan,events,mode,observedUntil,interrupted){"
+        },
+        {
+          "line": 23,
+          "excerpt": "  if(Number.isFinite(plan.timeLimit)&&observedUntil-anchor>plan.timeLimit*1000+100){assessment.clean=false;assessment.reasons.push('Превышен лимит времени учебной фразы.');}"
+        },
+        {
+          "line": 28,
+          "excerpt": "  return {assessment,metrics,quality:assessment.clean?clamp(.45*metrics.pulse+.45*metrics.holds+.10*metrics.chords):0};"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        }
+      ]
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "anchors": [
+        {
+          "line": 103,
+          "excerpt": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';"
+        }
+      ]
+    }
+  ],
+  "currentCanonical": {
+    "id": "detail-p-hands-03",
+    "title": "Противоположное движение двух рук",
+    "description": "Из C3/C4: левая идёт вниз B2–A2 пальцами 2–3 от большого на C3; правая вверх D4–E4 пальцами 2–3.",
+    "stage": "p4",
+    "stageTitle": "4. Согласование рук",
+    "optional": false,
+    "goal": "Из C3/C4: левая идёт вниз B2–A2 пальцами 2–3 от большого на C3; правая вверх D4–E4 пальцами 2–3.",
+    "requires": [
+      "detail-p-hands-02"
+    ],
+    "goalKey": "detail-p-hands-03",
+    "challengeReady": true,
+    "gradeFingerprint": "47383ac1",
+    "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+    "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce",
+    "bpm": 56,
+    "timeLimit": 20,
+    "steps": [
+      {
+        "midis": [
+          48,
+          60
+        ],
+        "startBeat": 0,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          47,
+          62
+        ],
+        "startBeat": 1,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          45,
+          64
+        ],
+        "startBeat": 2,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          47,
+          62
+        ],
+        "startBeat": 3,
+        "durationBeats": 0.85
+      },
+      {
+        "midis": [
+          48,
+          60
+        ],
+        "startBeat": 4,
+        "durationBeats": 0.85
+      }
+    ],
+    "profile": "standard"
+  },
+  "currentRawHandModeResolved": "split",
+  "hypotheticalTimingOnlyVersion": {
+    "fingerprint": "59fcadd5",
+    "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+    "editionVersion": "e27d2c3604143bb6604594acf54de37e1488e1c5df8f151a4495932797589f46",
+    "persisted": false
+  },
+  "preservedFingerPairs": [
+    [
+      {
+        "hand": "left",
+        "num": 1
+      },
+      {
+        "hand": "right",
+        "num": 1
+      }
+    ],
+    [
+      {
+        "hand": "left",
+        "num": 2
+      },
+      {
+        "hand": "right",
+        "num": 2
+      }
+    ],
+    [
+      {
+        "hand": "left",
+        "num": 3
+      },
+      {
+        "hand": "right",
+        "num": 3
+      }
+    ],
+    [
+      {
+        "hand": "left",
+        "num": 2
+      },
+      {
+        "hand": "right",
+        "num": 2
+      }
+    ],
+    [
+      {
+        "hand": "left",
+        "num": 1
+      },
+      {
+        "hand": "right",
+        "num": 1
+      }
+    ]
+  ],
+  "scenarios": [
+    {
+      "id": "exact",
+      "description": "All ten notes at the existing .85 durations, starts0…4.",
+      "expected": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": "left-final-off-plus200",
+      "description": "Only last left C3 releases200ms later; right C4 unchanged.",
+      "expected": [
+        true,
+        false
+      ]
+    },
+    {
+      "id": "right-final-off-plus200",
+      "description": "Only last right C4 releases200ms later; left C3 unchanged.",
+      "expected": [
+        true,
+        false
+      ]
+    },
+    {
+      "id": "both-final-offs-plus200",
+      "description": "Both last notes release200ms later together, inside current individual duration tolerances.",
+      "expected": [
+        true,
+        true
+      ]
+    },
+    {
+      "id": "left-middle-onset-plus200",
+      "description": "Third-pair left A2 onset/offset shifted200ms; right E4 unchanged.",
+      "expected": [
+        false,
+        false
+      ]
+    },
+    {
+      "id": "left-final-duration-plus400",
+      "description": "Only final left C3 duration grows400ms.",
+      "expected": [
+        false,
+        false
+      ]
+    },
+    {
+      "id": "missing-left-middle",
+      "description": "Third-pair left A2 absent, including its NoteOff.",
+      "expected": [
+        false,
+        false
+      ]
+    },
+    {
+      "id": "wrong-left-middle",
+      "description": "Third-pair expected left A2 replaced by Bb2; other notes unchanged.",
+      "expected": [
+        false,
+        false
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "scenario": "exact",
+      "policy": "current",
+      "expectedClean": true,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 100,
+        "chords": 100
+      },
+      "serviceQuality": 100,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "exact",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": true,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 100,
+        "chords": 100
+      },
+      "serviceQuality": 100,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-final-off-plus200",
+      "policy": "current",
+      "expectedClean": true,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 93,
+        "chords": 100
+      },
+      "serviceQuality": 97,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-final-off-plus200",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Окончания одновременных звуков не совпали"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 1,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 92,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "right-final-off-plus200",
+      "policy": "current",
+      "expectedClean": true,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 93,
+        "chords": 100
+      },
+      "serviceQuality": 97,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "right-final-off-plus200",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Окончания одновременных звуков не совпали"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 1,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 92,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "both-final-offs-plus200",
+      "policy": "current",
+      "expectedClean": true,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5396.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 85,
+        "chords": 100
+      },
+      "serviceQuality": 93,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "both-final-offs-plus200",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": true,
+      "observedUntil": 5646.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5396.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5396.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": true,
+        "reasons": [],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 83,
+        "chords": 100
+      },
+      "serviceQuality": 92,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-middle-onset-plus200",
+      "policy": "current",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2342.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3253.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Аккорд сыгран неодновременно"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 1,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 92,
+        "holds": 100,
+        "chords": 0
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-middle-onset-plus200",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2342.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3253.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Аккорд сыгран неодновременно",
+          "Окончания одновременных звуков не совпали"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 0,
+        "chordErrors": 1,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 1,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 92,
+        "holds": 100,
+        "chords": 0
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-final-duration-plus400",
+      "policy": "current",
+      "expectedClean": false,
+      "observedUntil": 5846.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5596.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Есть ошибки длительности или отпускания"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 1,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "left-final-duration-plus400",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5846.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 45,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 45,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5596.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Есть ошибки длительности или отпускания",
+          "Окончания одновременных звуков не совпали"
+        ],
+        "onsetErrors": 0,
+        "durationErrors": 1,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 1,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 100,
+        "pulse": 100,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "missing-left-middle",
+      "policy": "current",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Количество сыгранных нот отличается",
+          "Есть ошибки пульса или пауз"
+        ],
+        "onsetErrors": 1,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 80,
+        "pulse": 90,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "missing-left-middle",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Количество сыгранных нот отличается",
+          "Есть ошибки пульса или пауз"
+        ],
+        "onsetErrors": 1,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 80,
+        "pulse": 90,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "wrong-left-middle",
+      "policy": "current",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 46,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 46,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Есть ошибки пульса или пауз"
+        ],
+        "onsetErrors": 1,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 90,
+        "pulse": 90,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    },
+    {
+      "scenario": "wrong-left-middle",
+      "policy": "hypothetical-timingPrecision-v2",
+      "expectedClean": false,
+      "observedUntil": 5446.428571428571,
+      "events": [
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 0,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 910.7142857142856,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 1071.4285714285713,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 1982.142857142857,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 46,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 64,
+          "at": 2142.8571428571427,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 46,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 64,
+          "at": 3053.5714285714284,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 47,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 62,
+          "at": 3214.2857142857138,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 47,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 62,
+          "at": 4125,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 48,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "on",
+          "midi": 60,
+          "at": 4285.714285714285,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 48,
+          "at": 5196.428571428571,
+          "source": "midi"
+        },
+        {
+          "type": "off",
+          "midi": 60,
+          "at": 5196.428571428571,
+          "source": "midi"
+        }
+      ],
+      "assessment": {
+        "version": 1,
+        "clean": false,
+        "reasons": [
+          "Есть ошибки пульса или пауз"
+        ],
+        "onsetErrors": 1,
+        "durationErrors": 0,
+        "chordErrors": 0,
+        "articulationErrors": 0,
+        "timingPrecision": "beat-boundary-v2",
+        "releaseErrors": 0,
+        "scope": "MIDI: ноты, пульс, отпускания; пальцы и качество звука требуют проверки человеком"
+      },
+      "serviceMetrics": {
+        "notes": 90,
+        "pulse": 90,
+        "holds": 90,
+        "chords": 100
+      },
+      "serviceQuality": 0,
+      "directAssessmentExactlyEqualsService": true
+    }
+  ],
+  "geometry": {
+    "beatMs": 1071.4285714285713,
+    "durationMs": 910.7142857142856,
+    "standardDurationToleranceMs": 273.21428571428567,
+    "v2DurationToleranceMs": 235.7142857142857,
+    "commonReleaseAllowanceMs": 120,
+    "nominalEndBeat": 4.85,
+    "sourceTimeLimitSeconds": 20,
+    "illustrativeCurrentPolicyMathOnly": true
+  },
+  "checks": {
+    "newLogicalScenarios": 8,
+    "policiesPerScenario": 2,
+    "newDirectAndServiceComparisons": 16,
+    "directCoreCalls": 16,
+    "serviceGraderCalls": 16,
+    "totalCoreInvocations": 32,
+    "allDirectAssessmentsExactlyEqualService": true,
+    "eventsInputValidations": 8,
+    "newBrowserLoaderRuns": 0,
+    "newFullBuilderRuns": 0,
+    "newRegistryWrites": 0,
+    "newMusicalEditionsPersisted": 0,
+    "actualDatabaseOrRouteUsed": false,
+    "actualXpOrOutboxWritten": false,
+    "liveMidiOrAudioObserved": false,
+    "teacherReviewed": false,
+    "standardProfileUnchanged": true,
+    "timeLimit20Preserved": true,
+    "newTimeLimitAdded": false,
+    "endingAdded": false,
+    "voiceLinkV2Implemented": false
+  },
+  "limits": [
+    "Synthetic recorded-event input to the actual core/service functions, outside start/submit/DB/XP.",
+    "Hypothetical timingPrecisionv2 is not the F voice-linkv2 proposal and does not prove fingers, comfort, preparation or bimanual legato.",
+    "Both equally late releases can remain clean inside existing per-note tolerances; this test does not tighten those bounds.",
+    "No registry, musical notes, route, history, grade policy or release artifact was changed."
+  ]
+}

@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
 const {loadApp}=require('./helpers/load-app.cjs');
 const A=require('../practice-assessment.js'),fixture=require('./fixtures/piano-opposite-black-position-v1.json');
-const app=loadApp(),copy=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const app=loadApp(),copy=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(require('./helpers/piano-right-legato-history.cjs').project(x))).digest('hex');
 const expected=[
  {id:'detail-p-black-position-right-02',hand:'right',notes:[69,70,72,70,69,65,67,69,70,72,70,69,67,65],fingers:[3,4,5,4,3,1,2,3,4,5,4,3,2,1],black:70,wrong:71,grade:'fdfbe901'},
  {id:'detail-p-black-position-left-02',hand:'left',notes:[52,54,55,54,52,50,52,54,55,57,55,54,52,50],fingers:[4,3,2,3,4,5,4,3,2,1,2,3,4,5],black:54,wrong:53,grade:'93d7e76f'}

@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-11-14T02:12:52.571843+00:00",
+  "firstActualGeneratorInvocationExitCode": 1,
+  "observedError": "TypeError:ev.map is not a function in lesson-development.js registerPiano line99",
+  "errorObservedInToolOutput": true,
+  "standaloneErrorLogCaptured": false,
+  "actualTargetSuiteInvocationsBeforeFix": 0,
+  "actualNextPreflightInvocationsBeforeFix": 0,
+  "cause": "A new single-note spec supplied tone objects directly;the shipped adapter requires every event to be an array,including single notes. Synthetic model preflight used a parsed candidate and did not validate the adapter spec shape.",
+  "newDefinitionCorrected": true,
+  "existingAdapterChanged": false,
+  "historicalTestsChanged": false,
+  "newTestChangedAfterFirstRed": false,
+  "backupCopies": [
+    {
+      "path": "tmp/right-outer-staccato-191-definition.js",
+      "copy": "tmp/right-outer-staccato-registration-failure-191/right-outer-staccato-191-definition.js",
+      "sha256": "f3b8fedb5d6463252a2972581ee258382671bbb4043a51f0e5c80963d4fff7cb"
+    },
+    {
+      "path": "piano-lesson-development.js",
+      "copy": "tmp/right-outer-staccato-registration-failure-191/piano-lesson-development.js",
+      "sha256": "7c46c0d7aa1956f9a7172271619305c35211c688a0c5ec87db3087b20932963b"
+    }
+  ],
+  "afterFiles": [
+    {
+      "path": "tmp/right-outer-staccato-191-definition.js",
+      "sha256": "8b9f2ced1394a0947b7b1dc160d6729b4699488ca7bddc5384e4c7b69e633cc0"
+    },
+    {
+      "path": "piano-lesson-development.js",
+      "sha256": "5e0ba299158e25b7e2821c2c2c20caf52af36a2892f61734601798b29301f142"
+    }
+  ],
+  "correctionCountBeforeFirstTarget": 1,
+  "noOldLessonCorrected": true,
+  "modelAlgorithmChanged": false
+}

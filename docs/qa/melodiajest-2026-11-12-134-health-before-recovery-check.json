@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-11-12T13:14:54.219283+00:00",
+  "unit": {
+    "MainPID": "0",
+    "Result": "exit-code",
+    "ExecMainStartTimestamp": "Thu 2026-11-12 13:01:30 UTC",
+    "ExecMainExitTimestamp": "Thu 2026-11-12 13:01:31 UTC",
+    "ExecMainStatus": "1",
+    "ActiveState": "failed",
+    "SubState": "failed",
+    "StartLimitIntervalUSec": "2h",
+    "StartLimitBurst": "8",
+    "InvocationID": "3a1d4996a930465db523a59dd1d99c66"
+  },
+  "startBudget": {
+    "checkedAt": "2026-11-12T13:14:54.219283+00:00",
+    "unit": "melodiajest-backup-health.service",
+    "allowed": true,
+    "recentStarts": [
+      "2026-11-12T11:47:18.004732+00:00",
+      "2026-11-12T12:01:37.095937+00:00",
+      "2026-11-12T13:01:30.841567+00:00"
+    ],
+    "plannedStarts": 1,
+    "burst": 8,
+    "windowSeconds": 7200,
+    "marginSeconds": 10,
+    "notBefore": "2026-11-12T13:14:54.219283+00:00",
+    "conservativeJournalSnapshot": true,
+    "reservation": false,
+    "systemdCounterRead": false,
+    "mutationsPerformed": false,
+    "nativeLimits": {
+      "MainPID": "0",
+      "Result": "exit-code",
+      "ExecMainStartTimestamp": "Thu 2026-11-12 13:01:30 UTC",
+      "ExecMainExitTimestamp": "Thu 2026-11-12 13:01:31 UTC",
+      "ExecMainStatus": "1",
+      "ActiveState": "failed",
+      "SubState": "failed",
+      "StartLimitIntervalUSec": "2h",
+      "StartLimitBurst": "8",
+      "InvocationID": "3a1d4996a930465db523a59dd1d99c66"
+    }
+  },
+  "baseHealth": {
+    "accounts": {
+      "agesSeconds": {
+        "dataCompared": 819,
+        "independentRestore": 4574
+      },
+      "browserDataBackedUp": false,
+      "browserProgressCovered": false,
+      "configured": true,
+      "dataComparedAt": "2026-11-12T12:47:52.161095+00:00",
+      "engine": "postgres",
+      "problems": [
+        "last-attempt-not-verified",
+        "source-does-not-match-current",
+        "latest-snapshot-differs",
+        "latest-fingerprint-differs",
+        "latest-dataDigest-differs",
+        "lastAttempt-missing-or-invalid"
+      ],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-12T11:45:17.542732+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+      "sourceSha256": "3ac18ae14fae03bb64bf35109083c2790b6701dad8ddd0464171e82f385e932d",
+      "success": false
+    },
+    "agesSeconds": {
+      "backup": 4552,
+      "restore": 4483
+    },
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-12T13:01:31.052420+00:00",
+    "independentExternalCopyVerified": false,
+    "problems": [
+      "account-last-attempt-not-verified",
+      "account-source-does-not-match-current",
+      "account-latest-snapshot-differs",
+      "account-latest-fingerprint-differs",
+      "account-latest-dataDigest-differs",
+      "account-lastAttempt-missing-or-invalid"
+    ],
+    "success": false
+  },
+  "externalHealth": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 980,
+        "independentRestore": 980,
+        "lastAttempt": 980
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-12T11:45:17.542737+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-12T11:45:17.542732+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+      "sourceSha256": "3ac18ae14fae03bb64bf35109083c2790b6701dad8ddd0464171e82f385e932d",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 860,
+      "externalRestore": 860
+    },
+    "backupCreatedAt": "2026-11-12T11:45:52.616112+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-12T12:01:37.578144+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  },
+  "latestCurrent100DataComparedAt": "2026-11-12T13:06:05.031991+00:00",
+  "accountSnapshot": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+  "current": "releases/23.5.100-8f02cdfef1a8",
+  "previous": "releases/23.5.99-8e9ad96ba013",
+  "serviceStarts": 0,
+  "s3Requests": 0,
+  "serverMutations": 0
+}

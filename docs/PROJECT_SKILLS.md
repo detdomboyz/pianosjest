@@ -1,5 +1,169 @@
 # Проектные навыки
 
+Этап133:find-skills каталог и свежие Web Interface Guidelines применены к новому учебному содержимому;computer-use проверил3 подготовки,3 вида/EnterSpace,поиск и390px. Декоративных изменений/React/зависимостей0. [Отчёт](reports/piano-curriculum-2026-11-12-06.md).
+
+Этап132:find-skills-каталог,web-design-guidelines/MDNHistoryAPI/computer-use применены краннейнавигации при12sQAответе,BackForward/reload и390px. Зависимостей/React/новыхмузыкальныхисточников0. [Отчёт](reports/melodiajest-operations-2026-11-12-132.md).
+
+Этап131:find-skills-каталог,свежиеVercelWebInterfaceGuidelines/MDNHistoryAPI иcomputer-use применены кURL/reload/Back/Forward подготовки,3пререквизитам/EnterSpace/фокусу/3видам/390px. Беззависимостей/React/новыхмузыкальныхисточников. [Отчёт](reports/melodiajest-operations-2026-11-12-131.md).
+
+Этап130:find-skills-каталог,свежиеweb-design-guidelines иcomputer-use применены кновойкарточке:desktop/390px/3подготовки/EnterSpace/фокус/3видаreload/5seek. NativeJPEG визуальносверены;bytesповторнопрочитанысSHA,повторныйвизуальныйрендернезаявлен. Безdeps/React. [Отчёт](reports/melodiajest-operations-2026-11-12-130.md).
+
+Этап129:find-skills-каталог,свежие web-design-guidelines и computer-use применены к новой карточке:desktop/390px/3подготовки/Enter/Space/фокус/3видаreload/4seek. Без новых зависимостей иReact. [Отчёт](reports/melodiajest-operations-2026-11-12-129.md).
+
+Этап128:find-skills-каталог,свежие Web Interface Guidelines и computer-use для nativecache/trainer desktop390/modes/focus/JPEG. HTTP primaryRFC9110/9111,Caddy encode.go и official Nginx map/headers/proxy;actualproxy проверен независимо. Без установки навыков/зависимостей и React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-12-128.md).
+
+Этап127:find-skills-каталог/freshweb-design-guidelines/computer-use для HTTP/DOM-измерений,RFC9111/W3CResourceTiming для границ кеша/таймингов. CUAfacadeневыдаётperformanceAPI,браузерныеload/CPU/INPнезаявлены. Зависимости/React0. [Отчёт](reports/melodiajest-operations-2026-11-12-127.md).
+
+Этап126: find-skills-каталог, свежие web-design-guidelines и computer-use для новой карточки:desktop/390px/Enter/Space/фокус/3вида/3подготовки; JPEG независимо открыты. Без зависимостей/React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-12-126.md).
+
+Этап125:find-skills-каталог,свежиеweb-design-guidelines/computer-useдляновойкарточки,desktop/390px/Enter/Space/фокус/3вида/2preps;JPEGнезависимооткрыты.Беззависимостей/React-переноса.[Отчёт](reports/melodiajest-operations-2026-11-12-125.md).
+
+Этап124:find-skills-каталог,свежиеweb-design-guidelines/computer-use/web.dev;code+event-onlyQA подтвердили потерюpendingпослеasyncroute;CSS/React/зависимостей0. [Отчёт](reports/melodiajest-operations-2026-11-12-124.md).
+
+Этап123:find-skills-каталог,свежиеweb-design-guidelines/computer-use;local/publicDOM-AX/390px,localdesktop/mobilecard+publicdesktopJPEGs независимооткрыты;зависимостей/Reactпереноса0. [Отчёт](reports/melodiajest-operations-2026-11-12-123.md).
+
+Этап121:find-skills-каталог,свежиеweb-design-guidelines/computer-use,локальныйипубличныйDOM/AX/390px;локальныйcaptureнедоступен,публичныйdesktopJPEG независимооткрыт;беззависимостей/React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-11-121.md).
+
+Этап120: find-skills-каталог, свежие web-design-guidelines и computer-use для двух новых уроков; Enter/Space/фокус/подготовки/три вида/390px проверены. Index/CSS89 сохранены; без новых зависимостей/плагинов/React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-11-120.md).
+
+Этап119: применены существующие find-skills, свежие web-design-guidelines и computer-use. Код и покадровая QA подтвердили отсутствие вызова follower на resize; ограниченная коррекция проверена в новых документах без QA-вставки. Без зависимостей и React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-11-119.md).
+
+Этап118:find-skills-каталог,свежие web-design-guidelines/computer-use;причина full render при смене вида устранена scoped update,paired профили1280/390 иточныйпубличныйпуть проверены. Без зависимостей/React-переноса. [Отчёт](reports/melodiajest-operations-2026-11-11-118.md).
+
+Этап117:find-skills-каталог,web-design-guidelines и computer-use;левый безымянный держит D3 на новой первой доле,семь атак и одно продолжение,три вида/подготовки/мобильный холст проверены. Новых зависимостей/React-переноса0. [Отчёт](reports/melodiajest-operations-2026-11-11-117.md).
+
+Этап116:find-skills-каталог,web-design-guidelines и computer-use;семь нажатий и продолжение одной ноты через черту,мобильный холст и memory проверены. Новых зависимостей/React-переноса0. [Отчёт](reports/melodiajest-operations-2026-11-11-116.md).
+
+Этап115:web-design-guidelines,Chrome LoAF/web.dev/CSSWG и computer-use. Публичная проверка отклонила84;проверен откат83 и исправление85,девять содержательных регрессий реального UI-кода. Новых установок/React-переноса0. [Отчёт](reports/melodiajest-operations-2026-11-11-115.md).
+
+Этап114:существующий find-skills каталог без установок;свежие web-design-guidelines и computer-use для карточки. Браузер выявил неверное упоминание аккордов в одноголосном уроке;исправление проверено на моно/аккордовом материале. Визуальный редизайн/React-перенос не вводились. [Отчёт](reports/melodiajest-operations-2026-11-11-114.md).
+
+Этап113:web-design-guidelines(свежийVercel command.md) и computer-use для поиска/клавиатуры;MDN API для честных ограничений измерения. Новых установок/React-переноса/визуального редизайна0. [Отчёт](reports/melodiajest-operations-2026-11-11-113.md).
+
+Этап112:существующий find-skills каталог без установок;свежие Vercel web-design-guidelines и computer-use для новой карточки. Браузер выявил и подтвердил исправление слухового текста. React/UI-структура не менялись. [Отчёт](reports/melodiajest-operations-2026-11-11-112.md).
+
+Продолжение111: computer-use применён для фактической local/public QA двух уроков,клавиатуры/фокуса и guest reload. web-design-guidelines применён к изменённому пути; React-код не менялся. Уточнение пользователя об автономном QA/проверенном Ethernet учтено,ручное открытие чата не является штатным gate. [Отчёт](reports/melodiajest-operations-2026-11-11-111.md).
+
+Этап109:source-only hands02/ownunit61/1new+16generic108bindings/7fields,Clark15/36reuse безfetch/find-skills60catalog/OpenAI Docs88nativeworkflow reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-45.md).
+
+Этап108:source-only hands01/family/helpers/template/17bindings/7fields,Clark15/36reuse безfetch/find-skills60catalog/OpenAI Docs88nativeworkflow reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-44.md).
+
+Этап107:source-only existing07-01/owncase2000–2008/15fields/9own+14generic106bindings,Clark15/36reuse безfetch/find-skills60catalog/OpenAI Docs88nativeworkflow reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-43.md).
+
+Этап106:source-only existing07-02/owncase2009–2017/15fields/23bindings,Clark15/36reuse безfetch/find-skills60catalog/OpenAI Docs88nativeworkflow reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-42.md).
+
+Этап105:read-only firstobservedcalendar79,3fixedreceipts/4ownunits/2boundedjournals;OpenAI Docs88nativeworkflow/find-skills60catalog reused. НовыхUI/React/PDFработ/навыков/установок0. [Отчёт](reports/melodiajest-operations-2026-11-10-105.md).
+
+Этап104:source-only existing01-07/ownrow1013/15fields/1new+14generic103bindings;Clark15/36reuse безfetch,find-skills60catalog/OpenAI Docs88nativeworkflow reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-41.md).
+
+Этап103:source-only existing07-03/ownrow1015/15fields/15bindings,Clark15/36reuse безfetch;OpenAI Docs88nativeworkflow/find-skills60catalog reused. UI/React/PDF-навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-40.md).
+
+Этап102:computer-use SKILL.md/guidance/confirmations прочитаны;BrowserUse применён для реального public79 gueststatus/EnterSpace/390px5lines/screenshot,безMIDI/audio/productionauthwrites. OpenAI Docs nativeautomation workflow reused,пакетов0. [Отчёт](reports/melodiajest-operations-2026-11-10-102.md).
+
+Этап101:read-only2conditionalGET oneasset/304body0/returnedETagdifference preserved,RFC89/96technicalreuse безfreshfetch/JSнеисполнялся. OpenAI Docs88nativeworkflow reused/find-skills60 каталог сохранён;UI/React/PDFнавыки не требовались/пакетов0. [Отчёт](reports/melodiajest-operations-2026-11-10-101.md).
+
+Этап100:source-only existing07-07/ownrow1043/15fields/2new+10generic99bindings,Clark15/36reuse безfetch. OpenAI Docs88nativeworkflow reused/find-skills60 каталог сохранён;UI/React/PDFнавыки не требовались/установок0. [Отчёт](reports/piano-curriculum-2026-11-10-39.md).
+
+Этап99:source-only существующая07-06/11точныхbindings/14literalfields,Clark15/36reuse безfetch;freshfixedreceipts17. OpenAI Docs88nativeworkflow reused/find-skills60 каталог сохранён;UI/React/PDFнавыки не требовались/установок0. [Отчёт](reports/piano-curriculum-2026-11-10-38.md).
+
+Этап98:source-only старая right-held заготовка vs36snapshot,Clark15/36reuse без mediafetch. OpenAI Docs88nativeworkflow reused/find-skills60 каталог сохранён;UI/React/PDFнавыки не требовались/установок0. [Отчёт](reports/piano-curriculum-2026-11-10-37.md).
+
+Этап97:source-only одна старая held-left-bass заготовка,3cached registry-подготовки,Clark15CoordinatingtheHands freshHTML. OpenAI Docs88nativeworkflow reused/find-skills60 каталог сохранён;UI/React/PDF навыки не требовались,установок0. [Отчёт](reports/piano-curriculum-2026-11-10-36.md).
+
+Этап96:read-onlyHTTPcontentencodingoneasset2GET/boundedgzipdecode,JSнеисполнялся/RFC9110§8.4primarytechnicalread. OpenAI Docs88nativeworkflowreused/Find-skills60каталогсохранён/UI-React-PDFнавыкинетребовались/пакетов0. [Отчёт](reports/melodiajest-operations-2026-11-10-96.md).
+
+Этап95/исследование35:source-onlyoldplannedbass/treble34snapshot/Clark14-research26reuse/freshHTMLimagePDFaudio0,новыхrenderer/app/fragmentAPIcalls0. OpenAI Docs88nativeworkflowreused/Find-skills60каталогсохранён/UI-React-PDFнавыкинетребовались/пакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-35.md).
+
+Этап94/исследование34:source-onlyoldplannedtreble/Clark14-research26reuse/freshHTMLimagePDFaudio0,новыхrenderer/app/fragmentAPIcalls0. OpenAI Docs88nativeworkflowreused/Find-skills60каталогсохранён/UI-React-PDFнавыкинетребовались/пакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-34.md).
+
+Этап93/исследование33:source-onlyoldplannedear-echo vsprior31/32,1GIML91reuse/freshHTMLaudio0/applicationcalls0. OpenAI Docs88nativeworkflowreused/Find-skills60каталогсохранён/UI-React-PDFнавыкинетребовались/пакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-33.md).
+
+Этап92/исследование32:source-onlyexistingknowncard/oldplannedear-direction,1GIML91reuse/freshHTML-audio0,новыхappcalls0. OpenAI Docs88nativeworkflow reused/Find-skills60каталогсохранён;UI/React/PDFнавыкинетребовались/пакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-32.md).
+
+Этап91/исследование31:source-onlyexistingearcard+GIMLprimaryinstitutionalHTML,6sourcefiles/1domain snapshot,безappreview/normalization/playback/browser/MIDI. OpenAI Docs88переиспользован дляnativeсинхронизации;Find-skills60каталогсохранён,UI/React/PDFнавыкинетребовались/пакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-31.md).
+
+Этап90/исследование30:PDFskill(openai-primary-runtime/pdf/26.1104.22356)прочитан/применёнread-only,workspace-dependencies located/Poppler/view_image. Старыйp1дляновогоbar15+2crop(первыйобрезан/отклонён,исправленныйполныйпринят),PDF-LYнеfetch/rebuild/noPDFauthoring/пакетов0. OpenAI Docs88переиспользован дляnativeсинхронизации;Find-skills60каталогсохранён,UI/Reactнавыкинетребовались. [Отчёт](reports/piano-curriculum-2026-11-10-30.md).
+
+Этап89:read-onlyHTTPcacheнаблюдение2publicJSON/3GET,RFC9110/9111primaryread. OpenAI Docs88 переиспользован для обновления текста той же автоматизации,nativeполя проверены. Find-skills каталог60 сохранён;UI/React/PDF безизменений/навыкине требовались/пакетов0. [Отчёт](reports/melodiajest-operations-2026-11-10-89.md).
+
+Этап88/исследование29:source-onlyCtextfresh/targetPNG403,visual0/безповторов;PDF/дизайн/React не требовались. Find-skills каталог60 сохранён/пакетов0. Применён OpenAI Docs для синхронизации текста той же автоматизации; [официальная документация](https://learn.chatgpt.com/docs/automations?surface=app),native-инструмент и точная сверка полей,безAPIвызовов/сменырасписания. [Отчёт](reports/piano-curriculum-2026-11-10-29.md).
+
+Этап87 / исследование28:source-only existingevidenceindex/RFC6902fresh/ECMA78reuse;никакихновыхacceptanceplans/applicationtests. Find-skills каталог60 сохранён;UI/React/PDF не менялись/skills не требовались,новыхпакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-28.md).
+
+Этап86 / исследование27:source-only existingCwording/history review,DukeHTMLfresh/Clark26reuse;purepresenter/roundtrip/metadata/app/browser/deviceнеповторялись. Find-skills каталог60 сохранён;UI/React/PDF безизменений,соответствующиеskills не требовались/новыхпакетов0. [Отчёт](reports/piano-curriculum-2026-11-10-27.md).
+
+Этап85 / исследование26:source-only reading-boundary review/Clark§14HTMLfresh,никакихscoreimages/PDF/audio/новыхпакетов. Find-skills каталог60 сохранён;UI/React безизменений,design/React/PDF skills не требовались/неприменялись.4старыхmanualcards толькоSHAreuse,неDOM. [Отчёт](reports/piano-curriculum-2026-11-10-26.md).
+
+Этап84 / исследование25:source-only bounded access attempt,толькоweb metadata/interstitial;PDF/пикселитакта не получены,PDFskill не применялся/visualproof не заявлен. Предыдущая PDF83 запись переиспользована поSHA. Find-skills каталог60 сохранён;UI/React безизменений,design/React skills не требовались,новыхпакетов/плагинов0. [Отчёт](reports/piano-curriculum-2026-11-10-25.md).
+
+Этап83 / исследование24: применён PDF SKILL.md(openai-primary-runtime/pdf/26.1104.22356) read-only,Poppler/view_image,p1+bar3crop;пустаяобластьотклонена/исправлена,p2непросмотрена. Никакого PDF-authoring/установки зависимостей. Find-skills каталог60 сохранён;UI/React не менялись,design/React skills не требовались. [Отчёт](reports/piano-curriculum-2026-11-10-24.md).
+
+Этап82 / исследование23: source-only composite manual protocols,Clark§15/Pierce§7/10/Duke-Simmons fresh,Baylor67/ABRSM80 reuse;find-skills каталог60 сохранён. Новыхskills/плагинов/зависимостей нет;UI/React не менялись,design/React skills не требовались/5строк толькоструктура,неDOM. PDF80 не перезагружался. [Отчёт](reports/piano-curriculum-2026-11-10-23.md).
+
+Этап81 / исследование22: source-only manual protocol,Pierce/Duke-Simmons/Dumlavwalla fresh,Baylor67/ABRSM80 reuse;find-skills каталог60 сохранён. Новыхskills/плагинов/зависимостей нет;UI/React не менялись,design/React skills не требовались/5строк толькоструктура,неDOM. PDF80 не перезагружался. [Отчёт](reports/piano-curriculum-2026-11-10-22.md).
+
+Этап80 / исследование21: PDFskill прочитан (C:/Users/Alexander/.codex/plugins/cache/openai-primary-runtime/pdf/26.1104.22356/skills/pdf/SKILL.md),применён к read-only попытке visual-source verification. Poppler доступен;directdownload403/PDFPNG0,текстwebпрочитан/новыйvisualproof не заявляется. Find-skills каталог60 сохранён;UI/React не менялись,новыхskills/плагинов/зависимостей нет. [Отчёт](reports/piano-curriculum-2026-11-10-21.md).
+
+Этап79 / исследование20: source-only bounded history payload/actual signatures/selected v7 functions;RFC6902 иECMA262 прочитаны. Find-skills каталог60 сохранён,новыхskills/плагинов/зависимостей нет. UI/React не менялись,design/React skills не требовались/браузер не заявляется. [Отчёт](reports/piano-curriculum-2026-11-10-20.md).
+
+Этап78 / исследование19: actual selected v7 normalizers/field expressions/JSON,ECMA262 primary source;find-skills каталог60 сохранён,новыхskills/плагинов/зависимостей нет. UI/React не менялись;frontend-design/web-design-guidelines/React не применялись,браузер не заявляется. [Отчёт](reports/piano-curriculum-2026-11-10-19.md).
+
+Этап77 / исследование18: source-only load/personalization/history, actual pure existing consumers иRFC6902/9110. Find-skills каталог этапа60 сохранён; новыхskills/плагинов/зависимостей нет. UI/React не менялись; frontend-design/web-design-guidelines/React skill не требовались, браузерная проверка не заявляется. [Отчёт](reports/piano-curriculum-2026-11-10-18.md).
+
+Этап76 / исследование17:свой source-only текст02/манифест,4чистые comparison-функции75 без main и actual builder/Quality/UI/shared presenters;Duke/Carnegie свежие,OU/Dueck явно переиспользованы. Find-skills каталог сохранён,новыхskills/плагинов/зависимостей нет,UI-код не менялся/pure strings не browser/design/React proof. [Отчёт](reports/piano-curriculum-2026-11-10-17.md).
+
+Этап75 / исследование16:конкретный source-only текст/манифест,actual builder/Quality/UI/shared presenters и исходный escape callback;Duke/OMT свежие,Dueck/OU/Carnegie явно переиспользованы. Реестр find-skills сохранён,новых skills/плагинов/зависимостей нет. UI-код не менялся;pure HTML strings не browser/design/React применение. [Отчёт](reports/piano-curriculum-2026-11-10-16.md).
+
+Этап74 / исследование15:actual assessment/servicegrader/eventsInput на exactshort,первичные OpenLearn3.3/CarnegieHall HTML. Реестр find-skills сохранён,новых skills/плагинов/зависимостей нет; UI/React не менялись,браузер/дизайн/React применение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-15.md).
+
+Этап73 / исследование14: actual compile/core/capture/transfer и source-trace UI, первичные Dueck/OpenLearn и Duke/Simmons HTML. Реестр find-skills переиспользован; новых skills/плагинов/зависимостей нет. UI не менялся и не проверялся браузером; frontend/design/React применение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-14.md).
+
+Этап72 / исследование13:3 metadata/4 actual start-ветки с synthetic query-spy, свежие OMT/Duke–Simmons HTML и SHA-переиспользование общего XP-контракта71. Каталог find-skills сохранён; новых skills/плагинов/зависимостей нет, UI/React не менялись, дизайн/React применение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-13.md).
+
+Этап71 / исследование12: scoped чтение реальных builder/XP/game/repository/PG-схемы,3 metadata/6 арифметических примеров/4 service-ветки и официальные PostgreSQL18 docs. Реестр find-skills переиспользован; новых skills/плагинов/зависимостей нет, UI/React не менялись и дизайн/React-применение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-12.md).
+
+Этап70 / исследование11:5новыхсинтетическихbaselineactualcore/service,source-traceживоговвода/learning-client/сервера,первичныеWebMIDI/MIDIoverview. Новогопараллельногооценщика/loader/UI/React/skills/плагинов/зависимостейнет;реестрнавыковпереиспользован. [Отчёт](reports/piano-curriculum-2026-11-10-11.md).
+
+Этап69 / исследование10: cached-dataконтекст2принятыхзаписей60/24SHA,трассировкаMap/queues/events, Wiles/Clark23/15 HTML,изображения67переиспользованы. Новыхloader/assessment/UI/React/skills/плагинов/зависимостейнет,реестрнавыковпереиспользован. [Отчёт](reports/piano-curriculum-2026-11-10-10.md).
+
+Этап68 / исследование09: scoped cached-dataконтекст4записей/24исходныхSHA, Clark15/Duke–Simmons прочитаны,нотныеPNG67переиспользованы. Новогоloader/grade/контентаUI/React нет;реестрskillsпереиспользованбезновыхплагинов/зависимостей,дизайн/Reactприменениене приписано. [Отчёт](reports/piano-curriculum-2026-11-10-09.md).
+
+Этап67 / исследование08: реальныйизолированныйloader/7выбранныхзаписей, визуальнаяпроверка2первичныхPNG Baylor, Clark15/Dumlavwalla HTML. Реестр навыков переиспользован; UI/Reactне менялись, новыхskills/плагинов/зависимостей нет, дизайн/Reactприменение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-08.md).
+
+Этап66 / исследование07: scoped source-only трассировка13реальныхпотребителей и metadata-опыт, первичные MusicXML4.0 voice/slur/tied. Реестр project-skills переиспользован; новыхskills/плагинов/зависимостей нет, UI/Reactне меняются, frontend/design/Reactприменение не приписано. [Отчёт](reports/piano-curriculum-2026-11-10-07.md).
+
+Этап65 / исследование06: реальныйизолированныйloader/assessment/servicegrader и первичные Wiles/CarnegieHall/Dumlavwalla;16малыхпробобоснованыновымF-контрактом. Новыхskills/плагинов/зависимостей нет;UI/Reactне меняются,навыкидизайна/Reactнеприписаны. [Отчёт](reports/piano-curriculum-2026-11-10-06.md).
+
+Этап64 / исследование05: переиспользованы точные принятые loader-записи и первичные определения/советы практики; UI/React не менялись, соответствующие навыки неизменному браузеру не приписываются. Новых skills/плагинов/зависимостей нет. [Отчёт](reports/piano-curriculum-2026-11-10-05.md).
+
+Этап63 / исследование04: один запрос к реальным450учебным/явнымпальцам,прочитаны Kovarsky/Clark и ограниченные knownreceipts. Установка skills/плагинов/зависимостей не требовалась; UI/React не меняются, дизайн/React-навыки неизменному браузеру не приписываются. [Отчёт](reports/piano-curriculum-2026-11-10-04.md).
+
+Этап62 / исследование03: применены первичные определения/педагогический текст и реальный изолированный loader. Новых skills/плагинов/зависимостей нет; исходный проектный каталог навыков сохранён. Изменений UI/React нет, соответствующие дизайн/React-навыки к неизменному браузеру не приписываются. [Отчёт](reports/piano-curriculum-2026-11-10-03.md).
+
+Этап61 / исследование02: использованы первичные учебные страницы и реальный изолированный loader/оценщик. Каталог проектных навыков из60 сохранён; новых skills/плагинов/зависимостей нет. Source-only редактура не меняет UI/React; frontend-design/web-design-guidelines/React не объявлены применёнными к неизменному интерфейсу. [Отчёт](reports/piano-curriculum-2026-11-10-02.md).
+
+Этап60 / исследование2026-11-10-01: прочитан проектный find-skills, открыт skills.sh; использован существующий каталог навыков. Новых навыков/плагинов/зависимостей не установлено. Для source-only исследования требуются первичные учебные страницы, а UI/React не меняются; frontend-design/web-design-guidelines/React не объявлены применёнными к неизменному браузеру. [Отчёт](reports/piano-curriculum-2026-11-10-01.md).
+
+Партия13 /фаза49: прочитаны find-skills, frontend-design и web-design-guidelines; получен свежий официальный Vercel command.md. Переиспользуется существующая пианистическая карточка для одного левого контроля и двух собственных подготовок. Проверяются H2-focus, мышь/Enter/пробел, пять строк на390px, три memory-состояния без подсказок вDOM и authenticated hidden-reload после serverack. Палитра, типографика и CSS не меняются; React/Next и новые зависимости/плагины не вводятся. [Отчёт](reports/piano-curriculum-2026-11-09-13.md).
+
+Фазы34–35:ранее прочитанные find-skills/frontend-design/web-design-guidelines применены к1новой карточке/1H2-переходу/Enter/пробелу/мыши/5строкам390px/3memory-состояниям. Публичный account-only guest reset сохранён как отдельный UX-пункт. React/Next/плагины/зависимости не менялись. [Отчёт](reports/melodiajest-operations-2026-11-09-35.md).
+
+Фазы32–33: ранее прочитанные find-skills/frontend-design/web-design-guidelines применены к2 карточкам,3H2-переходам,Enter/пробелу/мыши,5строкам/390px и6memory-состояниям. В браузере найдена и исправлена старая ложная предпосылка в тексте дуги;0новых уроков,React/Next/плагины/зависимости не менялись. [Отчёт](reports/melodiajest-operations-2026-11-09-33.md).
+
+Выпуск31: повторная публичная проверка неизменной карточки фазы30 по ранее прочитанным frontend-design/web-design-guidelines:5строк/390px,Enter/пробел/мышь,2H2-focus,сохранённый возврат practice/compact. React/Next/плагины/зависимости не менялись. [Отчёт](reports/melodiajest-operations-2026-11-09-31.md).
+
+Партия2026-11-09-05: ранее прочитанные find-skills/frontend-design/web-design-guidelines/PDF применены к первоисточнику Clark,карточке с пятью строками на390px,мышью/Enter/пробелом,2 фокусамиH2 и3memory-состояниями без hintsDOM. React/Next/зависимости не менялись. [Проверенный локальный кандидат](reports/piano-curriculum-2026-11-09-05.md).
+
+Партия2026-11-09-04/выпуск68: find-skills каталог, frontend-design/web-design-guidelines/PDF, первичный Vercel command.md. Сохранены прежний дизайн, пять строк на390px, мышь/Enter/пробел, четыре фокуса H2 и шесть memory-настроек без hints DOM. React/Next/зависимости не менялись. [Проверки](reports/piano-curriculum-2026-11-09-04.md).
+
+Партия2026-11-09-03/выпуск67: find-skills каталог, frontend-design/web-design-guidelines/PDF, первичный Vercel command.md. Сохранены прежний дизайн, пять строк на390px, мышь/Enter/пробел, четыре фокуса H2 и шесть memory-настроек без hints DOM. React/Next/зависимости не менялись. [Проверки](reports/piano-curriculum-2026-11-09-03.md).
+
+Партия2026-11-09-02/выпуск66: прочитаны frontend-design,web-design-guidelines/PDF; использован прежний find-skills каталог, свежий Vercel command.md. Сохранены дизайн пюпитра/палитра/типографика,5строк на390px, Enter/пробел/мышь, фокус4подготовок и6memory-настроек без hintsDOM. React/Next/зависимости/новые плагины не менялись. [Доказательства](reports/piano-curriculum-2026-11-09-02.md).
+
+Фаза25: существующий find-skills перечитан для выбора уместного инструментария; дополнительных навыков/зависимостей/плагинов не требуется. Изменены только own backup/health workers и их тесты. Дизайн/React/Next и браузерные файлы не менялись, поэтому frontend-design/web-design-guidelines повторно не применялись. [Результат](reports/melodiajest-operations-2026-11-08-25.md).
+
+Партия2026-11-09-01 /выпуск65: из существующего каталога find-skills использованы PDF, frontend-design и web-design-guidelines; свежий первичный Vercel command.md прочитан. Сохранены существующие стиль/карточка, пять строк на390px, Enter/пробел/мышь, четыре подготовки с фокусомH2 и отсутствие подсказок во всех шести сочетаниях памяти. React/Next и зависимости не менялись, новые навыки/плагины не устанавливались. [Проверки и происхождение](reports/piano-curriculum-2026-11-09-01.md).
+
 В [эксплуатационной фазе 2026-11-08-01](reports/melodiajest-operations-2026-11-08-01.md) переиспользованы прочитанные find-skills, frontend-design и web-design-guidelines; заново прочитан первичный Vercel command.md. Стенд сохраняет палитру проекта, явную semantic button, focus-visible, aria-live=polite и перенос длинного JSON. Computer Use подтвердил Enter, кнопку 44 px и отсутствие горизонтальной прокрутки при 390 px; 18 native сценариев прошли. React/Next не менялись, новые навыки/плагины/зависимости не устанавливались. Первичные правила IndexedDB перечитаны для commit/rollback и очереди readwrite; значения форматов и лимитов остаются решениями проекта.
 
 В [учебной партии 50](reports/piano-curriculum-2026-11-07-50.md) применены прочитанные find-skills/frontend-design/web-design-guidelines; проверены skills.sh и свежий Vercel command.md. Существующая карточка уточняет левую аппликатуру 5–1, подготовку и отдельную память, не добавляя декоративных элементов. Duke/Simmons, Dumlavwalla, Hutchinson и авторская рукопись Chaffin/Imreh/Crawford прочитаны для выбранного урока; границы исследования опытной пианистки обозначены. Браузерная проверка клавиатуры, фокуса, пяти строк и скрытого DOM записывается отдельно. React/Next, общая гитарная карточка, новые плагины и зависимости не затронуты.
@@ -212,3 +376,40 @@ CLI-поиск backup/restore без установки в партии 01 за�
 
 
 В фазе2026-11-08-22 применены прочитанные find-skills, frontend-design, web-design-guidelines и Computer Use. Поиск навыков/актуальные Vercel guidelines не потребовал установки. Дизайн: музыкальная дорожка, CSS-клавиатура, mint/purple/gold, system/Bahnschrift, семантические dialogs/buttons, focus-visible и reduced-motion. Проверены public+isolated paths, mobile390px, история и Enter/пробел; viewport сброшен, screenshot сохранён в reports/assets. React best practices учтён по фактическому стеку: React/Next не переносились и преимущества такого переноса не заявляются. Для PostgreSQL установлен единственный закреплённый pg8.23.1 в отдельном service-пакете; корневые npm-зависимости не требуются. Подробности и первичные источники — отчёт22/GAME_SERVICE.
+
+Партия 9 ноября08 / фаза39: переиспользованы прочитанные find-skills, frontend-design и web-design-guidelines для сохранения пятистрочного preview, раскрытия, фокуса подготовки, постоянного authenticated вида и отсутствия подсказок в DOM памяти. Новый дизайн/React/Next/зависимости не вводились. Источники, техническая самопроверка и MIDI-зачёт явно разграничены; перенос регистра не раздут до новой цели.
+
+Партия09 / фаза41: прочитанные find-skills/frontend-design/web-design-guidelines переиспользованы для1контрольной карточки/1перехода,H2-focus,Enter/пробела/мыши,5строк390px и3memory безDOM. НовыхCSS/React/Next/плагинов/зависимостей нет;ручная готовность не выдана за автоматический зачёт.
+
+Партия10 / фаза43: перечитан web-design-guidelines,получен актуальный официальный vercel-labs command.md. Для прежнего пианистического компонента проверены семантическое раскрытие мышью/Enter/пробелом,фокус2подготовок,5строк390px,3memory безDOM и authenticated hidden-reload. Читанные ранее find-skills/frontend-design переиспользованы по существующему направлению;новый дизайн/React/Next/зависимости/плагины не вводились. Музыкальный первоисточник прочитан отдельно;настоящая физическая готовность не заявляется.
+
+Партия11 / фаза45:прочитанные find-skills/frontend-design/web-design-guidelines переиспользованы для прежнего пианистического компонента;актуальный официальный Vercel command.md получен. Проверяются1карточка/1подготовка,H2-focus,раскрытие мышью/Enter/пробелом,5строк390px,3memory безDOM и authenticated hidden-reload. НовогоCSS/React/Next/зависимостей/плагинов нет;музыкальный первоисточник прочитан отдельно.
+
+Фаза46:переиспользованы прочитанные find-skills/frontend-design/web-design-guidelines и прежняя карточка45. Computer Use подтвердил публичные1карточку/1подготовку,H2-focus,мышь/Enter/пробел,390px/5строк/0console.3localmemory/authenticatedhidden-reload45 переиспользованы по450точнымruntime/testфайлам. CSS/React/Next/зависимости/плагины не менялись. Guesthiddenreloadcompact остаётсяUX-очередью;отдельноеaccount-onlyсообщение в trainer.html визуально не подтверждено в46.
+
+Партия12/фаза47:прочитанныеfind-skills/frontend-design/web-design-guidelines переиспользованы,актуальныйVercelcommand.md получен. Проверяется1контрольнаякарточка/1подготовка,H2-focus/Enter/пробел/мышь,5строк390px,3memoryбезDOM иauthenticatedhiddenreload;новыйCSS/React/Next/зависимости/плагины невводятся.
+
+Фаза48:переиспользованы прочитанныеfind-skills/frontend-design/web-design-guidelines икарточка47. ComputerUse подтвердилпубличные1контроль/1подготовку,H2-focus/мышь/Enter/пробел/390px/5строк/0console;3localmemory/authenticatedhiddenreload47 переиспользованы по452точнымфайлам. НовогоCSS/React/Next/зависимостей/плагинов нет. Сборка не объявлена новоймоторнойцелью,реальноеисполнение/педагогнепроверялись.
+
+Фаза50: ранее прочитанные find-skills/frontend-design/web-design-guidelines применены к публичной карточке77:2подготовки,H2-focus,Enter/пробел/мышь,390px/5строк,0console;3localmemory/hiddenreload49 переиспользованы по454байтовым совпадениям. Ресурсный исполнитель отдельно проверен8network-none/nonroot Linux сценариями. CSS/React/Next/плагины/зависимости не менялись.
+
+
+Партия14/фаза55:прочитан web-design-guidelines и свежий официальный Vercel command.md;frontend-design применён к сохранению прежнего компонента без CSS/React/Next/зависимостей. ComputerUse попытка завершилась отказом attach/CDP/inventory;проверка UI этой партии НЕпройдена и остаётся publicationgate. Find-skills не потребовал установки. 1238npm/4аудита не выдаются за браузер/MIDI/педагога. См.отчёты14/55 и QA55-browser.
+
+
+Фаза56:свежо получены официальные Vercel web-interface-guidelines;прочитанные frontend-design/find-skills/ComputerUse применены к той же карточке78. Local+public1карточка/2подготовки/H2focus/Enter/Space/мышь/390px5строк/0console;3localmemory безDOM/authenticated hiddenreload послеDOMack. Видимость serverack не подтверждена/следующий UX-этап. CSS/React/Next/плагины/зависимости не менялись;старый отказ55 не выдан за регрессию и разрешён свежим QA.
+
+Фаза57:find-skills/frontend-design/web-design-guidelines/ComputerUse применены к существующемуplayer. Прочитаны официальный Vercelcommand.md иW3CUnderstandingSC4.1.3. Один существующийARIAstatusузел вынесен ввидимыйmain,atomic/plaintext;keyboard/memory/hiddenreload/guestpolicy/390px обоихрежимов подтверждены. Новые зависимости/плагины/React/Next не вводились;screenreader/WCAGсертификация не заявляются.
+
+
+Партия2026-11-11-01/фаза111:прочитан локальный web-design-guidelines и свежий официальный Vercel command.md;проверены сохранение состояния,доступный прежний переключатель и видимое сообщение об отказе хранения. Реализованы два ритмических урока и сохранение только неперсонального гостевого вида разбора. React/Next/CSS/зависимости/плагины не добавлялись. Новый ComputerUse26.1103.60933 прочитан;CUA обнаружил отсутствие браузерного подключения,нативный AX недоступен,захват67110 дважды завершился тайм-аутом. Вкладка точной локальной сборки поставлена в очередь черезopen_in_codex. Браузерная проверка и публикация пока не подтверждены;статические/VM/MIDI-проверки не объявляются браузером или педагогической экспертизой.
+
+
+## Навыки этапа213
+
+docs/reports/melodiajest-operations-2026-11-15-213.md:optionalNextp7/p8/p9исправлен/0newlessons/559learning535upperonly185music74localunchanged/2308full2attempts(first2307pass1fail_thenPASS)/73uniquetargets67+67+14+20(первыйtarget66pass1fail иfirstfull2307pass1failpreserved)/firstredtestfixtureНЕbyteexactoriginalsсохранены/metadata+append-safecontractcorrections/oldtestlogic1semanticguitarcontract/4freshаудита/service53+7Windowsfresh/build/BrowserSDK9+mobile/0SDKerrors/focusretentionнеисправлена/freshweb-design-guidelines/безReactdepsguitar/serverchanges/manualPGS3restore0/до1000локально. Next214THREEpreparedLHgoals/TWOnewcontacts/sourceplan15appsnotcounted;historicalmandatorycountformulacorrectionbefore214redrequiredwithoriginalpreserved.
+
+
+## Навыки этапа214
+
+docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclasses+1integration/562learning538upperonly/distinctnullteacher0/2338fullPASSattempt2(first2337pass1fail)/83target+14focused97unique2invocations/4freshaudits/service53+7Windows/build/BrowserSDK3cases0SDKerrors/84mainNext264oldoptionalNext295main/121rules0new15apps3freshREAD12reuseREAD15existingRULE/1freshHTML2sourceJPGreused/8fullpreprefs+actual3structure3card3personaledit+pedagogy0+historicalcountBEFOREred/model2attemptsreader1correction/30red3PASS27FAILwholeexact/oldtestlogic2(1BEFOREred+1AFTERfirstfull)/pretargetreader1/nativepathcollision1/noafterredmusictestcorrections/twofullattempts-final2338PASS/186music75local/public100previous99/до1000локально/manualPGS3restore0. Web-design-guidelinesfreshVercel/officialBrowserSDK/ReactCSSdeps0;onefulltitlemanualscroll/1earlynativeexcluded/Nextfocusretentionnotfixed. Next215threepreparedRHcombinationsEflatmajor/0newglobalmotorclasses;coveredAb4Bb4/34rejectedasnewmotor,7refs7unique,notimplementedyet.

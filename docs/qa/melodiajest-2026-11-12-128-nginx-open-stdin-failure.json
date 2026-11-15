@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-12T06:44:52.735090+00:00",
+  "kind": "real-pinned-nginx-disposable-unix-upstream",
+  "mode": "before",
+  "testSha256": "0e2c08a1e3aee5b85fc8935bb84577aec51962361a025c33dfb2641b475bea4d",
+  "configSha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+  "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+  "returnCode": 1,
+  "ran": 13,
+  "durationSeconds": 105.223,
+  "failures": 13,
+  "errors": 0,
+  "logSha256": "f5675f3514869d8f0790bffc866db56e497348313454bb35ff04fdbe94bfe5ff",
+  "remoteLog": "/opt/melodiajest/ops/course-128-01c5a1f0723d/proxy-cache-validation-v4/before.log",
+  "caps": {
+    "network": "none",
+    "memoryMiB": 64,
+    "cpus": 0.25,
+    "pids": 64,
+    "readOnly": true,
+    "capDrop": "ALL",
+    "tmpfsMiB": 16
+  },
+  "productionSocketMounted": false,
+  "productionMutations": false,
+  "newServicesStarted": 0,
+  "ownTestContainersStoppedAndRemoved": true,
+  "assertionsWeakened": false,
+  "status": "nc-open-stdin-timeout-not-final-red",
+  "reason": "Holding stdin open made nc wait indefinitely;bounded per-case timers killed thirteen clients. Replace only transport with hostHTTP client over extra fixture-only Unix listener;all production config directives and thirteen assertions retained before implementation."
+}

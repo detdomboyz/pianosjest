@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto'),vm=require('node:vm');
 const {loadApp}=require('./helpers/load-app.cjs'),A=require('../practice-assessment.js'),P=require('../piano-lesson-development.js'),fixture=require('./fixtures/piano-c-major-scales-v1.json');
-const app=loadApp(),copy=x=>x===undefined?undefined:JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex'),ids=fixture.lessons.map(x=>x.id),units=ids.map(id=>app.lessons.find(l=>l.id===id)),adapter={normalizeGuide:app.normalizeLessonGuide};
+const app=loadApp(),copy=x=>x===undefined?undefined:JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(JSON.stringify(require('./helpers/piano-right-legato-history.cjs').project(x))).digest('hex'),ids=fixture.lessons.map(x=>x.id),units=ids.map(id=>app.lessons.find(l=>l.id===id)),adapter={normalizeGuide:app.normalizeLessonGuide};
 function events(l,mode='clean'){
  const beat=60000/l.rhythm.practiceBpm,out=[];l.rhythm.steps.forEach((s,j)=>{const midi=app.stepMidiList(l.steps[j])[0]+(j===1?(mode==='wrong-note'?1:mode==='wrong-register'?12:0):0),shift=mode==='close-rest'&&s.startBeat>=(l.id.endsWith('01')?4:6)?1:0,start=s.startBeat-shift,duration=mode==='short-last'&&j===l.steps.length-1?.1:mode==='gap'?.3:s.durationBeats;out.push({type:'on',source:'midi',midi,at:1000+start*beat},{type:'off',midi,at:1000+(start+duration)*beat});});
  if(mode==='repeat-top'){const midi=app.stepMidiList(l.steps[7])[0];out.push({type:'on',source:'midi',midi,at:1000+7.3*beat},{type:'off',midi,at:1000+7.6*beat});}
@@ -18,7 +18,7 @@ test('instruction migration archives full prior teaching once and rejects person
   const ordered=copy(old.lesson);ordered.order=987;assert.equal(P.reviewCMajorScales([ordered],adapter),1);assert.equal(ordered.order,987);
  }
 });
-test('all578 music payloads,574 other complete records, order, baseline and guitar route remain exact',()=>{
+test('all578 music payloads,574 other complete historical records, order, baseline and guitar route remain exact',()=>{
  const historicalIds=new Set(fixture.catalog.map(l=>l.id));assert.deepEqual(copy(app.lessons.filter(l=>historicalIds.has(l.id)).map(l=>l.id)),fixture.catalog.map(l=>l.id));
  for(const old of fixture.catalog){const l=app.lessons.find(x=>x.id===old.id);assert.equal(hash({steps:l.steps,rhythm:l.rhythm,fingeringSpec:l.fingeringSpec,contentKind:l.contentKind}),old.musicSha256,old.id);assert.equal(A.pianoSignature(l),old.grade,old.id);assert.equal(l.order,old.order);assert.equal(l.themeId,old.themeId);if(!ids.includes(l.id))assert.equal(hash(l),old.fullRecordSha256,old.id);}
  assert.equal(crypto.createHash('sha256').update(fs.readFileSync('lesson-review-baseline.js')).digest('hex'),fixture.protectedBaselineSha256);const c={};vm.runInNewContext(fs.readFileSync('curriculum-plan.js','utf8'),c);assert.equal(hash(c.MUSIC_CURRICULUM_PLAN.guitar),fixture.guitarRouteSha256);

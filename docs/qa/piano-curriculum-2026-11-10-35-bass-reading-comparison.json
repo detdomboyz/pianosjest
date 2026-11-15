@@ -1,0 +1,525 @@
+{
+  "kind": "source-only-existing-bass-reading-versus-existing-treble-plan",
+  "phase": "95",
+  "batch": "2026-11-10-35",
+  "checkedAt": "2026-11-10T16:02:02.415394+00:00",
+  "status": "existing-bass-plan-boundaries-confirmed-no-readiness-change",
+  "existingProposal": {
+    "file": "docs/piano-skill-coverage.json",
+    "sourceFileSha256AtRead": "df93005d2399caccb8d08ce8b5c0a9bd341f32eecc9963d200e2e1291b879b39",
+    "jsonPointer": "/plannedLessons/5",
+    "snapshot": {
+      "planVersion": 1,
+      "coverageDomain": "ear-transfer",
+      "stage": "p2",
+      "lessonBlockMinutes": [
+        3,
+        5
+      ],
+      "assessmentStatus": "not-implemented",
+      "reviewStatus": "planned-source-and-data-reviewed-needs-fresh-bank-and-course-gates",
+      "provenance": {
+        "type": "project-technical-drill",
+        "author": "Проект MelodiaJest",
+        "sourceNote": "Собственные демонстрационные последовательности; ноты, пальцы, 56 BPM и протокол проекта не предписаны RCM/ABRSM. Это не копии экзаменационных примеров и не уроки, утверждённые авторами источников."
+      },
+      "targetBpm": 56,
+      "timingNotice": "По одной доле на событие в ознакомительном звуковом образце при 56 BPM. В первых пробах можно останавливаться для ответа; темп реакции не является зачётом чтения или слуха. Перед новым нажатием повторной ноты отпусти клавишу.",
+      "nextDay": "После перерыва и на следующий день выбрать другой ещё не показанный/не прослушанный здесь элемент. Известный элемент повторяется как практика, с сохранением отдельного статуса.",
+      "id": "detail-p-read-bass-01",
+      "title": "Чтение: первые три ориентира в басовом ключе",
+      "goalKey": "reading.bass.c3-e3.pitch-to-key",
+      "goal": "Соотнести C3–D3–E3 на нотном стане с уже знакомыми клавишами левой руки и сыграть новую короткую последовательность. Это начальная подготовка чтения высот, не зачёт чтения целой пьесы.",
+      "after": "course03-02",
+      "requires": [
+        "course03-02",
+        "detail-p-release-02"
+      ],
+      "hand": "left",
+      "targetMidis": [
+        48,
+        50,
+        50,
+        52
+      ],
+      "targetFingers": [
+        5,
+        4,
+        4,
+        3
+      ],
+      "targetNotes": [
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 1,
+          "durationBeats": 1
+        },
+        {
+          "midi": 50,
+          "hand": "left",
+          "finger": 4,
+          "startBeat": 2,
+          "durationBeats": 1
+        },
+        {
+          "midi": 52,
+          "hand": "left",
+          "finger": 3,
+          "startBeat": 3,
+          "durationBeats": 1
+        }
+      ],
+      "newMovement": "Перевести положение головки на линейке/между линейками через ключ в конкретную клавишу, сохраняя собственную позицию руки.",
+      "application": "Начать разбор новой записи по нотному стану; позднее добавить непрерывный ритм и более широкий диапазон.",
+      "distinctFrom": "Текущий холст показывает QWERTY/время и известный каталог, но не обучает чтению по линейкам и ключу. Здесь C3 во втором промежутке, D3 на средней (третьей) линейке, E3 в третьем промежутке. Басовый ключ имеет другую опорную высоту; правая рука не является обязательной подготовкой левой.",
+      "notation": {
+        "clef": "bass",
+        "staffLines": 5,
+        "positionUnit": "diatonic half-space, bottom line = 0, upward positive",
+        "anchor": {
+          "midi": 53,
+          "position": 6
+        },
+        "pitchPositions": [
+          {
+            "midi": 48,
+            "position": 3,
+            "ledger": false
+          },
+          {
+            "midi": 50,
+            "position": 4,
+            "ledger": false
+          },
+          {
+            "midi": 52,
+            "position": 5,
+            "ledger": false
+          }
+        ],
+        "clefDoesNotAssignHand": true
+      },
+      "assessmentProtocol": {
+        "version": 1,
+        "kind": "notation-to-key",
+        "response": "midi-pitch-sequence",
+        "firstExposureRequired": true,
+        "trackExposure": true,
+        "excludeDemonstrationsFromAssessment": true,
+        "responseBeforeReveal": true,
+        "assistedItemsPracticeOnly": true,
+        "repeatedItemsPracticeOnly": true,
+        "freshnessLimit": "Учитывать все опубликованные встроенные фразы курса и произведений, включая точные одноголосные окна, и местную историю показов. Текущий банк уже опубликован и доступен только для практики; знакомство в частных редакциях и вне сервиса неизвестно.",
+        "exhaustedPool": "practice-only; не выдавать повтор известного задания за новое",
+        "scoring": "Только соответствие видимых нотных позиций порядку сыгранных высот. Паузы для называния допустимы; скорость реакции и ритмическая непрерывность не зачтены.",
+        "accessibleAlternative": "Текстовое называние высот доступно как отдельная практика с явной отметкой; его не выдавать за визуальное чтение нотного стана.",
+        "excludePublishedCatalogWindows": true
+      },
+      "itemPool": {
+        "midis": [
+          48,
+          50,
+          52
+        ],
+        "events": 4,
+        "stepwise": true,
+        "oneDirection": true,
+        "allowRepeatedNotes": true,
+        "examplesArePracticeOnly": true
+      },
+      "requiresModel": [
+        "staff-clef-ledger-renderer",
+        "item-exposure-history",
+        "notation-only-first-reading-mode",
+        "separate-reading-progress",
+        "preparation-fragment-completion",
+        "published-catalog-exclusions",
+        "preparation-fragment-tempo-adaptation-v1"
+      ],
+      "practiceSteps": [
+        "Подготовка: найди C3–D3–E3 отдельно левой 5–4–3. Объясни пять линеек и промежутки, затем ключ: F3 на четвёртой линейке снизу. От неё вниз E3 в промежутке, D3 на средней линейке, C3 в следующем промежутке. Ключ сам по себе не назначает руку; здесь рука выбрана явно.",
+        "Медленно назови и сыграй открытый рисунок C3–D3–D3–E3, 5–4–4–3. Повторная высота получает новое нажатие. Можно остановиться перед каждым звуком. На этапе знакомства счёт по одной доле помогает, но не превращает нахождение высоты в экзамен ритма.",
+        "Блок 3–5 минут: сначала названия и клавиши с помощью, затем другая ещё не открытая последовательность на стане. В первой пробе остаётся стан; заранее не звучит мелодия, нет QWERTY, имён высот и следующих клавиш с подсветкой. После ответа можно раскрыть разбор. Новая проба после перерыва и завтра использует другую запись; первая запись остаётся практикой."
+      ],
+      "selfCheck": [
+        "Верно прочитан ключ, линейки считаются снизу; имена не взяты из QWERTY.",
+        "Сохраняется левая рука в своей позиции; пальцы проверяются самостоятельно, MIDI их не видит.",
+        "Для каждого повтора C, D или E клавиша освобождена и нажата заново. Пальцы и спокойное движение проверены отдельно; MIDI их не распознаёт.",
+        "Новую запись не слушал и не раскрывал до ответа; знакомый или подсказанный рисунок имеет статус практики."
+      ],
+      "typicalErrors": [
+        "Считать линейки сверху или пропустить промежуток.",
+        "Перенести номера пальцев другой руки или принять отсутствие подписи за режим памяти."
+      ],
+      "hearingModel": "При ознакомлении послушай поступенное движение с повтором средней высоты; перед первой пробой новой записи мелодия не проигрывается.",
+      "transfer": {
+        "goal": "Повтор перемещён к первой высоте: C3–C3–D3–E3, 5–5–4–3. Это опубликованная проба переноса, а не неизвестный элемент будущего банка.",
+        "notes": [
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 0,
+            "durationBeats": 1
+          },
+          {
+            "midi": 48,
+            "hand": "left",
+            "finger": 5,
+            "startBeat": 1,
+            "durationBeats": 1
+          },
+          {
+            "midi": 50,
+            "hand": "left",
+            "finger": 4,
+            "startBeat": 2,
+            "durationBeats": 1
+          },
+          {
+            "midi": 52,
+            "hand": "left",
+            "finger": 3,
+            "startBeat": 3,
+            "durationBeats": 1
+          }
+        ]
+      },
+      "candidateEvidenceIds": [
+        "ou-staff-clefs-2026-11-06",
+        "rcm-sight-reading-2026-11-06",
+        "rcm-piano-musicianship-2022-2026-11-06",
+        "abrsm-reading-aural-2025-26-2026-11-06",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "createdInBatch": "2026-11-06-19",
+      "report": "docs/reports/piano-curriculum-2026-11-06-19.md",
+      "preparationFragments": [
+        {
+          "lessonId": "course03-06",
+          "firstStep": 0,
+          "lastStep": 4,
+          "goal": "Отдельно повторить C–D–D–E–E в своей позиции: пальцы 4 и 3 должны давать новые атаки на D и E.",
+          "requiredBeforeAssessment": true,
+          "adaptation": {
+            "version": 1,
+            "id": "three-note-repeat-preparation-v1",
+            "kind": "project-training-adaptation",
+            "targetBpm": 56,
+            "rationale": "Отдельная моторная подготовка C–D–D–E–E в темпе 56 BPM будущего образца чтения. Сохраняются пять исходных высот, четвертные длительности и пальцы своей руки; сокращается только область, темп исходника 62/60 не переписывается. Это техническая адаптация проекта, знакомая практика, без зачёта полного урока или независимого чтения/слуха."
+          }
+        }
+      ],
+      "musicalReview": {
+        "batch": "2026-11-06-23",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "goal": "Чтение трёх подготовленных высот отдельно от разучивания готового рисунка и моторной тренировки.",
+        "prerequisiteCorrection": "Трёхпальцевый возврат course03-02 заменяет избыточную пятипальцевую фигуру вверх. Для повторов D/E отдельно нужна подготовка указанного фрагмента; автоматический зачёт фрагмента пока не подключён.",
+        "pitches": [
+          48,
+          50,
+          50,
+          52
+        ],
+        "fingers": [
+          5,
+          4,
+          4,
+          3
+        ],
+        "register": "C3–E3",
+        "notationPositions": [
+          3,
+          4,
+          4,
+          5
+        ],
+        "bankFinding": "Все шесть текущих шаблонов каждого ключа обнаружены в опубликованном каталоге; восемь прежних локально новых вариантов не являются независимым новым материалом.",
+        "deferredTransfer": "После перерыва можно сменить известную фразу как практику; независимый перенос потребует иной ещё не опубликованной и подготовленной записи.",
+        "teacherReviewed": false,
+        "physicalInstrumentReviewed": false,
+        "report": "docs/reports/piano-curriculum-2026-11-06-23.md"
+      },
+      "preparationFragmentReview": {
+        "batch": "2026-11-06-26",
+        "reviewedOn": "2026-11-06",
+        "status": "project-source-and-data-review; not-independent-teacher-review",
+        "sourceLessonId": "course03-06",
+        "range": "0–4 inclusive",
+        "sourceBpm": 60,
+        "adaptedBpm": 56,
+        "sourceEvidenceIds": [
+          "duke-simmons-small-goals-2026-11-05",
+          "kovarsky-fingering-context-2026-11-05"
+        ],
+        "limits": "API оценки и отдельного журнала проверены; экран/захват фрагмента и допуск чтения ещё не подключены. Не новый урок и не перенос в неизвестную фразу."
+      }
+    },
+    "snapshotSha256": "25a1b811d52eb4f6a29b34f13740bf18212164e895ab9a69d9919c2fee6d5115",
+    "entireMutableQueueFileNotClaimedUnchanged": true,
+    "presentInRegistry": false
+  },
+  "priorTrebleComparison": {
+    "file": "docs/qa/piano-curriculum-2026-11-10-34-treble-reading-comparison.json",
+    "sha256": "2a1b384f8c9585b5a3bc46207439755973e9c3064ec4cf4fbf3d0247cae942c3",
+    "unchangedTrebleSnapshotSha256": "8b98a00417d1dba1cbf3002c2b6fd443f7c656d5a49aec04fb38ec8a3c6ecc03",
+    "presentInRegistry": false
+  },
+  "registryBinding": {
+    "file": "service/course-registry.json",
+    "sha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "bothReadingProposalsAbsent": true
+  },
+  "comparison": {
+    "bassGoalKey": "reading.bass.c3-e3.pitch-to-key",
+    "trebleGoalKey": "reading.treble.c4-e4.pitch-to-key",
+    "sameGoalKeys": false,
+    "bassTargetNotes": [
+      {
+        "midi": 48,
+        "hand": "left",
+        "finger": 5,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 50,
+        "hand": "left",
+        "finger": 4,
+        "startBeat": 1,
+        "durationBeats": 1
+      },
+      {
+        "midi": 50,
+        "hand": "left",
+        "finger": 4,
+        "startBeat": 2,
+        "durationBeats": 1
+      },
+      {
+        "midi": 52,
+        "hand": "left",
+        "finger": 3,
+        "startBeat": 3,
+        "durationBeats": 1
+      }
+    ],
+    "trebleTargetNotes": [
+      {
+        "midi": 60,
+        "hand": "right",
+        "finger": 1,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 1,
+        "durationBeats": 1
+      },
+      {
+        "midi": 62,
+        "hand": "right",
+        "finger": 2,
+        "startBeat": 2,
+        "durationBeats": 1
+      },
+      {
+        "midi": 64,
+        "hand": "right",
+        "finger": 3,
+        "startBeat": 3,
+        "durationBeats": 1
+      }
+    ],
+    "bassEventPositions": [
+      3,
+      4,
+      4,
+      5
+    ],
+    "trebleEventPositions": [
+      -2,
+      -1,
+      -1,
+      0
+    ],
+    "bassClefAnchor": {
+      "midi": 53,
+      "position": 6
+    },
+    "trebleClefAnchor": {
+      "midi": 67,
+      "position": 2
+    },
+    "bassDeclaredLedgerFlags": [
+      false,
+      false,
+      false
+    ],
+    "trebleDeclaredLedgerFlags": [
+      true,
+      false,
+      false
+    ],
+    "existingPitchDifferencesSemitones": [
+      -12,
+      -12,
+      -12,
+      -12
+    ],
+    "transpositionOrHandOrFingeringAdaptationInvoked": false,
+    "sameRelativeContourDoesNotProveLearnerTransfer": true,
+    "bassOwnPrerequisites": [
+      "course03-02",
+      "detail-p-release-02"
+    ],
+    "bassFragmentSourceBpm": 60,
+    "trebleFragmentSourceBpm": 62,
+    "bothAdaptedBpmProjectChoice": 56,
+    "publishedBassTransferNotes": [
+      {
+        "midi": 48,
+        "hand": "left",
+        "finger": 5,
+        "startBeat": 0,
+        "durationBeats": 1
+      },
+      {
+        "midi": 48,
+        "hand": "left",
+        "finger": 5,
+        "startBeat": 1,
+        "durationBeats": 1
+      },
+      {
+        "midi": 50,
+        "hand": "left",
+        "finger": 4,
+        "startBeat": 2,
+        "durationBeats": 1
+      },
+      {
+        "midi": 52,
+        "hand": "left",
+        "finger": 3,
+        "startBeat": 3,
+        "durationBeats": 1
+      }
+    ],
+    "historicalBankAndApiEvidenceNotCurrentAuditOrNewCalls": true,
+    "plannedMeterAndProfileAbsentNotFabricated": true
+  },
+  "sourceReuse": {
+    "sourceId": "clark-sight-reading-process-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "clark-sight-reading-process-2026-11-10",
+      "author": "Michael Clark",
+      "title": "Baylor Piano Basics,14. Sight-Reading",
+      "url": "https://openbooks.library.baylor.edu/pianobasics/chapter/sight-reading/",
+      "resourceType": "primary-pedagogical-web-chapter",
+      "edition": "Baylor University open textbook,copyright2026",
+      "section": "Sight-Reading Tips before14.1; first read-through and subsequent reread/transpose paragraph",
+      "verifiedOn": "2026-11-10",
+      "evidence": "Sight-Reading Tips permits preview,count/tap and slow pulse; distinguishes first read-through from reviewing mistakes and rereading. Subsequent transposition is suggested.",
+      "application": "Source-only boundary review of four existing F transfer contexts; repeated reading may remain practice without independent first-read credit.",
+      "limits": "HTML advice only; example images not read,no new notes copied. No formal novelty audit or ear assessment is specified.91%usage/44BPM/3–5min/MIDI rules are not source claims. No performance/teacher validation.",
+      "lessonIds": [],
+      "plannedLessonIds": [
+        "research-p-f-major-bimanual-right-cross-01",
+        "research-p-f-major-bimanual-left-cross-01",
+        "research-p-f-major-bimanual-crossing-link-01",
+        "research-p-f-major-bimanual-ascent-checkpoint-01"
+      ]
+    },
+    "sourceBaseSha256": "e6d85770b4d47436cba3340f5024444af22ca5a3b67cca6b2cd5ca4f948a4305",
+    "evidenceReusedFrom": "85/research26",
+    "priorQa": "docs/qa/piano-curriculum-2026-11-10-26-reading-boundaries.json",
+    "priorQaSha256": "b6e68249bdfe42bce5a2809625a92a81a46281dbc17d5219448fed794ab19da7",
+    "freshReadInCurrentBatch": false,
+    "newSourceHtmlImagePdfOrAudioFetches": 0,
+    "application": "Existing left bass notation-to-key plan read independently of right treble mapping/fingering/ledger/preparation;preview/practice context reused without source endorsement or independent first-reading proof."
+  },
+  "claimContexts": [
+    {
+      "claim": "own-clef-register-map",
+      "observed": "BassF3anchor53/position6;C3,D3,E3positions3,4,5/allnoledger;target3,4,4,5.",
+      "limit": "Declared plan data,not renderer or independently read new score;trebleG4anchor/ledger is not copied."
+    },
+    {
+      "claim": "hand-and-fingers",
+      "observed": "Left5-4-4-3 explicitly assigned versus trebleRight1-2-2-3.",
+      "limit": "Clef alone does not assign hand;no automatic transfer or physical/finger validation."
+    },
+    {
+      "claim": "pitch-relationship",
+      "observed": "Existing targets are an octave apart and share C-D-D-E relative contour/onsets.",
+      "limit": "Only relation between existing values recorded;no transposition invoked,no new arrangement,grade or readiness transfer."
+    },
+    {
+      "claim": "own-preparation",
+      "observed": "Leftcourse03-02/release02;required03-06window0-4CDD EE;source60/adapt56 versus rightsource62.",
+      "limit": "Not whole-sourceexam,not right-hand prerequisite;historicalfragmentAPI evidence not rerun or integrated gate proof."
+    },
+    {
+      "claim": "response-visibility",
+      "observed": "Four-event notation-to-key,pausefornaming allowed;scorevisible,aids/audioexcluded;textalternative separatepractice.",
+      "limit": "Not continuousrhythm/firstreaction/fingering/earassessment or actualDOM/renderer/response persistence."
+    },
+    {
+      "claim": "disclosed-material-and-novelty",
+      "observed": "DemoC3-D3-D3-E3 and transferC3-C3-D3-E3 published;poolpractice-only/excludepublishedwindows.",
+      "limit": "OldNov6bank/fragment findings stayhistorical;no bank enumeration or currentglobalcatalog audit,outsidefamiliarity unknown."
+    },
+    {
+      "claim": "primary-source",
+      "observed": "Clark14/research26 reused forpreview/count/slowpulse/firstpass and laterpractice distinction.",
+      "limit": "Not formalnoveltyaudit or endorsement of this56BPM/3-5min/nextday/untimedpitchtask."
+    },
+    {
+      "claim": "unchanged-implementation-status",
+      "observed": "Bothreadingplansnotimplemented/absentinregistry;6futureunchanged.",
+      "limit": "Neither same protocol nor related contour proves implementedrenderer/grade,learnertransfer or independentpedagogicalgoalcount."
+    }
+  ],
+  "newActionableWordingMismatches": 0,
+  "proposalPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "actualHumanReadingEarMemoryOrResponseObserved": false,
+  "newSourceEntries": 0,
+  "newAccessNotes": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newNotationRenders": 0,
+  "newApplicationExecutions": 0,
+  "newAssessmentCalls": 0,
+  "newPreparationFragmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "humanSessionsObserved": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "independentReadingAssessmentReady": false
+}

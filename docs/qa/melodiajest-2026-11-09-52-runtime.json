@@ -1,0 +1,125 @@
+{
+  "phase": "2026-11-09-52",
+  "checkedAt": "2026-11-09T14:31:58.644538+00:00",
+  "version": "23.5.77",
+  "summary": {
+    "phase": "2026-11-09-52",
+    "checkedAt": "2026-11-09T14:26:11.074255+00:00",
+    "status": "single-historical-runtime-copy-reproducibility-and-observed-reference-review-confirmed",
+    "target": "/opt/melodiajest/ops/account-stage-21-03be786f085e/runtime",
+    "candidateFiles": 3,
+    "allocatedFileBytes": 127049728,
+    "directoryAllocatedBytes": 4096,
+    "archiveSha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+    "archiveBytes": 32039312,
+    "allThreeFilesReproducible": true,
+    "productionVerifierAcceptedBothCopies": true,
+    "canonicalPreserved": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048",
+    "activeArchivePreserved": "/opt/melodiajest/ops/account-stage-21-0efdc441ee74/node.tar.xz",
+    "documentedControlPaths": 16,
+    "units": 10,
+    "containers": 2,
+    "ownProcesses": 12,
+    "noActiveReferencesWithinObservedScope": true,
+    "controlsAndPointersUnchanged": true,
+    "referenceScopeLimitations": [
+      "documented current controls,units,containers and their live cgroups only;not every historical file reference",
+      "no public signature revalidation;existing pinned archive and ELF identities reused",
+      "non-atomic filesystem/process observation;fresh verification required before any future action",
+      "exclusive inode allocation is attribution,not a guarantee of reclaimed filesystem bytes",
+      "candidate exceeds old64MiB payload/staging executors;they must not be expanded or reused for it"
+    ],
+    "readOnly": true,
+    "deletedFiles": 0,
+    "freedBytes": 0,
+    "s3Requests": 0,
+    "old64MiBExecutorsApplicable": false,
+    "deletionExecutorPrepared": false,
+    "deletionReady": false,
+    "report": "docs/reports/melodiajest-operations-2026-11-09-52.md",
+    "qa": "docs/qa/melodiajest-2026-11-09-52-runtime.json",
+    "observerSha256": "fdba89912336a31711d9bb6f868be267a6c2143aebb69f9aaa61d679a5c546d7",
+    "nextAction": "77/previous76 остаются опубликованными. Read-only52 подтвердил одну историческую runtime-копию /opt/melodiajest/ops/account-stage-21-03be786f085e/runtime:3файла/127049728выделенных файловых байт,по одному hardlink/владелецroot;node/LICENSE побайтно совпали с сохранённым Node-архивом48cc0e21…,runtime.json воспроизводим,штатный verifier принял историческую и каноническую копии. В16документированных controlpaths/10unit/2своих контейнерах/12своих процессах ссылок не найдено;это точный наблюдённый scope,не глобальное доказательство отсутствия всех исторических ссылок. Удалений/backup/restore/S3requests0. Свободно982597632байта в14:29:32UTC:PGrecovery800MiB проходит,prepare1000MiB нет. Возможные127049728байт — оценка блоков,не освобождённое место и не гарантия будущего запаса. Следующий ресурсный этап — отдельно подготовить и изолированно проверить контракт единственной воспроизводимой runtime-копии/ровно3файла с полным свежим CAS/архивами/ссылками/процессами/реальнымиS3/shared/ownlocks. Старые64MiB payload/staging исполнители для неё НЕподходят,их caps не расширять и их не вызывать. Пока исполнитель/готовый план удаления отсутствуют;не удалять вручную,не повторять51payload-план в цикле,не чистить другие копии. Канонический runtime/архив активного профиляstage21-0efdc441ee74/stage27budgetmodule/workerkit/Workers25/stages49/47/архивы73/74/currentprevious/PG/static/kit/F7/14local/таймеры/StartLimit4/2h защищены. Учебное исследование допустимо локально:первоисточник/все дубли/готовность полного левогоF-спуска по своей обратной подготовке;правые4→1/1→4 не копировать. Паузную10/связный11/правые контроли09/12/левыйподъём13 не дублировать;подъём не доказывает спуска. При неподготовленности точный пробел без искусственного урока. Сборка/BPM/длина/регистр/повтор не новые цели. Минимум1000,449записей/427верхняя граница/teacher0/verifiedDistinct=null. Calendarhourly77 14:01:51–52/7731d281… подтверждён51 и прежний,restored13:30:50/S3requests0/restorefalse;следующий15:00:50UTC,daily10ноября02:14:51UTC,не приписыватьmanual77 календарю. Историю первогоdaily68/15minretry сохранять. Не повторятьprepare/publish49/npm/аудиты/Linux/backup/restore/архивы того жеSHA,удаление43/41 завершено50. Guesthiddenreloadcompact/видимостьaccount-only/serverack — отдельнаяUX-очередь. SSO/общийledger отдельно,XPбезвторогоLVL."
+  },
+  "availability": {
+    "checkedAt": "2026-11-09T14:29:32.048544+00:00",
+    "sites": {
+      "https://melodiajest.ru/": {
+        "status": 200,
+        "finalUrl": "https://melodiajest.ru/",
+        "certificateVerifiedByDefaultContext": true
+      },
+      "https://libreta.ru/": {
+        "status": 200,
+        "finalUrl": "https://libreta.ru/",
+        "certificateVerifiedByDefaultContext": true
+      },
+      "https://praicer.ru/": {
+        "status": 200,
+        "finalUrl": "https://praicer.ru/guest?returnTo=%2F",
+        "certificateVerifiedByDefaultContext": true
+      },
+      "https://grigorova.libreta.ru/": {
+        "status": 200,
+        "finalUrl": "https://grigorova.libreta.ru/",
+        "certificateVerifiedByDefaultContext": true
+      }
+    },
+    "apiRoute": "/api/service/v1/health",
+    "apiStatus": 200,
+    "api": {
+      "implementationSha256": "ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2",
+      "courseSha256": "1490ad7168e5e8ed2ba84629509a38af1c923e3583ec661c9c6fd8d565285675",
+      "databaseSchemaVersion": 2
+    },
+    "freeBytes": 982597632,
+    "readOnly": true,
+    "catalogDownloaded": false,
+    "backupOrRestorePerformed": false
+  },
+  "knownReceipts": {
+    "observedAt": "2026-11-09T14:21:26.996496+00:00",
+    "hourlyInvocationId": "7731d281f2c349c6a10c546b55aa0e36",
+    "hourlyReceiptCheckedAt": "2026-11-09T14:01:52.094839+00:00",
+    "pgSnapshot": "a02a4e05ed56109344c5d6fd5ba0ce7b0cc9c38f6400734c6ba012e014f21d50",
+    "pgRestoredAt": "2026-11-09T13:30:50.895910+00:00"
+  },
+  "wrongHealthRouteRejected": true,
+  "correctHealthRoute": "/api/service/v1/health",
+  "newLearningRecords": 0,
+  "newIndependentGoals": 0,
+  "npmAndAuditsRepeated": false,
+  "browserChanged": false,
+  "finalCheckoutIndependentlyRestored": false,
+  "finalLocalSourceCheckpointPending": false,
+  "sameAutomation": {
+    "checkedAt": "2026-11-09T14:33:53.445031+00:00",
+    "sameAutomationVerified": true,
+    "phase": "52",
+    "id": "automation",
+    "kind": "heartbeat",
+    "status": "ACTIVE",
+    "rrule": "FREQ=MINUTELY;INTERVAL=20",
+    "targetThreadId": "01a1a79e-67df-7cb2-8ead-4e7a8a52724b",
+    "canonicalSha256": "ca5ba14eebeba556519e328ae985490e726c4b4aeb5fda85f34dee4adf702b4b",
+    "nativePromptSha256": "b26fb73965e1c16ca93b3bab2c1e4ed6d85bdb5e1057cf4129d6268b5a793d82",
+    "trimmedCanonicalEqualsNative": true
+  },
+  "finalLocalSourceCheckpoint": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\backups\\melodiajest-source-23.5.77-20261109-52-final.tar.gz",
+    "bytes": 6663424,
+    "sha256": "d1abccc100ebcb5f798a83e7437d2d14163e849d7db58ea225b00f5ea3d1171b",
+    "version": "23.5.77",
+    "webManifestSha256": "dfe4860f62425b1b0e216ba9b728a3bff3001311b747be2e9abbde80c761a080",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 989,
+    "publicFiles": 40,
+    "localRestoreVerified": true,
+    "restoredFiles": 1033,
+    "independentExternalCopy": false,
+    "publicArtifactChanged": false,
+    "deployedVersion": "23.5.77",
+    "previousPublishedVersion": "23.5.76",
+    "scope": "Phase52 final allowlisted local source with one exact historical runtime read-only byte comparison,installed verifier,16 documented control paths,10 units,2 own containers,12 own processes,availability and wrong diagnostic health URL rejection,same automation verification before this receipt. No runtime/lessons/server/data/deletion changes. Published77/76 and independent PG/static/kit recoveries remain separate;this full final checkout only locally restored. No raw DB/private browser data/secrets."
+  }
+}

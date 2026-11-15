@@ -1,0 +1,157 @@
+{
+  "checkedAt": "2026-11-11T22:16:19.484017+00:00",
+  "kind": "post-reader-pg90-native15min-auto-retry-and-manual-health90",
+  "accountInvocationOrigin": "existing15min automatic restart after lock refusal",
+  "accountManualImmediateRetryPerformed": false,
+  "accountUnit": {
+    "RestartUSec": "15min",
+    "Result": "success",
+    "NRestarts": "1",
+    "ExecMainStartTimestamp": "Wed 2026-11-11 22:13:00 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-11-11 22:13:50 UTC",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "StartLimitIntervalUSec": "2h",
+    "StartLimitBurst": "4",
+    "InvocationID": "b57acc55da8f4466b8b1cd066f91b75a"
+  },
+  "accountTimer": {
+    "NextElapseUSecRealtime": "Thu 2026-11-12 02:10:03 UTC",
+    "LastTriggerUSec": "Wed 2026-11-11 02:14:35 UTC",
+    "Result": "success",
+    "ActiveState": "active",
+    "StartLimitIntervalUSec": "10s",
+    "StartLimitBurst": "5",
+    "InvocationID": "89f3a52ac32241d7b6760f584518e73b"
+  },
+  "accountStartedAt": "2026-11-11T22:13:00.344861+00:00",
+  "accountFinishedAt": "2026-11-11T22:13:50.645155+00:00",
+  "accountPublishedSummary": {
+    "billingMeasured": false,
+    "checkedAt": "2026-11-11T22:13:49.633168+00:00",
+    "filesVerified": 23,
+    "newSnapshotCreated": true,
+    "payloadBytes": 206437451,
+    "restore": {
+      "apiHealth": "ok",
+      "daemonLayerReusePossible": true,
+      "dataDigestMatched": true,
+      "ddlDenied": true,
+      "forgedOwnerDenied": true,
+      "imageBlobsVerified": 20,
+      "network": "none",
+      "nodeFromRestoredArchive": true,
+      "pgDependenciesFromRestoredArchive": true,
+      "postgresImageImported": true,
+      "privateWriteReadback": true,
+      "productionDataUsed": false,
+      "productionVolumesMounted": false,
+      "restoredSessionsRevoked": true,
+      "sourceSha256": "6b103408ba0e87079ea0fd4ad8e56ff0f48ad5562192ae010eaa06e68cca51c0",
+      "syntheticMidiDeviceUsed": false,
+      "twoUsersRegistered": true,
+      "wrongPasswordDenied": true
+    },
+    "snapshot": "243d0be611e16fb1d323917c3f4381dcea00ee8ee1edd0899583fe13a332b5bd",
+    "status": "verified"
+  },
+  "accountSummaryFieldsExactlyMatched": 8,
+  "accountSummaryNotFullReceipt": true,
+  "accountSnapshot": "243d0be611e16fb1d323917c3f4381dcea00ee8ee1edd0899583fe13a332b5bd",
+  "accountSourceSha256": "6b103408ba0e87079ea0fd4ad8e56ff0f48ad5562192ae010eaa06e68cca51c0",
+  "accountRestoredAt": "2026-11-11T22:13:49.633212+00:00",
+  "accountDataComparedAt": "2026-11-11T22:13:49.633218+00:00",
+  "accountCalendarDailyClaimed": false,
+  "healthUnit": {
+    "RestartUSec": "100ms",
+    "Result": "success",
+    "NRestarts": "0",
+    "ExecMainStartTimestamp": "Wed 2026-11-11 22:15:53 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-11-11 22:15:53 UTC",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "StartLimitIntervalUSec": "2h",
+    "StartLimitBurst": "8",
+    "InvocationID": "7805083e0ea44d17a5c9b4b44be66055"
+  },
+  "healthTimer": {
+    "NextElapseUSecRealtime": "Wed 2026-11-11 23:01:40 UTC",
+    "LastTriggerUSec": "Wed 2026-11-11 22:00:17 UTC",
+    "Result": "success",
+    "ActiveState": "active",
+    "StartLimitIntervalUSec": "10s",
+    "StartLimitBurst": "5",
+    "InvocationID": "83b8606f9a9040c896f1b110334469f1"
+  },
+  "healthStartedAt": "2026-11-11T22:15:53.540316+00:00",
+  "healthFinishedAt": "2026-11-11T22:15:54.050555+00:00",
+  "baseHealth": {
+    "accounts": {
+      "agesSeconds": {
+        "dataCompared": 124,
+        "independentRestore": 124,
+        "lastAttempt": 124
+      },
+      "browserDataBackedUp": false,
+      "browserProgressCovered": false,
+      "configured": true,
+      "dataComparedAt": "2026-11-11T22:13:49.633218+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-11T22:13:49.633212+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "243d0be611e16fb1d323917c3f4381dcea00ee8ee1edd0899583fe13a332b5bd",
+      "sourceSha256": "6b103408ba0e87079ea0fd4ad8e56ff0f48ad5562192ae010eaa06e68cca51c0",
+      "success": true
+    },
+    "agesSeconds": {
+      "backup": 73,
+      "restore": 25
+    },
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-11T22:15:53.768369+00:00",
+    "independentExternalCopyVerified": false,
+    "problems": [],
+    "success": true
+  },
+  "externalHealth": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 124,
+        "independentRestore": 124,
+        "lastAttempt": 124
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-11T22:13:49.633218+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-11T22:13:49.633212+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "243d0be611e16fb1d323917c3f4381dcea00ee8ee1edd0899583fe13a332b5bd",
+      "sourceSha256": "6b103408ba0e87079ea0fd4ad8e56ff0f48ad5562192ae010eaa06e68cca51c0",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 1,
+      "externalRestore": 1
+    },
+    "backupCreatedAt": "2026-11-11T22:14:48.514090+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-11T22:15:54.028736+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  },
+  "manualHealthBothFullReceiptsExactlyMatched": true,
+  "current90CalendarHourlyClaimed": false,
+  "accountStartLimitUnchanged": true,
+  "systemdInternalCounterRead": false,
+  "serverMutations": 0,
+  "s3RequestsInitiated": 0
+}

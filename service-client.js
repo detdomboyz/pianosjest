@@ -1,6 +1,6 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.MelodiaService=api;})(typeof window==='object'?window:globalThis,function(){
   'use strict';
-  const API='/api/service/v1', UI_KEY='piano-blind-trainer-ui-v20';
+  const API='/api/service/v1', UI_KEY='piano-blind-trainer-ui-v20',GUEST_MATERIAL_KEY='melodiajest-guest-material-view-v1';
   function create({fetch:request,storage,onStatus=()=>{},onAccountChange=()=>{},timeoutMs=15000,channelFactory=null,locks=null}){
     let user=null,csrf='',initialized=false,locked=false,notice='',jobs=0;
     const memory=new Map(),objects=new Map(),queues=new Map(),pending=new Map();
@@ -14,7 +14,11 @@
     async function api(route,{method='GET',data,publicRequest=false,account=user?.id}={}){
       const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeoutMs);
       try{
-        const response=await request(API+route,{method,credentials:'same-origin',cache:'no-store',redirect:'error',signal:controller.signal,
+        // Native HTTP-cache may revalidate this one anonymous public resource.
+        // The browser supplies a cached body after304; no application fallback
+        // can hide a failed revalidation or change another account's data.
+        const publicCourse=route==='/course'&&method==='GET'&&publicRequest===true&&data===undefined;
+        const response=await request(API+route,{method,credentials:publicCourse?'omit':'same-origin',cache:publicCourse?'no-cache':'no-store',redirect:'error',signal:controller.signal,
           headers:{...(method==='GET'?{}:{'Content-Type':'application/json','X-Melodiajest-CSRF':csrf}),...(!publicRequest&&account?{'X-Melodiajest-Account':account}:{})},body:data===undefined?undefined:JSON.stringify(data)});
         let result;try{result=await response.json();}catch{throw fail('BAD_RESPONSE','Сервис вернул неполный ответ. Сохрани свой вариант и повтори позже.');}
         if(!response.ok){
@@ -87,9 +91,22 @@
       queues.set(kind,job);return job;
     }
     const scoped=key=>'melodiajest:user:'+user.id+':'+key;
+    // Only this nonpersonal three-value preference survives guest reloads.
+    // Never read the legacy anonymous UI object or persist the guest UI payload.
+    const guestViewFailure='Вид разбора изменён только до перезагрузки: браузер не сохранил выбор.';
+    const materialMode=value=>['compact','expanded','hidden'].includes(value)?value:null;
+    function guestMaterialPreference(){
+      try{const mode=materialMode(storage.getItem(GUEST_MATERIAL_KEY));return mode?JSON.stringify({learningMaterialMode:mode}):null;}catch{return null;}
+    }
+    function saveGuestMaterialPreference(raw){
+      let mode;try{mode=materialMode(JSON.parse(raw)?.learningMaterialMode);}catch{return;}
+      if(!mode)return;
+      try{storage.setItem(GUEST_MATERIAL_KEY,mode);if(notice===guestViewFailure){notice='';notify();}}
+      catch{notice=guestViewFailure;notify();}
+    }
     const accountStorage={
       getItem(key){
-        if(!user)return memory.get(key)??null;
+        if(!user)return memory.has(key)?memory.get(key):key===UI_KEY?guestMaterialPreference():null;
         // Progress writers require a fresh read under their Web Lock. A memory
         // cache would hide another tab's committed receipt and lose its result.
         if(key===UI_KEY){if(memory.has(key))return memory.get(key);if(objects.has('preferences'))return objects.get('preferences').raw;}
@@ -97,7 +114,7 @@
       },
       setItem(key,value){
         value=String(value);
-        if(!user){memory.set(key,value);return;} // Guest practice is ephemeral.
+        if(!user){memory.set(key,value);if(key===UI_KEY)saveGuestMaterialPreference(value);return;} // Guest private data stays ephemeral.
         if(key===UI_KEY){
           memory.set(key,value);try{storage.setItem(scoped(key),value);}catch{notice='Браузер не сохраняет локальную копию настроек.';notify();}
           if(!locked)void saveObject('preferences',value).catch(()=>{});

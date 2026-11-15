@@ -1,0 +1,306 @@
+{
+  "kind": "source-only-time-disjoint-cross-voice-midi-contract",
+  "documentVersion": 1,
+  "proposedVersion": 2,
+  "phase": "2026-11-10-70",
+  "proposalId": "research-p-f-major-bimanual-ascent-checkpoint-01",
+  "status": "proposed-not-implemented",
+  "originalV1Unchanged": true,
+  "proposedPolicy": "piano-voice-legato-time-disjoint-v2",
+  "proposedRequirement": "expected-note-links-v2-time-disjoint-midi",
+  "proposedSavedGradeContract": "piano-note-links-v2-time-disjoint-midi",
+  "wirePayloadFieldsUnchanged": [
+    "type",
+    "midi",
+    "at",
+    "source"
+  ],
+  "sharedExpectedOccurrences": [
+    {
+      "id": "ascent-0-1",
+      "step": 0,
+      "noteIndex": 1,
+      "midi": 65,
+      "handAnnotation": "right",
+      "fingerAnnotation": 1,
+      "startBeat": 0,
+      "durationBeats": 1
+    },
+    {
+      "id": "ascent-7-0",
+      "step": 7,
+      "noteIndex": 0,
+      "midi": 65,
+      "handAnnotation": "left",
+      "fingerAnnotation": 1,
+      "startBeat": 7,
+      "durationBeats": 1
+    }
+  ],
+  "noteIdentityStatus": "Symbolic IDs from69, not persisted app noteIDs; final base sourceBinding hash must come from the eventual normalized actual lesson.",
+  "sourceBindingTemplate": {
+    "kind": "legacy-piano-steps-v1",
+    "lessonId": "research-p-f-major-bimanual-ascent-checkpoint-01",
+    "sha256NotYetCreatedForFinalLesson": true
+  },
+  "inheritedV1Boundary": {
+    "voices": 2,
+    "minSteps": 2,
+    "maxSteps": 32,
+    "maxExpectedNotes": 64,
+    "timeUnit": "quarter",
+    "durationBeatsPerNote": 1,
+    "integerBeatBoundaries": true,
+    "synchronousOneNotePerVoice": true,
+    "disjointPitchSetsBetweenVoices": true,
+    "unsupported": [
+      "same-pitch-legato",
+      "ties",
+      "pedal-proof",
+      "finger-substitution-on-held-note",
+      "held-polyphony",
+      "shared-MIDI-between-voices",
+      "unknown-time",
+      "unpitched",
+      "frequency"
+    ]
+  },
+  "soleProposedScopeExtension": "Cross-voice shared MIDI allowed only for separately identified strictly separated occurrences under expanded current-policy time envelopes.",
+  "globalMatchingPlan": [
+    "Attach each expected note ID to existing chronological canonical steps/midis, not iteration order of voices.",
+    "Derive played occurrence index on the server from accepted ordered NoteOn/Off; consume each occurrence once globally per MIDI queue.",
+    "Maintain a single ephemeral core table expectedNoteId→playedOccurrenceIndex for voice links and new-policy service metrics.",
+    "Do not infer physical hand/finger from pitch/channel or add a legato/tie between separate-voice appearances of the same pitch.",
+    "Keep raw MIDI private: table lives only during grading, not new historical raw-event storage or client-controlled IDs."
+  ],
+  "timingBoundaryPlan": {
+    "rule": "previousEnd + previousOnsetAllowance + previousDurationAllowance < nextStart - nextOnsetAllowance",
+    "samePolicySourceForEligibilityAndAssessorRequired": true,
+    "revalidateAtExactGradingBpmAndProfile": true,
+    "exampleOnlyCurrentStandard": {
+      "bpm": 44,
+      "beatMs": 1363.6363636363637,
+      "onsetAllowanceMs": 300,
+      "durationAllowanceMs": 409.0909090909091,
+      "firstExpectedSpanBeats": [
+        0,
+        1
+      ],
+      "secondExpectedSpanBeats": [
+        7,
+        8
+      ],
+      "firstLatestReleaseMs": 2072.727272727273,
+      "secondEarliestOnsetMs": 9245.454545454546,
+      "strictSeparationMarginMs": 7172.727272727273,
+      "currentStandardDurationProfile": true,
+      "notABoundaryV2Profile": true,
+      "illustrationOnly": true,
+      "proposedPolicyImplemented": false
+    },
+    "identityEnvelopeDoesNotRelaxLegatoThresholds": true,
+    "unsupported": [
+      "touching-or-overlapping-expanded-envelopes",
+      "simultaneous-shared-midi",
+      "overlapping-same-pitch-holds",
+      "required-discarded-channel-or-port-identity",
+      "tie-or-held-finger-substitution",
+      "acoustic-pedal-hand-finger-proof"
+    ]
+  },
+  "compatibilityPlan": [
+    "Conditionally include new requirement/body/policy in fingerprint and musicVersion; absent metadata retains old bytes and Assessment.VERSION1.",
+    "Keep catalog7/MusicDocument1/pending-storage-v1 and XP policyVersion separate from voice policyVersion2.",
+    "Old actual issued attempts dispatch to the unchanged saved legacy plan behavior; hypothetical voicev1 retains its boundary, unknown required version fails closed.",
+    "Preserve old result_raw/digest/XP/goal_key/policy_version/progress/ratings and idempotent retry. No retroactive migration or sameGoalAs.",
+    "Future new-policy assessor exposes one ephemeral matching result for service metrics; old return shapes and legacy diagnostics remain compatible."
+  ],
+  "currentConsumerNotes": [
+    "Live selected-input handler drops channel/velocity and records performance.now; it is not a hardware timing/hand proof.",
+    "Core skips active duplicate On; service metrics currently separately parses it. All five final assessments agree and malformed cases quality0.",
+    "Direct baseline grade calls bypass route/prerequisites and contain no new voice metadata; exact clean is not new-policy or dyad-legato proof."
+  ],
+  "futureCases": [
+    {
+      "id": "two-f4-valid",
+      "scenario": "Two distinct time-separated F4 occurrences, each consumed once by its own expected ID.",
+      "expected": "accept",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "voice-array-order",
+      "scenario": "Swap the outer voice list, retain timing/IDs; chronological matching stays the same. Exact serialized hash may change.",
+      "expected": "same-matching",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "same-voice-rest-repeat",
+      "scenario": "Repeated pitch after a rest within one voice retains separate occurrences, with changed-pitch legato edges only.",
+      "expected": "accept-if-separated",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "missing-first",
+      "scenario": "First F4 absent; last event cannot satisfy both expected notes.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "missing-last",
+      "scenario": "Last F4 absent; first event cannot satisfy both notes.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "long-held",
+      "scenario": "One long F4 cannot substitute for two NoteOn/Off occurrences.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "duplicate-on",
+      "scenario": "Second On while same MIDI active keeps current rejection.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "extra-middle",
+      "scenario": "Unexpected middle F4 remains an extra event, not silent reassignment.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "double-consumption",
+      "scenario": "Per-voice find-by-pitch would reuse one played index; global one-use invariant forbids it.",
+      "expected": "reject",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "bad-note-id",
+      "scenario": "Missing/duplicate/wrong locator or MIDI/binding/line references.",
+      "expected": "reject-schema",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "cross-voice-edge",
+      "scenario": "Link first right F4 directly to last left F4.",
+      "expected": "reject-schema",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "simultaneous-unison",
+      "scenario": "Same MIDI expected at the same time in two lines.",
+      "expected": "unsupported",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "overlapping-held",
+      "scenario": "Same MIDI expected to sustain across the other occurrence.",
+      "expected": "unsupported",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "touching-envelopes",
+      "scenario": "Nominal notes disjoint but expanded policy envelopes touch or overlap.",
+      "expected": "unsupported",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "channel-identity",
+      "scenario": "Plan relies on channels/ports discarded by live capture.",
+      "expected": "unsupported",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "pedal-finger-proof",
+      "scenario": "Require acoustic pedal/hand/finger identity from on/off-only payload.",
+      "expected": "unsupported",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "wrong-time-base",
+      "scenario": "Negative/unordered/out-of-observation events retain transport rejection.",
+      "expected": "reject-input",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "legacy-absent",
+      "scenario": "No new metadata; retain exact old fingerprints, Assessment.VERSION1 and grade behavior.",
+      "expected": "legacy-identical",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "strict-v1",
+      "scenario": "Existing documented v1 retains disjoint pitch-set boundary; no quiet upgrade.",
+      "expected": "v1-unchanged",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "unknown-required",
+      "scenario": "Unknown version/capability or missing body cannot fall through to legacy.",
+      "expected": "unsupported-no-grade",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "policy-hash",
+      "scenario": "Change new policy/links/binding => new musicVersion/fingerprint, keep historical results.",
+      "expected": "invalidate-new-edition-only",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "old-issued-retry",
+      "scenario": "Saved old plan/result/digest/XP and idempotent retry retained; no duplicate award.",
+      "expected": "preserve-history",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "shared-metrics",
+      "scenario": "New-policy server metrics use the same core allocation, never a second parser/matcher.",
+      "expected": "same-allocation",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "same-grading-bpm",
+      "scenario": "Evaluate envelope bounds at the exact gradingBPM/profile used by assessor; no implicit timingPrecisionv2.",
+      "expected": "same-policy",
+      "status": "planned-not-executed"
+    }
+  ],
+  "baselineQa": "docs/qa/piano-curriculum-2026-11-10-11-f4-baseline.json",
+  "newActualConsumerBaselineScenarios": 5,
+  "futurePolicyCasesExecuted": 0,
+  "implemented": false,
+  "automaticGradeReady": false,
+  "canEnterGradedRoute": false,
+  "teacherReviewed": false,
+  "realMidiDeviceObserved": false,
+  "runtimeSupportGapResolved": false,
+  "notesRegistersArticulationsAndV1Changed": false,
+  "researchReview": {
+    "id": "2026-11-10-11",
+    "phase": "2026-11-10-70",
+    "status": "completed-source-v2-contract-proposal-not-implemented",
+    "report": "docs/reports/piano-curriculum-2026-11-10-11.md",
+    "qa": "docs/qa/piano-curriculum-2026-11-10-11-f4-baseline.json",
+    "contract": "docs/qa/piano-curriculum-2026-11-10-11-time-disjoint-contract.json",
+    "proposalId": "research-p-f-major-bimanual-ascent-checkpoint-01",
+    "newSyntheticActualConsumerScenarios": 5,
+    "directAssessmentEqualsServiceGrader": true,
+    "exactCurrentBaselineClean": true,
+    "fourInvalidCurrentBaselinesRejected": true,
+    "newPolicyCasesPlanned": 24,
+    "newPolicyCasesExecuted": 0,
+    "newCatalogLoaderRuns": 0,
+    "originalV1Unchanged": true,
+    "runtimeSupportGapResolved": false,
+    "automaticGradeReady": false,
+    "canEnterGradedRoute": false,
+    "newLearningRecords": 0,
+    "newImplementedIndependentGoals": 0,
+    "newResearchLessonProposals": 0,
+    "newEditorialPlans": 0,
+    "pendingEditorialPlansTotal": 2,
+    "teacherReviewed": false
+  },
+  "nextAction": "Исследование70 завершено: source-only v2-контракт временноразнесённогообщегоMIDI предложен,НЕреализован. ДваF4/ascent-0-1 иascent-7-0 — отдельныеожидаемыеID;глобальныйхронологическийFIFO/однократноепотребление/общаяэфемернаяcore-matchтаблица длясвязейиметрик,не рукапоMIDI. Строгоразнесённыерасширенныеpolicyокна,на44standardаналитическийmargin≈7173ms;этоНЕзадержкаустройства/невалидатор,legatoпороги90/100нерасширены. 5новыхсинтетическихbaselineactualassessment/servicegrader:точнаязаписьclean,пропускпервого/последнегоF4,однодлинноеудержаниеиповторOnбезOffотклонены;assessmentточноравны. Этостароеповедениевнеroute/БД/XP,непроверкаv2/legato;24плановыхновыхcasesНЕисполнены. V1/4F-плана/контракты65–69/ноты/регистры/grade/XP/79прежние,automaticGradeReady/canEnterGradedRoute=false,F4implementationgapоткрыт. Следующиймалыйsource-onlyэтап — ранееожидавшийсяконтрактXP/истории/выданныхпопытокплана02 course01-07/detail-p-hands-02: реальныеgoalKey/ledger/bestXP/версии/idempotency/portaloutbox,ограниченныйсовместимыйпландолюбогоsameGoalAs/v2. Не менятьID/ноты/историю/старыенаграды/общийбудущийLVLавтоматически;план03 отдельно. 79точныйлокальный/замороженный,не менять/паковать/публиковать;ресурсныйответрешён/неповторять/непокупать/нечистить. 450/186/153/13/10/427верхняяграница/teacher0/verifiedDistinctnull и4F/6future/2редакционныхплана прежние;лёгкиеHTTPS/knownreceipts/nativequota передследующим этапом."
+}

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-12T06:41:23.010980+00:00",
+  "kind": "real-pinned-nginx-disposable-unix-upstream",
+  "mode": "before",
+  "testSha256": "2954005bc2222231c6f7169c2799e457b005846023811ac6eecb165f3d59a887",
+  "configSha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+  "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+  "returnCode": 1,
+  "ran": 13,
+  "durationSeconds": 2.983,
+  "failures": 5,
+  "errors": 0,
+  "logSha256": "4cf51334d3a7f5f66d68abfbd4452c65477268e3c0fff304f86848418aa8cdbf",
+  "remoteLog": "/opt/melodiajest/ops/course-128-01c5a1f0723d/proxy-cache-validation-v2/before.log",
+  "caps": {
+    "network": "none",
+    "memoryMiB": 64,
+    "cpus": 0.25,
+    "pids": 64,
+    "readOnly": true,
+    "capDrop": "ALL",
+    "tmpfsMiB": 16
+  },
+  "productionSocketMounted": false,
+  "productionMutations": false,
+  "newServicesStarted": 0,
+  "ownTestContainersStoppedAndRemoved": true,
+  "assertionsWeakened": false,
+  "status": "wget-transport-observation-failure-not-final-red",
+  "reason": "BusyBox wget omitted headers for304/503/502;two successful200 bodies already exposed oldprivate override. Replace transport with rawHTTP via existing BusyBox nc;all thirteen cases and header assertions retained before implementation."
+}

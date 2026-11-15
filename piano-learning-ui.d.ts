@@ -60,3 +60,5 @@ export function flatNameHtml(profile: unknown, midis: readonly number[] | null |
 export type AttemptMode = 'practice' | 'challenge' | 'memory';
 /** Visible only during assisted blind practice; never contains answer data. */
 export function blindPracticeHtml(enabled: boolean, mode: AttemptMode, eligible: boolean): string;
+/** Display a validated unscored context; all supplied note labels are escaped. */
+export function openResponseHtml(context: import('./piano-open-response').OpenResponseContext | import('./piano-open-response').UnsupportedOpenResponse | null, noteNames?: readonly string[], targetName?: string): string;

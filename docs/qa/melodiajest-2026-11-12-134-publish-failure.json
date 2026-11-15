@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-11-12T12:56:12.788153+00:00",
+  "publicVersion": "23.5.100",
+  "webCurrent": "releases/23.5.100-8f02cdfef1a8",
+  "webPrevious": "releases/23.5.99-8e9ad96ba013",
+  "backendCurrent": "releases/23.5.100-d4087bb957e77811",
+  "backendPrevious": "releases/23.5.101-975e3e171bc3449f",
+  "api": {
+    "status": "ok",
+    "engine": "postgres",
+    "implementationSha256": "3ac18ae14fae03bb64bf35109083c2790b6701dad8ddd0464171e82f385e932d",
+    "courseSha256": "28fe43de05efac37957363ad6dd93dbdc80afaebab79051f713722569eb51c7a",
+    "databaseSchemaVersion": 2
+  },
+  "profileSourceSha256": "3ac18ae14fae03bb64bf35109083c2790b6701dad8ddd0464171e82f385e932d",
+  "profileArchiveSha256": "d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3",
+  "latestSuccess": {
+    "status": "verified",
+    "snapshot": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+    "sourceSha256": "3ac18ae14fae03bb64bf35109083c2790b6701dad8ddd0464171e82f385e932d",
+    "checkedAt": "2026-11-12T12:47:52.161077+00:00",
+    "restoredAt": "2026-11-12T11:45:17.542732+00:00",
+    "dataComparedAt": "2026-11-12T12:47:52.161095+00:00"
+  },
+  "latestAttempt": {
+    "status": "failed",
+    "error": null,
+    "snapshot": "aa075f8f3fdeadf5cd47f842495682ad3f01975657cc445bc0ac0d86e3e7af1c",
+    "sourceSha256": null,
+    "checkedAt": null,
+    "startedAt": "2026-11-12T12:50:13.994624+00:00",
+    "finishedAt": null,
+    "reason": null
+  },
+  "unit": {
+    "Restart": "on-failure",
+    "RestartUSec": "15min",
+    "MainPID": "0",
+    "Result": "exit-code",
+    "NRestarts": "0",
+    "ExecMainStartTimestamp": "Thu 2026-11-12 12:50:10 UTC",
+    "ExecMainExitTimestamp": "Thu 2026-11-12 12:50:58 UTC",
+    "ExecMainStatus": "1",
+    "ActiveState": "activating",
+    "SubState": "auto-restart",
+    "StartLimitIntervalUSec": "2h",
+    "StartLimitBurst": "4",
+    "InvocationID": "c6a27eb2cc3043fabe70e2587dbfb6d9"
+  },
+  "journalMessages": [
+    "Starting melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery...",
+    "{\"status\": \"failed\"}",
+    "melodiajest-account-backup.service: Main process exited, code=exited, status=1/FAILURE",
+    "melodiajest-account-backup.service: Failed with result 'exit-code'.",
+    "Failed to start melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery.",
+    "melodiajest-account-backup.service: Consumed 19.350s CPU time."
+  ],
+  "rollbackReceipts": {
+    "rollback-account-protection.json": {
+      "manualStartPerformed": false,
+      "status": "pending-native-backoff-or-budget"
+    },
+    "rollback-result.json": {
+      "checkedAt": "2026-11-12T12:51:00.867716+00:00",
+      "dataRestorePerformed": false,
+      "publicManifestSha256": "8f02cdfef1a8ebb68bb74cfab2c87027941cedeec12418d6eabc6a1a575335c1",
+      "status": "own-readers-restored-inspect-account-protection"
+    }
+  },
+  "freeBytes": 966443008,
+  "oneStartBudget": {
+    "allowed": false,
+    "observationRefused": "Account backup is active or unsuccessful; inspect first",
+    "plannedStarts": 1,
+    "noOverrideApplied": true
+  },
+  "twoStartBudget": {
+    "allowed": false,
+    "observationRefused": "Account backup is active or unsuccessful; inspect first",
+    "plannedStarts": 2,
+    "noOverrideApplied": true
+  },
+  "conservativeJournalStarts": [
+    "2026-11-12T11:41:26.233074+00:00",
+    "2026-11-12T11:44:27.601884+00:00",
+    "2026-11-12T12:47:45.477547+00:00",
+    "2026-11-12T12:50:10.690221+00:00"
+  ],
+  "serverMutations": 0,
+  "serviceStarts": 0,
+  "s3Requests": 0
+}

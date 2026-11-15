@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-11-13T08:30:22.624251+00:00",
+  "redPath": "tmp/melodiajest-168-target-red.log",
+  "redSha256": "963c5253c7c39e0652985a9db296ad09a5a322be5b79b44d7997c016fd291b21",
+  "redPassed": 0,
+  "redFailed": 8,
+  "redDurationMs": 2001.0613,
+  "redBeforeImplementation": true,
+  "firstRedNewTestSha256": "9e85f53e8fe37b91b5edddd986fef07c48b17ffc099b9e6560ecb1fe2ecb45e6",
+  "firstRedSourceCopy": "tmp/left-eighth-pairs-168-first-red-test.cjs",
+  "wholeNewTestExactAfterFirstRed": false,
+  "newTestSha256": "7dba17f64730bc9f09a6a5b6474a08c3fd9b329d3505bce2b08858f4542f4f33",
+  "newFixtureSha256": "19003e823012fa404abcb3ab928010dd1863bae80094933b3e924502c0f8cb2c",
+  "preimplementationRefinements": 2,
+  "scaffoldCorrections": 2,
+  "designRefinement": "Original barline C3/5 toE3/3 third was not in the chosen quarter preparation. Secondbar now startsC3/5 again;all transitions adjacent/repeated. Added boundary and maximum-step assertions. Bothring-led pairs and all time values remain unchanged.",
+  "privateFixtureRefinement": "The isolated private user edits fingeringSpec.pattern coherently with its newly edited pattern. No existing test or app changed.",
+  "musicalAssertionsRemovedOrRelaxed": false,
+  "historicalTestFilesChanged": 0,
+  "lastRedPath": "tmp/melodiajest-168-target-refined-red.log",
+  "lastRedSha256": "6dd968e2eab03cb5efc533108ce68170f8efd210965dc9ed3014f170e39478b3",
+  "lastRedPassed": 0,
+  "lastRedFailed": 8,
+  "lastRedBeforeImplementation": true,
+  "lastRedDurationMs": 1872.531,
+  "wholeNewTestExactAfterLastRed": false,
+  "allFinalFilesFrozenAfterLastRed": {
+    "tests/piano-left-eighth-pairs.test.cjs": "773d5fb3918c89d6ee2f4c0ba008c1558ba644b891229e152619e825eb4689bb",
+    "tests/fixtures/piano-before-left-eighth-pairs-v1.json": "19003e823012fa404abcb3ab928010dd1863bae80094933b3e924502c0f8cb2c"
+  },
+  "lastRedNewTestSha256": "773d5fb3918c89d6ee2f4c0ba008c1558ba644b891229e152619e825eb4689bb",
+  "lastRedSourceCopy": "tmp/left-eighth-pairs-168-refined-red-test.cjs",
+  "postimplementationScaffoldCorrections": 1,
+  "firstTargetLog": "tmp/melodiajest-168-target-green.log",
+  "firstTargetPassed": 59,
+  "firstTargetFailed": 1,
+  "firstTargetDurationMs": 37692.3682,
+  "postimplementationScaffoldCorrection": "Shared app uses the non-event DOM stub. setTestLesson invokes geometry on a stub without style,so pure card test now assigns exposed state.lesson like the established D-major card test. The actual MIDI handler tests keep events:true and passed. All music/UI assertions retained;no app/helper changed.",
+  "allFinalFilesFrozenAfterLastCorrection": {
+    "tests/piano-left-eighth-pairs.test.cjs": "7dba17f64730bc9f09a6a5b6474a08c3fd9b329d3505bce2b08858f4542f4f33",
+    "tests/fixtures/piano-before-left-eighth-pairs-v1.json": "19003e823012fa404abcb3ab928010dd1863bae80094933b3e924502c0f8cb2c"
+  }
+}

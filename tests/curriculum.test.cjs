@@ -21,7 +21,7 @@ test('piano learns fingers, melodies and separate hands before coordination and 
   before('course02-08','course01-07');before('course03-08','course01-07');before('course09-01','course07-03');before('course08-01','course07-07');before('course05-06','course09-03');
   before('course02-02','course04-04');before('course02-02','course04-05');
   for(const entry of plan.piano)for(const id of entry.preparation||[])before(id,entry.id);
-  const route=C.route(plan,'piano',loadApp().lessons);assert.equal(route.length,80+require('../lesson-development.js').piano.length+require('../piano-lesson-development.js').piano.length);assert.equal(route.at(-1).id,'course10-08');assert.equal(C.next(plan,'piano',route,'course10-08'),null);
+  const route=C.route(plan,'piano',loadApp().lessons);const details=[...require('../lesson-development.js').piano,...require('../piano-lesson-development.js').piano],byId=new Map(plan.piano.map(e=>[e.id,e]));for(const d of details)assert.ok(byId.has(d.id),d.id);const mandatory=details.filter(d=>!C.stages[byId.get(d.id).stage].optional),optional=details.filter(d=>C.stages[byId.get(d.id).stage].optional);assert.equal(route.length,80+mandatory.length);for(const d of optional)assert.equal(route.some(l=>l.id===d.id),false,d.id+' optional lesson leaked into main route');assert.equal(route.at(-1).id,'course10-08');assert.equal(C.next(plan,'piano',route,'course10-08'),null);
 });
 test('guitar foundations no longer follow repertoire or the final exam',()=>{
   const ids=Array.from(plan.guitar,e=>e.id),index=id=>ids.indexOf(id);

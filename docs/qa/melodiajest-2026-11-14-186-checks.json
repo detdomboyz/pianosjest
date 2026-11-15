@@ -1,0 +1,225 @@
+{
+  "checkedAt": "2026-11-13T21:57:40.917138+00:00",
+  "checks": {
+    "firstRed": {
+      "path": "tmp/melodiajest-186-target-red.log",
+      "sha256": "ca68c7de577675c097cfa82e5f87c92f34675a556a78cbb90c420d4e8e5dc833",
+      "totals": {
+        "tests": 10,
+        "pass": 1,
+        "fail": 9,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 3937.9522
+      }
+    },
+    "targetInitial": {
+      "path": "tmp/melodiajest-186-target-initial-case-failed.log",
+      "sha256": "8e423cca23f82b24e3c03c8f87972e6b00b77acf57820e86621977273bf46da8",
+      "totals": {
+        "tests": 62,
+        "pass": 61,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 43900.3396
+      }
+    },
+    "targetRecheck": {
+      "path": "tmp/melodiajest-186-target-card-case-fixed.log",
+      "sha256": "99efebfb38c659df7363d2d132fb1e93ba7e598820cf0ca082878e650c910d7e",
+      "totals": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 1800.7816
+      }
+    },
+    "routeRecheck": {
+      "path": "tmp/melodiajest-186-target-route-fixed.log",
+      "sha256": "5cf380f0fcc2447f5088c6df62ac9d26e7b9c31f101b202d462870ead986d31d",
+      "totals": {
+        "tests": 2,
+        "pass": 2,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 5168.1506
+      }
+    },
+    "fullAttempt1": {
+      "path": "tmp/melodiajest-186-npm.log",
+      "sha256": "b10fe15e57501980e54c67741c607c98b18b3ac8cb79fcc0b721d6e23aa69bfa",
+      "totals": {
+        "tests": 1884,
+        "pass": 1883,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 811984.6268
+      }
+    },
+    "service": {
+      "path": "tmp/melodiajest-186-service-after-route.log",
+      "sha256": "5797cb4afe3b9ccb71fcedbd476ea6f730e99cc4bbe72d8e92fa56a9df50a560",
+      "totals": {
+        "tests": 60,
+        "pass": 53,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 7,
+        "todo": 0,
+        "duration_ms": 18634.4012
+      }
+    },
+    "full": {
+      "path": "tmp/melodiajest-186-npm-attempt2.log",
+      "sha256": "f6f313e4ac38b6470c818c6a35b38325aeffda74cfbcfe86386da95e4197403d",
+      "totals": {
+        "tests": 1884,
+        "pass": 1884,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 812095.0029
+      }
+    },
+    "audits": {
+      "lessons": {
+        "path": "tmp/melodiajest-186-audit-lessons.log",
+        "exitCode": 0,
+        "sha256": "9af2cbe2002aa825b48b6c8fac9fac8701f1983881ebe7b4bfb5fe8be78e5c3a",
+        "seconds": 4.875,
+        "reusedAfterRouteOnlyCorrection": true
+      },
+      "fingering": {
+        "path": "tmp/melodiajest-186-audit-fingering.log",
+        "exitCode": 0,
+        "sha256": "b0eb5dc413d35a88ae240f510bc9935746539b359545f488ac26fb1da83f2b67",
+        "seconds": 10.937,
+        "reusedAfterRouteOnlyCorrection": true
+      },
+      "curriculum": {
+        "path": "tmp/melodiajest-186-audit-curriculum-after-route.log",
+        "exitCode": 0,
+        "sha256": "e07c295da61d7ae6aae008957a630faf7217798be279d6cf1fe3a1ed201b3d8b",
+        "seconds": 12.5,
+        "invocation": 2
+      },
+      "piano-coverage": {
+        "path": "tmp/melodiajest-186-audit-piano-coverage.log",
+        "exitCode": 0,
+        "sha256": "f69da104f7906fed069b9592388ca1de18df9cb1b089bcbeda4406079c1e7a35",
+        "seconds": 2.39,
+        "reusedAfterRouteOnlyCorrection": true
+      }
+    }
+  },
+  "newTestDevelopment": {
+    "checkedAt": "2026-11-13T21:04:57.967757+00:00",
+    "newTestFile": "tests/piano-connected-paired-descent.test.cjs",
+    "newTestSha256": "1e03bc11d519a8a6cf20767d688dc8c8b70bef2d0e6255ecb58fd72afc948601",
+    "newFixtureSha256": "d2e8408a2dd65806916070009b3393476b76aa7d6fb9e0ca859cd3fbbb687616",
+    "redPath": "tmp/melodiajest-186-target-red.log",
+    "redSha256": "ca68c7de577675c097cfa82e5f87c92f34675a556a78cbb90c420d4e8e5dc833",
+    "redBeforeImplementation": true,
+    "firstRedPassed": 1,
+    "firstRedFailed": 9,
+    "wholeNewTestExactAfterFirstRed": false,
+    "newFixtureExactAfterFirstRed": true,
+    "scaffoldCorrections": 1,
+    "routePredicateChangedAfterFirstRed": true,
+    "musicalAssertionsRemovedOrRelaxed": false,
+    "historicalTestFilesChanged": 0,
+    "routePlanningHintAssumptionCorrectionBeforeFirstRed": 1,
+    "sourceNextLessonIdNotUsedByActualNext": true,
+    "newTerminalIsExtensible": true,
+    "firstRedTestPath": "tmp/melodiajest-186-test-at-first-red.cjs",
+    "firstRedTestSha256": "2f01a5a19489b4fe376e85830a7934d7ffdd15c89fa65af43198cea1a4108615",
+    "wholeNewTestExactAfterScaffoldCorrection": false,
+    "scaffoldCorrectionReason": "One expected Russian instruction changed sentence-initial при to При. Card already contained the warning. No application,data,notes,fingers,rhythm,grade or other assertion changed.",
+    "firstTargetPassed": 61,
+    "firstTargetFailed": 1,
+    "firstTargetDurationMs": 43900.3396,
+    "initialTargetLog": "tmp/melodiajest-186-target-initial-case-failed.log",
+    "initialTargetLogSha256": "8e423cca23f82b24e3c03c8f87972e6b00b77acf57820e86621977273bf46da8",
+    "appChangedForScaffoldCorrection": false,
+    "healthy61Rerun": false,
+    "targetSuiteInvocations": 3,
+    "finalUniqueTargetCasesPassed": 63,
+    "correctedCasePassed": 1,
+    "correctedCaseDurationMs": 1800.7816,
+    "targetBundle": "docs/qa/melodiajest-2026-11-14-186-target-bundle.json",
+    "nextMetadataOrderVerifiedBeforeFirstTarget": true,
+    "actualAppNextVerifiedBeforeFirstTarget": true,
+    "incomingEdgeVerifiedBeforeFirstTarget": true,
+    "protectedHistoricalNextPaths": 18,
+    "wholeNewTestExactAfterRouteCorrection": true,
+    "routeExpectationCorrections": 1,
+    "routePlacementCorrectionAfterFullFailure": true,
+    "routeTestAnchorChangedFrom": "course10-08",
+    "routeTestAnchorChangedTo": "course10-07",
+    "finalExamAssertionsAdded": 3,
+    "historicalFinalExamTestUnchanged": true,
+    "beforeRouteTestPath": "tmp/connected-desc-route-before-186/tests/piano-connected-paired-descent.test.cjs",
+    "beforeRouteTestSha256": "b5cfac6cc17f9000400dae201924c2742500ac4652d23ebe32816eb9a619ad80",
+    "initialFullTestsPassed": 1883,
+    "initialFullTestsFailed": 1,
+    "initialFullLog": "tmp/melodiajest-186-npm.log",
+    "initialFullLogSha256": "b10fe15e57501980e54c67741c607c98b18b3ac8cb79fcc0b721d6e23aa69bfa",
+    "postImplementationCaseExecutions": 65,
+    "routeRecheckCasesPassed": 2,
+    "unaffectedHealthy60Repeated": false,
+    "initialWhole61Repeated": false,
+    "routeTargetRecheckSha256": "5cf380f0fcc2447f5088c6df62ac9d26e7b9c31f101b202d462870ead986d31d"
+  },
+  "browserReport": "docs/qa/melodiajest-2026-11-14-186-browser.json",
+  "runtimeFilesFrozen": 611,
+  "oldRuntimeFiles": 609,
+  "changedOldRuntime": [
+    "curriculum-plan.js",
+    "package.json",
+    "piano-lesson-development.js",
+    "service/course-registry.json",
+    "tests/fixtures/piano-curriculum-counts.json"
+  ],
+  "fullOnce": false,
+  "fullSuiteAttempts": 2,
+  "fullPassInvocations": 1,
+  "targetInvocations": 3,
+  "targetUniqueCases": 63,
+  "postImplementationCaseExecutions": 65,
+  "initialWhole61Repeated": false,
+  "unaffectedHealthy60Repeated": false,
+  "previouslyHealthyRouteCaseRecheckedBecauseInputChanged": true,
+  "newTestExactAfterFirstRed": false,
+  "newFixtureExactAfterFirstRed": true,
+  "newTestScaffoldCorrections": 1,
+  "routeExpectationCorrections": 1,
+  "sourceContractCorrection": 0,
+  "historicalTestFilesChanged": 0,
+  "planningHintAssumptionCorrectionBeforeFirstRed": 1,
+  "sourceNextLessonIdNotUsedByActualNext": true,
+  "newTerminalIsExtensible": false,
+  "originalFinalExamRemainsTerminal": true,
+  "oldFinalExamTestUnchanged": true,
+  "routePlacementCorrections": 1,
+  "sourceEntriesBefore": 95,
+  "sourceEntriesAfter": 95,
+  "newSourceEntries": 0,
+  "sourceApplications": 7,
+  "freshApplications": 4,
+  "freshPrimaryDocuments": 3,
+  "previousRulesReused": 3,
+  "manualPgStarts": 0,
+  "s3Requests": 0,
+  "deployed": false
+}

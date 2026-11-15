@@ -1,0 +1,371 @@
+{
+  "kind": "source-only-c-pair-xp-issued-history-compatibility-contract",
+  "documentVersion": 1,
+  "phase": "2026-11-10-71",
+  "batch": "2026-11-10-12",
+  "editorialPlanId": "2026-11-10-02",
+  "editorialPlanUnmodified": true,
+  "lessonIds": [
+    "course01-07",
+    "detail-p-hands-02"
+  ],
+  "familyKeyCandidate": "course01-07",
+  "status": "proposed-not-implemented",
+  "implemented": false,
+  "sameGoalAsApplied": false,
+  "timingPrecisionApplied": false,
+  "proposedEditorialCutoverReady": false,
+  "existingGradedRoutesChanged": false,
+  "originalCanonicalRows": [
+    {
+      "id": "course01-07",
+      "gradeFingerprint": "4a15f477",
+      "goalKey": "course01-07",
+      "musicVersion": "1310ba3c752882db507cf0030996d6213678ca7947d9acabe198aa67b132a0a1",
+      "editionVersion": "42a184d10b4d0ade3ac73d64e4db6b66f2ce735677de3be3f359da08c30d2d29"
+    },
+    {
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "4cdf584f",
+      "goalKey": "detail-p-hands-02",
+      "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+      "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+    }
+  ],
+  "metadataExperiments": [
+    {
+      "name": "sameGoalAs-only",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "4cdf584f",
+      "goalKey": "course01-07",
+      "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+      "editionVersion": "49460bb9b153c7d968b3de5553b2605399b1adbe53231745ca1a8d06eae65551",
+      "changes": {
+        "fingerprint": false,
+        "musicVersion": false,
+        "editionVersion": true,
+        "goalKey": true
+      },
+      "persisted": false
+    },
+    {
+      "name": "timingPrecision-only",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "36f3afb3",
+      "goalKey": "detail-p-hands-02",
+      "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+      "editionVersion": "acd771543d681208a5e1344443ff8928939aceca144ddb7f0710ad465cd88960",
+      "changes": {
+        "fingerprint": true,
+        "musicVersion": true,
+        "editionVersion": true,
+        "goalKey": false
+      },
+      "persisted": false
+    },
+    {
+      "name": "both-proposed",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "36f3afb3",
+      "goalKey": "course01-07",
+      "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+      "editionVersion": "9688add8e0e785127ac80ea789d321691a56f254fd5a1e3b1676fc485e463776",
+      "changes": {
+        "fingerprint": true,
+        "musicVersion": true,
+        "editionVersion": true,
+        "goalKey": true
+      },
+      "persisted": false
+    }
+  ],
+  "metadataAndCreditQa": "docs/qa/piano-curriculum-2026-11-10-12-c-xp-trace.json",
+  "issuedBranchesQa": "docs/qa/piano-curriculum-2026-11-10-12-issued-branches.json",
+  "currentCreditModel": {
+    "experienceModuleVersion": 1,
+    "savedAttemptPolicyVersion": 1,
+    "goalBestRange": [
+      0,
+      100
+    ],
+    "award": "clean ? 60 + round(40*quality/100) : 0",
+    "priorBestQuery": "MAX(best_xp) WHERE owner_id and goal_key; all policy versions, one key",
+    "ledgerTotal": "SUM(experience_events.delta) per owner",
+    "attemptAwardIdentity": "UNIQUE attempt_id",
+    "outboxKey": [
+      "owner_id",
+      "goal_key",
+      "policy_version"
+    ],
+    "outboxMutableState": [
+      "best_xp",
+      "revision",
+      "delivered_revision"
+    ],
+    "progressKey": [
+      "owner_id",
+      "lesson_id",
+      "music_version"
+    ],
+    "ratingKey": [
+      "owner_id",
+      "lesson_id",
+      "edition_version"
+    ],
+    "issuedValidityMinutes": 30
+  },
+  "futureFamilyPolicy": {
+    "nameIsProposalOnly": "goal-family-credit-v2",
+    "separateFromTimingPrecisionAndVoicePolicy": true,
+    "membersExact": [
+      "course01-07",
+      "detail-p-hands-02"
+    ],
+    "entitlementCursorRange": [
+      0,
+      100
+    ],
+    "floor": "max(all historical A best, all historical B best, saved family cursor)",
+    "futureDelta": "max(0,wanted-floor)",
+    "futureCursor": "max(floor,wanted)",
+    "initializeCreatesAwardLedgerEventOrPortalCredit": false,
+    "rewriteOldGoalRows": false,
+    "historicalAwardSumRetainedEvenIf200": true,
+    "newTableOrSqlChosenOrCreated": false
+  },
+  "issuedTransitionPlan": {
+    "scope": "per owner, exactly the two lesson IDs",
+    "phaseSequence": [
+      "legacy",
+      "draining-with-no-new-family-issuance",
+      "adopted"
+    ],
+    "oldIssuedPlanKeyPolicyResultUnchanged": true,
+    "noForcedCancelOrExpiryExtension": true,
+    "drain": "Wait outside transactions for old issued attempts to finish or expire naturally; recheck status/time and in-flight submit atomically before adoption.",
+    "lock": "Existing owner atomic -> pg_advisory_xact_lock(hashtextextended(melodiajest:+owner,0)); all writers/adopter must participate.",
+    "noLongHeld30MinuteTransaction": true,
+    "newPolicyIssuanceRequiresOwnerAdoptedState": true,
+    "oldWriterFenceRequired": true
+  },
+  "idempotencyPlan": {
+    "currentStartChecksVersionBeforeReceipt": true,
+    "baselineCurrentChangedEditionCode": "LESSON_CHANGED409",
+    "proposedOwnedPriorStartReceiptBeforeCurrentVersionValidation": true,
+    "receiptKindDigestNonceOwnerMustMatch": true,
+    "newUnreceiptedRequestStillChecksCurrentVersionAndPrerequisites": true,
+    "finalSubmitReplayRetainsSavedResult": true,
+    "changedFinalPayloadStillRejected": true,
+    "fixImplemented": false
+  },
+  "portalPlan": {
+    "receiverAliasOrAdoptionContractVerifiedInReviewedScope": false,
+    "liveDeliveryStateRead": false,
+    "mayAssumeDeliveredRevisionZero": false,
+    "renameSumDeleteOrResetOldOutboxAllowed": false,
+    "candidateFutureSourceIdentity": [
+      "experience_events.id",
+      "attempt_id"
+    ],
+    "candidateFutureCredit": "immutable positive delta once",
+    "requiredBeforeCutover": "Explicit SSO link and receiver reconciliation receipt/epoch for already accepted snapshots; no blind ledger replay.",
+    "separateMelodiaRegistrationRetained": true,
+    "implicitEmailLinkAllowed": false,
+    "newSecondLevelIntroduced": false,
+    "singleFutureCommonPortalLevelRetained": true,
+    "dispatcherImplementedOrDeliveryTested": false
+  },
+  "rollbackAndBackupPlan": {
+    "oldUnguardedWriterAfterNewPolicyWritesAllowed": false,
+    "requiresPolicyCompatibleRollbackTarget": true,
+    "newStateMustBeInDataModelExportBackupRestoreAllowlist": true,
+    "futureMutationRequiresVerifiedBatchBackup": true,
+    "researchCreatesNewArchive": false,
+    "schemaMigrationOrExecutorPrepared": false
+  },
+  "preserve": [
+    "both lesson IDs and note/rhythm/fingering data",
+    "user order and edits",
+    "course_editions.plan_raw",
+    "learning_attempts versions/key/policy/nonces/results/digests",
+    "all positive historical experience_events",
+    "old goal_experience and portal outbox keys/receipts",
+    "progress by lesson/musicVersion and ratings by edition",
+    "browser histories without automatic import",
+    "original editorial02 and03",
+    "all F contracts and proposals"
+  ],
+  "actualMetadataExperiments": 3,
+  "actualXpArithmeticExamples": 6,
+  "actualServiceBranchScenarios": 4,
+  "newMidiAssessmentProbes": 0,
+  "newCatalogLoaderRuns": 0,
+  "databaseOpened": false,
+  "databaseConcurrencyTested": false,
+  "futureCases": [
+    {
+      "id": "empty-owner",
+      "scenario": "No old XP in either goal; future first clean100 adds100.",
+      "expected": "award100",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "detail100",
+      "scenario": "Only detail already100; family initialization and first clean100 add0.",
+      "expected": "award0",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "two-historical100",
+      "scenario": "Both old goals100: keep ledger200, cursor100, no additional initial credit.",
+      "expected": "preserve200-no-award",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "partial80-92",
+      "scenario": "Old A80/B92: future100 adds8 while keeping historical ledger172.",
+      "expected": "award8",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "owner-isolation",
+      "scenario": "Another owner family/receipt/progress is inaccessible; owner-scoped locks and predicates retained.",
+      "expected": "deny-cross-owner",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "issued-drain",
+      "scenario": "Old issued attempts complete or naturally expire; old plan/key/policy remain intact.",
+      "expected": "adopt-only-after-drain",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "adopter-submit-race",
+      "scenario": "Old submit concurrent with adoption; same owner transaction key and fence prevent mixed accounting.",
+      "expected": "serial-consistent",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "adopter-start-race",
+      "scenario": "Start concurrent with adoption; saved policy and admission agree; no old issuance after owner fence.",
+      "expected": "serial-consistent",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "receipt-start-new-edition",
+      "scenario": "Identical owned prior start receipt survives a current edition change.",
+      "expected": "return-original",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "new-start-stale",
+      "scenario": "No matching receipt and stale version; continue rejecting LESSON_CHANGED.",
+      "expected": "reject409",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "operation-conflict",
+      "scenario": "Existing operationId with changed kind/digest or nonce never returns original start.",
+      "expected": "reject-conflict",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "submit-final-retry",
+      "scenario": "Final exact payload after expiry/current update returns result without extra ledger or outbox revision.",
+      "expected": "idempotent",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "submit-final-changed",
+      "scenario": "Final changed payload stays ATTEMPT_SUBMITTED; owner+nonce checks precede result access.",
+      "expected": "reject409",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "timing-only-edition",
+      "scenario": "Grade correction changes musicVersion, retains old progress/results and same goal best; no free new100.",
+      "expected": "preserve-versioned-history",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "no-autopass",
+      "scenario": "sameGoal does not create progress for sibling lesson or other musicVersion; retain requires/order.",
+      "expected": "no-auto-completion",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "outbox-possibly-delivered",
+      "scenario": "Old snapshot may already be delivered; receiver receipts/epoch reconciliation required before source-event adoption.",
+      "expected": "no-blind-replay",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "outbox-retry-crash",
+      "scenario": "Exactly-once credit under duplicate/reordered delivery/crash after receiver acceptance; stable source event and receipt.",
+      "expected": "no-duplicate-or-loss",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "rollback-writer",
+      "scenario": "New policy writes exist; rollback reader/writer must retain family policy and fence; old unguarded writer refused.",
+      "expected": "compatible-rollback-only",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "backup-export-restore",
+      "scenario": "Chosen family state enters allowlist/export and independent isolated restore with all historic rows.",
+      "expected": "roundtrip-required",
+      "status": "planned-not-executed"
+    },
+    {
+      "id": "explicit-sso-one-level",
+      "scenario": "Distinct Melodia account explicitly linked by verified identity; summed ledger credited once, one future common portal LVL.",
+      "expected": "no-implicit-email-link-or-new-level",
+      "status": "planned-not-executed"
+    }
+  ],
+  "futureCasesExecuted": 0,
+  "newLearningRecords": 0,
+  "newIndependentGoals": 0,
+  "newEditorialPlans": 0,
+  "realMidiObserved": false,
+  "physicalFingersOrSoundVerified": false,
+  "teacherReviewed": false,
+  "limits": [
+    "Arithmetic floor is a proposal, not implemented accounting.",
+    "Query spy is not a database or concurrency test.",
+    "No live accounts, PG state, SSO identities, delivery receipts or neighboring application data were read.",
+    "F voicev2 and bimanual-legato support remain unimplemented; C current grading remains unchanged."
+  ],
+  "researchReview": {
+    "id": "2026-11-10-12",
+    "phase": "2026-11-10-71",
+    "status": "completed-source-c-pair-xp-compatibility-contract-not-implemented",
+    "report": "docs/reports/piano-curriculum-2026-11-10-12.md",
+    "qa": "docs/qa/piano-curriculum-2026-11-10-12-c-xp-trace.json",
+    "issuedBranchesQa": "docs/qa/piano-curriculum-2026-11-10-12-issued-branches.json",
+    "contract": "docs/qa/piano-curriculum-2026-11-10-12-c-xp-contract.json",
+    "editorialPlanId": "2026-11-10-02",
+    "lessonIds": [
+      "course01-07",
+      "detail-p-hands-02"
+    ],
+    "newMetadataExperiments": 3,
+    "newActualXpArithmeticExamples": 6,
+    "newActualServiceBranchScenarios": 4,
+    "futureCasesPlanned": 20,
+    "futureCasesExecuted": 0,
+    "newMidiAssessmentProbes": 0,
+    "newCatalogLoaderRuns": 0,
+    "newLearningRecords": 0,
+    "newImplementedIndependentGoals": 0,
+    "newResearchLessonProposals": 0,
+    "newEditorialPlans": 0,
+    "pendingEditorialPlansTotal": 2,
+    "sameGoalAsApplied": false,
+    "timingPrecisionApplied": false,
+    "proposedEditorialCutoverReady": false,
+    "xpOrIssuedHistoryChanged": false,
+    "teacherReviewed": false
+  }
+}

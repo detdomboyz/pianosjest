@@ -1,0 +1,127 @@
+{
+  "phase": "89",
+  "kind": "bounded-read-only-public-json-cache-observation",
+  "checkedAt": "2026-11-10T13:59:55.341844+00:00",
+  "endpointScopeClarification": "Previous task shorthand /api/health means actual previously observed /api/service/v1/health. No extra /api/health probe.",
+  "resources": [
+    {
+      "url": "https://melodiajest.ru/web-release.json",
+      "initial": {
+        "startedAt": "2026-11-10T13:59:54.485500+00:00",
+        "completedAt": "2026-11-10T13:59:55.107917+00:00",
+        "method": "GET",
+        "url": "https://melodiajest.ru/web-release.json",
+        "requestConditionalHeaders": {},
+        "status": 200,
+        "responseHeaders": {
+          "Cache-Control": "no-cache",
+          "ETag": "\"6af1f19d-16ef\"",
+          "Last-Modified": "Mon, 09 Nov 2026 16:15:25 GMT",
+          "Date": "Tue, 10 Nov 2026 13:59:51 GMT",
+          "Age": null,
+          "Vary": null,
+          "Content-Type": "application/json",
+          "Content-Length": "5871",
+          "Content-Encoding": null
+        },
+        "bodyBytes": 5871,
+        "bodySha256": "dd979b0daa63bc5b64cde4fee898dec1dea11ea04e9bfc797532a451df1e0e35",
+        "elapsedMsDiagnosticOnly": 622.153,
+        "finalUrl": "https://melodiajest.ru/web-release.json",
+        "tlsVerificationDisabled": false,
+        "publicSummary": {
+          "version": "23.5.78"
+        }
+      },
+      "conditional": {
+        "startedAt": "2026-11-10T13:59:55.108444+00:00",
+        "completedAt": "2026-11-10T13:59:55.213788+00:00",
+        "method": "GET",
+        "url": "https://melodiajest.ru/web-release.json",
+        "requestConditionalHeaders": {
+          "If-None-Match": "\"6af1f19d-16ef\""
+        },
+        "status": 304,
+        "responseHeaders": {
+          "Cache-Control": "no-cache",
+          "ETag": "\"6af1f19d-16ef\"",
+          "Last-Modified": "Mon, 09 Nov 2026 16:15:25 GMT",
+          "Date": "Tue, 10 Nov 2026 13:59:51 GMT",
+          "Age": null,
+          "Vary": null,
+          "Content-Type": null,
+          "Content-Length": null,
+          "Content-Encoding": null
+        },
+        "bodyBytes": 0,
+        "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "elapsedMsDiagnosticOnly": 105.715,
+        "finalUrl": "https://melodiajest.ru/web-release.json",
+        "tlsVerificationDisabled": false
+      },
+      "conditionalSkipReason": null,
+      "conditionalBodySameAsInitial": null,
+      "conditional304HasNoBody": true
+    },
+    {
+      "url": "https://melodiajest.ru/api/service/v1/health",
+      "initial": {
+        "startedAt": "2026-11-10T13:59:55.213788+00:00",
+        "completedAt": "2026-11-10T13:59:55.340791+00:00",
+        "method": "GET",
+        "url": "https://melodiajest.ru/api/service/v1/health",
+        "requestConditionalHeaders": {},
+        "status": 200,
+        "responseHeaders": {
+          "Cache-Control": "private, no-store",
+          "ETag": null,
+          "Last-Modified": null,
+          "Date": "Tue, 10 Nov 2026 13:59:52 GMT",
+          "Age": null,
+          "Vary": null,
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "798",
+          "Content-Encoding": null
+        },
+        "bodyBytes": 798,
+        "bodySha256": "8596d43324eebb892657122b5d617a414690818b37e81aeebaa9f4f2e8765562",
+        "elapsedMsDiagnosticOnly": 126.877,
+        "finalUrl": "https://melodiajest.ru/api/service/v1/health",
+        "tlsVerificationDisabled": false,
+        "publicSummary": {
+          "status": "ok",
+          "implementationSha256": "2c0af582e1055d802262f248d3a88a7d7a2dc11ed9453d3212116ef8dbc944aa",
+          "courseSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee",
+          "databaseSchemaVersion": 2
+        }
+      },
+      "conditional": null,
+      "conditionalSkipReason": "No ETag or Last-Modified observed; no fabricated validator or extra request."
+    }
+  ],
+  "counts": {
+    "fixedResources": 2,
+    "initialGets": 2,
+    "conditionalGets": 1,
+    "totalPublicGetRequests": 3,
+    "fullCatalogDownloads": 0,
+    "archivesDownloaded": 0,
+    "headRequests": 0,
+    "s3RequestsInitiated": 0,
+    "sshObservations": 0
+  },
+  "knownReceiptsReusedFrom": "docs/qa/melodiajest-2026-11-10-87-native-receipts.json",
+  "knownReceiptsSha256": "fcff294b182c8115c18b631ce4a81952b108f57a9691bf16ca4c532f2a3cb19f",
+  "knownReceiptsActualReadAt": "2026-11-10T13:19:47.186331+00:00",
+  "knownHourlyInvocationId": "94768955f94c4300966b04c02ad6e338",
+  "knownHourlyStart": "Tue 2026-11-10 13:01:32 UTC",
+  "newServerMutations": 0,
+  "newBackups": 0,
+  "newRestores": 0,
+  "newArchives": 0,
+  "browserObserved": false,
+  "speedImprovementProven": false,
+  "s3BenefitProven": false,
+  "responseBodyByteCountsAreNotTlsWireBytesOrFullBilling": true,
+  "latencySamplesAreNotBenchmarkOrControlledComparison": true
+}

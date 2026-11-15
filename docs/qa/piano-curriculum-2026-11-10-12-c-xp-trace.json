@@ -1,0 +1,481 @@
+{
+  "kind": "source-only-c-pair-goal-version-credit-analysis",
+  "phase": "71",
+  "checkedAt": "2026-11-10T07:58:29.845Z",
+  "selectedIds": [
+    "course01-07",
+    "detail-p-hands-02"
+  ],
+  "reusedAcceptedSnapshot": {
+    "qa": "docs/qa/piano-curriculum-2026-11-10-02-c-pair-verified.json",
+    "sha256": "c39f86bf063dd89e0cca0aedd84ff9ec04c5c01ad8588d5518a090c6df4426e5",
+    "originalPhase": "61"
+  },
+  "sourceDependenciesMatched": [
+    {
+      "file": "chopin-theme.js",
+      "sha256": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4"
+    },
+    {
+      "file": "fingering.js",
+      "sha256": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    {
+      "file": "beginner-fingering.js",
+      "sha256": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f"
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14"
+    },
+    {
+      "file": "piano-preparation.js",
+      "sha256": "4816f1da8b607f9c4bb1c215abfb373ea549f8b0ffcc5f5077bfbb51c7b454a6"
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73"
+    },
+    {
+      "file": "piano-preparation-fragment.js",
+      "sha256": "da913adafeaad325d3dedf7c13b201a5dbba91a43d77e2cbe1d6f4f317fd1278"
+    },
+    {
+      "file": "piano-preparation-capture.js",
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18"
+    },
+    {
+      "file": "piano-preparation-transfer.js",
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526"
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b"
+    },
+    {
+      "file": "curriculum.js",
+      "sha256": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a"
+    },
+    {
+      "file": "curriculum-plan.js",
+      "sha256": "7b6672eab1bcfc6f357fb3539308f945535d5872621e35e8c981ebd5ff7d1460"
+    },
+    {
+      "file": "catalog-sections.js",
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec"
+    },
+    {
+      "file": "lesson-review-baseline.js",
+      "sha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030"
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2"
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f"
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235"
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9"
+    },
+    {
+      "file": "tests/helpers/load-app.cjs",
+      "sha256": "94dca15b5ae63378ca2ce285d828ad501ad3c32a153c28f9fc80c460c52447f1"
+    }
+  ],
+  "handModeResolution": {
+    "lessonId": "detail-p-hands-02",
+    "missingInQA61": true,
+    "actualExpression": "hands.size===1?[...hands][0]:'split'",
+    "resolvedValue": "split",
+    "canonicalFingerprintMatched": true
+  },
+  "baselineCanonical": [
+    {
+      "id": "course01-07",
+      "gradeFingerprint": "4a15f477",
+      "goalKey": "course01-07",
+      "musicVersion": "1310ba3c752882db507cf0030996d6213678ca7947d9acabe198aa67b132a0a1",
+      "editionVersion": "42a184d10b4d0ade3ac73d64e4db6b66f2ce735677de3be3f359da08c30d2d29"
+    },
+    {
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "4cdf584f",
+      "goalKey": "detail-p-hands-02",
+      "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+      "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+    }
+  ],
+  "metadataVariants": [
+    {
+      "name": "sameGoalAs-only",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "4cdf584f",
+      "goalKey": "course01-07",
+      "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+      "editionVersion": "49460bb9b153c7d968b3de5553b2605399b1adbe53231745ca1a8d06eae65551",
+      "changes": {
+        "fingerprint": false,
+        "musicVersion": false,
+        "editionVersion": true,
+        "goalKey": true
+      },
+      "persisted": false
+    },
+    {
+      "name": "timingPrecision-only",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "36f3afb3",
+      "goalKey": "detail-p-hands-02",
+      "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+      "editionVersion": "acd771543d681208a5e1344443ff8928939aceca144ddb7f0710ad465cd88960",
+      "changes": {
+        "fingerprint": true,
+        "musicVersion": true,
+        "editionVersion": true,
+        "goalKey": false
+      },
+      "persisted": false
+    },
+    {
+      "name": "both-proposed",
+      "id": "detail-p-hands-02",
+      "gradeFingerprint": "36f3afb3",
+      "goalKey": "course01-07",
+      "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+      "editionVersion": "9688add8e0e785127ac80ea789d321691a56f254fd5a1e3b1676fc485e463776",
+      "changes": {
+        "fingerprint": true,
+        "musicVersion": true,
+        "editionVersion": true,
+        "goalKey": true
+      },
+      "persisted": false
+    }
+  ],
+  "creditExamples": [
+    {
+      "name": "none-earned",
+      "synthetic": true,
+      "mainBest": 0,
+      "detailBest": 0,
+      "oldLedgerAssumedForThisExample": 0,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 100
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 100
+      },
+      "proposedFamilyFloor": 0,
+      "hypotheticalLedgerAfterTargetOnly": 100,
+      "hypotheticalLedgerAfterFloor": 100,
+      "proposedPolicyImplemented": false
+    },
+    {
+      "name": "only-detail-full",
+      "synthetic": true,
+      "mainBest": 0,
+      "detailBest": 100,
+      "oldLedgerAssumedForThisExample": 100,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 100
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 0
+      },
+      "proposedFamilyFloor": 100,
+      "hypotheticalLedgerAfterTargetOnly": 200,
+      "hypotheticalLedgerAfterFloor": 100,
+      "proposedPolicyImplemented": false
+    },
+    {
+      "name": "both-full",
+      "synthetic": true,
+      "mainBest": 100,
+      "detailBest": 100,
+      "oldLedgerAssumedForThisExample": 200,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 0
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 0
+      },
+      "proposedFamilyFloor": 100,
+      "hypotheticalLedgerAfterTargetOnly": 200,
+      "hypotheticalLedgerAfterFloor": 200,
+      "proposedPolicyImplemented": false
+    },
+    {
+      "name": "only-detail-partial",
+      "synthetic": true,
+      "mainBest": 0,
+      "detailBest": 80,
+      "oldLedgerAssumedForThisExample": 80,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 100
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 20
+      },
+      "proposedFamilyFloor": 80,
+      "hypotheticalLedgerAfterTargetOnly": 180,
+      "hypotheticalLedgerAfterFloor": 100,
+      "proposedPolicyImplemented": false
+    },
+    {
+      "name": "only-main-partial",
+      "synthetic": true,
+      "mainBest": 80,
+      "detailBest": 0,
+      "oldLedgerAssumedForThisExample": 80,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 20
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 20
+      },
+      "proposedFamilyFloor": 80,
+      "hypotheticalLedgerAfterTargetOnly": 100,
+      "hypotheticalLedgerAfterFloor": 100,
+      "proposedPolicyImplemented": false
+    },
+    {
+      "name": "both-partial",
+      "synthetic": true,
+      "mainBest": 80,
+      "detailBest": 92,
+      "oldLedgerAssumedForThisExample": 172,
+      "wanted": 100,
+      "currentTargetOnlyCalculation": {
+        "best": 100,
+        "delta": 20
+      },
+      "proposedFloorIllustration": {
+        "best": 100,
+        "delta": 8
+      },
+      "proposedFamilyFloor": 92,
+      "hypotheticalLedgerAfterTargetOnly": 192,
+      "hypotheticalLedgerAfterFloor": 180,
+      "proposedPolicyImplemented": false
+    }
+  ],
+  "unsafeLateOldAttemptIllustration": {
+    "synthetic": true,
+    "initialMainBest": 80,
+    "initialDetailBest": 0,
+    "newFamilyAwardIllustration": {
+      "best": 100,
+      "delta": 20
+    },
+    "lateOldDetailAwardUnderSavedOldKey": {
+      "best": 100,
+      "delta": 100
+    },
+    "hypotheticalFinalLedger": 200,
+    "issue": "A late old-key attempt can still award its promised old-policy100 after the new-family20; adoption requires a drain/fence contract, not retrospective rewriting.",
+    "databaseTransactionExecuted": false
+  },
+  "sumOfTwoBestsCannotFitSingleBestCap": 100,
+  "attempted200BestRejectedByActualImprovement": true,
+  "currentBestQueryIgnoresPolicyVersionButNotGoalKey": true,
+  "sourceTrace": [
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 11,
+          "excerpt": "  function goalFor(lesson){const seen=new Set();while(lesson.learning?.sameGoalAs){if(seen.has(lesson.id))throw Error('Goal cycle');seen.add(lesson.id);lesson=byId.get(lesson.learning.sameGoalAs);if(!lesson)throw Error('Missing shared goal');}return lesson.id;}"
+        },
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        }
+      ]
+    },
+    {
+      "file": "portal-experience.js",
+      "sha256": "fca1c1433519dcf77efff8b3869c13cd2af3c44b6717a4684973ffd88533bc4f",
+      "anchors": [
+        {
+          "line": 13,
+          "excerpt": "  function award({clean,quality}){"
+        },
+        {
+          "line": 18,
+          "excerpt": "  function improvement(previous,best){"
+        }
+      ]
+    },
+    {
+      "file": "service/game.cjs",
+      "sha256": "4495bac063360eacc5f3644c158e1a780b01bc6fcb7211575c40b9501c2b95c6",
+      "anchors": [
+        {
+          "line": 60,
+          "excerpt": "      const id=randomUUID(),expiresAt=now+30*60000;"
+        },
+        {
+          "line": 61,
+          "excerpt": "      await q(\"INSERT INTO learning_attempts(id,owner_id,lesson_id,music_version,edition_version,goal_key,policy_version,mode,bpm,nonce_hash,started_at,expires_at,status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,'issued')\").run(id,owner,row.id,row.musicVersion,row.editionVersion,row.goalKey,1,input.mode,row.bpm,S.sha(input.nonce),now,expiresAt);"
+        },
+        {
+          "line": 73,
+          "excerpt": "      if(row.status!=='issued'){check(row.request_digest===digest,409,'ATTEMPT_SUBMITTED','Эта попытка уже отправлена с другой записью.');return JSON.parse(row.result_raw);}"
+        },
+        {
+          "line": 76,
+          "excerpt": "      const saved=await q('SELECT plan_raw FROM course_editions WHERE lesson_id=? AND music_version=? AND edition_version=?').get(row.lesson_id,row.music_version,row.edition_version);check(saved,500,'EDITION_MISSING','Не найдена редакция попытки.');"
+        },
+        {
+          "line": 78,
+          "excerpt": "      const wanted=Experience.award({clean,quality:graded.quality}),oldGoal=await q('SELECT MAX(best_xp) AS best FROM goal_experience WHERE owner_id=? AND goal_key=?').get(owner,row.goal_key),reward=Experience.improvement(oldGoal?.best||0,wanted);"
+        },
+        {
+          "line": 84,
+          "excerpt": "        await q('INSERT INTO experience_events VALUES(?,?,?,?,?,?)').run(randomUUID(),owner,id,row.goal_key,reward.delta,now);"
+        },
+        {
+          "line": 85,
+          "excerpt": "        await q('INSERT INTO portal_experience_outbox(owner_id,goal_key,policy_version,best_xp,revision,updated_at) VALUES(?,?,?,?,1,?) ON CONFLICT(owner_id,goal_key,policy_version) DO UPDATE SET best_xp=excluded.best_xp,revision=portal_experience_outbox.revision+1,updated_at=excluded.updated_at').run(owner,row.goal_key,row.policy_version,reward.best,now);"
+        },
+        {
+          "line": 39,
+          "excerpt": "    const total=await q('SELECT COALESCE(SUM(delta),0) AS xp FROM experience_events WHERE owner_id=?').get(owner),prefs=await preferences(owner),cache=await q('SELECT * FROM portal_level_cache WHERE owner_id=?').get(owner);"
+        }
+      ]
+    },
+    {
+      "file": "service/repository.cjs",
+      "sha256": "070ea1b9c21746c304706351e3881ce2e7fe736632584415b56db69af3aaaef7",
+      "anchors": [
+        {
+          "line": 8,
+          "excerpt": "const atomic=(fn,key)=>adapter.transaction(fn,key);"
+        }
+      ]
+    },
+    {
+      "file": "service/database.cjs",
+      "sha256": "266b2334906e69913b25d8d2690a0d0399386a6c322a4b80e90ff139a78b4c17",
+      "anchors": [
+        {
+          "line": 43,
+          "excerpt": "      await client.query(snapshot?'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY':'BEGIN');if(!snapshot)await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1,0))',['melodiajest:'+key]);"
+        }
+      ]
+    },
+    {
+      "file": "service/schema.pg.sql",
+      "sha256": "1483bb3daf4fd75c628166d9bd46bd65f37141e18e60c47d6f5c35cd1db2f47d",
+      "anchors": [
+        {
+          "line": 23,
+          "excerpt": "CREATE TABLE IF NOT EXISTS learning_attempts(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,edition_version TEXT NOT NULL,goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,mode TEXT NOT NULL CHECK(mode IN ('challenge','memory')),bpm BIGINT NOT NULL,nonce_hash TEXT NOT NULL,started_at BIGINT NOT NULL,expires_at BIGINT NOT NULL,submitted_at BIGINT,request_digest TEXT,result_raw TEXT,events_raw TEXT,status TEXT NOT NULL CHECK(status IN ('issued','passed','failed')),awarded_xp BIGINT NOT NULL DEFAULT 0 CHECK(awarded_xp>=0 AND awarded_xp<=100));"
+        },
+        {
+          "line": 25,
+          "excerpt": "CREATE TABLE IF NOT EXISTS lesson_progress(owner_id TEXT NOT NULL REFERENCES users(id),lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,first_passed_at BIGINT NOT NULL,best_quality BIGINT NOT NULL CHECK(best_quality>=0 AND best_quality<=100),clean_attempts BIGINT NOT NULL,memory_passed_at BIGINT,updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,lesson_id,music_version));"
+        },
+        {
+          "line": 26,
+          "excerpt": "CREATE TABLE IF NOT EXISTS goal_experience(owner_id TEXT NOT NULL REFERENCES users(id),goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,best_xp BIGINT NOT NULL CHECK(best_xp>=0 AND best_xp<=100),updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,goal_key,policy_version));"
+        },
+        {
+          "line": 27,
+          "excerpt": "CREATE TABLE IF NOT EXISTS experience_events(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),attempt_id TEXT NOT NULL UNIQUE REFERENCES learning_attempts(id),goal_key TEXT NOT NULL,delta BIGINT NOT NULL CHECK(delta>0 AND delta<=100),created_at BIGINT NOT NULL);"
+        },
+        {
+          "line": 29,
+          "excerpt": "CREATE TABLE IF NOT EXISTS portal_experience_outbox(owner_id TEXT NOT NULL REFERENCES users(id),goal_key TEXT NOT NULL,policy_version BIGINT NOT NULL,best_xp BIGINT NOT NULL CHECK(best_xp>=0 AND best_xp<=100),revision BIGINT NOT NULL,delivered_revision BIGINT NOT NULL DEFAULT 0,updated_at BIGINT NOT NULL,PRIMARY KEY(owner_id,goal_key,policy_version));"
+        },
+        {
+          "line": 37,
+          "excerpt": "CREATE TABLE IF NOT EXISTS course_editions(lesson_id TEXT NOT NULL,music_version TEXT NOT NULL,edition_version TEXT NOT NULL,plan_raw TEXT NOT NULL,PRIMARY KEY(lesson_id,music_version,edition_version));"
+        }
+      ]
+    },
+    {
+      "file": "service/data-model.cjs",
+      "sha256": "4dcb8157c9453db13462df637cd61c3990d94a786ca4c8fc8932cce333738f97",
+      "anchors": [
+        {
+          "line": 4,
+          "excerpt": "const TABLES=Object.freeze({users:'id',credentials:'user_id',identities:'issuer,subject',sessions:'token_hash',rate_limits:'bucket',objects:'user_id,kind',melodies:'id',melody_revisions:'melody_id,revision',publications:'id',publication_revisions:'publication_id,revision',feedback:'id',operation_receipts:'owner_id,kind,operation_id',learning_preferences:'user_id',course_editions:'lesson_id,music_version,edition_version',learning_attempts:'id',lesson_progress:'owner_id,lesson_id,music_version',goal_experience:'owner_id,goal_key,policy_version',experience_events:'id',portal_experience_outbox:'owner_id,goal_key,policy_version',portal_level_cache:'owner_id',lesson_ratings:'owner_id,lesson_id,edition_version',lesson_rating_revisions:'id',discussion_comments:'id',discussion_comment_revisions:'id',game_operation_receipts:'owner_id,operation_id'});"
+        }
+      ]
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "anchors": [
+        {
+          "line": 103,
+          "excerpt": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "catalogLoaderRuns": 0,
+    "actualAwardArithmeticExamples": 6,
+    "metadataVariantsEvaluated": 3,
+    "newMidiAssessmentProbes": 0,
+    "databaseOpened": false,
+    "liveAccountDataRead": false,
+    "appFilesWritten": false,
+    "policyOrGoalMergeImplemented": false,
+    "migrationOrOutboxDeliveryExecuted": false
+  },
+  "limits": [
+    "All balances and interleavings are hypothetical, not real users.",
+    "Actual Experience functions and exact extracted builder expressions are used; no XP engine or migrator is implemented.",
+    "Metadata copies are not persisted editions; database isolation/concurrency/receiver reconciliation remain future isolated acceptance work."
+  ]
+}

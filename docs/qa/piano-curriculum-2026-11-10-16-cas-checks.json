@@ -1,0 +1,312 @@
+{
+  "kind": "source-only-editorial-candidate-digest-and-presenter-checks",
+  "phase": "2026-11-10-75",
+  "checkedAt": "2026-11-10T09:27:17.038Z",
+  "candidateFile": "docs/qa/piano-curriculum-2026-11-10-16-editorial-candidate.json",
+  "candidatePayloadSha256": "12d1bd44c14907fc1a0b82899d16f22a7cd3803564ee47ca0eb60889885376d9",
+  "sourceTrace": [
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        },
+        {
+          "line": 20,
+          "excerpt": "    rows.push({id:lesson.id,title:lesson.title,description:lesson.description||'',stage:e.stage,stageTitle:stages[e.stage]?.title||e.stage,optional:Boolean(stages[e.stage]?.optional),goal:lesson.learning?.goal||'',requires:Array.from(e.preparation||[]),goalKey:goalFor(lesson),challengeReady:ready,gradeFingerprint:Assessment.pianoSignature(lesson),musicVersion,editionVersion,...(ready?{bpm:Math.round(rhythm.practiceBpm||rhythm.bpm),timeLimit:lesson.timeLimit,steps,profile:lesson.learning?.articulation||'standard',timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending}:{})});"
+        }
+      ]
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "anchors": [
+        {
+          "line": 6,
+          "excerpt": "  function pianoFingerprint(l){return A.signature({id:l.id,title:l.title,description:l.description,pattern:l.pattern,rhythm:l.rhythm||null,guide:l.guide||null,fingeringSpec:l.fingeringSpec||null,handMode:l.handMode||null,timeLimit:l.timeLimit,maxErrors:l.maxErrors,exam:!!l.exam});}"
+        }
+      ]
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f",
+      "anchors": [
+        {
+          "line": 653,
+          "excerpt": "  function instructionFingerprint(lesson){"
+        }
+      ]
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235",
+      "anchors": [
+        {
+          "line": 62,
+          "excerpt": "    if(memory||mode==='hidden') return '';"
+        },
+        {
+          "line": 60,
+          "excerpt": "  function materialHtml({mode,memory=false,preview='',renderBody}){"
+        }
+      ]
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "anchors": [
+        {
+          "line": 178,
+          "excerpt": "  function materialHtml(lesson,instrument,escape){const l=lesson.learning;if(!l)return '';const e=escape,items=values=>(values||[]).map(s=>'<li>'+e(s)+'</li>').join('');return '<details class=\"learning-material\"><summary>Разбор движения и учебные материалы</summary>'+provenanceHtml(l,e)+'<p><b>Цель:</b> '+e(l.goal||lesson.description)+'</p>'+(l.timeSignature?'<p>Размер '+l.timeSignature.numerator+'/'+l.timeSignature.denominator+' · '+lesson.bpm+' BPM</p>':'')+'<ol>'+items(l.practiceSteps)+'</ol><p><b>Проверь себя</b></p><ul>'+items(l.selfCheck)+'</ul>'+(l.rhythmNotice?'<p>'+e(l.rhythmNotice)+'</p>':'')+'<ul>'+items(l.limitations)+'</ul><p>'+(instrument==='piano'?'C4 — среднее до (MIDI 60). Пальцы 1–5: большой, указательный, средний, безымянный, мизинец. Legato — связно, staccato — коротко. Педаль в этих заданиях не используется.':'Струна 1 — тонкая E4, 6 — басовая E2 в стандартном строе. 0 — открытая струна. Левая рука: 1–4 от указательного до мизинца. Правая: p — большой, i — указательный, m — средний, a — безымянный; down/up — медиатор вниз/вверх.')+'</p><p>Четверть — одна доля, половинная — две, целая — четыре; восьмая — полдоли. Точка добавляет половину длительности. В паузе продолжай считать. Сначала качество короткого фрагмента, затем соединение и темп.</p><p>Первоисточники и дальнейшее чтение: '+(l.references||[]).filter(url=>/^https:\\/\\//.test(url)).map((url,i)=>'<a href=\"'+e(url)+'\" target=\"_blank\" rel=\"noopener noreferrer\">'+e(l.referenceTitles?.[url]||(url.includes('utexas')?'Duke / Simmons: практика':url.includes('koeln')?'Czerny: письмо 3':url.includes('trinity')?'Trinity: технические навыки':url.includes('openmusictheory')?'Chelsey Hamm: трезвучия':url.includes('cliffsmithguitarlessons.co.uk')?'Cliff Smith: полутоновый bend':'Первоисточник '+(i+1)))+'</a>').join(' · ')+'</p><p>Это упражнения проекта на основе общих принципов; их темпы и допуски не являются требованиями этих авторов или экзаменационной программы.</p></details>';}"
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9",
+      "anchors": [
+        {
+          "line": 2410,
+          "excerpt": "    return window.PianoLearningUI.materialHtml({mode:state.learningMaterialMode,memory:state.attemptMode==='memory',preview:[lesson.learning?.goalCounting==='checkpoint-only'?'Контроль знакомых навыков.':null,sameGoal?'Повторение навыка «'+sameGoal.title+'».':null,lesson.learning?.goal||lesson.description,lesson.learning?.practiceSteps?.[0]||lesson.guide?.setup].filter(Boolean).join('\\n'),renderBody:()=>window.PianoLearningUI.checkpointHtml(lesson.learning?.goalCounting)+window.PianoLearningUI.sameGoalHtml(sameGoal)+window.PianoLearningUI.preparationHtml(preparations.map(id=>lessons.find(item=>item.id===id&&window.MusicCatalog.sectionOf('piano',item,themes)==='learning')).filter(Boolean).map(item=>({id:item.id,title:item.title})))+learningContractHtml(true)+lessonGuideHtml()+window.PianoLearningUI.unwrapMaterial(window.LessonDevelopment.materialHtml(lesson,'piano',escapeHtml))});"
+        },
+        {
+          "line": 153,
+          "excerpt": "  function escapeHtml(s){ return String(s).replace(/[&<>'\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',\"'\":'&#39;','\"':'&quot;'}[c])); }"
+        }
+      ]
+    }
+  ],
+  "sourceDependenciesMatched": [
+    {
+      "file": "chopin-theme.js",
+      "sha256": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4"
+    },
+    {
+      "file": "fingering.js",
+      "sha256": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    {
+      "file": "beginner-fingering.js",
+      "sha256": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f"
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14"
+    },
+    {
+      "file": "piano-preparation.js",
+      "sha256": "4816f1da8b607f9c4bb1c215abfb373ea549f8b0ffcc5f5077bfbb51c7b454a6"
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73"
+    },
+    {
+      "file": "piano-preparation-fragment.js",
+      "sha256": "da913adafeaad325d3dedf7c13b201a5dbba91a43d77e2cbe1d6f4f317fd1278"
+    },
+    {
+      "file": "piano-preparation-capture.js",
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18"
+    },
+    {
+      "file": "piano-preparation-transfer.js",
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526"
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b"
+    },
+    {
+      "file": "curriculum.js",
+      "sha256": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a"
+    },
+    {
+      "file": "curriculum-plan.js",
+      "sha256": "7b6672eab1bcfc6f357fb3539308f945535d5872621e35e8c981ebd5ff7d1460"
+    },
+    {
+      "file": "catalog-sections.js",
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec"
+    },
+    {
+      "file": "lesson-review-baseline.js",
+      "sha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030"
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2"
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f"
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235"
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9"
+    },
+    {
+      "file": "tests/helpers/load-app.cjs",
+      "sha256": "94dca15b5ae63378ca2ce285d828ad501ad3c32a153c28f9fc80c460c52447f1"
+    }
+  ],
+  "reusedEvidence": [
+    {
+      "file": "docs/qa/piano-curriculum-2026-11-10-13-contrary-xp-contract.json",
+      "sha256": "55f032cac5ed650bcb72d46869245bd7df69d576c37d1507e5e9867294c3bba8"
+    },
+    {
+      "file": "docs/qa/piano-curriculum-2026-11-10-14-manual-fragment-contract.json",
+      "sha256": "43019d4aa00e0c0e0e708cf48217cdd5f8df63ac928ce3b488252e3b86011c5c"
+    },
+    {
+      "file": "docs/qa/piano-curriculum-2026-11-10-15-contrary-release-probes.json",
+      "sha256": "b1ced2de4e7dba0dc0a2b2f2cf14fea604202e79dd33cadc80ca8d1174bb6fd6"
+    }
+  ],
+  "before": {
+    "lessonId": "detail-p-hands-03",
+    "fingerprint": "47383ac1",
+    "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+    "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce",
+    "editorialProjectionSha256": "e2fc07f49fceb993f7ef371a9c079e22e8731857d89e04140016dae0c3a4ade8",
+    "notationInvariantSha256": "58c9dc58bf6f8f426aa46d8fb3b44f7dba091f849d0ce7949fb52308c678d2bc",
+    "goalKey": "detail-p-hands-03"
+  },
+  "after": {
+    "lessonId": "detail-p-hands-03",
+    "fingerprint": "59fcadd5",
+    "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+    "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1",
+    "editorialProjectionSha256": "57c7d22e99e5385a3d1a83bbc0deed3b6f8e462a24f84c7eaaff5ef174d59e4b",
+    "notationInvariantSha256": "58c9dc58bf6f8f426aa46d8fb3b44f7dba091f849d0ce7949fb52308c678d2bc",
+    "goalKey": "detail-p-hands-03"
+  },
+  "casComparisons": [
+    {
+      "name": "unchanged",
+      "expectedPreconditionsMatch": true,
+      "preconditionsMatch": true,
+      "serverEditionUnchanged": true,
+      "editorialProjectionUnchanged": true,
+      "actualPatchApplied": false
+    },
+    {
+      "name": "user-description",
+      "expectedPreconditionsMatch": false,
+      "preconditionsMatch": false,
+      "serverEditionUnchanged": false,
+      "editorialProjectionUnchanged": false,
+      "actualPatchApplied": false
+    },
+    {
+      "name": "user-guide-same-server-edition",
+      "expectedPreconditionsMatch": false,
+      "preconditionsMatch": false,
+      "serverEditionUnchanged": true,
+      "editorialProjectionUnchanged": false,
+      "actualPatchApplied": false
+    },
+    {
+      "name": "changed-note-duration",
+      "expectedPreconditionsMatch": false,
+      "preconditionsMatch": false,
+      "serverEditionUnchanged": false,
+      "editorialProjectionUnchanged": true,
+      "actualPatchApplied": false
+    },
+    {
+      "name": "changed-explicit-finger",
+      "expectedPreconditionsMatch": false,
+      "preconditionsMatch": false,
+      "serverEditionUnchanged": false,
+      "editorialProjectionUnchanged": true,
+      "actualPatchApplied": false
+    },
+    {
+      "name": "unknown-personal-learning-field",
+      "expectedPreconditionsMatch": false,
+      "preconditionsMatch": false,
+      "serverEditionUnchanged": false,
+      "editorialProjectionUnchanged": false,
+      "actualPatchApplied": false
+    }
+  ],
+  "metadataDiagnostics": {
+    "guideOnlyServerVersions": {
+      "fingerprint": "47383ac1",
+      "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+      "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce"
+    },
+    "guideOnlyEditorialProjectionDifferent": true,
+    "existingQualityInstructionFingerprintChanged": true,
+    "textOnlyVersion": {
+      "fingerprint": "47383ac1",
+      "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+      "editionVersion": "d91b9f9b4c8a632f809fb71fc4dddd7a26413077a42fc5bd889f10f5418eb410"
+    },
+    "textAndTimingCandidateVersion": {
+      "fingerprint": "59fcadd5",
+      "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+      "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1"
+    }
+  },
+  "purePresenterChecks": {
+    "normalModes": 3,
+    "memoryModes": 3,
+    "expandedBodyCalls": 1,
+    "hiddenBodyEmpty": true,
+    "memoryBodiesEmpty": true,
+    "lazyFullPresenterUsed": true,
+    "explicitReferenceTitleAvoidsIncorrectTriadAttribution": true,
+    "hiddenChoiceControlRetained": true,
+    "actualDomBrowserOrPixelLayoutObserved": false
+  },
+  "counts": {
+    "candidatesForExistingPlan": 1,
+    "newEditorialPlans": 0,
+    "newLessonIds": 0,
+    "newLearningRecords": 0,
+    "newIndependentGoals": 0,
+    "newDigestComparisonScenarios": 6,
+    "newMetadataDiagnostics": 3,
+    "newMidiAssessmentProbes": 0,
+    "newBrowserLoaderRuns": 0,
+    "newFullBuilderRuns": 0,
+    "appFilesWritten": 0,
+    "gradeXpRouteOrRegistryChanged": false,
+    "actualCasApplyOrMigratorTested": false
+  },
+  "originalNoteAndFingerAndRhythmProjectionPreserved": true,
+  "sourceOrTargetOr79Changed": false
+}

@@ -1,0 +1,730 @@
+{
+  "kind": "manual-post-reader-backup77",
+  "invocationId": "d4beff21322243c0a62ef88c26f7c6e1",
+  "startedAt": "2026-11-09T13:30:02.215600+00:00",
+  "finishedAt": "2026-11-09T13:30:52.011894+00:00",
+  "unit": {
+    "Result": "success",
+    "ExecMainStartTimestamp": "Mon 2026-11-09 13:30:02 UTC",
+    "ExecMainExitTimestamp": "Mon 2026-11-09 13:30:52 UTC",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive",
+    "StartLimitIntervalUSec": "2h",
+    "StartLimitBurst": "4",
+    "InvocationID": "d4beff21322243c0a62ef88c26f7c6e1"
+  },
+  "journal": [
+    {
+      "__REALTIME_TIMESTAMP": "1794231002215600",
+      "_PID": "1",
+      "_SELINUX_CONTEXT": "unconfined\n",
+      "_CAP_EFFECTIVE": "1ffffffffff",
+      "_HOSTNAME": "milena",
+      "_MACHINE_ID": "c451cb8655c84791a1738d32e3586dc0",
+      "__MONOTONIC_TIMESTAMP": "3117139612070",
+      "_TRANSPORT": "journal",
+      "_SYSTEMD_UNIT": "init.scope",
+      "TID": "1",
+      "_BOOT_ID": "f4b563c47f694a5b9e4d826442c999e2",
+      "_EXE": "/usr/lib/systemd/systemd",
+      "__CURSOR": "s=12b2d3c9cd514d52b49c380986018ef9;i=1c7231;b=f4b563c47f694a5b9e4d826442c999e2;m=2d5c3ffd1a6;t=65fd7f58834b0;x=395729d3d0cc9cbc",
+      "_RUNTIME_SCOPE": "system",
+      "INVOCATION_ID": "d4beff21322243c0a62ef88c26f7c6e1",
+      "SYSLOG_FACILITY": "3",
+      "UNIT": "melodiajest-account-backup.service",
+      "__SEQNUM": "1864241",
+      "CODE_FUNC": "job_emit_start_message",
+      "_GID": "0",
+      "_COMM": "systemd",
+      "JOB_ID": "4202269",
+      "MESSAGE_ID": "7d4958e842da4a758f6c1cdc7b36dcc5",
+      "PRIORITY": "6",
+      "SYSLOG_IDENTIFIER": "systemd",
+      "_UID": "0",
+      "_SYSTEMD_CGROUP": "/init.scope",
+      "MESSAGE": "Starting melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery...",
+      "CODE_FILE": "src/core/job.c",
+      "_SYSTEMD_SLICE": "-.slice",
+      "_CMDLINE": "/usr/lib/systemd/systemd --system --deserialize=94 nofb",
+      "__SEQNUM_ID": "12b2d3c9cd514d52b49c380986018ef9",
+      "CODE_LINE": "609",
+      "JOB_TYPE": "start",
+      "_SOURCE_REALTIME_TIMESTAMP": "1794231002215104"
+    },
+    {
+      "_PID": "2468000",
+      "_BOOT_ID": "f4b563c47f694a5b9e4d826442c999e2",
+      "_SELINUX_CONTEXT": "unconfined\n",
+      "SYSLOG_IDENTIFIER": "python3",
+      "_HOSTNAME": "milena",
+      "_GID": "0",
+      "_SYSTEMD_CGROUP": "/system.slice/melodiajest-account-backup.service",
+      "__CURSOR": "s=12b2d3c9cd514d52b49c380986018ef9;i=1c7323;b=f4b563c47f694a5b9e4d826442c999e2;m=2d5c6f739ea;t=65fd7f87f9cf4;x=f577060e0fd5de9f",
+      "_CAP_EFFECTIVE": "1fff7fdffff",
+      "_CMDLINE": "/usr/bin/python3 -B /opt/melodiajest/ops/tooling/account-bce1ef52c5266336/service/account_backup.py run",
+      "__SEQNUM_ID": "12b2d3c9cd514d52b49c380986018ef9",
+      "__REALTIME_TIMESTAMP": "1794231051984116",
+      "__SEQNUM": "1864483",
+      "__MONOTONIC_TIMESTAMP": "3117189380586",
+      "_MACHINE_ID": "c451cb8655c84791a1738d32e3586dc0",
+      "PRIORITY": "6",
+      "_EXE": "/usr/bin/python3.12",
+      "_STREAM_ID": "aae7248b5d7444d1a8d178738e9671d8",
+      "SYSLOG_FACILITY": "3",
+      "_SYSTEMD_SLICE": "system.slice",
+      "_RUNTIME_SCOPE": "system",
+      "MESSAGE": "{\"billingMeasured\": false, \"checkedAt\": \"2026-11-09T13:30:50.895845+00:00\", \"filesVerified\": 23, \"newSnapshotCreated\": true, \"payloadBytes\": 201581920, \"restore\": {\"apiHealth\": \"ok\", \"daemonLayerReusePossible\": true, \"dataDigestMatched\": true, \"ddlDenied\": true, \"forgedOwnerDenied\": true, \"imageBlobsVerified\": 20, \"network\": \"none\", \"nodeFromRestoredArchive\": true, \"pgDependenciesFromRestoredArchive\": true, \"postgresImageImported\": true, \"privateWriteReadback\": true, \"productionDataUsed\": false, \"productionVolumesMounted\": false, \"restoredSessionsRevoked\": true, \"sourceSha256\": \"ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2\", \"syntheticMidiDeviceUsed\": false, \"twoUsersRegistered\": true, \"wrongPasswordDenied\": true}, \"snapshot\": \"a02a4e05ed56109344c5d6fd5ba0ce7b0cc9c38f6400734c6ba012e014f21d50\", \"status\": \"verified\"}",
+      "_TRANSPORT": "stdout",
+      "_COMM": "python3",
+      "_SYSTEMD_UNIT": "melodiajest-account-backup.service",
+      "_UID": "0",
+      "_SYSTEMD_INVOCATION_ID": "d4beff21322243c0a62ef88c26f7c6e1"
+    },
+    {
+      "_SOURCE_REALTIME_TIMESTAMP": "1794231052011061",
+      "_BOOT_ID": "f4b563c47f694a5b9e4d826442c999e2",
+      "_CAP_EFFECTIVE": "1ffffffffff",
+      "__REALTIME_TIMESTAMP": "1794231052011424",
+      "__MONOTONIC_TIMESTAMP": "3117189407894",
+      "MESSAGE_ID": "7ad2d189f7e94e70a38c781354912448",
+      "__SEQNUM": "1864484",
+      "_MACHINE_ID": "c451cb8655c84791a1738d32e3586dc0",
+      "MESSAGE": "melodiajest-account-backup.service: Deactivated successfully.",
+      "_SYSTEMD_SLICE": "-.slice",
+      "SYSLOG_FACILITY": "3",
+      "_UID": "0",
+      "CODE_FILE": "src/core/unit.c",
+      "_RUNTIME_SCOPE": "system",
+      "_SYSTEMD_CGROUP": "/init.scope",
+      "INVOCATION_ID": "d4beff21322243c0a62ef88c26f7c6e1",
+      "CODE_LINE": "6013",
+      "_EXE": "/usr/lib/systemd/systemd",
+      "__CURSOR": "s=12b2d3c9cd514d52b49c380986018ef9;i=1c7324;b=f4b563c47f694a5b9e4d826442c999e2;m=2d5c6f7a496;t=65fd7f88007a0;x=ed802f03ed891252",
+      "SYSLOG_IDENTIFIER": "systemd",
+      "_TRANSPORT": "journal",
+      "CODE_FUNC": "unit_log_success",
+      "TID": "1",
+      "_HOSTNAME": "milena",
+      "UNIT": "melodiajest-account-backup.service",
+      "__SEQNUM_ID": "12b2d3c9cd514d52b49c380986018ef9",
+      "_PID": "1",
+      "_COMM": "systemd",
+      "_SYSTEMD_UNIT": "init.scope",
+      "_SELINUX_CONTEXT": "unconfined\n",
+      "PRIORITY": "6",
+      "_GID": "0",
+      "_CMDLINE": "/usr/lib/systemd/systemd --system --deserialize=94 nofb"
+    },
+    {
+      "TID": "1",
+      "SYSLOG_FACILITY": "3",
+      "_BOOT_ID": "f4b563c47f694a5b9e4d826442c999e2",
+      "_RUNTIME_SCOPE": "system",
+      "_CMDLINE": "/usr/lib/systemd/systemd --system --deserialize=94 nofb",
+      "_COMM": "systemd",
+      "MESSAGE": "Finished melodiajest-account-backup.service - MelodiaJest account data copy and isolated recovery.",
+      "_EXE": "/usr/lib/systemd/systemd",
+      "_SOURCE_REALTIME_TIMESTAMP": "1794231052011886",
+      "_SYSTEMD_CGROUP": "/init.scope",
+      "CODE_LINE": "796",
+      "JOB_TYPE": "start",
+      "_CAP_EFFECTIVE": "1ffffffffff",
+      "__MONOTONIC_TIMESTAMP": "3117189408364",
+      "_TRANSPORT": "journal",
+      "PRIORITY": "6",
+      "__SEQNUM_ID": "12b2d3c9cd514d52b49c380986018ef9",
+      "_SELINUX_CONTEXT": "unconfined\n",
+      "_GID": "0",
+      "SYSLOG_IDENTIFIER": "systemd",
+      "_PID": "1",
+      "JOB_ID": "4202269",
+      "JOB_RESULT": "done",
+      "_SYSTEMD_SLICE": "-.slice",
+      "__SEQNUM": "1864485",
+      "__REALTIME_TIMESTAMP": "1794231052011894",
+      "_HOSTNAME": "milena",
+      "_SYSTEMD_UNIT": "init.scope",
+      "INVOCATION_ID": "d4beff21322243c0a62ef88c26f7c6e1",
+      "_MACHINE_ID": "c451cb8655c84791a1738d32e3586dc0",
+      "MESSAGE_ID": "39f53479d3a045ac8e11786248231fbf",
+      "CODE_FUNC": "job_emit_done_message",
+      "UNIT": "melodiajest-account-backup.service",
+      "_UID": "0",
+      "__CURSOR": "s=12b2d3c9cd514d52b49c380986018ef9;i=1c7325;b=f4b563c47f694a5b9e4d826442c999e2;m=2d5c6f7a66c;t=65fd7f8800976;x=cc13ede002a8c6b7",
+      "CODE_FILE": "src/core/job.c"
+    },
+    {
+      "_EXE": "/usr/lib/systemd/systemd",
+      "TID": "1",
+      "_TRANSPORT": "journal",
+      "__MONOTONIC_TIMESTAMP": "3117189409977",
+      "CPU_USAGE_NSEC": "19004555000",
+      "CODE_LINE": "2577",
+      "_CAP_EFFECTIVE": "1ffffffffff",
+      "MESSAGE": "melodiajest-account-backup.service: Consumed 19.004s CPU time.",
+      "CODE_FILE": "src/core/unit.c",
+      "SYSLOG_FACILITY": "3",
+      "_SYSTEMD_UNIT": "init.scope",
+      "UNIT": "melodiajest-account-backup.service",
+      "_MACHINE_ID": "c451cb8655c84791a1738d32e3586dc0",
+      "MESSAGE_ID": "ae8f7b866b0347b9af31fe1c80b127c0",
+      "_PID": "1",
+      "_COMM": "systemd",
+      "__SEQNUM_ID": "12b2d3c9cd514d52b49c380986018ef9",
+      "__CURSOR": "s=12b2d3c9cd514d52b49c380986018ef9;i=1c7326;b=f4b563c47f694a5b9e4d826442c999e2;m=2d5c6f7acb9;t=65fd7f8800fc3;x=3809288b289ea841",
+      "__SEQNUM": "1864486",
+      "_SYSTEMD_SLICE": "-.slice",
+      "PRIORITY": "6",
+      "CODE_FUNC": "unit_log_resources",
+      "SYSLOG_IDENTIFIER": "systemd",
+      "_GID": "0",
+      "_HOSTNAME": "milena",
+      "_SYSTEMD_CGROUP": "/init.scope",
+      "_RUNTIME_SCOPE": "system",
+      "_BOOT_ID": "f4b563c47f694a5b9e4d826442c999e2",
+      "INVOCATION_ID": "d4beff21322243c0a62ef88c26f7c6e1",
+      "_CMDLINE": "/usr/lib/systemd/systemd --system --deserialize=94 nofb",
+      "_SOURCE_REALTIME_TIMESTAMP": "1794231052013494",
+      "__REALTIME_TIMESTAMP": "1794231052013507",
+      "_SELINUX_CONTEXT": "unconfined\n",
+      "_UID": "0"
+    }
+  ],
+  "receipt": {
+    "billingMeasured": false,
+    "checkedAt": "2026-11-09T13:30:50.895845+00:00",
+    "copyCreatedAt": "2026-11-09T13:30:16.595465+00:00",
+    "copyMetrics": {
+      "billingMeasured": false,
+      "cpuSystemSeconds": 0.228,
+      "cpuUserSeconds": 1.702,
+      "credentialsInArgv": false,
+      "elapsedSeconds": 6.153,
+      "error": null,
+      "exitCode": 0,
+      "operation": "backup",
+      "peakChildRssKiB": 80108,
+      "productionInputsMounted": false,
+      "result": [
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 24
+        },
+        {
+          "data_added": 6588409,
+          "data_added_packed": 6528920,
+          "files_changed": 0,
+          "files_new": 24,
+          "files_unmodified": 0,
+          "message_type": "summary",
+          "snapshot_id": "a02a4e05ed56109344c5d6fd5ba0ce7b0cc9c38f6400734c6ba012e014f21d50",
+          "total_bytes_processed": 201585874,
+          "total_duration": 6.077789839,
+          "total_files_processed": 24
+        }
+      ],
+      "s3HttpRequestCount": null
+    },
+    "dataComparedAt": "2026-11-09T13:30:50.895918+00:00",
+    "dataDigest": "9553ea2ebb8e2720d5a25f0959bffd48adce86c97997c37d5486ac3deabf4ddb",
+    "filesVerified": 23,
+    "fingerprint": "3a8912a11b6d5666e4eeebd5fbd3157cb571055c48ed2c1f1518b31198bc8eb9",
+    "kind": "melodiajest-postgres-protection",
+    "localPayload": "/opt/melodiajest/ops/account-postgres-backups/verified-122c3dfac78e42bbb58d92818cfd07bd",
+    "newSnapshotCreated": true,
+    "payloadBytes": 201581920,
+    "restore": {
+      "apiHealth": "ok",
+      "daemonLayerReusePossible": true,
+      "dataDigestMatched": true,
+      "ddlDenied": true,
+      "forgedOwnerDenied": true,
+      "imageBlobsVerified": 20,
+      "network": "none",
+      "nodeFromRestoredArchive": true,
+      "pgDependenciesFromRestoredArchive": true,
+      "postgresImageImported": true,
+      "privateWriteReadback": true,
+      "productionDataUsed": false,
+      "productionVolumesMounted": false,
+      "restoredSessionsRevoked": true,
+      "sourceSha256": "ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2",
+      "syntheticMidiDeviceUsed": false,
+      "twoUsersRegistered": true,
+      "wrongPasswordDenied": true
+    },
+    "restoreMetrics": {
+      "billingMeasured": false,
+      "cpuSystemSeconds": 0.676,
+      "cpuUserSeconds": 2.344,
+      "credentialsInArgv": false,
+      "elapsedSeconds": 6.831,
+      "error": null,
+      "exitCode": 0,
+      "operation": "restore",
+      "peakChildRssKiB": 216224,
+      "productionInputsMounted": false,
+      "result": [
+        {
+          "bytes_restored": 4655,
+          "files_restored": 4,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 2034327,
+          "files_restored": 6,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 6331212,
+          "files_restored": 11,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 8605833,
+          "files_restored": 12,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 8731143,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 13527919,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 17825653,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 20720986,
+          "files_restored": 16,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 21536780,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 34961098,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 39798714,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 51780215,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 56962537,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 60140924,
+          "files_restored": 21,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 63714247,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 69037721,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 71520264,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 73227808,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 76635323,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 87037072,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 87037072,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 89252408,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 97549850,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 103426741,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 109593286,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 112801453,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 125142313,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 131678828,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 135594347,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 141694803,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 152783546,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 158888469,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 164654840,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 168356922,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 172826025,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 183288368,
+          "files_restored": 22,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 193934920,
+          "files_restored": 23,
+          "message_type": "status",
+          "total_bytes": 201585874,
+          "total_files": 28
+        },
+        {
+          "bytes_restored": 201585874,
+          "files_restored": 28,
+          "message_type": "summary",
+          "total_bytes": 201585874,
+          "total_files": 28
+        }
+      ],
+      "s3HttpRequestCount": null
+    },
+    "restoredAt": "2026-11-09T13:30:50.895910+00:00",
+    "retention": "latest three verified own local payloads; immutable local image hard-links; no external deletion",
+    "snapshot": "a02a4e05ed56109344c5d6fd5ba0ce7b0cc9c38f6400734c6ba012e014f21d50",
+    "sourceSha256": "ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2",
+    "standby": false,
+    "status": "verified",
+    "version": 2
+  },
+  "journalReceipt": {
+    "billingMeasured": false,
+    "checkedAt": "2026-11-09T13:30:50.895845+00:00",
+    "filesVerified": 23,
+    "newSnapshotCreated": true,
+    "payloadBytes": 201581920,
+    "restore": {
+      "apiHealth": "ok",
+      "daemonLayerReusePossible": true,
+      "dataDigestMatched": true,
+      "ddlDenied": true,
+      "forgedOwnerDenied": true,
+      "imageBlobsVerified": 20,
+      "network": "none",
+      "nodeFromRestoredArchive": true,
+      "pgDependenciesFromRestoredArchive": true,
+      "postgresImageImported": true,
+      "privateWriteReadback": true,
+      "productionDataUsed": false,
+      "productionVolumesMounted": false,
+      "restoredSessionsRevoked": true,
+      "sourceSha256": "ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2",
+      "syntheticMidiDeviceUsed": false,
+      "twoUsersRegistered": true,
+      "wrongPasswordDenied": true
+    },
+    "snapshot": "a02a4e05ed56109344c5d6fd5ba0ce7b0cc9c38f6400734c6ba012e014f21d50",
+    "status": "verified"
+  },
+  "timerLastTrigger": "Mon 2026-11-09 02:12:50 UTC",
+  "calendarExecution": false,
+  "newSnapshotCreated": true,
+  "nativeUnitAndAllJournalReceiptFieldsMatched": true,
+  "scope": "Read-only evidence of the already completed ordinary post-reader PG backup. Every emitted journal receipt field equals the full saved receipt;no new service starts/S3 requests."
+}

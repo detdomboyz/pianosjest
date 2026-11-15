@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-13T11:49:14.194706+00:00",
+  "file": "tests/piano-left-eighth-pairs.test.cjs",
+  "backup": "tmp/piano-left-eighth-pairs-before-count-fix-172.cjs",
+  "beforeSha256": "7dba17f64730bc9f09a6a5b6474a08c3fd9b329d3505bce2b08858f4542f4f33",
+  "afterSha256": "cbce5fb033735052eaabfdcc601ba7626d3bd6663d3dc0c05102c6b897467315",
+  "originalAssertion": "assert.equal(c.counts.graded,234);",
+  "replacement": "assert.equal(c.counts.graded,counts.checkedMidiRouteLessons);const originalGraded=new Set([...before.server.route,id]);assert.equal(originalGraded.size,234);assert.equal(c.lessons.filter(x=>originalGraded.has(x.id)&&x.challengeReady).length,234);for(const oldId of originalGraded)assert.ok(c.route.includes(oldId),oldId);assert.deepEqual(c.route.filter(x=>before.server.route.includes(x)),before.server.route);",
+  "allOtherBytesExact": true,
+  "originalFixed234CohortStillRequired": true,
+  "oldRouteRelativeOrderStillRequired": true,
+  "currentGlobalCountMatchesSharedCounts": true,
+  "notesFingersTimingGradeAssertionsUnchanged": true,
+  "newEmajorTestAndFixtureStillExactAfterFirstRed": true,
+  "firstFullLog": "tmp/melodiajest-172-npm.log",
+  "firstFullLogSha256": "4b4e7e215d4825d00934c278d411190f826198f3bea19b6579b55175b7304937",
+  "firstFullPassed": 1757,
+  "firstFullFailed": 1,
+  "firstFullDurationMs": 714707.8534,
+  "firstFullFailure": "Old global graded count234 rejects legitimate new235;no musical/runtime failure inferred",
+  "extraTestBackupReadBackVerified": true
+}

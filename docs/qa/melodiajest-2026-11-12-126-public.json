@@ -1,0 +1,136 @@
+{
+  "checkedAt": "2026-11-12T05:04:23.201712+00:00",
+  "publicVersion": "23.5.95",
+  "manifestSha256": "a54350438ab926eb3c3cb7eae8aa3fb8ec6d421c284178922b65cb3ce58ff554",
+  "publicFilesPreviouslyHashVerified": 40,
+  "redirects": {
+    "http": {
+      "status": 308,
+      "location": "https://melodiajest.ru/"
+    },
+    "www": {
+      "status": 301,
+      "location": "https://melodiajest.ru/"
+    }
+  },
+  "certificates": {
+    "melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:22 2027 GMT"
+    },
+    "www.melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:23 2027 GMT"
+    }
+  },
+  "forbiddenPaths": {
+    "/server.cjs": 404,
+    "/trainer-content.json": 404,
+    "/.git/config": 404,
+    "/.env": 404,
+    "/service/server.cjs": 404,
+    "/service/course-registry.json": 404,
+    "/api/content": 404,
+    "/api/launch-app": 404
+  },
+  "api": {
+    "status": "ok",
+    "engine": "postgres",
+    "implementationSha256": "e214cfadd5a008931f74b69f60df20b57309c602d10b6dd761bd3ac38c3c55f6",
+    "databaseSchemaVersion": 2,
+    "courseSha256": "41582bcd7ec1d035d24cc5f3f1149cfea6667e41ba26d1c938ec52a15459ce49"
+  },
+  "staticAliases": [
+    "melodiajest-web-1",
+    "melodiajest-static",
+    "melodiajest-web"
+  ],
+  "staticService": "melodiajest-static",
+  "current": "releases/23.5.95-a54350438ab9",
+  "previous": "releases/23.5.94-f7420a0ff12b",
+  "health": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 99,
+        "independentRestore": 99,
+        "lastAttempt": 99
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-12T05:01:12.737359+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-12T05:01:12.737354+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "9491057f0cbf75501e3f858ef5006550dd1941376b6d24665637ca40a3b829a8",
+      "sourceSha256": "e214cfadd5a008931f74b69f60df20b57309c602d10b6dd761bd3ac38c3c55f6",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 1,
+      "externalRestore": 1
+    },
+    "backupCreatedAt": "2026-11-12T05:01:42.432331+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-12T05:02:51.605116+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  },
+  "hourlyService": {
+    "Result": "success",
+    "ExecMainStartTimestamp": "Thu 2026-11-12 05:02:51 UTC",
+    "ExecMainExitTimestamp": "Thu 2026-11-12 05:02:51 UTC",
+    "ExecMainStatus": "0",
+    "InvocationID": "fc2cb370b3bc415aaff9e4d5fb501622"
+  },
+  "hourlyTimer": {
+    "NextElapseUSecRealtime": "Thu 2026-11-12 06:00:22 UTC",
+    "LastTriggerUSec": "Thu 2026-11-12 05:00:50 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "accountTimer": {
+    "NextElapseUSecRealtime": "Fri 2026-11-13 02:12:15 UTC",
+    "LastTriggerUSec": "Thu 2026-11-12 02:14:17 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "resources": {
+    "freeDiskBytes": 2519871488,
+    "api": {
+      "MemoryCurrent": "25276416",
+      "MemoryPeak": "59256832",
+      "CPUUsageNSec": "890558000"
+    },
+    "containers": [
+      {
+        "BlockIO": "1.62MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-web-1",
+        "ID": "7d874f398812",
+        "MemPerc": "6.01%",
+        "MemUsage": "3.848MiB / 64MiB",
+        "Name": "melodiajest-web-1",
+        "NetIO": "25.5kB / 2.22MB",
+        "PIDs": "2"
+      },
+      {
+        "BlockIO": "104MB / 189MB",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-postgres-1",
+        "ID": "5c0b3afec574",
+        "MemPerc": "4.07%",
+        "MemUsage": "20.84MiB / 512MiB",
+        "Name": "melodiajest-postgres-1",
+        "NetIO": "0B / 0B",
+        "PIDs": "10"
+      }
+    ],
+    "loadTest": false
+  },
+  "billingMeasured": false
+}

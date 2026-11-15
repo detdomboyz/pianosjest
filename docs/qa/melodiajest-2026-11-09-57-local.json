@@ -1,0 +1,428 @@
+{
+  "artifact": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\melodiajest-23.5.79-20261109-57.tar.gz",
+    "bytes": 6986732,
+    "sha256": "a4209ac8f841ae6f770f9e3da9bf94f8163d11c02182b43400f871a18ad9dd15",
+    "version": "23.5.79",
+    "webManifestSha256": "6a715c7f447a22944fab153ddb518eacb415f33569ce5295d16440ce3c6c5f93",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 1018,
+    "publicFiles": 40,
+    "restoreVerified": true,
+    "restoredFiles": 1062,
+    "browserVerifiedLocally": true,
+    "publicationReady": false,
+    "independentExternalCopy": false
+  },
+  "proof": {
+    "kind": "local-account-status-visibility-verified",
+    "checkedAt": "2026-11-09T17:16:09.304915+00:00",
+    "candidateVersion": "23.5.79",
+    "publicVersion": "23.5.78",
+    "previousPublishedVersion": "23.5.77",
+    "fullTests": {
+      "path": "tmp/melodiajest-57-npm-final.tap",
+      "totals": {
+        "tests": 1246,
+        "pass": 1246,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "sha256": "eeb0f86dbd73a900f7d8e4a94eb98f4ce23acb9b25eb2fad50ec1ffb3f643755"
+    },
+    "targetedTests": {
+      "path": "tmp/melodiajest-57-targeted.tap",
+      "totals": {
+        "tests": 35,
+        "pass": 35,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "sha256": "5dc9d9ec15c998f10cb8047377b797b0eda4d9a8e57f317f1320ec8b5f3e432d"
+    },
+    "newStatusTests": {
+      "path": "tmp/melodiajest-57-status-after.tap",
+      "totals": {
+        "tests": 8,
+        "pass": 8,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "sha256": "7ae40f0287b43a1c79b18eecde12f283c1970194f387a2ec4540556bb074ec1d"
+    },
+    "reproductionBeforeFix": {
+      "path": "tmp/melodiajest-57-status-before.tap",
+      "totals": {
+        "tests": 8,
+        "pass": 1,
+        "fail": 7,
+        "cancelled": 0,
+        "skipped": 0
+      },
+      "sha256": "6c0a8ba0ee47a34cc3b63cf8436f114d6b33172f519898e1625c38261e1bf2fa"
+    },
+    "firstFullRunRejected": {
+      "evidence": {
+        "path": "tmp/melodiajest-57-npm-initial-version-mismatch.tap",
+        "totals": {
+          "tests": 1246,
+          "pass": 1232,
+          "fail": 14,
+          "cancelled": 0,
+          "skipped": 0
+        },
+        "sha256": "c24e218517a3e122f54f64c5cd1e29756144b0be529820dcdfc462c0bc240e11"
+      },
+      "cause": "Registry sourceVersion stayed78 after package bump79. Builder output differed only in serialized sourceVersion;course hash and all450lesson editions unchanged. Corrected metadata with existing builder,not by changing assertions/fixtures."
+    },
+    "runtimeFilesFrozen": 457,
+    "runtimeDelta": {
+      "unchangedOldFiles": 452,
+      "changed": [
+        "learning-game.css",
+        "package.json",
+        "piano-game-player.js",
+        "service/course-registry.json"
+      ],
+      "newTest": "tests/player-account-status.test.cjs",
+      "currentFiles": 457,
+      "registryMetadataOnly": true,
+      "changedRegistryField": "sourceVersion",
+      "musicalContentChanged": false,
+      "courseContentSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee",
+      "learningRecords": 450,
+      "oldRegistrySha256": "491c96c11694ec684fc904dbf54f5d585c56e7390a1ef8ae13825aa6b6dea8b9",
+      "newRegistrySha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034"
+    },
+    "browserVerifiedLocally": true,
+    "browserReport": "docs/qa/melodiajest-2026-11-09-57-browser.json",
+    "musicAuditsReusedFrom55": {
+      "count": 4,
+      "reason": "Exact unchanged musical source/route/fingerings/baseline;registry changes only sourceVersion. No repeated heavy audits for UI-only change."
+    },
+    "windowsServiceChecksReusedFrom55": {
+      "passed": 43,
+      "environmentSkipped": 7,
+      "serviceLogicChanged": false
+    },
+    "newLearningRecords": 0,
+    "newIndependentGoals": 0,
+    "all598CompleteRecordsAnd450ServerMusicalEditionsPreserved": true,
+    "personalDataChanged": false,
+    "candidateLinuxTestsPending": true,
+    "candidateReaderRestorePending": true,
+    "serverResourcePreparationPending": true,
+    "independentCandidateCopyVerified": false,
+    "publicationReady": false,
+    "publicationPending": true,
+    "serverMutationsPerformed": false,
+    "usage": {
+      "checkedAt": "2026-11-09 17:15:59 UTC",
+      "ordinaryUsageAllowed": true,
+      "limitId": "codex",
+      "usedPercent": 66,
+      "remainingPercent": 34,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871,
+      "spendControlReached": false
+    },
+    "calendar78Report": "docs/qa/melodiajest-2026-11-09-57-calendar78.json",
+    "sourceSha256": "d424a2538bcbad419c6501103fa2316b13eda572e514afb646e0da5538b236a9",
+    "courseSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee"
+  },
+  "browser": {
+    "kind": "local-account-status-visibility",
+    "candidateVersion": "23.5.79",
+    "publicVersion": "23.5.78",
+    "checkedAt": "2026-11-09T17:12:56.358377+00:00",
+    "verified": true,
+    "publicCandidateVerified": false,
+    "syntheticLoopbackAccount": true,
+    "productionDataUsed": false,
+    "performanceGradingTested": false,
+    "beforePublic78": {
+      "guestPolicyInDom": true,
+      "hiddenAncestor": true,
+      "inMain": false,
+      "noticeInDom": true,
+      "renderedBoxes": 0,
+      "text": "",
+      "url": "https://melodiajest.ru/trainer.html?lesson=detail-p-f-major-descent-checkpoint-left-01"
+    },
+    "evidenceMethod": "Core observations reconstructed from returned CUA tool results after the optional native AX probe reset the JS kernel; screenshot files persisted. The final authenticated390 measurement and cleanup were freshly saved directly from CUA.",
+    "actualCoreObservations": {
+      "authenticated": [
+        {
+          "text": "Сохранение в аккаунт…",
+          "visible": true
+        },
+        {
+          "text": "Не удалось сохранить настройки. Попробуй ещё раз.",
+          "visible": true,
+          "syntheticHttpStatus": 503
+        },
+        {
+          "text": "Сохранено в аккаунте",
+          "visible": true
+        }
+      ],
+      "eachStatus": {
+        "inMain": true,
+        "hiddenAncestor": false,
+        "renderedBoxes": 1,
+        "uniqueIdCount": 1,
+        "after": "game-player-root",
+        "role": "status",
+        "aria-live": "polite",
+        "aria-atomic": "true"
+      },
+      "authenticatedHiddenReload": {
+        "before": {
+          "mode": "hidden",
+          "text": "Сохранено в аккаунте",
+          "visible": true
+        },
+        "after": {
+          "mode": "hidden",
+          "text": "Сохранено в аккаунте",
+          "inMain": true,
+          "visible": true
+        }
+      },
+      "memory": [
+        {
+          "from": "expanded",
+          "attempt": "memory",
+          "materialInDom": false,
+          "toggleInDom": false,
+          "sourceInDom": false,
+          "accountMessage": "Сохранено в аккаунте",
+          "inMain": true
+        },
+        {
+          "from": "compact",
+          "attempt": "memory",
+          "materialInDom": false,
+          "toggleInDom": false,
+          "sourceInDom": false,
+          "accountMessage": "Сохранено в аккаунте",
+          "inMain": true
+        },
+        {
+          "from": "hidden",
+          "attempt": "memory",
+          "materialInDom": false,
+          "toggleInDom": false,
+          "sourceInDom": false,
+          "accountMessage": "Сохранено в аккаунте",
+          "inMain": true
+        }
+      ],
+      "guest": {
+        "text": "Гость. Войди в аккаунт, чтобы сохранять настройки, личные правки и результаты испытаний.",
+        "visible": true,
+        "inMain": true,
+        "hiddenAncestor": false,
+        "uniqueIdCount": 1,
+        "disabledModes": [
+          "challenge",
+          "memory"
+        ],
+        "editDescribedBy": "service-account-status",
+        "hiddenReloadResult": "compact",
+        "enterExpanded": true,
+        "spaceCollapsed": true,
+        "focus": "learning-material-toggle"
+      },
+      "guest390": {
+        "innerWidth": 390,
+        "statusRect": {
+          "left": 26.64,
+          "right": 349.04,
+          "top": 193.0599976,
+          "bottom": 278.159996,
+          "width": 322.4,
+          "height": 85.1
+        },
+        "statusOverflow": false,
+        "hiddenAncestor": false,
+        "previewLines": 5
+      },
+      "authenticatedDesktop": {
+        "innerWidth": 1280,
+        "text": "Сохранено в аккаунте",
+        "visible": true,
+        "hiddenAncestor": false,
+        "mode": "hidden"
+      },
+      "capturedConsole": {
+        "authenticatedWarningsOrErrors": [],
+        "guestWarningsOrErrors": []
+      }
+    },
+    "authenticated390": {
+      "atomic": "true",
+      "focus": "player-catalog-toggle",
+      "hiddenAncestor": false,
+      "inMain": true,
+      "innerWidth": 390,
+      "live": "polite",
+      "mode": "compact",
+      "preview": {
+        "className": "learning-preview-text",
+        "height": 112,
+        "lineHeight": "22.4px",
+        "lines": 5
+      },
+      "rect": {
+        "bottom": 427.4599800109863,
+        "height": 41.70000076293945,
+        "left": 26.63999938964844,
+        "right": 349.0399932861328,
+        "top": 385.7599792480469,
+        "width": 322.3999938964844
+      },
+      "role": "status",
+      "status": "Сохранено в аккаунте",
+      "uniqueCount": 1
+    },
+    "authenticated390Cleanup": {
+      "viewportReset": true,
+      "closedTab": "96",
+      "remainingTabs": [
+        {
+          "id": "78",
+          "providerTabId": "browser-use:d6d7bf8c-683e-46e6-a327-9c1fc3559356",
+          "title": "MelodiaJest — пианино",
+          "url": "https://melodiajest.ru/trainer.html?lesson=detail-p-f-major-descent-checkpoint-left-01"
+        }
+      ],
+      "public78Retained": true,
+      "consoleWarningsOrErrors": 0
+    },
+    "earlierCleanup": {
+      "viewportReset": true,
+      "closedQaTabs": [
+        "94",
+        "95"
+      ],
+      "remainingTabs": [
+        {
+          "id": "78",
+          "providerTabId": "browser-use:d6d7bf8c-683e-46e6-a327-9c1fc3559356",
+          "title": "MelodiaJest — пианино",
+          "url": "https://melodiajest.ru/trainer.html?lesson=detail-p-f-major-descent-checkpoint-left-01"
+        }
+      ],
+      "public78Retained": true,
+      "optionalAuth390ProbeAccepted": false
+    },
+    "previewCleanup": {
+      "ports": [
+        63410,
+        63411
+      ],
+      "portsClosed": true,
+      "productionDataUsed": false,
+      "pids": [
+        51088,
+        54496
+      ],
+      "closed": true
+    },
+    "mobilePreviewCleanup": {
+      "productionDataUsed": false,
+      "pid": 53256,
+      "port": 63410,
+      "portClosed": true,
+      "closed": true
+    },
+    "screenshots": {
+      "guest390": "docs/reports/assets/melodiajest-20261109-57-guest-390.jpg",
+      "authenticatedDesktop": "docs/reports/assets/melodiajest-20261109-57-saved-desktop.jpg",
+      "authenticated390": "docs/reports/assets/melodiajest-20261109-57-saved-390.png"
+    },
+    "unacceptedProbe": {
+      "image": "docs/reports/assets/melodiajest-20261109-57-saved-mobile-unaccepted.jpg",
+      "reason": "Actual width1280,not390;native AX probe then timed out and reset kernel. This is superseded by the fresh saved390 measurement.",
+      "accepted": false
+    },
+    "hardwareMidiSoundPhysicalPerformanceTeacherVerified": false,
+    "screenReaderVerified": false,
+    "completionSummaryRecorded": true,
+    "sourceVersionOnlyCorrectionAfterCoreBrowserQa": true,
+    "musicalContentChanged": false,
+    "savedHelperSources": {
+      "fix-registry-metadata-57.cjs": "5ad69f4c29eb46b17933648b08c3a7a0f4dbc5b38c8c237dd8bdca15eb511600",
+      "preview-account-status-57.cjs": "1935191830eca5d4ad14511501c969d3012d477200c42133966fc9147016b663",
+      "read-native-health-end-57.py": "27ac2a466e020b6fa37fa76fdcfc286929933ab047b4e55f1de5d8095b3ff33b",
+      "record-calendar-78-phase57.py": "febbe5e06801e55ae82a43b740cda597f5df3ca947611506582a932c1dcbeaaa"
+    }
+  },
+  "fullCheckoutIndependentlyRestored": false,
+  "sameAutomation": {
+    "checkedAt": "2026-11-09T17:21:32.490748+00:00",
+    "sameAutomationVerified": true,
+    "phase": "57",
+    "id": "automation",
+    "kind": "heartbeat",
+    "status": "ACTIVE",
+    "rrule": "FREQ=MINUTELY;INTERVAL=20",
+    "targetThreadId": "01a1a79e-67df-7cb2-8ead-4e7a8a52724b",
+    "canonicalSha256": "efeae7d3aac9fe462e820d512522801383626331c5c586150b5a83be9b32205c",
+    "nativePromptSha256": "5387a599dba312049dfca305e7f73fe420bd0218eeae1984534ca2e83b7dafd5",
+    "trimmedCanonicalEqualsNative": true,
+    "canonicalRawFileSha256": "20b0f220fca31c0b80de93aa495d7952bc4df627cf1a5bf2671a069becab3291",
+    "nativePromptNormalization": "universal-newlines-and-trailing-newline-trimmed"
+  },
+  "finalLocalSourceCheckpointPending": false,
+  "finalLocalSourceCheckpoint": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\backups\\melodiajest-source-23.5.79-20261109-57-final-verified.tar.gz",
+    "bytes": 7052688,
+    "sha256": "156dfbfd6d3f5a4e23efd53795be90f1bd93d2a59b2cebd739ca0f5787299674",
+    "version": "23.5.79",
+    "webManifestSha256": "6a715c7f447a22944fab153ddb518eacb415f33569ce5295d16440ce3c6c5f93",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 1019,
+    "publicFiles": 40,
+    "localRestoreVerified": true,
+    "restoredFiles": 1063,
+    "independentExternalCopy": false,
+    "candidateArtifactChanged": false,
+    "serverChanged": false,
+    "deployedVersion": "23.5.78",
+    "previousPublishedVersion": "23.5.77",
+    "runtimeTestFilesCompared": 457,
+    "exactHelperBodiesDecodedAndHashVerified": true,
+    "helperBodiesVerified": 12,
+    "supersedesIncompleteHelperCheckpoint": "763077fea9d5d02d654e998183523e4a09bcdaa9e8f3dfff8dcca3c9eb0bd490",
+    "scope": "Final verified LOCAL source57 candidate79:UI/full1246/target35/status8/browser390both/memory/hiddenreload,calendar78/resource gate/native same automation,and exact helper bytes preserved in allowlisted JSON envelope. Each helper decoded from isolated restored JSON and matched byte-for-byte/SHA/size. Application457runtime/test also matched. Public78/previous77 and independent PG/static/kit remain separate;this wholefinalsource only locally restored,not independentexternal."
+  },
+  "initialLocalSourceCheckpointCompletenessCorrected": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\backups\\melodiajest-source-23.5.79-20261109-57-final.tar.gz",
+    "bytes": 7012549,
+    "sha256": "763077fea9d5d02d654e998183523e4a09bcdaa9e8f3dfff8dcca3c9eb0bd490",
+    "version": "23.5.79",
+    "webManifestSha256": "6a715c7f447a22944fab153ddb518eacb415f33569ce5295d16440ce3c6c5f93",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 1019,
+    "publicFiles": 40,
+    "localRestoreVerified": true,
+    "restoredFiles": 1063,
+    "independentExternalCopy": false,
+    "candidateArtifactChanged": false,
+    "serverChanged": false,
+    "deployedVersion": "23.5.78",
+    "previousPublishedVersion": "23.5.77",
+    "runtimeTestFilesCompared": 457,
+    "scope": "Final allowlisted LOCAL source57 for candidate79 account-status visibility:1246npm/35targeted/8new regressions,sourceVersion-only registry correction,450unchanged course editions,local auth pending/error/ack+guest policy+390px both+3memory+hiddenreload,closed QA previews/reset viewport,calendar78 exact timer/journal/receipts,resource prepare gate failing,exact temporary helper sources and same native automation verification. Public78/previous77 and their independent PG/static/kit remain separate historical protections. No raw DB/browser data/secrets. This entire final source is only locally file-restored,not independently external.",
+    "helperBodiesIncluded": false,
+    "helperDigestsOnly": true,
+    "completenessCorrection": "docs allowlist includes md/json,not rawpy/cjs. This local restore retained application sources and helper digests;the checked JSON envelope is provided by the later final-verified checkpoint."
+  },
+  "exactHelperBodiesDecodedAndHashVerified": true,
+  "helperBodiesVerified": 12
+}

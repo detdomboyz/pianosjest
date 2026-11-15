@@ -1,0 +1,418 @@
+{
+  "checkedAt": "2026-11-09T06:30:53.954553+00:00",
+  "phase": "2026-11-09-37",
+  "status": "updater-and-independent-kit-recovery-verified-installation-pending",
+  "newLessons": 0,
+  "newPythonRegressionTests": 12,
+  "windowsUpdaterTestsPassed": 12,
+  "linuxUpdaterTestsPassed": 12,
+  "npmPassed": 1168,
+  "npmTapSha256": "12bab36b954e281808573c555fdc2478e6867cea56664e914cec07599c93aeac",
+  "previousWorkerLinux15ReusedBySha256": true,
+  "prepared": {
+    "status": "worker-updater-linux-and-independent-recovery-verified-not-installed",
+    "checkedAt": "2026-11-09T06:26:57.900029+00:00",
+    "stage": "/opt/melodiajest/ops/worker-update-37-cb60d5b8912e",
+    "updaterPath": "/opt/melodiajest/ops/worker-update-37-cb60d5b8912e/fixture/service/worker_update.py",
+    "updaterSha256": "cb60d5b8912e523352fd79e000dd0e3a03cf148a8be7593b68faacf8511308e2",
+    "kitArchive": "/opt/melodiajest/ops/attempt-36-bce1ef52c526/candidate-tool.tar.gz",
+    "kitArchiveSha256": "b59402cb71ee452facad33982a82db822fae4df0f6ab590475c3ae510f2c91be",
+    "expectedPath": "/opt/melodiajest/ops/worker-update-37-cb60d5b8912e/expected.json",
+    "plan": {
+      "kind": "melodiajest-account-worker-update",
+      "version": 1,
+      "archive": "/opt/melodiajest/ops/attempt-36-bce1ef52c526/candidate-tool.tar.gz",
+      "archiveSha256": "b59402cb71ee452facad33982a82db822fae4df0f6ab590475c3ae510f2c91be",
+      "manifest": {
+        "changedFiles": [
+          "service/postgres_backup.py"
+        ],
+        "files": {
+          "catalog-personalization.js": {
+            "bytes": 7028,
+            "sha256": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b"
+          },
+          "catalog-transfer.js": {
+            "bytes": 4081,
+            "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+          },
+          "deploy/shared-host/backup_replica.py": {
+            "bytes": 10595,
+            "sha256": "246a48e092a60fd6285f22f6e19d45503174e5ebc7696d3a0202bde3ec566ce2"
+          },
+          "deploy/shared-host/backup_s3_job.py": {
+            "bytes": 20906,
+            "sha256": "c948d95125972dc44f4eec3c8f340885110b7edc20a67e1b613197633a78646b"
+          },
+          "deploy/shared-host/backup_s3_runtime.py": {
+            "bytes": 11578,
+            "sha256": "a1b9891d3d6dbb4af7ac53bad318e065d26c2a94ae737cfb659bedf6e7423d31"
+          },
+          "deploy/shared-host/backup_s3_schedule.py": {
+            "bytes": 14611,
+            "sha256": "5b20b99f32727cef11aeaa051e5017c03c5d60ca28fa05e46f2c63caf2da63bf"
+          },
+          "deploy/shared-host/backup_units.py": {
+            "bytes": 1741,
+            "sha256": "ccfac3884635c699565704421da0ffe393d1edacb6156943e0695c158b2add38"
+          },
+          "deploy/shared-host/public-assets.json": {
+            "bytes": 909,
+            "sha256": "d0423f26f52663c7c1c0e5d581a27cab3ea6f98848f4f800e55f39cabca16738"
+          },
+          "deploy/shared-host/release_artifact.py": {
+            "bytes": 15215,
+            "sha256": "67eb9e75faf7692450aa37538d414784a5c84378e916c3a0e10ec0715c17a55d"
+          },
+          "deploy/shared-host/release_backup.py": {
+            "bytes": 21229,
+            "sha256": "1307015760e3fdb5673530c6f6d064f133069e9af3d63ba735b3b2f35fdd2eed"
+          },
+          "deploy/shared-host/release_update.py": {
+            "bytes": 23249,
+            "sha256": "6427fdfea8bc24fe14fae602508683df8215027def6314523a404e93adfb8f9f"
+          },
+          "lesson-rating.js": {
+            "bytes": 3837,
+            "sha256": "7796ae26e26b8e51387acb03a8b76563b4e4f0b423a2f938fe0713c8b333db1c"
+          },
+          "music-document.js": {
+            "bytes": 2256,
+            "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+          },
+          "piano-catalog-adapter.js": {
+            "bytes": 6186,
+            "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+          },
+          "portal-experience.js": {
+            "bytes": 1541,
+            "sha256": "fca1c1433519dcf77efff8b3869c13cd2af3c44b6717a4684973ffd88533bc4f"
+          },
+          "practice-assessment.js": {
+            "bytes": 12012,
+            "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+          },
+          "service/account_backup.py": {
+            "bytes": 18698,
+            "sha256": "5f75e5198a7e7639f5d73145402f45ab7583d8302c07d6a8476f54a0250937b2"
+          },
+          "service/backup.cjs": {
+            "bytes": 8151,
+            "sha256": "cd2323ae0cf3fc39dd11192a88d701ab44af584c9390cab2e454bb253291f2d0"
+          },
+          "service/canonical.cjs": {
+            "bytes": 428,
+            "sha256": "c59128bdc692274b5052204634e400007b9dde34361fd037b583f35f18881a0f"
+          },
+          "service/course-registry.json": {
+            "bytes": 651103,
+            "sha256": "c5ad5f4863f1d943e4007cfb88384f9ac8a31d19ed85e0713659058c8b5324c4"
+          },
+          "service/course.cjs": {
+            "bytes": 1128,
+            "sha256": "207a3d83f643b24c46e00efb926da44af3d560a27552f27041c1ffcbd8106ed6"
+          },
+          "service/data-model.cjs": {
+            "bytes": 1061,
+            "sha256": "4dcb8157c9453db13462df637cd61c3990d94a786ca4c8fc8932cce333738f97"
+          },
+          "service/database.cjs": {
+            "bytes": 4097,
+            "sha256": "266b2334906e69913b25d8d2690a0d0399386a6c322a4b80e90ff139a78b4c17"
+          },
+          "service/db-config.cjs": {
+            "bytes": 1538,
+            "sha256": "c20918ce6df58c4253893ab1cb38c797e6f6badaee1409898414dffd94285b60"
+          },
+          "service/deployment.py": {
+            "bytes": 12937,
+            "sha256": "51c7c11b00b4005a1eb2ebb6947ad4016cd8ead4b011bbb6fa20654df9e53fef"
+          },
+          "service/game-grade.cjs": {
+            "bytes": 3382,
+            "sha256": "ab328af357e1a9c1f84b59ac321b01537728d89ee51d21ad064eb2f91feb3f22"
+          },
+          "service/game-schema.sql": {
+            "bytes": 5200,
+            "sha256": "b385d2558d653339e923452a3fbe9d2a6d3db22dc438a8906fb950b503977656"
+          },
+          "service/game.cjs": {
+            "bytes": 21333,
+            "sha256": "4495bac063360eacc5f3644c158e1a780b01bc6fcb7211575c40b9501c2b95c6"
+          },
+          "service/implementation-files.json": {
+            "bytes": 801,
+            "sha256": "838f9758e55bcbdaa48935892bdf37b4ace9bf95855632e9510c7ae99459cb8d"
+          },
+          "service/migration.cjs": {
+            "bytes": 7638,
+            "sha256": "58d16b740e391eb1201a1d2dd8fbc9422ed377165b2fb9feda9fe7a476bff481"
+          },
+          "service/operate.py": {
+            "bytes": 4186,
+            "sha256": "8be3c910c9c8ae315d0a970eaf95070b055b50f21849f1e28c3ff5623c59d590"
+          },
+          "service/package-lock.json": {
+            "bytes": 5538,
+            "sha256": "16e70b5d1d4fd2c8eeac99ab2fa7e37db963f6a69801e520327b509eaf35f594"
+          },
+          "service/package.json": {
+            "bytes": 428,
+            "sha256": "d842bfa6bc272ed2301075a5e2a2458c522daf467de2f38ed52b4e9cd89ad329"
+          },
+          "service/pg-snapshot.cjs": {
+            "bytes": 3136,
+            "sha256": "c8cece867b6695418fcf0089a1b3b407b781b2192684e226b1b651a40d258eba"
+          },
+          "service/postgres-runtime.json": {
+            "bytes": 498,
+            "sha256": "fcd84e2ee98ea68721f5278f569c08cf17ba1140f555af982273d04a5d41475f"
+          },
+          "service/postgres.py": {
+            "bytes": 8336,
+            "sha256": "c65aca5101358df4494b7900ca4819bc3f102701f9b4893e9f39c991388d4d6c"
+          },
+          "service/postgres_backup.py": {
+            "bytes": 27846,
+            "sha256": "9a1e92fde7d5776368f24ca1f630ea41fa33f03975bdbd355eb05d463f125781"
+          },
+          "service/postgres_image.py": {
+            "bytes": 6832,
+            "sha256": "b9d697896a94e093e540433ff388ea932f3d9363276d87d206e32b417906a847"
+          },
+          "service/repository.cjs": {
+            "bytes": 15416,
+            "sha256": "070ea1b9c21746c304706351e3881ce2e7fe736632584415b56db69af3aaaef7"
+          },
+          "service/runtime.json": {
+            "bytes": 582,
+            "sha256": "c7943cd8d2d70616c23b116b3cabd91d0efbdfaf604ed64ed828b3123fc16f22"
+          },
+          "service/schema.pg.sql": {
+            "bytes": 8204,
+            "sha256": "1483bb3daf4fd75c628166d9bd46bd65f37141e18e60c47d6f5c35cd1db2f47d"
+          },
+          "service/security.cjs": {
+            "bytes": 3750,
+            "sha256": "7e224275164819a09d6254ce0a451c54db73b833129b2d8673708924d09b3d23"
+          },
+          "service/server.cjs": {
+            "bytes": 25620,
+            "sha256": "a7f581730c6c24cb248be4d3154504e6f4a3d43bc6159e41376b266d166be108"
+          },
+          "service/socket-clean.cjs": {
+            "bytes": 1311,
+            "sha256": "6bb96bc2b530cd4ef2d33ee92581b8b0f727c8d72b25a4fe2b495b504fb14d5e"
+          },
+          "service/store.cjs": {
+            "bytes": 5007,
+            "sha256": "322de9b5ec43745f915dda8440eb163cc44295e3f1097f46ef0eb65c83593afb"
+          },
+          "service/units.py": {
+            "bytes": 4047,
+            "sha256": "75625b13cc824f0e854be99548d21a88ef8aa18bde109aa3a8f1a4a5e690158d"
+          },
+          "service/validation.cjs": {
+            "bytes": 4317,
+            "sha256": "98850d4cddcb3a4f24a080953dfd37352f90cc577377fe41841da8484ea98559"
+          },
+          "tests/backup_s3_runtime_test.py": {
+            "bytes": 8506,
+            "sha256": "bb884f68eeeef4f67dc7ff0c83c8037860d47ac14fee3fc54352ad095c82897f"
+          },
+          "tests/backup_s3_schedule_test.py": {
+            "bytes": 9767,
+            "sha256": "13fc93b31cbb8cb0a94f6b96f4e4250903ceeba9fd05c49b6585ab5e34aef8bd"
+          },
+          "tools/melodiajest_secret.py": {
+            "bytes": 2358,
+            "sha256": "5a4792df9d29f0eb858334a59cc0658e46ca3d429788ecd685c57b6f99270bd1"
+          },
+          "tools/package-service-dependencies.py": {
+            "bytes": 5226,
+            "sha256": "cd62031994960eb24c980b1221e7606ab66faab04930829391bc5fe06c54f569"
+          }
+        },
+        "identity": "bce1ef52c526633649eb3c9eb52f1625ccd6ddf5e574542faa560e494620ba60",
+        "kind": "melodiajest-account-worker-candidate",
+        "plannedTooling": "/opt/melodiajest/ops/tooling/account-bce1ef52c5266336",
+        "previousTooling": "/opt/melodiajest/ops/tooling/account-64ff96b88f808d9e",
+        "productionFiles": 51,
+        "productionInstalled": false,
+        "unchangedFiles": 50,
+        "version": 1
+      },
+      "oldProfile": {
+        "archive": "/opt/melodiajest/ops/course-34-0dabeb8dd5bd/release.tar.gz",
+        "archiveSha256": "0dabeb8dd5bd0933c1d7cbfffac5e63e435ba30337d69f1c8bd83e4339ab4588",
+        "dependenciesArchive": "/opt/melodiajest/ops/game-stage-22-ae6496c5b2ef/pg-dependencies.tar.gz",
+        "dependenciesArchiveSha256": "ded01c70706a71958537da51bdf3e7951be8b01b5fb30757ebd4fb2c213b6452",
+        "dependenciesDirectory": "/opt/melodiajest/runtime/pg-8.23.1-ded01c70706a",
+        "engine": "postgres",
+        "imageArchive": "/opt/melodiajest/ops/postgres-runtime/postgres-18-3725f4e2499e.tar.gz",
+        "imageArchiveSha256": "5ed2feecc2294dd4433bb6c8a54865be71516806b0ea3f28f486a7acac4be86c",
+        "kind": "melodiajest-account-profile",
+        "nodeArchive": "/opt/melodiajest/ops/account-stage-21-0efdc441ee74/node.tar.xz",
+        "nodeArchiveSha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+        "nodeDirectory": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048",
+        "postgresImageId": "sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650",
+        "previousArchive": "/opt/melodiajest/ops/course-32-05846bf97a68/release.tar.gz",
+        "previousArchiveSha256": "05846bf97a68aca8fd2d3d9ca39f906ca211b3e28bdb6a7ec8560988fae19a03",
+        "sourceSha256": "db92342ac8ca7f92e325378342cd33355a28397188eca1f20803c62998b8d83b",
+        "sqliteBeforeMigrationCopy": "/opt/melodiajest/ops/game-stage-22-ae6496c5b2ef/before-postgres-a557d5d1ec3b.sqlite",
+        "sqliteBeforeMigrationDigest": "d9c4d98c8a9a5e2b2804157607261ca9edc843f754fa71acde388370c23ddae3",
+        "sqliteIndependentSnapshot": "17a3cc889c93ce9280e250faba6a75a0730f3af928db581cc6f50d4f00b4c7e7",
+        "standby": false,
+        "tooling": "/opt/melodiajest/ops/tooling/account-64ff96b88f808d9e",
+        "version": 2
+      },
+      "oldTooling": "/opt/melodiajest/ops/tooling/account-64ff96b88f808d9e",
+      "newTooling": "/opt/melodiajest/ops/tooling/account-bce1ef52c5266336",
+      "before": {
+        "profile": "ewogICJhcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2NvdXJzZS0zNC0wZGFiZWI4ZGQ1YmQvcmVsZWFzZS50YXIuZ3oiLAogICJhcmNoaXZlU2hhMjU2IjogIjBkYWJlYjhkZDViZDA5MzNjMWQ3Y2JmZmZhYzVlNjNlNDM1YmEzMDMzN2Q2OWYxYzhiZDgzZTQzMzlhYjQ1ODgiLAogICJkZXBlbmRlbmNpZXNBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2dhbWUtc3RhZ2UtMjItYWU2NDk2YzViMmVmL3BnLWRlcGVuZGVuY2llcy50YXIuZ3oiLAogICJkZXBlbmRlbmNpZXNBcmNoaXZlU2hhMjU2IjogImRlZDAxYzcwNzA2YTcxOTU4NTM3ZGE1MWJkZjNlNzk1MWJlOGIwMWI1ZmIzMDc1N2ViZDRmYjJjMjEzYjY0NTIiLAogICJkZXBlbmRlbmNpZXNEaXJlY3RvcnkiOiAiL29wdC9tZWxvZGlhamVzdC9ydW50aW1lL3BnLTguMjMuMS1kZWQwMWM3MDcwNmEiLAogICJlbmdpbmUiOiAicG9zdGdyZXMiLAogICJpbWFnZUFyY2hpdmUiOiAiL29wdC9tZWxvZGlhamVzdC9vcHMvcG9zdGdyZXMtcnVudGltZS9wb3N0Z3Jlcy0xOC0zNzI1ZjRlMjQ5OWUudGFyLmd6IiwKICAiaW1hZ2VBcmNoaXZlU2hhMjU2IjogIjVlZDJmZWVjYzIyOTRkZDQ0MzNiYjZjOGE1NDg2NWJlNzE1MTY4MDZiMGVhM2YyOGY0ODZhN2FjYWM0YmU4NmMiLAogICJraW5kIjogIm1lbG9kaWFqZXN0LWFjY291bnQtcHJvZmlsZSIsCiAgIm5vZGVBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2FjY291bnQtc3RhZ2UtMjEtMGVmZGM0NDFlZTc0L25vZGUudGFyLnh6IiwKICAibm9kZUFyY2hpdmVTaGEyNTYiOiAiNDhjYzBlMjFlMDQ4NzkwZTU0YzBjZjU3NDljMjcyNTAwNTMxM2Q2NTI2NTFjNDBiN2EyMWZlYjk2OTdhYWY3NSIsCiAgIm5vZGVEaXJlY3RvcnkiOiAiL29wdC9tZWxvZGlhamVzdC9ydW50aW1lL25vZGUtdjI0LjIyLjItNDhjYzBlMjFlMDQ4IiwKICAicG9zdGdyZXNJbWFnZUlkIjogInNoYTI1NjozNzI1ZjRlMjQ5OWVlZjUxMzQ1OTJiM2I0YWI3OWE1NDNlZDdmOGU1MzNiMDViNWI2MzdhZjkyNjYzMGY2NjUwIiwKICAicHJldmlvdXNBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2NvdXJzZS0zMi0wNTg0NmJmOTdhNjgvcmVsZWFzZS50YXIuZ3oiLAogICJwcmV2aW91c0FyY2hpdmVTaGEyNTYiOiAiMDU4NDZiZjk3YTY4YWNhOGZkMmQzZDljYTM5ZjkwNmNhMjExYjNlMjhiZGI2YTdlYzg1NjA5ODhmYWUxOWEwMyIsCiAgInNvdXJjZVNoYTI1NiI6ICJkYjkyMzQyYWM4Y2E3ZjkyZTMyNTM3ODM0MmNkMzMzNTVhMjgzOTcxODhlY2ExZjIwODAzYzYyOTk4YjhkODNiIiwKICAic3FsaXRlQmVmb3JlTWlncmF0aW9uQ29weSI6ICIvb3B0L21lbG9kaWFqZXN0L29wcy9nYW1lLXN0YWdlLTIyLWFlNjQ5NmM1YjJlZi9iZWZvcmUtcG9zdGdyZXMtYTU1N2Q1ZDFlYzNiLnNxbGl0ZSIsCiAgInNxbGl0ZUJlZm9yZU1pZ3JhdGlvbkRpZ2VzdCI6ICJkOWM0ZDk4YzhhOWE1ZTJiMjgwNDE1NzYwNzI2MWNhOWVkYzg0M2Y3NTRmYTcxYWNkZTM4ODM3MGMyM2RkYWUzIiwKICAic3FsaXRlSW5kZXBlbmRlbnRTbmFwc2hvdCI6ICIxN2EzY2M4ODljOTNjZTkyODBlMjUwZmFiYTZhNzVhMDczMGYzYWY5MjhkYjU4MWNjNmY1MGQ0ZjAwYjRjN2U3IiwKICAic3RhbmRieSI6IGZhbHNlLAogICJ0b29saW5nIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL3Rvb2xpbmcvYWNjb3VudC02NGZmOTZiODhmODA4ZDllIiwKICAidmVyc2lvbiI6IDIKfQo=",
+        "unit": "W1VuaXRdCkRlc2NyaXB0aW9uPU1lbG9kaWFKZXN0IGFjY291bnQgZGF0YSBjb3B5IGFuZCBpc29sYXRlZCByZWNvdmVyeQpBZnRlcj1sb2NhbC1mcy50YXJnZXQgZG9ja2VyLnNlcnZpY2UKU3RhcnRMaW1pdEludGVydmFsU2VjPTJoClN0YXJ0TGltaXRCdXJzdD00CgpbU2VydmljZV0KVHlwZT1vbmVzaG90CkV4ZWNTdGFydD0vdXNyL2Jpbi9weXRob24zIC1CIC9vcHQvbWVsb2RpYWplc3Qvb3BzL3Rvb2xpbmcvYWNjb3VudC02NGZmOTZiODhmODA4ZDllL3NlcnZpY2UvYWNjb3VudF9iYWNrdXAucHkgcnVuCldvcmtpbmdEaXJlY3Rvcnk9L29wdC9tZWxvZGlhamVzdApFbnZpcm9ubWVudD1QWVRIT05ET05UV1JJVEVCWVRFQ09ERT0xIERPQ0tFUl9IT1NUPXVuaXg6Ly8vdmFyL3J1bi9kb2NrZXIuc29jayBET0NLRVJfQ09ORklHPS9vcHQvbWVsb2RpYWplc3Qvb3BzL2RvY2tlci1jbGllbnQKVU1hc2s9MDA3NwpUaW1lb3V0U3RhcnRTZWM9MTVtaW4KUmVzdGFydD1vbi1mYWlsdXJlClJlc3RhcnRTZWM9MTVtaW4KTmljZT0xMApDUFVXZWlnaHQ9MTAKSU9XZWlnaHQ9MTAKTWVtb3J5TWF4PTUxMk0KTm9OZXdQcml2aWxlZ2VzPXllcwpQcml2YXRlVG1wPXllcwpQcml2YXRlTmV0d29yaz15ZXMKUHJpdmF0ZURldmljZXM9eWVzClByb3RlY3RTeXN0ZW09c3RyaWN0ClByb3RlY3RIb21lPXllcwpQcm90ZWN0S2VybmVsVHVuYWJsZXM9eWVzClByb3RlY3RDb250cm9sR3JvdXBzPXllcwpSZXN0cmljdFNVSURTR0lEPXllcwpMb2NrUGVyc29uYWxpdHk9eWVzClJlc3RyaWN0QWRkcmVzc0ZhbWlsaWVzPUFGX1VOSVgKUmVhZFdyaXRlUGF0aHM9L29wdC9tZWxvZGlhamVzdC9vcHMgL29wdC9tZWxvZGlhamVzdC9hY2NvdW50LWRhdGEgL29wdC9tZWxvZGlhamVzdC9hY2NvdW50LWJhY2t1cC13b3JrIC9vcHQvbWVsb2RpYWplc3QvYWNjb3VudC1yZXN0b3JlLXdvcmsgL3J1bi9sb2NrL2xpYnJlLWRlcGxveS5sb2NrCg=="
+      },
+      "after": {
+        "profile": "ewogICJhcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2NvdXJzZS0zNC0wZGFiZWI4ZGQ1YmQvcmVsZWFzZS50YXIuZ3oiLAogICJhcmNoaXZlU2hhMjU2IjogIjBkYWJlYjhkZDViZDA5MzNjMWQ3Y2JmZmZhYzVlNjNlNDM1YmEzMDMzN2Q2OWYxYzhiZDgzZTQzMzlhYjQ1ODgiLAogICJkZXBlbmRlbmNpZXNBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2dhbWUtc3RhZ2UtMjItYWU2NDk2YzViMmVmL3BnLWRlcGVuZGVuY2llcy50YXIuZ3oiLAogICJkZXBlbmRlbmNpZXNBcmNoaXZlU2hhMjU2IjogImRlZDAxYzcwNzA2YTcxOTU4NTM3ZGE1MWJkZjNlNzk1MWJlOGIwMWI1ZmIzMDc1N2ViZDRmYjJjMjEzYjY0NTIiLAogICJkZXBlbmRlbmNpZXNEaXJlY3RvcnkiOiAiL29wdC9tZWxvZGlhamVzdC9ydW50aW1lL3BnLTguMjMuMS1kZWQwMWM3MDcwNmEiLAogICJlbmdpbmUiOiAicG9zdGdyZXMiLAogICJpbWFnZUFyY2hpdmUiOiAiL29wdC9tZWxvZGlhamVzdC9vcHMvcG9zdGdyZXMtcnVudGltZS9wb3N0Z3Jlcy0xOC0zNzI1ZjRlMjQ5OWUudGFyLmd6IiwKICAiaW1hZ2VBcmNoaXZlU2hhMjU2IjogIjVlZDJmZWVjYzIyOTRkZDQ0MzNiYjZjOGE1NDg2NWJlNzE1MTY4MDZiMGVhM2YyOGY0ODZhN2FjYWM0YmU4NmMiLAogICJraW5kIjogIm1lbG9kaWFqZXN0LWFjY291bnQtcHJvZmlsZSIsCiAgIm5vZGVBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2FjY291bnQtc3RhZ2UtMjEtMGVmZGM0NDFlZTc0L25vZGUudGFyLnh6IiwKICAibm9kZUFyY2hpdmVTaGEyNTYiOiAiNDhjYzBlMjFlMDQ4NzkwZTU0YzBjZjU3NDljMjcyNTAwNTMxM2Q2NTI2NTFjNDBiN2EyMWZlYjk2OTdhYWY3NSIsCiAgIm5vZGVEaXJlY3RvcnkiOiAiL29wdC9tZWxvZGlhamVzdC9ydW50aW1lL25vZGUtdjI0LjIyLjItNDhjYzBlMjFlMDQ4IiwKICAicG9zdGdyZXNJbWFnZUlkIjogInNoYTI1NjozNzI1ZjRlMjQ5OWVlZjUxMzQ1OTJiM2I0YWI3OWE1NDNlZDdmOGU1MzNiMDViNWI2MzdhZjkyNjYzMGY2NjUwIiwKICAicHJldmlvdXNBcmNoaXZlIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL2NvdXJzZS0zMi0wNTg0NmJmOTdhNjgvcmVsZWFzZS50YXIuZ3oiLAogICJwcmV2aW91c0FyY2hpdmVTaGEyNTYiOiAiMDU4NDZiZjk3YTY4YWNhOGZkMmQzZDljYTM5ZjkwNmNhMjExYjNlMjhiZGI2YTdlYzg1NjA5ODhmYWUxOWEwMyIsCiAgInNvdXJjZVNoYTI1NiI6ICJkYjkyMzQyYWM4Y2E3ZjkyZTMyNTM3ODM0MmNkMzMzNTVhMjgzOTcxODhlY2ExZjIwODAzYzYyOTk4YjhkODNiIiwKICAic3FsaXRlQmVmb3JlTWlncmF0aW9uQ29weSI6ICIvb3B0L21lbG9kaWFqZXN0L29wcy9nYW1lLXN0YWdlLTIyLWFlNjQ5NmM1YjJlZi9iZWZvcmUtcG9zdGdyZXMtYTU1N2Q1ZDFlYzNiLnNxbGl0ZSIsCiAgInNxbGl0ZUJlZm9yZU1pZ3JhdGlvbkRpZ2VzdCI6ICJkOWM0ZDk4YzhhOWE1ZTJiMjgwNDE1NzYwNzI2MWNhOWVkYzg0M2Y3NTRmYTcxYWNkZTM4ODM3MGMyM2RkYWUzIiwKICAic3FsaXRlSW5kZXBlbmRlbnRTbmFwc2hvdCI6ICIxN2EzY2M4ODljOTNjZTkyODBlMjUwZmFiYTZhNzVhMDczMGYzYWY5MjhkYjU4MWNjNmY1MGQ0ZjAwYjRjN2U3IiwKICAic3RhbmRieSI6IGZhbHNlLAogICJ0b29saW5nIjogIi9vcHQvbWVsb2RpYWplc3Qvb3BzL3Rvb2xpbmcvYWNjb3VudC1iY2UxZWY1MmM1MjY2MzM2IiwKICAidmVyc2lvbiI6IDIKfQo=",
+        "unit": "W1VuaXRdCkRlc2NyaXB0aW9uPU1lbG9kaWFKZXN0IGFjY291bnQgZGF0YSBjb3B5IGFuZCBpc29sYXRlZCByZWNvdmVyeQpBZnRlcj1sb2NhbC1mcy50YXJnZXQgZG9ja2VyLnNlcnZpY2UKU3RhcnRMaW1pdEludGVydmFsU2VjPTJoClN0YXJ0TGltaXRCdXJzdD00CgpbU2VydmljZV0KVHlwZT1vbmVzaG90CkV4ZWNTdGFydD0vdXNyL2Jpbi9weXRob24zIC1CIC9vcHQvbWVsb2RpYWplc3Qvb3BzL3Rvb2xpbmcvYWNjb3VudC1iY2UxZWY1MmM1MjY2MzM2L3NlcnZpY2UvYWNjb3VudF9iYWNrdXAucHkgcnVuCldvcmtpbmdEaXJlY3Rvcnk9L29wdC9tZWxvZGlhamVzdApFbnZpcm9ubWVudD1QWVRIT05ET05UV1JJVEVCWVRFQ09ERT0xIERPQ0tFUl9IT1NUPXVuaXg6Ly8vdmFyL3J1bi9kb2NrZXIuc29jayBET0NLRVJfQ09ORklHPS9vcHQvbWVsb2RpYWplc3Qvb3BzL2RvY2tlci1jbGllbnQKVU1hc2s9MDA3NwpUaW1lb3V0U3RhcnRTZWM9MTVtaW4KUmVzdGFydD1vbi1mYWlsdXJlClJlc3RhcnRTZWM9MTVtaW4KTmljZT0xMApDUFVXZWlnaHQ9MTAKSU9XZWlnaHQ9MTAKTWVtb3J5TWF4PTUxMk0KTm9OZXdQcml2aWxlZ2VzPXllcwpQcml2YXRlVG1wPXllcwpQcml2YXRlTmV0d29yaz15ZXMKUHJpdmF0ZURldmljZXM9eWVzClByb3RlY3RTeXN0ZW09c3RyaWN0ClByb3RlY3RIb21lPXllcwpQcm90ZWN0S2VybmVsVHVuYWJsZXM9eWVzClByb3RlY3RDb250cm9sR3JvdXBzPXllcwpSZXN0cmljdFNVSURTR0lEPXllcwpMb2NrUGVyc29uYWxpdHk9eWVzClJlc3RyaWN0QWRkcmVzc0ZhbWlsaWVzPUFGX1VOSVgKUmVhZFdyaXRlUGF0aHM9L29wdC9tZWxvZGlhamVzdC9vcHMgL29wdC9tZWxvZGlhamVzdC9hY2NvdW50LWRhdGEgL29wdC9tZWxvZGlhamVzdC9hY2NvdW50LWJhY2t1cC13b3JrIC9vcHQvbWVsb2RpYWplc3QvYWNjb3VudC1yZXN0b3JlLXdvcmsgL3J1bi9sb2NrL2xpYnJlLWRlcGxveS5sb2NrCg=="
+      },
+      "beforeSha256": {
+        "profile": "c72bbec3912fd11b2541287fbcc85a0ecf51b8bc55e8cf3fd10d43cfc3f28dc9",
+        "unit": "032d6bd7534705933d270462d91620ac31b576be104adf85a274d1af61bb76e9"
+      },
+      "afterSha256": {
+        "profile": "2f9cc21b68ce938278d9eff1b6f04a40d98d02e9333b3301a3ef818e7a1dc6b4",
+        "unit": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1"
+      },
+      "controlModes": {
+        "profile": 384,
+        "unit": 420
+      },
+      "expected": {
+        "profileSha256": "c72bbec3912fd11b2541287fbcc85a0ecf51b8bc55e8cf3fd10d43cfc3f28dc9",
+        "unitSha256": "032d6bd7534705933d270462d91620ac31b576be104adf85a274d1af61bb76e9",
+        "oldWorkerSha256": "2fce7b2ebc4255d27eae0d6cc1cfafc96ebc81ecdb83010347848622f21c4cc7"
+      },
+      "dataMigrationPerformed": false,
+      "apiRestarted": false,
+      "newTimersCreated": 0
+    },
+    "linuxUpdaterTests": {
+      "logSha256": "5d31e2a6bde401f6ac61083d6ba34aac910f534244a59a8cb386a8b1461c12df",
+      "network": "none",
+      "passed": 12,
+      "productionVolumesMounted": false,
+      "skipped": 0,
+      "testsSha256": "612a4c3908201cea1f78be56084d77e5349ff6e5d063f0b5727db6cb035d8e34",
+      "updaterSha256": "cb60d5b8912e523352fd79e000dd0e3a03cf148a8be7593b68faacf8511308e2"
+    },
+    "independentKitProof": {
+      "kind": "melodiajest-independent-worker-kit-recovery",
+      "checkedAt": "2026-11-09T06:26:57.709156+00:00",
+      "independentExternalCopyVerified": true,
+      "archiveSha256": "b59402cb71ee452facad33982a82db822fae4df0f6ab590475c3ae510f2c91be",
+      "restoredArchiveSha256": "b59402cb71ee452facad33982a82db822fae4df0f6ab590475c3ae510f2c91be",
+      "filesVerified": 51,
+      "updaterSha256": "cb60d5b8912e523352fd79e000dd0e3a03cf148a8be7593b68faacf8511308e2",
+      "snapshotId": "567730110f8fdcb2b490d0bd7fe8d788ffead40503670283587158fd2f7decb2",
+      "payloadFiles": 10,
+      "productionVolumesMounted": false,
+      "isolatedRecovery": {
+        "kitFilesVerified": 51,
+        "payloadFilesVerified": 9,
+        "installedAndRolledBack": true,
+        "originalControlBytesAndModesRestored": true,
+        "network": "none",
+        "productionVolumesMounted": false,
+        "restoredUpdaterUsed": true,
+        "apiStarted": false,
+        "nativeServiceStarted": false
+      },
+      "originalPayloadUnavailable": true,
+      "metrics": {
+        "copy": {
+          "exitCode": 0,
+          "elapsedSeconds": 2.739,
+          "cpuUserSeconds": 0.288,
+          "cpuSystemSeconds": 0.12,
+          "peakChildRssKiB": 68680,
+          "result": [
+            {
+              "message_type": "status",
+              "total_files": 10,
+              "total_bytes": 245691
+            },
+            {
+              "message_type": "summary",
+              "files_new": 10,
+              "files_changed": 0,
+              "files_unmodified": 0,
+              "data_added": 246934,
+              "data_added_packed": 212720,
+              "total_files_processed": 10,
+              "total_bytes_processed": 245691,
+              "total_duration": 2.680538669,
+              "snapshot_id": "567730110f8fdcb2b490d0bd7fe8d788ffead40503670283587158fd2f7decb2"
+            }
+          ],
+          "error": null,
+          "operation": "backup",
+          "s3HttpRequestCount": null,
+          "billingMeasured": false,
+          "credentialsInArgv": false,
+          "productionInputsMounted": false
+        },
+        "restore": {
+          "exitCode": 0,
+          "elapsedSeconds": 1.537,
+          "cpuUserSeconds": 0.229,
+          "cpuSystemSeconds": 0.088,
+          "peakChildRssKiB": 66304,
+          "result": [
+            {
+              "message_type": "summary",
+              "total_files": 11,
+              "files_restored": 11,
+              "total_bytes": 245691,
+              "bytes_restored": 245691
+            }
+          ],
+          "error": null,
+          "operation": "restore",
+          "s3HttpRequestCount": null,
+          "billingMeasured": false,
+          "credentialsInArgv": false,
+          "productionInputsMounted": false
+        }
+      },
+      "billingMeasured": false
+    },
+    "proofPath": "/opt/melodiajest/ops/worker-update-37-cb60d5b8912e/independent-kit-proof.json",
+    "productionControlsChanged": false,
+    "nativeUnitsStarted": 0,
+    "newTimersCreated": 0
+  },
+  "publicVersion": "23.5.71",
+  "productionInstalled": false,
+  "nativeUnitsStarted": 0,
+  "finalLocalSourceCheckpointPending": false,
+  "nextAction": "Следующая фаза38:установить только уже проверенный worker account-bce1ef52c5266336 постоянным worker_update.py SHAcb60d5b8912e523352fd79e000dd0e3a03cf148a8be7593b68faacf8511308e2. Начать с actual TWO-start gate;последняя известная граница06:35:12.493499UTC не reservation. Сначала обычная свежая precompare71 старой службой,затем immutable worker-updater/новый51file kit,ровно backup-unit ExecStart/profile.tooling,daemon-reload без запуска API/изменениятаймеров. Один обычный post-install PGbackup должен прочитать/расшифровать/восстановить новый snapshot;у toolkit уже независимый S3proof 567730110f8fdcb2b490d0bd7fe8d788ffead40503670283587158fd2f7decb2. При регрессии использовать проверенный byte-exact rollback своих2controls,не восстанавливать production DB. На занятыхlocks/active/failed/retryingunit installer отказывает,не прерывает чужую работу;5мин окна до dailytimer обязательны. Никакогоreset/повышения4/2h/обходаworker/новогоweb/API-reader/миграции/повторныхnpm/Linux/копии того жеSHA. Worker ещё не установлен;public71/previous70 иPG075567…/static634e… сохранены. После эксплуатации верхняя праваяC5–F5 по первоисточнику/дублям;готовый4→1 не повторять. Минимум1000,SSO/общийledger отдельно.",
+  "finalLocalSourceCheckpoint": {
+    "archive": "C:\\Users\\Alexander\\Documents\\web\\pianosjest\\dist\\backups\\melodiajest-source-23.5.71-20261109-37-final.tar.gz",
+    "bytes": 5252922,
+    "sha256": "e616d48abe069ffa613ac4b347fd6adba9fa4af65dbb454bd651c4c6eced486a",
+    "version": "23.5.71",
+    "webManifestSha256": "1c807970b06fd61742a67c1ef44073a1ad78c94e80d512b3285228e58b8c039e",
+    "sourceSnapshotIncluded": true,
+    "sourceFiles": 903,
+    "publicFiles": 40,
+    "localRestoreVerified": true,
+    "restoredFiles": 947,
+    "independentExternalCopy": false,
+    "publicArtifactChanged": false,
+    "deployedVersion": "23.5.71",
+    "previousPublishedVersion": "23.5.70",
+    "workerCandidateNotInstalled": true,
+    "scope": "Final allowlisted checkout with UNINSTALLED PG worker and tested permanent updater,phase37 independent kit-recovery reports and same automation verification before this receipt. Public71/70 and existing own PG snapshots are independently protected separately. Candidate kit/updater independently recovered separately;no entire-checkout or newly active PG-worker recovery claim;no browser private data/production secrets included."
+  }
+}

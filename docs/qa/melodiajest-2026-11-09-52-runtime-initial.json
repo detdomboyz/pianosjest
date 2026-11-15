@@ -1,0 +1,232 @@
+{
+  "checkedAt": "2026-11-09T14:21:56.469849+00:00",
+  "version": "23.5.77",
+  "target": "/opt/melodiajest/ops/account-stage-21-03be786f085e/runtime",
+  "targetMetadata": {
+    "bytes": 4096,
+    "allocatedBytes": 4096,
+    "mode": "0o755",
+    "uid": 0,
+    "gid": 0,
+    "device": 2049,
+    "inode": 176946,
+    "links": 2,
+    "type": "directory"
+  },
+  "members": {
+    "LICENSE": {
+      "bytes": 157609,
+      "allocatedBytes": 159744,
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176948,
+      "links": 1,
+      "type": "file"
+    },
+    "node": {
+      "bytes": 126881248,
+      "allocatedBytes": 126885888,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176947,
+      "links": 1,
+      "type": "file"
+    },
+    "runtime.json": {
+      "bytes": 491,
+      "allocatedBytes": 4096,
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176949,
+      "links": 1,
+      "type": "file"
+    }
+  },
+  "stageChildren": {
+    "bootstrap": {
+      "bytes": 4096,
+      "allocatedBytes": 4096,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176103,
+      "links": 2,
+      "type": "directory"
+    },
+    "linux-tests.txt": {
+      "bytes": 4023,
+      "allocatedBytes": 4096,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176950,
+      "links": 1,
+      "type": "file"
+    },
+    "node.tar.xz": {
+      "bytes": 32039312,
+      "allocatedBytes": 32043008,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176107,
+      "links": 1,
+      "type": "file"
+    },
+    "release.tar.gz": {
+      "bytes": 4056687,
+      "allocatedBytes": 4063232,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176106,
+      "links": 1,
+      "type": "file"
+    },
+    "restored": {
+      "bytes": 4096,
+      "allocatedBytes": 4096,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176108,
+      "links": 5,
+      "type": "directory"
+    },
+    "runtime": {
+      "bytes": 4096,
+      "allocatedBytes": 4096,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "device": 2049,
+      "inode": 176946,
+      "links": 2,
+      "type": "directory"
+    }
+  },
+  "profile": {
+    "nodeArchive": "/opt/melodiajest/ops/account-stage-21-0efdc441ee74/node.tar.xz",
+    "nodeArchiveSha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+    "nodeDirectory": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048",
+    "archive": "/opt/melodiajest/ops/course-49-5ff25a1df85e/release.tar.gz",
+    "previousArchive": "/opt/melodiajest/ops/course-47-de50ec44843d/release.tar.gz",
+    "tooling": "/opt/melodiajest/ops/tooling/account-bce1ef52c5266336",
+    "sourceSha256": "ff248aeaee1ebf1c8d153bb62ec44891d2067eda62e8c6ad0e68e9a400a6fab2"
+  },
+  "units": {
+    "melodiajest-account-backup.service": {
+      "loadState": "loaded",
+      "activeState": "inactive",
+      "mainPid": "0",
+      "controlGroup": "",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "31faeaebe1b18bbe07fd6e40a6beddf86e773ff566996da74e7ce2e54c6db677"
+    },
+    "melodiajest-account.service": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": "2467932",
+      "controlGroup": "/system.slice/melodiajest-account.service",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "a98e640b75b93ff4a1dfb22fa5bd1ff789d3d466379add52bbee92621192b53a"
+    },
+    "melodiajest-backup-health.service": {
+      "loadState": "loaded",
+      "activeState": "inactive",
+      "mainPid": "0",
+      "controlGroup": "",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "9ed7418ab89da2309d871240847dcc6ccf2a5ac01f83e6312f59a0cbb4159013"
+    },
+    "melodiajest-backup.service": {
+      "loadState": "loaded",
+      "activeState": "inactive",
+      "mainPid": "0",
+      "controlGroup": "",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "1135b70e212369a7151fcfa4368bb268ccf516da349dd5d9ba0b696cce1e852d"
+    },
+    "melodiajest-postgres.service": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": "0",
+      "controlGroup": "",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "a4ba2411edfa753d1db4e3bb5313f2a22870a57ffc3e33f565aeaa741b5beb4d"
+    },
+    "melodiajest-restore-check.service": {
+      "loadState": "loaded",
+      "activeState": "inactive",
+      "mainPid": "0",
+      "controlGroup": "",
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "812d6d87f93e5579cdf819a125c45a16af1cc8e69654422c5284b5389e53d16a"
+    },
+    "melodiajest-account-backup.timer": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": null,
+      "controlGroup": null,
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "ed785a2217f72bdbb700d4e1d5f40ea0f6b29d11216bd9cd2e3bcf5cfc347691"
+    },
+    "melodiajest-backup-health.timer": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": null,
+      "controlGroup": null,
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "5b661f49a787701caa76ae096e28bcc78dd11235df217103c16a503d988cb8a7"
+    },
+    "melodiajest-backup.timer": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": null,
+      "controlGroup": null,
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "94ad035ddc67bd6286b62c66ec3ced6fc351714284f31c57a674380d0d8cdb50"
+    },
+    "melodiajest-restore-check.timer": {
+      "loadState": "loaded",
+      "activeState": "active",
+      "mainPid": null,
+      "controlGroup": null,
+      "referencesCandidateFields": [],
+      "showFieldsSha256": "55479e379adf827afdb241eeba4c79a89e6ca209fdb8238680a4a0c786c9840b"
+    }
+  },
+  "ownProcesses": [
+    {
+      "pid": 2467932,
+      "executable": "/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048/node",
+      "cwd": "/opt/melodiajest/account-service/releases/23.5.77-5ff25a1df85eebc3",
+      "candidateReferences": [],
+      "fileDescriptorsObserved": 22
+    }
+  ],
+  "processesDisappearedDuringRead": 0,
+  "pointers": {
+    "current": "releases/23.5.77-dfe4860f6242",
+    "previous": "releases/23.5.76-4d85da38a2c1",
+    "account-service/current": "releases/23.5.77-5ff25a1df85eebc3",
+    "account-service/previous": "releases/23.5.76-de50ec44843d8a9e"
+  },
+  "freeBytes": 982667264,
+  "readOnly": true,
+  "deletedFiles": 0,
+  "s3Requests": 0,
+  "payloadOrDatabaseOpened": false,
+  "nodeArchiveOpened": false
+}

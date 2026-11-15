@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-12T00:16:12.374141+00:00",
+  "httpsStatus": 200,
+  "publicVersion": "23.5.91",
+  "manifestSha256": "c01562c346e1935af0bc9fb9952ecc5c39850c3fd1f7888b5a01262c4d0cb50b",
+  "current": "releases/23.5.91-c01562c346e1",
+  "previous": "releases/23.5.90-32f595309c0d",
+  "receipts": {
+    "server-backups/health.json": {
+      "checkedAt": "2026-11-12T00:01:13.958500+00:00",
+      "success": true,
+      "problems": []
+    },
+    "external-s3/scheduled/health.json": {
+      "checkedAt": "2026-11-12T00:01:14.226809+00:00",
+      "success": true,
+      "accountBackup": {
+        "agesSeconds": {
+          "dataCompared": 91,
+          "independentRestore": 91,
+          "lastAttempt": 91
+        },
+        "browserDataBackedUp": false,
+        "dataComparedAt": "2026-11-11T23:59:43.456338+00:00",
+        "engine": "postgres",
+        "problems": [],
+        "required": true,
+        "restorePerformedThisCheck": false,
+        "restoreVerifiedAt": "2026-11-11T23:59:43.456333+00:00",
+        "s3RequestsThisCheck": 0,
+        "snapshotId": "d18fe245616c6d46df6605dcf75b813b82076122cb224cbc51581aaf67dc3e06",
+        "sourceSha256": "b07aa82770cd5e0548298481594b7309462b1d86e0a0062b93850e280f4cf864",
+        "success": true
+      },
+      "problems": []
+    },
+    "account-postgres-backups/latest-success.json": {
+      "checkedAt": "2026-11-11T23:59:43.456294+00:00",
+      "restoredAt": "2026-11-11T23:59:43.456333+00:00",
+      "dataComparedAt": "2026-11-11T23:59:43.456338+00:00",
+      "status": "verified",
+      "snapshot": "d18fe245616c6d46df6605dcf75b813b82076122cb224cbc51581aaf67dc3e06",
+      "sourceSha256": "b07aa82770cd5e0548298481594b7309462b1d86e0a0062b93850e280f4cf864"
+    },
+    "account-postgres-backups/latest-attempt.json": {
+      "checkedAt": "2026-11-11T23:59:43.456294+00:00",
+      "restoredAt": "2026-11-11T23:59:43.456333+00:00",
+      "dataComparedAt": "2026-11-11T23:59:43.456338+00:00",
+      "status": "verified",
+      "snapshot": "d18fe245616c6d46df6605dcf75b813b82076122cb224cbc51581aaf67dc3e06",
+      "sourceSha256": "b07aa82770cd5e0548298481594b7309462b1d86e0a0062b93850e280f4cf864"
+    }
+  },
+  "fullCatalogDownloaded": false,
+  "archivesDownloaded": false,
+  "serviceStarts": 0,
+  "s3RequestsInitiated": 0,
+  "serverMutations": 0
+}

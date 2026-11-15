@@ -17,3 +17,6 @@ body.game-player{background:var(--scene)}.game-player .topbar{border-bottom:1px 
 @media(max-width:700px){.campus h1{font-size:clamp(39px,12vw,46px);letter-spacing:-1.8px}.course-hero{padding:34px 0 25px;gap:10px}.hero-lead{font-size:13px;line-height:1.75;margin-bottom:23px}.wide-break{display:none}.hero-instrument{height:165px}.piano-object{max-width:280px}.piano-top{height:38px}.piano-keys{height:85px}.staff-orbit{top:0;height:110px}.staff-orbit>span{margin:10px 0}.instrument-caption{display:none}}
 
 .history-label{display:none}
+.game-player .player-account-status{margin:0 0 18px;padding:10px 12px;border-left:2px solid var(--line);color:var(--muted);font-size:14px;line-height:1.55;overflow-wrap:anywhere}
+.game-player .player-account-status[data-state="pending"],.game-player .player-account-status[data-state="locked"]{border-color:var(--gold);color:var(--ink)}
+.game-player .player-account-status[data-state="saved"]{border-color:var(--mint)}

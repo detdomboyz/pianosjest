@@ -1,0 +1,71 @@
+{
+  "status": "isolated-candidate-reader-verified-current-data-protected",
+  "checkedAt": "2026-11-12T06:29:15.631435+00:00",
+  "stage": "/opt/melodiajest/ops/course-128-01c5a1f0723d",
+  "artifactSha256": "01c5a1f0723d7165fc7dc2bb1460da238a2062166782a570755b2cb18dc14d86",
+  "webManifestSha256": "0afa3cacfd2d7ba7bb85486930d6f3fa7db2e3afb8a1edd35ff630f841dd48c2",
+  "newSourceSha256": "53cf70f8a0098eca8b08d9c0cf03ac280c61199efd6f6b8aa0928298e9d19f98",
+  "linuxTestsPassed": 74,
+  "startBudgetTestsPassed": 7,
+  "startBudget": {
+    "checkedAt": "2026-11-12T06:28:42.162446+00:00",
+    "unit": "melodiajest-account-backup.service",
+    "allowed": true,
+    "recentStarts": [
+      "2026-11-12T04:51:31.500562+00:00",
+      "2026-11-12T05:00:23.460161+00:00"
+    ],
+    "plannedStarts": 2,
+    "burst": 4,
+    "windowSeconds": 7200,
+    "marginSeconds": 10,
+    "notBefore": "2026-11-12T06:28:42.162446+00:00",
+    "conservativeJournalSnapshot": true,
+    "reservation": false,
+    "systemdCounterRead": false,
+    "mutationsPerformed": false,
+    "nativeLimits": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStartTimestamp": "Thu 2026-11-12 05:00:23 UTC",
+      "StartLimitIntervalUSec": "2h",
+      "StartLimitBurst": "4"
+    }
+  },
+  "preUpdateProtection": {
+    "mode": "normal-service-fresh-comparison-after-budget-window",
+    "manualPreUpdateStarts": 1,
+    "checkedAt": "2026-11-12T06:28:48.508822+00:00",
+    "dataComparedAt": "2026-11-12T06:28:48.508842+00:00",
+    "restoredAt": "2026-11-12T05:01:12.737354+00:00",
+    "snapshot": "9491057f0cbf75501e3f858ef5006550dd1941376b6d24665637ca40a3b829a8",
+    "newSnapshotCreated": false,
+    "directCalendarSuccessClaimed": false
+  },
+  "preUpdateAccountSnapshot": "9491057f0cbf75501e3f858ef5006550dd1941376b6d24665637ca40a3b829a8",
+  "preUpdateDataComparedAt": "2026-11-12T06:28:48.508842+00:00",
+  "isolatedCandidateRestore": {
+    "productionDataUsed": false,
+    "productionVolumesMounted": false,
+    "network": "none",
+    "postgresImageImported": true,
+    "imageBlobsVerified": 20,
+    "daemonLayerReusePossible": true,
+    "nodeFromRestoredArchive": true,
+    "pgDependenciesFromRestoredArchive": true,
+    "sourceSha256": "53cf70f8a0098eca8b08d9c0cf03ac280c61199efd6f6b8aa0928298e9d19f98",
+    "dataDigestMatched": true,
+    "ddlDenied": true,
+    "wrongPasswordDenied": true,
+    "restoredSessionsRevoked": true,
+    "apiHealth": "ok",
+    "twoUsersRegistered": true,
+    "privateWriteReadback": true,
+    "forgedOwnerDenied": true,
+    "syntheticMidiDeviceUsed": false
+  },
+  "independentCandidateSnapshotClaimed": false,
+  "liveApiAndPublicUnchanged": true,
+  "dataMigrationPerformed": false,
+  "newTimersCreated": 0
+}

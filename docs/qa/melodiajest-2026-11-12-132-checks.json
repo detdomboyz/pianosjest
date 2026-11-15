@@ -1,0 +1,141 @@
+{
+  "checkedAt": "2026-11-12T11:17:19.950454+00:00",
+  "candidateVersion": "23.5.100",
+  "publicVersion": "23.5.99",
+  "newLearningRecords": 0,
+  "newIndependentGoals": 0,
+  "full": {
+    "path": "tmp/melodiajest-132-npm.log",
+    "sha256": "2280b2592f749006bf298cac91eed21ee536875543dfec7c218544a7230253ca",
+    "totals": {
+      "tests": 1419.0,
+      "pass": 1419.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 0.0,
+      "duration_ms": 502094.7509
+    }
+  },
+  "targeted": {
+    "path": "tmp/melodiajest-132-target-green.log",
+    "sha256": "efcf27698dd1108b621c562a75db9f2f2c45eecafc1021fb1ce82e3373755988",
+    "totals": {
+      "tests": 3.0,
+      "pass": 3.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 0.0,
+      "duration_ms": 6522.8582
+    }
+  },
+  "service": {
+    "path": "tmp/melodiajest-130-service.log",
+    "sha256": "468b9af1e23fed8a5285d227abae62f74e39aba96cdf95030f2fa0d3c396834e",
+    "totals": {
+      "tests": 60.0,
+      "pass": 53.0,
+      "fail": 0.0,
+      "cancelled": 0.0,
+      "skipped": 7.0,
+      "duration_ms": 32716.9007
+    },
+    "fresh": false,
+    "reusedFromPhase": 130
+  },
+  "serviceReuseProof": {
+    "serviceCodeAndTestsExact": true,
+    "registryChangedOnlySourceVersion99To100": true,
+    "packageApplicationVersionAlsoChanged": true,
+    "notAllInputBytesIdentical": true,
+    "current53ServiceCasesWillRunFreshInLinux107": true,
+    "exactFiles": {
+      "service/account_backup.py": "5f75e5198a7e7639f5d73145402f45ab7583d8302c07d6a8476f54a0250937b2",
+      "service/backup.cjs": "cd2323ae0cf3fc39dd11192a88d701ab44af584c9390cab2e454bb253291f2d0",
+      "service/canonical.cjs": "c59128bdc692274b5052204634e400007b9dde34361fd037b583f35f18881a0f",
+      "service/course.cjs": "207a3d83f643b24c46e00efb926da44af3d560a27552f27041c1ffcbd8106ed6",
+      "service/data-model.cjs": "4dcb8157c9453db13462df637cd61c3990d94a786ca4c8fc8932cce333738f97",
+      "service/database.cjs": "266b2334906e69913b25d8d2690a0d0399386a6c322a4b80e90ff139a78b4c17",
+      "service/db-config.cjs": "c20918ce6df58c4253893ab1cb38c797e6f6badaee1409898414dffd94285b60",
+      "service/deployment.py": "51c7c11b00b4005a1eb2ebb6947ad4016cd8ead4b011bbb6fa20654df9e53fef",
+      "service/game-grade.cjs": "ab328af357e1a9c1f84b59ac321b01537728d89ee51d21ad064eb2f91feb3f22",
+      "service/game-schema.sql": "b385d2558d653339e923452a3fbe9d2a6d3db22dc438a8906fb950b503977656",
+      "service/game.cjs": "4495bac063360eacc5f3644c158e1a780b01bc6fcb7211575c40b9501c2b95c6",
+      "service/implementation-files.json": "838f9758e55bcbdaa48935892bdf37b4ace9bf95855632e9510c7ae99459cb8d",
+      "service/migration.cjs": "58d16b740e391eb1201a1d2dd8fbc9422ed377165b2fb9feda9fe7a476bff481",
+      "service/operate.py": "8be3c910c9c8ae315d0a970eaf95070b055b50f21849f1e28c3ff5623c59d590",
+      "service/package-lock.json": "16e70b5d1d4fd2c8eeac99ab2fa7e37db963f6a69801e520327b509eaf35f594",
+      "service/package.json": "d842bfa6bc272ed2301075a5e2a2458c522daf467de2f38ed52b4e9cd89ad329",
+      "service/pg-snapshot.cjs": "c8cece867b6695418fcf0089a1b3b407b781b2192684e226b1b651a40d258eba",
+      "service/postgres-runtime.json": "fcd84e2ee98ea68721f5278f569c08cf17ba1140f555af982273d04a5d41475f",
+      "service/postgres.py": "c65aca5101358df4494b7900ca4819bc3f102701f9b4893e9f39c991388d4d6c",
+      "service/postgres_backup.py": "9a1e92fde7d5776368f24ca1f630ea41fa33f03975bdbd355eb05d463f125781",
+      "service/postgres_image.py": "b9d697896a94e093e540433ff388ea932f3d9363276d87d206e32b417906a847",
+      "service/preview.cjs": "d86ad0b72663da556babdbffea61089d5efa5b60da3245ffe3cee736629eb393",
+      "service/repository.cjs": "070ea1b9c21746c304706351e3881ce2e7fe736632584415b56db69af3aaaef7",
+      "service/runtime.json": "c7943cd8d2d70616c23b116b3cabd91d0efbdfaf604ed64ed828b3123fc16f22",
+      "service/schema.pg.sql": "1483bb3daf4fd75c628166d9bd46bd65f37141e18e60c47d6f5c35cd1db2f47d",
+      "service/security.cjs": "7e224275164819a09d6254ce0a451c54db73b833129b2d8673708924d09b3d23",
+      "service/server.cjs": "2686c5ef8c29df6025906d53e33f33c82b153be84493bc8edeaa68e511363efb",
+      "service/socket-clean.cjs": "6bb96bc2b530cd4ef2d33ee92581b8b0f727c8d72b25a4fe2b495b504fb14d5e",
+      "service/store.cjs": "322de9b5ec43745f915dda8440eb163cc44295e3f1097f46ef0eb65c83593afb",
+      "service/units.py": "75625b13cc824f0e854be99548d21a88ef8aa18bde109aa3a8f1a4a5e690158d",
+      "service/validation.cjs": "98850d4cddcb3a4f24a080953dfd37352f90cc577377fe41841da8484ea98559",
+      "service/worker_update.py": "cb60d5b8912e523352fd79e000dd0e3a03cf148a8be7593b68faacf8511308e2",
+      "service/fixtures/mobile-preview.html": "c1118bd04a4b409002754b0dc9970f351e2946e796ba01a2c15b245dc6a0bfa4",
+      "service/tests/database.test.cjs": "68b58268e09eeef4dc9a766ceec1838514168e100469e4c0ba8feea05a8a444e",
+      "service/tests/game.test.cjs": "9b62a079af4a86d0f977dd82444f2c1b0ce6fe202f3b5d67efa19a7d3c998f8d",
+      "service/tests/postgres.test.cjs": "d69c003920267b25126b9fdf2d66a2d3b01a9b0bac61fcaa1196ddbad47cce46",
+      "service/tests/service.test.cjs": "4452cae7f077a65f22dbce919cc1662043641aa1b0ba1a1337488a4d9cadc76e",
+      "service/tests/course-cache.test.cjs": "0b4802cd559709dcd0cf71daf3458b2364290356367123751a492b2a7f627fa9",
+      "service-client.js": "d3182c08cb515d797f3c9dcb468e77edafee5bdca0f24d7edde2fe93bf04a286",
+      "learning-client.js": "c7e795b7b93d4ca18c8ae8c1780a80e1170413c27447f9dd8b33a7e1b42e5887",
+      "piano-game-player.js": "3e08d1790116b3bc8b3329d810127cebd6211f7311e5d837e9b8a4776a347c77",
+      "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "tests/service-client.test.cjs": "b07fd8265ed941561c6d5fd7e2de1d8fbf64fdf5c2b1fcd81946110d74200077",
+      "tests/service-progress-scope.test.cjs": "b7b7d895211e5ffc0b090556a925e62e7c25e24b6dcd597c72b62c6cb5f30218"
+    }
+  },
+  "musicalAudits": [
+    {
+      "name": "lessons",
+      "path": "tmp/melodiajest-132-audit-lessons.log",
+      "sha256": "da43c4cd0b3e3326ef60a49d4dca0110b8555c7a7d832a95f342221e969d2d94",
+      "fresh": true,
+      "toolExitCode": 0
+    },
+    {
+      "name": "fingering",
+      "path": "tmp/melodiajest-132-audit-fingering.log",
+      "sha256": "8c60745e3d1ecb404f63f21d0ec95d377a5c74a3630b044e0b4b80592149bca8",
+      "fresh": true,
+      "toolExitCode": 0
+    },
+    {
+      "name": "curriculum",
+      "path": "tmp/melodiajest-132-audit-curriculum.log",
+      "sha256": "770fd6cfa4f9572dffb2c8031b578c20a393ac520c1c1988fe91bc58c663e22a",
+      "fresh": true,
+      "toolExitCode": 0
+    },
+    {
+      "name": "coverage",
+      "path": "tmp/melodiajest-132-audit-coverage.log",
+      "sha256": "3bc9f61806625b3c8bf7bb9b0a0ba52c6ad139f31e3af8552267b755a6c0a455",
+      "fresh": true,
+      "toolExitCode": 0
+    }
+  ],
+  "fourMusicalAuditsFresh": true,
+  "newTestSha256": "c2e37bef00d20fe6c5926b7a76e5fc6ffb4ace0272ef3a34681553e4b2a5622e",
+  "historical14TestSha256": "3e86cdc13e88ae480b29c4fa75894044907429f49290cabcd96242c4fb3622ba",
+  "historical14PassedInFull": true,
+  "initializationMoveOnlyInIndex": true,
+  "initial3RedPass0Fail3BeforeImplementation": true,
+  "newTestsUnchangedAfterRed": true,
+  "fullInterrupted": false,
+  "browserPending": false,
+  "linuxPending": false,
+  "publicationReady": true,
+  "teacherReviewed": 0,
+  "realMidiDeviceOrAudioObserved": false
+}

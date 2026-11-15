@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-11-15T01:24:42.064340+00:00",
+  "currentPhase": 214,
+  "nextPhase": 215,
+  "planningOnly": true,
+  "full214MustPassBeforeImplementation": true,
+  "sourceReport": "docs/qa/melodiajest-2026-11-15-214-next-source-planning.json",
+  "coverageScreen": "docs/qa/melodiajest-2026-11-15-214-next-gap-screen.json",
+  "preparationCandidates": "docs/qa/melodiajest-2026-11-15-214-next-preparation-candidates.json",
+  "rejectedNewMotorHypothesis": "right3black→4blackwholeup already exactAb4Bb4/34 inblack03 andgenericC#5D#5/34 Emajor;3polyoccurrences too",
+  "newGlobalMotorClasses": 0,
+  "newPreparedCombinationGoalsPlanned": 3,
+  "ownPrerequisiteReferences": 7,
+  "uniqueOwnPrerequisiteIds": 7,
+  "cases": [
+    {
+      "caseKey": "white-black-pair",
+      "id": "detail-p-eflat-white-black-pair-right-01",
+      "midis": [
+        67,
+        68,
+        70
+      ],
+      "fingers": [
+        2,
+        3,
+        4
+      ],
+      "sourceFromIndex": 2,
+      "sourceStarts": [
+        1,
+        1.5,
+        2
+      ],
+      "sourceEndBeat": 2.5,
+      "sourceNext": "C5continuesascent",
+      "requires": [
+        "detail-p-black-03",
+        "detail-p-bflat-major-ascent-right-01"
+      ],
+      "goal": "ConnectwhiteG4/2halfupintoAb4/3thenwholeupblackBb4/4;twoindividuallypreparedcontactsjoined,newreading/mixedwhiteblackphrase.NOTnew3→4motorclass;black03alreadyexactAb4Bb4/34."
+    },
+    {
+      "caseKey": "upper-exit",
+      "id": "detail-p-eflat-upper-exit-right-01",
+      "midis": [
+        70,
+        72,
+        74,
+        75
+      ],
+      "fingers": [
+        4,
+        1,
+        2,
+        3
+      ],
+      "sourceFromIndex": 4,
+      "sourceStarts": [
+        2,
+        2.5,
+        3,
+        3.5
+      ],
+      "sourceEndBeat": 4,
+      "sourceNext": "D5descentcontinues",
+      "requires": [
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-g-natural-minor-ascent-right-01"
+      ],
+      "goal": "ExtendalreadyexactBb4C5D5/412intoterminalEb5/3 afterthumb;D4Eb4/23preparedinGnaturalminor,explicit+12registercomparison. New4notecombination/notnewindividualpair;sourcehighEbsharedturnnotendingquiet."
+    },
+    {
+      "caseKey": "full-ascent",
+      "id": "detail-p-eflat-major-ascent-right-01",
+      "midis": [
+        63,
+        65,
+        67,
+        68,
+        70,
+        72,
+        74,
+        75
+      ],
+      "fingers": [
+        2,
+        1,
+        2,
+        3,
+        4,
+        1,
+        2,
+        3
+      ],
+      "sourceFromIndex": 0,
+      "sourceStarts": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5
+      ],
+      "sourceEndBeat": 4,
+      "sourceNext": "D5descentcontinues",
+      "requires": [
+        "detail-p-bflat-second-thumb-right-01",
+        "detail-p-eflat-white-black-pair-right-01",
+        "detail-p-eflat-upper-exit-right-01"
+      ],
+      "goal": "IntegratepreparedRHthree-flatEflatmajorascent21234123/groups1+4+3;twoarrivalsatthumb,threeblackkeys,terminalthird. OwnBb3C4D4/212prepares2black→1whitewholeup;Eb4F4G4/212explicitregister/pitchcomparison+5. Notnewglobalmotorclass."
+    }
+  ],
+  "oldMainRoute295Unchanged": true,
+  "mainExamTerminal": true,
+  "stage": "p7",
+  "branch": "common",
+  "anchor": "detail-p-bflat-major-descent-left-01",
+  "oldActualNext": "oct201--2",
+  "oldAnchorHintMustRemain": "oct201--2",
+  "newChain": [
+    "detail-p-bflat-major-descent-left-01",
+    "detail-p-eflat-white-black-pair-right-01",
+    "detail-p-eflat-upper-exit-right-01",
+    "detail-p-eflat-major-ascent-right-01",
+    "oct201--2"
+  ],
+  "oldOptionalOutgoingPathsCurrent267": true,
+  "protectedOldOptionalOutgoingPaths266": true,
+  "oldMainNextPaths84": true,
+  "sourceNotationRegisterUnchanged": true,
+  "sourceEightEighthsOne4_4BarToEightQuartersTwo4_4BarsExplicit": true,
+  "projectMicro3QuartersPartialBar": true,
+  "projectExit4QuartersOneCompleteBar": true,
+  "projectFull8QuartersTwoCompleteBars": true,
+  "sourceTopEb5SharedWithFollowingDescent": true,
+  "sourceFollowingD5NotProjectQuiet": true,
+  "manualQuietUngraded": true,
+  "projectBpm40LegatoV2": true,
+  "newLessonsImplemented": 0,
+  "sourceApplicationsAddedTo214": 0,
+  "newSourceRulesAddedTo214": 0,
+  "noClaimsOfTeacherOrSourceEndorsement": true,
+  "planningMetadataCountCorrection": 1
+}

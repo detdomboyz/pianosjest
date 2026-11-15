@@ -1,0 +1,402 @@
+{
+  "kind": "source-only-existing-course07-07-chord-handoff-declaration-review",
+  "phase": "100",
+  "batch": "2026-11-10-39",
+  "checkedAt": "2026-11-10T17:41:58.949123+00:00",
+  "status": "existing-chord-handoff-source-claims-match-nominal-data-no-readiness-change",
+  "existingCard": {
+    "id": "course07-07",
+    "registryFile": "service/course-registry.json",
+    "registrySha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "snapshot": {
+      "id": "course07-07",
+      "title": "Басовый аккорд + правая нота",
+      "description": "В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.",
+      "stage": "p5",
+      "stageTitle": "5. Гамма, арпеджио и трезвучие",
+      "optional": false,
+      "goal": "В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.",
+      "requires": [
+        "course08-02",
+        "course07-06",
+        "course04-02"
+      ],
+      "goalKey": "course07-07",
+      "challengeReady": true,
+      "gradeFingerprint": "c778a1db",
+      "musicVersion": "bbe9cc7643868ce2066a89d23b0f6f71d4b18c0ac11d240ced5fa81473a633b5",
+      "editionVersion": "3b1b1fd33d0b198821ef950ffc893cd7d9bcd07406e43a95a864ffe33b0ff56f",
+      "bpm": 52,
+      "timeLimit": 50,
+      "steps": [
+        {
+          "midis": [
+            48,
+            52,
+            55
+          ],
+          "startBeat": 0,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            60
+          ],
+          "startBeat": 2,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            48,
+            52,
+            55
+          ],
+          "startBeat": 4,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            62
+          ],
+          "startBeat": 6,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            48,
+            52,
+            55
+          ],
+          "startBeat": 8,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            64
+          ],
+          "startBeat": 10,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            48,
+            52,
+            55
+          ],
+          "startBeat": 12,
+          "durationBeats": 2
+        },
+        {
+          "midis": [
+            67
+          ],
+          "startBeat": 14,
+          "durationBeats": 2
+        }
+      ],
+      "profile": "standard",
+      "timingPrecision": "beat-boundary-v2"
+    },
+    "snapshotSha256": "584fdfcb57bb302c1172d7329bc69ca20e3849f56c9a58258f2eb941561c7ed9",
+    "guideFieldPresentInRegistry": false,
+    "learningFieldPresentInRegistry": false
+  },
+  "priorSnapshot": {
+    "file": "docs/qa/piano-curriculum-2026-11-10-36-held-bass-comparison.json",
+    "sha256": "71c24ad08d2058a170f19dae5e476892ee138617c0cd83e194d68fdc7dd5c961",
+    "registryRowSnapshotSha256": "584fdfcb57bb302c1172d7329bc69ca20e3849f56c9a58258f2eb941561c7ed9"
+  },
+  "sourceDeclarations": {
+    "file": "piano-lesson-development.js",
+    "fileSha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f",
+    "boundedRowWindow": [
+      1039,
+      1044
+    ],
+    "rowSourceLine": 1043,
+    "literalFields": [
+      {
+        "field": "fingerprint",
+        "literal": "'741d8889'",
+        "value": "741d8889",
+        "sourceLine": 1043
+      },
+      {
+        "field": "stage",
+        "literal": "'p5'",
+        "value": "p5",
+        "sourceLine": 1043
+      },
+      {
+        "field": "after",
+        "literal": "'course08-02'",
+        "value": "course08-02",
+        "sourceLine": 1043
+      },
+      {
+        "field": "requires",
+        "literal": "['course08-02','course07-06','course04-02']",
+        "value": [
+          "course08-02",
+          "course07-06",
+          "course04-02"
+        ],
+        "sourceLine": 1043
+      },
+      {
+        "field": "duration",
+        "literal": "2",
+        "value": 2,
+        "sourceLine": 1043
+      },
+      {
+        "field": "precision",
+        "literal": "'beat-boundary-v2'",
+        "value": "beat-boundary-v2",
+        "sourceLine": 1043
+      },
+      {
+        "field": "goal",
+        "literal": "'В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.'",
+        "value": "В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "purpose",
+        "literal": "'Передавать двухдольную опору от одновременного левого трезвучия к отдельной правой ноте, сохраняя общий пульс и согласованное окончание аккорда.'",
+        "value": "Передавать двухдольную опору от одновременного левого трезвучия к отдельной правой ноте, сохраняя общий пульс и согласованное окончание аккорда.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "position",
+        "literal": "'Левая: C3–E3–G3 пальцами 5–3–1. Правая: C4, D4, E4, G4 пальцами 1, 2, 3, 5 соответственно. Заранее найди удобную форму, педаль выключена.'",
+        "value": "Левая: C3–E3–G3 пальцами 5–3–1. Правая: C4, D4, E4, G4 пальцами 1, 2, 3, 5 соответственно. Заранее найди удобную форму, педаль выключена.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "breakdown",
+        "literal": "'Коротко проверь C-мажор левой и четыре правых ноты отдельно, затем соедини один такт. Считай «раз, два, три, четыре»: на «раз» одновременно нажми C3–E3–G3 левой 5–3–1 и держи две доли; на «три» отпусти все три клавиши вместе и сыграй правый C4 пальцем 1 до следующего «раз». Повтори такты с правыми D4/2, E4/3, G4/5. Четыре такта занимают шестнадцать долей; последний G4 также держится две доли.'",
+        "value": "Коротко проверь C-мажор левой и четыре правых ноты отдельно, затем соедини один такт. Считай «раз, два, три, четыре»: на «раз» одновременно нажми C3–E3–G3 левой 5–3–1 и держи две доли; на «три» отпусти все три клавиши вместе и сыграй правый C4 пальцем 1 до следующего «раз». Повтори такты с правыми D4/2, E4/3, G4/5. Четыре такта занимают шестнадцать долей; последний G4 также держится две доли.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "hearing",
+        "literal": "'Слышен цельный низкий C-мажор, затем отдельная высокая нота. У трезвучия общее начало и общее окончание; один его звук не должен оставаться после остальных. Высокие ответы поднимаются C–D–E–G.'",
+        "value": "Слышен цельный низкий C-мажор, затем отдельная высокая нота. У трезвучия общее начало и общее окончание; один его звук не должен оставаться после остальных. Высокие ответы поднимаются C–D–E–G.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "errors",
+        "literal": "['Не перебирай C3–E3–G3 как арпеджио и не отпускай один палец аккорда заранее.','Не сокращай правый ответ до одной доли: следующая левая опора приходит на «раз» нового такта. Не держи аккорд под ответом.']",
+        "value": [
+          "Не перебирай C3–E3–G3 как арпеджио и не отпускай один палец аккорда заранее.",
+          "Не сокращай правый ответ до одной доли: следующая левая опора приходит на «раз» нового такта. Не держи аккорд под ответом."
+        ],
+        "sourceLine": 1043
+      },
+      {
+        "field": "transfer",
+        "literal": "'После попытки сыграй два такта с тем же левым трезвучием, но ответами E4/3 и C4/1. Доли «раз–два / три–четыре» и общий конец трезвучия остаются прежними.'",
+        "value": "После попытки сыграй два такта с тем же левым трезвучием, но ответами E4/3 и C4/1. Доли «раз–два / три–четыре» и общий конец трезвучия остаются прежними.",
+        "sourceLine": 1043
+      },
+      {
+        "field": "next",
+        "literal": "'course08-03'",
+        "value": "course08-03",
+        "sourceLine": 1043
+      },
+      {
+        "field": "nextText",
+        "literal": "'Следующий шаг — отдельно подготовить F major перед сменой аккордов; удержанный бас под мелодией будет самостоятельной темой.'",
+        "value": "Следующий шаг — отдельно подготовить F major перед сменой аккордов; удержанный бас под мелодией будет самостоятельной темой.",
+        "sourceLine": 1043
+      }
+    ],
+    "newExactLineBindings": [
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1043,
+        "text": "    {id:'course07-07',fingerprint:'741d8889',stage:'p5',after:'course08-02',requires:['course08-02','course07-06','course04-02'],duration:2,precision:'beat-boundary-v2',goal:'В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.',purpose:'Передавать двухдольную опору от одновременного левого трезвучия к отдельной правой ноте, сохраняя общий пульс и согласованное окончание аккорда.',position:'Левая: C3–E3–G3 пальцами 5–3–1. Правая: C4, D4, E4, G4 пальцами 1, 2, 3, 5 соответственно. Заранее найди удобную форму, педаль выключена.',breakdown:'Коротко проверь C-мажор левой и четыре правых ноты отдельно, затем соедини один такт. Считай «раз, два, три, четыре»: на «раз» одновременно нажми C3–E3–G3 левой 5–3–1 и держи две доли; на «три» отпусти все три клавиши вместе и сыграй правый C4 пальцем 1 до следующего «раз». Повтори такты с правыми D4/2, E4/3, G4/5. Четыре такта занимают шестнадцать долей; последний G4 также держится две доли.',hearing:'Слышен цельный низкий C-мажор, затем отдельная высокая нота. У трезвучия общее начало и общее окончание; один его звук не должен оставаться после остальных. Высокие ответы поднимаются C–D–E–G.',errors:['Не перебирай C3–E3–G3 как арпеджио и не отпускай один палец аккорда заранее.','Не сокращай правый ответ до одной доли: следующая левая опора приходит на «раз» нового такта. Не держи аккорд под ответом.'],transfer:'После попытки сыграй два такта с тем же левым трезвучием, но ответами E4/3 и C4/1. Доли «раз–два / три–четыре» и общий конец трезвучия остаются прежними.',next:'course08-03',nextText:'Следующий шаг — отдельно подготовить F major перед сменой аккордов; удержанный бас под мелодией будет самостоятельной темой.'}",
+        "textSha256": "3d0b788d23f96c84c74babe7f5225427e92a48ec91577573a1df1338c9d98b7f"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1062,
+        "text": "      if(review.duration===2){l.references.push(THEORY);l.referenceTitles[THEORY]='The Open University: состав мажорного трезвучия';l.sourceEvidenceIds.push('ou-triads-2026-11-05');}",
+        "textSha256": "a31df45bd7a2057e417dc434516f397e533aa578eb888410badcc3b24a29c460"
+      }
+    ],
+    "reusedGenericBindings": [
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1049,
+        "text": "      if(!lesson?.learning||(lesson.contentKind!==undefined&&lesson.contentKind!=='exercise')||lesson.learning.contentReview||instructionFingerprint(lesson)!==review.fingerprint)continue;",
+        "textSha256": "ef30279310fd17dda7b4147e8a17fd24b4de62df8e73330b361dbd26d5ed76b6"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1051,
+        "text": "      lesson.rhythm=adapter.normalizeRhythm({version:1,source:'project-regular-phrase-v1',bpm:lesson.rhythm.bpm,practiceBpm:bpm,timeSignature:{numerator:4,denominator:4},steps:lesson.steps.map((_,i)=>{const start=i*review.duration;return {startBeat:start,durationBeats:review.duration,restBeforeBeats:0,measure:Math.floor(start/4)+1,beatInMeasure:start%4,sourceStartMs:Math.round(start*60000/lesson.rhythm.bpm),sourceDurationMs:Math.round(review.duration*60000/lesson.rhythm.bpm)};})},lesson.steps.length);",
+        "textSha256": "20f188c8ac112b0a8929026d857a627172554bb5e3c7803dcb7aa1514a004d36"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1052,
+        "text": "      lesson.contentKind='exercise';lesson.description=review.goal;",
+        "textSha256": "36cf22612be0d27b747abc83156567ea676a59c4473ea39f494ef235e077965a"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1053,
+        "text": "      lesson.guide=adapter.normalizeGuide({...lesson.guide,stage:'Две руки: передача фразы',setup:review.position,motion:'Готовь движение спокойно у клавиш. Играющая рука заканчивает заданную длительность и передаёт пульс другой; свободная рука остаётся подвижной, без зажатого удержания.',blind:'Перед началом найди C3 и C4 по группам чёрных клавиш; затем следи за счётом и звучанием, не требуя постоянного взгляда на пальцы.',mastery:'Чистая MIDI-попытка проверяет высоты и временные события. Отдельно проверь заданные пальцы, свободу руки и ясность передачи; вернись к короткой фразе после перерыва.'});",
+        "textSha256": "426338dd6ed5af35e15906de13a567987429c5268bb0c851118294840fea8021"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1055,
+        "text": "      l.stage=review.stage;l.after=review.after;l.requires=review.requires;l.goal=review.goal;",
+        "textSha256": "9c38fb3fe839aad0cecafa906f0c9aee52929c0e474dd0de010c9051b9313307"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1056,
+        "text": "      l.practiceSteps=['Подготовка: сначала выполни указанные уроки основы. '+review.position+' Послушай образец и мысленно услышь смену рук: '+review.hearing,'Медленный разбор: '+review.breakdown+' Сначала собери один такт в удобном медленном пульсе; темп зачёта — '+bpm+' BPM.','Блок около 3–5 минут: короткий разбор, целая фраза и остановка для самопроверки. '+review.transfer+' Это самостоятельная проба переноса, не фраза текущего MIDI-зачёта. После перерыва вернись к исходной фразе.'];",
+        "textSha256": "8617b7c49c35db8658ee4c1b2238cbd88380fcfa4a0e5d73f10f5e905a595ec0"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1057,
+        "text": "      l.selfCheck=[...review.errors,review.hearing,'MIDI не определяет пальцы, расслабление, звуковой баланс и музыкальную выразительность. Известная фраза не является независимой слуховой пробой.',review.nextText];",
+        "textSha256": "ffb954b2decc9beaee181614fa5df5b6dac9267fff0fdbe3e42523d9995fe803"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1058,
+        "text": "      l.rhythmNotice='Новая учебная редакция ритма: '+(review.duration===1?'три такта 4/4, двенадцать четвертей':'четыре такта 4/4, восемь половинных событий')+'; '+bpm+' BPM. Высоты, руки и пальцы сохранены; длительности и тактовые границы уточнены. Прежние попытки сохраняются в своей версии, для нового зачёта нужен повтор. Бас и правая фраза здесь чередуются, это не упражнение на независимый удержанный голос. Числовые допуски — настройки проекта.';",
+        "textSha256": "0355b234d8a5fd0aaa1d5589cc99b11329bfe81559313ffa3e8156cbf9b12a32"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1063,
+        "text": "      l.provenance={type:'project-technical-drill',author:'Упражнение проекта',purpose:review.purpose,context:'Подготовка к соединению мелодии и сопровождения: сначала точная передача по очереди, затем отдельные задания с одновременным или независимым звучанием.',sourceNote:'Это ритмическая редакция собственной заготовки проекта, не фрагмент произведения. Ранее группы занимали '+(review.duration===1?'пять':'три')+' доли в 4/4 без объяснения их сдвига; здесь выбран регулярный тактовый рисунок для начальной передачи рук. Такие сдвиги допустимы в музыке, но не являются задачей данного урока. Hutchinson подтверждает определение четырёхдольного размера, OpenLearn — отношения длительностей'+(review.duration===2?' и состав C-мажора':'')+'. Ноты, пальцы, ритмическая редакция, темп и критерии выбраны проектом; авторы источников не утверждали упражнение.'};",
+        "textSha256": "b341e399e3d097c5bc118fc8195739c0b333227ea7e232ad815413ace1305336"
+      },
+      {
+        "file": "piano-lesson-development.js",
+        "line": 1064,
+        "text": "      l.contentReview={id:'phrase-handoff-v1',sourceFingerprint:review.fingerprint,previousAssessmentFingerprint,previousRhythm,reviewedFingerprint:instructionFingerprint(lesson)};changed++;",
+        "textSha256": "6d4688696e52e07213f70f53113e736688feeab3a7d8142504f570a17b685a3c"
+      }
+    ],
+    "genericBindingQa": "docs/qa/piano-curriculum-2026-11-10-38-handoff-source-review.json",
+    "genericBindingQaSha256": "94add3fb6a06f65667b8fc45ca141d299034b109be8c8d5e3331f315c4f61cbb",
+    "descriptionBinding": "review.goal -> lesson.description",
+    "guideLearningDeclarationsReusedWithoutExecution": true,
+    "fullRuntimeGuideAssembled": false,
+    "normalizersOrReviewInvoked": false,
+    "sourceHistoricalInstructionFingerprint": "741d8889",
+    "cachedGradeFingerprint": "c778a1db"
+  },
+  "sourceReuse": {
+    "sourceId": "clark-practice-bimanual-scaffolding-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "clark-practice-bimanual-scaffolding-2026-11-10",
+      "author": "Michael Clark",
+      "title": "Baylor Piano Basics, 15. Practice Strategies",
+      "url": "https://openbooks.library.baylor.edu/pianobasics/chapter/practice-strategies/",
+      "edition": "Baylor University open textbook, copyright2026",
+      "section": "Coordinating the Hands; Fixing Trouble Spots; Preparing to Perform",
+      "verifiedOn": "2026-11-10",
+      "evidence": "The author distinguishes hand coordination from separate-hand preparation, recommends scaffolding and isolating a short transition, and discusses starting points and cold performance.",
+      "application": "Research-only two-pair scaffolds for right4-to-1 and left1-to-3 coordination, followed by two compound controls.",
+      "limits": "Author teaching guidance,not a controlled novice study or approval of these drafts. Notes,register,rhythm,44BPM,checks and prerequisites are project choices. No images,score or extended prose copied. No performance or teacher verification.",
+      "lessonIds": [
+        "course07-04",
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-f-major-ascent-checkpoint-left-01"
+      ],
+      "plannedLessonIds": [
+        "research-p-f-major-bimanual-right-cross-01",
+        "research-p-f-major-bimanual-left-cross-01",
+        "research-p-f-major-bimanual-crossing-link-01",
+        "research-p-f-major-bimanual-ascent-checkpoint-01"
+      ]
+    },
+    "sourceBaseSha256": "5242bdc4bc4601c7eb1f628965e9bcdc3e913a6bcb4d533b4bdeda6e05a51b55",
+    "priorQa": "docs/qa/piano-curriculum-2026-11-10-36-held-bass-comparison.json",
+    "priorQaSha256": "71c24ad08d2058a170f19dae5e476892ee138617c0cd83e194d68fdc7dd5c961",
+    "evidenceReusedFrom": "97/research36",
+    "freshReadInCurrentBatch": false,
+    "newSourceHtmlImagePdfAudioOrVideoFetches": 0,
+    "newSourceEntries": 0,
+    "sourceNumericThresholdsAssigned": false,
+    "runtimeLessonReferencesChanged": false
+  },
+  "claimContexts": [
+    {
+      "claim": "whole-triad-and-single-note",
+      "observed": "LH C3-E3-G3/48-52-55 fingers5-3-1 together,then RH C4,D4,E4,G4 fingers1,2,3,5.",
+      "limit": "Explicit project source assignments,not independent fingering/physical/teacher validation or arpeggio."
+    },
+    {
+      "claim": "common-release-and-alternation",
+      "observed": "LH triads [0,2],[4,6],[8,10],[12,14];RH replies [2,4],[6,8],[10,12],[14,16].",
+      "limit": "Common triad end precedes right response nominally;no bass/chord remains under melody,not independently staggered note endings."
+    },
+    {
+      "claim": "own-timing-and-edition",
+      "observed": "52BPM/standard/beat-boundary-v2,8eventgroups/16noteattacks/16beats/4bars4-4;lastG4 lasts2.",
+      "limit": "Not copied from07-06 58BPM/v1/12events/3bars;no version calculation or actual MIDI tolerance execution."
+    },
+    {
+      "claim": "own-preparation",
+      "observed": "after08-02/requires08-02,07-06,04-02 explicitly;source asks briefly confirm separate parts then combine one bar.",
+      "limit": "No new required sourceexam,preparation fragment or proof that a person can hold/play/release the chord."
+    },
+    {
+      "claim": "guide-learning-source-only",
+      "observed": "Own row1043 supplies setup/count/hearing/errors/transfer;10generic bindings reused from99;duration2 conditional adds old triad source reference.",
+      "limit": "Registry lacks guide/learning;no normalization,merge,review/register,fullruntimeguide or DOM;old source refs not freshly verified."
+    },
+    {
+      "claim": "aural-image-and-disclosed-transfer",
+      "observed": "Known lowCmajor followed by high note;transfer keeps left triad with E4/3 then C4/1 replies over2bars,outsideMIDI score.",
+      "limit": "Known/disclosed practice,not independent unknown ear/memory/reading test,new stimulus or human-performance observation."
+    },
+    {
+      "claim": "guard-and-primary-source",
+      "observed": "Historical instructionguard741d8889 differs from cachedgradec778a1db;Clark15/36 reused by exactbase/QA.",
+      "limit": "No computed new fingerprint or source exercise endorsement;52BPM,2beats,notes,fingers,3-5minutes and numerical tolerances are project choices."
+    },
+    {
+      "claim": "held-voice-gap-and-counting",
+      "observed": "Existing chord common release is distinct from6future independent-held/direction/echo/reading tasks.",
+      "limit": "No new lesson/goal/plan/contract/protocol,grade/XP or held-voice/Fvoicev2 readiness;MIDI not fingers,comfort,balance or artistry."
+    }
+  ],
+  "newActionableWordingMismatches": 0,
+  "cardPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "humanSessionsObserved": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newContracts": 0,
+  "newApplicationExecutions": 0,
+  "newAssessmentCalls": 0,
+  "newPreparationFragmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "heldVoiceReadinessChanged": false
+}

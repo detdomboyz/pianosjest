@@ -1,0 +1,101 @@
+{
+  "publicVersionAtInvocation": "23.5.68",
+  "startedAt": "2026-11-09T03:00:42.346042+00:00",
+  "invocationId": "4ecd1c0cbd16496899ffe74386c95039",
+  "bothHealthReceiptsMatchedJournal": true,
+  "timerLastTrigger": "2026-11-09T03:00:42+00:00",
+  "receipts": [
+    {
+      "accounts": {
+        "agesSeconds": {
+          "dataCompared": 1959,
+          "independentRestore": 6895,
+          "lastAttempt": 1959
+        },
+        "browserDataBackedUp": false,
+        "browserProgressCovered": false,
+        "configured": true,
+        "dataComparedAt": "2026-11-09T02:28:03.611426+00:00",
+        "engine": "postgres",
+        "problems": [],
+        "required": true,
+        "restorePerformedThisCheck": false,
+        "restoreVerifiedAt": "2026-11-09T01:05:47.229087+00:00",
+        "s3RequestsThisCheck": 0,
+        "snapshotId": "ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1",
+        "sourceSha256": "4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb",
+        "success": true
+      },
+      "agesSeconds": {
+        "backup": 4801,
+        "restore": 6841
+      },
+      "browserDataBackedUp": false,
+      "checkedAt": "2026-11-09T03:00:42.583645+00:00",
+      "independentExternalCopyVerified": false,
+      "problems": [],
+      "success": true
+    },
+    {
+      "checkedAt": "2026-11-09T03:00:42.869891+00:00",
+      "success": true,
+      "problems": [],
+      "agesSeconds": {
+        "coverageCheck": 4801,
+        "externalRestore": 6820
+      },
+      "backupCreatedAt": "2026-11-09T01:06:06.518430+00:00",
+      "independentExternalCopyVerified": true,
+      "browserDataBackedUp": false,
+      "scheduledExternalBackup": true,
+      "s3RequestsThisCheck": 0,
+      "accountBackup": {
+        "required": true,
+        "success": true,
+        "engine": "postgres",
+        "problems": [],
+        "agesSeconds": {
+          "lastAttempt": 1959,
+          "dataCompared": 1959,
+          "independentRestore": 6896
+        },
+        "snapshotId": "ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1",
+        "sourceSha256": "4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb",
+        "restoreVerifiedAt": "2026-11-09T01:05:47.229087+00:00",
+        "dataComparedAt": "2026-11-09T02:28:03.611426+00:00",
+        "s3RequestsThisCheck": 0,
+        "restorePerformedThisCheck": false,
+        "browserDataBackedUp": false
+      }
+    }
+  ],
+  "journal": [
+    {
+      "__REALTIME_TIMESTAMP": "1794193242346042",
+      "MESSAGE": "Starting melodiajest-backup-health.service - MelodiaJest backup-health...",
+      "INVOCATION_ID": "4ecd1c0cbd16496899ffe74386c95039"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794193242592785",
+      "MESSAGE": "{\"accounts\": {\"agesSeconds\": {\"dataCompared\": 1959, \"independentRestore\": 6895, \"lastAttempt\": 1959}, \"browserDataBackedUp\": false, \"browserProgressCovered\": false, \"configured\": true, \"dataComparedAt\": \"2026-11-09T02:28:03.611426+00:00\", \"engine\": \"postgres\", \"problems\": [], \"required\": true, \"restorePerformedThisCheck\": false, \"restoreVerifiedAt\": \"2026-11-09T01:05:47.229087+00:00\", \"s3RequestsThisCheck\": 0, \"snapshotId\": \"ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1\", \"sourceSha256\": \"4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb\", \"success\": true}, \"agesSeconds\": {\"backup\": 4801, \"restore\": 6841}, \"browserDataBackedUp\": false, \"checkedAt\": \"2026-11-09T03:00:42.583645+00:00\", \"independentExternalCopyVerified\": false, \"problems\": [], \"success\": true}",
+      "_SYSTEMD_INVOCATION_ID": "4ecd1c0cbd16496899ffe74386c95039"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794193242878636",
+      "MESSAGE": "{\"checkedAt\": \"2026-11-09T03:00:42.869891+00:00\", \"success\": true, \"problems\": [], \"agesSeconds\": {\"coverageCheck\": 4801, \"externalRestore\": 6820}, \"backupCreatedAt\": \"2026-11-09T01:06:06.518430+00:00\", \"independentExternalCopyVerified\": true, \"browserDataBackedUp\": false, \"scheduledExternalBackup\": true, \"s3RequestsThisCheck\": 0, \"accountBackup\": {\"required\": true, \"success\": true, \"engine\": \"postgres\", \"problems\": [], \"agesSeconds\": {\"lastAttempt\": 1959, \"dataCompared\": 1959, \"independentRestore\": 6896}, \"snapshotId\": \"ae6f7309c023da5a39d071f76849ce23b967ab6c5fac5b3441dfbfb4632458c1\", \"sourceSha256\": \"4f93d8a584e8d1ebaa7831fd68ad1ec836014e767e8af70fdf0b9ef146cc5efb\", \"restoreVerifiedAt\": \"2026-11-09T01:05:47.229087+00:00\", \"dataComparedAt\": \"2026-11-09T02:28:03.611426+00:00\", \"s3RequestsThisCheck\": 0, \"restorePerformedThisCheck\": false, \"browserDataBackedUp\": false}}",
+      "_SYSTEMD_INVOCATION_ID": "4ecd1c0cbd16496899ffe74386c95039"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794193242897727",
+      "MESSAGE": "melodiajest-backup-health.service: Deactivated successfully.",
+      "INVOCATION_ID": "4ecd1c0cbd16496899ffe74386c95039"
+    },
+    {
+      "__REALTIME_TIMESTAMP": "1794193242897988",
+      "MESSAGE": "Finished melodiajest-backup-health.service - MelodiaJest backup-health.",
+      "JOB_RESULT": "done",
+      "INVOCATION_ID": "4ecd1c0cbd16496899ffe74386c95039"
+    }
+  ],
+  "newBackupOrRestoreClaimed": false
+}

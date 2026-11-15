@@ -4,7 +4,7 @@ One exported MVCC snapshot binds pg_dump and the logical data digest. The image,
 Node, pg dependency kit, exact API source and own configs travel with the dump.
 No production restore, foreign mount, snapshot deletion or global prune exists.
 """
-from contextlib import ExitStack
+from contextlib import ExitStack, contextmanager
 import datetime as dt
 import hashlib
 import importlib.util
@@ -191,13 +191,37 @@ def exercise_restore(payload,uid):
         stop_owned(api_name,'api-restore');stop_owned(pg_name,'postgres-restore');legacy.cleanup_work(work)
 
 
+@contextmanager
+def attempt_receipt(home,state):
+    # This lock serializes only this PostgreSQL worker's receipt writes. It is
+    # acquired before the existing shared S3/deployment locks and never replaces
+    # their protection. A competing PG invocation must not overwrite active work.
+    with ExitStack() as own:
+        try:own.enter_context(base_backup.worker_lock(home))
+        except BlockingIOError as error:
+            deployment.save(home/'latest-refusal.json',{'kind':state['kind'],'version':state['version'],'status':'refused','startedAt':state['startedAt'],'failedAt':now(),'errorType':type(error).__name__,'reason':'postgres-worker-active'})
+            raise
+        try:
+            deployment.save(home/'latest-attempt.json',state)
+            yield
+        except Exception as error:
+            # Preserve latest-success and actual copy/restore dates. Only the
+            # accepted owner can change latest-attempt, including lock refusals.
+            deployment.save(home/'latest-attempt.json',{**state,'status':'failed','failedAt':now(),'errorType':type(error).__name__})
+            raise
+
+
 def run(force_restore=False,profile_path=BASE/'ops/account-profile.json'):
     value,uid,source=profile(profile_path);home=legacy.private(HOME);state={'kind':'melodiajest-postgres-protection','version':2,'status':'started','startedAt':now(),'standby':value['standby']};work=None;transport_work=None
-    with ExitStack() as stack:
+    with attempt_receipt(home,state),ExitStack() as stack:
+        state['failureStage']='shared-s3-worker-lock'
         stack.enter_context(base_backup.worker_lock(BASE/'ops/external-s3/scheduled'))
-        stack.enter_context(update.operation_locks(BASE));update.ensure_idle(BASE);neighbors()
+        state['failureStage']='deployment-locks';stack.enter_context(update.operation_locks(BASE))
+        state['failureStage']='deployment-idle';update.ensure_idle(BASE)
+        state['failureStage']='neighbors-before-backup';neighbors()
+        state['failureStage']='snapshot-and-protection'
         try:
-            deployment.save(home/'latest-attempt.json',state);work=legacy.owned_work(BASE/'account-backup-work',uid);work.chmod(0o700);os.chown(work,0,0)
+            work=legacy.owned_work(BASE/'account-backup-work',uid);work.chmod(0o700);os.chown(work,0,0)
             dump=work/'postgres.dump';env=node_environment(value['dependenciesDirectory']);snapshot_run=subprocess.run([str(Path(value['nodeDirectory'])/'node'),str(source_paths(value)/'service/pg-snapshot.cjs'),str(dump)],text=True,capture_output=True,timeout=150,env=env)
             require(snapshot_run.returncode==0,'Consistent own PostgreSQL snapshot failed');snapshot=json.loads(snapshot_run.stdout.strip());deployment.save(work/'snapshot.json',snapshot)
             controls={name:images.descriptor(path) for name,path in control_sources().items()}
@@ -234,8 +258,6 @@ def run(force_restore=False,profile_path=BASE/'ops/account-profile.json'):
                 for item in sorted(obsolete.rglob('*'),key=lambda path:len(path.parts),reverse=True):require(not item.is_symlink(),'Linked rotation member');item.unlink() if item.is_file() else item.rmdir()
                 obsolete.rmdir()
             return state
-        except Exception as error:
-            state.update(status='failed',failedAt=now(),errorType=type(error).__name__);deployment.save(home/'latest-attempt.json',state);raise
         finally:
             if work is not None:legacy.cleanup_work(work)
             if transport_work is not None:legacy.cleanup_work(transport_work)

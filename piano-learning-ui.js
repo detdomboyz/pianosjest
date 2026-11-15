@@ -116,5 +116,11 @@
     if(enabled!==true||!['practice','challenge'].includes(mode))return '';
     return '<div class="blind-practice-notice"><p role="status" aria-live="polite">Без взгляда на руки: экранные подсказки остаются. '+(eligible===true?'Для памяти выбери отдельный режим по MIDI.':'Зачёт памяти станет доступен после подготовки учебных данных.')+'</p>'+(eligible===true?'<button type="button" class="mini-btn" id="start-memory-check">Проверить память по MIDI</button>':'')+'</div>';
   }
-  return {MODES,normalizeMode,actionCountText,rhythmDurationView,rhythmTimingView,controlsHtml,materialHtml,unwrapMaterial,preparationHtml,repeatedNoteHtml,sameGoalHtml,checkpointHtml,dottedQuarterHtml,memoryAssistanceText,positionChangeHtml,wholeNoteHtml,handHandoffHtml,chordReleaseHtml,flatNameHtml,blindPracticeHtml};
+  function openResponseHtml(context,noteNames=[],targetName=''){
+    if(!context?.manualOnly)return '';
+    if(!context.supported)return '<div class="target-scroll"><div class="big-next">Задание недоступно</div><p class="hint">Описание свободного ответа повреждено или не поддерживается. Автоматический зачёт недоступен.</p></div>';
+    const notes=noteNames.map((name,i)=>escapeHtml(name)+' — '+escapeHtml(context.fingers[i])).join('; ');
+    return '<div class="target-scroll"><div class="big-next">Свободный ответ</div><p class="hint">'+(context.hand==='right'?'Правая':'Левая')+': '+notes+'. Последняя опора — '+escapeHtml(targetName)+'.</p><p class="hint">Вопрос: '+escapeHtml(context.questionBeats)+' доли; затем '+escapeHtml(context.restBeats)+' доли тишины и свой ответ на '+escapeHtml(context.answerBeats)+' доли. Образец на холсте — для разбора и прослушивания.</p><p class="hint">MIDI здесь не оценивает свободный ответ. Приложение не проверяет выбранные ноты, пальцы и выразительность; сверь результат самостоятельно по разбору.</p></div>';
+  }
+  return {MODES,normalizeMode,actionCountText,rhythmDurationView,rhythmTimingView,controlsHtml,materialHtml,unwrapMaterial,preparationHtml,repeatedNoteHtml,sameGoalHtml,checkpointHtml,dottedQuarterHtml,memoryAssistanceText,positionChangeHtml,wholeNoteHtml,handHandoffHtml,chordReleaseHtml,flatNameHtml,blindPracticeHtml,openResponseHtml};
 });

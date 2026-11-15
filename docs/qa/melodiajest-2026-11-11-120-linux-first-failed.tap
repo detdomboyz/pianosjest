@@ -1,0 +1,925 @@
+TAP version 13
+# Subtest: connected F-major goal rejects the paused trace and awards only its own bounded improvement
+ok 1 - connected F-major goal rejects the paused trace and awards only its own bounded improvement
+  ---
+  duration_ms: 166.450886
+  type: 'test'
+  ...
+# Subtest: two prerequisite-only revisions keep old attempts,progress and XP while rejecting stale editions
+ok 2 - two prerequisite-only revisions keep old attempts,progress and XP while rejecting stale editions
+  ---
+  duration_ms: 112.29492
+  type: 'test'
+  ...
+# Subtest: upper readiness text revision preserves old progress,immutable attempts and one-time XP
+ok 3 - upper readiness text revision preserves old progress,immutable attempts and one-time XP
+  ---
+  duration_ms: 89.836286
+  type: 'test'
+  ...
+# Subtest: F-major ascent checkpoint keeps separate progress and awards bounded musicXP only once
+ok 4 - F-major ascent checkpoint keeps separate progress and awards bounded musicXP only once
+  ---
+  duration_ms: 101.804798
+  type: 'test'
+  ...
+# Subtest: reverse F-major fourth preparation rejects forward credit and keeps one-time XP and owner isolation
+ok 5 - reverse F-major fourth preparation rejects forward credit and keeps one-time XP and owner isolation
+  ---
+  duration_ms: 39.00611
+  type: 'test'
+  ...
+# Subtest: connected reverse F-major task rejects paused credit and grants its own bounded XP without new portal level
+ok 6 - connected reverse F-major task rejects paused credit and grants its own bounded XP without new portal level
+  ---
+  duration_ms: 73.862689
+  type: 'test'
+  ...
+# Subtest: F-major descent checkpoint rejects preparation credit and keeps separate bounded XP and owner isolation
+ok 7 - F-major descent checkpoint rejects preparation credit and keeps separate bounded XP and owner isolation
+  ---
+  duration_ms: 75.274738
+  type: 'test'
+  ...
+# Subtest: F-major left ascent keeps own preparations,right progress and repeated XP separate
+ok 8 - F-major left ascent keeps own preparations,right progress and repeated XP separate
+  ---
+  duration_ms: 100.288703
+  type: 'test'
+  ...
+# Subtest: F-major left descent keeps own preparations,right progress and repeated XP separate
+ok 9 - F-major left descent keeps own preparations,right progress and repeated XP separate
+  ---
+  duration_ms: 41.214575
+  type: 'test'
+  ...
+# Subtest: default sequential route rejects skips, awards authoritative XP once and opens the next step
+ok 10 - default sequential route rejects skips, awards authoritative XP once and opens the next step
+  ---
+  duration_ms: 80.069678
+  type: 'test'
+  ...
+# Subtest: failed notes, tempo and client scores cannot grant progress or XP
+ok 11 - failed notes, tempo and client scores cannot grant progress or XP
+  ---
+  duration_ms: 72.098386
+  type: 'test'
+  ...
+# Subtest: attempt time, event order, nonce and exact lesson edition are checked
+ok 12 - attempt time, event order, nonce and exact lesson edition are checked
+  ---
+  duration_ms: 30.420489
+  type: 'test'
+  ...
+# Subtest: retries grant only quality improvement and never farm a shared goal
+ok 13 - retries grant only quality improvement and never farm a shared goal
+  ---
+  duration_ms: 75.787016
+  type: 'test'
+  ...
+# Subtest: free mode is a saved explicit choice with CAS; start operation replays exactly
+ok 14 - free mode is a saved explicit choice with CAS; start operation replays exactly
+  ---
+  duration_ms: 92.946205
+  type: 'test'
+  ...
+# Subtest: immutable attempt edition remains available after a changed live registry
+ok 15 - immutable attempt edition remains available after a changed live registry
+  ---
+  duration_ms: 30.199774
+  type: 'test'
+  ...
+# Subtest: zero rating is real, exact scales survive changes, aggregate is fractional ten and removal is separate
+ok 16 - zero rating is real, exact scales survive changes, aggregate is fractional ten and removal is separate
+  ---
+  duration_ms: 76.431675
+  type: 'test'
+  ...
+# Subtest: concurrent lesson ratings require one winning revision and remain owner-scoped
+ok 17 - concurrent lesson ratings require one winning revision and remain owner-scoped
+  ---
+  duration_ms: 29.336534
+  type: 'test'
+  ...
+# Subtest: public comments are plain text, idempotent, own-editable, versioned and soft-deleted
+ok 18 - public comments are plain text, idempotent, own-editable, versioned and soft-deleted
+  ---
+  duration_ms: 89.770981
+  type: 'test'
+  ...
+# Subtest: lesson replies cannot cross scopes and stable cursors preserve equal-timestamp comments
+ok 19 - lesson replies cannot cross scopes and stable cursors preserve equal-timestamp comments
+  ---
+  duration_ms: 96.896328
+  type: 'test'
+  ...
+# Subtest: cold width-dependent row shift is corrected by the actual resize event without replacing trainer DOM
+ok 20 - cold width-dependent row shift is corrected by the actual resize event without replacing trainer DOM
+  ---
+  duration_ms: 4402.617431
+  type: 'test'
+  ...
+# Subtest: rapid resize events coalesce before reading or scrolling selected-row geometry
+ok 21 - rapid resize events coalesce before reading or scrolling selected-row geometry
+  ---
+  duration_ms: 4206.504955
+  type: 'test'
+  ...
+# Subtest: follow disabled preserves the manually scrolled sidebar and schedules no correction
+ok 22 - follow disabled preserves the manually scrolled sidebar and schedules no correction
+  ---
+  duration_ms: 4311.664139
+  type: 'test'
+  ...
+# Subtest: changing the filter cancels a queued resize before geometry reads
+ok 23 - changing the filter cancels a queued resize before geometry reads
+  ---
+  duration_ms: 4276.983145
+  type: 'test'
+  ...
+# Subtest: memory hides the old row before a pending resize can inspect its geometry
+ok 24 - memory hides the old row before a pending resize can inspect its geometry
+  ---
+  duration_ms: 4273.273815
+  type: 'test'
+  ...
+# Subtest: account invalidation cancels pending resize and keeps the authoritative privacy screen
+ok 25 - account invalidation cancels pending resize and keeps the authoritative privacy screen
+  ---
+  duration_ms: 4302.073555
+  type: 'test'
+  ...
+# Subtest: replacing a sidebar or filtered row cancels stale resize callbacks
+ok 26 - replacing a sidebar or filtered row cancels stale resize callbacks
+  ---
+  duration_ms: 8798.672898
+  type: 'test'
+  ...
+# Subtest: selecting a different lesson cancels the old resize correction
+ok 27 - selecting a different lesson cancels the old resize correction
+  ---
+  duration_ms: 4236.530287
+  type: 'test'
+  ...
+# Subtest: late offscreen row growth is corrected after layout and the selected row remains visible
+ok 28 - late offscreen row growth is corrected after layout and the selected row remains visible
+  ---
+  duration_ms: 4319.13603
+  type: 'test'
+  ...
+# Subtest: a row that stays visible receives no unnecessary second scroll write
+ok 29 - a row that stays visible receives no unnecessary second scroll write
+  ---
+  duration_ms: 4368.993134
+  type: 'test'
+  ...
+# Subtest: a stale follow callback cannot scroll a replaced sidebar
+ok 30 - a stale follow callback cannot scroll a replaced sidebar
+  ---
+  duration_ms: 4221.358429
+  type: 'test'
+  ...
+# Subtest: a stale follow callback cannot use a row replaced by search results
+ok 31 - a stale follow callback cannot use a row replaced by search results
+  ---
+  duration_ms: 4459.765555
+  type: 'test'
+  ...
+# Subtest: a changed filter cancels the pending follow correction
+ok 32 - a changed filter cancels the pending follow correction
+  ---
+  duration_ms: 4317.922748
+  type: 'test'
+  ...
+# Subtest: memory mode prevents a pending callback from reading the old lesson geometry
+ok 33 - memory mode prevents a pending callback from reading the old lesson geometry
+  ---
+  duration_ms: 4220.332166
+  type: 'test'
+  ...
+# Subtest: disabling follow cancels a pending post-layout scroll
+ok 34 - disabling follow cancels a pending post-layout scroll
+  ---
+  duration_ms: 4283.859915
+  type: 'test'
+  ...
+# Subtest: account invalidation blocks a pending follow callback even if an old row reference survives
+ok 35 - account invalidation blocks a pending follow callback even if an old row reference survives
+  ---
+  duration_ms: 4326.990015
+  type: 'test'
+  ...
+# Subtest: automatic keyboard fitting preserves the catalog/search DOM and updates its own width controls
+ok 36 - automatic keyboard fitting preserves the catalog/search DOM and updates its own width controls
+  ---
+  duration_ms: 4258.92275
+  type: 'test'
+  ...
+# Subtest: search input retains focus/caret and leaves the selected trainer DOM untouched
+ok 37 - search input retains focus/caret and leaves the selected trainer DOM untouched
+  ---
+  duration_ms: 5388.943157
+  type: 'test'
+  ...
+# Subtest: repeated queries use actual section filter/order and recover from no matches
+ok 38 - repeated queries use actual section filter/order and recover from no matches
+  ---
+  duration_ms: 5006.537904
+  type: 'test'
+  ...
+# Subtest: refreshed rows remain selectable and guest edit/drag controls remain disabled
+ok 39 - refreshed rows remain selectable and guest edit/drag controls remain disabled
+  ---
+  duration_ms: 4515.29536
+  type: 'test'
+  ...
+# Subtest: free-order drag help follows the query without rebuilding the trainer
+ok 40 - free-order drag help follows the query without rebuilding the trainer
+  ---
+  duration_ms: 4564.176584
+  type: 'test'
+  ...
+# Subtest: a stale search event in memory mode uses the full hidden-hints renderer
+ok 41 - a stale search event in memory mode uses the full hidden-hints renderer
+  ---
+  duration_ms: 4547.75366
+  type: 'test'
+  ...
+# Subtest: a stale search event after account invalidation cannot repopulate results
+ok 42 - a stale search event after account invalidation cannot repopulate results
+  ---
+  duration_ms: 4189.95981
+  type: 'test'
+  ...
+# Subtest: actual material selection survives a fresh guest client and trainer: compact
+ok 43 - actual material selection survives a fresh guest client and trainer: compact
+  ---
+  duration_ms: 8703.376797
+  type: 'test'
+  ...
+# Subtest: actual material selection survives a fresh guest client and trainer: expanded
+ok 44 - actual material selection survives a fresh guest client and trainer: expanded
+  ---
+  duration_ms: 8469.404301
+  type: 'test'
+  ...
+# Subtest: actual material selection survives a fresh guest client and trainer: hidden
+ok 45 - actual material selection survives a fresh guest client and trainer: hidden
+  ---
+  duration_ms: 8320.029596
+  type: 'test'
+  ...
+# Subtest: guest persists only the allowlisted nonpersonal view,leaving legacy and private data byte-exact
+ok 46 - guest persists only the allowlisted nonpersonal view,leaving legacy and private data byte-exact
+  ---
+  duration_ms: 2.679938
+  type: 'test'
+  ...
+# Subtest: unknown stored and imported modes are ignored without adopting another preference object
+ok 47 - unknown stored and imported modes are ignored without adopting another preference object
+  ---
+  duration_ms: 12903.040559
+  type: 'test'
+  ...
+# Subtest: storage failure keeps current view and exposes the failure without claiming reload persistence
+ok 48 - storage failure keeps current view and exposes the failure without claiming reload persistence
+  ---
+  duration_ms: 8598.607837
+  type: 'test'
+  ...
+# Subtest: account preferences take precedence and never get exported into the guest view key
+ok 49 - account preferences take precedence and never get exported into the guest view key
+  ---
+  duration_ms: 2.206133
+  type: 'test'
+  ...
+# Subtest: persisted view cannot expose any material or source hints in actual memory renderer
+ok 50 - persisted view cannot expose any material or source hints in actual memory renderer
+  ---
+  duration_ms: 12802.940627
+  type: 'test'
+  ...
+# Subtest: material selector updates only its slot and preserves catalogue,search,player and attempt state
+ok 51 - material selector updates only its slot and preserves catalogue,search,player and attempt state
+  ---
+  duration_ms: 5416.054811
+  type: 'test'
+  ...
+# Subtest: new disclosure and preparation buttons remain bound to actual actions after scoped replacement
+ok 52 - new disclosure and preparation buttons remain bound to actual actions after scoped replacement
+  ---
+  duration_ms: 4660.239521
+  type: 'test'
+  ...
+# Subtest: hidden and unknown views keep the selector and avoid full-body hints
+ok 53 - hidden and unknown views keep the selector and avoid full-body hints
+  ---
+  duration_ms: 4128.38034
+  type: 'test'
+  ...
+# Subtest: scoped guest view keeps the live storage-failure notice visible and does not replace the player
+ok 54 - scoped guest view keeps the live storage-failure notice visible and does not replace the player
+  ---
+  duration_ms: 4266.602451
+  type: 'test'
+  ...
+# Subtest: a stale material callback in memory uses the actual full privacy renderer
+ok 55 - a stale material callback in memory uses the actual full privacy renderer
+  ---
+  duration_ms: 4233.457762
+  type: 'test'
+  ...
+# Subtest: an invalidated account rejects stale material callbacks before persisting preferences
+ok 56 - an invalidated account rejects stale material callbacks before persisting preferences
+  ---
+  duration_ms: 4369.89605
+  type: 'test'
+  ...
+# Subtest: a missing slot falls back to a complete render instead of silently losing the material
+ok 57 - a missing slot falls back to a complete render instead of silently losing the material
+  ---
+  duration_ms: 4714.212202
+  type: 'test'
+  ...
+# Subtest: a stale learning-material event in pieces cannot insert a learning card
+ok 58 - a stale learning-material event in pieces cannot insert a learning card
+  ---
+  duration_ms: 4418.205361
+  type: 'test'
+  ...
+# Subtest: barline display carries the same source note into the next measure without inventing a new attack
+ok 59 - barline display carries the same source note into the next measure without inventing a new attack
+  ---
+  duration_ms: 6.290304
+  type: 'test'
+  ...
+# Subtest: continuation handles multiple barlines,quarter units in6/8 and exact boundary endings
+ok 60 - continuation handles multiple barlines,quarter units in6/8 and exact boundary endings
+  ---
+  duration_ms: 2.183137
+  type: 'test'
+  ...
+# Subtest: damaged or very long imported holds have a bounded explicit display limitation and chords keep their source event
+ok 61 - damaged or very long imported holds have a bounded explicit display limitation and chords keep their source event
+  ---
+  duration_ms: 41.481257
+  type: 'test'
+  ...
+# Subtest: one new barline goal preserves all602 complete records,themes,versions and existing routes
+ok 62 - one new barline goal preserves all602 complete records,themes,versions and existing routes
+  ---
+  duration_ms: 500.171373
+  type: 'test'
+  ...
+# Subtest: right index2 crosses the downbeat from four-and to next one-and with one true rest and seven attacks
+ok 63 - right index2 crosses the downbeat from four-and to next one-and with one true rest and seven attacks
+  ---
+  duration_ms: 1.625414
+  type: 'test'
+  ...
+# Subtest: real client and server distinguish one continuous note from a reattack or release at the barline
+ok 64 - real client and server distinguish one continuous note from a reattack or release at the barline
+  ---
+  duration_ms: 20.282569
+  type: 'test'
+  ...
+# Subtest: actual MIDI handlers retain D4 across the first beat and require the full final release
+ok 65 - actual MIDI handlers retain D4 across the first beat and require the full final release
+  ---
+  duration_ms: 4312.574733
+  type: 'test'
+  ...
+# Subtest: preparations,count,fingers,source scope and transfer render while memory contains no continuation hints
+ok 66 - preparations,count,fingers,source scope and transfer render while memory contains no continuation hints
+  ---
+  duration_ms: 17.000992
+  type: 'test'
+  ...
+# Subtest: preview duration and render scaling preserve one held event at each chosen tempo
+ok 67 - preview duration and render scaling preserve one held event at each chosen tempo
+  ---
+  duration_ms: 3.526414
+  type: 'test'
+  ...
+# Subtest: server454 editions,personal catalogue roundtrip and counts stay independent of continuation display
+ok 68 - server454 editions,personal catalogue roundtrip and counts stay independent of continuation display
+  ---
+  duration_ms: 20462.728361
+  type: 'test'
+  ...
+# Subtest: two hand-specific repeated-pitch lessons preserve604 complete records and old route
+ok 69 - two hand-specific repeated-pitch lessons preserve604 complete records and old route
+  ---
+  duration_ms: 821.576156
+  type: 'test'
+  ...
+# Subtest: right thumb and left ring finger have distinct exact pitches,half-rests and complete endings
+ok 70 - right thumb and left ring finger have distinct exact pitches,half-rests and complete endings
+  ---
+  duration_ms: 8.989028
+  type: 'test'
+  ...
+# Subtest: actual client and server require silence and a new same-pitch attack for both hands
+ok 71 - actual client and server require silence and a new same-pitch attack for both hands
+  ---
+  duration_ms: 41.681421
+  type: 'test'
+  ...
+# Subtest: real MIDI handlers require reattack and final noteoff without cross-hand or preparation credit
+ok 72 - real MIDI handlers require reattack and final noteoff without cross-hand or preparation credit
+  ---
+  duration_ms: 26945.613022
+  type: 'test'
+  ...
+# Subtest: preparations,sources,own exercise origin and open transfer render;memory has no hints
+ok 73 - preparations,sources,own exercise origin and open transfer render;memory has no hints
+  ---
+  duration_ms: 57.530752
+  type: 'test'
+  ...
+# Subtest: audio-preview timing preserves the half-rest and short repeat at three practice tempos
+ok 74 - audio-preview timing preserves the half-rest and short repeat at three practice tempos
+  ---
+  duration_ms: 3.447799
+  type: 'test'
+  ...
+# Subtest: catalogue reinstall and exchange preserve personal editions,classifications and histories
+ok 75 - catalogue reinstall and exchange preserve personal editions,classifications and histories
+  ---
+  duration_ms: 16115.841291
+  type: 'test'
+  ...
+# Subtest: canonical service preserves456 editions and independently keys two new goals without schema change
+ok 76 - canonical service preserves456 editions and independently keys two new goals without schema change
+  ---
+  duration_ms: 10198.864946
+  type: 'test'
+  ...
+# Subtest: one left control preserves all597 old complete records,grades,themes,route,baseline and guitar
+ok 77 - one left control preserves all597 old complete records,grades,themes,route,baseline and guitar
+  ---
+  duration_ms: 511.512509
+  type: 'test'
+  ...
+# Subtest: F4-to-F3 descent explicitly uses LH12312345,Bflat under2,D-to-C31 and8 quarter beats
+ok 78 - F4-to-F3 descent explicitly uses LH12312345,Bflat under2,D-to-C31 and8 quarter beats
+  ---
+  duration_ms: 1.713289
+  type: 'test'
+  ...
+# Subtest: actual grader rejects wrongB,register,apex,paused crossing,rush,gap,overlap,early release and keyboard
+ok 79 - actual grader rejects wrongB,register,apex,paused crossing,rush,gap,overlap,early release and keyboard
+  ---
+  duration_ms: 13.397781
+  type: 'test'
+  ...
+# Subtest: real MIDI handlers wait for terminalF3 release and keep both preparations and right control uncredited
+ok 80 - real MIDI handlers wait for terminalF3 release and keep both preparations and right control uncredited
+  ---
+  duration_ms: 4597.51317
+  type: 'test'
+  ...
+# Subtest: own left static and connected-white preparations precede control without a rightF or piece prerequisite
+ok 81 - own left static and connected-white preparations precede control without a rightF or piece prerequisite
+  ---
+  duration_ms: 5.600037
+  type: 'test'
+  ...
+# Subtest: card has four dated primary applications,manual readiness,correct count and no hints in memory views
+ok 82 - card has four dated primary applications,manual readiness,correct count and no hints in memory views
+  ---
+  duration_ms: 14.921652
+  type: 'test'
+  ...
+# Subtest: actual preview retains8 equal quarters includingBflat2 and reverse D3-C1
+ok 83 - actual preview retains8 equal quarters includingBflat2 and reverse D3-C1
+  ---
+  duration_ms: 3.513798
+  type: 'test'
+  ...
+# Subtest: catalog reinstall/export/import retains personal notes,instructions,classification and placement
+ok 84 - catalog reinstall/export/import retains personal notes,instructions,classification and placement
+  ---
+  duration_ms: 10584.433395
+  type: 'test'
+  ...
+# Subtest: canonical server preserves all449 complete editions and schema2,adding one separately graded left control
+ok 85 - canonical server preserves all449 complete editions and schema2,adding one separately graded left control
+  ---
+  duration_ms: 5575.3833
+  type: 'test'
+  ...
+# Subtest: one left checkpoint adds a record and control without raising independent-goal upper bound427
+ok 86 - one left checkpoint adds a record and control without raising independent-goal upper bound427
+  ---
+  duration_ms: 4622.205084
+  type: 'test'
+  ...
+# Subtest: one connected drill preserves all594 complete records,themes,grades,baseline and guitar route
+ok 87 - one connected drill preserves all594 complete records,themes,grades,baseline and guitar route
+  ---
+  duration_ms: 506.410129
+  type: 'test'
+  ...
+# Subtest: same notes,fingers and44BPM add continuous1-to-4 coordination rather than a longer or faster row
+ok 88 - same notes,fingers and44BPM add continuous1-to-4 coordination rather than a longer or faster row
+  ---
+  duration_ms: 53.558
+  type: 'test'
+  ...
+# Subtest: actual assessment rejects old crossing pauses,wrong pitches and interruptions at1-to-4
+ok 89 - actual assessment rejects old crossing pauses,wrong pitches and interruptions at1-to-4
+  ---
+  duration_ms: 4.202678
+  type: 'test'
+  ...
+# Subtest: real MIDI handlers wait for final release without granting the paused prerequisite
+ok 90 - real MIDI handlers wait for final release without granting the paused prerequisite
+  ---
+  duration_ms: 4403.9843
+  type: 'test'
+  ...
+# Subtest: paused own-hand preparation precedes the new lesson without moving old route IDs or adding a piece gate
+ok 91 - paused own-hand preparation precedes the new lesson without moving old route IDs or adding a piece gate
+  ---
+  duration_ms: 5.481542
+  type: 'test'
+  ...
+# Subtest: card has dated sources,precise partial-last-bar count,manual transfer and no hints in memory
+ok 92 - card has dated sources,precise partial-last-bar count,manual transfer and no hints in memory
+  ---
+  duration_ms: 13.934221
+  type: 'test'
+  ...
+# Subtest: actual preview sustains quarters across the crossing and leaves only the interphrase silence
+ok 93 - actual preview sustains quarters across the crossing and leaves only the interphrase silence
+  ---
+  duration_ms: 2.452639
+  type: 'test'
+  ...
+# Subtest: catalog reinstall and export/import preserve personal notes,instructions,classification and relative placement
+ok 94 - catalog reinstall and export/import preserve personal notes,instructions,classification and relative placement
+  ---
+  duration_ms: 10309.290256
+  type: 'test'
+  ...
+# Subtest: server derives the real new score and preserves all446 old complete editions and schema2
+ok 95 - server derives the real new score and preserves all446 old complete editions and schema2
+  ---
+  duration_ms: 5566.859725
+  type: 'test'
+  ...
+# Subtest: one prepared motor goal increases the upper bound once,without teacher or duplicate-control inflation
+ok 96 - one prepared motor goal increases the upper bound once,without teacher or duplicate-control inflation
+  ---
+  duration_ms: 4312.756828
+  type: 'test'
+  ...
+# Subtest: one new barline goal preserves all603 complete records,themes,versions and existing routes
+ok 97 - one new barline goal preserves all603 complete records,themes,versions and existing routes
+  ---
+  duration_ms: 554.362168
+  type: 'test'
+  ...
+# Subtest: left ring4 crosses the downbeat from four-and to next one-and with one true rest and seven attacks
+ok 98 - left ring4 crosses the downbeat from four-and to next one-and with one true rest and seven attacks
+  ---
+  duration_ms: 3.71275
+  type: 'test'
+  ...
+# Subtest: real client and server distinguish one continuous note from a reattack or release at the barline
+ok 99 - real client and server distinguish one continuous note from a reattack or release at the barline
+  ---
+  duration_ms: 92.708183
+  type: 'test'
+  ...
+# Subtest: actual MIDI handlers retain D3 across the first beat and require the full final release
+ok 100 - actual MIDI handlers retain D3 across the first beat and require the full final release
+  ---
+  duration_ms: 4393.505346
+  type: 'test'
+  ...
+# Subtest: preparations,count,fingers,source scope and transfer render while memory contains no continuation hints
+ok 101 - preparations,count,fingers,source scope and transfer render while memory contains no continuation hints
+  ---
+  duration_ms: 19.951137
+  type: 'test'
+  ...
+# Subtest: preview duration and render scaling preserve one held event at each chosen tempo
+ok 102 - preview duration and render scaling preserve one held event at each chosen tempo
+  ---
+  duration_ms: 3.574537
+  type: 'test'
+  ...
+# Subtest: server455 editions,personal catalogue roundtrip and counts stay independent of continuation display
+ok 103 - server455 editions,personal catalogue roundtrip and counts stay independent of continuation display
+  ---
+  duration_ms: 20381.771773
+  type: 'test'
+  ...
+# Subtest: left barline and previous left syncopation reject each other without sharing a goal or edition
+ok 104 - left barline and previous left syncopation reject each other without sharing a goal or edition
+  ---
+  duration_ms: 3.685864
+  type: 'test'
+  ...
+# Subtest: one left-hand lesson preserves all600 complete records,grades,order,themes and old route
+ok 105 - one left-hand lesson preserves all600 complete records,grades,order,themes and old route
+  ---
+  duration_ms: 623.703544
+  type: 'test'
+  ...
+# Subtest: left4 release and left3 offbeat have exact notes,fingers,third-beat rests and full ending
+ok 106 - left4 release and left3 offbeat have exact notes,fingers,third-beat rests and full ending
+  ---
+  duration_ms: 1.828217
+  type: 'test'
+  ...
+# Subtest: actual client and server require the new rest location and reject eight concrete mistakes
+ok 107 - actual client and server require the new rest location and reject eight concrete mistakes
+  ---
+  duration_ms: 55.007089
+  type: 'test'
+  ...
+# Subtest: actual MIDI handlers wait for the final release and do not award preparations or right lessons
+ok 108 - actual MIDI handlers wait for the final release and do not award preparations or right lessons
+  ---
+  duration_ms: 4316.297463
+  type: 'test'
+  ...
+# Subtest: own preparations,sources,hand-specific goal and transfer limits render while memory DOM stays empty
+ok 109 - own preparations,sources,hand-specific goal and transfer limits render while memory DOM stays empty
+  ---
+  duration_ms: 22.719948
+  type: 'test'
+  ...
+# Subtest: audio preview keeps half-beat E3 and beat-length neighbours at three practice tempos
+ok 110 - audio preview keeps half-beat E3 and beat-length neighbours at three practice tempos
+  ---
+  duration_ms: 1.94432
+  type: 'test'
+  ...
+# Subtest: reinstall and catalogue exchange preserve a personal left-hand edition and classification
+ok 111 - reinstall and catalogue exchange preserve a personal left-hand edition and classification
+  ---
+  duration_ms: 10091.77602
+  type: 'test'
+  ...
+# Subtest: canonical server preserves452 editions and independently keys one new goal without a schema change
+ok 112 - canonical server preserves452 editions and independently keys one new goal without a schema change
+  ---
+  duration_ms: 10091.915648
+  type: 'test'
+  ...
+# Subtest: one left syncopation keeps every601 old complete record,grade,theme,order and route
+ok 113 - one left syncopation keeps every601 old complete record,grade,theme,order and route
+  ---
+  duration_ms: 741.168268
+  type: 'test'
+  ...
+# Subtest: left middle3 holds through four and ring4 enters only on four-and with exact eight-beat ending
+ok 114 - left middle3 holds through four and ring4 enters only on four-and with exact eight-beat ending
+  ---
+  duration_ms: 1.670282
+  type: 'test'
+  ...
+# Subtest: actual client/server reject reattack,early release and previous offbeat rhythm in both directions
+ok 115 - actual client/server reject reattack,early release and previous offbeat rhythm in both directions
+  ---
+  duration_ms: 17.095875
+  type: 'test'
+  ...
+# Subtest: actual MIDI handlers retain E3 at the crossed pulse and wait for the final eighth release
+ok 116 - actual MIDI handlers retain E3 at the crossed pulse and wait for the final eighth release
+  ---
+  duration_ms: 4285.275923
+  type: 'test'
+  ...
+# Subtest: own prerequisites,counts,fingers,sources and transfer render without leaking memory hints
+ok 117 - own prerequisites,counts,fingers,sources and transfer render without leaking memory hints
+  ---
+  duration_ms: 74.283467
+  type: 'test'
+  ...
+# Subtest: preview keeps held E3 a full pulse and final D3 half a pulse at three practice tempos
+ok 118 - preview keeps held E3 a full pulse and final D3 half a pulse at three practice tempos
+  ---
+  duration_ms: 9.206503
+  type: 'test'
+  ...
+# Subtest: reinstall and catalogue exchange preserve a personal syncopation edition and classification
+ok 119 - reinstall and catalogue exchange preserve a personal syncopation edition and classification
+  ---
+  duration_ms: 10373.117169
+  type: 'test'
+  ...
+# Subtest: server preserves453 old editions and schema2 and counts one project goal without inflating controls
+ok 120 - server preserves453 old editions and schema2 and counts one project goal without inflating controls
+  ---
+  duration_ms: 10624.28919
+  type: 'test'
+  ...
+# Subtest: lesson contract mentions simultaneous chords only for a scored chord lesson
+ok 121 - lesson contract mentions simultaneous chords only for a scored chord lesson
+  ---
+  duration_ms: 10.892703
+  type: 'test'
+  ...
+# Subtest: two new rhythm goals preserve every old complete record,grade,order,theme,route and protected schema
+ok 122 - two new rhythm goals preserve every old complete record,grade,order,theme,route and protected schema
+  ---
+  duration_ms: 503.807869
+  type: 'test'
+  ...
+# Subtest: entry and held syncopation have different exact timing,real half-beat rests and own right fingers
+ok 123 - entry and held syncopation have different exact timing,real half-beat rests and own right fingers
+  ---
+  duration_ms: 2.993226
+  type: 'test'
+  ...
+# Subtest: actual client and server reject exchanged rhythms,filled or lengthened rests,early entry,taps and keyboard
+ok 124 - actual client and server reject exchanged rhythms,filled or lengthened rests,early entry,taps and keyboard
+  ---
+  duration_ms: 57.563094
+  type: 'test'
+  ...
+# Subtest: real MIDI path waits for final release and awards only the played edition
+ok 125 - real MIDI path waits for final release and awards only the played edition
+  ---
+  duration_ms: 8934.641709
+  type: 'test'
+  ...
+# Subtest: preparation precedes both lessons and no piece or unsupported model is required
+ok 126 - preparation precedes both lessons and no piece or unsupported model is required
+  ---
+  duration_ms: 3.256968
+  type: 'test'
+  ...
+# Subtest: primary evidence supports concepts while card keeps project decisions and transfer limits explicit
+ok 127 - primary evidence supports concepts while card keeps project decisions and transfer limits explicit
+  ---
+  duration_ms: 53.377351
+  type: 'test'
+  ...
+# Subtest: preview preserves exact silences and durations at different playback tempos
+ok 128 - preview preserves exact silences and durations at different playback tempos
+  ---
+  duration_ms: 3.684229
+  type: 'test'
+  ...
+# Subtest: reinstall and catalog exchange preserve user notation,classification,instructions and order
+ok 129 - reinstall and catalog exchange preserve user notation,classification,instructions and order
+  ---
+  duration_ms: 10540.370276
+  type: 'test'
+  ...
+# Subtest: canonical server keeps450 previous editions and adds two independently keyed goals
+ok 130 - canonical server keeps450 previous editions and adds two independently keyed goals
+  ---
+  duration_ms: 9964.972561
+  type: 'test'
+  ...
+# node:internal/modules/cjs/loader:1568
+#   throw err;
+#   ^
+# Error: Cannot find module '../web-app/tools/reading-spec.cjs'
+# Require stack:
+# - /fixture/tests/piano-reading-catalog.test.cjs
+#     at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+#     at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+#     at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+#     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+#     at Module._load (node:internal/modules/cjs/loader:1341:5)
+#     at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+#     at Module.require (node:internal/modules/cjs/loader:1674:12)
+#     at require (node:internal/modules/helpers:157:16)
+#     at Object.<anonymous> (/fixture/tests/piano-reading-catalog.test.cjs:3:349)
+#     at Module._compile (node:internal/modules/cjs/loader:1929:14) {
+#   code: 'MODULE_NOT_FOUND',
+#   requireStack: [ '/fixture/tests/piano-reading-catalog.test.cjs' ]
+# }
+# Node.js v24.22.2
+# Subtest: tests/piano-reading-catalog.test.cjs
+not ok 15 - tests/piano-reading-catalog.test.cjs
+  ---
+  duration_ms: 130.393693
+  type: 'test'
+  location: '/fixture/tests/piano-reading-catalog.test.cjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: confirmed account save is visible in main outside the hidden legacy account panel
+ok 132 - confirmed account save is visible in main outside the hidden legacy account panel
+  ---
+  duration_ms: 6.16857
+  type: 'test'
+  ...
+# Subtest: guest gets a visible sign-in policy without changing the guest or attempt state
+ok 133 - guest gets a visible sign-in policy without changing the guest or attempt state
+  ---
+  duration_ms: 3.915724
+  type: 'test'
+  ...
+# Subtest: the same live node stays after the server panel across repeated mounts
+ok 134 - the same live node stays after the server panel across repeated mounts
+  ---
+  duration_ms: 38.954222
+  type: 'test'
+  ...
+# Subtest: pending,error and real acknowledgement replace text without claiming an early save
+ok 135 - pending,error and real acknowledgement replace text without claiming an early save
+  ---
+  duration_ms: 2.170422
+  type: 'test'
+  ...
+# Subtest: locked account keeps the actual message and recovery controls in their existing panel
+ok 136 - locked account keeps the actual message and recovery controls in their existing panel
+  ---
+  duration_ms: 4.141501
+  type: 'test'
+  ...
+# Subtest: authenticated idle fallback describes settings without claiming a checked performance
+ok 137 - authenticated idle fallback describes settings without claiming a checked performance
+  ---
+  duration_ms: 4.701407
+  type: 'test'
+  ...
+# Subtest: account status in memory contains no musical hints and treats a notice as plain text
+ok 138 - account status in memory contains no musical hints and treats a notice as plain text
+  ---
+  duration_ms: 5.278522
+  type: 'test'
+  ...
+# Subtest: a page without the account notice keeps the existing player contract
+ok 139 - a page without the account notice keeps the existing player contract
+  ---
+  duration_ms: 3.876755
+  type: 'test'
+  ...
+# Subtest: guest practice cannot read, overwrite or upload existing anonymous browser data
+ok 140 - guest practice cannot read, overwrite or upload existing anonymous browser data
+  ---
+  duration_ms: 4.522449
+  type: 'test'
+  ...
+# Subtest: authenticated local progress is scoped to the permanent account; old keys remain byte-exact
+ok 141 - authenticated local progress is scoped to the permanent account; old keys remain byte-exact
+  ---
+  duration_ms: 2.299935
+  type: 'test'
+  ...
+# Subtest: a committed registration returns its recovery code even when the following preferences read fails
+ok 142 - a committed registration returns its recovery code even when the following preferences read fails
+  ---
+  duration_ms: 0.840024
+  type: 'test'
+  ...
+# Subtest: client refuses to replace an object that has never been loaded
+ok 143 - client refuses to replace an object that has never been loaded
+  ---
+  duration_ms: 1.551391
+  type: 'test'
+  ...
+# Subtest: conflicting settings keep the exact pending export and never rebase onto another device
+ok 144 - conflicting settings keep the exact pending export and never rebase onto another device
+  ---
+  duration_ms: 1.116763
+  type: 'test'
+  ...
+# Subtest: a cookie/account change locks the page before it can adopt another user’s private state
+ok 145 - a cookie/account change locks the page before it can adopt another user’s private state
+  ---
+  duration_ms: 1.660892
+  type: 'test'
+  ...
+# Subtest: private API reads send the expected account, while public music has no owner header
+ok 146 - private API reads send the expected account, while public music has no owner header
+  ---
+  duration_ms: 1.761699
+  type: 'test'
+  ...
+# Subtest: authenticated readback observes another tab instead of hiding its changes behind a memory cache
+ok 147 - authenticated readback observes another tab instead of hiding its changes behind a memory cache
+  ---
+  duration_ms: 0.718757
+  type: 'test'
+  ...
+# Subtest: a pending old-account progress writer remains in its original local namespace after an account change
+ok 148 - a pending old-account progress writer remains in its original local namespace after an account change
+  ---
+  duration_ms: 0.664069
+  type: 'test'
+  ...
+1..148
+# tests 148
+# suites 0
+# pass 147
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 480508.065701
+

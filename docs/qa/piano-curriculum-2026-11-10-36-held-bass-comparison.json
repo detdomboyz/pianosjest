@@ -1,0 +1,463 @@
+{
+  "kind": "source-only-existing-held-left-bass-proposal-review",
+  "phase": "97",
+  "batch": "2026-11-10-36",
+  "checkedAt": "2026-11-10T16:43:09.864623+00:00",
+  "status": "existing-held-bass-boundaries-confirmed-no-readiness-change",
+  "existingProposal": {
+    "file": "docs/piano-skill-coverage.json",
+    "sourceFileSha256AtRead": "3ec0c0ddd9659f422f8791cbfa68a212d6fb6788c652d0970affcb5ad56146df",
+    "jsonPointer": "/plannedLessons/0",
+    "snapshot": {
+      "id": "detail-p-held-voice-01",
+      "title": "Левый бас держится, правая меняет ноты",
+      "coverageDomain": "coordination",
+      "stage": "p5",
+      "goal": "Удержать один C3 левой 5 на две доли без повторного нажатия, пока правая сыграет E4/3 и D4/2 по одной доле; отпустить оба голоса у общей границы.",
+      "after": "course07-07",
+      "requires": [
+        "course07-06",
+        "course07-03",
+        "course07-07"
+      ],
+      "hand": "both",
+      "sustainedHand": "left",
+      "targetNotes": [
+        {
+          "midi": 48,
+          "hand": "left",
+          "finger": 5,
+          "startBeat": 0,
+          "durationBeats": 2
+        },
+        {
+          "midi": 64,
+          "hand": "right",
+          "finger": 3,
+          "startBeat": 0,
+          "durationBeats": 1
+        },
+        {
+          "midi": 62,
+          "hand": "right",
+          "finger": 2,
+          "startBeat": 1,
+          "durationBeats": 1
+        }
+      ],
+      "distinctFrom": "В текущих handoff-уроках бас отпускается до ответа; здесь он остаётся при смене другой ноты.",
+      "requiresModel": [
+        "independent-note-durations-and-voice-identities",
+        "held-voice-fingering-and-playback",
+        "per-note-release-assessment-and-persistence"
+      ],
+      "candidateEvidenceIds": [
+        "hutchinson-meter-2026-11-05",
+        "ou-time-values-2026-11-05"
+      ],
+      "reviewStatus": "planned-needs-held-voice-model-musical-source-review-and-tests"
+    },
+    "snapshotSha256": "7d1751d7134589c27532b81088940f43ed69f6ccf5857e753653da7c66bbe05f",
+    "entireMutableQueueFileNotClaimedUnchanged": true,
+    "presentInRegistry": false,
+    "absentFieldNames": [
+      "assessmentStatus",
+      "goalKey",
+      "targetBpm",
+      "bpm",
+      "profile",
+      "timeSignature",
+      "response",
+      "assessmentProtocol",
+      "demo",
+      "transfer",
+      "exposure",
+      "pedal"
+    ]
+  },
+  "registryBinding": {
+    "file": "service/course-registry.json",
+    "sha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "selectedProposalAbsent": true,
+    "prerequisiteRows": [
+      {
+        "id": "course07-06",
+        "snapshot": {
+          "id": "course07-06",
+          "title": "Левая опора, правая фраза",
+          "description": "Передай фразу от левого C3 к трём правым нотам в трёх тактах 4/4: каждая нота длится одну долю. Положение руки сохраняется, а бас отпускается перед ответом.",
+          "stage": "p4",
+          "stageTitle": "4. Согласование рук",
+          "optional": false,
+          "goal": "Передай фразу от левого C3 к трём правым нотам в трёх тактах 4/4: каждая нота длится одну долю. Положение руки сохраняется, а бас отпускается перед ответом.",
+          "requires": [
+            "course07-02",
+            "course02-08",
+            "course03-01",
+            "course04-01"
+          ],
+          "goalKey": "course07-06",
+          "challengeReady": true,
+          "gradeFingerprint": "5c83af1a",
+          "musicVersion": "06e6e22ddd498beaee0e5b6357e8dada8f63ce3eeccf967970c4511c2b0deafe",
+          "editionVersion": "7ce4ff0523fba3dc87b6dd4fd288d254c2d271c0bfe1125780b37f01d0c6465d",
+          "bpm": 58,
+          "timeLimit": 50,
+          "steps": [
+            {
+              "midis": [
+                48
+              ],
+              "startBeat": 0,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                60
+              ],
+              "startBeat": 1,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                62
+              ],
+              "startBeat": 2,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                64
+              ],
+              "startBeat": 3,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                48
+              ],
+              "startBeat": 4,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                62
+              ],
+              "startBeat": 5,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                64
+              ],
+              "startBeat": 6,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                65
+              ],
+              "startBeat": 7,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                48
+              ],
+              "startBeat": 8,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                64
+              ],
+              "startBeat": 9,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                65
+              ],
+              "startBeat": 10,
+              "durationBeats": 1
+            },
+            {
+              "midis": [
+                67
+              ],
+              "startBeat": 11,
+              "durationBeats": 1
+            }
+          ],
+          "profile": "standard",
+          "timingPrecision": "beat-boundary-v1"
+        },
+        "snapshotSha256": "fe15be0a4a87332c1b0763d8e27de44bea743eef7d094221fa1e99f545bd0bb2"
+      },
+      {
+        "id": "course07-03",
+        "snapshot": {
+          "id": "course07-03",
+          "title": "Пары C–D–E одновременно",
+          "description": "Играй пары C3+C4, D3+D4, E3+E4, D3+D4, C3+C4. Каждая звучит две доли с общими началом и окончанием; слева пальцы 5–4–3–4–5, справа 1–2–3–2–1.",
+          "stage": "p4",
+          "stageTitle": "4. Согласование рук",
+          "optional": false,
+          "goal": "Играй пары C3+C4, D3+D4, E3+E4, D3+D4, C3+C4. Каждая звучит две доли с общими началом и окончанием; слева пальцы 5–4–3–4–5, справа 1–2–3–2–1.",
+          "requires": [
+            "course07-02",
+            "course01-07",
+            "course02-02",
+            "course03-02"
+          ],
+          "goalKey": "course07-03",
+          "challengeReady": true,
+          "gradeFingerprint": "2ece0382",
+          "musicVersion": "c9b2b3d8cf4167f00aac64f2e9e56f6ab0927f7a2dcb71528ead350994a494fb",
+          "editionVersion": "ce42347be3c1b73b81be4f2151206448182c94f9deff80e029c9703c951ec49a",
+          "bpm": 54,
+          "timeLimit": 50,
+          "steps": [
+            {
+              "midis": [
+                48,
+                60
+              ],
+              "startBeat": 0,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                50,
+                62
+              ],
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                52,
+                64
+              ],
+              "startBeat": 4,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                50,
+                62
+              ],
+              "startBeat": 6,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                48,
+                60
+              ],
+              "startBeat": 8,
+              "durationBeats": 2
+            }
+          ],
+          "profile": "standard",
+          "timingPrecision": "beat-boundary-v2"
+        },
+        "snapshotSha256": "ad842e170e6e9d28ab2f74fe83c0f9f4fc21aca77c0280d0414747eb89da0d5a"
+      },
+      {
+        "id": "course07-07",
+        "snapshot": {
+          "id": "course07-07",
+          "title": "Басовый аккорд + правая нота",
+          "description": "В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.",
+          "stage": "p5",
+          "stageTitle": "5. Гамма, арпеджио и трезвучие",
+          "optional": false,
+          "goal": "В каждом такте 4/4 сыграй левое трезвучие C3–E3–G3 на «раз» на две доли, затем правую ноту на «три» на две доли. Это чередование, без удержания аккорда под ответом.",
+          "requires": [
+            "course08-02",
+            "course07-06",
+            "course04-02"
+          ],
+          "goalKey": "course07-07",
+          "challengeReady": true,
+          "gradeFingerprint": "c778a1db",
+          "musicVersion": "bbe9cc7643868ce2066a89d23b0f6f71d4b18c0ac11d240ced5fa81473a633b5",
+          "editionVersion": "3b1b1fd33d0b198821ef950ffc893cd7d9bcd07406e43a95a864ffe33b0ff56f",
+          "bpm": 52,
+          "timeLimit": 50,
+          "steps": [
+            {
+              "midis": [
+                48,
+                52,
+                55
+              ],
+              "startBeat": 0,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                60
+              ],
+              "startBeat": 2,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                48,
+                52,
+                55
+              ],
+              "startBeat": 4,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                62
+              ],
+              "startBeat": 6,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                48,
+                52,
+                55
+              ],
+              "startBeat": 8,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                64
+              ],
+              "startBeat": 10,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                48,
+                52,
+                55
+              ],
+              "startBeat": 12,
+              "durationBeats": 2
+            },
+            {
+              "midis": [
+                67
+              ],
+              "startBeat": 14,
+              "durationBeats": 2
+            }
+          ],
+          "profile": "standard",
+          "timingPrecision": "beat-boundary-v2"
+        },
+        "snapshotSha256": "584fdfcb57bb302c1172d7329bc69ca20e3849f56c9a58258f2eb941561c7ed9"
+      }
+    ]
+  },
+  "sourceApplication": {
+    "sourceId": "clark-practice-bimanual-scaffolding-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "clark-practice-bimanual-scaffolding-2026-11-10",
+      "author": "Michael Clark",
+      "title": "Baylor Piano Basics, 15. Practice Strategies",
+      "url": "https://openbooks.library.baylor.edu/pianobasics/chapter/practice-strategies/",
+      "edition": "Baylor University open textbook, copyright2026",
+      "section": "Coordinating the Hands; Fixing Trouble Spots; Preparing to Perform",
+      "verifiedOn": "2026-11-10",
+      "evidence": "The author distinguishes hand coordination from separate-hand preparation, recommends scaffolding and isolating a short transition, and discusses starting points and cold performance.",
+      "application": "Research-only two-pair scaffolds for right4-to-1 and left1-to-3 coordination, followed by two compound controls.",
+      "limits": "Author teaching guidance,not a controlled novice study or approval of these drafts. Notes,register,rhythm,44BPM,checks and prerequisites are project choices. No images,score or extended prose copied. No performance or teacher verification.",
+      "lessonIds": [
+        "course07-04",
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-f-major-ascent-checkpoint-left-01"
+      ],
+      "plannedLessonIds": [
+        "research-p-f-major-bimanual-right-cross-01",
+        "research-p-f-major-bimanual-left-cross-01",
+        "research-p-f-major-bimanual-crossing-link-01",
+        "research-p-f-major-bimanual-ascent-checkpoint-01"
+      ]
+    },
+    "sourceBaseSha256": "5242bdc4bc4601c7eb1f628965e9bcdc3e913a6bcb4d533b4bdeda6e05a51b55",
+    "freshReadInCurrentBatch": true,
+    "freshHtmlRead": true,
+    "sectionRead": "15. Practice Strategies / Coordinating the Hands",
+    "sectionLocator": "HTML heading followed by separate-hand practice paragraph,Scaffolding,Blocking,Tap and Play",
+    "htmlAccessSucceeded": true,
+    "newSourceEntries": 0,
+    "newImagesPdfAudioOrVideoLoaded": 0,
+    "sourceNumericThresholdsAssigned": false
+  },
+  "claimContexts": [
+    {
+      "claim": "different-note-end-boundaries",
+      "observed": "LH C3/48 finger5 [0,2];RH E4/64 finger3 [0,1],D4/62 finger2 [1,2].",
+      "limit": "Read existing fields;not played audio/MIDI,not a new stimulus,contract or runtime timeline."
+    },
+    {
+      "claim": "held-bass-through-moving-line",
+      "observed": "At beat1 E4 ends and D4 begins while the original C3 continues;at2 C3 and D4 end.",
+      "limit": "No second bass attack in the target;not a chord pair whose every note shares one duration."
+    },
+    {
+      "claim": "own-two-hand-preparation",
+      "observed": "course07-06 is sequential bass-to-right handoff;07-03 has simultaneous pairs with common endings;07-07 alternates a left triad and right note.",
+      "limit": "Existing challengeReady on these preparations does not establish held-voice support or learner transfer;no new fragmentAPI or grade calls."
+    },
+    {
+      "claim": "hands-pedal-and-within-hand-voices",
+      "observed": "Explicit left5/right3-to2 assignment;target is a left bass under a right line.",
+      "limit": "Not a pedal task or independent voices in one hand;no pedal metadata/events or per-voice IDs read into absent fields."
+    },
+    {
+      "claim": "requested-models-not-implementation",
+      "observed": "Three requiresModel strings name durations/voice identities,playback/fingering,and per-note release/persistence.",
+      "limit": "Plan remains outside registry;these requirements are not implemented renderer/player/matcher/validator/grade/history proof."
+    },
+    {
+      "claim": "absent-fields-stay-absent",
+      "observed": "assessmentStatus,BPM,meter/profile,response/demo/transfer/exposure/pedal fields are absent.",
+      "limit": "No null/default/not-implemented status inserted;no tempo borrowed from 58/54/52BPM prerequisites or new protocol assigned."
+    },
+    {
+      "claim": "primary-coordination-guidance",
+      "observed": "Fresh Clark15 Coordinating the Hands:separate-hand confirmation distinguished from combined coordination;temporary simplification retains coordination and omitted notes return.",
+      "limit": "Author teaching guidance,not a controlled study or approval of this C3/E4/D4,fingering,two-beat design,model or numerical tolerances."
+    },
+    {
+      "claim": "human-and-counting-boundaries",
+      "observed": "One of six old future proposals read;zero new lesson/goal/ID/plan.",
+      "limit": "No human performance/familiarity/novelty/reading/ear/memory/finger/comfort/teacher observation or XP;six proposals remain excluded from450/1000."
+    }
+  ],
+  "newActionableWordingMismatches": 0,
+  "proposalPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "humanSessionsObserved": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newContracts": 0,
+  "newApplicationExecutions": 0,
+  "newAssessmentCalls": 0,
+  "newPreparationFragmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "heldVoiceReadinessChanged": false
+}

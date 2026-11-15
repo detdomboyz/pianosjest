@@ -21,7 +21,10 @@ function fixture() {
 }
 async function setup(t, {dataDir, clock, serviceOptions={}} = {}) {
   const root = fs.mkdtempSync(path.join(ROOT, 'tmp', 'account-service-test-'));
-  const service = await createService({dataDir: dataDir || path.join(root, 'data'), origin: 'http://127.0.0.1:0', development: true, now: clock,...serviceOptions});
+  // Auth/ownership cases model an admitted one-GiB filesystem. Resource cases
+  // override this test-only input,including the real statfs path below. This
+  // neither enlarges the64MiB sandbox nor changes the production512MiB guard.
+  const service = await createService({dataDir: dataDir || path.join(root, 'data'), origin: 'http://127.0.0.1:0', development: true, now: clock,diskFreeBytes:()=>1024*1024*1024,...serviceOptions});
   service.server.listen(0, '127.0.0.1'); await once(service.server, 'listening');
   service.options.origin.port = String(service.server.address().port);
   const origin = service.options.origin.origin;
@@ -231,4 +234,20 @@ test('read-only maintenance preserves reads and rejects durable writes before ac
 test('low available disk stops account writes while the saved service remains readable',async t=>{
   const {service,client}=await setup(t,{serviceOptions:{diskFreeBytes:()=>511*1024*1024}}),visitor=await client();
   const write=await visitor.request('/auth/register',{method:'POST',data:{username:'disk_fixture',displayName:'Fixture',password:PASSWORD}});assert.equal(write.status,503);assert.equal(write.data.error.code,'DISK_RESERVE');assert.equal((await visitor.request('/health')).status,200);assert.equal((await service.store.statement('SELECT count(*) AS n FROM users').get()).n,0);
+});
+
+test('the real filesystem reserve remains active without the nominal auth fixture override',async t=>{
+  const {service,client,root}=await setup(t,{serviceOptions:{diskFreeBytes:null}}),visitor=await client();
+  const space=fs.statfsSync(path.join(root,'data')),available=space.bavail*space.bsize,reserve=512*1024*1024;
+  const result=await visitor.request('/catalog',{method:'PUT',data:{expectedRevision:0,raw:'{}'}});
+  assert.equal(result.status,available<reserve?503:401);assert.equal(result.data.error.code,available<reserve?'DISK_RESERVE':'SIGN_IN_REQUIRED');assert.equal(result.headers.get('cache-control'),'private, no-store');assert.equal(result.headers.get('etag'),null);assert.equal((await service.store.statement('SELECT count(*) AS n FROM users').get()).n,0);
+  t.diagnostic('Unmocked statfs freeBytes='+available+';512MiB reserve branch='+(available<reserve?'blocked':'admitted-to-auth'));
+});
+
+test('the512MiB reserve boundary is exact and resource errors cannot become cached successes',async t=>{
+  const reserve=512*1024*1024;
+  for(const bytes of [reserve-1,reserve]){
+    const {service,client}=await setup(t,{serviceOptions:{diskFreeBytes:()=>bytes}}),visitor=await client();
+    const result=await visitor.request('/catalog',{method:'PUT',data:{expectedRevision:0,raw:'{}'},headers:{'If-None-Match':'*'}});assert.equal(result.status,bytes<reserve?503:401);assert.equal(result.data.error.code,bytes<reserve?'DISK_RESERVE':'SIGN_IN_REQUIRED');assert.equal(result.headers.get('cache-control'),'private, no-store');assert.equal(result.headers.get('etag'),null);assert.equal((await service.store.statement('SELECT count(*) AS n FROM users').get()).n,0);
+  }
 });

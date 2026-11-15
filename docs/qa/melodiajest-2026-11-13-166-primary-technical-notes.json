@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-13T06:53:22.461630+00:00",
+  "sources": [
+    {
+      "author": "Vercel Web Interface Guidelines",
+      "url": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md",
+      "section": "Focus States;Performance;Navigation & State",
+      "evidence": "Visible focus,uncovered focused controls and cheap typing;preserve search/caret rather than replacing the whole app."
+    },
+    {
+      "author": "CSS Working Group;Simon Fraser and Emilio Cobos Alvarez",
+      "url": "https://drafts.csswg.org/cssom-view/#dom-element-scrolltop",
+      "edition": "CSSOM View Module Level1,Editor draft5November2026,work in progress",
+      "section": "6.Extensions to Element;scrollTop getter/setter",
+      "evidence": "Element scrollTop describes its scrolling area;ordinary scrolling-box setter scrolls that element. Root/body special cases refer to window scroll. Separate sidebar and page coordinates in QA."
+    }
+  ],
+  "application": "Reuse existing bounded/coalesced sidebar follower only on transition from a nonblank query to an empty trimmed query;scope guards protect queued work. Geometry/tickets/3frames are project choices,not prescribed numbers.",
+  "newMusicalSources": 0,
+  "newMusicalApplications": 0,
+  "newLessons": 0
+}

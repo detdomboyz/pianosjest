@@ -1,0 +1,609 @@
+{
+  "checkedAt": "2026-11-12T20:58:37.950169+00:00",
+  "files": [
+    {
+      "path": "tests/lesson-navigation-history.test.cjs",
+      "beforeSha256": "2d807289c4e4cbfdade4841088921d22f9a3b414e69079d2373bf5ebddaca245",
+      "afterSha256": "3ed658ef8a4d0bfa1b11fd9c365f6fb85af83ec052859abcb01efae45dc31db4",
+      "replacements": [
+        {
+          "from": "assert.equal(sha(JSON.stringify(b.app.themes)),baseline.themesSha256)",
+          "to": "assert.equal(sha(JSON.stringify(assertPreservedThemes(b.app.themes,require('./fixtures/piano-before-c-first-inversion-right-v1.json').themes))),baseline.themesSha256)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-barline-hold.test.cjs",
+      "beforeSha256": "b7cd6af0599a5bc2d085e805d69150a662e8afb8f287a67c761776dab379362a",
+      "afterSha256": "51da57ae1e8906a5f0c67e6be2a39ddd12910a782f652105fb6a224dc6752271",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-browser-checkpoint-candidate.test.cjs",
+      "beforeSha256": "eefb3a1c8f4aa99f36daa3489c0603713e02a866e2edf6ca40d0dbf4a01f6444",
+      "afterSha256": "fb26032e72c75251671286db088fe868c565d5785b51d63710fd3319e8ae7244",
+      "replacements": [
+        {
+          "from": "catalog.lessons=catalog.lessons.filter(l=>ids.has(l.id));",
+          "to": "catalog.themes=catalog.themes.filter(t=>cohort.themes.some(old=>old.id===t.id));assert.deepEqual(catalog.themes.map(t=>t.id),cohort.themes.map(t=>t.id));catalog.lessons=catalog.lessons.filter(l=>ids.has(l.id));"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-direct-cadence-left.test.cjs",
+      "beforeSha256": "0d71f03e7992f451b3678d78ad0574a818779c86031176b6ce5376b15595ab81",
+      "afterSha256": "832c8c66baed43fc749d53a87f3933b1f210ebc691241fdb8534f07df710b658",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-f-common-bass-left.test.cjs",
+      "beforeSha256": "28eb26b862b0eb3221e69ba9498338b448bf4ab76443d546ea24a662b428a9f2",
+      "afterSha256": "b4e6e579158a4a4064a8de7a643405ea0c206af4e4202784b113db0efa75998b",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-first-inversion-left.test.cjs",
+      "beforeSha256": "e1bad3a462f216820e52c1161a6d0a134857e1485174a71c2392767564442b80",
+      "afterSha256": "009a152fa00ff64fedbf930bfa0ada3e36b97e9ac90abe25729c37bcc632037a",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-first-inversion-right.test.cjs",
+      "beforeSha256": "7d83c9c4811cc6cd748021ed6f65e3c112f9c968f2c9e8a0fde99301ceec0a3c",
+      "afterSha256": "6fa3961549057fb159c025b3e40fa18db91241400a533d40b8a72a1870e9d8dd",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-first-second-inversion-left.test.cjs",
+      "beforeSha256": "fc81ad8e8b0a6a5da71a2774442ed87fe3bc6adee3f87a1502e26e270333b788",
+      "afterSha256": "9cc72c0cb6a1bfb87d9c352b48e6c9375965d1efb365678a9e824133e215447a",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-first-second-inversion-right.test.cjs",
+      "beforeSha256": "b8ce3e1cca8f930ef7519ff195e3df59994d0a9c01e9a63ff7530526b3dd5463",
+      "afterSha256": "668c62c13930d94514ac4c3befcd1329eee08eae8d692354928882f31df57ca7",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-g7-common-tone-left.test.cjs",
+      "beforeSha256": "11eb8d95eb5715906dcfdfdf40214c2acc623cd13f8a6bed8aff9041330a9347",
+      "afterSha256": "bbd26b593fd77126f28a601e800f04a2c78f440cd35c62402dbbc3889ae666ec",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-root-first-inversion-left.test.cjs",
+      "beforeSha256": "3a4f753fb6d9510a668872f1cf95e8dbaecd7d0e6c316333d0aa8d911da42fc2",
+      "afterSha256": "85e3983c8234581334a1c8593dca06bb67c73cfaf55cfb0bea1c9e951ac4314e",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-root-first-inversion-right.test.cjs",
+      "beforeSha256": "52476d4b5eaa335bc51210fadb6a9c3f75c90ce710f38347f74ea15644765a9d",
+      "afterSha256": "f2fd518cdebdf085178cf852d181d52a14e8bc2cd19b614e72e9b20f43d60ef9",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-second-inversion-left.test.cjs",
+      "beforeSha256": "0c45014984bc6b37102beca9e82e02e6153b1ccd18a75caad54e29efda235e4a",
+      "afterSha256": "463846caa574411925c76c00f0189e29b0807e00bee555aadf0420c87303650b",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-c-second-inversion-right.test.cjs",
+      "beforeSha256": "0d9b7552221d5224a637eb21f15bddd115cc64912ccde86825906e0f6a861f33",
+      "afterSha256": "c223129f7f5c1597ecea00bbbb4b807ccb7971a276c0484ff136b77b1a643116",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-dotted-quarter-eighth-rest-left.test.cjs",
+      "beforeSha256": "b162855dfafe0a83c8e90c4ebca0ce39fc22e465b405bf2fb37b48634d3c4dbe",
+      "afterSha256": "9e10076e61ebb59b640dea26cf1d307f24697e2298c236d2636476b8b621c6d4",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-dotted-quarter-eighth-rest-right.test.cjs",
+      "beforeSha256": "a506c4e063278608c1430eb36ce11ce8f50a7474a763765ed36a59bbd91fd322",
+      "afterSha256": "837094bfba7c5a8d8754f481da492aaea795442dacada54bcad8d894b37b8b02",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-middle-ring-left-g.test.cjs",
+      "beforeSha256": "e027617da2104ce6816168d81829ebd30e73cd92d657988b8fcd83c8cbe683e6",
+      "afterSha256": "664bea52a580ee71d067f7ca9d450f5a4385bdd7379a380f5dcd217bac50c7c8",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-middle-thumb-left-d.test.cjs",
+      "beforeSha256": "395dcd5f050da6f34bb537fef1c4b1a91e2242d8c021152a6d7500051b7f3176",
+      "afterSha256": "457ad4907598d2f59b727e22e5bbf99efb91aa12cc754048e463275ddddb9ea8",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-middle-thumb-right.test.cjs",
+      "beforeSha256": "79cf4112ef94609d0b8010ba078cc8f887382ee9c4d7f05354ebafe732538d69",
+      "afterSha256": "993904c5683f798c1243d3d2e552f7497b0f72305ccfc36993050d5cde8f774c",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-repeat.test.cjs",
+      "beforeSha256": "6a05e5c8aa02218e89fd995c262f43d7e0cee5404cd5ed496ef9c960d83f1a53",
+      "afterSha256": "4891094fb5b13e3c3366b9542f7cf9e21a631f28bf74e9ee43a0e1e7b6d27fa5",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-ring-little-right.test.cjs",
+      "beforeSha256": "9474d8beb4cebaa397c23e0bf89e130b1a499cb6c438a7ca9417cdb595968ca7",
+      "afterSha256": "b62a417f0aef163af78dc17bf0a5c055b218e45b7aba4688abdab66e2b494813",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-ring-middle-right.test.cjs",
+      "beforeSha256": "38e43bb0d4df46ada36546189d678577f92ac1302c4ffbf15ad5580b37b7f8de",
+      "afterSha256": "40f4c760e26cded43a518c27b117cfebfdf774555649bb566635377f4ddefa59",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-thumb-middle-right.test.cjs",
+      "beforeSha256": "d10ce6b5141c1ed45cf3330aa0d7a7aa9d7c6aa5367f1de20ed26b7bc4a3ebcb",
+      "afterSha256": "d401ab38eaf2992128b7877824c054c1b4a99cb63dea749b76aad1b2fb5e1ce9",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-eighth-rest-thumb-middle.test.cjs",
+      "beforeSha256": "9271ba9a8920fb33e945e3b2022eb48a7e2dba7a5e15b5a4ae654129576dd144",
+      "afterSha256": "7ec12536db446923a59a293c086b444d53145db66214b95d2e8e262e57d119c2",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-f-major-ascent-checkpoint.test.cjs",
+      "beforeSha256": "0b022844de76b3ce6770a5fefaf3a1503e437d2b8371cf5888e46c270c435f2b",
+      "afterSha256": "4cb5fa0c549cb2f662a603b85fe1f9a4e04f8d32ee34b0ca7b4eb336b9b46aff",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-ascent-checkpoint-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-connected.test.cjs",
+      "beforeSha256": "4dcefcbb2957167292f6def53d9840512b954cddad58f909fb05c97d696b86a6",
+      "afterSha256": "67982ac27250849815b60b0c25f471640cb93ec3f2681b129bbb1cd1ab00ad85",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-connected-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-descent-checkpoint.test.cjs",
+      "beforeSha256": "71cb15e6d9aebe792ae3faf15ac2b52e7312ec3de5613e82f719fa07433ebff5",
+      "afterSha256": "88b139fff6a796d4795c7d1587aa98857aa655b313b069eff379fce5015b5d58",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-descent-checkpoint-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-fourth-thumb.test.cjs",
+      "beforeSha256": "e543f67e1bdae519ade01c9fc42638a5379ca3ec89ce53da3a2f2bc9f449ec5f",
+      "afterSha256": "a0089c47dc024f81783455603aba6067e95a1fcc4f6988747e1623552f324105",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>fixture.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-fourth-thumb-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-left-ascent-checkpoint.test.cjs",
+      "beforeSha256": "c71ab51decd343aa1572563956f8ee662c4ba81c5d4db7399a98784a5e5221c2",
+      "afterSha256": "64dd0a3af5153bf81102d049a57435d452455fecac043d00f449271c5e714da3",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-left-ascent-checkpoint-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-left-descent-checkpoint.test.cjs",
+      "beforeSha256": "9c6273752e3a244abb3cbcc349b1aa6bea1365881a3de3f115522c994df9f252",
+      "afterSha256": "bedbff86378c180f70c77b3fb2b0e2824ea110df887ac432d5e1acae5915aec5",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-left-descent-checkpoint-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-thumb-fourth-connected.test.cjs",
+      "beforeSha256": "93736b5aaed6dfc5d10c8c2fd59171cc00de78a295f92814b38d06a47ead6427",
+      "afterSha256": "47617283f3143dc300ab95375952350dc3045a46566e2ea212aa6551d6f4cd14",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-thumb-fourth-connected-v1.json"
+    },
+    {
+      "path": "tests/piano-f-major-thumb-fourth.test.cjs",
+      "beforeSha256": "e256fdb0df71e1d3abe6a77734dcb56a9a1756a363d9071aa5f2d138e57a348d",
+      "afterSha256": "b88ccba13d7a04391020a987e3dae2c4cb504249fa47c4995c26ac4e8160a8f9",
+      "replacements": [
+        {
+          "from": "assert.equal(all.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(all.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(all.lessons.filter(x=>before.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-f-major-thumb-fourth-v1.json"
+    },
+    {
+      "path": "tests/piano-g-major-roundtrip.test.cjs",
+      "beforeSha256": "c886e37f53e13b3b61f43000681c24d40c5d9438f5753fd823527301a3e8e3bf",
+      "afterSha256": "44b2c2d384c4dea1d0c7c1e4c0324f8b704cae4bc9c4acdee0ff6c01031264b9",
+      "replacements": [
+        {
+          "from": "assert.equal(r.counts.explicitSameGoalVariants,10)",
+          "to": "assert.equal(r.counts.explicitSameGoalVariants,require('./fixtures/piano-curriculum-counts.json').explicitSameGoalVariants);assert.equal(tool.goalAccounting(r.lessons.filter(x=>fixture.catalog.some(old=>old.id===x.id))).explicitSameGoalVariants,10)"
+        }
+      ],
+      "goalFixture": "tests/fixtures/piano-before-g-major-roundtrip-v1.json"
+    },
+    {
+      "path": "tests/piano-left-barline-hold.test.cjs",
+      "beforeSha256": "c39379330d9625cd765aa72703ac102c9ca24eb4dba419dde36be50c82d72e47",
+      "afterSha256": "75d38c73477646acc92fe7d73766e0fcb12e6ed58eebf8536e416c24ffa13224",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-left-offbeat-rest.test.cjs",
+      "beforeSha256": "be4b60e424f82acf8cdf84516b5c6d3ac6b93215cc30910ee1339e4e8200003b",
+      "afterSha256": "967888418cc9dfa84846b4df300f1c5991f8fb9eae048918c05411f0432e8291",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-left-syncopation.test.cjs",
+      "beforeSha256": "89e18217b5be420b2242cfc15c33ab117c2e78c6b713eca2cf9b09a42388e7ac",
+      "afterSha256": "1aac426f4fc8361c09ab1b680573b3d9034722d303f0c74e03aa02e764c629ec",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/piano-right-lower-b-position.test.cjs",
+      "beforeSha256": "1eba26d4cf472944d21d1021c0627f7d64e31d58f0027b94341756d15fb66e0c",
+      "afterSha256": "c639a016e4fdc5894e9722952df1fc999c800774340a4c7d05a7186811827a6e",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(copy(app.themes),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    },
+    {
+      "path": "tests/public-course-cache-client.test.cjs",
+      "beforeSha256": "205a197b7ef58a4f8c9ab0309389031c59511edeb036f42dc941e4b7b1d0c452",
+      "afterSha256": "1c7218ebd4b233e34328bbb57a53c3a5e3a4f9bdddd9afe80a5bf44f0bf76e76",
+      "replacements": [
+        {
+          "from": "assert.deepEqual(JSON.parse(JSON.stringify(app.themes)),before.themes)",
+          "to": "assertPreservedThemes(app.themes,before.themes)"
+        },
+        {
+          "from": "'use strict';",
+          "to": "'use strict';\r\nconst {assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');"
+        }
+      ],
+      "goalFixture": null
+    }
+  ],
+  "stats": {
+    "themeEquality": 27,
+    "currentAndHistoricalVariantCounts": 9,
+    "navigationHash": 1,
+    "historical614Projection": 1
+  },
+  "newMusicalTestUnchangedAfterFirstRed": true,
+  "firstFullLog": "tmp/melodiajest-150-npm.log",
+  "firstFullLogSha256": "c716171f46c2d7ee71bb6c07e58acf5a37e46efbaec491275c75e181ae578a9d",
+  "firstFullPassed": 1520,
+  "firstFullFailed": 38,
+  "firstFullTests": 1558,
+  "fixturesRegenerated": false,
+  "runtimeMusicOrBrowserChanges": false,
+  "preflight": {
+    "historicalVariantCases": 9,
+    "oldVariants": 10,
+    "currentVariants": 11,
+    "historical108ThemeHashExact": true
+  },
+  "localTestCopiesReadBack": 38,
+  "nonInventoryBytesExactAfterReversingEdits": true,
+  "allImmutableFixturesExact": true,
+  "newMusicalTestSha256": "65ecc36ce2e833be6201ba3f12905b0b4c179bac5bcf6bff999ff124baa079dc",
+  "newMusicalTestStillExact": true,
+  "runtimeFilesAfterCorrection": 531,
+  "finalFullTestsPlanned": 1566,
+  "browserAndServiceResultsReusedByExactUnchangedRuntime": true,
+  "exportProjectionRefinedAt": "2026-11-12T21:04:38.781284+00:00",
+  "exportThemesHaveAddedNullContentKind": true,
+  "immutableCatalogDigestsStillEnforced": true,
+  "firstSelectedLog": "tmp/melodiajest-150-inventory-target-green.log",
+  "firstSelectedLogSha256": "e20d1d48ece243e5265fa8ac5f640954190cf9df057948d38dd9b0754ff47397",
+  "firstSelectedTests": 51,
+  "firstSelectedPassed": 50,
+  "firstSelectedFailed": 1
+}

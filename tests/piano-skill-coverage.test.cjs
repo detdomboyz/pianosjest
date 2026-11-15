@@ -35,7 +35,7 @@ test('explicit checkpoints have known preparation and are excluded once without 
 });
 
 test('actual final exam is a distinct control record, not an independent new goal or a one-component alias',()=>{
- const r=Coverage.build(),l=r.lessons.find(l=>l.id==='course10-08');assert.equal(l.goalCounting,'checkpoint-only');assert.equal(l.sameGoalAs,null);assert.deepEqual(r.checkpointLessonIds,['course01-08','course02-08','course03-08','course07-08','course08-08','course10-05','course10-08']);assert.equal(r.counts.explicitCheckpoints,require('./fixtures/piano-curriculum-counts.json').explicitCheckpoints);assert.equal(r.counts.goalGroupUpperBound,r.counts.implementedLearningLessons-r.counts.explicitSameGoalVariants-r.counts.explicitCheckpoints);
+ const r=Coverage.build(),l=r.lessons.find(l=>l.id==='course10-08');assert.equal(l.goalCounting,'checkpoint-only');assert.equal(l.sameGoalAs,null);assert.deepEqual(r.checkpointLessonIds,['course01-08','course02-08','course03-08','course07-08','course08-08','course10-05','course10-08','detail-p-g-major-roundtrip-right-01','detail-p-g-major-roundtrip-left-01','detail-p-f-major-ascent-checkpoint-right-01','detail-p-f-major-descent-checkpoint-right-01','detail-p-f-major-ascent-checkpoint-left-01','detail-p-f-major-descent-checkpoint-left-01']);assert.equal(r.counts.explicitCheckpoints,require('./fixtures/piano-curriculum-counts.json').explicitCheckpoints);assert.equal(r.counts.goalGroupUpperBound,r.counts.implementedLearningLessons-r.counts.explicitSameGoalVariants-r.counts.explicitCheckpoints);
 });
 
 test('future held-voice plans keep each hand and finger distinct in the coverage table',()=>{

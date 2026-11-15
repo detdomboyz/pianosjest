@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-11-13T10:17:03.726861+00:00",
+  "redPath": "tmp/melodiajest-170-target-red.log",
+  "redSha256": "9126859dce508a7567579e696f5e944e5832243f9f8bca9f72cc55c548cdd395",
+  "redPassed": 1,
+  "redFailed": 7,
+  "redDurationMs": 4080.1308,
+  "redBeforeImplementation": true,
+  "newTestSha256": "0dd2a5e298234d5cdcf7cc90dd2c816f42058707a8d526263bc4e3c9fd4dd2c7",
+  "newFixtureSha256": "c6daa1bbb32e65c97f6d91621daeaa6168b5d32c04d7dcc53c50e8e5e383b840",
+  "wholeNewTestExactAfterFirstRed": false,
+  "historicalTestFilesChanged": 0,
+  "scaffoldCorrections": 1,
+  "musicalAssertionsRemovedOrRelaxed": false,
+  "firstRedSourceCopy": "tmp/own-quarter-rest-170-first-red-test.cjs",
+  "firstRedNewTestSha256": "b7e8a98524be432e851547db959397d203182b384a31981746b7dedb8c241a56",
+  "updatedAt": "2026-11-13T10:20:38.650393+00:00",
+  "routeAssertionRefinedFromAdjacencyToPrecedence": true,
+  "routePredicateChangedAfterFirstRed": true,
+  "oldTestAssertionsChanged": false,
+  "firstTargetPassed": 32,
+  "firstTargetFailed": 1,
+  "firstTargetPath": "tmp/melodiajest-170-target-green.log",
+  "firstTargetSha256": "c656d567f0391eef59712ecbb5c05324634d29c73fecfda0a48ea9de9f44d3d0",
+  "corrections": [
+    "New-test immediate predecessor assertion was unsupported:insertDetails guarantees the after/requirement ordering,not adjacency after older dependent nodes are resolved. Replaced adjacency with explicit anchor precedence;all four preparation precedences and the exact650-record old relative route assertions retained. This changes a route predicate afterfirstred,not an exact-red claim.",
+    "New metadata next corrected fromcourse01-06 to actual generated mainline nextdetail-p-cross-01,following the unchanged nextLesson route code. The old RHSolo Next tocourse02-08 and all oldtest files remain exact."
+  ]
+}

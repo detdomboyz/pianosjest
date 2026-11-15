@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-12T03:22:41.071187+00:00",
+  "beforeImplementation": true,
+  "initialRed": {
+    "path": "tmp/melodiajest-125-target-before.log",
+    "pass": 0,
+    "fail": 8
+  },
+  "testPreparationCorrectionBeforeImplementation": "Mechanical test generation accidentally referenced its own new ID as a prerequisite. Corrected to the existing right1-to-3 anchor;assertions for notes,timing,grading,old full records unchanged. A second unchanged-runtime run still fails all8.",
+  "correctedRed": {
+    "path": "tmp/melodiajest-125-target-before-corrected-preparation.log",
+    "pass": 0,
+    "fail": 8
+  },
+  "testSha256BeforeImplementation": "9bb1bf1b0769c941b822ed7ae718f224811e215f412bac6a37dcb49c9b55fb8c",
+  "assertionsWeakened": false,
+  "legacyTestsAltered": false,
+  "after": {
+    "path": "tmp/melodiajest-125-targeted-final.log",
+    "pass": 40,
+    "fail": 0,
+    "newTests": 8
+  },
+  "currentTestSha256": "6d7c6d6ec7008f7058209af0d5bc5dc417bb76748c47f146e34d5aaf06d710e1",
+  "postRedStrengthening": "The no-cross-credit assertion now names the actual existing left anchor instead of a mechanically inverted nonexistent ID. Pitch,timing,trace,grade,preservation assertions unchanged.",
+  "historicalRight123Cohort": "Exact608/460 historical cohort plus current shared-count fixture;all607 full hashes/459 edition hashes and old traces retained."
+}

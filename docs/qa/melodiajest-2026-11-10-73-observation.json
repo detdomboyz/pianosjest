@@ -1,0 +1,54 @@
+{
+  "kind": "source-only-research-observation",
+  "phase": "2026-11-10-73",
+  "recordedAt": "2026-11-10T08:48:32.012Z",
+  "public": {
+    "checkedAt": "2026-11-10T08:39:10.0608350+00:00",
+    "version": "23.5.78",
+    "status": "ok",
+    "implementationSha256": "2c0af582e1055d802262f248d3a88a7d7a2dc11ed9453d3212116ef8dbc944aa",
+    "courseSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee",
+    "databaseSchemaVersion": 2,
+    "healthUrl": "https://melodiajest.ru/api/service/v1/health"
+  },
+  "quota": {
+    "start": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 83,
+      "remainingPercent": 17,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "beforeMetadata": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 83,
+      "remainingPercent": 17,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "policy": "until-exhausted;reserve0"
+  },
+  "knownReceipts": {
+    "qa": "docs/qa/melodiajest-2026-11-10-72-native-receipts.json",
+    "observedAt": "2026-11-10T08:20:44.798967+00:00",
+    "hourlyInvocationId": "5af66a1d4169461aafcfdf693f752e29",
+    "hourlyStart": "Tue 2026-11-10 08:01:17 UTC",
+    "hourlyEnd": "Tue 2026-11-10 08:01:18 UTC",
+    "bothFullReceiptsMatchedJournal": true,
+    "timerMatched": true,
+    "pgJournalSummaryMatchedAllEightReceiptFields": true,
+    "healthS3Requests": 0,
+    "originalCounterField": "s3RequestsThisCheck",
+    "pgNewSnapshotCreated": false,
+    "pgRestoredAt": "2026-11-09T16:15:21.593234+00:00",
+    "pgDataComparedAt": "2026-11-10T02:12:16.205169+00:00",
+    "reason": "Accepted receipt72 reused at entry08:39 inside the same hourly interval with original actual read08:20; no new SSH/S3/service start/backup or restore in73.",
+    "reobservedInPhase73": false
+  },
+  "newBackupCreated": false,
+  "newRestorePerformed": false,
+  "serverMutationsPerformed": false,
+  "s3RequestsInitiatedInPhase": 0
+}

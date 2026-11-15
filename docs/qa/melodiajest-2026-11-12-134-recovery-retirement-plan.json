@@ -1,0 +1,648 @@
+{
+  "checkedAt": "2026-11-12T13:03:31.210974+00:00",
+  "freeDiskBytes": 966508544,
+  "prepareRequiresGreaterThan": 1048576000,
+  "targets": [
+    {
+      "path": "/opt/melodiajest/ops/course-123-167ee43e3405/isolated-candidate-payload-v2",
+      "stage": "/opt/melodiajest/ops/course-123-167ee43e3405",
+      "completedRelease": "23.5.92",
+      "files": [
+        {
+          "path": "account-payload.json",
+          "bytes": 3990,
+          "sha256": "a86cefb098c1a89302ca3a7e086646c860707f178dbeeb9b0cf8d6100216dbc9",
+          "links": 1
+        },
+        {
+          "path": "controls/account.env",
+          "bytes": 230,
+          "sha256": "3133a849f4f0423cd8ce6a39758d214ae412f0e31f547420b9394bca08fbf929",
+          "links": 1
+        },
+        {
+          "path": "controls/compose.yaml",
+          "bytes": 1644,
+          "sha256": "b2ebd72a3f61727a4b32c8fe45bdcd58960589f263fbfae0ead417e0b141bb99",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.service",
+          "bytes": 970,
+          "sha256": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.timer",
+          "bytes": 231,
+          "sha256": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account.service",
+          "bytes": 1548,
+          "sha256": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-postgres.service",
+          "bytes": 870,
+          "sha256": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+          "links": 1
+        },
+        {
+          "path": "controls/nginx.conf",
+          "bytes": 1811,
+          "sha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_hba.conf",
+          "bytes": 325,
+          "sha256": "bfd0ab1a392983dc92cb4060ff7bee1d1a087a9aca48f392263c3ebb07cf389c",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_ident.conf",
+          "bytes": 184,
+          "sha256": "8f0f4971687b8146744187731e413495a318175df266f7e43bba7c643bff999a",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/postgresql.conf",
+          "bytes": 722,
+          "sha256": "f57fb5a58521e84e6fd5a61f05ae6f881505653dfae788f194eb1ba9344187c6",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres.compose.yaml",
+          "bytes": 1914,
+          "sha256": "03d81c019b0ad3041f1533ddd55ce6aff6f98074099b3ecd7848e9d7ec153245",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-bootstrap",
+          "bytes": 44,
+          "sha256": "73e4f2e6c04ece3fb89a4ca880d48d960add8547febf9829d9d02feda3a1a032",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-password",
+          "bytes": 44,
+          "sha256": "0b7e852d506f6ce036d637df83010ba04b7371013977172b17db7e3fa0824f66",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.dump",
+          "bytes": 48544,
+          "sha256": "7f689e39a6964225b51be5490ee5ffd2d6438b527767f5de5e410db5ab391ccc",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.json",
+          "bytes": 222,
+          "sha256": "4d3ae82b82ddc3dcac3a719a8bad90a17b38289415d04b8f9dfce7e93cdc2f10",
+          "links": 1
+        },
+        {
+          "path": "data/session-secret",
+          "bytes": 65,
+          "sha256": "8f20fa0d95f80abc12dc7b137c5e7ee809f701f84edf32457ecbf64fa4c76c1b",
+          "links": 1
+        },
+        {
+          "path": "data/snapshot.json",
+          "bytes": 984,
+          "sha256": "ea752556ae635c586f51e0a6bcf401c188e42afbfea32962432f572b531a201d",
+          "links": 1
+        },
+        {
+          "path": "node.tar.xz",
+          "bytes": 32039312,
+          "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+          "links": 1
+        },
+        {
+          "path": "pg-dependencies.tar.gz",
+          "bytes": 123168,
+          "sha256": "ded01c70706a71958537da51bdf3e7951be8b01b5fb30757ebd4fb2c213b6452",
+          "links": 1
+        },
+        {
+          "path": "postgres-image.tar.gz",
+          "bytes": 156548506,
+          "sha256": "5ed2feecc2294dd4433bb6c8a54865be71516806b0ea3f28f486a7acac4be86c",
+          "links": 37
+        },
+        {
+          "path": "previous-release.tar.gz",
+          "bytes": 9023958,
+          "sha256": "527d6bf8804fdf6489eef84c18fb2f4c5328c83caeb31cab5e3f6358c56e23dc",
+          "links": 1
+        },
+        {
+          "path": "profile.json",
+          "bytes": 1723,
+          "sha256": "2f0add4da5c98cd0779510e1f028208a2adb3c612c93c85e0434f2ef05b9fcd2",
+          "links": 1
+        },
+        {
+          "path": "release.tar.gz",
+          "bytes": 9192380,
+          "sha256": "167ee43e340566b63e2d59613347e23b51b322829d8c9ed6071ba5557905f5b4",
+          "links": 1
+        }
+      ],
+      "allocatedFileBytes": 207069184,
+      "estimatedUniquelyLinkedFileBytes": 50515968,
+      "payloadManifestSha256": "a86cefb098c1a89302ca3a7e086646c860707f178dbeeb9b0cf8d6100216dbc9",
+      "isolatedCandidateFixture": true,
+      "completedReaderAndPublicationVerified": true,
+      "isCurrentAccountProtection": false,
+      "liveProfileReferencesTarget": false
+    },
+    {
+      "path": "/opt/melodiajest/ops/course-124-343b89dc91ea/isolated-candidate-payload-v2",
+      "stage": "/opt/melodiajest/ops/course-124-343b89dc91ea",
+      "completedRelease": "23.5.93",
+      "files": [
+        {
+          "path": "account-payload.json",
+          "bytes": 3990,
+          "sha256": "9f4ca52da1e091e40f2f2bdafa9d2eab7365b5b199163c1408d13ac00ea5a0b6",
+          "links": 1
+        },
+        {
+          "path": "controls/account.env",
+          "bytes": 230,
+          "sha256": "3133a849f4f0423cd8ce6a39758d214ae412f0e31f547420b9394bca08fbf929",
+          "links": 1
+        },
+        {
+          "path": "controls/compose.yaml",
+          "bytes": 1644,
+          "sha256": "b2ebd72a3f61727a4b32c8fe45bdcd58960589f263fbfae0ead417e0b141bb99",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.service",
+          "bytes": 970,
+          "sha256": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.timer",
+          "bytes": 231,
+          "sha256": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account.service",
+          "bytes": 1548,
+          "sha256": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-postgres.service",
+          "bytes": 870,
+          "sha256": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+          "links": 1
+        },
+        {
+          "path": "controls/nginx.conf",
+          "bytes": 1811,
+          "sha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_hba.conf",
+          "bytes": 325,
+          "sha256": "bfd0ab1a392983dc92cb4060ff7bee1d1a087a9aca48f392263c3ebb07cf389c",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_ident.conf",
+          "bytes": 184,
+          "sha256": "8f0f4971687b8146744187731e413495a318175df266f7e43bba7c643bff999a",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/postgresql.conf",
+          "bytes": 722,
+          "sha256": "f57fb5a58521e84e6fd5a61f05ae6f881505653dfae788f194eb1ba9344187c6",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres.compose.yaml",
+          "bytes": 1914,
+          "sha256": "03d81c019b0ad3041f1533ddd55ce6aff6f98074099b3ecd7848e9d7ec153245",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-bootstrap",
+          "bytes": 44,
+          "sha256": "73e4f2e6c04ece3fb89a4ca880d48d960add8547febf9829d9d02feda3a1a032",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-password",
+          "bytes": 44,
+          "sha256": "0b7e852d506f6ce036d637df83010ba04b7371013977172b17db7e3fa0824f66",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.dump",
+          "bytes": 48595,
+          "sha256": "549a71b386df6ead8f598f3832cdf8683cd51cab952613bc68b5e4674cc2ce0c",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.json",
+          "bytes": 222,
+          "sha256": "4d3ae82b82ddc3dcac3a719a8bad90a17b38289415d04b8f9dfce7e93cdc2f10",
+          "links": 1
+        },
+        {
+          "path": "data/session-secret",
+          "bytes": 65,
+          "sha256": "8f20fa0d95f80abc12dc7b137c5e7ee809f701f84edf32457ecbf64fa4c76c1b",
+          "links": 1
+        },
+        {
+          "path": "data/snapshot.json",
+          "bytes": 984,
+          "sha256": "e86fd8556a4e3122e5ef671de0818b1102eac44c05aa524e093f982d222e2817",
+          "links": 1
+        },
+        {
+          "path": "node.tar.xz",
+          "bytes": 32039312,
+          "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+          "links": 1
+        },
+        {
+          "path": "pg-dependencies.tar.gz",
+          "bytes": 123168,
+          "sha256": "ded01c70706a71958537da51bdf3e7951be8b01b5fb30757ebd4fb2c213b6452",
+          "links": 1
+        },
+        {
+          "path": "postgres-image.tar.gz",
+          "bytes": 156548506,
+          "sha256": "5ed2feecc2294dd4433bb6c8a54865be71516806b0ea3f28f486a7acac4be86c",
+          "links": 37
+        },
+        {
+          "path": "previous-release.tar.gz",
+          "bytes": 9192380,
+          "sha256": "167ee43e340566b63e2d59613347e23b51b322829d8c9ed6071ba5557905f5b4",
+          "links": 1
+        },
+        {
+          "path": "profile.json",
+          "bytes": 1723,
+          "sha256": "cd601c19e83c93c23c654ef846c957db02ec1ef0efc9626cfe4441dd6e0294ad",
+          "links": 1
+        },
+        {
+          "path": "release.tar.gz",
+          "bytes": 9247296,
+          "sha256": "343b89dc91ea6d00a2efd1d57af6fc760182c19b782d60f1d377e2a820391d48",
+          "links": 1
+        }
+      ],
+      "allocatedFileBytes": 207294464,
+      "estimatedUniquelyLinkedFileBytes": 50741248,
+      "payloadManifestSha256": "9f4ca52da1e091e40f2f2bdafa9d2eab7365b5b199163c1408d13ac00ea5a0b6",
+      "isolatedCandidateFixture": true,
+      "completedReaderAndPublicationVerified": true,
+      "isCurrentAccountProtection": false,
+      "liveProfileReferencesTarget": false
+    },
+    {
+      "path": "/opt/melodiajest/ops/course-125-628719f1a8c0/isolated-candidate-payload-v2",
+      "stage": "/opt/melodiajest/ops/course-125-628719f1a8c0",
+      "completedRelease": "23.5.94",
+      "files": [
+        {
+          "path": "account-payload.json",
+          "bytes": 3991,
+          "sha256": "33a4aa295c3ea6d0f250cd12709fcc8a99b96da396a558249429682164ecaf85",
+          "links": 1
+        },
+        {
+          "path": "controls/account.env",
+          "bytes": 230,
+          "sha256": "3133a849f4f0423cd8ce6a39758d214ae412f0e31f547420b9394bca08fbf929",
+          "links": 1
+        },
+        {
+          "path": "controls/compose.yaml",
+          "bytes": 1644,
+          "sha256": "b2ebd72a3f61727a4b32c8fe45bdcd58960589f263fbfae0ead417e0b141bb99",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.service",
+          "bytes": 970,
+          "sha256": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.timer",
+          "bytes": 231,
+          "sha256": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account.service",
+          "bytes": 1548,
+          "sha256": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-postgres.service",
+          "bytes": 870,
+          "sha256": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+          "links": 1
+        },
+        {
+          "path": "controls/nginx.conf",
+          "bytes": 1811,
+          "sha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_hba.conf",
+          "bytes": 325,
+          "sha256": "bfd0ab1a392983dc92cb4060ff7bee1d1a087a9aca48f392263c3ebb07cf389c",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_ident.conf",
+          "bytes": 184,
+          "sha256": "8f0f4971687b8146744187731e413495a318175df266f7e43bba7c643bff999a",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/postgresql.conf",
+          "bytes": 722,
+          "sha256": "f57fb5a58521e84e6fd5a61f05ae6f881505653dfae788f194eb1ba9344187c6",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres.compose.yaml",
+          "bytes": 1914,
+          "sha256": "03d81c019b0ad3041f1533ddd55ce6aff6f98074099b3ecd7848e9d7ec153245",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-bootstrap",
+          "bytes": 44,
+          "sha256": "73e4f2e6c04ece3fb89a4ca880d48d960add8547febf9829d9d02feda3a1a032",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-password",
+          "bytes": 44,
+          "sha256": "0b7e852d506f6ce036d637df83010ba04b7371013977172b17db7e3fa0824f66",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.dump",
+          "bytes": 48594,
+          "sha256": "c778cf1cf8438a9bb8f70faf4b8c34da477bf48f67d98d7590f625e656b24fdd",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.json",
+          "bytes": 222,
+          "sha256": "4d3ae82b82ddc3dcac3a719a8bad90a17b38289415d04b8f9dfce7e93cdc2f10",
+          "links": 1
+        },
+        {
+          "path": "data/session-secret",
+          "bytes": 65,
+          "sha256": "8f20fa0d95f80abc12dc7b137c5e7ee809f701f84edf32457ecbf64fa4c76c1b",
+          "links": 1
+        },
+        {
+          "path": "data/snapshot.json",
+          "bytes": 984,
+          "sha256": "22c300d8b4b50b38261114bf21918dc411e97ab1a2c668754f541382e6ae0c0b",
+          "links": 1
+        },
+        {
+          "path": "node.tar.xz",
+          "bytes": 32039312,
+          "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+          "links": 1
+        },
+        {
+          "path": "pg-dependencies.tar.gz",
+          "bytes": 123168,
+          "sha256": "ded01c70706a71958537da51bdf3e7951be8b01b5fb30757ebd4fb2c213b6452",
+          "links": 1
+        },
+        {
+          "path": "postgres-image.tar.gz",
+          "bytes": 156548506,
+          "sha256": "5ed2feecc2294dd4433bb6c8a54865be71516806b0ea3f28f486a7acac4be86c",
+          "links": 37
+        },
+        {
+          "path": "previous-release.tar.gz",
+          "bytes": 9247296,
+          "sha256": "343b89dc91ea6d00a2efd1d57af6fc760182c19b782d60f1d377e2a820391d48",
+          "links": 1
+        },
+        {
+          "path": "profile.json",
+          "bytes": 1723,
+          "sha256": "18089350670d7039d401054a0ef15ed78542fee9bd6f261be9c08506818385f0",
+          "links": 1
+        },
+        {
+          "path": "release.tar.gz",
+          "bytes": 10116443,
+          "sha256": "628719f1a8c0911060f586602b32f5a5ee1c6b84d2e2b757baf789e4fe1d036e",
+          "links": 1
+        }
+      ],
+      "allocatedFileBytes": 208216064,
+      "estimatedUniquelyLinkedFileBytes": 51662848,
+      "payloadManifestSha256": "33a4aa295c3ea6d0f250cd12709fcc8a99b96da396a558249429682164ecaf85",
+      "isolatedCandidateFixture": true,
+      "completedReaderAndPublicationVerified": true,
+      "isCurrentAccountProtection": false,
+      "liveProfileReferencesTarget": false
+    },
+    {
+      "path": "/opt/melodiajest/ops/course-126-94da99ce855d/isolated-candidate-payload-v2",
+      "stage": "/opt/melodiajest/ops/course-126-94da99ce855d",
+      "completedRelease": "23.5.95",
+      "files": [
+        {
+          "path": "account-payload.json",
+          "bytes": 3992,
+          "sha256": "5c30c87d42e886214178f1abb360b10b1a8ae310f4a036b20d1ed004723a5071",
+          "links": 1
+        },
+        {
+          "path": "controls/account.env",
+          "bytes": 230,
+          "sha256": "3133a849f4f0423cd8ce6a39758d214ae412f0e31f547420b9394bca08fbf929",
+          "links": 1
+        },
+        {
+          "path": "controls/compose.yaml",
+          "bytes": 1644,
+          "sha256": "b2ebd72a3f61727a4b32c8fe45bdcd58960589f263fbfae0ead417e0b141bb99",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.service",
+          "bytes": 970,
+          "sha256": "2aac5e5decbe12a276daba43cf8191a55626597b1c055c3bd51ea12235751fb1",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account-backup.timer",
+          "bytes": 231,
+          "sha256": "c270a37ee4656268d283a10084e3971ebf0942677fbb37d31ea541a4de0d2119",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-account.service",
+          "bytes": 1548,
+          "sha256": "c8d57d81d64b5b99f9d6b7250b9158882a544084aef15259d90db48d816d184a",
+          "links": 1
+        },
+        {
+          "path": "controls/melodiajest-postgres.service",
+          "bytes": 870,
+          "sha256": "c18b3641ff7f06d318851040906c9e38b03abec20fe3d271c5667930e6bb73a4",
+          "links": 1
+        },
+        {
+          "path": "controls/nginx.conf",
+          "bytes": 1811,
+          "sha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_hba.conf",
+          "bytes": 325,
+          "sha256": "bfd0ab1a392983dc92cb4060ff7bee1d1a087a9aca48f392263c3ebb07cf389c",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/pg_ident.conf",
+          "bytes": 184,
+          "sha256": "8f0f4971687b8146744187731e413495a318175df266f7e43bba7c643bff999a",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres-config/postgresql.conf",
+          "bytes": 722,
+          "sha256": "f57fb5a58521e84e6fd5a61f05ae6f881505653dfae788f194eb1ba9344187c6",
+          "links": 1
+        },
+        {
+          "path": "controls/postgres.compose.yaml",
+          "bytes": 1914,
+          "sha256": "03d81c019b0ad3041f1533ddd55ce6aff6f98074099b3ecd7848e9d7ec153245",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-bootstrap",
+          "bytes": 44,
+          "sha256": "73e4f2e6c04ece3fb89a4ca880d48d960add8547febf9829d9d02feda3a1a032",
+          "links": 1
+        },
+        {
+          "path": "data/postgres-password",
+          "bytes": 44,
+          "sha256": "0b7e852d506f6ce036d637df83010ba04b7371013977172b17db7e3fa0824f66",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.dump",
+          "bytes": 48546,
+          "sha256": "199165b32a2834905f1048d1f7077184510363e94c033e874283f8a32adaedd4",
+          "links": 1
+        },
+        {
+          "path": "data/postgres.json",
+          "bytes": 222,
+          "sha256": "4d3ae82b82ddc3dcac3a719a8bad90a17b38289415d04b8f9dfce7e93cdc2f10",
+          "links": 1
+        },
+        {
+          "path": "data/session-secret",
+          "bytes": 65,
+          "sha256": "8f20fa0d95f80abc12dc7b137c5e7ee809f701f84edf32457ecbf64fa4c76c1b",
+          "links": 1
+        },
+        {
+          "path": "data/snapshot.json",
+          "bytes": 984,
+          "sha256": "fa0f0cc191b003b8c977a0892a1427401dcd8df83a1bf63b30083da723d22522",
+          "links": 1
+        },
+        {
+          "path": "node.tar.xz",
+          "bytes": 32039312,
+          "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+          "links": 1
+        },
+        {
+          "path": "pg-dependencies.tar.gz",
+          "bytes": 123168,
+          "sha256": "ded01c70706a71958537da51bdf3e7951be8b01b5fb30757ebd4fb2c213b6452",
+          "links": 1
+        },
+        {
+          "path": "postgres-image.tar.gz",
+          "bytes": 156548506,
+          "sha256": "5ed2feecc2294dd4433bb6c8a54865be71516806b0ea3f28f486a7acac4be86c",
+          "links": 37
+        },
+        {
+          "path": "previous-release.tar.gz",
+          "bytes": 10116443,
+          "sha256": "628719f1a8c0911060f586602b32f5a5ee1c6b84d2e2b757baf789e4fe1d036e",
+          "links": 1
+        },
+        {
+          "path": "profile.json",
+          "bytes": 1723,
+          "sha256": "719b861cf64b576576c0627328877f30a4502a4d66b67467476026d4215c3613",
+          "links": 1
+        },
+        {
+          "path": "release.tar.gz",
+          "bytes": 10994055,
+          "sha256": "94da99ce855d37c98ee490f9fe77acae73d2cbcc2d2e47693d77dd94ead402ae",
+          "links": 1
+        }
+      ],
+      "allocatedFileBytes": 209960960,
+      "estimatedUniquelyLinkedFileBytes": 53407744,
+      "payloadManifestSha256": "5c30c87d42e886214178f1abb360b10b1a8ae310f4a036b20d1ed004723a5071",
+      "isolatedCandidateFixture": true,
+      "completedReaderAndPublicationVerified": true,
+      "isCurrentAccountProtection": false,
+      "liveProfileReferencesTarget": false
+    }
+  ],
+  "current": "releases/23.5.100-8f02cdfef1a8",
+  "previous": "releases/23.5.99-8e9ad96ba013",
+  "latestAccountSnapshot": "a7bd2d2c51d00b1960b4d1d507689bacd5d9012248cc6c402fc838d001455240",
+  "latestAccountRestoreVerifiedAt": "2026-11-12T11:45:17.542732+00:00",
+  "serverMutations": 0,
+  "deletions": 0,
+  "serviceStarts": 0,
+  "s3Requests": 0,
+  "retirementAuthorizedScope": "Only these four completed own isolated-candidate-payload-v2 directories;retain release archives,restored sources,receipts,current/previous,latest PG/static protection and all protected checkpoints."
+}

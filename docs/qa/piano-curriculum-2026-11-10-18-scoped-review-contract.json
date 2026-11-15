@@ -1,0 +1,403 @@
+{
+  "kind": "source-only-scoped-editorial-review-contract",
+  "documentVersion": 1,
+  "phase": "2026-11-10-77",
+  "batch": "2026-11-10-18",
+  "status": "proposed-not-implemented",
+  "lessonIds": [
+    "detail-p-hands-02",
+    "detail-p-hands-03"
+  ],
+  "editorialPlanIds": [
+    "2026-11-10-02",
+    "2026-11-10-03"
+  ],
+  "executionAllowed": false,
+  "applyExecutorIncluded": false,
+  "proposedEditorialCutoverReady": false,
+  "newEditorialPlans": 0,
+  "newLessons": 0,
+  "probesQa": "docs/qa/piano-curriculum-2026-11-10-18-scoped-review-probes.json",
+  "probesQaSha256": "e6bcafc82547ac3ef65ab4ed3fa69b266e00db01e1ff221095fa057df5ac96e9",
+  "sourceTrace": [
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9",
+      "anchors": [
+        {
+          "line": 1174,
+          "excerpt": "  function normalizeCatalog(){"
+        },
+        {
+          "line": 1240,
+          "excerpt": "  function catalogSnapshot(){"
+        },
+        {
+          "line": 1341,
+          "excerpt": "  function applyCatalogSnapshot(snapshot){"
+        },
+        {
+          "line": 1383,
+          "excerpt": "    catalogMigrationPending=installReviewedLessons()||catalogMigrationPending;"
+        },
+        {
+          "line": 1391,
+          "excerpt": "      serviceBaseCatalog=JSON.parse(JSON.stringify(catalogSnapshot()));"
+        },
+        {
+          "line": 1393,
+          "excerpt": "      try{const current=serviceClient.status();if(current.user&&!current.locked){const saved=await serviceClient.getObject('catalog');serviceCatalogRaw=saved.raw;if(saved.raw){const value=JSON.parse(saved.raw);if(value.kind===window.CatalogPersonalization.KIND){const merged=window.CatalogPersonalization.apply(serviceBaseCatalog,value);if(!merged.ok)throw Error('Личные правки конфликтуют с новой редакцией курса. Они сохранены на сервере; скачай их JSON перед разрешением конфликта.');snapshot=merged.snapshot;}else snapshot=value;loadedFrom='аккаунта';}serviceCatalogReady=true;}}"
+        },
+        {
+          "line": 2093,
+          "excerpt": "  function installReviewedLessons(){"
+        },
+        {
+          "line": 2095,
+          "excerpt": "    for(const lesson of lessons)if(window.MusicCatalog.sectionOf('piano',lesson,themes)==='learning'&&window.LessonQuality.repairPiano(lesson,window.LessonReviewBaseline,a)){delete lesson.fingeringPlan;changed++;}"
+        },
+        {
+          "line": 2097,
+          "excerpt": "    changed+=window.LessonDevelopment.registerPiano(lessons,themes,a);changed+=window.PianoLessonDevelopment.registerPiano(lessons,themes,a);normalizeCatalog();return changed>0;"
+        },
+        {
+          "line": 2099,
+          "excerpt": "  initializeBuiltInCatalog();"
+        },
+        {
+          "line": 2330,
+          "excerpt": "  function challengeEligible(){const fragment=activePreparationFragment();if(fragment)return window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key===fragment.requirement.key;const e=curriculumEntry();return state.contentSection==='learning'&&Boolean(e&&e.challenge&&e.fingerprint===window.PracticeAssessment.pianoSignature(state.lesson)&&lessonRhythm()&&state.lesson.fingeringSpec);}"
+        }
+      ]
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "anchors": [
+        {
+          "line": 97,
+          "excerpt": "  function registerPiano(lessons,themes,a,specifications=piano){let added=0;const keyFor=m=>Object.keys(a.keyMap).find(k=>a.keyMap[k]===m);"
+        },
+        {
+          "line": 98,
+          "excerpt": "    for(const spec of specifications){if(lessons.some(l=>l.id===spec.id))continue;let theme=themes.find(t=>t.id==='detail-p-'+spec.group);if(!theme){theme={id:'detail-p-'+spec.group,name:spec.groupTitle,order:Math.max(0,...themes.map(t=>t.order))+1,contentKind:'exercise'};themes.push(theme);}"
+        },
+        {
+          "line": 102,
+          "excerpt": "      lesson.themeId=theme.id;lesson.order=lessons.filter(l=>l.themeId===theme.id).length+1;lesson.contentKind='exercise';lesson.maxErrors=1;lesson.timeLimit=Math.ceil(cursor*60/bpm*1.8+10);"
+        },
+        {
+          "line": 103,
+          "excerpt": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';"
+        }
+      ]
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f",
+      "anchors": [
+        {
+          "line": 653,
+          "excerpt": "  function instructionFingerprint(lesson){"
+        },
+        {
+          "line": 1596,
+          "excerpt": "  function registerPiano(lessons,themes,adapter){"
+        },
+        {
+          "line": 1597,
+          "excerpt": "    const existing=new Set(lessons.map(l=>l.id));let added=Development.registerPiano(lessons,themes,adapter,piano);"
+        },
+        {
+          "line": 1632,
+          "excerpt": "    added+=reviewLeftFiveFingerPreparation(lessons,adapter);"
+        },
+        {
+          "line": 1636,
+          "excerpt": "    return added+reviewEarlyRelease(lessons,adapter)+reviewEarlyLegato(lessons,adapter)+upgradeReleaseLabels(lessons)+reviewEarlyStaccato(lessons,adapter)+reviewKnownThird(lessons,adapter)+upgradeKnownThirdPreparation(lessons)+reviewRemainingKnownIntervals(lessons,adapter)+reviewEarlyRhythm(lessons,adapter)+reviewBasicDurations(lessons,adapter)+reviewCoordinatedTiming(lessons,adapter)+reviewPhraseHandoff(lessons,adapter)+reviewBlockedTriads(lessons,adapter)+reviewPositionTriads(lessons,adapter)+reviewChordPhrases(lessons,adapter)+reviewBrokenChords(lessons,adapter)+reviewMinorAssembly(lessons,adapter)+reviewMinorComparison(lessons,adapter)+reviewChordMoveCadence(lessons,adapter)+reviewOdePhrases(lessons,adapter)+reviewOdeMemory(lessons,adapter)+reviewTwinkle(lessons,adapter)+reviewMary(lessons,adapter)+reviewBassAnswer(lessons,adapter)+reviewBlindRhythm(lessons,adapter)+reviewBlindChords(lessons,adapter)+reviewFinalExam(lessons,adapter)+reviewWholeNoteRole(lessons)+reviewIndependentPreparation(lessons,adapter)+reviewLeftBlackAndTriadPreparation(lessons,adapter)+reviewRightReleaseAndBlackGroups(lessons,adapter)+reviewRelocationPreparation(lessons,adapter)+reviewDyads(lessons,adapter)+reviewThreeFingerPreparation(lessons,adapter)+reviewRightFiveFingerPreparation(lessons,adapter)+reviewRightPositionFlow(lessons,adapter)+reviewQuarterPulseAndRests(lessons,adapter)+reviewEighthPairsAndTripleMeter(lessons,adapter)+reviewFirstTwoFingers(lessons,adapter)+reviewSingleNoteOrientations(lessons,adapter)+reviewRightCFLandmarks(lessons,adapter)+reviewTwoHandCGHandoff(lessons,adapter)+reviewTwoHandOrientationCheckpoint(lessons,adapter)+reviewAlternatingHands(lessons,adapter)+reviewFivePairedPositions(lessons,adapter)+reviewContraryFiveFingerMotion(lessons,adapter)+reviewTwoHandCoordinationExam(lessons,adapter)+reviewChordCoordinationExam(lessons,adapter)+reviewRightMemoryPosition(lessons,adapter)+reviewLeftMemoryPosition(lessons,adapter)+reviewBlindRelocation(lessons,adapter)+upgradeBlindRelocationPreparation(lessons)+reviewTwoHandMemory(lessons,adapter)+reviewMelodyMemory(lessons,adapter)+reviewThumbCrossings(lessons,adapter)+reviewCMajorScales(lessons,adapter)+reviewRightLegatoPrerequisites(lessons)+reviewFMajorUpperReadiness(lessons);"
+        },
+        {
+          "line": 1017,
+          "excerpt": "  function reviewCoordinatedTiming(lessons,adapter){"
+        },
+        {
+          "line": 244,
+          "excerpt": "    const previousInstruction=JSON.parse(JSON.stringify({guide:lesson.guide,learning}));"
+        }
+      ]
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "anchors": [
+        {
+          "line": 6,
+          "excerpt": "  function pianoFingerprint(l){return A.signature({id:l.id,title:l.title,description:l.description,pattern:l.pattern,rhythm:l.rhythm||null,guide:l.guide||null,fingeringSpec:l.fingeringSpec||null,handMode:l.handMode||null,timeLimit:l.timeLimit,maxErrors:l.maxErrors,exam:!!l.exam});}"
+        },
+        {
+          "line": 8,
+          "excerpt": "  function allowed(l,b,fingerprint){const entry=b?.[l.id];if(!entry)return false;const now=fingerprint(l);return now===entry.fingerprint&&!(l.lessonReview?.version===VERSION&&l.lessonReview.reviewedFingerprint===now);}"
+        },
+        {
+          "line": 12,
+          "excerpt": "  function repairPiano(lesson,baseline,adapter){"
+        }
+      ]
+    },
+    {
+      "file": "catalog-personalization.js",
+      "sha256": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b",
+      "anchors": [
+        {
+          "line": 14,
+          "excerpt": "  function slot(value,key){return own(value,key)?{present:true,value:clone(value[key])}:{present:false};}"
+        },
+        {
+          "line": 15,
+          "excerpt": "  function diffFields(before,after,excluded=[]){const changes=[];for(const key of new Set([...Object.keys(before),...Object.keys(after)])){if(excluded.includes(key))continue;const a=slot(before,key),b=slot(after,key);if(!equal(a,b))changes.push({key,before:a,after:b});}return changes;}"
+        },
+        {
+          "line": 43,
+          "excerpt": "  function applyChanges(record,fields,id,conflicts){for(const field of fields){const current=slot(record,field.key);if(!equal(current,field.before)&&!equal(current,field.after)){conflicts.push({code:'PERSONAL_CATALOG_FIELD_CONFLICT',id,key:field.key});continue;}"
+        },
+        {
+          "line": 51,
+          "excerpt": "  function apply(base,personal){snapshot(base);validate(personal);const result=clone(base),conflicts=[];"
+        }
+      ]
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "anchors": [
+        {
+          "line": 10,
+          "excerpt": "  function pianoSignature(lesson){return signature({pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,...(lesson.learning?.ending!==undefined?{ending:lesson.learning.ending}:{})});}"
+        },
+        {
+          "line": 107,
+          "excerpt": "  function record(previous,{instrument,lessonId,fingerprint,mode,clean,now=Date.now()}){"
+        },
+        {
+          "line": 110,
+          "excerpt": "    if(previous&&!old&&previous.instrument===instrument&&previous.lessonId===lessonId){const {history:ignored,...snapshot}=previous;history[previous.version+':'+previous.fingerprint]=snapshot;}"
+        }
+      ]
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14",
+      "anchors": [
+        {
+          "line": 10,
+          "excerpt": " function apply(row,op,now){"
+        },
+        {
+          "line": 12,
+          "excerpt": "  if(existing){if(JSON.stringify(existing)!==JSON.stringify(op))fail('LEGACY_RECEIPT_CONFLICT');return row;}"
+        },
+        {
+          "line": 24,
+          "excerpt": "  }else result=Assessment.record(row,{instrument:'piano',lessonId:op.lessonId,fingerprint:op.fingerprint,mode:op.mode,clean:op.clean,now:op.at});"
+        },
+        {
+          "line": 40,
+          "excerpt": "  async function locked(work){try{if(!locks||typeof locks.request!=='function')fail('LOCKS_UNAVAILABLE');if(!storage||typeof storage.getItem!=='function'||typeof storage.setItem!=='function')fail('STORAGE_UNAVAILABLE');return await locks.request(LOCK_NAME,{mode:'exclusive'},lock=>{if(!lock)fail('LOCK_NOT_ACQUIRED');return work();});}catch(e){code=e?.code||'LOCK_OR_STORAGE_FAILED';return {status:'unsaved',code};}}"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        }
+      ]
+    },
+    {
+      "file": "service/canonical.cjs",
+      "sha256": "c59128bdc692274b5052204634e400007b9dde34361fd037b583f35f18881a0f",
+      "anchors": [
+        {
+          "line": 3,
+          "excerpt": "function canonical(value){"
+        },
+        {
+          "line": 7,
+          "excerpt": "const hash=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');"
+        }
+      ]
+    }
+  ],
+  "candidateBindings": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-16-editorial-candidate.json",
+      "candidateSha256": "cd09a47236bbe9f2e3a1458ee13ad7a427308c34b00e78d0b937ac499bfcc7a3",
+      "before": {
+        "fingerprint": "47383ac1",
+        "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+        "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce"
+      },
+      "after": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1"
+      },
+      "sourceDerivedCanonicalFields": {
+        "contentKind": "exercise",
+        "maxErrors": 1,
+        "exam": false,
+        "handMode": "split"
+      },
+      "cacheProjectionMissingFields": [
+        "contentKind",
+        "maxErrors",
+        "exam"
+      ],
+      "cacheNotationInvariantSha256": "58c9dc58bf6f8f426aa46d8fb3b44f7dba091f849d0ce7949fb52308c678d2bc",
+      "sourceCanonicalNotationInvariantSha256": "d7eae12d2799cf258c10ef49028740ec4b97819ac85dfee36c8219622134fda8",
+      "actualInstructionFingerprintBefore": "e1ef7965",
+      "actualInstructionFingerprintAfter": "e53ebcb6",
+      "proposedMarkerMetadataProbe": {
+        "markerIsOnlySynthetic": true,
+        "noReviewFunctionExecuted": true,
+        "unmarkedEditionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1",
+        "stampedEditionVersion": "1a7880e9bf3c1ef8cca6372fc56c0edc938ea2f9a700ef0612da6d08e84fa302",
+        "fingerprintAndMusicVersionUnchanged": true,
+        "instructionFingerprintIgnoresContentReview": true
+      }
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-17-editorial-candidate.json",
+      "candidateSha256": "c031de11782c57a35c508c6e29f5348c3640cfb800e50285a5143abc2591d120",
+      "before": {
+        "fingerprint": "4cdf584f",
+        "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+        "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+      },
+      "after": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7"
+      },
+      "sourceDerivedCanonicalFields": {
+        "contentKind": "exercise",
+        "maxErrors": 1,
+        "exam": false,
+        "handMode": "split"
+      },
+      "cacheProjectionMissingFields": [
+        "contentKind",
+        "maxErrors",
+        "exam"
+      ],
+      "cacheNotationInvariantSha256": "14ed9b4dfd98aaa330cd0617f7a89f51b50d787cda26151ce37420d470e7c9ad",
+      "sourceCanonicalNotationInvariantSha256": "1ecab41ec440d7d003f3f3043b722db8867b7beab897da80862780c7c24c15ae",
+      "actualInstructionFingerprintBefore": "0106ffe1",
+      "actualInstructionFingerprintAfter": "1277234b",
+      "proposedMarkerMetadataProbe": {
+        "markerIsOnlySynthetic": true,
+        "noReviewFunctionExecuted": true,
+        "unmarkedEditionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7",
+        "stampedEditionVersion": "23e7b8acba3fd7aa826bdbb4024455d287095ad902036f7ade83b314edecb8fb",
+        "fingerprintAndMusicVersionUnchanged": true,
+        "instructionFingerprintIgnoresContentReview": true
+      }
+    }
+  ],
+  "loadOrder": {
+    "fresh": [
+      "initializeBuiltInCatalog -> normalizeCatalog",
+      "upgradeCatalogToV7(0)",
+      "installReviewedLessons: Quality repair/themed repair",
+      "LessonDevelopment.registerPiano appends missing focused IDs",
+      "PianoLessonDevelopment.registerPiano adds/initializes new source records then executes 61 existing review/upgrade calls",
+      "normalizeCatalog"
+    ],
+    "restoredV7": [
+      "applyCatalogSnapshot parses pattern and normalizes rhythm/guide/classification",
+      "normalizeCatalog",
+      "upgradeCatalogToV7(snapshot.version)",
+      "installReviewedLessons repeats registered review path"
+    ],
+    "accountOverlay": [
+      "serviceBaseCatalog is serialized before account overlay",
+      "CatalogPersonalization.apply merges whole top-level field slots",
+      "applyCatalogSnapshot invokes normalized restoration/review path"
+    ],
+    "proposedInsertionOnly": "At the end of the existing piano review chain, before the final normalization. No function or call was added."
+  },
+  "matchAndSkip": {
+    "targetIdsOnly": true,
+    "missingTarget": "skip; do not create a new exercise or reinsert it in a new review",
+    "sourceState": "Known complete normalized runtime fields: exercise, exam=false, maxErrors=1, handMode=split; cache projections alone are insufficient.",
+    "identityGate": "Combine exact source assessment/music/edition/editorial/notation bindings with explicit exam/maxErrors/classification and existing instructionFingerprint; no numerical shortcut hash is sole authority.",
+    "markerGate": "Preserve any unknown nonempty lessonReview/contentReview; matching own future after-state+envelope is no-op, after-like data without provenance is ambiguous.",
+    "placement": "Preserve themeId, order, theme classification and unrelated supported fields; normalization already has its own ordering contract.",
+    "editGate": "Changed instructions, unknown learning properties, music, hands/fingers or grading flags cause skip; never replace an entire personal record.",
+    "rawRepresentation": "Retain serialized source for conflicts. Do not silently treat an omitted field as null or erase unknown personal data. Exact runtime/v7 roundtrip remains a follow-up evidence gap."
+  },
+  "historyAndVersions": {
+    "proposedEnvelopeLocation": "learning.contentReview, same scoped-review convention, separate from legacy lessonReview",
+    "previousInstruction": "Immutable pre-change instruction/provenance plus source assessment/instruction identities; cloning happens before changing any text or learning field.",
+    "envelopeFinalized": false,
+    "metadataProbeOnly": true,
+    "unmarkedCandidateEditionsAreNotFinalReviewedEditions": true,
+    "editionEffect": "Builder includes the entire learning object in editionVersion. Adding review history changes edition even when grade/music and instructionFingerprint are unchanged.",
+    "progressEffect": "No progress/XP writes during review. New timing fingerprint is read as a distinct edition; the actual summary reducer archives old takes only on a later record operation and never inherits old readiness.",
+    "issuedAndXp": "Unchanged goalKey is not proof of issued-plan/edition compatibility. Preserve plan/key/policy/result, old awards/ledger/outbox, per-owner fencing and rollback obligations71/72. No sameGoalAs or family merge."
+  },
+  "personalOverlayBoundary": {
+    "wholeLearningSlot": true,
+    "descriptionGuideLearningConflicts": "Actual apply returns ok=false/snapshot=null for stale conflicting personal field; do not deep-merge unknown learning subfields.",
+    "unchangedPlacementAndClassification": "Actual pure overlay retained personal order/classification. This is not a full loader/browser proof.",
+    "removal": "Pure overlay removes the ID, while the existing registration source appends missing built-ins; this stage does not redefine deletion semantics or run the loader."
+  },
+  "futureAcceptance": {
+    "planned": 16,
+    "executed": 0,
+    "cases": [
+      "Both exact normalized source records match before any mutation; no fallback by title/ID alone.",
+      "Any personal description or guide is skipped and raw source retained.",
+      "Changed note, duration, explicit hand or finger is skipped.",
+      "Changed exam or maxErrors is skipped using explicit values and instruction fingerprint.",
+      "Personal piece classification is retained and excluded from exercise review.",
+      "Unknown personal learning fields cause a skip, not a shallow overwrite.",
+      "Unknown contentReview or legacy lessonReview is preserved and skipped.",
+      "Own exact after payload plus matching review envelope is an idempotent no-op.",
+      "After-like payload without matching provenance is skipped as ambiguous.",
+      "Theme placement and user order are retained by reference/field preservation.",
+      "Normalized runtime and serialized-v7 presence/null/index distinctions are bounded explicitly.",
+      "Review history captures an immutable exact previous instruction and assessment identity.",
+      "No progress reducer is called by loading/review and no old readiness is promoted.",
+      "Personal learning/guide/description overlay conflicts retain server raw and expose conflict.",
+      "Failed mixed batch produces no partial save or registry publication.",
+      "Issued attempts, owner fencing, XP history and rollback compatibility71/72 pass before release."
+    ]
+  },
+  "technicalReferences": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc6902.html#section-4.6",
+      "section": "4.6 and5",
+      "readOn": "2026-11-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#name-if-match",
+      "section": "13.1.1",
+      "readOn": "2026-11-10"
+    }
+  ],
+  "limits": [
+    "No JSON Patch/HTTP If-Match endpoint was added; standards motivate preconditions and atomic refusal, not an implemented protocol.",
+    "No real MIDI/audio/fingers/teacher or browser/DOM observed. F voice-v2 gap remains open.",
+    "Exact79 remains local and frozen; neither candidate was applied."
+  ]
+}

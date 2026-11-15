@@ -161,6 +161,18 @@
       ]
     },
     {
+      "id": "detail-p-left-eighth-pairs-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "d3ec0f1c",
+      "challenge": true,
+      "preparation": [
+        "course03-02",
+        "course04-01",
+        "detail-p-release-02"
+      ]
+    },
+    {
       "id": "detail-p-left-upper-position-01",
       "stage": "p2",
       "branch": "common",
@@ -281,8 +293,8 @@
       "fingerprint": "e74e728e",
       "challenge": true,
       "preparation": [
-        "course03-02",
-        "detail-p-release-04"
+        "course01-03",
+        "detail-p-release-03"
       ]
     },
     {
@@ -302,7 +314,7 @@
       "fingerprint": "7e83f608",
       "challenge": true,
       "preparation": [
-        "detail-p-legato-02"
+        "detail-p-legato-01"
       ]
     },
     {
@@ -349,6 +361,19 @@
       ]
     },
     {
+      "id": "detail-p-improv-three-key-answer-left-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "c68a923f",
+      "challenge": false,
+      "preparation": [
+        "detail-p-legato-04",
+        "detail-p-position-skips-03",
+        "course04-01",
+        "detail-p-release-02"
+      ]
+    },
+    {
       "id": "detail-p-position-skips-04",
       "stage": "p2",
       "branch": "common",
@@ -360,6 +385,18 @@
       ]
     },
     {
+      "id": "detail-p-improv-rhythm-choice-left-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "7d4e65a3",
+      "challenge": false,
+      "preparation": [
+        "detail-p-left-eighth-pairs-01",
+        "detail-p-improv-three-key-answer-left-01",
+        "detail-p-release-02"
+      ]
+    },
+    {
       "id": "detail-p-position-skips-05",
       "stage": "p2",
       "branch": "common",
@@ -368,6 +405,19 @@
       "preparation": [
         "detail-p-position-skips-04",
         "detail-p-legato-pairs-04"
+      ]
+    },
+    {
+      "id": "detail-p-improv-quarter-rest-choice-left-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "a68ec5dd",
+      "challenge": false,
+      "preparation": [
+        "course01-02",
+        "course03-02",
+        "detail-p-improv-three-key-answer-left-01",
+        "detail-p-release-02"
       ]
     },
     {
@@ -519,6 +569,18 @@
       ]
     },
     {
+      "id": "detail-p-staccato-right-outer-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "62597dfe",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-03",
+        "detail-p-right-upper-position-01",
+        "course02-04"
+      ]
+    },
+    {
       "id": "course04-07",
       "stage": "p3",
       "branch": "common",
@@ -551,6 +613,19 @@
         "course02-06",
         "course02-05",
         "detail-p-right-upper-position-01"
+      ]
+    },
+    {
+      "id": "detail-p-improv-three-key-answer-right-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "587134a5",
+      "challenge": false,
+      "preparation": [
+        "course02-02",
+        "course02-07",
+        "course04-01",
+        "detail-p-release-01"
       ]
     },
     {
@@ -642,6 +717,19 @@
         "course01-04",
         "course01-06",
         "course01-07"
+      ]
+    },
+    {
+      "id": "detail-p-improv-quarter-rest-choice-right-01",
+      "stage": "p2",
+      "branch": "common",
+      "fingerprint": "9785126a",
+      "challenge": false,
+      "preparation": [
+        "course01-01",
+        "course02-02",
+        "detail-p-improv-three-key-answer-right-01",
+        "detail-p-release-01"
       ]
     },
     {
@@ -785,6 +873,155 @@
       ]
     },
     {
+      "id": "detail-p-improv-rhythm-choice-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "85c567e5",
+      "challenge": false,
+      "preparation": [
+        "course04-06",
+        "detail-p-improv-three-key-answer-right-01",
+        "course02-02",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-offbeat-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "3a24beb9",
+      "challenge": true,
+      "preparation": [
+        "detail-p-rhythm-04",
+        "course04-05",
+        "course02-02"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-repeat-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "9ac8037b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-offbeat-right-01",
+        "detail-p-release-01"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-thumb-middle-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "acc4c6eb",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-repeat-right-01",
+        "course02-02"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-middle-thumb-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "c3279e3e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-thumb-middle-right-01",
+        "course02-02"
+      ]
+    },
+    {
+      "id": "detail-p-syncopation-hold-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "c0f8eef1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-offbeat-right-01",
+        "course04-02"
+      ]
+    },
+    {
+      "id": "detail-p-barline-hold-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "e52d7705",
+      "challenge": true,
+      "preparation": [
+        "detail-p-syncopation-hold-right-01",
+        "course04-02"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-offbeat-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "fce2abef",
+      "challenge": true,
+      "preparation": [
+        "course03-02",
+        "detail-p-release-02",
+        "detail-p-rhythm-04",
+        "course04-05"
+      ]
+    },
+    {
+      "id": "detail-p-dotted-quarter-eighth-rest-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "6b123aeb",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-offbeat-left-01",
+        "course03-02",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-repeat-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "999081f1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-offbeat-left-01",
+        "detail-p-release-02"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-thumb-middle-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "4e10db69",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-repeat-left-01",
+        "detail-p-left-upper-position-01"
+      ]
+    },
+    {
+      "id": "detail-p-syncopation-hold-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "13876105",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-offbeat-left-01",
+        "detail-p-left-half-01"
+      ]
+    },
+    {
+      "id": "detail-p-barline-hold-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "ddfb175b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-syncopation-hold-left-01",
+        "detail-p-left-half-01"
+      ]
+    },
+    {
       "id": "detail-p-dotted-quarter-01",
       "stage": "p3",
       "branch": "common",
@@ -793,6 +1030,18 @@
       "preparation": [
         "course04-06",
         "course04-02",
+        "course02-02"
+      ]
+    },
+    {
+      "id": "detail-p-dotted-quarter-eighth-rest-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "454f5cfd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-dotted-quarter-01",
+        "detail-p-eighth-rest-offbeat-right-01",
         "course02-02"
       ]
     },
@@ -921,6 +1170,30 @@
       ]
     },
     {
+      "id": "detail-p-right-lower-b-position-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "6a9f7b26",
+      "challenge": true,
+      "preparation": [
+        "course02-04",
+        "detail-p-right-upper-position-01",
+        "detail-p-relocate-01"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-ring-little-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "d3ca939e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-repeat-right-01",
+        "detail-p-right-upper-position-01",
+        "detail-p-right-lower-b-position-01"
+      ]
+    },
+    {
       "id": "detail-p-position-return-01",
       "stage": "p3",
       "branch": "common",
@@ -955,6 +1228,18 @@
         "course02-02",
         "detail-p-position-skips-02",
         "course05-06"
+      ]
+    },
+    {
+      "id": "detail-p-a-minor-third-thumb-prep-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "e8364c3f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-01",
+        "detail-p-cross-01",
+        "course02-08"
       ]
     },
     {
@@ -1023,6 +1308,18 @@
       "preparation": [
         "detail-p-relocate-04",
         "detail-p-position-skips-05"
+      ]
+    },
+    {
+      "id": "detail-p-eighth-rest-middle-ring-left-g-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "925112a7",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-thumb-middle-left-01",
+        "detail-p-shifted-left-five-01",
+        "detail-p-left-g-position-01"
       ]
     },
     {
@@ -1133,6 +1430,18 @@
       ]
     },
     {
+      "id": "detail-p-eighth-rest-ring-middle-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "e8058adf",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-thumb-middle-right-01",
+        "detail-p-right-upper-position-01",
+        "detail-p-black-position-right-01"
+      ]
+    },
+    {
       "id": "detail-p-black-position-right-02",
       "stage": "p3",
       "branch": "common",
@@ -1142,6 +1451,80 @@
         "detail-p-black-position-right-01",
         "detail-p-right-upper-position-01",
         "detail-p-black-03"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-fourth-thumb-prep-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "d109eea7",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-right-02",
+        "detail-p-cross-01"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-fourth-thumb-connected-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "a78402d1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-fourth-thumb-prep-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-thumb-fourth-prep-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "dc459947",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-cross-02"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-thumb-fourth-connected-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "01e12ef1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-thumb-fourth-prep-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-d-major-thumb-third-connected-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "39df1639",
+      "challenge": true,
+      "preparation": [
+        "detail-p-cross-02",
+        "detail-p-black-position-right-01",
+        "detail-p-f-major-thumb-fourth-connected-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-descent-checkpoint-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "a2ed684f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-thumb-fourth-connected-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-ascent-checkpoint-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "94a95dbf",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-fourth-thumb-connected-right-01"
       ]
     },
     {
@@ -1190,6 +1573,18 @@
       ]
     },
     {
+      "id": "detail-p-eighth-rest-middle-thumb-left-d-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "b3da11c4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-thumb-middle-left-01",
+        "detail-p-black-position-left-02",
+        "detail-p-shifted-left-five-01"
+      ]
+    },
+    {
       "id": "course06-01",
       "stage": "p3",
       "branch": "common",
@@ -1197,11 +1592,56 @@
       "challenge": true
     },
     {
+      "id": "detail-p-bflat-thumb-second-descent-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "fc4680bc",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-03",
+        "detail-p-d-major-thumb-third-connected-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-thumb-second-terminal-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "a5806976",
+      "challenge": true,
+      "preparation": [
+        "detail-p-legato-pairs-04",
+        "detail-p-black-position-left-01",
+        "detail-p-cross-03"
+      ]
+    },
+    {
       "id": "course06-02",
       "stage": "p3",
       "branch": "common",
       "fingerprint": "6306a576",
       "challenge": true
+    },
+    {
+      "id": "detail-p-bflat-second-thumb-right-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "4f057f57",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-03",
+        "detail-p-cross-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-thumb-fourth-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "6210a5d7",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-02",
+        "detail-p-cross-03"
+      ]
     },
     {
       "id": "course07-01",
@@ -1239,6 +1679,18 @@
       ]
     },
     {
+      "id": "detail-p-eighth-rest-repeat-paired-01",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "d5d0df43",
+      "challenge": true,
+      "preparation": [
+        "detail-p-eighth-rest-repeat-right-01",
+        "detail-p-eighth-rest-repeat-left-01",
+        "course01-07"
+      ]
+    },
+    {
       "id": "course07-04",
       "stage": "p4",
       "branch": "common",
@@ -1248,6 +1700,19 @@
         "course07-03",
         "course02-03",
         "course03-03"
+      ]
+    },
+    {
+      "id": "detail-p-staccato-paired-01",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "aa3dd58b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-01",
+        "detail-p-staccato-02",
+        "course01-07",
+        "detail-p-eighth-rest-repeat-paired-01"
       ]
     },
     {
@@ -1263,6 +1728,19 @@
       ]
     },
     {
+      "id": "detail-p-staccato-moving-paired-01",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "a14a8647",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-03",
+        "detail-p-staccato-04",
+        "course07-03",
+        "detail-p-staccato-paired-01"
+      ]
+    },
+    {
       "id": "course07-06",
       "stage": "p4",
       "branch": "common",
@@ -1273,6 +1751,19 @@
         "course02-08",
         "course03-01",
         "course04-01"
+      ]
+    },
+    {
+      "id": "detail-p-staccato-contrary-paired-01",
+      "stage": "p4",
+      "branch": "common",
+      "fingerprint": "1f9e9665",
+      "challenge": true,
+      "preparation": [
+        "detail-p-staccato-04",
+        "detail-p-staccato-right-outer-01",
+        "course07-05",
+        "detail-p-staccato-moving-paired-01"
       ]
     },
     {
@@ -1308,6 +1799,28 @@
       ]
     },
     {
+      "id": "detail-p-f-major-descent-checkpoint-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "52ebe975",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-left-01",
+        "detail-p-scale-04"
+      ]
+    },
+    {
+      "id": "detail-p-f-major-ascent-checkpoint-left-01",
+      "stage": "p3",
+      "branch": "common",
+      "fingerprint": "721b25dd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-left-01",
+        "detail-p-scale-04"
+      ]
+    },
+    {
       "id": "detail-p-g-major-split-left-01",
       "stage": "p5",
       "branch": "common",
@@ -1316,6 +1829,76 @@
       "preparation": [
         "detail-p-scale-04",
         "detail-p-g-major-upper-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-continuous-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "e5ad70b5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-split-left-01",
+        "detail-p-scale-04"
+      ]
+    },
+    {
+      "id": "detail-p-d-major-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "2a68f43a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-left-02",
+        "detail-p-g-major-upper-left-01",
+        "detail-p-black-02",
+        "detail-p-cross-03",
+        "detail-p-g-major-continuous-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-descent-split-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "0606eec6",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-left-01",
+        "detail-p-cross-04"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-descent-continuous-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "c76090fd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-descent-split-left-01",
+        "detail-p-scale-04"
+      ]
+    },
+    {
+      "id": "detail-p-d-major-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "0258ab6f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-major-ascent-left-01",
+        "detail-p-g-major-descent-continuous-left-01",
+        "detail-p-cross-04"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-roundtrip-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "7b7b2b8a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-left-01",
+        "detail-p-g-major-descent-continuous-left-01"
       ]
     },
     {
@@ -1348,6 +1931,76 @@
       "preparation": [
         "detail-p-scale-02",
         "detail-p-g-major-upper-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-continuous-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "8ce83638",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-split-right-01",
+        "detail-p-scale-02"
+      ]
+    },
+    {
+      "id": "detail-p-d-major-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "eb8a68ac",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-right-01",
+        "detail-p-g-major-upper-right-01",
+        "detail-p-black-01",
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-g-major-continuous-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-descent-split-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "d3bc1aa0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-right-01",
+        "detail-p-cross-02"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-descent-continuous-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "55cc2d3a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-descent-split-right-01",
+        "detail-p-scale-02"
+      ]
+    },
+    {
+      "id": "detail-p-d-major-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "ddec79d1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-major-thumb-third-connected-right-01",
+        "detail-p-d-major-ascent-right-01",
+        "detail-p-g-major-descent-continuous-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-major-roundtrip-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "e138fc62",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-right-01",
+        "detail-p-g-major-descent-continuous-right-01"
       ]
     },
     {
@@ -1413,6 +2066,74 @@
         "detail-p-triads-01",
         "course02-08",
         "course04-02"
+      ]
+    },
+    {
+      "id": "detail-p-c-first-inversion-shape-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "ddef98e4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-01",
+        "course08-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-first-inversion-block-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "713ffbbc",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-shape-right-01",
+        "course08-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-second-inversion-shape-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "e52d41b0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-block-right-01",
+        "detail-p-relocate-03"
+      ]
+    },
+    {
+      "id": "detail-p-c-second-inversion-block-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "f534c10c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-second-inversion-shape-right-01",
+        "detail-p-c-first-inversion-block-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-first-second-inversion-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "f4c61ddc",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-block-right-01",
+        "detail-p-c-second-inversion-block-right-01",
+        "detail-p-relocate-03"
+      ]
+    },
+    {
+      "id": "detail-p-c-root-first-inversion-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "948af8a2",
+      "challenge": true,
+      "preparation": [
+        "course08-01",
+        "detail-p-c-first-inversion-block-right-01",
+        "detail-p-relocate-01"
       ]
     },
     {
@@ -1491,6 +2212,74 @@
       ]
     },
     {
+      "id": "detail-p-c-first-inversion-shape-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "2805c1f4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "course08-02"
+      ]
+    },
+    {
+      "id": "detail-p-c-first-inversion-block-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "ccd39e2c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-shape-left-01",
+        "course08-02"
+      ]
+    },
+    {
+      "id": "detail-p-c-second-inversion-shape-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "226d6d82",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-block-left-01",
+        "detail-p-relocate-02"
+      ]
+    },
+    {
+      "id": "detail-p-c-second-inversion-block-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "e2d32fd2",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-second-inversion-shape-left-01",
+        "detail-p-c-first-inversion-block-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-first-second-inversion-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "cc359fe4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-first-inversion-block-left-01",
+        "detail-p-c-second-inversion-block-left-01",
+        "detail-p-relocate-02"
+      ]
+    },
+    {
+      "id": "detail-p-c-root-first-inversion-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "7ebc8832",
+      "challenge": true,
+      "preparation": [
+        "course08-02",
+        "detail-p-c-first-inversion-block-left-01",
+        "detail-p-relocate-02"
+      ]
+    },
+    {
       "id": "detail-p-left-position-triad-01",
       "stage": "p5",
       "branch": "common",
@@ -1525,6 +2314,104 @@
       ]
     },
     {
+      "id": "detail-p-a-natural-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "3a9dec13",
+      "challenge": true,
+      "preparation": [
+        "detail-p-cross-03",
+        "detail-p-scale-04",
+        "detail-p-minor-triads-02"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-upper-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "2cab1926",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-left-01",
+        "detail-p-d-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-natural-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "85769b37",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-left-01",
+        "detail-p-black-04",
+        "detail-p-cross-03"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-thumb-third-connected-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "4763de62",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-left-01",
+        "detail-p-d-major-ascent-left-01",
+        "detail-p-black-04",
+        "detail-p-cross-03"
+      ]
+    },
+    {
+      "id": "detail-p-a-natural-minor-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "a121ed4a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-left-01",
+        "detail-p-cross-04",
+        "detail-p-scale-04"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-lower-connected-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "828573d0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-left-01",
+        "detail-p-black-04",
+        "detail-p-d-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-natural-minor-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "16e2348e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-left-01",
+        "detail-p-a-natural-minor-descent-left-01",
+        "detail-p-cross-04"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "4b12976f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-left-01",
+        "detail-p-d-major-ascent-left-01",
+        "detail-p-black-04",
+        "detail-p-e-major-lower-connected-left-01",
+        "detail-p-e-major-thumb-third-connected-left-01"
+      ]
+    },
+    {
       "id": "detail-p-triads-03",
       "stage": "p5",
       "branch": "common",
@@ -1532,6 +2419,19 @@
       "challenge": true,
       "preparation": [
         "detail-p-triads-02"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-upper-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "67235cbc",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-natural-minor-descent-left-01",
+        "detail-p-d-major-descent-left-01",
+        "detail-p-cross-04"
       ]
     },
     {
@@ -1548,6 +2448,18 @@
       ]
     },
     {
+      "id": "detail-p-e-major-lower-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "e82b54fd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-natural-minor-descent-left-01",
+        "detail-p-black-04"
+      ]
+    },
+    {
       "id": "course08-04",
       "stage": "p5",
       "branch": "common",
@@ -1557,6 +2469,19 @@
         "course08-03",
         "detail-p-relocate-03",
         "course04-02"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "ec05e366",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-natural-minor-descent-left-01",
+        "detail-p-e-major-upper-descent-left-01",
+        "detail-p-e-major-lower-descent-left-01"
       ]
     },
     {
@@ -1596,6 +2521,155 @@
       ]
     },
     {
+      "id": "detail-p-a-natural-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "2f0d060b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-minor-third-thumb-prep-right-01",
+        "detail-p-scale-02",
+        "detail-p-minor-triads-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-upper-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "5d34f52d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-right-01",
+        "detail-p-d-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-natural-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "fce392a3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-right-01",
+        "detail-p-black-03",
+        "detail-p-cross-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "88c5c9c3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-right-01",
+        "detail-p-a-harmonic-minor-upper-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "dca12929",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-left-01",
+        "detail-p-a-harmonic-minor-upper-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "50709653",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-right-01",
+        "detail-p-black-03",
+        "detail-p-d-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-natural-minor-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "dddd1532",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-ascent-right-01",
+        "detail-p-cross-02",
+        "detail-p-scale-02"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-upper-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "6560ba52",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-descent-right-01",
+        "detail-p-a-harmonic-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-upper-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "3836ee27",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-descent-left-01",
+        "detail-p-a-harmonic-minor-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-natural-minor-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "b07deb76",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-right-01",
+        "detail-p-a-natural-minor-descent-right-01",
+        "detail-p-cross-02"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "63177a31",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-descent-right-01",
+        "detail-p-a-harmonic-minor-upper-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-a-harmonic-minor-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "b92f2d3b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-a-natural-minor-descent-left-01",
+        "detail-p-a-harmonic-minor-upper-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "b0bf7e0e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-d-major-descent-right-01",
+        "detail-p-e-natural-minor-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-chordmove-01",
       "stage": "p5",
       "branch": "common",
@@ -1607,6 +2681,18 @@
       ]
     },
     {
+      "id": "detail-p-e-major-paired-preparation-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "65cb66df",
+      "challenge": true,
+      "preparation": [
+        "course07-03",
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-chordmove-02",
       "stage": "p5",
       "branch": "common",
@@ -1614,6 +2700,18 @@
       "challenge": true,
       "preparation": [
         "detail-p-chordmove-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-asymmetric-thumb-paired-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "268a69c1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-paired-preparation-01",
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-major-ascent-left-01"
       ]
     },
     {
@@ -1628,6 +2726,29 @@
         "detail-p-chordmove-01",
         "detail-p-chordmove-02",
         "course04-07"
+      ]
+    },
+    {
+      "id": "detail-p-d-natural-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "135928b6",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-major-ascent-right-01",
+        "detail-p-e-natural-minor-ascent-right-01",
+        "detail-p-black-position-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-d-natural-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "276dc5a6",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-major-ascent-left-01",
+        "detail-p-e-major-thumb-third-connected-left-01"
       ]
     },
     {
@@ -1666,6 +2787,28 @@
       ]
     },
     {
+      "id": "detail-p-e-harmonic-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "194bd5fb",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-right-01",
+        "detail-p-e-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-harmonic-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "a04c6b55",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-ascent-left-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-chordmove-03",
       "stage": "p5",
       "branch": "common",
@@ -1676,11 +2819,130 @@
       ]
     },
     {
+      "id": "detail-p-c-f-common-bass-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "c8fe8298",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-chordmove-03",
+        "detail-p-c-second-inversion-block-left-01",
+        "detail-p-c-first-second-inversion-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-natural-minor-ascent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "907b4a3b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-right-01",
+        "detail-p-d-natural-minor-ascent-right-01",
+        "detail-p-d-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-natural-minor-ascent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "d3755095",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-left-01",
+        "detail-p-d-natural-minor-ascent-left-01",
+        "detail-p-d-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-g7-common-tone-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "999e0a13",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-c-f-common-bass-left-01",
+        "detail-p-relocate-02"
+      ]
+    },
+    {
+      "id": "detail-p-d-natural-minor-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "8d1de148",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-natural-minor-ascent-right-01",
+        "detail-p-d-major-descent-right-01",
+        "detail-p-e-natural-minor-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-d-natural-minor-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "ba0767b0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-natural-minor-ascent-left-01",
+        "detail-p-d-major-descent-left-01",
+        "detail-p-e-major-upper-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-c-direct-cadence-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "38d47ef0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-c-f-common-bass-left-01",
+        "detail-p-c-g7-common-tone-left-01",
+        "detail-p-relocate-02"
+      ]
+    },
+    {
+      "id": "detail-p-e-harmonic-minor-descent-right-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "97d9019d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-descent-right-01",
+        "detail-p-e-harmonic-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-harmonic-minor-descent-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "15282f17",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-natural-minor-descent-left-01",
+        "detail-p-e-harmonic-minor-ascent-left-01"
+      ]
+    },
+    {
       "id": "course09-08",
       "stage": "p6",
       "branch": "common",
       "fingerprint": "8caeb649",
       "challenge": true
+    },
+    {
+      "id": "detail-p-e-major-asymmetric-cross-paired-left-01",
+      "stage": "p5",
+      "branch": "common",
+      "fingerprint": "78d64bc9",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-asymmetric-thumb-paired-01",
+        "detail-p-e-major-thumb-third-connected-left-01",
+        "detail-p-e-major-ascent-right-01"
+      ]
     },
     {
       "id": "course10-01",
@@ -1695,6 +2957,30 @@
       ]
     },
     {
+      "id": "detail-p-g-natural-minor-descent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "d98f1f23",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-ascent-right-01",
+        "detail-p-d-natural-minor-descent-right-01",
+        "detail-p-d-major-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-natural-minor-descent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "522e8fd5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-ascent-left-01",
+        "detail-p-d-natural-minor-descent-left-01",
+        "detail-p-d-major-descent-left-01"
+      ]
+    },
+    {
       "id": "course10-02",
       "stage": "p6",
       "branch": "common",
@@ -1704,6 +2990,30 @@
         "course03-05",
         "course03-07",
         "course04-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-harmonic-minor-ascent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "2133b49f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-ascent-right-01",
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-harmonic-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-harmonic-minor-ascent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "b0ca5543",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-ascent-left-01",
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-harmonic-minor-ascent-left-01"
       ]
     },
     {
@@ -1722,6 +3032,32 @@
       ]
     },
     {
+      "id": "detail-p-g-harmonic-minor-descent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "777a9fa3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-descent-right-01",
+        "detail-p-g-harmonic-minor-ascent-right-01",
+        "detail-p-e-major-descent-right-01",
+        "detail-p-e-harmonic-minor-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-harmonic-minor-descent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "dbf86ff7",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-descent-left-01",
+        "detail-p-g-harmonic-minor-ascent-left-01",
+        "detail-p-e-major-descent-left-01",
+        "detail-p-e-harmonic-minor-descent-left-01"
+      ]
+    },
+    {
       "id": "course10-04",
       "stage": "p6",
       "branch": "common",
@@ -1729,6 +3065,28 @@
       "challenge": true,
       "preparation": [
         "course04-08"
+      ]
+    },
+    {
+      "id": "detail-p-g-melodic-minor-ascent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "b9cce653",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-right-01",
+        "detail-p-g-harmonic-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-g-melodic-minor-ascent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "0df828d1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-major-continuous-left-01",
+        "detail-p-g-harmonic-minor-ascent-left-01"
       ]
     },
     {
@@ -1742,6 +3100,20 @@
       ]
     },
     {
+      "id": "detail-p-e-major-connected-paired-ascent-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "52948cc3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-paired-preparation-01",
+        "detail-p-e-major-asymmetric-thumb-paired-01",
+        "detail-p-e-major-asymmetric-cross-paired-left-01",
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-transfer-02",
       "stage": "p6",
       "branch": "common",
@@ -1749,6 +3121,18 @@
       "challenge": true,
       "preparation": [
         "detail-p-transfer-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-asymmetric-thumb-paired-left-descent-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "b936289a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-left-01",
+        "detail-p-e-major-descent-right-01",
+        "detail-p-e-major-paired-preparation-01"
       ]
     },
     {
@@ -1762,6 +3146,29 @@
       ]
     },
     {
+      "id": "detail-p-bflat-major-ascent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "fe708d3c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-second-thumb-right-01",
+        "detail-p-g-natural-minor-ascent-right-01",
+        "detail-p-f-major-fourth-thumb-connected-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-fourth-third-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "d9e54be5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-thumb-fourth-left-01",
+        "detail-p-g-major-continuous-left-01"
+      ]
+    },
+    {
       "id": "detail-p-transfer-04",
       "stage": "p6",
       "branch": "common",
@@ -1769,6 +3176,18 @@
       "challenge": true,
       "preparation": [
         "detail-p-transfer-03"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-asymmetric-cross-paired-right-descent-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "6de3dc89",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-asymmetric-cross-paired-left-01",
+        "detail-p-e-major-descent-right-01",
+        "detail-p-e-major-descent-left-01"
       ]
     },
     {
@@ -1785,6 +3204,30 @@
       ]
     },
     {
+      "id": "detail-p-bflat-major-descent-right-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "0c854f14",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-thumb-fourth-connected-right-01",
+        "detail-p-g-natural-minor-descent-right-01",
+        "detail-p-bflat-thumb-second-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-major-ascent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "9c5639c3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-ascent-left-01",
+        "detail-p-bflat-fourth-third-left-01",
+        "detail-p-bflat-thumb-second-terminal-left-01"
+      ]
+    },
+    {
       "id": "course10-06",
       "stage": "p6",
       "branch": "common",
@@ -1794,6 +3237,17 @@
         "course08-05",
         "course08-02",
         "detail-p-left-triple-pulse-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-second-thumb-descent-left-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "2b6ea9af",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-position-left-01",
+        "detail-p-d-natural-minor-descent-left-01"
       ]
     },
     {
@@ -1810,6 +3264,17 @@
       ]
     },
     {
+      "id": "detail-p-e-major-connected-paired-descent-01",
+      "stage": "p6",
+      "branch": "common",
+      "fingerprint": "1e5098ed",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-asymmetric-cross-paired-right-descent-01",
+        "detail-p-e-major-asymmetric-thumb-paired-left-descent-01"
+      ]
+    },
+    {
       "id": "course10-08",
       "stage": "p6",
       "branch": "common",
@@ -1820,6 +3285,133 @@
         "course08-07",
         "course08-01",
         "course04-04"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-middle-descent-right-01",
+      "stage": "p7",
+      "branch": "eflat-right-descent",
+      "fingerprint": "11c58434",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-03",
+        "detail-p-g-natural-minor-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-major-descent-right-01",
+      "stage": "p7",
+      "branch": "eflat-right-descent",
+      "fingerprint": "c4dec61a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-g-natural-minor-descent-right-01",
+        "detail-p-f-major-thumb-fourth-connected-right-01",
+        "detail-p-eflat-middle-descent-right-01",
+        "detail-p-bflat-major-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-white-black-pair-right-01",
+      "stage": "p7",
+      "branch": "eflat-right-ascent",
+      "fingerprint": "a421ed9e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-black-03",
+        "detail-p-bflat-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-upper-exit-right-01",
+      "stage": "p7",
+      "branch": "eflat-right-ascent",
+      "fingerprint": "79da58c2",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-g-natural-minor-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-major-ascent-right-01",
+      "stage": "p7",
+      "branch": "eflat-right-ascent",
+      "fingerprint": "cfe604d8",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-second-thumb-right-01",
+        "detail-p-eflat-white-black-pair-right-01",
+        "detail-p-eflat-upper-exit-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-third-fourth-descent-left-01",
+      "stage": "p7",
+      "branch": "common",
+      "fingerprint": "e091962e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-natural-minor-descent-left-01",
+        "detail-p-bflat-fourth-third-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-fourth-thumb-descent-left-01",
+      "stage": "p7",
+      "branch": "common",
+      "fingerprint": "6352697f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-third-fourth-descent-left-01",
+        "detail-p-g-natural-minor-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-bflat-major-descent-left-01",
+      "stage": "p7",
+      "branch": "common",
+      "fingerprint": "be104fab",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-second-thumb-descent-left-01",
+        "detail-p-bflat-fourth-thumb-descent-left-01",
+        "detail-p-d-natural-minor-descent-left-01",
+        "detail-p-g-natural-minor-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-lower-combination-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-ascent",
+      "fingerprint": "9e49e8c9",
+      "challenge": true,
+      "preparation": [
+        "detail-p-d-major-ascent-left-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-thumb-fourth-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-ascent",
+      "fingerprint": "08da478c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-thumb-fourth-left-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-ascent-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-ascent",
+      "fingerprint": "320a36d2",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-lower-combination-left-01",
+        "detail-p-b-major-thumb-fourth-left-01",
+        "detail-p-e-major-ascent-left-01"
       ]
     },
     {

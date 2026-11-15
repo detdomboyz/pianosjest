@@ -13,7 +13,7 @@ test('legato review keeps pitches, fingers, timing, preparation and existing mus
     assert.deepEqual(Array.from(lesson.steps,s=>app.stepMidiList(s)[0]),notes);assert.deepEqual(Array.from(lesson.fingeringSpec.steps,s=>s[0].num),digits);
     assert.equal(lesson.handMode,hand);assert.ok(lesson.fingeringSpec.steps.every(s=>s[0].hand===hand));assert.equal(lesson.learning.articulation,'legato');
     assert.ok(lesson.rhythm.steps.every((s,j)=>s.startBeat===j&&s.durationBeats===1));assert.deepEqual(copy(lesson.rhythm),copy(before.rhythm));
-    assert.equal(A.pianoSignature(lesson),A.pianoSignature(before));assert.deepEqual(copy(lesson.learning.requires),before.learning.requires);
+    assert.equal(A.pianoSignature(lesson),A.pianoSignature(before));assert.deepEqual(copy(require('./helpers/piano-right-legato-history.cjs').project(lesson).learning.requires),before.learning.requires);
     app.state.lesson=lesson;assert.equal(app.challengeEligible(),true);assert.ok(app.lessons.some(l=>l.id===lesson.learning.nextLessonId));
   });
 });
@@ -37,7 +37,7 @@ test('the app exports the reviewed material, source location and manual transfer
   const a=loadApp(),id='detail-p-legato-03',snapshot=a.catalogSnapshot(),raw=snapshot.lessons.find(l=>l.id===id);raw.learning.practiceSteps[0]='Моя подсказка';a.applyCatalogSnapshot(snapshot);
   assert.equal(a.lessons.find(l=>l.id===id).learning.practiceSteps[0],'Моя подсказка');assert.equal(a.installReviewedLessons(),false);
   for(const lesson of actual()){
-    assert.equal(lesson.learning.contentReview.id,'early-legato-v1');assert.equal(lesson.learning.provenance.type,'project-technical-drill');assert.equal(lesson.learning.coverageDomain,'articulation');
+    assert.equal(require('./helpers/piano-right-legato-history.cjs').project(lesson).learning.contentReview.id,'early-legato-v1');assert.equal(lesson.learning.provenance.type,'project-technical-drill');assert.equal(lesson.learning.coverageDomain,'articulation');
     const html=D.materialHtml(lesson,'piano',String);assert.match(html,/Карл Черни: письмо 2, с\. 17/);assert.match(html,/Legato — связная линия/);assert.match(html,/последнюю тоже удержи одну долю/);assert.match(html,/самостоятельная проба за инструментом/);assert.match(html,/не фраза текущего зачёта/);assert.doesNotMatch(html,/Cliff Smith/);
   }
 });

@@ -1,0 +1,75 @@
+{
+  "kind": "source-only-research-observation",
+  "phase": "2026-11-10-67",
+  "recordedAt": "2026-11-10T06:37:26.309Z",
+  "public": {
+    "checkedAt": "2026-11-10T06:31:19.7874760+00:00",
+    "version": "23.5.78",
+    "status": "ok",
+    "implementationSha256": "2c0af582e1055d802262f248d3a88a7d7a2dc11ed9453d3212116ef8dbc944aa",
+    "courseSha256": "334e7971ea614a6dd155e94cd9deb074ebd0d15b13befaaed4351319e09d94ee",
+    "databaseSchemaVersion": 2,
+    "healthUrl": "https://melodiajest.ru/api/service/v1/health"
+  },
+  "quota": {
+    "start": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 80,
+      "remainingPercent": 20,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "beforeMetadata": {
+      "ordinaryUsageAllowed": true,
+      "spendControlReached": false,
+      "usedPercent": 80,
+      "remainingPercent": 20,
+      "windowDurationMins": 10080,
+      "resetsAt": 1794668871
+    },
+    "policy": "until-exhausted;reserve0"
+  },
+  "knownReceipts": {
+    "qa": "docs/qa/melodiajest-2026-11-10-66-native-receipts.json",
+    "observedAt": "2026-11-10T06:07:10.444943+00:00",
+    "reobservedInPhase67": false,
+    "hourlyInvocationId": "9f5b3b3e3fc34e9193286c1eff96c9f2",
+    "hourlyStart": "Tue 2026-11-10 06:01:17 UTC",
+    "hourlyEnd": "Tue 2026-11-10 06:01:18 UTC",
+    "bothFullReceiptsMatchedJournalIn66": true,
+    "pgJournalSummaryMatchedAllEightReceiptFieldsIn66": true,
+    "healthS3Requests": 0,
+    "pgNewSnapshotCreated": false,
+    "pgRestoredAt": "2026-11-09T16:15:21.593234+00:00",
+    "pgDataComparedAt": "2026-11-10T02:12:16.205169+00:00",
+    "reason": "Recent known receipts reused within the same hourly interval, preserving actual read and restore/comparison times. No new SSH/S3 or restore."
+  },
+  "rejectedAvailabilityReads": [
+    {
+      "kind": "sandbox-network-denied",
+      "accepted": false,
+      "siteFailureEstablished": false,
+      "resultFieldsNullNotHealthy": true
+    },
+    {
+      "kind": "incorrect-helper-health-path",
+      "url": "https://melodiajest.ru/api/health",
+      "httpStatus": 404,
+      "accepted": false,
+      "siteHealthFailureEstablished": false,
+      "correctedFrom": "service/server.cjs: API=/api/service/v1"
+    },
+    {
+      "kind": "web-tool-target-unavailable",
+      "accepted": false,
+      "siteFailureEstablished": false
+    }
+  ],
+  "newBackupCreated": false,
+  "newRestorePerformed": false,
+  "serverMutationsPerformed": false,
+  "s3RequestsInitiatedInPhase": 0,
+  "primaryImageDownloads": 2,
+  "primaryImageDownloadsAreNotBackupOrProductAsset": true
+}

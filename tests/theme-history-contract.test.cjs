@@ -1,0 +1,11 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),{assertPreservedThemes}=require('./helpers/assert-preserved-themes.cjs');
+const prior=[{id:'one',name:'First',order:1,metadata:{kind:'lesson'}},{id:'two',name:'Second',order:2}],added={id:'three',name:'New topic',order:3},copy=x=>JSON.parse(JSON.stringify(x));
+test('new topics can be added while every previous record and relative order remain exact without input mutation',()=>{const actual=[prior[0],added,prior[1]],snapshot=copy(actual);assert.deepEqual(assertPreservedThemes(actual,prior),prior);assert.deepEqual(actual,snapshot);});
+test('removing an old theme is rejected',()=>{assert.throws(()=>assertPreservedThemes([prior[0],added],prior));});
+test('old name,order and nested metadata changes are each rejected',()=>{for(const edit of [x=>x[0].name='Changed',x=>x[0].order=4,x=>x[0].metadata.kind='changed']){const actual=copy([...prior,added]);edit(actual);assert.throws(()=>assertPreservedThemes(actual,prior));}});
+test('reordering previous themes is rejected even when all their fields remain intact',()=>{assert.throws(()=>assertPreservedThemes([prior[1],added,prior[0]],prior));});
+test('a duplicate historical theme ID is rejected',()=>{assert.throws(()=>assertPreservedThemes([...prior,copy(prior[0])],prior));});
+test('a duplicate new theme ID is rejected',()=>{assert.throws(()=>assertPreservedThemes([...prior,added,copy(added)],prior));});
+test('malformed new IDs,names or orders cannot hide behind the historical projection',()=>{for(const bad of [null,{...added,id:''},{...added,name:''},{...added,order:null}])assert.throws(()=>assertPreservedThemes([...prior,bad],prior));});
+test('the shipped catalogue retains the independently frozen108 themes while adding its minor topic and exposes real old-name damage',()=>{const a=require('./helpers/load-app.cjs').loadApp(),before=require('./fixtures/piano-before-a-natural-minor-right-v1.json');assert.deepEqual(assertPreservedThemes(a.themes,before.themes),before.themes);assert.ok(a.themes.some(x=>x.id==='detail-p-minor-scales'));const damaged=copy(a.themes);damaged.find(x=>x.id===before.themes[0].id).name+=' changed';assert.throws(()=>assertPreservedThemes(damaged,before.themes));});

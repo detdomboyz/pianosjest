@@ -1,0 +1,835 @@
+{
+  "kind": "source-only-scoped-review-consumer-diagnostics",
+  "phase": "77",
+  "batch": "2026-11-10-18",
+  "checkedAt": "2026-11-10T10:07:02.396Z",
+  "status": "passed",
+  "sourceTrace": [
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9",
+      "anchors": [
+        {
+          "line": 1174,
+          "excerpt": "  function normalizeCatalog(){"
+        },
+        {
+          "line": 1240,
+          "excerpt": "  function catalogSnapshot(){"
+        },
+        {
+          "line": 1341,
+          "excerpt": "  function applyCatalogSnapshot(snapshot){"
+        },
+        {
+          "line": 1383,
+          "excerpt": "    catalogMigrationPending=installReviewedLessons()||catalogMigrationPending;"
+        },
+        {
+          "line": 1391,
+          "excerpt": "      serviceBaseCatalog=JSON.parse(JSON.stringify(catalogSnapshot()));"
+        },
+        {
+          "line": 1393,
+          "excerpt": "      try{const current=serviceClient.status();if(current.user&&!current.locked){const saved=await serviceClient.getObject('catalog');serviceCatalogRaw=saved.raw;if(saved.raw){const value=JSON.parse(saved.raw);if(value.kind===window.CatalogPersonalization.KIND){const merged=window.CatalogPersonalization.apply(serviceBaseCatalog,value);if(!merged.ok)throw Error('Личные правки конфликтуют с новой редакцией курса. Они сохранены на сервере; скачай их JSON перед разрешением конфликта.');snapshot=merged.snapshot;}else snapshot=value;loadedFrom='аккаунта';}serviceCatalogReady=true;}}"
+        },
+        {
+          "line": 2093,
+          "excerpt": "  function installReviewedLessons(){"
+        },
+        {
+          "line": 2095,
+          "excerpt": "    for(const lesson of lessons)if(window.MusicCatalog.sectionOf('piano',lesson,themes)==='learning'&&window.LessonQuality.repairPiano(lesson,window.LessonReviewBaseline,a)){delete lesson.fingeringPlan;changed++;}"
+        },
+        {
+          "line": 2097,
+          "excerpt": "    changed+=window.LessonDevelopment.registerPiano(lessons,themes,a);changed+=window.PianoLessonDevelopment.registerPiano(lessons,themes,a);normalizeCatalog();return changed>0;"
+        },
+        {
+          "line": 2099,
+          "excerpt": "  initializeBuiltInCatalog();"
+        },
+        {
+          "line": 2330,
+          "excerpt": "  function challengeEligible(){const fragment=activePreparationFragment();if(fragment)return window.PianoPreparationFragment.prepare(state.lesson)?.requirement.key===fragment.requirement.key;const e=curriculumEntry();return state.contentSection==='learning'&&Boolean(e&&e.challenge&&e.fingerprint===window.PracticeAssessment.pianoSignature(state.lesson)&&lessonRhythm()&&state.lesson.fingeringSpec);}"
+        }
+      ]
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+      "anchors": [
+        {
+          "line": 97,
+          "excerpt": "  function registerPiano(lessons,themes,a,specifications=piano){let added=0;const keyFor=m=>Object.keys(a.keyMap).find(k=>a.keyMap[k]===m);"
+        },
+        {
+          "line": 98,
+          "excerpt": "    for(const spec of specifications){if(lessons.some(l=>l.id===spec.id))continue;let theme=themes.find(t=>t.id==='detail-p-'+spec.group);if(!theme){theme={id:'detail-p-'+spec.group,name:spec.groupTitle,order:Math.max(0,...themes.map(t=>t.order))+1,contentKind:'exercise'};themes.push(theme);}"
+        },
+        {
+          "line": 102,
+          "excerpt": "      lesson.themeId=theme.id;lesson.order=lessons.filter(l=>l.themeId===theme.id).length+1;lesson.contentKind='exercise';lesson.maxErrors=1;lesson.timeLimit=Math.ceil(cursor*60/bpm*1.8+10);"
+        },
+        {
+          "line": 103,
+          "excerpt": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';"
+        }
+      ]
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f",
+      "anchors": [
+        {
+          "line": 653,
+          "excerpt": "  function instructionFingerprint(lesson){"
+        },
+        {
+          "line": 1596,
+          "excerpt": "  function registerPiano(lessons,themes,adapter){"
+        },
+        {
+          "line": 1597,
+          "excerpt": "    const existing=new Set(lessons.map(l=>l.id));let added=Development.registerPiano(lessons,themes,adapter,piano);"
+        },
+        {
+          "line": 1632,
+          "excerpt": "    added+=reviewLeftFiveFingerPreparation(lessons,adapter);"
+        },
+        {
+          "line": 1636,
+          "excerpt": "    return added+reviewEarlyRelease(lessons,adapter)+reviewEarlyLegato(lessons,adapter)+upgradeReleaseLabels(lessons)+reviewEarlyStaccato(lessons,adapter)+reviewKnownThird(lessons,adapter)+upgradeKnownThirdPreparation(lessons)+reviewRemainingKnownIntervals(lessons,adapter)+reviewEarlyRhythm(lessons,adapter)+reviewBasicDurations(lessons,adapter)+reviewCoordinatedTiming(lessons,adapter)+reviewPhraseHandoff(lessons,adapter)+reviewBlockedTriads(lessons,adapter)+reviewPositionTriads(lessons,adapter)+reviewChordPhrases(lessons,adapter)+reviewBrokenChords(lessons,adapter)+reviewMinorAssembly(lessons,adapter)+reviewMinorComparison(lessons,adapter)+reviewChordMoveCadence(lessons,adapter)+reviewOdePhrases(lessons,adapter)+reviewOdeMemory(lessons,adapter)+reviewTwinkle(lessons,adapter)+reviewMary(lessons,adapter)+reviewBassAnswer(lessons,adapter)+reviewBlindRhythm(lessons,adapter)+reviewBlindChords(lessons,adapter)+reviewFinalExam(lessons,adapter)+reviewWholeNoteRole(lessons)+reviewIndependentPreparation(lessons,adapter)+reviewLeftBlackAndTriadPreparation(lessons,adapter)+reviewRightReleaseAndBlackGroups(lessons,adapter)+reviewRelocationPreparation(lessons,adapter)+reviewDyads(lessons,adapter)+reviewThreeFingerPreparation(lessons,adapter)+reviewRightFiveFingerPreparation(lessons,adapter)+reviewRightPositionFlow(lessons,adapter)+reviewQuarterPulseAndRests(lessons,adapter)+reviewEighthPairsAndTripleMeter(lessons,adapter)+reviewFirstTwoFingers(lessons,adapter)+reviewSingleNoteOrientations(lessons,adapter)+reviewRightCFLandmarks(lessons,adapter)+reviewTwoHandCGHandoff(lessons,adapter)+reviewTwoHandOrientationCheckpoint(lessons,adapter)+reviewAlternatingHands(lessons,adapter)+reviewFivePairedPositions(lessons,adapter)+reviewContraryFiveFingerMotion(lessons,adapter)+reviewTwoHandCoordinationExam(lessons,adapter)+reviewChordCoordinationExam(lessons,adapter)+reviewRightMemoryPosition(lessons,adapter)+reviewLeftMemoryPosition(lessons,adapter)+reviewBlindRelocation(lessons,adapter)+upgradeBlindRelocationPreparation(lessons)+reviewTwoHandMemory(lessons,adapter)+reviewMelodyMemory(lessons,adapter)+reviewThumbCrossings(lessons,adapter)+reviewCMajorScales(lessons,adapter)+reviewRightLegatoPrerequisites(lessons)+reviewFMajorUpperReadiness(lessons);"
+        },
+        {
+          "line": 1017,
+          "excerpt": "  function reviewCoordinatedTiming(lessons,adapter){"
+        },
+        {
+          "line": 244,
+          "excerpt": "    const previousInstruction=JSON.parse(JSON.stringify({guide:lesson.guide,learning}));"
+        }
+      ]
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2",
+      "anchors": [
+        {
+          "line": 6,
+          "excerpt": "  function pianoFingerprint(l){return A.signature({id:l.id,title:l.title,description:l.description,pattern:l.pattern,rhythm:l.rhythm||null,guide:l.guide||null,fingeringSpec:l.fingeringSpec||null,handMode:l.handMode||null,timeLimit:l.timeLimit,maxErrors:l.maxErrors,exam:!!l.exam});}"
+        },
+        {
+          "line": 8,
+          "excerpt": "  function allowed(l,b,fingerprint){const entry=b?.[l.id];if(!entry)return false;const now=fingerprint(l);return now===entry.fingerprint&&!(l.lessonReview?.version===VERSION&&l.lessonReview.reviewedFingerprint===now);}"
+        },
+        {
+          "line": 12,
+          "excerpt": "  function repairPiano(lesson,baseline,adapter){"
+        }
+      ]
+    },
+    {
+      "file": "catalog-personalization.js",
+      "sha256": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b",
+      "anchors": [
+        {
+          "line": 14,
+          "excerpt": "  function slot(value,key){return own(value,key)?{present:true,value:clone(value[key])}:{present:false};}"
+        },
+        {
+          "line": 15,
+          "excerpt": "  function diffFields(before,after,excluded=[]){const changes=[];for(const key of new Set([...Object.keys(before),...Object.keys(after)])){if(excluded.includes(key))continue;const a=slot(before,key),b=slot(after,key);if(!equal(a,b))changes.push({key,before:a,after:b});}return changes;}"
+        },
+        {
+          "line": 43,
+          "excerpt": "  function applyChanges(record,fields,id,conflicts){for(const field of fields){const current=slot(record,field.key);if(!equal(current,field.before)&&!equal(current,field.after)){conflicts.push({code:'PERSONAL_CATALOG_FIELD_CONFLICT',id,key:field.key});continue;}"
+        },
+        {
+          "line": 51,
+          "excerpt": "  function apply(base,personal){snapshot(base);validate(personal);const result=clone(base),conflicts=[];"
+        }
+      ]
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47",
+      "anchors": [
+        {
+          "line": 10,
+          "excerpt": "  function pianoSignature(lesson){return signature({pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,...(lesson.learning?.ending!==undefined?{ending:lesson.learning.ending}:{})});}"
+        },
+        {
+          "line": 107,
+          "excerpt": "  function record(previous,{instrument,lessonId,fingerprint,mode,clean,now=Date.now()}){"
+        },
+        {
+          "line": 110,
+          "excerpt": "    if(previous&&!old&&previous.instrument===instrument&&previous.lessonId===lessonId){const {history:ignored,...snapshot}=previous;history[previous.version+':'+previous.fingerprint]=snapshot;}"
+        }
+      ]
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14",
+      "anchors": [
+        {
+          "line": 10,
+          "excerpt": " function apply(row,op,now){"
+        },
+        {
+          "line": 12,
+          "excerpt": "  if(existing){if(JSON.stringify(existing)!==JSON.stringify(op))fail('LEGACY_RECEIPT_CONFLICT');return row;}"
+        },
+        {
+          "line": 24,
+          "excerpt": "  }else result=Assessment.record(row,{instrument:'piano',lessonId:op.lessonId,fingerprint:op.fingerprint,mode:op.mode,clean:op.clean,now:op.at});"
+        },
+        {
+          "line": 40,
+          "excerpt": "  async function locked(work){try{if(!locks||typeof locks.request!=='function')fail('LOCKS_UNAVAILABLE');if(!storage||typeof storage.getItem!=='function'||typeof storage.setItem!=='function')fail('STORAGE_UNAVAILABLE');return await locks.request(LOCK_NAME,{mode:'exclusive'},lock=>{if(!lock)fail('LOCK_NOT_ACQUIRED');return work();});}catch(e){code=e?.code||'LOCK_OR_STORAGE_FAILED';return {status:'unsaved',code};}}"
+        }
+      ]
+    },
+    {
+      "file": "tools/build-service-curriculum.cjs",
+      "sha256": "2c2b404dff76961379eb3ccc30b011e506cb223d17d5249df1faf31d327bc601",
+      "anchors": [
+        {
+          "line": 17,
+          "excerpt": "    const body={pattern:lesson.pattern,rhythm:lesson.rhythm,fingeringSpec:lesson.fingeringSpec,handMode:lesson.handMode,articulation:lesson.learning?.articulation,timingPrecision:lesson.learning?.timingPrecision,ending:lesson.learning?.ending,timeLimit:lesson.timeLimit};"
+        },
+        {
+          "line": 18,
+          "excerpt": "    const musicVersion=hash(body),editionVersion=hash({id:lesson.id,title:lesson.title,description:lesson.description,learning:lesson.learning,musicVersion,timeLimit:lesson.timeLimit});"
+        }
+      ]
+    },
+    {
+      "file": "service/canonical.cjs",
+      "sha256": "c59128bdc692274b5052204634e400007b9dde34361fd037b583f35f18881a0f",
+      "anchors": [
+        {
+          "line": 3,
+          "excerpt": "function canonical(value){"
+        },
+        {
+          "line": 7,
+          "excerpt": "const hash=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');"
+        }
+      ]
+    }
+  ],
+  "sourceDependenciesMatched": [
+    {
+      "file": "chopin-theme.js",
+      "sha256": "70b0b0ed2999155233c18c8e730eb6805ad7c575561d99f04d48bc1ca6bac7a4"
+    },
+    {
+      "file": "fingering.js",
+      "sha256": "532f6662f6a06093f8a91a7f757b407664b9d970cba6046ae9992f0bfaedb106"
+    },
+    {
+      "file": "beginner-fingering.js",
+      "sha256": "b441c6cef6311f45cb9e585db8cb5c34933b214070b707566a0a7519ca246b2f"
+    },
+    {
+      "file": "practice-assessment.js",
+      "sha256": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+    },
+    {
+      "file": "music-document.js",
+      "sha256": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14"
+    },
+    {
+      "file": "piano-catalog-adapter.js",
+      "sha256": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266"
+    },
+    {
+      "file": "piano-progress-store.js",
+      "sha256": "6c4178c1b1d571fd1c25b3153d0dae05969b85196bdb456eff090059b9589f14"
+    },
+    {
+      "file": "piano-preparation.js",
+      "sha256": "4816f1da8b607f9c4bb1c215abfb373ea549f8b0ffcc5f5077bfbb51c7b454a6"
+    },
+    {
+      "file": "piano-preparation-store.js",
+      "sha256": "152c0dc6809a2ab35019031e1335b03afd15c9c4d0ed2419db15871721377f73"
+    },
+    {
+      "file": "piano-preparation-fragment.js",
+      "sha256": "da913adafeaad325d3dedf7c13b201a5dbba91a43d77e2cbe1d6f4f317fd1278"
+    },
+    {
+      "file": "piano-preparation-capture.js",
+      "sha256": "50339c77e77b681dcfc3848ef4199fb9ed8df2ce797bba64ba207ecac7bc6f18"
+    },
+    {
+      "file": "piano-preparation-transfer.js",
+      "sha256": "b5eb95358a6df00f84a8fbdbb409e4b95c1dc483c443d23aecb6a48400801526"
+    },
+    {
+      "file": "piano-preparation-import.js",
+      "sha256": "09af936fbb26b9f14b8165ba63706a14f33eecd42fce83a0c543c858a267975b"
+    },
+    {
+      "file": "curriculum.js",
+      "sha256": "acfb7c01f9d3d9ff4a9ebfc173be21436b1748951367c0ca9e13a7c9f1fcef8a"
+    },
+    {
+      "file": "curriculum-plan.js",
+      "sha256": "7b6672eab1bcfc6f357fb3539308f945535d5872621e35e8c981ebd5ff7d1460"
+    },
+    {
+      "file": "catalog-sections.js",
+      "sha256": "a6a742320586e0b4b012f0801e7827ba48445c0c58a9ceab160f887489cb40ec"
+    },
+    {
+      "file": "lesson-review-baseline.js",
+      "sha256": "53ee2c3a123d5b7a31046e6d2d0819ba09f7a897e3bdbc16b8e5b8fd02986030"
+    },
+    {
+      "file": "lesson-quality.js",
+      "sha256": "882fd729cbe7be474ab2e1a00062e0b5ebfd8a9a14aa1fd6bef073a5828e04f2"
+    },
+    {
+      "file": "lesson-development.js",
+      "sha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7"
+    },
+    {
+      "file": "piano-lesson-development.js",
+      "sha256": "46737ca5a45a6ecd3ef9a5ba07836f04c9d2a08331cce66ef9431bc723a4ef1f"
+    },
+    {
+      "file": "piano-learning-ui.js",
+      "sha256": "bbf93b7d9f94334303544fe5e9fc592549b1b3bb50eec6b001c8e94b194e2235"
+    },
+    {
+      "file": "catalog-transfer.js",
+      "sha256": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb"
+    },
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9"
+    },
+    {
+      "file": "tests/helpers/load-app.cjs",
+      "sha256": "94dca15b5ae63378ca2ce285d828ad501ad3c32a153c28f9fc80c460c52447f1"
+    }
+  ],
+  "existingReviewOrder": [
+    "reviewLeftFiveFingerPreparation",
+    "reviewLeftPositionFlow",
+    "reviewLeftSkipsAndCheckpoint",
+    "reviewRightSkipsAndCheckpoint",
+    "reviewEarlyRelease",
+    "reviewEarlyLegato",
+    "upgradeReleaseLabels",
+    "reviewEarlyStaccato",
+    "reviewKnownThird",
+    "upgradeKnownThirdPreparation",
+    "reviewRemainingKnownIntervals",
+    "reviewEarlyRhythm",
+    "reviewBasicDurations",
+    "reviewCoordinatedTiming",
+    "reviewPhraseHandoff",
+    "reviewBlockedTriads",
+    "reviewPositionTriads",
+    "reviewChordPhrases",
+    "reviewBrokenChords",
+    "reviewMinorAssembly",
+    "reviewMinorComparison",
+    "reviewChordMoveCadence",
+    "reviewOdePhrases",
+    "reviewOdeMemory",
+    "reviewTwinkle",
+    "reviewMary",
+    "reviewBassAnswer",
+    "reviewBlindRhythm",
+    "reviewBlindChords",
+    "reviewFinalExam",
+    "reviewWholeNoteRole",
+    "reviewIndependentPreparation",
+    "reviewLeftBlackAndTriadPreparation",
+    "reviewRightReleaseAndBlackGroups",
+    "reviewRelocationPreparation",
+    "reviewDyads",
+    "reviewThreeFingerPreparation",
+    "reviewRightFiveFingerPreparation",
+    "reviewRightPositionFlow",
+    "reviewQuarterPulseAndRests",
+    "reviewEighthPairsAndTripleMeter",
+    "reviewFirstTwoFingers",
+    "reviewSingleNoteOrientations",
+    "reviewRightCFLandmarks",
+    "reviewTwoHandCGHandoff",
+    "reviewTwoHandOrientationCheckpoint",
+    "reviewAlternatingHands",
+    "reviewFivePairedPositions",
+    "reviewContraryFiveFingerMotion",
+    "reviewTwoHandCoordinationExam",
+    "reviewChordCoordinationExam",
+    "reviewRightMemoryPosition",
+    "reviewLeftMemoryPosition",
+    "reviewBlindRelocation",
+    "upgradeBlindRelocationPreparation",
+    "reviewTwoHandMemory",
+    "reviewMelodyMemory",
+    "reviewThumbCrossings",
+    "reviewCMajorScales",
+    "reviewRightLegatoPrerequisites",
+    "reviewFMajorUpperReadiness"
+  ],
+  "rows": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-16-editorial-candidate.json",
+      "candidateSha256": "cd09a47236bbe9f2e3a1458ee13ad7a427308c34b00e78d0b937ac499bfcc7a3",
+      "sourceCache": {
+        "qa": "docs/qa/piano-curriculum-2026-11-10-03-c-motion.json",
+        "sha256": "55779a960d0464529739527f0a9e43d9e9c9754e10cc5bbd00e0d086fe68a3b4",
+        "actualLoaderReadAt": "2026-11-10T04:46:04.287Z"
+      },
+      "before": {
+        "fingerprint": "47383ac1",
+        "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+        "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce"
+      },
+      "after": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1"
+      },
+      "sourceDerivedCanonicalFields": {
+        "contentKind": "exercise",
+        "maxErrors": 1,
+        "exam": false,
+        "handMode": "split"
+      },
+      "cacheProjectionMissingFields": [
+        "contentKind",
+        "maxErrors",
+        "exam"
+      ],
+      "cacheNotationInvariantSha256": "58c9dc58bf6f8f426aa46d8fb3b44f7dba091f849d0ce7949fb52308c678d2bc",
+      "sourceCanonicalNotationInvariantSha256": "d7eae12d2799cf258c10ef49028740ec4b97819ac85dfee36c8219622134fda8",
+      "actualInstructionFingerprintBefore": "e1ef7965",
+      "actualInstructionFingerprintAfter": "e53ebcb6",
+      "digestDiagnostics": [
+        {
+          "name": "unchanged",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "personal-guide",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "maxErrors-edit",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "exam-edit",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "content-review-marker",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "top-level-lesson-review",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "classification-piece",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "personal-placement",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "proposed-payload-without-marker",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "unknown-learning-field",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        }
+      ],
+      "proposedMarkerMetadataProbe": {
+        "markerIsOnlySynthetic": true,
+        "noReviewFunctionExecuted": true,
+        "unmarkedEditionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1",
+        "stampedEditionVersion": "1a7880e9bf3c1ef8cca6372fc56c0edc938ea2f9a700ef0612da6d08e84fa302",
+        "fingerprintAndMusicVersionUnchanged": true,
+        "instructionFingerprintIgnoresContentReview": true
+      },
+      "personalOverlayCases": [
+        {
+          "name": "no-personal-edits",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-order",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-classification",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-description",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-03",
+              "key": "description"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-guide",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-03",
+              "key": "guide"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-learning",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-03",
+              "key": "learning"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-exact-proposed-fields",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-removal-pure-merge-only",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        }
+      ],
+      "historyReducerCases": [
+        {
+          "name": "same-fingerprint-failed",
+          "cleanTakes": 3,
+          "ready": true
+        },
+        {
+          "name": "new-fingerprint-failed",
+          "cleanTakes": 0,
+          "ready": false,
+          "archiveKey": "1:47383ac1",
+          "archivedCleanTakes": 3
+        },
+        {
+          "name": "new-fingerprint-clean",
+          "cleanTakes": 1,
+          "ready": false
+        },
+        {
+          "name": "later-clean-new-fingerprint",
+          "cleanTakes": 1,
+          "priorArchiveUnchanged": true
+        }
+      ],
+      "syntheticOldHistoryInputUnchanged": true,
+      "progressWasNotWritten": true
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-17-editorial-candidate.json",
+      "candidateSha256": "c031de11782c57a35c508c6e29f5348c3640cfb800e50285a5143abc2591d120",
+      "sourceCache": {
+        "qa": "docs/qa/piano-curriculum-2026-11-10-02-c-pair-verified.json",
+        "sha256": "c39f86bf063dd89e0cca0aedd84ff9ec04c5c01ad8588d5518a090c6df4426e5",
+        "actualLoaderReadAt": "2026-11-10T04:31:42.119Z"
+      },
+      "before": {
+        "fingerprint": "4cdf584f",
+        "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+        "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+      },
+      "after": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7"
+      },
+      "sourceDerivedCanonicalFields": {
+        "contentKind": "exercise",
+        "maxErrors": 1,
+        "exam": false,
+        "handMode": "split"
+      },
+      "cacheProjectionMissingFields": [
+        "contentKind",
+        "maxErrors",
+        "exam"
+      ],
+      "cacheNotationInvariantSha256": "14ed9b4dfd98aaa330cd0617f7a89f51b50d787cda26151ce37420d470e7c9ad",
+      "sourceCanonicalNotationInvariantSha256": "1ecab41ec440d7d003f3f3043b722db8867b7beab897da80862780c7c24c15ae",
+      "actualInstructionFingerprintBefore": "0106ffe1",
+      "actualInstructionFingerprintAfter": "1277234b",
+      "digestDiagnostics": [
+        {
+          "name": "unchanged",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "personal-guide",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "maxErrors-edit",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "exam-edit",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "content-review-marker",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "top-level-lesson-review",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "classification-piece",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "personal-placement",
+          "previousFiveIdentityPartsMatch": true,
+          "actualInstructionFingerprintMatches": true,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "proposed-payload-without-marker",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        },
+        {
+          "name": "unknown-learning-field",
+          "previousFiveIdentityPartsMatch": false,
+          "actualInstructionFingerprintMatches": false,
+          "proposedPatchApplied": false
+        }
+      ],
+      "proposedMarkerMetadataProbe": {
+        "markerIsOnlySynthetic": true,
+        "noReviewFunctionExecuted": true,
+        "unmarkedEditionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7",
+        "stampedEditionVersion": "23e7b8acba3fd7aa826bdbb4024455d287095ad902036f7ade83b314edecb8fb",
+        "fingerprintAndMusicVersionUnchanged": true,
+        "instructionFingerprintIgnoresContentReview": true
+      },
+      "personalOverlayCases": [
+        {
+          "name": "no-personal-edits",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-order",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-classification",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-description",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-02",
+              "key": "description"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-guide",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-02",
+              "key": "guide"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-learning",
+          "ok": false,
+          "conflicts": [
+            {
+              "code": "PERSONAL_CATALOG_FIELD_CONFLICT",
+              "id": "detail-p-hands-02",
+              "key": "learning"
+            }
+          ],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-exact-proposed-fields",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        },
+        {
+          "name": "personal-removal-pure-merge-only",
+          "ok": true,
+          "conflicts": [],
+          "inputsUnchanged": true,
+          "fullLoaderExecuted": false
+        }
+      ],
+      "historyReducerCases": [
+        {
+          "name": "same-fingerprint-failed",
+          "cleanTakes": 3,
+          "ready": true
+        },
+        {
+          "name": "new-fingerprint-failed",
+          "cleanTakes": 0,
+          "ready": false,
+          "archiveKey": "1:4cdf584f",
+          "archivedCleanTakes": 3
+        },
+        {
+          "name": "new-fingerprint-clean",
+          "cleanTakes": 1,
+          "ready": false
+        },
+        {
+          "name": "later-clean-new-fingerprint",
+          "cleanTakes": 1,
+          "priorArchiveUnchanged": true
+        }
+      ],
+      "syntheticOldHistoryInputUnchanged": true,
+      "progressWasNotWritten": true
+    }
+  ],
+  "counts": {
+    "candidateBindings": 2,
+    "digestScopeDiagnostics": 20,
+    "personalOverlayCreateCalls": 16,
+    "personalOverlayApplyCalls": 16,
+    "historyReducerCalls": 8,
+    "syntheticReviewMarkerMetadataComparisons": 2,
+    "newFullCatalogLoads": 0,
+    "newFullBuilderRuns": 0,
+    "actualAssessmentOrServiceGraderCalls": 0,
+    "registerOrReviewFunctionCalls": 0,
+    "proposedCasMatcherOrMigratorCalls": 0,
+    "storageWrites": 0,
+    "databaseWrites": 0
+  },
+  "findings": {
+    "cachedProjectionNotFullNormalizedRecord": true,
+    "maxErrorsAndExamOutsidePreviousFiveIdentityParts": true,
+    "instructionFingerprintCatchesMaxErrorsAndExam": true,
+    "separateReviewMarkerGateRequired": true,
+    "learningOverlayIsAtomicTopLevelField": true,
+    "contentReviewChangesServerEdition": true,
+    "newTimingFingerprintDoesNotInheritOldReadiness": true,
+    "personalRemovalObservationIsNotFullLoaderProof": true
+  },
+  "executionAllowed": false,
+  "applyExecutorIncluded": false,
+  "proposedEditorialCutoverReady": false,
+  "actualCasApplyOrMigratorTested": false,
+  "limitations": [
+    "Synthetic pure-consumer inputs, no browser/DOM/network during probes.",
+    "Source-derived missing fields are not a new loader capture.",
+    "Old candidate payloads and their unmarked edition identities are preserved; the future review envelope has no finalized production edition.",
+    "No writer, migration, XP, issued-attempt transition, route, registry, artifact or public release changed."
+  ]
+}

@@ -146,6 +146,14 @@ def assess_health(ctx,attempt,last,check,restored,now,backup_attempt,restore_att
     if check and last and check.get('snapshotId')!=last.get('snapshotId'):problems.append('coverage-snapshot-differs')
     return {'checkedAt':now.isoformat(),'success':not problems,'problems':problems,'agesSeconds':ages,'backupCreatedAt':last.get('backupCreatedAt') if last else None,'independentExternalCopyVerified':bool(last and last.get('independentExternalCopyVerified') and not problems),'browserDataBackedUp':False,'scheduledExternalBackup':True,'s3RequestsThisCheck':0}
 
+# Both the base ExecStart gate and this external ExecStartPost use one contract.
+assess_account_health = backup.assess_account_health
+
+
+def account_health(base=BASE,now=None):
+    return backup.account_health(base,now)
+
+
 def execute(command):
     require(command in ['backup','restore-check','health'],'unknown scheduled operation');config=configuration();job.private_directory(STATE)
     with backup.worker_lock(STATE):
@@ -153,7 +161,12 @@ def execute(command):
         ctx=context(config)
         if command=='backup':return backup_cycle(STATE,ctx,Backend())
         if command=='restore-check':return restore_cycle(STATE,ctx,Backend())
-        value=assess_health(ctx,optional(STATE/'last-attempt.json'),optional(STATE/'last-success.json'),optional(STATE/'last-check-success.json'),optional(STATE/'last-restore-success.json'),datetime.datetime.now(datetime.timezone.utc),optional(STATE/'last-backup-attempt.json'),optional(STATE/'last-restore-attempt.json'));job.save(STATE/'health.json',value);return value
+        now=datetime.datetime.now(datetime.timezone.utc)
+        value=assess_health(ctx,optional(STATE/'last-attempt.json'),optional(STATE/'last-success.json'),optional(STATE/'last-check-success.json'),optional(STATE/'last-restore-success.json'),now,optional(STATE/'last-backup-attempt.json'),optional(STATE/'last-restore-attempt.json'))
+        account=account_health(BASE,now);value['accountBackup']=account
+        if not account['success']:
+            value['success']=False;value['independentExternalCopyVerified']=False;value['problems'].extend('account-'+name for name in account['problems'])
+        job.save(STATE/'health.json',value);return value
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['backup','restore-check','health']);args=parser.parse_args()

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-14T06:37:49.632963+00:00",
+  "stage": 195,
+  "beforeFirstTarget": true,
+  "firstActualNextPreflightFailed": true,
+  "failingFrom": "detail-p-e-natural-minor-ascent-right-01",
+  "expectedNext": "detail-p-a-harmonic-minor-ascent-right-01",
+  "actualNext": "detail-p-e-major-ascent-right-01",
+  "cause": "Real loadApp groups catalogue by theme;full build later inserts the old E-major sibling after shared E-natural anchor.Virtual insertion had suppressed old after metadata,so missed this sibling move.",
+  "correction": "Append one harmonic-minor topic for the two new full-octave goals.New lessons alone move in catalogue processing;all old116 themes and674 records,all old after/hints/requirements,guitar and generator stay exact.",
+  "newTopic": "detail-p-harmonic-minor",
+  "newTopicTitle": "Гармонический минор: целая октава",
+  "newTopics": 1,
+  "oldTopics": 116,
+  "topicsAfter": 117,
+  "implementationCorrectionsBeforeFirstTarget": 1,
+  "newOrOldTestsChanged": false,
+  "newFixtureChanged": false,
+  "newWholeTestExactFirstRed": true,
+  "copiedPreCorrectionFiles": [
+    {
+      "path": "piano-lesson-development.js",
+      "sha256": "dedf9d47d93f314a3a9377a4be17b46935ab78fc36d3919b02c420230360b065",
+      "bytes": 1835296
+    },
+    {
+      "path": "curriculum-plan.js",
+      "sha256": "8ff7053ee48d69c7ee755843b5764548e673067b42908b0cb0bc75711fd000a7",
+      "bytes": 235377
+    },
+    {
+      "path": "service/course-registry.json",
+      "sha256": "641c4257738ac61577a4ab861a71e4528009952ed6d7e59881db1f242f30ff64",
+      "bytes": 895760
+    },
+    {
+      "path": "tests/fixtures/piano-curriculum-counts.json",
+      "sha256": "395a3cd5d47aba02684d123f8c4b3c0a760220eab8dcd17619d1a8a0fdeb8400",
+      "bytes": 382
+    }
+  ],
+  "copiesReadBackVerified": true,
+  "modelChanged": false,
+  "generatorChanged": false,
+  "preflightCoverageGapAcknowledged": true,
+  "oldHealthyChecksRepeated": false
+}

@@ -1,0 +1,485 @@
+{
+  "kind": "source-only-existing-detail-p-hands-02-common-group-end-review",
+  "phase": "109",
+  "batch": "2026-11-10-45",
+  "checkedAt": "2026-11-10T20:36:35.816593+00:00",
+  "status": "existing-four-common-C-groups-source-bound-no-independent-voice-readiness-change",
+  "existingCard": {
+    "id": "detail-p-hands-02",
+    "registryFile": "service/course-registry.json",
+    "registrySha256": "86ad643ef2187ce9d4ff8a246263f46f2185778bbfeed6da184eb643dfb19034",
+    "snapshot": {
+      "id": "detail-p-hands-02",
+      "title": "Два C вместе",
+      "description": "Одновременно нажми C3 левой (5) и C4 правой (1). Одновременно отпусти, затем повтори.",
+      "stage": "p4",
+      "stageTitle": "4. Согласование рук",
+      "optional": false,
+      "goal": "Одновременно нажми C3 левой (5) и C4 правой (1). Одновременно отпусти, затем повтори.",
+      "requires": [
+        "detail-p-hands-01"
+      ],
+      "goalKey": "detail-p-hands-02",
+      "challengeReady": true,
+      "gradeFingerprint": "4cdf584f",
+      "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+      "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a",
+      "bpm": 56,
+      "timeLimit": 18,
+      "steps": [
+        {
+          "midis": [
+            48,
+            60
+          ],
+          "startBeat": 0,
+          "durationBeats": 0.85
+        },
+        {
+          "midis": [
+            48,
+            60
+          ],
+          "startBeat": 1,
+          "durationBeats": 0.85
+        },
+        {
+          "midis": [
+            48,
+            60
+          ],
+          "startBeat": 2,
+          "durationBeats": 0.85
+        },
+        {
+          "midis": [
+            48,
+            60
+          ],
+          "startBeat": 3,
+          "durationBeats": 0.85
+        }
+      ],
+      "profile": "standard"
+    },
+    "snapshotSha256": "ded5af48a39551467568b30355eae64d3d488bbee07a6a5ae18dca2e32b295bf",
+    "absentFieldsObserved": [
+      "guide",
+      "learning",
+      "timeSignature",
+      "meter",
+      "pedal",
+      "timingPrecision",
+      "assessmentStatus",
+      "after",
+      "sameGoalAs"
+    ],
+    "absentFieldsNotFilled": true,
+    "nominalGroupEndBeatsAsDecimalStrings": [
+      "0.85",
+      "1.85",
+      "2.85",
+      "3.85"
+    ]
+  },
+  "priorComparisons": [
+    {
+      "file": "docs/qa/piano-curriculum-2026-11-10-44-hands-origin-source-review.json",
+      "sha256": "518fe1cbff4b5db4ac447fa84c1927a5637710a9d9740f5a7f155f8f68d56436",
+      "id": "detail-p-hands-01",
+      "snapshotSha256": "e5adc9dcd053d8e7d9ab420a51f3376146722a8229d412c5523fd53535f13703"
+    },
+    {
+      "file": "docs/qa/piano-curriculum-2026-11-10-41-common-pair-source-review.json",
+      "sha256": "a6829b43acb883b94e20269d5319761f00729d15eaa4852f22421c0082b47969",
+      "id": "course01-07",
+      "snapshotSha256": "8b82f307799322f5d469de2984bb79a9f842437fc923482ab41409d1c7c1cf04"
+    }
+  ],
+  "sourceDeclarations": {
+    "file": "lesson-development.js",
+    "fileSha256": "8bae76ed8d7c2818b5b034bc52198af8d15607c71c277462baae7d523a2a64d7",
+    "boundedOwnUnitWindow": [
+      59,
+      65
+    ],
+    "boundedTemplateWindow": [
+      97,
+      108
+    ],
+    "sourceFields": [
+      {
+        "field": "familyKey",
+        "value": "hands",
+        "sourceLine": 59,
+        "kind": "literal-string"
+      },
+      {
+        "field": "familyTitle",
+        "value": "Согласование двух рук по шагам",
+        "sourceLine": 59,
+        "kind": "literal-string"
+      },
+      {
+        "field": "stage",
+        "value": "p4",
+        "sourceLine": 59,
+        "kind": "literal-string"
+      },
+      {
+        "field": "familyAfter",
+        "value": "course01-07",
+        "sourceLine": 59,
+        "kind": "literal-string"
+      },
+      {
+        "field": "unitTitle",
+        "value": "Два C вместе",
+        "sourceLine": 61,
+        "kind": "literal-string"
+      },
+      {
+        "field": "unitGoal",
+        "value": "Одновременно нажми C3 левой (5) и C4 правой (1). Одновременно отпусти, затем повтори.",
+        "sourceLine": 61,
+        "kind": "literal-string"
+      },
+      {
+        "field": "eventsExpression",
+        "expression": "repeat([[tone(48,5,'left'),tone(60,1)]],4)",
+        "sourceLine": 61,
+        "kind": "source-expression-read-not-executed"
+      }
+    ],
+    "exactLineBindings": [
+      {
+        "file": "lesson-development.js",
+        "line": 61,
+        "text": "    ['Два C вместе','Одновременно нажми C3 левой (5) и C4 правой (1). Одновременно отпусти, затем повтори.',repeat([[tone(48,5,'left'),tone(60,1)]],4)],",
+        "textSha256": "9b4e94b509b2b8847f8ccdcfc507b29482f7dfc9f3a5618f499697d1ec968cf9"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 3,
+        "text": "  const PRACTICE='https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice',CZERNY='https://www.koelnklavier.de/quellen/czer-brf/brief-03.html',BENDS='https://cliffsmithguitarlessons.co.uk/guitar-lesson-videos/string-bends-lesson-2/',TRINITY='https://www.trinityrock.com/instruments/guitar/grade2';",
+        "textSha256": "3fe99e4a2c2f71f9598ab2bf8acafbf17a1ab94027d1eb114758b9d80ce71c38"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 4,
+        "text": "  const tone=(midi,num,hand='right')=>({midi,num,hand});",
+        "textSha256": "98f5e4d5fbaa8605b5202a3492fb2f36a3fda68667872e67a513654068d154ee"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 6,
+        "text": "  const repeat=(values,n=2)=>Array.from({length:n},()=>values).flat();",
+        "textSha256": "97e407d832611408e6d2ad4c010d3ccc0d4df60b37ce37cc6bb5129151ce892d"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 8,
+        "text": "  function family(key,title,stage,after,units,requirements=[]){",
+        "textSha256": "d350914713fdc53978d29e47ec9b2d3c22a0cfa601c25f8e20b6505a7f44ece3"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 9,
+        "text": "    units.forEach((u,i)=>{const id=`detail-p-${key}-${String(i+1).padStart(2,'0')}`;piano.push({id,group:key,groupTitle:title,title:u[0],goal:u[1],events:u[2],options:u[3]||{},stage,after:i?`detail-p-${key}-${String(i).padStart(2,'0')}`:after,requires:i?[`detail-p-${key}-${String(i).padStart(2,'0')}`]:[after,...requirements]});});",
+        "textSha256": "f7dd69a5161e634eb93868f2c2216b5239152c6a2c73e30721881867b5b5250b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 59,
+        "text": "  family('hands','Согласование двух рук по шагам','p4','course01-07',[",
+        "textSha256": "c0f262ffab26d29fe631389803e43b613ee790ede3a7edada0560f8fa3ed6098"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 64,
+        "text": "  ]);",
+        "textSha256": "431d2a14472787d97a97f7cb7d839af3f6ef929c14f6817a0f5921dcd86db4dc"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 97,
+        "text": "  function registerPiano(lessons,themes,a,specifications=piano){let added=0;const keyFor=m=>Object.keys(a.keyMap).find(k=>a.keyMap[k]===m);",
+        "textSha256": "0d4a7cd13d9ad88902ec43ef5d17c7c19ff6c94db6d393cd72b55f99c250891b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 98,
+        "text": "    for(const spec of specifications){if(lessons.some(l=>l.id===spec.id))continue;let theme=themes.find(t=>t.id==='detail-p-'+spec.group);if(!theme){theme={id:'detail-p-'+spec.group,name:spec.groupTitle,order:Math.max(0,...themes.map(t=>t.order))+1,contentKind:'exercise'};themes.push(theme);}",
+        "textSha256": "d7f14d607462bc5baebabe849ab5f321dd40c6384ea9892f1a49bd09571bdb68"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 99,
+        "text": "      const o=spec.options,bpm=o.bpm||56,articulation=o.articulation||'standard';const pattern=spec.events.map(ev=>{const keys=ev.map(n=>{const k=keyFor(n.midi);if(!k)throw Error('Unmapped teaching note '+n.midi);return k;});return keys.length>1?'['+keys.join('')+']':keys[0];}).join(' ');",
+        "textSha256": "368245fdce881be19e0d3a4ad85936eb5ac8b8008dbd741f8364f2f07471aed0"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 100,
+        "text": "      const lesson=a.makeLesson(spec.id,theme.name,spec.title,spec.goal,pattern,90,false);let cursor=0,end=0;const steps=spec.events.map((ev,i)=>{cursor+=(o.rests?.[i]||0);const interval=o.beats?.[i%o.beats.length]||1,duration=interval*(articulation==='staccato'?.3:articulation==='nonlegato'?.65:articulation==='legato'?1:.85),start=cursor;cursor+=interval;const step={startBeat:start,durationBeats:duration,restBeforeBeats:Math.max(0,start-end),measure:Math.floor(start/4)+1,beatInMeasure:start%4,sourceStartMs:Math.round(start*60000/bpm),sourceDurationMs:Math.round(duration*60000/bpm)};end=start+duration;return step;});",
+        "textSha256": "164a20659f132508e3ebae1226b194f678a82204a93603f6357a7c31b24ef866"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 101,
+        "text": "      lesson.rhythm=a.normalizeRhythm({version:1,source:'project-focused-study-v1',bpm,practiceBpm:bpm,timeSignature:{numerator:4,denominator:4},steps},steps.length);",
+        "textSha256": "b1a74062578647b41d750e16b1338305c28273a4f037b79d14abb344193f712b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 102,
+        "text": "      lesson.themeId=theme.id;lesson.order=lessons.filter(l=>l.themeId===theme.id).length+1;lesson.contentKind='exercise';lesson.maxErrors=1;lesson.timeLimit=Math.ceil(cursor*60/bpm*1.8+10);",
+        "textSha256": "32be5e516ad5590024c4df6c051ddbaaea619f62d126c6d15be497e236ef5ab0"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 103,
+        "text": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';",
+        "textSha256": "c5b082a0740c5b3c99d5fc8fdef09fe69b4ea23676cea2217829c76b14c0a6a1"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 104,
+        "text": "      lesson.guide=a.normalizeGuide({stage:spec.groupTitle,setup:'Найди начальные ноты и пальцы. Сядь удобно, кисть и предплечье свободны. Педаль не используется.',motion:spec.goal,blind:'После разбора послушай образец, представь фразу, затем повтори без подсказок. Не ищи дальнюю позицию вслепую до её освоения.',mastery:'Три чистые MIDI-попытки, одна из памяти; ещё одна из памяти на следующий день. Свободу движения, пальцы и звук оцени самостоятельно или с педагогом.'});",
+        "textSha256": "742ee2affe4c43940257b42e89a0e8726f381b499703a89c4f7e9f81bad97e53"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 105,
+        "text": "      lesson.learning={version:1,kind:'exercise',stage:spec.stage,after:spec.after,requires:spec.requires,articulation,machineCheck:'piano-midi',phraseSize:0,goal:spec.goal,practiceSteps:['Послушай образец и проговори счёт, включая паузы.','Разбери движение на двух нотах, затем сыграй короткое задание.','Сравни окончания звуков с образцом, повтори из памяти после уверенного разбора.'],selfCheck:[articulation==='legato'?'Связь звуков слышна без провалов и долгих наложений.':articulation==='staccato'?'Короткий звук заканчивается задолго до следующей доли.':'Каждый звук отпускается в своё время.','Пальцы совпадают с назначением; плечо и запястье не зажаты.','В слуховых уроках сравнение выполняется самостоятельно: автоматического теста слуха здесь нет.'],rhythmNotice:'Авторское упражнение проекта; темп и допуски являются учебной настройкой проекта.',references:[PRACTICE,CZERNY,'https://viva.pressbooks.pub/openmusictheory/chapter/triads/']};lessons.push(lesson);added++;",
+        "textSha256": "9257a83c67d284878b4ade514ef6e53612b0a11398824a1bf5f923bda8ea7199"
+      }
+    ],
+    "newExactLineBindings": [
+      {
+        "file": "lesson-development.js",
+        "line": 61,
+        "text": "    ['Два C вместе','Одновременно нажми C3 левой (5) и C4 правой (1). Одновременно отпусти, затем повтори.',repeat([[tone(48,5,'left'),tone(60,1)]],4)],",
+        "textSha256": "9b4e94b509b2b8847f8ccdcfc507b29482f7dfc9f3a5618f499697d1ec968cf9"
+      }
+    ],
+    "reusedGenericBindings": [
+      {
+        "file": "lesson-development.js",
+        "line": 3,
+        "text": "  const PRACTICE='https://cml.music.utexas.edu/online-resources/intelligent-music-practice/10-tips-for-effective-practice',CZERNY='https://www.koelnklavier.de/quellen/czer-brf/brief-03.html',BENDS='https://cliffsmithguitarlessons.co.uk/guitar-lesson-videos/string-bends-lesson-2/',TRINITY='https://www.trinityrock.com/instruments/guitar/grade2';",
+        "textSha256": "3fe99e4a2c2f71f9598ab2bf8acafbf17a1ab94027d1eb114758b9d80ce71c38"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 4,
+        "text": "  const tone=(midi,num,hand='right')=>({midi,num,hand});",
+        "textSha256": "98f5e4d5fbaa8605b5202a3492fb2f36a3fda68667872e67a513654068d154ee"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 6,
+        "text": "  const repeat=(values,n=2)=>Array.from({length:n},()=>values).flat();",
+        "textSha256": "97e407d832611408e6d2ad4c010d3ccc0d4df60b37ce37cc6bb5129151ce892d"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 8,
+        "text": "  function family(key,title,stage,after,units,requirements=[]){",
+        "textSha256": "d350914713fdc53978d29e47ec9b2d3c22a0cfa601c25f8e20b6505a7f44ece3"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 9,
+        "text": "    units.forEach((u,i)=>{const id=`detail-p-${key}-${String(i+1).padStart(2,'0')}`;piano.push({id,group:key,groupTitle:title,title:u[0],goal:u[1],events:u[2],options:u[3]||{},stage,after:i?`detail-p-${key}-${String(i).padStart(2,'0')}`:after,requires:i?[`detail-p-${key}-${String(i).padStart(2,'0')}`]:[after,...requirements]});});",
+        "textSha256": "f7dd69a5161e634eb93868f2c2216b5239152c6a2c73e30721881867b5b5250b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 59,
+        "text": "  family('hands','Согласование двух рук по шагам','p4','course01-07',[",
+        "textSha256": "c0f262ffab26d29fe631389803e43b613ee790ede3a7edada0560f8fa3ed6098"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 64,
+        "text": "  ]);",
+        "textSha256": "431d2a14472787d97a97f7cb7d839af3f6ef929c14f6817a0f5921dcd86db4dc"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 97,
+        "text": "  function registerPiano(lessons,themes,a,specifications=piano){let added=0;const keyFor=m=>Object.keys(a.keyMap).find(k=>a.keyMap[k]===m);",
+        "textSha256": "0d4a7cd13d9ad88902ec43ef5d17c7c19ff6c94db6d393cd72b55f99c250891b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 98,
+        "text": "    for(const spec of specifications){if(lessons.some(l=>l.id===spec.id))continue;let theme=themes.find(t=>t.id==='detail-p-'+spec.group);if(!theme){theme={id:'detail-p-'+spec.group,name:spec.groupTitle,order:Math.max(0,...themes.map(t=>t.order))+1,contentKind:'exercise'};themes.push(theme);}",
+        "textSha256": "d7f14d607462bc5baebabe849ab5f321dd40c6384ea9892f1a49bd09571bdb68"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 99,
+        "text": "      const o=spec.options,bpm=o.bpm||56,articulation=o.articulation||'standard';const pattern=spec.events.map(ev=>{const keys=ev.map(n=>{const k=keyFor(n.midi);if(!k)throw Error('Unmapped teaching note '+n.midi);return k;});return keys.length>1?'['+keys.join('')+']':keys[0];}).join(' ');",
+        "textSha256": "368245fdce881be19e0d3a4ad85936eb5ac8b8008dbd741f8364f2f07471aed0"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 100,
+        "text": "      const lesson=a.makeLesson(spec.id,theme.name,spec.title,spec.goal,pattern,90,false);let cursor=0,end=0;const steps=spec.events.map((ev,i)=>{cursor+=(o.rests?.[i]||0);const interval=o.beats?.[i%o.beats.length]||1,duration=interval*(articulation==='staccato'?.3:articulation==='nonlegato'?.65:articulation==='legato'?1:.85),start=cursor;cursor+=interval;const step={startBeat:start,durationBeats:duration,restBeforeBeats:Math.max(0,start-end),measure:Math.floor(start/4)+1,beatInMeasure:start%4,sourceStartMs:Math.round(start*60000/bpm),sourceDurationMs:Math.round(duration*60000/bpm)};end=start+duration;return step;});",
+        "textSha256": "164a20659f132508e3ebae1226b194f678a82204a93603f6357a7c31b24ef866"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 101,
+        "text": "      lesson.rhythm=a.normalizeRhythm({version:1,source:'project-focused-study-v1',bpm,practiceBpm:bpm,timeSignature:{numerator:4,denominator:4},steps},steps.length);",
+        "textSha256": "b1a74062578647b41d750e16b1338305c28273a4f037b79d14abb344193f712b"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 102,
+        "text": "      lesson.themeId=theme.id;lesson.order=lessons.filter(l=>l.themeId===theme.id).length+1;lesson.contentKind='exercise';lesson.maxErrors=1;lesson.timeLimit=Math.ceil(cursor*60/bpm*1.8+10);",
+        "textSha256": "32be5e516ad5590024c4df6c051ddbaaea619f62d126c6d15be497e236ef5ab0"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 103,
+        "text": "      lesson.fingeringSpec={version:1,source:'focused-exercise-intent-v1',pattern,steps:spec.events.map(ev=>ev.map(n=>({hand:n.hand,num:n.num})))};const hands=new Set(spec.events.flat().map(n=>n.hand));lesson.handMode=hands.size===1?[...hands][0]:'split';",
+        "textSha256": "c5b082a0740c5b3c99d5fc8fdef09fe69b4ea23676cea2217829c76b14c0a6a1"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 104,
+        "text": "      lesson.guide=a.normalizeGuide({stage:spec.groupTitle,setup:'Найди начальные ноты и пальцы. Сядь удобно, кисть и предплечье свободны. Педаль не используется.',motion:spec.goal,blind:'После разбора послушай образец, представь фразу, затем повтори без подсказок. Не ищи дальнюю позицию вслепую до её освоения.',mastery:'Три чистые MIDI-попытки, одна из памяти; ещё одна из памяти на следующий день. Свободу движения, пальцы и звук оцени самостоятельно или с педагогом.'});",
+        "textSha256": "742ee2affe4c43940257b42e89a0e8726f381b499703a89c4f7e9f81bad97e53"
+      },
+      {
+        "file": "lesson-development.js",
+        "line": 105,
+        "text": "      lesson.learning={version:1,kind:'exercise',stage:spec.stage,after:spec.after,requires:spec.requires,articulation,machineCheck:'piano-midi',phraseSize:0,goal:spec.goal,practiceSteps:['Послушай образец и проговори счёт, включая паузы.','Разбери движение на двух нотах, затем сыграй короткое задание.','Сравни окончания звуков с образцом, повтори из памяти после уверенного разбора.'],selfCheck:[articulation==='legato'?'Связь звуков слышна без провалов и долгих наложений.':articulation==='staccato'?'Короткий звук заканчивается задолго до следующей доли.':'Каждый звук отпускается в своё время.','Пальцы совпадают с назначением; плечо и запястье не зажаты.','В слуховых уроках сравнение выполняется самостоятельно: автоматического теста слуха здесь нет.'],rhythmNotice:'Авторское упражнение проекта; темп и допуски являются учебной настройкой проекта.',references:[PRACTICE,CZERNY,'https://viva.pressbooks.pub/openmusictheory/chapter/triads/']};lessons.push(lesson);added++;",
+        "textSha256": "9257a83c67d284878b4ade514ef6e53612b0a11398824a1bf5f923bda8ea7199"
+      }
+    ],
+    "genericBindingQa": "docs/qa/piano-curriculum-2026-11-10-44-hands-origin-source-review.json",
+    "genericBindingQaSha256": "518fe1cbff4b5db4ac447fa84c1927a5637710a9d9740f5a7f155f8f68d56436",
+    "ownUnitIndexZeroBased": 1,
+    "sourceDerivedAfterAndRequires": "detail-p-hands-01",
+    "familyFirstUnitAfterNotAppliedToSecondUnit": true,
+    "descriptionBinding": "spec.goal passed to makeLesson arg4;cached description equals own goal",
+    "fullRuntimeGuideAssembled": false,
+    "normalizersOrRegisterInvoked": false,
+    "makeLessonDefinitionReadOrInvoked": false,
+    "timeSignatureObjectDeclaredInSource": true,
+    "timeSignatureObjectLiteral": "{numerator:4,denominator:4}",
+    "cachedMeterFieldPresent": false,
+    "defaultSourceDurationFactor": 0.85,
+    "defaultSourceInterval": 1,
+    "ownUnitOptionsSupplied": false,
+    "specificTransferBindingStatus": "not-found-in-own-unit-and-bounded-template",
+    "specificGuardBindingStatus": "not-found-in-own-unit-and-bounded-template",
+    "pedalOffInGenericGuideText": true,
+    "signaturesCalculated": false
+  },
+  "sourceReuse": {
+    "sourceId": "clark-practice-bimanual-scaffolding-2026-11-10",
+    "sourceBaseSnapshot": {
+      "id": "clark-practice-bimanual-scaffolding-2026-11-10",
+      "author": "Michael Clark",
+      "title": "Baylor Piano Basics, 15. Practice Strategies",
+      "url": "https://openbooks.library.baylor.edu/pianobasics/chapter/practice-strategies/",
+      "edition": "Baylor University open textbook, copyright2026",
+      "section": "Coordinating the Hands; Fixing Trouble Spots; Preparing to Perform",
+      "verifiedOn": "2026-11-10",
+      "evidence": "The author distinguishes hand coordination from separate-hand preparation, recommends scaffolding and isolating a short transition, and discusses starting points and cold performance.",
+      "application": "Research-only two-pair scaffolds for right4-to-1 and left1-to-3 coordination, followed by two compound controls.",
+      "limits": "Author teaching guidance,not a controlled novice study or approval of these drafts. Notes,register,rhythm,44BPM,checks and prerequisites are project choices. No images,score or extended prose copied. No performance or teacher verification.",
+      "lessonIds": [
+        "course07-04",
+        "detail-p-f-major-fourth-thumb-connected-right-01",
+        "detail-p-f-major-ascent-checkpoint-left-01"
+      ],
+      "plannedLessonIds": [
+        "research-p-f-major-bimanual-right-cross-01",
+        "research-p-f-major-bimanual-left-cross-01",
+        "research-p-f-major-bimanual-crossing-link-01",
+        "research-p-f-major-bimanual-ascent-checkpoint-01"
+      ]
+    },
+    "sourceBaseSha256": "5242bdc4bc4601c7eb1f628965e9bcdc3e913a6bcb4d533b4bdeda6e05a51b55",
+    "priorQa": "docs/qa/piano-curriculum-2026-11-10-36-held-bass-comparison.json",
+    "priorQaSha256": "71c24ad08d2058a170f19dae5e476892ee138617c0cd83e194d68fdc7dd5c961",
+    "evidenceReusedFrom": "97/research36",
+    "freshReadInCurrentBatch": false,
+    "newSourceHtmlImagePdfAudioOrVideoFetches": 0,
+    "newSourceEntries": 0,
+    "sourceNumericThresholdsAssigned": false,
+    "runtimeLessonReferencesChanged": false
+  },
+  "claimContexts": [
+    {
+      "claim": "own-second-unit-and-hands",
+      "observed": "Own row61/second hands unit:four groups of C3/48 LH5 plusC4/60 RH1 together;RH is explicit tone-helper default.",
+      "limit": "No family/register/repeat invocation,newID or actual MIDI hand/finger proof."
+    },
+    {
+      "claim": "own-common-group-ends",
+      "observed": "Four group starts0-3/duration0.85/common nominal ends0.85,1.85,2.85,3.85;8noteattacks,0.15 gaps.",
+      "limit": "Not6single attacks fromhands01 or per-note staggered held voice/final silence assessment."
+    },
+    {
+      "claim": "own-defaults-and-preparation",
+      "observed": "Owncached56BPM/standard/timeLimit18;no options in unit;source defaults reused;second-unit after/requiresprevious hands01 by family9.",
+      "limit": "Not family first-unit aftercourse01-07 assigned to this row;cached after not created,actual learner preparation not observed."
+    },
+    {
+      "claim": "comparison-to-long-common-C-pairs",
+      "observed": "Savedcourse01-07 has4pairs/52BPM/duration2/start0,2,4,6/end8;own4pairs/56BPM/0.85/start0-3/end3.85.",
+      "limit": "Same pitch/fingers/common ends do not authorize goalKey alias,grade/XP/history transfer,new distinct-goal claim or recount."
+    },
+    {
+      "claim": "guide-learning-and-meter-source",
+      "observed": "16unchanged helper/family/template bindings108 reused plus own61;source1014/4object/guide104/learning105.",
+      "limit": "Cached guide/learning/meter/pedal/timingPrecision/assessmentStatus/after/sameGoalAs absent;no fullruntime/normalizer/DOM or inserted field."
+    },
+    {
+      "claim": "bounded-transfer-guard-and-known-image",
+      "observed": "Ownspecific transfer/guard not found in unit/template;generic known listening/memory/next-day practice only.",
+      "limit": "No transfer/guard borrowed fromothercard,new stimulus/protocol/signature or unknown ear/memory/reading test;human familiarity/novelty not observed."
+    },
+    {
+      "claim": "source-reuse-scope",
+      "observed": "Clark15/36 exactsourcebase/QA reused;genericoldrefs unchanged.",
+      "limit": "Not author endorsement of0.85/0.15/56BPM/fingers/counts or tolerances;no runtime reference insertion/fresh media."
+    },
+    {
+      "claim": "open-independent-voice-gap",
+      "observed": "Only simultaneous common-end C groups read;450/427upper/4F/6future/2C unchanged.",
+      "limit": "No held-voice/pedal/single-hand polyphony support,new lesson/goal/plan/contract/grade/XP or teacher/physical proof."
+    }
+  ],
+  "newActionableWordingMismatches": 0,
+  "cardPayloadChanged": false,
+  "newVersionCalculations": 0,
+  "actualHumanFamiliarityObserved": false,
+  "actualHumanNoveltyObserved": false,
+  "humanSessionsObserved": 0,
+  "newLessons": 0,
+  "newIndependentGoals": 0,
+  "newLessonIds": 0,
+  "newEditorialPlans": 0,
+  "newResearchLessonProposals": 0,
+  "newStimuli": 0,
+  "newBanks": 0,
+  "newProtocols": 0,
+  "newContracts": 0,
+  "newApplicationExecutions": 0,
+  "newAssessmentCalls": 0,
+  "newPreparationFragmentCalls": 0,
+  "newCatalogLoaderRuns": 0,
+  "newFullBuilderRuns": 0,
+  "newBrowserRuns": 0,
+  "progressWrites": 0,
+  "xpWrites": 0,
+  "heldVoiceReadinessChanged": false
+}

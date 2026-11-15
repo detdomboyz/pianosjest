@@ -1,0 +1,268 @@
+{
+  "kind": "source-only-editorial-v7-selected-field-roundtrip-contract",
+  "documentVersion": 1,
+  "phase": "2026-11-10-78",
+  "batch": "2026-11-10-19",
+  "status": "proposed-not-implemented",
+  "lessonIds": [
+    "detail-p-hands-02",
+    "detail-p-hands-03"
+  ],
+  "editorialPlanIds": [
+    "2026-11-10-02",
+    "2026-11-10-03"
+  ],
+  "executionAllowed": false,
+  "applyExecutorIncluded": false,
+  "proposedEditorialCutoverReady": false,
+  "newLessons": 0,
+  "newEditorialPlans": 0,
+  "probesQa": "docs/qa/piano-curriculum-2026-11-10-19-v7-roundtrip-probes.json",
+  "probesQaSha256": "29876330ec14d183242e4065cb0a4553cb2b1724e583c24ccdb4b3d8416e1d43",
+  "sourceTrace": [
+    {
+      "file": "index.html",
+      "sha256": "1f37b06c07c29aef903a2b6398944a4d0e3129b5c5a2b1c04c6c4f7be58065f9",
+      "anchors": [
+        {
+          "line": 166,
+          "excerpt": "  function normalizeLessonGuide(raw){"
+        },
+        {
+          "line": 1216,
+          "excerpt": "  function normalizeLessonRhythm(raw,stepCount){"
+        },
+        {
+          "line": 1235,
+          "excerpt": "  function serializeLessonRhythm(raw,stepCount){"
+        },
+        {
+          "line": 1249,
+          "excerpt": "        rhythm:lesson.rhythm===undefined?undefined:serializeLessonRhythm(lesson.rhythm,lesson.steps.length),handMode:lesson.handMode||undefined,fingeringSpec:lesson.fingeringSpec,curriculumStage:Number(lesson.curriculumStage)||null,guide:normalizeLessonGuide(lesson.guide),learning:lesson.learning||null,lessonReview:lesson.lessonReview||null"
+        },
+        {
+          "line": 1362,
+          "excerpt": "      if(Object.prototype.hasOwnProperty.call(raw,'rhythm'))item.rhythm=normalizeLessonRhythm(raw.rhythm,item.steps.length);else delete item.rhythm;"
+        },
+        {
+          "line": 1364,
+          "excerpt": "      item.guide=normalizeLessonGuide(raw.guide);"
+        },
+        {
+          "line": 1365,
+          "excerpt": "      item.learning=raw.learning&&typeof raw.learning==='object'?raw.learning:null;item.lessonReview=raw.lessonReview||null;"
+        },
+        {
+          "line": 1366,
+          "excerpt": "      if(['left','right','split','auto'].includes(raw.handMode))item.handMode=raw.handMode;else delete item.handMode;"
+        }
+      ]
+    }
+  ],
+  "candidateBindings": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-16-editorial-candidate.json",
+      "candidateSha256": "cd09a47236bbe9f2e3a1458ee13ad7a427308c34b00e78d0b937ac499bfcc7a3"
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "candidate": "docs/qa/piano-curriculum-2026-11-10-17-editorial-candidate.json",
+      "candidateSha256": "c031de11782c57a35c508c6e29f5348c3640cfb800e50285a5143abc2591d120"
+    }
+  ],
+  "scope": {
+    "actualFunctions": [
+      "serializeLessonRhythm",
+      "normalizeLessonRhythm",
+      "normalizeLessonGuide"
+    ],
+    "actualFieldExpressions": [
+      "rhythm",
+      "guide",
+      "handMode",
+      "learning",
+      "lessonReview"
+    ],
+    "fullCatalogSnapshotCalled": false,
+    "applyCatalogSnapshotCalled": false,
+    "completeLoaderProven": false,
+    "patternParserStoredFingeringThemeOrderAndPersistenceTested": false,
+    "registryStepsUsedOnlyForCardinality": true
+  },
+  "verifiedBindings": [
+    {
+      "lessonId": "detail-p-hands-03",
+      "state": "before",
+      "normalized": {
+        "fingerprint": "47383ac1",
+        "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+        "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce"
+      },
+      "serializedOnly": {
+        "fingerprint": "eec60661",
+        "musicVersion": "4d9e6074d583b41fea88e4a41411f965afca21b56a2f3ff38fbdb1d441e4340a",
+        "editionVersion": "cd35e71b14866dcd88488ebd2578653bb74c864572d45601e37f26730728d0e5"
+      },
+      "restored": {
+        "fingerprint": "47383ac1",
+        "musicVersion": "f7c31dd4c74be6cb0c64737dd73487ac77f2935a427dfa3081a59292077587e7",
+        "editionVersion": "768ca256dc243a088d1b1c129542228b2a6c800a46bb9960f1d7101a7e2492ce"
+      },
+      "instructionFingerprint": "e1ef7965",
+      "markerIsOnlySynthetic": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "state": "unmarked-candidate",
+      "normalized": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1"
+      },
+      "serializedOnly": {
+        "fingerprint": "c7c5d0b5",
+        "musicVersion": "50ace23f09206af55feb402df0f5a434852949c2893f10a66265ba814bcb5fc1",
+        "editionVersion": "49b243a6781b1572b166455cab20e6998600a01efcc31355dcd8a6e163d5a014"
+      },
+      "restored": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "34ce54271f2c0ad557b69c04ed341b1faa81b0c1e9ecf1ee070eb6c1da73cae1"
+      },
+      "instructionFingerprint": "e53ebcb6",
+      "markerIsOnlySynthetic": false
+    },
+    {
+      "lessonId": "detail-p-hands-03",
+      "state": "synthetic-history-marker",
+      "normalized": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "1a7880e9bf3c1ef8cca6372fc56c0edc938ea2f9a700ef0612da6d08e84fa302"
+      },
+      "serializedOnly": {
+        "fingerprint": "c7c5d0b5",
+        "musicVersion": "50ace23f09206af55feb402df0f5a434852949c2893f10a66265ba814bcb5fc1",
+        "editionVersion": "8f2a84dcd7e93ba63ec00603418d99a6b55015589b4cec6c73b8821e33c43b97"
+      },
+      "restored": {
+        "fingerprint": "59fcadd5",
+        "musicVersion": "2e81d531c8cd39bacc3a7b1b362ee5e61a3426dd238be5716bad138078892cc7",
+        "editionVersion": "1a7880e9bf3c1ef8cca6372fc56c0edc938ea2f9a700ef0612da6d08e84fa302"
+      },
+      "instructionFingerprint": "e53ebcb6",
+      "markerIsOnlySynthetic": true
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "state": "before",
+      "normalized": {
+        "fingerprint": "4cdf584f",
+        "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+        "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+      },
+      "serializedOnly": {
+        "fingerprint": "21af695f",
+        "musicVersion": "63c17b4dacf2f1459c1212d58943fe7774eb4d6520c3dbe522d715991d5ddd28",
+        "editionVersion": "e843e34ead05569db176f242d341b86f684269409ada1e40945c982f6a20740f"
+      },
+      "restored": {
+        "fingerprint": "4cdf584f",
+        "musicVersion": "305f471db686504ec13f2e8df2d3fed839319abbab982b59a3bdfa669bd52de0",
+        "editionVersion": "09ca8f24b16da23486f4ba5cd0aff567ef0b9657e11364d4fbbb58cebe557d1a"
+      },
+      "instructionFingerprint": "0106ffe1",
+      "markerIsOnlySynthetic": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "state": "unmarked-candidate",
+      "normalized": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7"
+      },
+      "serializedOnly": {
+        "fingerprint": "d8bfa943",
+        "musicVersion": "69733613866351f5d7dac191c9dae6c446888ea775d2768004389152558fc9eb",
+        "editionVersion": "363d571d8cf6971a78565062acce71109d808970db5484d403308337346033c1"
+      },
+      "restored": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "2a5c5b5e2a36438aca16b77c883e6f6d195b6382a6d8800e53ccc3ee5dec15a7"
+      },
+      "instructionFingerprint": "1277234b",
+      "markerIsOnlySynthetic": false
+    },
+    {
+      "lessonId": "detail-p-hands-02",
+      "state": "synthetic-history-marker",
+      "normalized": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "23e7b8acba3fd7aa826bdbb4024455d287095ad902036f7ade83b314edecb8fb"
+      },
+      "serializedOnly": {
+        "fingerprint": "d8bfa943",
+        "musicVersion": "69733613866351f5d7dac191c9dae6c446888ea775d2768004389152558fc9eb",
+        "editionVersion": "638d920120320ff508296b401f162d4444c0dcb8d45a6fd6f6f6616cf65878c6"
+      },
+      "restored": {
+        "fingerprint": "36f3afb3",
+        "musicVersion": "b35cdd6567c3e59a0bfa782f4f09989dbce9a8ef6a3e81e4fb1a47fc0a272b70",
+        "editionVersion": "23e7b8acba3fd7aa826bdbb4024455d287095ad902036f7ade83b314edecb8fb"
+      },
+      "instructionFingerprint": "1277234b",
+      "markerIsOnlySynthetic": true
+    }
+  ],
+  "presenceRules": {
+    "rhythm": "Omitted stays omitted; explicit null stays null. Their assessment signatures differ.",
+    "guideLearningLessonReview": "Actual selected serializer/restoration binds absence and null to null; this is explicit conversion, not byte equality.",
+    "handMode": "Null and absence serialize as omission and restore as absence; source cards themselves remain split.",
+    "stepIndex": "Serializer omits the normalized index; normalizer regenerates the sequence. Compare grade/music in the normalized domain.",
+    "rawGuard": "Inspect/preserve raw before normalization. Unknown guide/rhythm fields can disappear and the result can resemble the baseline; post-normalization matching alone is insufficient."
+  },
+  "historyEnvelope": {
+    "finalized": false,
+    "roundtripOfSynthetic77Envelope": true,
+    "gradeMusicEditionInstructionRecoveredAfterSelectedRestore": true,
+    "unmarkedCandidateVersionsPreserved": true,
+    "newRegistryOrSavedEditionCreated": false,
+    "nextStep": "Define a bounded source-only final history descriptor and exact stage-specific bindings; no writer or apply."
+  },
+  "futureAcceptance": {
+    "planned": 12,
+    "executed": 0,
+    "cases": [
+      "Exact raw before is inspected before a lossy normalizer; unknown personal fields cause skip.",
+      "Both known normalized source states have explicit exercise/maxErrors1/examfalse/split bindings.",
+      "Only the five tested v7 field bindings may use the documented presence conversion.",
+      "Omitted rhythm is not rewritten to null; invalid rhythm never becomes a graded source.",
+      "StepIndex is regenerated by order, never a stable application note/hand identifier.",
+      "Guide/learning/lessonReview null/absence and handMode omission are explicit stage-specific cases.",
+      "Unknown guide/rhythm properties are preserved in raw by refusal before projection.",
+      "Corrupted count/order/index cannot be normalized into a successful review without source matching.",
+      "Whole-row pattern parsing, stored fingering and theme/order restoration are validated separately.",
+      "Review history envelope is finalized before the final reviewed edition is derived.",
+      "No old progress/XP/issued result is promoted by this roundtrip.",
+      "Future writer/readback/rollback/owner-lock and browser tests run before any release."
+    ]
+  },
+  "technicalSource": {
+    "url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.stringify",
+    "referencePage": "https://tc39.es/ecma262/multipage/structured-data.html#sec-serializejsonobject",
+    "sectionAsRead": "25.5.4 notes2/5 and25.5.4.5",
+    "readOn": "2026-11-10"
+  },
+  "limitations": [
+    "Only selected real v7 row field expressions and selected restoration bindings run; no full catalogSnapshot/applyCatalogSnapshot, pattern parser, stored fingering validation, theme ordering or persistence.",
+    "Baseline omitted fields are source-derived as77, not a new loader capture. Registry steps supply only cardinality to the rhythm functions.",
+    "Synthetic contentReview is a metadata probe, not a finalized review envelope or new stored edition.",
+    "No writer/progress/XP/issued attempts/real device/browser changed.",
+    "No real MIDI/sound/finger/teacher/browser proof; F voice-v2 matcher/validator gap remains open.",
+    "Exact79 stays frozen/local; no server changes, new archive/backup/restore or S3 request."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "stage": "/opt/melodiajest/ops/course-128-43e89e8e3aee",
+  "tapSha256": "d499f091e1a32ac5ba7481f31962e1a988493b2b3bcfdbea82f8945c75777a92",
+  "totals": {
+    "tests": 72.0,
+    "pass": 56.0,
+    "fail": 16.0,
+    "cancelled": 0.0,
+    "skipped": 0.0,
+    "duration_ms": 29554.891056
+  },
+  "failures": [
+    {
+      "name": "not ok 33 - registration rotates anonymous session, stores no raw secrets, and exposes no fake SSO",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:59:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 34 - anonymous writes, cross-site writes, absent CSRF and forged owners fail closed",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:69:1'\n  error: |-\n    503 !== 401\n  expected: 401\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 35 - private settings and catalog use authenticated owner and optimistic revisions",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:78:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 36 - private melody round-trips all notes, timing, fingers, IDs and metadata; another user cannot read or edit it",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:89:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 37 - publishing requires the owner, explicit rights, exact revisions; private edits never silently update the public snapshot",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:100:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 38 - feedback is private, tied to its author and cannot overwrite a lesson or gain a reviewer role",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:119:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 39 - login errors do not distinguish a missing account from a wrong password; logout revokes the current session",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:126:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 40 - recovery is one-use, rotates the code, revokes all old sessions and preserves the permanent account/data",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:137:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 41 - session expiration and persisted authentication throttling work without depending on process memory",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:145:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 42 - future SSO identities are separate from accounts and unique by issuer plus subject; no linking endpoint is enabled",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:153:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 43 - SQLite online backup, SHA256 verification and isolated restore preserve real login and ownership without production files",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:160:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 45 - an old tab cannot read or replace data through another account’s cookie",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:191:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 46 - retries of the same create request do not duplicate a melody or correction proposal",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:199:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 47 - private and public musical histories survive edits and unpublishing is idempotent",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:206:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 48 - large authentication bodies are rejected before password work",
+      "diagnostic": "  duration_ms: 685.503338\n  location: '/fixture/service/tests/service.test.cjs:215:1'\n  error: |-\n    503 !== 413\n  expected: 413\n  actual: 503\n  operator: 'strictEqual'"
+    },
+    {
+      "name": "not ok 49 - personal catalog patches restore the actual shipped corpus without changing its notes, rhythm or grading versions",
+      "diagnostic": "  location: '/fixture/service/tests/service.test.cjs:218:1'\n  error: |-\n    {\"error\":{\"code\":\"DISK_RESERVE\",\"message\":\"Сохранение временно приостановлено: сервису нужно место для безопасной копии. Текущие данные сохранены.\"}}\n    503 !== 200\n  expected: 200\n  actual: 503\n  operator: 'strictEqual'"
+    }
+  ],
+  "remoteServicesStartedByReader": 0,
+  "remoteMutationsByReader": 0
+}

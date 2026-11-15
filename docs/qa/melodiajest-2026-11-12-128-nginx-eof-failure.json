@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-12T06:42:20.327004+00:00",
+  "kind": "real-pinned-nginx-disposable-unix-upstream",
+  "mode": "before",
+  "testSha256": "e64bf037016121b7c25fa8df3fce66f6d579bc09254311290276f4c367191b47",
+  "configSha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+  "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+  "returnCode": 1,
+  "ran": 13,
+  "durationSeconds": 3.728,
+  "failures": 5,
+  "errors": 0,
+  "logSha256": "08e6078931d7f91b37a11a92d3e10d9816d711a1fd7384e8b4fb760b84feb89a",
+  "remoteLog": "/opt/melodiajest/ops/course-128-01c5a1f0723d/proxy-cache-validation-v3/before.log",
+  "caps": {
+    "network": "none",
+    "memoryMiB": 64,
+    "cpus": 0.25,
+    "pids": 64,
+    "readOnly": true,
+    "capDrop": "ALL",
+    "tmpfsMiB": 16
+  },
+  "productionSocketMounted": false,
+  "productionMutations": false,
+  "newServicesStarted": 0,
+  "ownTestContainersStoppedAndRemoved": true,
+  "assertionsWeakened": false,
+  "status": "nc-early-input-eof-race-not-final-red",
+  "reason": "Three expected policy failures plus two empty responses/BrokenPipe because nc input EOF could close before reply. Hold stdin until server closes HTTP1.0;thirteen cases/assertions unchanged before implementation."
+}

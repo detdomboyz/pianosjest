@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-11-13T19:20:54.799294+00:00",
+  "checks": {
+    "firstRed": {
+      "path": "tmp/melodiajest-183-target-red.log",
+      "sha256": "8b7582d5aba7fcdc715d963446e6ef1acf012237e8498c7e09984771ba6b23c5",
+      "totals": {
+        "tests": 10,
+        "pass": 1,
+        "fail": 9,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 4493.0796
+      }
+    },
+    "targeted": {
+      "path": "tmp/melodiajest-183-target-green.log",
+      "sha256": "fd85217bc2c234f478518523478bdcf8fb1f5b0a558cdb0cd14b6b25c2d74ee5",
+      "totals": {
+        "tests": 60,
+        "pass": 60,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 47673.802
+      }
+    },
+    "service": {
+      "path": "tmp/melodiajest-183-service.log",
+      "sha256": "e98815a1144c5c57a3ace00698b24408aa5dde41d38224e582811c8f7c9f86b9",
+      "totals": {
+        "tests": 60,
+        "pass": 53,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 7,
+        "todo": 0,
+        "duration_ms": 18516.0894
+      }
+    },
+    "full": {
+      "path": "tmp/melodiajest-183-npm.log",
+      "sha256": "2ade781a130ef597035c6061e240bd5ba4981be0ff5fbea73113ef26a70c0b7b",
+      "totals": {
+        "tests": 1854,
+        "pass": 1854,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 785605.5565
+      }
+    },
+    "audits": {
+      "lessons": {
+        "path": "tmp/melodiajest-183-audit-lessons.log",
+        "exitCode": 0,
+        "sha256": "83a73acfd06e28b181b53aba38d60e047a1fb9fb937c03ef3279b7486b67e46e",
+        "seconds": 4.078
+      },
+      "fingering": {
+        "path": "tmp/melodiajest-183-audit-fingering.log",
+        "exitCode": 0,
+        "sha256": "6b5ae64f5528ca5d58ca59fb1d3144241d0f5cac009664bc918fc4a8a71abd54",
+        "seconds": 10.11
+      },
+      "curriculum": {
+        "path": "tmp/melodiajest-183-audit-curriculum.log",
+        "exitCode": 0,
+        "sha256": "a8b13360a1265a270b4540eb8b7488661986c84bb3fb327ffcac1486184c29dc",
+        "seconds": 12.422
+      },
+      "piano-coverage": {
+        "path": "tmp/melodiajest-183-audit-piano-coverage.log",
+        "exitCode": 0,
+        "sha256": "73498aa51d687c980b37bbc56cceeef8d577246f3e3e4de4d896464226a9c0d1",
+        "seconds": 2.406
+      }
+    }
+  },
+  "newTestDevelopment": {
+    "checkedAt": "2026-11-13T19:00:22.382118+00:00",
+    "newTestFile": "tests/piano-asymmetric-cross-paired-right-descent.test.cjs",
+    "newTestSha256": "2acb1a9e994ef8de0ad64e20e2e90ebd98b31e5371ee586ecf526f3b697ced88",
+    "newFixtureSha256": "9fded8abe9688f776a04680b92ef5cc9bd1b4bb8306288cb85532112c945c900",
+    "redPath": "tmp/melodiajest-183-target-red.log",
+    "redSha256": "8b7582d5aba7fcdc715d963446e6ef1acf012237e8498c7e09984771ba6b23c5",
+    "redBeforeImplementation": true,
+    "firstRedPassed": 1,
+    "firstRedFailed": 9,
+    "wholeNewTestExactAfterFirstRed": true,
+    "newFixtureExactAfterFirstRed": true,
+    "scaffoldCorrections": 0,
+    "routePredicateChangedAfterFirstRed": false,
+    "musicalAssertionsRemovedOrRelaxed": false,
+    "historicalTestFilesChanged": 0,
+    "routePlanningHarnessCrossRealmNormalizationCorrection": 1,
+    "routePlanningCorrectionBeforeFirstRed": true,
+    "firstTargetPassed": 60,
+    "firstTargetFailed": 0,
+    "firstTargetDurationMs": 47673.802,
+    "firstTargetLog": "tmp/melodiajest-183-target-green.log",
+    "firstTargetLogSha256": "fd85217bc2c234f478518523478bdcf8fb1f5b0a558cdb0cd14b6b25c2d74ee5",
+    "targetSuiteInvocations": 1,
+    "nextMetadataVerifiedBeforeFirstTarget": true,
+    "actualAppNextVerifiedBeforeFirstTarget": true,
+    "incomingEdgeVerifiedBeforeFirstTarget": true,
+    "protectedHistoricalNextPaths": 12
+  },
+  "browserReport": "docs/qa/melodiajest-2026-11-13-183-browser.json",
+  "runtimeFilesFrozen": 605,
+  "oldRuntimeFiles": 603,
+  "changedOldRuntime": [
+    "curriculum-plan.js",
+    "package.json",
+    "piano-lesson-development.js",
+    "service/course-registry.json",
+    "tests/fixtures/piano-curriculum-counts.json"
+  ],
+  "fullOnce": true,
+  "targetInvocations": 1,
+  "newTestExactAfterFirstRed": true,
+  "newFixtureExactAfterFirstRed": true,
+  "newTestScaffoldCorrections": 0,
+  "routeExpectationCorrections": 0,
+  "sourceContractCorrection": 0,
+  "historicalTestFilesChanged": 0,
+  "sourceEntriesBefore": 95,
+  "sourceEntriesAfter": 95,
+  "newSourceEntries": 0,
+  "sourceApplications": 7,
+  "freshApplications": 4,
+  "freshPrimaryDocuments": 3,
+  "previousRulesReused": 3,
+  "manualPgStarts": 0,
+  "s3Requests": 0,
+  "deployed": false
+}

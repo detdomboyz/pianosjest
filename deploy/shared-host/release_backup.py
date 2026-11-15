@@ -219,6 +219,94 @@ def check_restore(base, runtime):
     return receipt
 
 
+def assess_account_health(profile,attempt,last,backend,payload,now):
+    """Read existing PostgreSQL proof; never refresh its restore timestamp."""
+    problems=[];ages={}
+    values=[profile,attempt,last,backend,payload]
+    if not all(isinstance(value,dict) for value in values):
+        return {'required':True,'success':False,'problems':['receipt-missing-or-invalid'],'s3RequestsThisCheck':0,'restorePerformedThisCheck':False}
+    sha=lambda value:isinstance(value,str) and SHA.fullmatch(value) is not None
+    if profile.get('kind')!='melodiajest-account-profile' or profile.get('version')!=2 or profile.get('engine')!='postgres' or profile.get('standby') is not False:problems.append('profile-not-active-postgres')
+    for name,value in [('last-attempt',attempt),('last-success',last)]:
+        if value.get('kind')!='melodiajest-postgres-protection' or value.get('version')!=2 or value.get('status')!='verified' or value.get('standby') is not False:problems.append(name+'-not-verified')
+    if backend.get('kind')!='melodiajest-account-source' or backend.get('dataSchemaVersion')!=2:problems.append('active-reader-not-compatible')
+    source=profile.get('sourceSha256')
+    if not sha(source) or any(value.get('sourceSha256')!=source for value in [attempt,last,backend,payload]):problems.append('source-does-not-match-current')
+    for field in ['snapshot','fingerprint','dataDigest']:
+        if not sha(last.get(field)) or attempt.get(field)!=last.get(field):problems.append('latest-'+field+'-differs')
+    if payload.get('kind')!='melodiajest-postgres-payload' or payload.get('version')!=2 or payload.get('standby') is not False:problems.append('payload-not-active-postgres')
+    if payload.get('fingerprint')!=last.get('fingerprint') or payload.get('dataDigest')!=last.get('dataDigest'):problems.append('payload-receipt-differs')
+    if not sha(profile.get('archiveSha256')) or payload.get('archiveSha256')!=profile.get('archiveSha256') or payload.get('previousArchiveSha256')!=profile.get('previousArchiveSha256'):problems.append('archive-coverage-differs')
+    files=payload.get('files',{});needed={'release.tar.gz','node.tar.xz','pg-dependencies.tar.gz','postgres-image.tar.gz','data/postgres.dump','data/snapshot.json','profile.json'}
+    if not isinstance(files,dict) or not needed.issubset(files) or not isinstance(files.get('release.tar.gz'),dict) or files['release.tar.gz'].get('sha256')!=profile.get('archiveSha256'):problems.append('runtime-or-dump-proof-missing')
+    proof=last.get('restore',{});flags=['postgresImageImported','nodeFromRestoredArchive','pgDependenciesFromRestoredArchive','dataDigestMatched','ddlDenied','wrongPasswordDenied','restoredSessionsRevoked','twoUsersRegistered','privateWriteReadback','forgedOwnerDenied']
+    if not isinstance(proof,dict) or any(proof.get(key) is not True for key in flags) or proof.get('productionVolumesMounted') is not False or proof.get('productionDataUsed') is not False or proof.get('network')!='none' or proof.get('apiHealth')!='ok' or proof.get('sourceSha256')!=source:problems.append('independent-recovery-proof-incomplete')
+    for name,value,key,limit in [('lastAttempt',attempt,'checkedAt',30*3600),('dataCompared',last,'dataComparedAt',30*3600),('independentRestore',last,'restoredAt',7*86400)]:
+        try:
+            stamp=dt.datetime.fromisoformat(value[key]);require(stamp.tzinfo is not None,'ambiguous account timestamp');age=(now-stamp).total_seconds();ages[name]=round(age)
+            if age < -300 or age>limit:problems.append(name+'-invalid-or-stale')
+        except (TypeError,KeyError,ValueError):problems.append(name+'-missing-or-invalid')
+    return {'required':True,'success':not problems,'engine':'postgres','problems':problems,'agesSeconds':ages,'snapshotId':last.get('snapshot'),'sourceSha256':source,'restoreVerifiedAt':last.get('restoredAt'),'dataComparedAt':last.get('dataComparedAt'),'s3RequestsThisCheck':0,'restorePerformedThisCheck':False,'browserDataBackedUp':False}
+
+
+def postgres_account_health(base,now,profile):
+    try:
+        home=base/'ops/account-postgres-backups';last=read_account_receipt(home/'latest-success.json');attempt=read_account_receipt(home/'latest-attempt.json')
+        link=base/'account-service/current';require(link.is_symlink(),'account reader pointer missing');target=link.readlink();require(re.fullmatch(r'releases/[0-9]+\.[0-9]+\.[0-9]+-[a-f0-9]{16}',target.as_posix()),'invalid account reader pointer')
+        backend=base/'account-service'/target;require(backend.resolve()==backend,'linked account reader directory');backend=read_account_receipt(backend/'backend.json')
+        retained=Path(last['localPayload']);require(retained.is_absolute() and retained.parent==home and re.fullmatch(r'verified-[a-f0-9]{32}',retained.name) and retained.resolve()==retained,'invalid retained account proof')
+        payload=read_account_receipt(retained/'account-payload.json');return assess_account_health(profile,attempt,last,backend,payload,now)
+    except (OSError,ValueError,TypeError,KeyError):
+        return {'required':True,'success':False,'problems':['receipt-missing-or-invalid'],'s3RequestsThisCheck':0,'restorePerformedThisCheck':False}
+
+
+def read_account_receipt(path):
+    require(path.parent.resolve()==path.parent and not path.is_symlink() and path.is_file() and path.stat().st_size<=256*1024, 'invalid bounded account receipt')
+    value=json_file(path)
+    require(isinstance(value,dict), 'invalid account receipt object')
+    return value
+
+
+def sqlite_account_health(base,now):
+    """Retain the legacy SQLite deadlines; never consult it for PostgreSQL."""
+    problems=[];account={'required':True,'engine':'sqlite','s3RequestsThisCheck':0,'restorePerformedThisCheck':False,'browserDataBackedUp':False}
+    for name in ['latest-attempt.json','latest-success.json']:
+        receipt=read_account_receipt(base/'ops/account-backups'/name)
+        if receipt.get('status') not in {'verified','unchanged-confirmed'}:problems.append(name+'-not-verified')
+        stamp=dt.datetime.fromisoformat(receipt.get('checkedAt',receipt.get('startedAt')))
+        require(stamp.tzinfo is not None,'ambiguous account timestamp')
+        checked=(now-stamp).total_seconds()
+        if checked < -300 or checked > 30*3600:problems.append(name+'-stale')
+        if name=='latest-success.json':
+            stamp=dt.datetime.fromisoformat(receipt['restore']['verifiedAt'])
+            require(stamp.tzinfo is not None,'ambiguous account restore timestamp')
+            restored=(now-stamp).total_seconds()
+            if restored < -300 or restored > 8*86400:problems.append('runtime-restore-stale')
+            account.update(checkedAgeSeconds=round(checked),restoreAgeSeconds=round(restored),dataDigest=receipt['dataDigest'],sourceSha256=receipt['sourceSha256'],independentReadAndRestore=receipt['restore'].get('restoredRuntimeExecuted') is True)
+    return {**account,'success':not problems,'problems':problems}
+
+
+def account_health(base,now=None):
+    """Select one backend from the installed profile; missing proof fails closed.
+
+    This bounded local read performs no database, S3 or restore operation.
+    """
+    base=Path(base);now=now or dt.datetime.now(dt.timezone.utc)
+    installed=any(path.exists() or path.is_symlink() for path in [base/'ops/account-profile.json',base/'account-service/current',base/'account-data/postgres.json'])
+    if not installed:return {'required':False,'success':True,'status':'not-configured','problems':[],'s3RequestsThisCheck':0,'restorePerformedThisCheck':False}
+    try:
+        profile=read_account_receipt(base/'ops/account-profile.json')
+        require(profile.get('kind')=='melodiajest-account-profile' and type(profile.get('version')) is int,'unknown account profile')
+        if profile['version']==2:
+            require(profile.get('engine')=='postgres','unknown account backend')
+            return postgres_account_health(base,now,profile)
+        marker=base/'account-data/postgres.json'
+        require(profile['version']==1 and profile.get('engine','sqlite')=='sqlite' and not (marker.exists() or marker.is_symlink()),'unknown account backend or PostgreSQL downgrade')
+        return sqlite_account_health(base,now)
+    except (OSError,ValueError,TypeError,KeyError):
+        return {'required':True,'success':False,'problems':['receipt-missing-or-invalid'],'s3RequestsThisCheck':0,'restorePerformedThisCheck':False}
+
+
 def freshness(base, now=None):
     home = layout(base)
     now = dt.datetime.now(dt.timezone.utc) if now is None else now
@@ -251,23 +339,10 @@ def freshness(base, now=None):
         previous_sha = artifact.sha256(artifact.regular_bytes(base / previous, 'web-release.json')) if previous else None
         if saved['entries'].get('previous', {}).get('manifestSha256') != previous_sha:
             problems.append('previous-release-not-backed-up')
-    account = {'configured': False, 'browserProgressCovered': False}
-    if (base / 'ops/account-profile.json').exists():
-        account['configured'] = True
-        for name in ['latest-attempt.json', 'latest-success.json']:
-            path = base / 'ops/account-backups' / name
-            if not path.exists():
-                problems.append('account-' + name + '-missing')
-                continue
-            receipt = json_file(path)
-            if receipt.get('status') not in {'verified', 'unchanged-confirmed'}:
-                problems.append('account-' + name + '-not-verified')
-            checked = (now - dt.datetime.fromisoformat(receipt.get('checkedAt', receipt.get('startedAt')))).total_seconds()
-            if checked < -300 or checked > 30 * 3600: problems.append('account-' + name + '-stale')
-            if name == 'latest-success.json':
-                restored = (now - dt.datetime.fromisoformat(receipt['restore']['verifiedAt'])).total_seconds()
-                if restored < -300 or restored > 8 * 86400: problems.append('account-runtime-restore-stale')
-                account.update(checkedAgeSeconds=round(checked), restoreAgeSeconds=round(restored), dataDigest=receipt['dataDigest'], sourceSha256=receipt['sourceSha256'], independentReadAndRestore=receipt['restore'].get('restoredRuntimeExecuted') is True)
+    checked_account = account_health(base,now)
+    account = {'configured':checked_account['required'],'browserProgressCovered':False,**checked_account}
+    if not checked_account['success']:
+        problems.extend('account-'+name for name in checked_account['problems'])
     result = {'checkedAt': now.isoformat(), 'success': not problems, 'problems': problems, 'agesSeconds': ages, 'independentExternalCopyVerified': False, 'browserDataBackedUp': False, 'accounts': account}
     update.save_json(home / 'health.json', result)
     return result

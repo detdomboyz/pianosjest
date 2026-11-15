@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-11-12T08:28:22.450303+00:00",
+  "version": "23.5.97",
+  "manifestSha256": "fd45c21e7681e74f504e086a3e03d3de47333451bdb61209a460cba4f2872610",
+  "courseSha256": "41099edf920cf1ace4cbeab42d77d19f9eb9ca8445e119f31eafe3375092dbb1",
+  "old96ValidatorReturned200": true,
+  "new97ValidatorReturned304": true,
+  "old96Validator": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+  "new97Validator": "W/\"8ad818ccfc41987543826aec186ccba63e059399eb112dcec74aed9ad903fb69\"",
+  "requests": 2,
+  "requestCap": 2,
+  "bodyBytes": 70068,
+  "bodyByteCap": 4194304,
+  "rows": [
+    {
+      "path": "/api/service/v1/course",
+      "requestMethod": "GET",
+      "acceptEncoding": "gzip",
+      "conditionalHeaderSent": "W/\"ea33ea6589f6ff901e64e4fa6e616bd94227bfe69efcbdb0d676e5d278191118\"",
+      "status": 200,
+      "httpVersion": 11,
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Encoding": "gzip",
+        "Content-Length": null,
+        "ETag": "W/\"8ad818ccfc41987543826aec186ccba63e059399eb112dcec74aed9ad903fb69\"",
+        "Cache-Control": "public, no-cache",
+        "Vary": "Accept-Encoding",
+        "Set-Cookie": null,
+        "X-Content-Type-Options": "nosniff, nosniff, nosniff",
+        "Referrer-Policy": "no-referrer",
+        "Date": "Thu, 12 Nov 2026 08:28:18 GMT"
+      },
+      "bodyBytes": 70068,
+      "decodedBytes": 451834,
+      "decodedSha256": "8ad818ccfc41987543826aec186ccba63e059399eb112dcec74aed9ad903fb69",
+      "timingMs": {
+        "dnsTcpTls": 632.0389001630247,
+        "responseHeadersAfterConnect": 42.701799888163805,
+        "bodyRead": 48.26349997892976,
+        "total": 723.0042000301182
+      }
+    },
+    {
+      "path": "/api/service/v1/course",
+      "requestMethod": "GET",
+      "acceptEncoding": "identity",
+      "conditionalHeaderSent": "W/\"8ad818ccfc41987543826aec186ccba63e059399eb112dcec74aed9ad903fb69\"",
+      "status": 304,
+      "httpVersion": 11,
+      "headers": {
+        "Content-Type": null,
+        "Content-Encoding": null,
+        "Content-Length": null,
+        "ETag": "W/\"8ad818ccfc41987543826aec186ccba63e059399eb112dcec74aed9ad903fb69\"",
+        "Cache-Control": "public, no-cache",
+        "Vary": "Accept-Encoding",
+        "Set-Cookie": null,
+        "X-Content-Type-Options": "nosniff, nosniff, nosniff",
+        "Referrer-Policy": "no-referrer",
+        "Date": "Thu, 12 Nov 2026 08:28:19 GMT"
+      },
+      "bodyBytes": 0,
+      "decodedBytes": 0,
+      "decodedSha256": null,
+      "timingMs": {
+        "dnsTcpTls": 69.26200003363192,
+        "responseHeadersAfterConnect": 36.54880006797612,
+        "bodyRead": 0.24179997853934765,
+        "total": 106.05260008014739
+      }
+    }
+  ],
+  "lessons": 463,
+  "publicMetadataExactAgainstCurrentRegistry": true,
+  "tlsCertificateAndNameVerified": true,
+  "credentialsOrCookiesSent": false,
+  "sessionEndpointCalled": false,
+  "s3Requests": 0,
+  "servicesStarted": 0,
+  "productionMutations": false,
+  "oldHealthyCacheCases128ReusedNotRerun": true,
+  "fieldPerformanceOrBillingMeasured": false
+}

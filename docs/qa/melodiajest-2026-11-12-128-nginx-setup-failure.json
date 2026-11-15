@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-12T06:40:47.080500+00:00",
+  "kind": "real-pinned-nginx-disposable-unix-upstream",
+  "mode": "before",
+  "testSha256": "3c4997b3ea8a542cb9179363cc4ca8c46b3e1520d6900040e522d75d5342d3e0",
+  "configSha256": "30969296fb6ad6239c340575bdc65004771d3bf18f11f90b3cc0cef3754138c2",
+  "image": "sha256:985220252f3863977e468f611ef118ebd01421289dd86ee1ae99cb068c3bce2b",
+  "returnCode": 5,
+  "ran": 0,
+  "durationSeconds": 0.003,
+  "failures": 0,
+  "errors": 1,
+  "logSha256": "aa99545b959ea21f97258a93a3f8d5174a684f56a6388e9f6ee6e9f1c8725bbf",
+  "remoteLog": "/opt/melodiajest/ops/course-128-01c5a1f0723d/proxy-cache-validation-v1/before.log",
+  "caps": {
+    "network": "none",
+    "memoryMiB": 64,
+    "cpus": 0.25,
+    "pids": 64,
+    "readOnly": true,
+    "capDrop": "ALL",
+    "tmpfsMiB": 16
+  },
+  "productionSocketMounted": false,
+  "productionMutations": false,
+  "newServicesStarted": 0,
+  "ownTestContainersStoppedAndRemoved": true,
+  "assertionsWeakened": false,
+  "status": "test-setup-failure-not-regression-red",
+  "reason": "AF_UNIX path too long under immutable release staging path;no HTTP cases ran.",
+  "noImplementationChangeBeforeSetupCorrection": true
+}
