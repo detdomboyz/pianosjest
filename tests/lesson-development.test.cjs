@@ -6,6 +6,21 @@ const guitarRoot=process.env.GUITAR_TEST_ROOT||path.resolve(__dirname,'../../gui
 const P=require('../piano-lesson-development.js'),pianoCount=492+D.piano.length+P.piano.length,learningCount=344+D.piano.length+P.piano.length;
 const app=loadApp(),guitar=loadGuitarCourse(),copy=v=>JSON.parse(JSON.stringify(v));
 const adapter=a=>({normalizeRhythm:a.normalizeLessonRhythm,normalizeGuide:a.normalizeLessonGuide,parsePattern:a.parsePattern,midis:a.stepMidiList,spacesBefore:a.lessonSpacesBefore});
+const C=require('../curriculum.js'),beforeScopedPrerequisites=require('./fixtures/piano-before-b-major-left-descent-v1.json'),protectedPrerequisiteIds=new Set(beforeScopedPrerequisites.catalog.map(l=>l.id));
+function assertPreparationEdge(x){
+  const {instrument,lesson,preparation,entry,preparationEntry,index,preparationIndex,historicalIds,canonicalRow,plan,lessons}=x;
+  assert.ok(preparationIndex>=0&&preparationIndex<index,lesson.id+' needs '+preparation?.id);
+  if(preparationEntry.branch==='common'||preparationEntry.branch===entry.branch)return;
+  assert.equal(instrument,'piano','Guitar branch isolation remains unchanged');
+  assert.ok(!historicalIds.has(lesson.id),lesson.id+' historical branch isolation remains unchanged');
+  assert.equal(entry.stage,'p7');assert.equal(preparationEntry.stage,'p7');assert.equal(C.stages.p7.optional,true);
+  assert.equal(lesson.contentKind,'exercise');assert.equal(preparation.contentKind,'exercise');
+  assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
+  assert.deepEqual(copy(canonicalRow.requires),copy(lesson.learning.requires),'Canonical prerequisites must be explicitly declared');
+  assert.ok(lesson.learning.requires.includes(preparation.id));
+  const next=C.next(plan,'piano',lessons,lesson.id);
+  if(next)assert.equal(plan.piano.find(e=>e.id===next.id).branch,entry.branch,'Next remains in its own navigation branch');
+}
 test('all learning lessons have a goal, preparation method, self-checks and primary references',()=>{
   const p=Catalog.available('piano','learning',app.lessons,app.themes),g=Catalog.available('guitar','learning',guitar.lessons,guitar.topics);assert.equal(p.length,learningCount);assert.equal(g.length,456);
   for(const l of [...p,...g]){assert.ok(l.learning?.goal,l.id);assert.ok(l.learning.practiceSteps.length>=3,l.id);assert.ok(l.learning.practiceSteps.every(step=>typeof step==='string'&&step.trim().length>0),l.id);assert.ok(l.learning.selfCheck.length>=3,l.id);assert.ok(l.learning.references.every(url=>url.startsWith('https://')),l.id);}
@@ -16,11 +31,18 @@ test('extension lessons are short focused exercises with explicit timing; pieces
   for(const l of fresh){assert.equal(l.contentKind,'exercise');assert.ok(l.learning.requires.length);assert.ok((l.steps||l.notes).length<=24);}
   assert.equal(Catalog.available('piano','pieces',app.lessons,app.themes).length,148);assert.equal(Catalog.available('guitar','pieces',guitar.lessons,guitar.topics).length,257);
 });
-test('every new lesson preparation precedes it and each branch can be followed independently',()=>{
+test('preparations precede lessons; historical branches stay independent and explicit same-hand optional prerequisites preserve scoped Next',()=>{
   const context={};vm.runInNewContext(fs.readFileSync(path.resolve(__dirname,'../curriculum-plan.js'),'utf8'),context);const plan=context.MUSIC_CURRICULUM_PLAN;
+  const canonical=require('../service/course-registry.json');
   for(const [instrument,ls] of [['piano',app.lessons],['guitar',guitar.lessons]])for(const l of ls.filter(l=>l.learning?.after)){
-    const entries=plan[instrument],i=entries.findIndex(e=>e.id===l.id);for(const id of l.learning.requires){const j=entries.findIndex(e=>e.id===id);assert.ok(j>=0&&j<i,l.id+' needs '+id);const branch=entries[j].branch;assert.ok(branch==='common'||branch===entries[i].branch,l.id+' depends on other branch '+branch);}
+    const entries=plan[instrument],i=entries.findIndex(e=>e.id===l.id);for(const id of l.learning.requires){const j=entries.findIndex(e=>e.id===id);assertPreparationEdge({instrument,lesson:l,preparation:ls.find(p=>p.id===id),entry:entries[i],preparationEntry:entries[j],index:i,preparationIndex:j,historicalIds:protectedPrerequisiteIds,canonicalRow:canonical.lessons.find(row=>row.id===l.id),plan,lessons:ls});}
   }
+});
+
+test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{
+  const context={};vm.runInNewContext(fs.readFileSync(path.resolve(__dirname,'../curriculum-plan.js'),'utf8'),context);const plan=context.MUSIC_CURRICULUM_PLAN,lesson=app.lessons.find(l=>l.id==='detail-p-b-major-thumb-first-left-01'),preparation=app.lessons.find(l=>l.id==='detail-p-b-major-thumb-fourth-left-01'),entry=plan.piano.find(e=>e.id===lesson.id),preparationEntry=plan.piano.find(e=>e.id===preparation.id),canonicalRow=require('../service/course-registry.json').lessons.find(l=>l.id===lesson.id);
+  const base={instrument:'piano',lesson,preparation,entry,preparationEntry,index:plan.piano.indexOf(entry),preparationIndex:plan.piano.indexOf(preparationEntry),historicalIds:protectedPrerequisiteIds,canonicalRow,plan,lessons:app.lessons};assertPreparationEdge(base);
+  for(const patch of [{instrument:'guitar'},{preparationIndex:-1},{preparationIndex:base.index},{preparation:{...preparation,handMode:'right'}},{preparation:{...preparation,contentKind:'piece'}},{entry:{...entry,stage:'p9'}},{preparationEntry:{...preparationEntry,stage:'p9'}},{canonicalRow:{...canonicalRow,requires:[]}},{historicalIds:new Set([...protectedPrerequisiteIds,lesson.id])}])assert.throws(()=>assertPreparationEdge({...base,...patch}));
 });
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{
   const a=loadApp({unreviewed:true}),old=new Map(a.lessons.map(l=>[l.id,l.pattern]));assert.equal(a.lessons.length,492);

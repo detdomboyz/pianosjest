@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-11-15T07:40:10.951535+00:00",
+  "planningOnly": true,
+  "currentPhase": 220,
+  "futurePhase": 221,
+  "current220FullMustPassBeforeImplementation": true,
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-15-220-next-source-planning.json",
+  "screen": "docs/qa/melodiajest-2026-11-15-220-next-gap-screen.json",
+  "catalogBefore": 726,
+  "learningBefore": 578,
+  "newIndependentGoalsPlanned": 3,
+  "newGlobalMotorClasses": 0,
+  "newPreparedCombinationGoalsPlanned": 3,
+  "newLessonsImplemented": 0,
+  "sourceApplicationsAddedTo220": 0,
+  "caseKeys": [
+    "thumb-exit",
+    "upper-five",
+    "full-ascent"
+  ],
+  "cases": [
+    {
+      "caseKey": "thumb-exit",
+      "id": "detail-p-b-major-thumb-exit-right-01",
+      "title": "Правая: D♯4/3 → E4/1 → F♯4/2",
+      "midis": [
+        63,
+        64,
+        66
+      ],
+      "fingers": [
+        3,
+        1,
+        2
+      ],
+      "requires": [
+        "detail-p-e-major-ascent-right-01"
+      ],
+      "sourceFromIndex": 2,
+      "sourceStarts": [
+        1,
+        1.5,
+        2
+      ],
+      "sourceEndBeat": 2.5,
+      "sourceFollowing": "G#4continuesascent",
+      "goal": "JoinoldG#4A4/31-5→D#4E4/31witholdexactE4F#4/12. SharedE4once. Newpreparedcombinationblack3white1black2half+wholeup;individualclassesalreadycovered."
+    },
+    {
+      "caseKey": "upper-five",
+      "id": "detail-p-b-major-upper-ascent-right-01",
+      "title": "Правая: E4–F♯4–G♯4–A♯4–B4 под 1–2–3–4–5",
+      "midis": [
+        64,
+        66,
+        68,
+        70,
+        71
+      ],
+      "fingers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requires": [
+        "detail-p-e-major-ascent-right-01"
+      ],
+      "sourceFromIndex": 3,
+      "sourceStarts": [
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5
+      ],
+      "sourceEndBeat": 4,
+      "sourceFollowing": "A#4startsdescent",
+      "goal": "JoinoldexactE4F#4G#4/123witholdC#5D#5E5/345-5→G#4A#4B4/345. SharedG#4once. Threeconsecutiveblack234afterE4/1thenB4/5;newpreparedfive-notecombination,notanewglobalmotorclass. Upper-fourcontainedhereNOTfourthgoal;terminal345alreadycovered."
+    },
+    {
+      "caseKey": "full-ascent",
+      "id": "detail-p-b-major-ascent-right-01",
+      "title": "Си мажор правой: группы 3+5, B3–B4",
+      "midis": [
+        59,
+        61,
+        63,
+        64,
+        66,
+        68,
+        70,
+        71
+      ],
+      "fingers": [
+        1,
+        2,
+        3,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requires": [
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-b-major-thumb-exit-right-01",
+        "detail-p-b-major-upper-ascent-right-01"
+      ],
+      "sourceFromIndex": 0,
+      "sourceStarts": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5
+      ],
+      "sourceEndBeat": 4,
+      "sourceFollowing": "A#4startsdescentat4",
+      "goal": "IntegrateoldlowerB3C#4D#4/123preparedbyEmajorfirst3-5withnew312thumb-exit+newupper12345;sharedD#4,E4,F#4once. Newwhole-contextintegration,notBPMvariation/lower123notnewgoal/endingB4under5."
+    }
+  ],
+  "prerequisiteReferences": 5,
+  "uniqueOwnPrerequisiteIds": 3,
+  "uniqueOldOwnPrerequisiteIds": 1,
+  "prerequisiteFullArraysAsserted": true,
+  "prerequisiteRegisterComparisonsFiveSemitonesExplicit": true,
+  "prerequisiteSubspanAndOverlapAssertionsPassed": true,
+  "otherHandNotMandatoryPreparation": true,
+  "rejectedAlreadyCoveredShortGoals": [
+    "lower-ascent",
+    "thumb-entry",
+    "terminal-three"
+  ],
+  "upperFourContainedInUpperFiveNotFourthGoal": true,
+  "allFiveIndividualMotorClassesAlreadyCovered": true,
+  "branch": "b-major-right-ascent",
+  "newScopedNextTransitions": 2,
+  "newScopedTerminalCases": 1,
+  "anchor": "course10-08",
+  "mainRoute295And84MainNextRemainExact": true,
+  "old283OptionalPathsMustRemainExact": true,
+  "terminalFinger5SourceNot4": true,
+  "sourceRegisterUnchanged": true,
+  "sourceOneAscending4_4Bar": true,
+  "sourceEnd4FollowingASharp4DescentExplicit": true,
+  "projectBpm": 40,
+  "projectArticulation": "legato",
+  "timingPrecision": "beat-boundary-v2",
+  "projectDurationsChoice": "3/5/8quarters;end3/5/8;partialfirstbar/onefull+partialnextbar/twofullbars;notmislabelledallcomplete",
+  "manualFollowingQuietQuarterNotSourcePause": true,
+  "manualQuietScored": false,
+  "newSourceRulesPlanned": 1,
+  "newSourceApplicationsPlanned": 15,
+  "freshReadApplicationsPlanned": 3,
+  "oldRulesApplicationsPlanned": 12,
+  "expectedVersion": "23.5.186",
+  "expectedCatalog": 729,
+  "expectedLearning": 581,
+  "expectedMidi": 311,
+  "expectedProvenance": 284,
+  "expectedUpperBound": 557,
+  "expectedSourceEntries": 128,
+  "expectedNewTests": 30,
+  "expectedFullTests": 2529,
+  "newThemes": 0,
+  "publicationHeldUntil1000": true,
+  "requiresPreflightActualGeneratorCanonicalCoverageCardRoutePersonalEditPedagogyAndHistoricalPreservationBeforeFirstRed": true,
+  "wholeNewTestAndFixtureMustRemainExactAfterFirstRed": true,
+  "actualHistoricalPrerequisiteBranchGuardRequiredBeforeFirstRed": true,
+  "current220HistoricalGuardCorrectionProof": "docs/qa/melodiajest-2026-11-15-220-branch-prerequisite-guard-correction.json",
+  "existingCountAndPreservationCallbacksStillRequired": true,
+  "beforeFullTestsAfterGuardCorrection": 2499,
+  "actualHistoricalPrerequisiteBranchGuardNegativeCallbackAlsoRequiredBeforeFirstRed": true,
+  "preflightHistoricalCallbacksRequired": [
+    "curriculum-count",
+    "optional-nav-preservation",
+    "prerequisite-branch-guard",
+    "prerequisite-branch-negative-regression"
+  ]
+}

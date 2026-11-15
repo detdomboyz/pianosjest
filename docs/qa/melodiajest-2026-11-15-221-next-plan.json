@@ -1,0 +1,176 @@
+{
+  "checkedAt": "2026-11-15T09:43:52.806665+00:00",
+  "planningOnly": true,
+  "currentPhase": 221,
+  "futurePhase": 222,
+  "current221FullMustPassBeforeImplementation": true,
+  "requiresExplicitResumeBeforeImplementation": true,
+  "nativeAutomationStatus": "PAUSED",
+  "interactiveContinuationStopsAt221Checkpoint": true,
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-15-221-next-source-planning.json",
+  "screen": "docs/qa/melodiajest-2026-11-15-221-next-gap-screen.json",
+  "catalogBefore": 729,
+  "learningBefore": 581,
+  "newIndependentGoalsPlanned": 3,
+  "newGlobalMotorClasses": 0,
+  "newPreparedCombinationGoalsPlanned": 3,
+  "newLessonsImplemented": 0,
+  "sourceApplicationsAddedTo221": 0,
+  "caseKeys": [
+    "upper-five",
+    "thumb-exit",
+    "full-descent"
+  ],
+  "cases": [
+    {
+      "caseKey": "upper-five",
+      "id": "detail-p-b-major-upper-descent-right-01",
+      "title": "Правая: B4–A♯4–G♯4–F♯4–E4 под 5–4–3–2–1",
+      "midis": [
+        71,
+        70,
+        68,
+        66,
+        64
+      ],
+      "fingers": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "requires": [
+        "detail-p-e-major-descent-right-01"
+      ],
+      "sourceFromIndex": 0,
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5
+      ],
+      "sourceEndBeat": 6,
+      "sourceFollowing": "D#4continuesdescentat6",
+      "goal": "JoinoldE5D#5C#5/543minus5→B4A#4G#4/543witholdexactG#4F#4E4/321. SharedG#4once; three successive black keys under4,3,2 between white5and1. Upper-four contained here, not fourth goal."
+    },
+    {
+      "caseKey": "thumb-exit",
+      "id": "detail-p-b-major-thumb-exit-descent-right-01",
+      "title": "Правая: F♯4/2 → E4/1 → D♯4/3",
+      "midis": [
+        66,
+        64,
+        63
+      ],
+      "fingers": [
+        2,
+        1,
+        3
+      ],
+      "requires": [
+        "detail-p-e-major-descent-right-01"
+      ],
+      "sourceFromIndex": 3,
+      "sourceStarts": [
+        5,
+        5.5,
+        6
+      ],
+      "sourceEndBeat": 6.5,
+      "sourceFollowing": "C#4continuesdescentat6.5",
+      "goal": "JoinoldexactF#4E4/21witholdA4G#4/13minus5→E4D#4/13. SharedE4once. Preparedblack2white1black3whole+halfdown combination, not a new individual motor class."
+    },
+    {
+      "caseKey": "full-descent",
+      "id": "detail-p-b-major-descent-right-01",
+      "title": "Си мажор правой вниз: группы 5+3, B4–B3",
+      "midis": [
+        71,
+        70,
+        68,
+        66,
+        64,
+        63,
+        61,
+        59
+      ],
+      "fingers": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        3,
+        2,
+        1
+      ],
+      "requires": [
+        "detail-p-e-major-descent-right-01",
+        "detail-p-b-major-upper-descent-right-01",
+        "detail-p-b-major-thumb-exit-descent-right-01"
+      ],
+      "sourceFromIndex": 0,
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7
+      ],
+      "sourceEndBeat": 7.5,
+      "sourceFollowing": "eighthrest7.5..8",
+      "goal": "Joinnewupper54321andnewthumb-exit213witholdlowerD#4C#4B3/321preparedbyoldEmajorlast3minus5. SharedF#4,E4,D#4eachonce; integrate5+3, not aBPMvariation. FinalB3under1; source highB4under5sharedwithascent, project starts separatelyaftermanualsilence."
+    }
+  ],
+  "prerequisiteReferences": 5,
+  "uniqueOwnPrerequisiteIds": 3,
+  "uniqueOldOwnPrerequisiteIds": 1,
+  "prerequisiteFullArraysAsserted": true,
+  "prerequisiteRegisterComparisonsFiveSemitonesExplicit": true,
+  "prerequisiteSubspanAndOverlapAssertionsPassed": true,
+  "otherHandNotMandatoryPreparation": true,
+  "rejectedAlreadyCoveredShortGoals": [
+    "thumb-entry",
+    "lower-three"
+  ],
+  "upperFourContainedInUpperFiveNotFourthGoal": true,
+  "allIndividualMotorClassesAlreadyCovered": true,
+  "branch": "b-major-right-descent",
+  "newScopedNextTransitions": 2,
+  "newScopedTerminalCases": 1,
+  "anchor": "course10-08",
+  "mainRoute295And84MainNextRemainExact": true,
+  "old286OptionalPathsMustRemainExact": true,
+  "terminalFinger1SourceNot3": true,
+  "sourceRegisterUnchanged": true,
+  "sourcePeakLastEighthBeforeBarlineShared": true,
+  "sourceEnd7_5FollowingEighthRestExplicit": true,
+  "projectBpm": 40,
+  "projectArticulation": "legato",
+  "timingPrecision": "beat-boundary-v2",
+  "projectDurationsChoice": "5/3/8quarters;end5/3/8;onefull4_4bar+firstquartersecond/partialfirstbar/twofullbars;notallcomplete",
+  "manualFollowingQuietQuarterNotSourcePause": true,
+  "manualQuietScored": false,
+  "newSourceRulesPlanned": 1,
+  "newSourceApplicationsPlanned": 15,
+  "freshReadApplicationsPlanned": 3,
+  "oldRulesApplicationsPlanned": 12,
+  "expectedVersion": "23.5.187",
+  "expectedCatalog": 732,
+  "expectedLearning": 584,
+  "expectedMidi": 314,
+  "expectedProvenance": 287,
+  "expectedUpperBound": 560,
+  "expectedSourceEntries": 129,
+  "expectedNewTests": 30,
+  "expectedFullTests": 2559,
+  "newThemes": 0,
+  "publicationHeldUntil1000": true,
+  "requiresPreflightActualGeneratorCanonicalCoverageCardRoutePersonalEditPedagogyAndFourActualHistoricalCallbacksBeforeFirstRed": true,
+  "wholeNewTestAndFixtureMustRemainExactAfterFirstModelAndFirstRed": true
+}

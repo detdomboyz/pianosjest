@@ -3381,6 +3381,94 @@
       ]
     },
     {
+      "id": "detail-p-eflat-middle-descent-left-01",
+      "stage": "p7",
+      "branch": "eflat-left-descent",
+      "fingerprint": "b41d1bc3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-descent-left-01",
+        "detail-p-e-major-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-major-descent-left-01",
+      "stage": "p7",
+      "branch": "eflat-left-descent",
+      "fingerprint": "906eed4a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-descent-left-01",
+        "detail-p-eflat-middle-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-thumb-exit-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-ascent",
+      "fingerprint": "e4fbb111",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-upper-ascent-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-ascent",
+      "fingerprint": "353aadca",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-ascent-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-ascent",
+      "fingerprint": "5880fa1d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-b-major-thumb-exit-right-01",
+        "detail-p-b-major-upper-ascent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-upper-descent-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-descent",
+      "fingerprint": "d85b0924",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-middle-ascent-left-01",
+      "stage": "p7",
+      "branch": "eflat-left-ascent",
+      "fingerprint": "ebba83f0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-thumb-fourth-left-01",
+        "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-eflat-major-ascent-left-01",
+      "stage": "p7",
+      "branch": "eflat-left-ascent",
+      "fingerprint": "cf02cd9a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-ascent-left-01",
+        "detail-p-eflat-middle-ascent-left-01",
+        "detail-p-g-natural-minor-ascent-left-01",
+        "detail-p-bflat-thumb-second-terminal-left-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-lower-combination-left-01",
       "stage": "p7",
       "branch": "b-major-left-ascent",
@@ -3400,6 +3488,41 @@
       "preparation": [
         "detail-p-bflat-thumb-fourth-left-01",
         "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-thumb-first-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-descent",
+      "fingerprint": "1724ca24",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-upper-descent-left-01",
+        "detail-p-b-major-thumb-fourth-left-01",
+        "detail-p-eflat-major-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-lower-descent-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-descent",
+      "fingerprint": "c4c94064",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-left-01",
+        "detail-p-d-major-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-descent-left-01",
+      "stage": "p7",
+      "branch": "b-major-left-descent",
+      "fingerprint": "51cb8a52",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-upper-descent-left-01",
+        "detail-p-b-major-thumb-first-left-01",
+        "detail-p-b-major-lower-descent-left-01"
       ]
     },
     {

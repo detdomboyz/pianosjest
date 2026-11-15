@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-11-15T11:10:20.167764+00:00",
+  "publicVersion": "23.5.186",
+  "manifestSha256": "665baf26c009d9f789d8c9db7b04f371703e0be98b700e133241c4d577359196",
+  "publicFilesPreviouslyHashVerified": 41,
+  "redirects": {
+    "http": {
+      "status": 308,
+      "location": "https://melodiajest.ru/"
+    },
+    "www": {
+      "status": 301,
+      "location": "https://melodiajest.ru/"
+    }
+  },
+  "certificates": {
+    "melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:22 2027 GMT"
+    },
+    "www.melodiajest.ru": {
+      "verified": true,
+      "expires": "Feb  4 18:24:23 2027 GMT"
+    }
+  },
+  "forbiddenPaths": {
+    "/server.cjs": 404,
+    "/trainer-content.json": 404,
+    "/.git/config": 404,
+    "/.env": 404,
+    "/service/server.cjs": 404,
+    "/service/course-registry.json": 404,
+    "/api/content": 404,
+    "/api/launch-app": 404
+  },
+  "api": {
+    "status": "ok",
+    "engine": "postgres",
+    "implementationSha256": "dc7a4f70c9b122cbecb5e3af4722cb2a4d256b149ffa080333fa5822f2d238c0",
+    "databaseSchemaVersion": 2,
+    "courseSha256": "a8c7bb74ee94458dfc58f58085f5e548834c17ba04cd721b178404d993392bbc"
+  },
+  "staticAliases": [
+    "melodiajest-web-1",
+    "melodiajest-static",
+    "melodiajest-web"
+  ],
+  "staticService": "melodiajest-static",
+  "current": "releases/23.5.186-665baf26c009",
+  "previous": "releases/23.5.100-8f02cdfef1a8",
+  "health": {
+    "accountBackup": {
+      "agesSeconds": {
+        "dataCompared": 125,
+        "independentRestore": 125,
+        "lastAttempt": 125
+      },
+      "browserDataBackedUp": false,
+      "dataComparedAt": "2026-11-15T11:04:38.059370+00:00",
+      "engine": "postgres",
+      "problems": [],
+      "required": true,
+      "restorePerformedThisCheck": false,
+      "restoreVerifiedAt": "2026-11-15T11:04:38.059364+00:00",
+      "s3RequestsThisCheck": 0,
+      "snapshotId": "7fadc342a07c6092a8f2d79dd9772fcbb29710514ae8025a3d1f31c843efa690",
+      "sourceSha256": "dc7a4f70c9b122cbecb5e3af4722cb2a4d256b149ffa080333fa5822f2d238c0",
+      "success": true
+    },
+    "agesSeconds": {
+      "coverageCheck": 1,
+      "externalRestore": 1
+    },
+    "backupCreatedAt": "2026-11-15T11:05:21.884475+00:00",
+    "browserDataBackedUp": false,
+    "checkedAt": "2026-11-15T11:06:43.557286+00:00",
+    "independentExternalCopyVerified": true,
+    "problems": [],
+    "s3RequestsThisCheck": 0,
+    "scheduledExternalBackup": true,
+    "success": true
+  },
+  "hourlyService": {
+    "Result": "success",
+    "ExecMainStartTimestamp": "Sun 2026-11-15 11:06:43 UTC",
+    "ExecMainExitTimestamp": "Sun 2026-11-15 11:06:43 UTC",
+    "ExecMainStatus": "0",
+    "InvocationID": "dedcdd36135b4c9eba58473f61a38add"
+  },
+  "hourlyTimer": {
+    "NextElapseUSecRealtime": "Sun 2026-11-15 12:00:21 UTC",
+    "LastTriggerUSec": "Sun 2026-11-15 11:00:17 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "accountTimer": {
+    "NextElapseUSecRealtime": "Mon 2026-11-16 02:14:23 UTC",
+    "LastTriggerUSec": "Sun 2026-11-15 02:12:07 UTC",
+    "ActiveState": "active",
+    "UnitFileState": "enabled"
+  },
+  "resources": {
+    "freeDiskBytes": 1391861760,
+    "api": {
+      "MemoryCurrent": "42983424",
+      "MemoryPeak": "59203584",
+      "CPUUsageNSec": "1011597000"
+    },
+    "containers": [
+      {
+        "BlockIO": "2.65MB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-web-1",
+        "ID": "f007b0b723b4",
+        "MemPerc": "7.50%",
+        "MemUsage": "4.797MiB / 64MiB",
+        "Name": "melodiajest-web-1",
+        "NetIO": "80.8kB / 8.07MB",
+        "PIDs": "2"
+      },
+      {
+        "BlockIO": "139MB / 215MB",
+        "CPUPerc": "0.00%",
+        "Container": "melodiajest-postgres-1",
+        "ID": "5c0b3afec574",
+        "MemPerc": "3.79%",
+        "MemUsage": "19.42MiB / 512MiB",
+        "Name": "melodiajest-postgres-1",
+        "NetIO": "0B / 0B",
+        "PIDs": "10"
+      }
+    ],
+    "loadTest": false
+  },
+  "billingMeasured": false,
+  "publicCourse": {
+    "learningRecords": 581,
+    "bytes": 656330,
+    "bodySha256": "138a678da158b165e0f2c02b6d7f43c7448be13161e6aa88638dcefbc8acb7e2",
+    "courseSha256": "a8c7bb74ee94458dfc58f58085f5e548834c17ba04cd721b178404d993392bbc",
+    "etag": "W/\"138a678da158b165e0f2c02b6d7f43c7448be13161e6aa88638dcefbc8acb7e2\"",
+    "bodyless304Verified": true,
+    "setsNoCookie": true,
+    "latestThreeIdsPublic": true,
+    "notesNotExposedInPublicSummary": true
+  }
+}
