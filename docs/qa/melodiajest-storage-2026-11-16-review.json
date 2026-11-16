@@ -1,0 +1,1391 @@
+{
+  "checkedAt": "2026-11-16T15:40:27.274223+00:00",
+  "status": "audited-no-cleanup-missing-backup-input-recovered",
+  "scope": "Own MelodiaJest server files and shared Docker metadata;no foreign app files changed.",
+  "releaseVersion": "23.5.186",
+  "operationsReport": "docs/reports/melodiajest-storage-review-2026-11-16.md",
+  "serverAllocatedBytes": 10021625856,
+  "opsAllocatedBytes": 9641734144,
+  "freeDiskBytes": 13685248000,
+  "sizeObservationsArePointInTime": true,
+  "spaceFreedByThisAuditBytes": 0,
+  "nodeArchiveRecoveryAddedBytes": 32039312,
+  "inventoryMetadata": {
+    "regularFileEntries": 101100,
+    "uniqueRegularInodes": 101066,
+    "multiLinkInodes": 2,
+    "sharedInodesAcrossTopDirectories": 2,
+    "symlinksSkipped": 3,
+    "warnings": []
+  },
+  "controlsUnchangedDuringInventory": true,
+  "protectedTopDirectories": {
+    "tooling": [
+      "ops/account-profile.json",
+      "ops/backup-tooling.json",
+      "ops/s3-schedule.json",
+      "ops/s3-tooling.json",
+      "ops/updater-tooling.json",
+      "systemd:20-external-s3.conf",
+      "systemd:melodiajest-account-backup.service",
+      "systemd:melodiajest-backup-health.service",
+      "systemd:melodiajest-backup.service",
+      "systemd:melodiajest-postgres.service",
+      "systemd:melodiajest-restore-check.service"
+    ],
+    "game-stage-22-ae6496c5b2ef": [
+      "ops/account-profile.json"
+    ],
+    "development-source-550361242dc4": [
+      "active-content-SHA-or-pin"
+    ],
+    "account-stage-21-0efdc441ee74": [
+      "ops/account-profile.json"
+    ],
+    "postgres-runtime": [
+      "ops/account-profile.json"
+    ],
+    "development-source-d4087bb957e7": [
+      "active-content-SHA-or-pin"
+    ],
+    "secrets": [
+      "docker-mount:/melodiajest-postgres-1"
+    ],
+    "docker-client": [
+      "systemd:melodiajest-account-backup.service",
+      "systemd:melodiajest-backup-health.service",
+      "systemd:melodiajest-backup.service",
+      "systemd:melodiajest-postgres.service",
+      "systemd:melodiajest-restore-check.service"
+    ],
+    "course-222-550361242dc4": [
+      "active-content-SHA-or-pin",
+      "ops/account-profile.json"
+    ],
+    "server-backups": [
+      "active-content-SHA-or-pin",
+      "ops/server-backups/last-restore-success.json"
+    ],
+    "external-work": [
+      "ops/external-s3/last-attempt.json",
+      "ops/external-s3/last-backup-success.json",
+      "ops/external-s3/last-restore-success.json",
+      "ops/external-s3/scheduled/last-restore-success.json",
+      "ops/external-s3/scheduled/last-success.json",
+      "ops/external-s3/scheduled/pending.json"
+    ],
+    "source-snapshots": [
+      "ops/backup-policy.json"
+    ],
+    "development-source-f7fb2134b86a": [
+      "active-content-SHA-or-pin"
+    ],
+    "course-132-d4087bb957e7": [
+      "active-content-SHA-or-pin",
+      "ops/account-profile.json"
+    ],
+    "backups": [
+      "ops/backup-policy.json",
+      "ops/update-state.json",
+      "ops/updater-tooling.json"
+    ],
+    "external-kits": [
+      "active-content-SHA-or-pin"
+    ],
+    "artifacts": [
+      "active-content-SHA-or-pin",
+      "ops/update-state.json"
+    ]
+  },
+  "explicitHistoricalSourcePins": [
+    "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "2b264c731926ee7320e91c4b3c9f9f589a60c8390c3868fd7dd950dad69c8584",
+    "2e448605dacf024382882cb796b470f6449990f4b9e7f631fe7032caa1f4f47e",
+    "307755474fb2b8180e876e20e12f4234d3f9ff0b40e4f295f31f46e953ba1ee9",
+    "3a71fc5bf71adc548bccfb748df937d1b73eae392ef2d2c5b39f95f4581b35bd",
+    "463eca510470768b5e0037b74a13eae91af6f0e8db512be6560848948ea26870",
+    "9cf6cae160bb3ecfff604cdd8cb58e7f16a9ccbd3c89bbb668669fd6fff343db",
+    "c19a475f2e4eb0a85c8d173e9cf28284fb6cac33a05e176cf23176dc3d5469c4",
+    "e66f6181e7f653c331f2421b85a61cec6c5d0d5699a6c69785daa8eade49c131"
+  ],
+  "additionalProtectedStageDirectories": [
+    {
+      "name": "course-134-975e3e171bc3",
+      "allocatedByDu": 180453376,
+      "singleDirectoryReclaimUpperBoundBytes": 180453376,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "historical-failed101-evidence-preserved"
+      ]
+    },
+    {
+      "name": "course-32-05846bf97a68",
+      "allocatedByDu": 41897984,
+      "singleDirectoryReclaimUpperBoundBytes": 41897984,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "additional-control:account-worker-update.json"
+      ]
+    },
+    {
+      "name": "course-34-0dabeb8dd5bd",
+      "allocatedByDu": 43290624,
+      "singleDirectoryReclaimUpperBoundBytes": 43290624,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "additional-control:account-worker-update.json"
+      ]
+    },
+    {
+      "name": "development-source-0f4b30f85ca4",
+      "allocatedByDu": 2932736,
+      "singleDirectoryReclaimUpperBoundBytes": 2932736,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-2b264c731926",
+      "allocatedByDu": 3080192,
+      "singleDirectoryReclaimUpperBoundBytes": 3080192,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-2e448605dacf",
+      "allocatedByDu": 2818048,
+      "singleDirectoryReclaimUpperBoundBytes": 2818048,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-307755474fb2",
+      "allocatedByDu": 2473984,
+      "singleDirectoryReclaimUpperBoundBytes": 2473984,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-3a71fc5bf71a",
+      "allocatedByDu": 2732032,
+      "singleDirectoryReclaimUpperBoundBytes": 2732032,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-463eca510470",
+      "allocatedByDu": 2560000,
+      "singleDirectoryReclaimUpperBoundBytes": 2560000,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-9cf6cae160bb",
+      "allocatedByDu": 3170304,
+      "singleDirectoryReclaimUpperBoundBytes": 3170304,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-c19a475f2e4e",
+      "allocatedByDu": 3215360,
+      "singleDirectoryReclaimUpperBoundBytes": 3215360,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "development-source-e66f6181e7f6",
+      "allocatedByDu": 2641920,
+      "singleDirectoryReclaimUpperBoundBytes": 2641920,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    },
+    {
+      "name": "release-23.5.53-9cf6cae160bb",
+      "allocatedByDu": 21356544,
+      "singleDirectoryReclaimUpperBoundBytes": 21356544,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false,
+      "extraHoldReasons": [
+        "explicit-historical-source-pin"
+      ]
+    }
+  ],
+  "unreferencedStageCandidates": [
+    {
+      "name": "account-stage-21-03be786f085e",
+      "allocatedByDu": 26673152,
+      "singleDirectoryReclaimUpperBoundBytes": 26673152,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "account-stage-21-4549478f359c",
+      "allocatedByDu": 153735168,
+      "singleDirectoryReclaimUpperBoundBytes": 153735168,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "account-stage-21-6916a9191816",
+      "allocatedByDu": 153776128,
+      "singleDirectoryReclaimUpperBoundBytes": 153776128,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "account-stage-21-729640af5b30",
+      "allocatedByDu": 153714688,
+      "singleDirectoryReclaimUpperBoundBytes": 153714688,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-102-a4209ac8f841",
+      "allocatedByDu": 60018688,
+      "singleDirectoryReclaimUpperBoundBytes": 60018688,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-111-434d164ed890",
+      "allocatedByDu": 226652160,
+      "singleDirectoryReclaimUpperBoundBytes": 70098944,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-112-9b69c0c1706a",
+      "allocatedByDu": 72097792,
+      "singleDirectoryReclaimUpperBoundBytes": 72097792,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-113-f7918e913d8f",
+      "allocatedByDu": 72806400,
+      "singleDirectoryReclaimUpperBoundBytes": 72806400,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-114-7fdcedf48a32",
+      "allocatedByDu": 73695232,
+      "singleDirectoryReclaimUpperBoundBytes": 73695232,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-115-dfc2d9234ce8",
+      "allocatedByDu": 74567680,
+      "singleDirectoryReclaimUpperBoundBytes": 74567680,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-11585-acaf023e2d9f",
+      "allocatedByDu": 75083776,
+      "singleDirectoryReclaimUpperBoundBytes": 75083776,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-116-c9a3da6d9d55",
+      "allocatedByDu": 75931648,
+      "singleDirectoryReclaimUpperBoundBytes": 75931648,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-117-94afc7c4c8dd",
+      "allocatedByDu": 76898304,
+      "singleDirectoryReclaimUpperBoundBytes": 76898304,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-118-d4add77cb32c",
+      "allocatedByDu": 77496320,
+      "singleDirectoryReclaimUpperBoundBytes": 77496320,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-119-7251436a86ba",
+      "allocatedByDu": 77963264,
+      "singleDirectoryReclaimUpperBoundBytes": 77963264,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-120-579a7391c635",
+      "allocatedByDu": 78872576,
+      "singleDirectoryReclaimUpperBoundBytes": 78872576,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-121-527d6bf8804f",
+      "allocatedByDu": 80125952,
+      "singleDirectoryReclaimUpperBoundBytes": 80125952,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-123-167ee43e3405",
+      "allocatedByDu": 63197184,
+      "singleDirectoryReclaimUpperBoundBytes": 63197184,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-124-343b89dc91ea",
+      "allocatedByDu": 63700992,
+      "singleDirectoryReclaimUpperBoundBytes": 63700992,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-125-628719f1a8c0",
+      "allocatedByDu": 77238272,
+      "singleDirectoryReclaimUpperBoundBytes": 77238272,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-126-94da99ce855d",
+      "allocatedByDu": 90959872,
+      "singleDirectoryReclaimUpperBoundBytes": 90959872,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-128-01c5a1f0723d",
+      "allocatedByDu": 114831360,
+      "singleDirectoryReclaimUpperBoundBytes": 114831360,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-128-43e89e8e3aee",
+      "allocatedByDu": 91873280,
+      "singleDirectoryReclaimUpperBoundBytes": 91873280,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-129-a336d4d8039f",
+      "allocatedByDu": 106258432,
+      "singleDirectoryReclaimUpperBoundBytes": 106258432,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-130-00a9c1bca431",
+      "allocatedByDu": 120348672,
+      "singleDirectoryReclaimUpperBoundBytes": 120348672,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-131-fe7de9e12697",
+      "allocatedByDu": 120758272,
+      "singleDirectoryReclaimUpperBoundBytes": 120758272,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-24-436b26f0d19f",
+      "allocatedByDu": 69853184,
+      "singleDirectoryReclaimUpperBoundBytes": 69853184,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-26-721b75e09192",
+      "allocatedByDu": 38391808,
+      "singleDirectoryReclaimUpperBoundBytes": 38391808,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-27-202d50f7ff6d",
+      "allocatedByDu": 39161856,
+      "singleDirectoryReclaimUpperBoundBytes": 39161856,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-29-7de54d6f4894",
+      "allocatedByDu": 39948288,
+      "singleDirectoryReclaimUpperBoundBytes": 39948288,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-30-8e8baa67d7e6",
+      "allocatedByDu": 40607744,
+      "singleDirectoryReclaimUpperBoundBytes": 40607744,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-32-c10225e2670c",
+      "allocatedByDu": 31817728,
+      "singleDirectoryReclaimUpperBoundBytes": 31817728,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-39-1033cc5f702c",
+      "allocatedByDu": 45592576,
+      "singleDirectoryReclaimUpperBoundBytes": 45592576,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-41-204443534f2f",
+      "allocatedByDu": 17088512,
+      "singleDirectoryReclaimUpperBoundBytes": 17088512,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-43-e942e0791008",
+      "allocatedByDu": 17756160,
+      "singleDirectoryReclaimUpperBoundBytes": 17756160,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-45-f2ae9037ffd2",
+      "allocatedByDu": 51531776,
+      "singleDirectoryReclaimUpperBoundBytes": 51531776,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-47-de50ec44843d",
+      "allocatedByDu": 53428224,
+      "singleDirectoryReclaimUpperBoundBytes": 53428224,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-49-5ff25a1df85e",
+      "allocatedByDu": 55332864,
+      "singleDirectoryReclaimUpperBoundBytes": 55332864,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "course-56-03d90e7c0495",
+      "allocatedByDu": 58761216,
+      "singleDirectoryReclaimUpperBoundBytes": 58761216,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-00a9c1bca431",
+      "allocatedByDu": 13066240,
+      "singleDirectoryReclaimUpperBoundBytes": 13066240,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-01c5a1f0723d",
+      "allocatedByDu": 11182080,
+      "singleDirectoryReclaimUpperBoundBytes": 11182080,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-03d90e7c0495",
+      "allocatedByDu": 6897664,
+      "singleDirectoryReclaimUpperBoundBytes": 6897664,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-05846bf97a68",
+      "allocatedByDu": 4980736,
+      "singleDirectoryReclaimUpperBoundBytes": 4980736,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-07144dd8d2c2",
+      "allocatedByDu": 2449408,
+      "singleDirectoryReclaimUpperBoundBytes": 2449408,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-0dabeb8dd5bd",
+      "allocatedByDu": 5156864,
+      "singleDirectoryReclaimUpperBoundBytes": 5156864,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-0efdc441ee74",
+      "allocatedByDu": 4067328,
+      "singleDirectoryReclaimUpperBoundBytes": 4067328,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-1033cc5f702c",
+      "allocatedByDu": 5427200,
+      "singleDirectoryReclaimUpperBoundBytes": 5427200,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-108456ed2429",
+      "allocatedByDu": 4259840,
+      "singleDirectoryReclaimUpperBoundBytes": 4259840,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-167ee43e3405",
+      "allocatedByDu": 9199616,
+      "singleDirectoryReclaimUpperBoundBytes": 9199616,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-1b71a95ee9d7",
+      "allocatedByDu": 3325952,
+      "singleDirectoryReclaimUpperBoundBytes": 3325952,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-202d50f7ff6d",
+      "allocatedByDu": 4595712,
+      "singleDirectoryReclaimUpperBoundBytes": 4595712,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-204443534f2f",
+      "allocatedByDu": 5660672,
+      "singleDirectoryReclaimUpperBoundBytes": 5660672,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-261d422abbea",
+      "allocatedByDu": 3424256,
+      "singleDirectoryReclaimUpperBoundBytes": 3424256,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-272e9880dce6",
+      "allocatedByDu": 2531328,
+      "singleDirectoryReclaimUpperBoundBytes": 2531328,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-294e25a499b6",
+      "allocatedByDu": 2297856,
+      "singleDirectoryReclaimUpperBoundBytes": 2297856,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-2a0c984d9e7d",
+      "allocatedByDu": 2789376,
+      "singleDirectoryReclaimUpperBoundBytes": 2789376,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-2d2891d5d682",
+      "allocatedByDu": 2113536,
+      "singleDirectoryReclaimUpperBoundBytes": 2113536,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-33ee4a7d4447",
+      "allocatedByDu": 3969024,
+      "singleDirectoryReclaimUpperBoundBytes": 3969024,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-341dfdeb0fce",
+      "allocatedByDu": 2166784,
+      "singleDirectoryReclaimUpperBoundBytes": 2166784,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-343b89dc91ea",
+      "allocatedByDu": 9252864,
+      "singleDirectoryReclaimUpperBoundBytes": 9252864,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-3529f869ad32",
+      "allocatedByDu": 2396160,
+      "singleDirectoryReclaimUpperBoundBytes": 2396160,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-357a263bb073",
+      "allocatedByDu": 3760128,
+      "singleDirectoryReclaimUpperBoundBytes": 3760128,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-3b30b9429a83",
+      "allocatedByDu": 2908160,
+      "singleDirectoryReclaimUpperBoundBytes": 2908160,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-434d164ed890",
+      "allocatedByDu": 8142848,
+      "singleDirectoryReclaimUpperBoundBytes": 8142848,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-436b26f0d19f",
+      "allocatedByDu": 4374528,
+      "singleDirectoryReclaimUpperBoundBytes": 4374528,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-502d1cd2cef3",
+      "allocatedByDu": 2322432,
+      "singleDirectoryReclaimUpperBoundBytes": 2322432,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-527d6bf8804f",
+      "allocatedByDu": 9031680,
+      "singleDirectoryReclaimUpperBoundBytes": 9031680,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-579a7391c635",
+      "allocatedByDu": 8892416,
+      "singleDirectoryReclaimUpperBoundBytes": 8892416,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-5e89c0c45f39",
+      "allocatedByDu": 2191360,
+      "singleDirectoryReclaimUpperBoundBytes": 2191360,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-5ff25a1df85e",
+      "allocatedByDu": 6524928,
+      "singleDirectoryReclaimUpperBoundBytes": 6524928,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-628719f1a8c0",
+      "allocatedByDu": 10121216,
+      "singleDirectoryReclaimUpperBoundBytes": 10121216,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-70d8d2c13c77",
+      "allocatedByDu": 3678208,
+      "singleDirectoryReclaimUpperBoundBytes": 3678208,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-721b75e09192",
+      "allocatedByDu": 4489216,
+      "singleDirectoryReclaimUpperBoundBytes": 4489216,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-7251436a86ba",
+      "allocatedByDu": 8781824,
+      "singleDirectoryReclaimUpperBoundBytes": 8781824,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-77d5ce3cdb21",
+      "allocatedByDu": 2371584,
+      "singleDirectoryReclaimUpperBoundBytes": 2371584,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-791935d708de",
+      "allocatedByDu": 2703360,
+      "singleDirectoryReclaimUpperBoundBytes": 2703360,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-7c5ec44834c9",
+      "allocatedByDu": 3649536,
+      "singleDirectoryReclaimUpperBoundBytes": 3649536,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-7de54d6f4894",
+      "allocatedByDu": 4706304,
+      "singleDirectoryReclaimUpperBoundBytes": 4706304,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-7fdcedf48a32",
+      "allocatedByDu": 8413184,
+      "singleDirectoryReclaimUpperBoundBytes": 8413184,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-8989bf11f22b",
+      "allocatedByDu": 2351104,
+      "singleDirectoryReclaimUpperBoundBytes": 2351104,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-8e5bfebc519d",
+      "allocatedByDu": 3031040,
+      "singleDirectoryReclaimUpperBoundBytes": 3031040,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-8e8baa67d7e6",
+      "allocatedByDu": 4788224,
+      "singleDirectoryReclaimUpperBoundBytes": 4788224,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-94afc7c4c8dd",
+      "allocatedByDu": 8704000,
+      "singleDirectoryReclaimUpperBoundBytes": 8704000,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-94da99ce855d",
+      "allocatedByDu": 11005952,
+      "singleDirectoryReclaimUpperBoundBytes": 11005952,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-97ed79971d32",
+      "allocatedByDu": 3792896,
+      "singleDirectoryReclaimUpperBoundBytes": 3792896,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-99198b049ccf",
+      "allocatedByDu": 2621440,
+      "singleDirectoryReclaimUpperBoundBytes": 2621440,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-9b69c0c1706a",
+      "allocatedByDu": 8253440,
+      "singleDirectoryReclaimUpperBoundBytes": 8253440,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-9c043f965a4a",
+      "allocatedByDu": 3874816,
+      "singleDirectoryReclaimUpperBoundBytes": 3874816,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a2c550c13230",
+      "allocatedByDu": 2215936,
+      "singleDirectoryReclaimUpperBoundBytes": 2215936,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a336d4d8039f",
+      "allocatedByDu": 12128256,
+      "singleDirectoryReclaimUpperBoundBytes": 12128256,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a4209ac8f841",
+      "allocatedByDu": 6991872,
+      "singleDirectoryReclaimUpperBoundBytes": 6991872,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a558fc6c5681",
+      "allocatedByDu": 2252800,
+      "singleDirectoryReclaimUpperBoundBytes": 2252800,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a593d39968e9",
+      "allocatedByDu": 3567616,
+      "singleDirectoryReclaimUpperBoundBytes": 3567616,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-a5ee722c7536",
+      "allocatedByDu": 2125824,
+      "singleDirectoryReclaimUpperBoundBytes": 2125824,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-acaf023e2d9f",
+      "allocatedByDu": 8486912,
+      "singleDirectoryReclaimUpperBoundBytes": 8486912,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-ba6c2d1c5404",
+      "allocatedByDu": 3551232,
+      "singleDirectoryReclaimUpperBoundBytes": 3551232,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-c9a3da6d9d55",
+      "allocatedByDu": 8597504,
+      "singleDirectoryReclaimUpperBoundBytes": 8597504,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-cbd88d17a75c",
+      "allocatedByDu": 3579904,
+      "singleDirectoryReclaimUpperBoundBytes": 3579904,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-d1d21a4a04ef",
+      "allocatedByDu": 3362816,
+      "singleDirectoryReclaimUpperBoundBytes": 3362816,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-d4add77cb32c",
+      "allocatedByDu": 8744960,
+      "singleDirectoryReclaimUpperBoundBytes": 8744960,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-d6bff8eafb6a",
+      "allocatedByDu": 2269184,
+      "singleDirectoryReclaimUpperBoundBytes": 2269184,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-de50ec44843d",
+      "allocatedByDu": 6299648,
+      "singleDirectoryReclaimUpperBoundBytes": 6299648,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-dfc2d9234ce8",
+      "allocatedByDu": 8458240,
+      "singleDirectoryReclaimUpperBoundBytes": 8458240,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-e942e0791008",
+      "allocatedByDu": 5877760,
+      "singleDirectoryReclaimUpperBoundBytes": 5877760,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-ea401bd03ff7",
+      "allocatedByDu": 3465216,
+      "singleDirectoryReclaimUpperBoundBytes": 3465216,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-f2ae9037ffd2",
+      "allocatedByDu": 6086656,
+      "singleDirectoryReclaimUpperBoundBytes": 6086656,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-f7918e913d8f",
+      "allocatedByDu": 8306688,
+      "singleDirectoryReclaimUpperBoundBytes": 8306688,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-fa7618b06fbe",
+      "allocatedByDu": 2191360,
+      "singleDirectoryReclaimUpperBoundBytes": 2191360,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-fe7de9e12697",
+      "allocatedByDu": 13127680,
+      "singleDirectoryReclaimUpperBoundBytes": 13127680,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "development-source-ff0b5998afe2",
+      "allocatedByDu": 2076672,
+      "singleDirectoryReclaimUpperBoundBytes": 2076672,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-0daa81322a00",
+      "allocatedByDu": 29184000,
+      "singleDirectoryReclaimUpperBoundBytes": 29184000,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-1ba7dadb7967",
+      "allocatedByDu": 28721152,
+      "singleDirectoryReclaimUpperBoundBytes": 28721152,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-56f71094cd72",
+      "allocatedByDu": 29208576,
+      "singleDirectoryReclaimUpperBoundBytes": 29208576,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-84022e6c6471",
+      "allocatedByDu": 29106176,
+      "singleDirectoryReclaimUpperBoundBytes": 29106176,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-85061859f975",
+      "allocatedByDu": 29208576,
+      "singleDirectoryReclaimUpperBoundBytes": 29208576,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-fixture-22-8b7631b4360a",
+      "allocatedByDu": 29200384,
+      "singleDirectoryReclaimUpperBoundBytes": 29200384,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-stage-22-56f71094cd72",
+      "allocatedByDu": 28196864,
+      "singleDirectoryReclaimUpperBoundBytes": 28196864,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-stage-22-85061859f975",
+      "allocatedByDu": 28184576,
+      "singleDirectoryReclaimUpperBoundBytes": 28184576,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "game-stage-22-c3ac0964c7bc",
+      "allocatedByDu": 28188672,
+      "singleDirectoryReclaimUpperBoundBytes": 28188672,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.34-07067fba67a4",
+      "allocatedByDu": 12058624,
+      "singleDirectoryReclaimUpperBoundBytes": 12058624,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.35-770542f171b7",
+      "allocatedByDu": 12472320,
+      "singleDirectoryReclaimUpperBoundBytes": 12472320,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.36-c8df28357b51",
+      "allocatedByDu": 12890112,
+      "singleDirectoryReclaimUpperBoundBytes": 12890112,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.37-239c49db8ab9",
+      "allocatedByDu": 13283328,
+      "singleDirectoryReclaimUpperBoundBytes": 13283328,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.38-12596a1443bc",
+      "allocatedByDu": 13660160,
+      "singleDirectoryReclaimUpperBoundBytes": 13660160,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.39-eb8f49852ad1",
+      "allocatedByDu": 14123008,
+      "singleDirectoryReclaimUpperBoundBytes": 14123008,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.40-d93c524521e8",
+      "allocatedByDu": 14409728,
+      "singleDirectoryReclaimUpperBoundBytes": 14409728,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.41-5cb39eaece87",
+      "allocatedByDu": 14700544,
+      "singleDirectoryReclaimUpperBoundBytes": 14700544,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.42-a2c550c13230",
+      "allocatedByDu": 15241216,
+      "singleDirectoryReclaimUpperBoundBytes": 15241216,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.43-d6bff8eafb6a",
+      "allocatedByDu": 15650816,
+      "singleDirectoryReclaimUpperBoundBytes": 15650816,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.44-502d1cd2cef3",
+      "allocatedByDu": 16035840,
+      "singleDirectoryReclaimUpperBoundBytes": 16035840,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.45-77d5ce3cdb21",
+      "allocatedByDu": 16429056,
+      "singleDirectoryReclaimUpperBoundBytes": 16429056,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.46-07144dd8d2c2",
+      "allocatedByDu": 16904192,
+      "singleDirectoryReclaimUpperBoundBytes": 16904192,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.47-272e9880dce6",
+      "allocatedByDu": 17428480,
+      "singleDirectoryReclaimUpperBoundBytes": 17428480,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.48-99198b049ccf",
+      "allocatedByDu": 18001920,
+      "singleDirectoryReclaimUpperBoundBytes": 18001920,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.49-791935d708de",
+      "allocatedByDu": 18538496,
+      "singleDirectoryReclaimUpperBoundBytes": 18538496,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.50-2a0c984d9e7d",
+      "allocatedByDu": 19070976,
+      "singleDirectoryReclaimUpperBoundBytes": 19070976,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.51-3b30b9429a83",
+      "allocatedByDu": 19759104,
+      "singleDirectoryReclaimUpperBoundBytes": 19759104,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.52-8e5bfebc519d",
+      "allocatedByDu": 20492288,
+      "singleDirectoryReclaimUpperBoundBytes": 20492288,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.54-1b71a95ee9d7",
+      "allocatedByDu": 22220800,
+      "singleDirectoryReclaimUpperBoundBytes": 22220800,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.55-261d422abbea",
+      "allocatedByDu": 22949888,
+      "singleDirectoryReclaimUpperBoundBytes": 22949888,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.56-ea401bd03ff7",
+      "allocatedByDu": 23232512,
+      "singleDirectoryReclaimUpperBoundBytes": 23232512,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.57-ba6c2d1c5404",
+      "allocatedByDu": 23646208,
+      "singleDirectoryReclaimUpperBoundBytes": 23646208,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.58-7c5ec44834c9",
+      "allocatedByDu": 24174592,
+      "singleDirectoryReclaimUpperBoundBytes": 20529152,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.59-357a263bb073",
+      "allocatedByDu": 24850432,
+      "singleDirectoryReclaimUpperBoundBytes": 24850432,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.60-9c043f965a4a",
+      "allocatedByDu": 25534464,
+      "singleDirectoryReclaimUpperBoundBytes": 25534464,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    },
+    {
+      "name": "release-23.5.61-33ee4a7d4447",
+      "allocatedByDu": 26079232,
+      "singleDirectoryReclaimUpperBoundBytes": 26079232,
+      "hardlinkBytesHeld": 0,
+      "automaticDeletionReady": false
+    }
+  ],
+  "unreferencedStageCount": 146,
+  "stageReclaimUpperBoundBytes": 3991846912,
+  "stageAutomaticDeletionReady": false,
+  "stageLimitations": "Active controls/units/mounts/process command and cwd references checked. No exhaustive nested historical dependency or open-FD proof;retirement/replica verification needed before deletion.",
+  "externalWorkTotalBytes": 2408976384,
+  "externalWorkCount": 84,
+  "externalWorkMetadataEligibleCount": 71,
+  "externalWorkMetadataEligibleUpperBoundBytes": 2030632960,
+  "externalWorkPayloadsHashedAndVerifiedNow": 2,
+  "existingBoundedFirstBatchBytes": 34996224,
+  "existingBoundedPlan": "docs/qa/melodiajest-storage-2026-11-16-retention-plan.json",
+  "existingBoundedPlanSha256": "383e89e8437249c431ffb954d85f8ef496c3d1baff30f70a80f849ab0bca81b6",
+  "existingExecutionLimitsRaised": false,
+  "combinedStageAndMetadataPayloadUpperBoundBytes": 6022479872,
+  "estimatesAreNotGuaranteedReclaim": true,
+  "unverifiedKitsNotAddedToSavingEstimate": true,
+  "externalKitsTotalBytes": 947113984,
+  "externalKitCount": 80,
+  "boundedArchiveHashBytes": 110400593,
+  "boundedArchiveHashCapBytes": 134217728,
+  "confirmedArchiveDuplicates": [
+    {
+      "sha256": "d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3",
+      "copies": 8,
+      "uniqueInodes": 8,
+      "bytesPerCopy": 13155622,
+      "independentCopyAllocatedBytes": 105283584,
+      "theoreticalDuplicateAllocatedBytes": 92123136,
+      "paths": [
+        "/opt/melodiajest/ops/development-source-d4087bb957e7/selected-checkout.tar.gz",
+        "/opt/melodiajest/ops/server-backups/blobs/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz",
+        "/opt/melodiajest/ops/external-work/payload-8427352bf19179b3/payload/published/blobs/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz",
+        "/opt/melodiajest/ops/external-work/payload-4636f1cbcebe50f2/payload/published/blobs/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz",
+        "/opt/melodiajest/ops/course-132-d4087bb957e7/release.tar.gz",
+        "/opt/melodiajest/ops/external-kits/e8b3640a70908928a1e55cee473566b55fad6c85b72b02da4a29b4a7e0a24001/blobs/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz",
+        "/opt/melodiajest/ops/external-kits/5405c40a306834e3c6b281265b6cd4fdfe5e5952f818f4f9d283688ee9e9fd6c/blobs/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz",
+        "/opt/melodiajest/ops/artifacts/d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3.tar.gz"
+      ],
+      "currentlyReferenced": true
+    },
+    {
+      "sha256": "725feb1fbc2c282a8ba218f356d555ac503db1cf31da6d4f399036a20f4082bf",
+      "copies": 3,
+      "uniqueInodes": 3,
+      "bytesPerCopy": 1718539,
+      "independentCopyAllocatedBytes": 5160960,
+      "theoreticalDuplicateAllocatedBytes": 3440640,
+      "paths": [
+        "/opt/melodiajest/ops/server-backups/blobs/725feb1fbc2c282a8ba218f356d555ac503db1cf31da6d4f399036a20f4082bf.tar.gz",
+        "/opt/melodiajest/ops/source-snapshots/725feb1fbc2c282a8ba218f356d555ac503db1cf31da6d4f399036a20f4082bf.tar.gz",
+        "/opt/melodiajest/ops/external-kits/1f3695900770508b0d0cc95e97b8e19195f37116d81165d02aea98f7d9fc25cd/blobs/725feb1fbc2c282a8ba218f356d555ac503db1cf31da6d4f399036a20f4082bf.tar.gz"
+      ],
+      "currentlyReferenced": true
+    }
+  ],
+  "duplicateSavingsOverlapOtherCandidates": true,
+  "public100ArchiveCopies8Verified": true,
+  "public100ArchiveSha256": "d4087bb957e778116f216f09b577f84f255f4de3fffd7ed6895d16c47c55d9c3",
+  "public100ArchiveCopiesPotentialDuplicateBytes": 92123136,
+  "dockerSummary": [
+    {
+      "Active": "10",
+      "Reclaimable": "1.426GB (14%)",
+      "Size": "9.537GB",
+      "TotalCount": "27",
+      "Type": "Images"
+    },
+    {
+      "Active": "14",
+      "Reclaimable": "0B (0%)",
+      "Size": "3.826MB",
+      "TotalCount": "14",
+      "Type": "Containers"
+    },
+    {
+      "Active": "5",
+      "Reclaimable": "0B (0%)",
+      "Size": "1.36GB",
+      "TotalCount": "5",
+      "Type": "Local Volumes"
+    },
+    {
+      "Active": "459",
+      "Reclaimable": "0B",
+      "Size": "7.117GB",
+      "TotalCount": "459",
+      "Type": "Build Cache"
+    }
+  ],
+  "dockerCacheNotAttributedExclusivelyToMelodiajest": true,
+  "dockerSizesNotSummedWithSharedCache": true,
+  "dockerPruneOrVolumeRemovalPerformed": false,
+  "missingNodeArchiveRecovery": "docs/qa/melodiajest-storage-2026-11-16-node-archive-recovery.json",
+  "missingNodeArchiveRecovered": true,
+  "recoveryCauseNotEstablished": true,
+  "newFullBackupOrColdRestoreClaimed": false,
+  "s3Requests": 0,
+  "nativePgStarts": 0,
+  "healthServiceStarts": 0,
+  "servicesRestarted": 0,
+  "productionDbChanged": false,
+  "deletedExistingFiles": 0,
+  "automaticTasksResumed": false,
+  "all5AutomationsPaused": true,
+  "newLessons": 0,
+  "newMusicalBatches": 0,
+  "sourceApplicationsAdded": 0,
+  "officialDockerGcReference": "https://docs.docker.com/build/cache/garbage-collection/",
+  "hardlinkPayloadWarning": "retention_plan.real/tree_usage requiresst_nlink1;do not retrofit payloads with hardlinks without a separately tested contract change.",
+  "rawLocalEvidence": [
+    {
+      "path": "tmp/storage-optimization-inventory-20261116.json",
+      "sha256": "882fc203381014d1ce01ca4905d7315d36d40a27efb5b94c9de36813838f36d6"
+    },
+    {
+      "path": "tmp/storage-optimization-followup-20261116.json",
+      "sha256": "319484ed238a949e6fbb5733ae8164c76e033d370ea235a36d2ea65f049e0686"
+    },
+    {
+      "path": "tmp/storage-optimization-final-read-20261116.json",
+      "sha256": "e41d9491e68a3ece6a1d92a55bdf4dd05ebd8eb760a5d3629b7492c5e4a5d587"
+    }
+  ],
+  "fullRetestNotRequiredReason": "Application/music/test code unchanged;683 freeze members exact,AGENTS ispreviouslypushedpolicychange;only reporting and recovery of missing exact runtime archive."
+}

@@ -1,0 +1,714 @@
+{
+  "format": "melodiajest-local-payload-retention-plan-v1",
+  "checkedAt": "2026-11-16T15:34:47.514928+00:00",
+  "policy": {
+    "keepNewest": 3,
+    "minAgeSeconds": 21600,
+    "maxCandidates": 2,
+    "maxAllocatedBytes": 67108864
+  },
+  "controls": {
+    "fingerprints": {
+      "s3-schedule.json": {
+        "bytes": 1771,
+        "sha256": "e121e58d29110c9021705a50414b0232cdb10fc56b68def2ce362551c423afea"
+      },
+      "update-state.json": {
+        "bytes": 1881,
+        "sha256": "5e5dd018b59cb4a7019ab435c6da1ff1a71c7ff461d10f4292faee060844e5fb"
+      },
+      "external-s3/last-backup-success.json": {
+        "bytes": 3855,
+        "sha256": "b8e111496ae12d895cce10649f2f57ce870074f3126fc72574d25ec84e44f5fb"
+      },
+      "external-s3/last-restore-success.json": {
+        "bytes": 6972,
+        "sha256": "b107d0034efedd9fda1361ee8b9f3b3843b739b532b50fe551f4146c3b8e6015"
+      },
+      "external-s3/last-attempt.json": {
+        "bytes": 199,
+        "sha256": "3e985850ce208c6774be501e1f47fea941aeaa3694280e41ddbeae3dd3163868"
+      },
+      "external-s3/scheduled/pending.json": {
+        "bytes": 5114,
+        "sha256": "7cfc29e7b883f13ed7eb59f1b027272962849f7f996cff8971d5c5776dbbd811"
+      },
+      "external-s3/scheduled/last-success.json": {
+        "bytes": 1358,
+        "sha256": "3a6453fa1a3f7f1b5eb77034cea385bd4e12d4dd18f108ad47994417b1d661a8"
+      },
+      "external-s3/scheduled/last-restore-success.json": {
+        "bytes": 6972,
+        "sha256": "b107d0034efedd9fda1361ee8b9f3b3843b739b532b50fe551f4146c3b8e6015"
+      },
+      "external-s3/scheduled/last-attempt.json": {
+        "bytes": 271,
+        "sha256": "b9150806570bc41a619c9cc939f2e69cbf28fc1647466c8730da7cc040c20dfd"
+      }
+    },
+    "protectedWorks": [
+      "payload-8427352bf19179b3"
+    ],
+    "developmentSourceSha256": "f7fb2134b86a5aef9e7d20254a1baa279a534dc7cda7497691d2b12ab20d278b",
+    "releaseManifests": {
+      "current": "665baf26c009d9f789d8c9db7b04f371703e0be98b700e133241c4d577359196",
+      "previous": "8f02cdfef1a8ebb68bb74cfab2c87027941cedeec12418d6eabc6a1a575335c1"
+    },
+    "releasePaths": {
+      "current": "releases/23.5.186-665baf26c009",
+      "previous": "releases/23.5.100-8f02cdfef1a8"
+    }
+  },
+  "pinnedSourceSha256s": [
+    "0f4b30f85ca473eba47a71b5bcb3360e7ac5f1999438818389e5939b3b58b598",
+    "2b264c731926ee7320e91c4b3c9f9f589a60c8390c3868fd7dd950dad69c8584",
+    "2e448605dacf024382882cb796b470f6449990f4b9e7f631fe7032caa1f4f47e",
+    "307755474fb2b8180e876e20e12f4234d3f9ff0b40e4f295f31f46e953ba1ee9",
+    "3a71fc5bf71adc548bccfb748df937d1b73eae392ef2d2c5b39f95f4581b35bd",
+    "463eca510470768b5e0037b74a13eae91af6f0e8db512be6560848948ea26870",
+    "9cf6cae160bb3ecfff604cdd8cb58e7f16a9ccbd3c89bbb668669fd6fff343db",
+    "c19a475f2e4eb0a85c8d173e9cf28284fb6cac33a05e176cf23176dc3d5469c4",
+    "e66f6181e7f653c331f2421b85a61cec6c5d0d5699a6c69785daa8eade49c131",
+    "f7fb2134b86a5aef9e7d20254a1baa279a534dc7cda7497691d2b12ab20d278b"
+  ],
+  "candidates": [
+    {
+      "work": "payload-9da7661799c8a902",
+      "path": "ops/external-work/payload-9da7661799c8a902",
+      "holdReasons": [],
+      "payloadContentsVerified": true,
+      "automaticDeletionReady": false,
+      "entries": 38,
+      "logicalBytes": 17251103,
+      "allocatedBytes": 17379328,
+      "newestMtime": 1794032965.0321631,
+      "allocationMeasured": true,
+      "verifiedAt": "2026-11-07T06:29:25.009265+00:00",
+      "preparedAt": "2026-11-07T06:28:02.293146+00:00",
+      "snapshotId": "5829aa9fa90211a06e04014c5ca3d7c578370d431f39befbf754f54cd25bc6aa",
+      "checkoutSha256": "341dfdeb0fce0e6ee8ba9cf7065b3f8695a00e85ee46883a4b956276bd989737",
+      "releaseManifestSha256": "5575c6e9c5b1d025c3b9ee8f0ab9dc28cd24b89778e500b9d0ff1ff763910b72",
+      "payloadManifestSha256": "3917dd98b42acab67148f36e62f0fddfaf4dd047fcc26eda9734f6b4aee84a26",
+      "payloadBytes": 17233747,
+      "metadataMatchedColdRestore": true,
+      "ageSeconds": 810322,
+      "status": "candidate-requires-separate-executor"
+    },
+    {
+      "work": "payload-e8b01390ecb7463f",
+      "path": "ops/external-work/payload-e8b01390ecb7463f",
+      "holdReasons": [],
+      "payloadContentsVerified": true,
+      "automaticDeletionReady": false,
+      "entries": 45,
+      "logicalBytes": 17470786,
+      "allocatedBytes": 17616896,
+      "newestMtime": 1794035006.7535622,
+      "allocationMeasured": true,
+      "verifiedAt": "2026-11-07T07:03:26.732776+00:00",
+      "preparedAt": "2026-11-07T07:01:23.044072+00:00",
+      "snapshotId": "c9036c4dffc6cb62d110b26ccf7283042132836e4d1036155cee774d1b5fad74",
+      "checkoutSha256": "fa7618b06fbe2ac7834d2db0b7be66a3d81983e9ad15ce557eb6917295a7c0f1",
+      "releaseManifestSha256": "5575c6e9c5b1d025c3b9ee8f0ab9dc28cd24b89778e500b9d0ff1ff763910b72",
+      "payloadManifestSha256": "0d7291a95df0dc0e3f07630357a775be6f0be8c1d17d8481157a0015b8802cee",
+      "payloadBytes": 17449503,
+      "metadataMatchedColdRestore": true,
+      "ageSeconds": 808281,
+      "status": "candidate-requires-separate-executor"
+    }
+  ],
+  "held": [
+    {
+      "work": "payload-12432744f35ac54e",
+      "path": "ops/external-work/payload-12432744f35ac54e",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-cc5445c42077894f",
+      "path": "ops/external-work/payload-cc5445c42077894f",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6aa2fb2fa0390a24",
+      "path": "ops/external-work/payload-6aa2fb2fa0390a24",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6848c573f5f4c1c3",
+      "path": "ops/external-work/payload-6848c573f5f4c1c3",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-ceb9b6eb9f393b7e",
+      "path": "ops/external-work/payload-ceb9b6eb9f393b7e",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-d79e2c2d88fe9834",
+      "path": "ops/external-work/payload-d79e2c2d88fe9834",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-7c9c9e178ba2943e",
+      "path": "ops/external-work/payload-7c9c9e178ba2943e",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-8d11d3516df012f3",
+      "path": "ops/external-work/payload-8d11d3516df012f3",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6c39f0aeab0d0552",
+      "path": "ops/external-work/payload-6c39f0aeab0d0552",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-bc82fdd84f453020",
+      "path": "ops/external-work/payload-bc82fdd84f453020",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-c96a72c7700a17d1",
+      "path": "ops/external-work/payload-c96a72c7700a17d1",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-c852e989bb6ab714",
+      "path": "ops/external-work/payload-c852e989bb6ab714",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-e831a2f5cc15ab0c",
+      "path": "ops/external-work/payload-e831a2f5cc15ab0c",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6473c6b62c785a2b",
+      "path": "ops/external-work/payload-6473c6b62c785a2b",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-1de90d4731a0f796",
+      "path": "ops/external-work/payload-1de90d4731a0f796",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-8e68412696046f4c",
+      "path": "ops/external-work/payload-8e68412696046f4c",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-41d83edf0f0ec8c6",
+      "path": "ops/external-work/payload-41d83edf0f0ec8c6",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-3ae7ce6625e3f9d3",
+      "path": "ops/external-work/payload-3ae7ce6625e3f9d3",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-7b45c950218ddcb3",
+      "path": "ops/external-work/payload-7b45c950218ddcb3",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-981a58f768078c4f",
+      "path": "ops/external-work/payload-981a58f768078c4f",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-a3e82cd9e496ac4b",
+      "path": "ops/external-work/payload-a3e82cd9e496ac4b",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-d6e656d674c4ca41",
+      "path": "ops/external-work/payload-d6e656d674c4ca41",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-60c7a758a0675be3",
+      "path": "ops/external-work/payload-60c7a758a0675be3",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-8e6f265232479de5",
+      "path": "ops/external-work/payload-8e6f265232479de5",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-6ab6af3f41e2fad8",
+      "path": "ops/external-work/payload-6ab6af3f41e2fad8",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-120d532c045739a9",
+      "path": "ops/external-work/payload-120d532c045739a9",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-a3ec62854e06245d",
+      "path": "ops/external-work/payload-a3ec62854e06245d",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-89392494836da471",
+      "path": "ops/external-work/payload-89392494836da471",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6e8e0711ed5bacd5",
+      "path": "ops/external-work/payload-6e8e0711ed5bacd5",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-04419d89e0272b86",
+      "path": "ops/external-work/payload-04419d89e0272b86",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-73d3fe1f15dd7705",
+      "path": "ops/external-work/payload-73d3fe1f15dd7705",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-50bd486c60de07a9",
+      "path": "ops/external-work/payload-50bd486c60de07a9",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-02c0465c6a655d2c",
+      "path": "ops/external-work/payload-02c0465c6a655d2c",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-aefbfb422ae3e70a",
+      "path": "ops/external-work/payload-aefbfb422ae3e70a",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-4de05f0f360c2ad0",
+      "path": "ops/external-work/payload-4de05f0f360c2ad0",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-91ddcb3ad8f1c6c6",
+      "path": "ops/external-work/payload-91ddcb3ad8f1c6c6",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-b4c39341acf93a0d",
+      "path": "ops/external-work/payload-b4c39341acf93a0d",
+      "reasons": [
+        "pinned-development-source"
+      ]
+    },
+    {
+      "work": "payload-1f80c3244c20e6ed",
+      "path": "ops/external-work/payload-1f80c3244c20e6ed",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-9611c7dee6781033",
+      "path": "ops/external-work/payload-9611c7dee6781033",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-e4a03293516310c4",
+      "path": "ops/external-work/payload-e4a03293516310c4",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-0a8459e0a2349676",
+      "path": "ops/external-work/payload-0a8459e0a2349676",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-85a58bcc3166c633",
+      "path": "ops/external-work/payload-85a58bcc3166c633",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-7879d05929e22919",
+      "path": "ops/external-work/payload-7879d05929e22919",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-8dd5ebc46548cd7c",
+      "path": "ops/external-work/payload-8dd5ebc46548cd7c",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-3dd8855c5e6b1e40",
+      "path": "ops/external-work/payload-3dd8855c5e6b1e40",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-645f42dfc73b15cb",
+      "path": "ops/external-work/payload-645f42dfc73b15cb",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-ed20d027b8e32e9f",
+      "path": "ops/external-work/payload-ed20d027b8e32e9f",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-803a09af4cfef707",
+      "path": "ops/external-work/payload-803a09af4cfef707",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-368bfabf848fa388",
+      "path": "ops/external-work/payload-368bfabf848fa388",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-d329804df106d2dd",
+      "path": "ops/external-work/payload-d329804df106d2dd",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-df365e0fc9169a25",
+      "path": "ops/external-work/payload-df365e0fc9169a25",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-9fde5a06b0df0e55",
+      "path": "ops/external-work/payload-9fde5a06b0df0e55",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-3025c9b01412852b",
+      "path": "ops/external-work/payload-3025c9b01412852b",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-96ddfe94b83c65fb",
+      "path": "ops/external-work/payload-96ddfe94b83c65fb",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-81f631bb28fcc832",
+      "path": "ops/external-work/payload-81f631bb28fcc832",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-76a0b408de8c2301",
+      "path": "ops/external-work/payload-76a0b408de8c2301",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-2713d0f65fb3a57b",
+      "path": "ops/external-work/payload-2713d0f65fb3a57b",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-8821b5cce0d7b9ee",
+      "path": "ops/external-work/payload-8821b5cce0d7b9ee",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-a0c76b7d207ad0a2",
+      "path": "ops/external-work/payload-a0c76b7d207ad0a2",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-336b8a17035cfa9a",
+      "path": "ops/external-work/payload-336b8a17035cfa9a",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-9c648b30058c5474",
+      "path": "ops/external-work/payload-9c648b30058c5474",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-8ce73a54a99fabb2",
+      "path": "ops/external-work/payload-8ce73a54a99fabb2",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-e1d084861fb959ba",
+      "path": "ops/external-work/payload-e1d084861fb959ba",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-ceba8bc1c3565225",
+      "path": "ops/external-work/payload-ceba8bc1c3565225",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-46ec2636052f85f9",
+      "path": "ops/external-work/payload-46ec2636052f85f9",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6574196dabc6552b",
+      "path": "ops/external-work/payload-6574196dabc6552b",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-ff9904b6f6c96e37",
+      "path": "ops/external-work/payload-ff9904b6f6c96e37",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-a34d4aa73d4b5132",
+      "path": "ops/external-work/payload-a34d4aa73d4b5132",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-193f0aa200911249",
+      "path": "ops/external-work/payload-193f0aa200911249",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-5bc0220bfbac9ab0",
+      "path": "ops/external-work/payload-5bc0220bfbac9ab0",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-f8c8f64b69c23fb9",
+      "path": "ops/external-work/payload-f8c8f64b69c23fb9",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-d6bbc21625a7e9cd",
+      "path": "ops/external-work/payload-d6bbc21625a7e9cd",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-fb26c1c14c20372b",
+      "path": "ops/external-work/payload-fb26c1c14c20372b",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-e61f91ed21c3428d",
+      "path": "ops/external-work/payload-e61f91ed21c3428d",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-c6605b3e835b96b3",
+      "path": "ops/external-work/payload-c6605b3e835b96b3",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-d211c0de99e7f731",
+      "path": "ops/external-work/payload-d211c0de99e7f731",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-51eb26bde4fff9cf",
+      "path": "ops/external-work/payload-51eb26bde4fff9cf",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-2cb0c049bfdc99c7",
+      "path": "ops/external-work/payload-2cb0c049bfdc99c7",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6c7d1f71bec2fc46",
+      "path": "ops/external-work/payload-6c7d1f71bec2fc46",
+      "reasons": [
+        "bounded-plan-budget"
+      ]
+    },
+    {
+      "work": "payload-6901ac6efb28fd30",
+      "path": "ops/external-work/payload-6901ac6efb28fd30",
+      "reasons": [
+        "keep-newest-three"
+      ]
+    },
+    {
+      "work": "payload-4636f1cbcebe50f2",
+      "path": "ops/external-work/payload-4636f1cbcebe50f2",
+      "reasons": [
+        "current-or-previous-release",
+        "keep-newest-three"
+      ]
+    },
+    {
+      "work": "payload-8427352bf19179b3",
+      "path": "ops/external-work/payload-8427352bf19179b3",
+      "reasons": [
+        "active-receipt-reference",
+        "current-or-previous-release",
+        "keep-newest-three"
+      ]
+    }
+  ],
+  "unknownEntriesPreserved": [
+    "archive-readers222-0eaffc070b62",
+    "worker-update-37-cb60d5b8912e"
+  ],
+  "estimatedAllocatedBytes": 34996224,
+  "deletionImplemented": false,
+  "automaticDeletionReady": false,
+  "deletedFiles": 0,
+  "s3Requests": 0,
+  "requiredBeforeDeletion": [
+    "fresh exact independent restore or preserved verified independent replica",
+    "revalidate pinned controls and every candidate under actual shared and own exclusive locks",
+    "verify all payload hashes and sizes; no links, special files or active mounts",
+    "bounded reversible quarantine and recovery verification before any final removal"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-16T15:36:53.462126+00:00",
+  "status": "expected-node-archive-restored",
+  "changed": true,
+  "target": "/opt/melodiajest/ops/account-stage-21-0efdc441ee74/node.tar.xz",
+  "source": "/opt/melodiajest/ops/account-postgres-backups/verified-66f0c7b29a644384b4edbe3b2a27674f/node.tar.xz",
+  "bytes": 32039312,
+  "sha256": "48cc0e21e048790e54c0cf5749c2725005313d652651c40b7a21feb9697aaf75",
+  "verifiedSourceFromExistingRestoredPayload": true,
+  "sourceAndTargetShaVerified": true,
+  "atomicNoOverwriteInstall": true,
+  "locks": [
+    "postgres-worker",
+    "scheduled-s3-worker",
+    "/run/lock/libre-deploy.lock",
+    "melodiajest-operation"
+  ],
+  "profileAndControlsUnchanged": true,
+  "allFiveArchiveInputsExist": true,
+  "nativePgReceiptUnchanged": true,
+  "freshBackupOrRestoreClaimed": false,
+  "nativePgStarts": 0,
+  "s3Requests": 0,
+  "servicesRestarted": 0,
+  "productionDatabaseChanged": false,
+  "beforeNeighborHttp": {
+    "melodiajest.ru": 200,
+    "libreta.ru": 200,
+    "praicer.ru": 200,
+    "grigorova.libreta.ru": 200
+  },
+  "afterNeighborHttp": {
+    "melodiajest.ru": 200,
+    "libreta.ru": 200,
+    "praicer.ru": 200,
+    "grigorova.libreta.ru": 200
+  },
+  "deletedExistingFiles": 0,
+  "artifactVersion": "23.5.186",
+  "automaticTasksResumed": false
+}
