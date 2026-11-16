@@ -2,13 +2,14 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{once}=require('node:events'),{randomUUID}=require('node:crypto');
 const {PostgresDatabase}=require('../database.cjs'),{openRepository}=require('../repository.cjs'),{createService}=require('../server.cjs'),S=require('../security.cjs');
 const configFile=process.env.MELODIA_POSTGRES_TEST_CONFIG;
+const TEST_TMP=fs.realpathSync(path.resolve(__dirname,'../../tmp'));
 const pgTest=(name,fn)=>test(name,{skip:!configFile},fn);
 async function setup(t,api=false){
   const config=JSON.parse(fs.readFileSync(configFile,'utf8'));
   assert.equal(config.isolatedFixture,true);assert.equal(config.database,'melodiajest_fixture');assert.equal(config.user,'melodiajest_fixture_owner');assert.equal(config.host,'/pg-socket');
   const {Pool}=require('pg'),schema='melodiajest_test_'+randomUUID().replaceAll('-',''),admin=new Pool({...config,max:1});
   await admin.query('CREATE SCHEMA '+schema);await admin.query('SET search_path TO '+schema+',pg_catalog');await admin.query(fs.readFileSync(path.join(__dirname,'../schema.pg.sql'),'utf8'));
-  const adapter=new PostgresDatabase({...config,schema}),root=fs.mkdtempSync(path.resolve(__dirname,'../../tmp/postgres-test-'));
+  const adapter=new PostgresDatabase({...config,schema}),root=fs.mkdtempSync(path.join(TEST_TMP,'postgres-test-'));
   let service,store;const clock={now:Date.now()};
   if(api){service=await createService({database:adapter,dataDir:path.join(root,'data'),origin:'http://127.0.0.1:0',development:true,now:()=>clock.now,diskFreeBytes:()=>2*1024**3,onError:error=>console.error('Isolated API:',error.code||error.name,error.message)});service.server.listen(0,'127.0.0.1');await once(service.server,'listening');service.options.origin.port=String(service.server.address().port);store=service.store;}
   else store=await openRepository({database:adapter});

@@ -13,6 +13,7 @@ const S = require('../security.cjs');
 const Backup = require('../backup.cjs');
 const Adapter = require('../../piano-catalog-adapter.js');
 const ROOT = path.resolve(__dirname, '../..');
+const TEST_TMP = fs.realpathSync(path.join(ROOT, 'tmp'));
 const PASSWORD = 'a separate piano phrase 2026';
 function fixture() {
   return {entry: {id: 'original-piece-id', themeId: 'original-theme-id', title: 'Моя фраза', description: 'Авторская короткая фраза.', pattern: 't y u', contentKind: 'piece', order: 4,
@@ -20,7 +21,7 @@ function fixture() {
     handMode: 'right', fingeringSpec: {kind: 'explicit', hand: 'right', fingers: [1, 2, 3]}, personalExtension: {note: 'сохранить точную редакцию'}}, origin: 'original', source: ''};
 }
 async function setup(t, {dataDir, clock, serviceOptions={}} = {}) {
-  const root = fs.mkdtempSync(path.join(ROOT, 'tmp', 'account-service-test-'));
+  const root = fs.mkdtempSync(path.join(TEST_TMP, 'account-service-test-'));
   // Auth/ownership cases model an admitted one-GiB filesystem. Resource cases
   // override this test-only input,including the real statfs path below. This
   // neither enlarges the64MiB sandbox nor changes the production512MiB guard.
@@ -178,7 +179,7 @@ test('SQLite online backup, SHA256 verification and isolated restore preserve re
   fs.appendFileSync(path.join(bundle.directory, 'session-secret'), 'changed'); assert.throws(() => Backup.verifyBackup(bundle.directory), /SHA256/);
 });
 test('production configuration requires HTTPS and Secure host-only cookies; foreign schema is refused', async t => {
-  const root = fs.mkdtempSync(path.join(ROOT, 'tmp', 'account-config-test-')); let service;
+  const root = fs.mkdtempSync(path.join(TEST_TMP, 'account-config-test-')); let service;
   t.after(async () => { if (service) await service.close(); fs.rmSync(root, {recursive: true, force: true}); });
   await assert.rejects(() => createService({dataDir: path.join(root, 'bad'), origin: 'http://melodiajest.ru'}), /HTTPS/);
   service = await createService({dataDir: path.join(root, 'good'), origin: 'https://melodiajest.ru'});

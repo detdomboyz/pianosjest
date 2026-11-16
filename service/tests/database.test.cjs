@@ -1,7 +1,8 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{randomUUID}=require('node:crypto');
 const {openRepository}=require('../repository.cjs');
-async function setup(t){const dir=fs.mkdtempSync(path.resolve(__dirname,'../../tmp/repository-'));const store=await openRepository({filename:path.join(dir,'accounts.sqlite')});t.after(async()=>{await store.close();fs.rmSync(dir,{recursive:true,force:true});});return store;}
+const TEST_TMP=fs.realpathSync(path.resolve(__dirname,'../../tmp'));
+async function setup(t){const dir=fs.mkdtempSync(path.join(TEST_TMP,'repository-'));const store=await openRepository({filename:path.join(dir,'accounts.sqlite')});t.after(async()=>{await store.close();fs.rmSync(dir,{recursive:true,force:true});});return store;}
 test('transaction reads wait for commit and rollback never exposes another request’s partial data',async t=>{
   const store=await setup(t);await store.register('transaction_user','Transactional user','hash-one','recovery-one',1);
   let release;const gate=new Promise(resolve=>{release=resolve;});let entered;const ready=new Promise(resolve=>{entered=resolve;});

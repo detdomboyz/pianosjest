@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-11-16",
+  "updatedOn": "2026-11-17",
   "brand": "MelodiaJest",
   "workingFolder": "pianosjest",
   "scope": [
@@ -183891,8 +183891,8 @@
       "publicationReport": "docs/reports/melodiajest-operations-2026-11-12-132.md",
       "sourceCutScope": "1788selected source/40public/496runtime incl current Nginx c0 and its13 tests;late final132 documents and whole checkout excluded;immutable"
     },
-    "lastReport": "docs/reports/melodiajest-operations-2026-11-15-222.md",
-    "lastCheckedAt": "2026-11-15T11:38:24.823180+00:00",
+    "lastReport": "docs/reports/melodiajest-storage-optimization-2026-11-17.md",
+    "lastCheckedAt": "2026-11-16T19:37:51.280362+00:00",
     "pendingExternalStage": null,
     "performanceBaseline": {
       "status": "measured",
@@ -196329,16 +196329,18 @@
       "report": "docs/reports/melodiajest-operations-2026-11-09-38.md"
     },
     "currentStorageGate": {
-      "checkedAt": "2026-11-12T11:52:33.899772+00:00",
-      "phase": "2026-11-12-132",
-      "freeBytes": 926244864,
+      "checkedAt": "2026-11-16T19:30:26.676447+00:00",
+      "phase": "explicit-storage-maintenance-2026-11-17",
+      "freeBytes": 22263349248,
       "prepareRequiredGreaterThan": 1048576000,
       "preparePassed": true,
       "postgresRecoveryRequiredGreaterThan": 838860800,
       "postgresRecoveryPassed": true,
       "reservation": false,
-      "cleanupOrResizePerformed": false,
-      "qa": "docs/qa/melodiajest-2026-11-12-132-public.json"
+      "spaceObservationOnlyNotStartAllowance": true,
+      "cleanupOrResizePerformed": true,
+      "tariffResizePerformed": false,
+      "qa": "docs/qa/melodiajest-storage-2026-11-17-optimization.json"
     },
     "storageAnalysis": {
       "checkedAt": "2026-11-09T14:15:02.012879+00:00",
@@ -197023,6 +197025,18 @@
         "reservation": false,
         "cleanupOrResizePerformed": false,
         "qa": "docs/qa/melodiajest-2026-11-12-131-public.json"
+      },
+      {
+        "checkedAt": "2026-11-12T11:52:33.899772+00:00",
+        "phase": "2026-11-12-132",
+        "freeBytes": 926244864,
+        "prepareRequiredGreaterThan": 1048576000,
+        "preparePassed": true,
+        "postgresRecoveryRequiredGreaterThan": 838860800,
+        "postgresRecoveryPassed": true,
+        "reservation": false,
+        "cleanupOrResizePerformed": false,
+        "qa": "docs/qa/melodiajest-2026-11-12-132-public.json"
       }
     ],
     "restoredCopyReview": {
@@ -199896,6 +199910,28 @@
       "serviceRetestOrNewReleaseRequired": false,
       "nextAction": "Audit only complete. Keep all automation paused. A future explicitly requested cleanup must revalidate controls and replicas,stage retirement and bounded quarantine;do not execute this stale plan.",
       "remainingConcern": "Hourly freshness currently does not itselfprove required profile archive inputs exist;consider a small existence/change-fingerprint guard in a separate prepared stage."
+    },
+    "latestStorageOptimization": {
+      "checkedAt": "2026-11-16T19:37:51.280362+00:00",
+      "status": "completed-and-verified",
+      "report": "docs/reports/melodiajest-storage-optimization-2026-11-17.md",
+      "qa": "docs/qa/melodiajest-storage-2026-11-17-optimization.json",
+      "actualAvailableBytesIncrease": 8565682176,
+      "ownAllocatedBytesDecrease": 8566333440,
+      "ownAllocatedBytesAfter": 1455292416,
+      "serverFreeBytesAfter": 22263349248,
+      "localArtifactsMovedLogicalBytes": 8757709767,
+      "privateDirectory": "D:\\MelodiaJest-private\\host-maintenance",
+      "originalArchivesAndRestoreMapsPreserved": true,
+      "currentVersion": "23.5.186",
+      "previousVersion": "23.5.100",
+      "compactBuildPublished": false,
+      "applicationOrCoursePublished": false,
+      "newLessons": 0,
+      "nativeAutomationStatus": "PAUSED",
+      "guardDefectDetectedAndCorrected": true,
+      "dataRetentionUnchanged": true,
+      "nextAction": "No automatic continuation. Preserve indefinite pause and retained copies. On an explicit future maintenance task, bound own PG container logs at safe recreation; do not publish course or resume development implicitly."
     }
   },
   "lastMusicalCheckpoint": {

@@ -1,6 +1,6 @@
 """Fetch a pinned, checksummed portable runtime without changing system Node.
 
-This optional account-service tool writes only tmp/service-runtime. The existing
+This optional account-service tool writes only the private D: service-runtime. The existing
 Node 20 trainer and its dependency-free startup remain independent.
 """
 import hashlib
@@ -16,12 +16,14 @@ VERSION = 'v24.22.2'
 FILE = 'node-v24.22.2-win-x64.zip'
 SHA256 = 'ca1bff5d8ead13c9f2ea404a176db46bd430704d5b5113734049fa365e7799e2'
 ROOT = Path(__file__).resolve().parent.parent
-DEST = ROOT / 'tmp' / 'service-runtime'
+STORAGE = Path(r'D:\MelodiaJest-private\host-maintenance\workspace-artifacts')
+DEST = STORAGE / 'tmp' / 'service-runtime'
 
 
 def main():
     DEST.mkdir(parents=True, exist_ok=True)
-    assert not DEST.is_symlink() and DEST.resolve().is_relative_to(ROOT)
+    assert os.name == 'nt' and STORAGE.resolve() == STORAGE and not DEST.is_symlink() and DEST.resolve().is_relative_to(STORAGE)
+    assert (ROOT/'tmp').resolve() == STORAGE/'tmp', 'Project tmp must point to its private D: storage'
     archive = DEST / FILE
     if not archive.exists():
         with urllib.request.urlopen('https://nodejs.org/dist/' + VERSION + '/' + FILE, timeout=45) as response:

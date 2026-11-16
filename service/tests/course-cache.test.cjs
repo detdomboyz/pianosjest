@@ -2,10 +2,11 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{once}=require('node:events'),{createHash,randomUUID}=require('node:crypto');
 const {createService}=require('../server.cjs'),{loadCourse}=require('../course.cjs'),{hash}=require('../canonical.cjs');
 const ROOT=path.resolve(__dirname,'../..');
+const TEST_TMP=fs.realpathSync(path.join(ROOT,'tmp'));
 async function setup(t,{registry}={}){
-  const dir=fs.mkdtempSync(path.join(ROOT,'tmp','course-cache-http-'));const service=await createService({dataDir:path.join(dir,'data'),origin:'http://127.0.0.1:0',development:true,...(registry?{courseRegistry:registry}:{})});
+  const dir=fs.mkdtempSync(path.join(TEST_TMP,'course-cache-http-'));const service=await createService({dataDir:path.join(dir,'data'),origin:'http://127.0.0.1:0',development:true,...(registry?{courseRegistry:registry}:{})});
   service.server.listen(0,'127.0.0.1');await once(service.server,'listening');service.options.origin.port=String(service.server.address().port);const origin=service.options.origin.origin;
-  t.after(async()=>{await service.close();assert.ok(dir.startsWith(path.join(ROOT,'tmp')+path.sep));fs.rmSync(dir,{recursive:true,force:true});});
+  t.after(async()=>{await service.close();assert.ok(dir.startsWith(TEST_TMP+path.sep));fs.rmSync(dir,{recursive:true,force:true});});
   async function request(route='/course',{method='GET',headers={}}={}){
     const r=await fetch(origin+'/api/service/v1'+route,{method,headers:{Connection:'close',...headers}}),raw=Buffer.from(await r.arrayBuffer());let data=null;if(raw.length)data=JSON.parse(raw.toString());return{status:r.status,headers:r.headers,raw,data};
   }
@@ -37,7 +38,7 @@ test('a real rating update changes the ETag while the canonical course SHA remai
   const removed=await x.request('/course',{headers:{'If-None-Match':rated.headers.get('etag')}});assert.equal(removed.status,200);assert.deepEqual(removed.raw,first.raw);assert.equal(removed.headers.get('etag'),first.headers.get('etag'));
 });
 test('a new canonical edition cannot reuse an earlier course validator',async t=>{
-  const a=await setup(t),first=await a.request(),dir=fs.mkdtempSync(path.join(ROOT,'tmp','course-cache-edition-'));t.after(()=>{assert.ok(dir.startsWith(path.join(ROOT,'tmp')+path.sep));fs.rmSync(dir,{recursive:true,force:true});});
+  const a=await setup(t),first=await a.request(),dir=fs.mkdtempSync(path.join(TEST_TMP,'course-cache-edition-'));t.after(()=>{assert.ok(dir.startsWith(TEST_TMP+path.sep));fs.rmSync(dir,{recursive:true,force:true});});
   const changed=JSON.parse(fs.readFileSync(path.join(ROOT,'service/course-registry.json'),'utf8'));changed.lessons[0].title+=' · isolated edition';changed.lessons[0].editionVersion='synthetic-edition-changed';changed.contentSha256=hash({route:changed.route,lessons:changed.lessons});const filename=path.join(dir,'registry.json');fs.writeFileSync(filename,JSON.stringify(changed));
   const b=await setup(t,{registry:loadCourse(filename)}),next=await b.request('/course',{headers:{'If-None-Match':expectedTag(first.raw)}});assert.equal(next.status,200);assert.notEqual(next.data.sha256,first.data.sha256);assert.notEqual(next.headers.get('etag'),first.headers.get('etag'));assert.equal(next.headers.get('etag'),expectedTag(next.raw));
 });

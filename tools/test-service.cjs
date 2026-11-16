@@ -10,5 +10,5 @@ if(process.versions.node!=='24.22.2'){
   node=candidate;
 }
 const files=fs.readdirSync(path.join(ROOT,'service/tests')).filter(n=>n.endsWith('.test.cjs')).sort().map(n=>path.join(ROOT,'service/tests',n));
-const result=spawnSync(node,['--preserve-symlinks','--preserve-symlinks-main','--test','--test-reporter=tap',...files],{cwd:ROOT,stdio:'inherit',windowsHide:true});
+const result=spawnSync(node,['--preserve-symlinks','--preserve-symlinks-main','--test','--test-concurrency=1','--test-reporter=tap',...files],{cwd:ROOT,stdio:'inherit',windowsHide:true});
 process.exitCode=result.status??1;
