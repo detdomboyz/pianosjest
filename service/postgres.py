@@ -20,6 +20,7 @@ def compose():
             {'type':'bind','source':(BASE/'ops/secrets/postgres-bootstrap').as_posix(),'target':'/run/secrets/melodiajest-bootstrap','read_only':True}]
     service={'image':PIN['imageId'],'container_name':CONTAINER,'labels':{'com.melodiajest.role':'postgres'},'network_mode':'none','restart':'unless-stopped',
              'user':'999:999','read_only':True,'cap_drop':['ALL'],'security_opt':['no-new-privileges:true'],'mem_limit':'512m','cpus':0.5,'pids_limit':128,'shm_size':'64m','stop_grace_period':'30s',
+             'logging':{'driver':'json-file','options':{'max-size':'5m','max-file':'2'}},
              'tmpfs':['/tmp:rw,mode=1777,size=16m','/var/run/postgresql:rw,uid=999,gid=999,mode=2775,size=4m'],
              'environment':{'POSTGRES_USER':'melodiajest_admin','POSTGRES_DB':'melodiajest','POSTGRES_PASSWORD_FILE':'/run/secrets/melodiajest-bootstrap','POSTGRES_INITDB_ARGS':'--locale=C.UTF-8 --encoding=UTF8 --auth-local=peer --auth-host=scram-sha-256'},
              'volumes':mounts,'command':['postgres','-c','config_file=/etc/melodiajest-postgres/postgresql.conf']}

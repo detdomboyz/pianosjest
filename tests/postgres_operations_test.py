@@ -20,12 +20,18 @@ import units
 
 class PostgresOperations(unittest.TestCase):
     def setUp(self):
-        self.temp=tempfile.TemporaryDirectory(dir=ROOT/'tmp');self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
+        self.temp=tempfile.TemporaryDirectory(dir=ROOT/'tmp');self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name).resolve()
     def test_no_network_no_foreign_paths_and_password_file_only(self):
         value=json.loads(postgres.compose());self.assertEqual(set(value['services']),{'melodiajest-postgres'});service=value['services']['melodiajest-postgres'];self.assertEqual(service['network_mode'],'none');self.assertNotIn('ports',service);self.assertTrue(service['read_only']);self.assertEqual(service['cap_drop'],['ALL'])
         self.assertNotIn('POSTGRES_PASSWORD',service['environment']);self.assertIn('POSTGRES_PASSWORD_FILE',service['environment'])
         for mount in service['volumes']:self.assertTrue(mount['source'].startswith(('/opt/melodiajest/','/run/melodiajest-')))
         config=postgres.configuration();self.assertIn("listen_addresses = ''",config['postgresql.conf']);self.assertIn('fsync = on',config['postgresql.conf']);self.assertIn('melodiajest_api scram-sha-256',config['pg_hba.conf']);self.assertNotIn('trust',config['pg_hba.conf'])
+    def test_next_postgres_container_has_bounded_logging_without_changing_data_or_memory(self):
+        service=json.loads(postgres.compose())['services']['melodiajest-postgres']
+        self.assertEqual(service['logging'],{'driver':'json-file','options':{'max-size':'5m','max-file':'2'}})
+        self.assertEqual(service['mem_limit'],'512m')
+        self.assertEqual(service['image'],postgres.PIN['imageId'])
+        self.assertEqual(service['volumes'][0]['source'],'/opt/melodiajest/postgres-data')
     def test_unit_preserves_unix_only_api_and_uses_pinned_optional_dependencies(self):
         node='/opt/melodiajest/runtime/node-v24.22.2-48cc0e21e048/node';tooling='/opt/melodiajest/ops/tooling/account-'+'a'*16;deps='/opt/melodiajest/runtime/pg-8.23.1-'+'b'*12+'/node_modules'
         result=units.render(node,tooling,postgres=True,dependencies=deps);self.assertIn('PrivateNetwork=yes',result['melodiajest-account.service']);self.assertIn('RestrictAddressFamilies=AF_UNIX',result['melodiajest-account.service']);self.assertIn('NODE_PATH='+deps,result['melodiajest-account.service']);self.assertIn('Requires=melodiajest-postgres.service',result['melodiajest-account.service']);self.assertIn('MELODIA_POSTGRES_CONFIG=',units.environment(True,postgres=True,maintenance=True));self.assertIn('MELODIA_MAINTENANCE_READ_ONLY=1',units.environment(True,postgres=True,maintenance=True))

@@ -10,6 +10,13 @@ const {loadApp}=require('./helpers/load-app.cjs');
 const ROOT=path.resolve(__dirname,'..');
 const OUT=fs.mkdtempSync(path.join(ROOT,'tmp','web-release-test-'));
 const CONTENT_KEY='piano-blind-trainer-content-v20';
+// Remove only this fixture after all tests; resolve the D: junction first.
+test.after(()=>{
+  const physical=fs.realpathSync(OUT);
+  assert.equal(path.dirname(physical),fs.realpathSync(path.join(ROOT,'tmp')));
+  assert.ok(path.basename(physical).startsWith('web-release-test-'));
+  fs.rmSync(physical,{recursive:true,force:true});
+});
 
 test('shared-host service names cannot shadow another portal app through automatic Compose DNS aliases',()=>{
   const config=fs.readFileSync(path.join(ROOT,'deploy/shared-host/compose.yaml'),'utf8');

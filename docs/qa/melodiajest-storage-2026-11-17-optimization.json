@@ -545,5 +545,25 @@
     "Historical ad hoc QA scripts with checkout-only resolved-path guards may need scoped adaptation when explicitly resumed.",
     "Data browser export is separate from VPS backup."
   ],
-  "nextAction": "No automatic continuation. Preserve indefinite pause and retained copies. On an explicit future maintenance task, bound own PG container logs at safe recreation; do not publish course or resume development implicitly."
+  "nextAction": "No automatic continuation. Preserve indefinite pause and retained copies. On an explicit future maintenance task, bound own PG container logs at safe recreation; do not publish course or resume development implicitly.",
+  "policyAudit": {
+    "at": "2026-11-17T09:18:46.711848+00:00",
+    "publicReleaseDirectories": 2,
+    "apiReleaseDirectories": 2,
+    "physicalDBuildGuardTested": true,
+    "nodeTestsPassed": 8,
+    "postgresPythonChecks": 16,
+    "postgresPosixOnlySkipped": 2,
+    "postgresRotationPrepared": {
+      "maxSize": "5m",
+      "maxFile": "2"
+    },
+    "postgresRotationAppliedToRunningContainer": false,
+    "postgresLogBytes": 177526,
+    "permanentContainersUnchanged": 14,
+    "publicHttpsPassed": true,
+    "applicationReleaseChanged": false,
+    "automationsChanged": false,
+    "nextAction": "Apply PostgreSQL log rotation only during separately prepared safe recreation with backup/restore; preserve current/previous/toolkits and D: artifact policy."
+  }
 }

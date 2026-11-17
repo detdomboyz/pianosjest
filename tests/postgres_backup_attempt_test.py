@@ -24,7 +24,7 @@ def free_lock(*args,**kwargs):yield
 class PostgresBackupAttempts(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory(dir=ROOT/'tmp');self.addCleanup(self.temp.cleanup)
-        self.base=Path(self.temp.name);self.home=self.base/'receipts';self.home.mkdir();self.work=self.base/'work';self.work.mkdir()
+        self.base=Path(self.temp.name).resolve();self.home=self.base/'receipts';self.home.mkdir();self.work=self.base/'work';self.work.mkdir()
         self.old={'kind':'melodiajest-postgres-protection','version':2,'status':'verified','checkedAt':'2026-11-09T05:00:00+00:00','restoredAt':'2026-11-09T04:00:00+00:00','snapshot':'a'*64,'localPayload':str(self.base/'old-payload')}
         self.old_bytes=(json.dumps(self.old,indent=2)+'\n').encode()
         for name in ['latest-attempt.json','latest-success.json']:(self.home/name).write_bytes(self.old_bytes)
