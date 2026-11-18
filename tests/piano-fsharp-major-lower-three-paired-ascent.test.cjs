@@ -1,0 +1,84 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),crypto=require('node:crypto');
+const {loadApp}=require('./helpers/load-app.cjs'),{createMemoryStorage}=require('./helpers/memory-storage.cjs'),A=require('../practice-assessment.js'),G=require('../service/game-grade.cjs'),C=require('../curriculum.js'),before=require('./fixtures/piano-before-fsharp-major-lower-three-paired-ascent-v1.json'),counts=require('./fixtures/piano-curriculum-counts.json'),app=loadApp(),plain=x=>JSON.parse(JSON.stringify(x)),hash=x=>crypto.createHash('sha256').update(Buffer.isBuffer(x)?x:JSON.stringify(x)).digest('hex');
+const ID='detail-p-fsharp-major-lower-three-paired-ascent-01',BATCH='2026-11-18-13',ANCHOR='course10-08',BRANCH='fsharp-major-lower-three-paired-ascent',notes=[[54,66],[56,68],[58,70]],digits=[[4,2],[3,3],[2,4]],preps=['detail-p-fsharp-major-ascent-left-01','detail-p-fsharp-major-ascent-right-01','detail-p-e-major-connected-paired-ascent-01'];
+function lesson(a=app){const l=a.lessons.find(x=>x.id===ID);assert.ok(l,'Missing prepared F-sharp lower-three paired coordination');return l;}
+function route(){return vm.runInNewContext(fs.readFileSync('curriculum-plan.js','utf8')+';MUSIC_CURRICULUM_PLAN',{});}
+function events(mode='clean',spread=0){
+ const out=[];
+ for(let i=0;i<3;i++)for(let j=0;j<2;j++){
+  if(mode==='left-only'&&j===1||mode==='right-only'&&j===0||mode==='omit-middle-right'&&i===1&&j===1)continue;
+  let midi=notes[i][j],on=1000+i*1500,off=on+1500;
+  if(mode==='wrong-'+i+'-'+j)midi--;
+  if(mode==='octave-left'&&j===0)midi-=12;if(mode==='octave-right'&&j===1)midi+=12;
+  if(mode==='rolled'&&i===1&&j===1)on+=250;
+  if(mode==='on-spread'&&i===1&&j===1)on+=spread;
+  if(mode==='split-end'&&i===2)off+=j?spread/2:-spread/2;
+  if(mode==='early-left'&&i===1&&j===0||mode==='early-right'&&i===1&&j===1)off-=600;
+  if(mode==='held-left'&&i===1&&j===0||mode==='held-right'&&i===1&&j===1)off+=600;
+  if(mode==='short-last-left'&&i===2&&j===0||mode==='short-last-right'&&i===2&&j===1)off-=600;
+  if(mode==='internal-pause'&&i>=1){on+=600;off+=600;}
+  if(mode==='half-notes'){on=1000+i*750;off=on+750;}
+  if(mode==='first-pair-only'&&i>0)continue;
+  const source=mode==='keyboard'?'keyboard':'midi';out.push({type:'on',source,midi,at:on});
+  if(!(mode==='missing-first-off'&&i===0&&j===0)&&!(mode==='missing-final-off'&&i===2&&j===1))out.push({type:'off',source,midi,at:off});
+ }
+ if(mode==='extra')out.push({type:'on',source:'midi',midi:60,at:1700},{type:'off',source:'midi',midi:60,at:1800});
+ return out.sort((a,b)=>a.at-b.at||(a.type==='off'?-1:1));
+}
+const wrongModes=['left-only','right-only','omit-middle-right','octave-left','octave-right','rolled','early-left','early-right','held-left','held-right','short-last-left','short-last-right','internal-pause','half-notes','first-pair-only','missing-first-off','missing-final-off','extra','keyboard',...notes.flatMap((ns,i)=>ns.map((_,j)=>'wrong-'+i+'-'+j))];
+function compare(l,es,precision=l.learning.timingPrecision){const row=require('../service/course-registry.json').lessons.find(x=>x.id===ID);assert.ok(row);const end=Math.max(5500,...es.map(e=>e.at));return {client:A.assessPiano({steps:l.rhythm.steps.map((s,i)=>({...s,midis:app.stepMidiList(l.steps[i])})),events:es,bpm:40,targetBpm:40,profile:l.learning.articulation,timingPrecision:precision}),server:G.grade({...row,timingPrecision:precision},G.eventsInput(es,end),'challenge',end,false).assessment};}
+test('paired235 preserves748 full records,600 canonical editions,themes,grade versions,relative routes,guitar and source runtime',()=>{
+ const ids=new Set(before.catalog.map(x=>x.id));assert.equal(ids.size,748);assert.deepEqual(plain(app.lessons.filter(x=>ids.has(x.id)).map(l=>({id:l.id,fullRecordSha256:hash(l),grade:A.pianoSignature(l),order:l.order,themeId:l.themeId}))),before.catalog);assert.deepEqual(plain(app.themes),before.themes);const p=route();assert.deepEqual(plain(p.piano.filter(x=>ids.has(x.id)).map(x=>x.id)),before.pianoRoute);assert.equal(hash(p.guitar),before.guitarRouteSha256);
+ for(const[f,h]of[['lesson-review-baseline.js',before.protectedBaselineSha256],['practice-assessment.js',before.assessmentModuleSha256],['piano-open-response.js',before.openResponseModuleSha256],['service/schema.pg.sql',before.server.schemaSha256]])assert.equal(hash(fs.readFileSync(f)),h);
+ const built=plain(require('../tools/build-service-curriculum.cjs').build()),old=new Set(before.server.lessons.map(x=>x.id));assert.equal(old.size,600);assert.deepEqual(built.lessons.filter(x=>old.has(x.id)).map(x=>({id:x.id,fullRecordSha256:hash(x),musicVersion:x.musicVersion,gradeFingerprint:x.gradeFingerprint})),before.server.lessons);assert.deepEqual(built.route.filter(x=>old.has(x)),before.server.route);
+});
+test('paired235 uses three dyads,L432/R234,three full quarters in partial4/4 and three full own prerequisites',()=>{
+ const l=lesson();assert.equal(l.pattern,'[QI] [WO] [EP]');assert.deepEqual(plain(l.steps.map(app.stepMidiList)),notes);assert.deepEqual(plain(l.fingeringSpec.steps),digits.map(([a,b])=>[{hand:'left',num:a},{hand:'right',num:b}]));
+ assert.equal(l.handMode,'split');assert.equal(l.contentKind,'exercise');assert.equal(l.learning.stage,'p7');assert.equal(l.learning.coverageDomain,'coordination');assert.equal(l.learning.articulation,'standard');assert.equal(l.learning.timingPrecision,'beat-boundary-v2');assert.equal(l.rhythm.practiceBpm,40);
+ assert.deepEqual(plain(l.rhythm.steps.map(x=>[x.startBeat,x.durationBeats,x.restBeforeBeats,x.measure,x.beatInMeasure])),[[0,1,0,1,0],[1,1,0,1,1],[2,1,0,1,2]]);assert.deepEqual(plain(l.rhythm.timeSignature),{numerator:4,denominator:4});assert.equal(l.rhythm.steps.at(-1).startBeat+l.rhythm.steps.at(-1).durationBeats,3);assert.equal(l.learning.sameGoalAs,undefined);
+ assert.deepEqual(plain(l.learning.requires),preps);
+ const known=[
+  {id:preps[0],hand:'left',m:[[54],[56],[58],[59],[61],[63],[65],[66]],f:[4,3,2,1,3,2,1,2].map(num=>[{hand:'left',num}]),profile:'legato'},
+  {id:preps[1],hand:'right',m:[[66],[68],[70],[71],[73],[75],[77],[78]],f:[2,3,4,1,2,3,1,2].map(num=>[{hand:'right',num}]),profile:'legato'},
+  {id:preps[2],hand:'split',m:[[52,64],[54,66],[56,68],[57,69],[59,71],[61,73],[63,75],[64,76]],f:[5,4,3,2,1,3,2,1].map((num,i)=>[{hand:'left',num},{hand:'right',num:[1,2,3,1,2,3,4,5][i]}]),profile:'standard'}];
+ for(const k of known){const a=app.lessons.find(x=>x.id===k.id);assert.ok(a,k.id);assert.equal(a.handMode,k.hand);assert.deepEqual(plain(a.steps.map(app.stepMidiList)),k.m);assert.deepEqual(plain(a.fingeringSpec.steps),k.f);assert.equal(a.learning.articulation,k.profile);assert.deepEqual(plain(a.rhythm.steps.map(x=>[x.startBeat,x.durationBeats,x.restBeforeBeats,x.measure,x.beatInMeasure])),Array.from({length:8},(_,i)=>[i,1,0,Math.floor(i/4)+1,i%4]));}
+ assert.deepEqual(known[2].m.slice(1,3),notes.slice(0,2));assert.deepEqual(known[2].f.slice(1,3),plain(l.fingeringSpec.steps.slice(0,2)));assert.deepEqual(known[2].m[6].map(n=>n-5),notes[2]);assert.deepEqual(known[2].f[6],plain(l.fingeringSpec.steps[2]));
+});
+test('paired235 actual client and canonical graders reject either missing hand,every wrong black pitch,wrong registers,rolled and shortened pairs',()=>{
+ const l=lesson();for(const mode of ['clean',...wrongModes]){const es=events(mode);if(mode!=='clean')assert.notDeepEqual(es,events(),'negative input must differ '+mode);const result=compare(l,es);assert.equal(result.client.clean,mode==='clean','client '+mode);assert.equal(result.server.clean,mode==='clean','server '+mode);}
+ for(let i=0;i<3;i++)for(let j=0;j<2;j++)assert.equal(events('wrong-'+i+'-'+j).filter(x=>x.type==='on')[i*2+j].midi,notes[i][j]-1);
+});
+test('paired235 preserves120ms dyad onset and v2 release-spread boundaries,with legacy release behavior explicit',()=>{
+ const l=lesson();for(const spread of [119,120,121])for(const mode of ['on-spread','split-end']){const x=compare(l,events(mode,spread));assert.equal(x.client.clean,spread<=120,mode+spread);assert.equal(x.server.clean,x.client.clean);if(mode==='split-end'){const legacy=compare(l,events(mode,spread),'beat-boundary-v1');assert.equal(legacy.client.clean,true);assert.equal(legacy.server.clean,true);}}
+});
+test('paired235 actual MIDI handlers require both final releases and preserve independent older progress',async()=>{
+ lesson();let cases=0;for(const mode of ['clean','left-only','right-only','rolled','early-left','early-right','short-last-left','short-last-right','missing-first-off','missing-final-off','wrong-2-0','wrong-2-1']){
+  const clock={now:5000},a=loadApp({events:true,clock,storage:createMemoryStorage(),locks:{request:async(n,o,fn)=>fn({name:n})}});a.setTestLesson(a.lessons.find(x=>x.id===ID));a.state.attemptMode='challenge';const es=events(mode);
+  for(const[i,e]of es.entries()){clock.now=5000+e.at-1000;if(mode==='clean'&&i===es.length-1)assert.equal(a.state.completed,false,'wait for both last offs');if(e.type==='on')a.handleNoteOn(e.midi,'midi');else a.handleNoteOff(e.midi);}
+  assert.equal(a.state.passed,mode==='clean',mode);assert.equal(a.state.learningProgress[ID]?.cleanTakes??0,mode==='clean'?1:0,mode);if(mode==='clean')assert.equal(a.state.completed,true);if(mode==='missing-final-off')assert.equal(a.state.completed,false);for(const id of preps)assert.equal(Object.hasOwn(a.state.learningProgress,id),false);await a.legacyProgressStore.settled();a.resetLessonState();cases++;
+ }assert.equal(cases,12);
+});
+test('paired235 preserves389 actual Next paths and adds one optional terminal prepared goal with current counts',()=>{
+ const l=lesson(),p=route(),ids=p.piano.map(x=>x.id),at=ids.indexOf(ID);for(const id of preps)assert.ok(ids.indexOf(id)>=0&&ids.indexOf(id)<at,id);assert.equal(l.learning.after,ANCHOR);assert.equal(l.learning.nextLessonId,null);assert.equal(p.piano.find(x=>x.id===ID).branch,BRANCH);assert.equal(p.piano.find(x=>x.id===ID).challenge,true);
+ assert.equal(before.oldNextPaths.length,84);assert.equal(before.oldOptionalNextPaths.length,305);const a=loadApp({events:true,storage:createMemoryStorage()});a.state.guidedPath=true;a.setContentSection('learning');for(const pair of [...before.oldNextPaths,...before.oldOptionalNextPaths]){a.setTestLesson(a.lessons.find(x=>x.id===pair.from));a.nextLesson();assert.equal(a.state.lesson.id,pair.to??pair.from,pair.from);}
+ a.setTestLesson(a.lessons.find(x=>x.id===ID));a.nextLesson();assert.equal(a.state.lesson.id,ID);
+ const cov=require('../tools/piano-skill-coverage.cjs').build(),old=require('../tools/piano-skill-coverage.cjs').goalAccounting(cov.lessons.filter(x=>x.id!==ID));assert.equal(cov.counts.goalGroupUpperBound-old.goalGroupUpperBound,1);for(const k of Object.keys(cov.counts))assert.deepEqual(cov.counts[k],counts[k],k);assert.equal(counts.catalogRecords,749);assert.equal(counts.implementedLearningLessons,601);assert.equal(counts.goalGroupUpperBound,577);assert.equal(counts.verifiedDistinctGoalCount,null);assert.equal(counts.independentTeacherReviewed,0);
+});
+test('paired235 keeps134 complete old source entries and adds exactly2fresh+3reused applications from separate charts',()=>{
+ const l=lesson(),ledger=require('../docs/piano-curriculum-sources.json');assert.equal(ledger.entries.length,134);const restored=plain(ledger.entries);for(const e of restored)if(Array.isArray(e.applications))e.applications=e.applications.filter(x=>x.batch!==BATCH);assert.equal(hash(restored),before.sourceEntriesSha256);
+ assert.equal(l.learning.sourceEvidenceIds.length,5);assert.equal(l.learning.references.length,5);const applications=l.learning.sourceEvidenceIds.map(id=>{const a=ledger.entries.find(e=>e.id===id)?.applications.find(x=>x.batch===BATCH);assert.ok(a,id);assert.deepEqual(a.lessonIds,[ID]);return a;});assert.equal(applications.filter(x=>x.freshReadInCurrentBatch).length,2);
+ for(let i=0;i<2;i++){const a=applications[i];assert.equal(a.sourcePrintedDuet,false);assert.equal(a.sourceChartsCombinedByProject,true);assert.equal(a.sourceSuppliesProjectQuarterRhythm,false);assert.equal(a.sourceFollowingIsRest,false);assert.equal(a.sourceEnd,1.5);assert.deepEqual(a.sourceStarts,[0,.5,1]);assert.deepEqual(a.projectStarts,[0,1,2]);assert.equal(a.projectEnd,3);assert.equal(a.projectPartial4_4,true);assert.equal(a.followingQuietBeatScored,false);}
+ for(const a of applications.slice(2))assert.equal(a.reusedReadNotClaimedFresh,true);
+ const course=require('../service/course-registry.json');assert.deepEqual(course,plain(require('../tools/build-service-curriculum.cjs').build()));assert.equal(course.lessons.find(x=>x.id===ID).gradeFingerprint,A.pianoSignature(l));
+});
+test('paired235 actual card distinguishes prepared coordination,source eighths,unscored quiet beat and memory-hidden hints',()=>{
+ const l=lesson();app.state.lesson=l;app.state.attemptMode='practice';app.state.learningMaterialMode='expanded';const html=app.learningMaterialHtml();for(const t of ['F♯3+F♯4','G♯3+G♯4','A♯3+A♯4','левая 4–3–2','правая 2–3–4','три пары','на четыре','неполный такт 4/4','не записана паузой','вне MIDI-зачёта','legato каждого голоса здесь не оценивается','0,0.5,1','не напечатанный дуэт','переноса октавы нет','не фрагмент пьесы','MIDI не видит пальцы','при напряжении остановись','3–5 минут','на следующий день','не является независимым тестом слуха','Ветка завершается'])assert.ok(html.includes(t),t);
+ assert.equal(l.learning.provenance.type,'project-technical-drill');assert.equal(l.learning.practiceSteps.length,6);assert.ok(l.learning.selfCheck.length>=6);for(const mode of ['compact','expanded','hidden']){app.state.learningMaterialMode=mode;app.state.attemptMode='memory';assert.equal(app.learningMaterialHtml(),'');}
+});
+test('paired235 actual current-note and preview callbacks show both explicit fingers and three one-beat dyads',()=>{
+ const l=lesson(),names=[['F#3','F#4'],['G#3','G#4'],['A#3','A#4']];app.state.lesson=l;app.state.attemptMode='practice';assert.deepEqual(plain(app.playbackDurations(l)),[1,1,1]);for(let i=0;i<3;i++){app.state.stepIndex=i;const html=app.currentNoteHtml().replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');for(let j=0;j<2;j++)assert.ok(html.includes(names[i][j]+': '+(j?'правая':'левая')+' рука: палец '+digits[i][j]),html);for(const bpm of [32,40,48])assert.ok(Math.abs(app.previewSoundDurationMs(l,i,bpm,60000/bpm)-60000/bpm)<1e-6);}app.state.stepIndex=0;
+});
+test('paired235 user dyad pitches,two-hand fingers,classification,guide and personal edits survive reinstall and catalog exchange',async()=>{
+ lesson();const a=loadApp({web:true,events:true,storage:createMemoryStorage()}),l=a.lessons.find(x=>x.id===ID),old=Object.fromEntries(preps.map(id=>[id,plain(a.lessons.find(x=>x.id===id))]));l.contentKind='piece';l.guide.setup='Личная двуручная подготовка';l.learning.practiceSteps[0]='Личный разбор трёх пар';assert.equal(l.pattern.split(' ')[0],'[QI]');l.pattern='[Qi] '+l.pattern.split(' ').slice(1).join(' ');l.steps=a.parsePattern(l.pattern).steps;l.fingeringSpec.pattern=l.pattern;const saved=plain(l);a.installReviewedLessons();assert.deepEqual(plain(a.lessons.find(x=>x.id===ID)),saved);assert.equal(await a.importCatalogText(a.catalogExportText(),()=>true),true);const got=a.lessons.find(x=>x.id===ID);for(const k of ['contentKind','pattern'])assert.equal(got[k],saved[k]);assert.deepEqual(plain(got.steps),saved.steps);assert.deepEqual(plain(got.fingeringSpec),saved.fingeringSpec);assert.equal(got.guide.setup,saved.guide.setup);assert.equal(got.learning.practiceSteps[0],saved.learning.practiceSteps[0]);assert.equal(a.lessons.filter(x=>x.id===ID).length,1);for(const[id,record]of Object.entries(old)){const actual=a.lessons.find(x=>x.id===id);assert.equal(A.pianoSignature(actual),A.pianoSignature(record));assert.deepEqual(plain(actual.guide),record.guide);}
+});

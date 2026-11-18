@@ -7,6 +7,30 @@ const P=require('../piano-lesson-development.js'),pianoCount=492+D.piano.length+
 const app=loadApp(),guitar=loadGuitarCourse(),copy=v=>JSON.parse(JSON.stringify(v));
 const adapter=a=>({normalizeRhythm:a.normalizeLessonRhythm,normalizeGuide:a.normalizeLessonGuide,parsePattern:a.parsePattern,midis:a.stepMidiList,spacesBefore:a.lessonSpacesBefore});
 const C=require('../curriculum.js'),beforeScopedPrerequisites=require('./fixtures/piano-before-b-major-left-descent-v1.json'),protectedPrerequisiteIds=new Set(beforeScopedPrerequisites.catalog.map(l=>l.id));
+function explicitPreparationFrames(lesson,handMode){
+ const hands=handMode==='split'?['left','right']:[handMode];
+ assert.ok(handMode==='split'||['left','right'].includes(handMode),'Explicit supported preparation hand mode required');
+ assert.ok(Array.isArray(lesson.steps)&&lesson.steps.length>0);
+ assert.equal(lesson.fingeringSpec?.steps?.length,lesson.steps.length,'Every note group needs explicit fingers');
+ return lesson.steps.map((step,i)=>{
+  const notes=app.stepMidiList(step),fingers=lesson.fingeringSpec.steps[i];assert.equal(notes.length,hands.length);assert.equal(fingers.length,hands.length);
+  const result={};for(let j=0;j<hands.length;j++){const f=fingers[j];assert.equal(f.hand,hands[j]);assert.ok(Number.isInteger(f.num)&&f.num>=1&&f.num<=5);result[f.hand]={midi:notes[j],num:f.num};}return result;
+ });
+}
+function assertPreparedHandEvidence(lesson,preparation,lessons){
+ if(lesson.handMode!=='split'){
+  assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
+  explicitPreparationFrames(lesson,lesson.handMode);explicitPreparationFrames(preparation,preparation.handMode);return;
+ }
+ assert.equal(lesson.learning.coverageDomain,'coordination','Only explicitly declared paired coordination can combine prepared hands');
+ const target=explicitPreparationFrames(lesson,'split');explicitPreparationFrames(preparation,preparation.handMode);
+ const required=lesson.learning.requires.map(id=>{const l=lessons.find(x=>x.id===id);assert.ok(l,'Every declared preparation must exist');assert.equal(l.contentKind,'exercise');return l;});
+ for(const hand of ['left','right']){
+  const candidates=required.filter(l=>l.handMode===hand);assert.ok(candidates.length>0,'Both separate hands must be prepared');
+  assert.ok(candidates.some(l=>{const frames=explicitPreparationFrames(l,hand);for(let from=0;from<=frames.length-target.length;from++)if(target.every((event,i)=>event[hand].midi===frames[from+i][hand].midi&&event[hand].num===frames[from+i][hand].num))return true;return false;}),'Exact contiguous pitches and fingers of each own hand must already be prepared');
+ }
+ assert.ok(required.some(l=>l.handMode==='split'&&explicitPreparationFrames(l,'split').length>0),'A prior explicit paired coordination is also required');
+}
 function assertPreparationEdge(x){
   const {instrument,lesson,preparation,entry,preparationEntry,index,preparationIndex,historicalIds,canonicalRow,plan,lessons}=x;
   assert.ok(preparationIndex>=0&&preparationIndex<index,lesson.id+' needs '+preparation?.id);
@@ -15,7 +39,8 @@ function assertPreparationEdge(x){
   assert.ok(!historicalIds.has(lesson.id),lesson.id+' historical branch isolation remains unchanged');
   assert.equal(entry.stage,'p7');assert.equal(preparationEntry.stage,'p7');assert.equal(C.stages.p7.optional,true);
   assert.equal(lesson.contentKind,'exercise');assert.equal(preparation.contentKind,'exercise');
-  assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
+  assert.equal(canonicalRow.id,lesson.id,'Canonical identity must match the prepared exercise');
+  assertPreparedHandEvidence(lesson,preparation,lessons);
   assert.deepEqual(copy(canonicalRow.requires),copy(lesson.learning.requires),'Canonical prerequisites must be explicitly declared');
   assert.ok(lesson.learning.requires.includes(preparation.id));
   const next=C.next(plan,'piano',lessons,lesson.id);
@@ -44,6 +69,33 @@ test('optional cross-branch preparation rejects wrong hand,pieces,later or missi
   const base={instrument:'piano',lesson,preparation,entry,preparationEntry,index:plan.piano.indexOf(entry),preparationIndex:plan.piano.indexOf(preparationEntry),historicalIds:protectedPrerequisiteIds,canonicalRow,plan,lessons:app.lessons};assertPreparationEdge(base);
   for(const patch of [{instrument:'guitar'},{preparationIndex:-1},{preparationIndex:base.index},{preparation:{...preparation,handMode:'right'}},{preparation:{...preparation,contentKind:'piece'}},{entry:{...entry,stage:'p9'}},{preparationEntry:{...preparationEntry,stage:'p9'}},{canonicalRow:{...canonicalRow,requires:[]}},{historicalIds:new Set([...protectedPrerequisiteIds,lesson.id])}])assert.throws(()=>assertPreparationEdge({...base,...patch}));
 });
+test('paired optional preparation requires both exact own-hand groups,a prior dyad course and explicit canonical links;rejects malformed extensions',()=>{
+ const context={};vm.runInNewContext(fs.readFileSync(path.resolve(__dirname,'../curriculum-plan.js'),'utf8'),context);const original=context.MUSIC_CURRICULUM_PLAN;
+ const ids=['detail-p-fsharp-major-ascent-left-01','detail-p-fsharp-major-ascent-right-01','detail-p-e-major-connected-paired-ascent-01'],left=app.lessons.find(l=>l.id===ids[0]);
+ const lesson={id:'synthetic-prepared-paired-guard',contentKind:'exercise',handMode:'split',steps:app.parsePattern('[QI] [WO] [EP]').steps,fingeringSpec:{steps:[[4,2],[3,3],[2,4]].map(([a,b])=>[{hand:'left',num:a},{hand:'right',num:b}])},learning:{requires:ids,coverageDomain:'coordination',nextLessonId:null}};
+ const entry={id:lesson.id,stage:'p7',branch:'synthetic-prepared-paired-guard',preparation:ids},plan=copy(original);plan.piano.push(entry);const ls=[...app.lessons,lesson],canonicalRow={id:lesson.id,requires:ids};
+ const base={instrument:'piano',lesson,preparation:left,entry,preparationEntry:plan.piano.find(e=>e.id===left.id),index:plan.piano.length-1,preparationIndex:plan.piano.findIndex(e=>e.id===left.id),historicalIds:protectedPrerequisiteIds,canonicalRow,plan,lessons:ls};
+ assertPreparationEdge(base);
+ const fakeOneHand={...lesson,handMode:'left'},badTarget=copy(lesson);badTarget.fingeringSpec.steps[1][1].hand='left';
+ const badDigit=copy(lesson);badDigit.fingeringSpec.steps[0][0].num=0;const wrongPitch=copy(lesson);wrongPitch.steps=app.parsePattern('[qI] [WO] [EP]').steps;
+ const malformedPrep=copy(left);malformedPrep.fingeringSpec.steps[0][0].num=6;
+ const withoutRight=ids.filter(x=>x!==ids[1]),withoutPriorPair=ids.slice(0,2),unknown=[...ids,'missing-preparation-id'];
+ const patches=[
+  {instrument:'guitar'},{preparationIndex:-1},{preparationIndex:base.index},
+  {lesson:fakeOneHand},{lesson:badTarget},{lesson:badDigit},{lesson:wrongPitch},
+  {lesson:{...lesson,contentKind:'piece'}},{preparation:{...left,contentKind:'piece'}},
+  {preparation:{...left,handMode:'right'}},{preparation:malformedPrep},
+  {lesson:{...lesson,learning:{...lesson.learning,coverageDomain:'crossings'}}},
+  {lesson:{...lesson,learning:{...lesson.learning,requires:withoutRight}},canonicalRow:{...canonicalRow,requires:withoutRight}},
+  {lesson:{...lesson,learning:{...lesson.learning,requires:withoutPriorPair}},canonicalRow:{...canonicalRow,requires:withoutPriorPair}},
+  {lesson:{...lesson,learning:{...lesson.learning,requires:unknown}},canonicalRow:{...canonicalRow,requires:unknown}},
+  {canonicalRow:{...canonicalRow,id:'wrong-canonical-id'}},{canonicalRow:{...canonicalRow,requires:[]}},
+  {entry:{...entry,stage:'p9'}},{preparationEntry:{...base.preparationEntry,stage:'p9'}},
+  {historicalIds:new Set([...protectedPrerequisiteIds,lesson.id])}
+ ];
+ assert.equal(patches.length,20);for(const patch of patches)assert.throws(()=>assertPreparationEdge({...base,...patch}));
+});
+
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{
   const a=loadApp({unreviewed:true}),old=new Map(a.lessons.map(l=>[l.id,l.pattern]));assert.equal(a.lessons.length,492);
   assert.equal(a.installReviewedLessons(),true);assert.equal(a.lessons.filter(l=>l.lessonReview).length,344);assert.equal(a.lessons.length,pianoCount);
