@@ -1,0 +1,370 @@
+{
+  "checkedAt": "2026-11-18T04:55:08.280983+00:00",
+  "currentPhase": 223,
+  "futurePhase": 224,
+  "planningOnly": true,
+  "implementedLessons": 0,
+  "sourceApplicationsAdded": 0,
+  "plannedRecords": 2,
+  "plannedProjectMotorClasses": 1,
+  "plannedPreparedCombinationGoals": 1,
+  "nextWorkId": "local-fsharp-major-four-thumb-right224",
+  "nextAction": "Локально реализовать две правые подготовки фа-диез мажора: A♯4/4→B4/1 через полутон (новый для проекта контакт чёрной четвёртым с белой большим вверх) и A♯4–B4–C♯5/4–1–2 (соединение с уже подготовленным выходом1–2). Exact/generic/poly для обоих0. Полная гамма пока отложена: верхняя D♯5–E♯5–F♯5/3–1–2 тоже ещё не покрыта. Нижнюю F♯4–G♯4–A♯4/2–3–4 и пару B4–C♯5/1–2 отдельными новыми уроками не считать. Источник PFF F-sharp Major RH1 Figure1/3 свежо прочитан18ноября,оригинальныеPNG сохранены/прочитаны/просмотрены. Сначала новый локальный before-copy,actual sourcecut/исторические callbacks/педагогические и MIDI проверки,RED до реализации,затем целевые/полный тест,аудиты и изолированный browser; standard/beat-boundary-v2/ID/ноты/пальцы/версии/порядок/прогресс сохранить. Не повторять готовые проверки223 и не публиковать до1000.",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-18-223-next-primary-source.json",
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-18-223-next-coverage.json",
+  "sourceUrl": "https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-right-hand/",
+  "sourceRegisterUnchanged": true,
+  "sourceFirstBar": {
+    "midis": [
+      66,
+      68,
+      70,
+      71,
+      73,
+      75,
+      77,
+      78
+    ],
+    "fingers": [
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      1,
+      2
+    ],
+    "starts": [
+      0,
+      0.5,
+      1,
+      1.5,
+      2,
+      2.5,
+      3,
+      3.5
+    ],
+    "end": 4,
+    "peakSharedWithDescent": true
+  },
+  "cases": [
+    {
+      "id": "detail-p-fsharp-major-four-thumb-right-01",
+      "title": "Правая: A♯4/4 → B4/1 через полутон",
+      "midis": [
+        70,
+        71
+      ],
+      "fingers": [
+        4,
+        1
+      ],
+      "pattern": "P a",
+      "requires": [
+        "detail-p-f-major-fourth-thumb-connected-right-01"
+      ],
+      "sourceStarts": [
+        1,
+        1.5
+      ],
+      "sourceEnd": 2,
+      "sourceNext": "C#5 at2,not a rest",
+      "projectStarts": [
+        0,
+        1
+      ],
+      "projectDurations": [
+        1,
+        1
+      ],
+      "projectEnd": 2,
+      "projectMeter": "partial4/4;release on three",
+      "goal": "Prepared fourth-to-thumb crossing changes from known Bb4/4→C5/1 whole tone to A#4/4→B4/1 semitone; Bb4=A#4 same piano key. This is not merely a BPM or spelling variant."
+    },
+    {
+      "id": "detail-p-fsharp-major-thumb-exit-right-01",
+      "title": "Правая: A♯4/4 → B4/1 → C♯5/2",
+      "midis": [
+        70,
+        71,
+        73
+      ],
+      "fingers": [
+        4,
+        1,
+        2
+      ],
+      "pattern": "P a S",
+      "requires": [
+        "detail-p-fsharp-major-four-thumb-right-01",
+        "detail-p-b-major-ascent-right-01"
+      ],
+      "sourceStarts": [
+        1,
+        1.5,
+        2
+      ],
+      "sourceEnd": 2.5,
+      "sourceNext": "D#5 at2.5,not a rest",
+      "projectStarts": [
+        0,
+        1,
+        2
+      ],
+      "projectDurations": [
+        1,
+        1,
+        1
+      ],
+      "projectEnd": 3,
+      "projectMeter": "partial4/4;release on four",
+      "goal": "Integrate new4→1 semitone with already generic white1→black2 whole tone; old B3/1→C#4/2 moved12semitones prepares B4/1→C#5/2,not its high B4/5 ending. Shared B4 once."
+    }
+  ],
+  "wholeOldPrerequisites": [
+    {
+      "id": "detail-p-f-major-fourth-thumb-connected-right-01",
+      "title": "Правая: связный 4→1 на B♭4–C5",
+      "hand": "right",
+      "midis": [
+        [
+          69
+        ],
+        [
+          70
+        ],
+        [
+          72
+        ],
+        [
+          74
+        ],
+        [
+          69
+        ],
+        [
+          70
+        ],
+        [
+          72
+        ],
+        [
+          74
+        ]
+      ],
+      "fingers": [
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ]
+      ]
+    },
+    {
+      "id": "detail-p-b-major-ascent-right-01",
+      "title": "Си мажор правой: группы 3+5, B3–B4",
+      "hand": "right",
+      "midis": [
+        [
+          59
+        ],
+        [
+          61
+        ],
+        [
+          63
+        ],
+        [
+          64
+        ],
+        [
+          66
+        ],
+        [
+          68
+        ],
+        [
+          70
+        ],
+        [
+          71
+        ]
+      ],
+      "fingers": [
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 1
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 2
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 3
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 4
+          }
+        ],
+        [
+          {
+            "hand": "right",
+            "num": 5
+          }
+        ]
+      ]
+    }
+  ],
+  "prerequisiteReferences": 3,
+  "uniquePrerequisiteIds": 3,
+  "preparationSubspans": {
+    "pair": {
+      "oldId": "detail-p-f-major-fourth-thumb-connected-right-01",
+      "indices": [
+        1,
+        2
+      ],
+      "oldMidis": [
+        70,
+        72
+      ],
+      "fingers": [
+        4,
+        1
+      ],
+      "newMidis": [
+        70,
+        71
+      ],
+      "change": "Same A#4/Bb4 key under4; thumb destination changes C5→B4,whole-tone to semitone. New class,not exact old preparation."
+    },
+    "integrationExit": {
+      "oldId": "detail-p-b-major-ascent-right-01",
+      "indices": [
+        0,
+        1
+      ],
+      "oldMidis": [
+        59,
+        61
+      ],
+      "fingers": [
+        1,
+        2
+      ],
+      "transposeSemitones": 12,
+      "newMidis": [
+        71,
+        73
+      ]
+    }
+  },
+  "projectDefaults": {
+    "bpm": 40,
+    "articulation": "legato",
+    "assessment": "standard",
+    "timingPrecision": "beat-boundary-v2",
+    "hand": "right",
+    "otherHand": "rests",
+    "pedal": "off",
+    "sourceEighthsReframedToQuarters": true,
+    "manualFollowingQuietQuarterUngraded": true,
+    "sourceFollowingSilenceClaimed": false,
+    "typicalMinutes": [
+      3,
+      5
+    ],
+    "manualOpenTransferRequired": true
+  },
+  "route": {
+    "stage": "p7",
+    "branch": "fsharp-major-right-thumb-transition",
+    "anchor": "course10-08",
+    "mainAnchorNextMustRemainNull": true,
+    "oldAnchorHint": "course08-06",
+    "newNextAdvances": 1,
+    "newTerminalCases": 1
+  },
+  "deferred": {
+    "fsharpUpper312": "0 exact/generic/poly; prepare separately before full scale",
+    "fullFsharpMajor": "0 exact/generic/poly; not implemented or counted",
+    "lowerBlack234": "3exact/3generic,already covered;not new goal",
+    "whiteThumbBlackTwoWholeUp": "7generic monophonic+3potentialpoly matches,already covered;not new goal"
+  },
+  "limits": [
+    "No finger/comfort/teacher/performance proof.",
+    "Project2/3quarters,40BPM,legato,manual silence and transfer are not source prescriptions.",
+    "No publication,server changes,new schedules or guitar changes."
+  ]
+}

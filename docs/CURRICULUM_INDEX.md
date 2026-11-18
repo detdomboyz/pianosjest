@@ -470,6 +470,9 @@
 | detail-p-bflat-major-descent-left-01 | Си-бемоль мажор левой: спуск 1+4+3, B♭3–B♭2 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-second-thumb-descent-left-01; сначала detail-p-bflat-fourth-thumb-descent-left-01; сначала detail-p-d-natural-minor-descent-left-01; сначала detail-p-g-natural-minor-descent-left-01 |
 | detail-p-eflat-middle-descent-left-01 | Левая вниз: C4–B♭3–A♭3 под 2–3–4 | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-descent-left-01; сначала detail-p-e-major-descent-left-01 |
 | detail-p-eflat-major-descent-left-01 | Ми-бемоль мажор левой вниз: 1+4+3, E♭4–E♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-descent-left-01; сначала detail-p-eflat-middle-descent-left-01 |
+| detail-p-b-major-upper-descent-right-01 | Правая: B4–A♯4–G♯4–F♯4–E4 под 5–4–3–2–1 | 5 | 40 | MIDI-челлендж | сначала detail-p-e-major-descent-right-01 |
+| detail-p-b-major-thumb-exit-descent-right-01 | Правая: F♯4/2 → E4/1 → D♯4/3 | 3 | 40 | MIDI-челлендж | сначала detail-p-e-major-descent-right-01 |
+| detail-p-b-major-descent-right-01 | Си мажор правой вниз: группы 5+3, B4–B3 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-major-descent-right-01; сначала detail-p-b-major-upper-descent-right-01; сначала detail-p-b-major-thumb-exit-descent-right-01 |
 | detail-p-b-major-thumb-exit-right-01 | Правая: D♯4/3 → E4/1 → F♯4/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01 |
 | detail-p-b-major-upper-ascent-right-01 | Правая: E4–F♯4–G♯4–A♯4–B4 под 1–2–3–4–5 | 5 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01 |
 | detail-p-b-major-ascent-right-01 | Си мажор правой: группы 3+5, B3–B4 | 8 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01; сначала detail-p-b-major-thumb-exit-right-01; сначала detail-p-b-major-upper-ascent-right-01 |

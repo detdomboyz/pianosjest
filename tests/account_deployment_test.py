@@ -20,7 +20,7 @@ class AccountDeployment(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.work=tempfile.TemporaryDirectory(dir=ROOT/'tmp',prefix='account-deployment-')
-        cls.root=Path(cls.work.name);web=cls.root/'web'
+        cls.root=Path(cls.work.name).resolve();web=Path(cls.work.name)/'web'
         subprocess.run(['node','--preserve-symlinks','--preserve-symlinks-main','-e',"require('./tools/build-web.cjs').buildWeb({outDir:process.argv[1],service:true})",str(web)],cwd=ROOT,check=True,capture_output=True)
         cls.archive=cls.root/'release.tar.gz'
         cls.receipt=deploy.artifact.pack(web,ROOT/'deploy/shared-host',cls.archive,ROOT)

@@ -1,0 +1,291 @@
+{
+  "checkedAt": "2026-11-18T04:55:08.454584+00:00",
+  "phase": "2026-11-18-223",
+  "version": "23.5.187",
+  "publicVersion": "23.5.186",
+  "full": {
+    "startedAt": "2026-11-18T04:33:35.217389+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\full-final.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 17476,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T04:53:13.106012+00:00",
+    "wallSeconds": 1177.891,
+    "logSha256": "585d41324eadaa86625b05a7006e14102b379613e2561e6a5637ff1573d9eca4",
+    "totals": {
+      "tests": 2561,
+      "pass": 2561,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1177388.5582
+    }
+  },
+  "firstFailedFull": {
+    "startedAt": "2026-11-18T04:01:41.775152+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "failed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\full.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 19104,
+    "exitCode": 1,
+    "finishedAt": "2026-11-18T04:22:32.117877+00:00",
+    "wallSeconds": 1250.344,
+    "logSha256": "987435ffa3ad1a4f581f751594525e856c623ceef47a2e0761db603a04826bb2",
+    "totals": {
+      "tests": 2560,
+      "pass": 2557,
+      "fail": 3,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1249800.4238
+    }
+  },
+  "fullAttempts": 2,
+  "totalFullCaseExecutions": 5121,
+  "target": {
+    "startedAt": "2026-11-18T03:39:48.352468+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-b-major-right-descent.test.cjs",
+      "tests/piano-b-major-right-ascent.test.cjs",
+      "tests/piano-b-major-left-descent.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\target.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 5716,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T03:45:17.744145+00:00",
+    "wallSeconds": 329.391,
+    "logSha256": "925335e4c152402c0266a714ba079f85e0e318cc474b3ae225e2ffc8e0fd7cc9",
+    "totals": {
+      "tests": 133,
+      "pass": 133,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 329333.364
+    }
+  },
+  "storageTarget": {
+    "startedAt": "2026-11-18T04:32:26.284692+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/account-deployment.test.cjs",
+      "tests/artifact-profile.test.cjs",
+      "tests/artifact-legacy-game.test.cjs",
+      "tests/piano-lesson-parts.test.cjs",
+      "tests/build-storage.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\storage-target-pass.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 20796,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T04:32:55.013397+00:00",
+    "wallSeconds": 28.734,
+    "logSha256": "c6127d91e61aabab252380b84470b16760e22d07cf203c2e8060341768a97e41",
+    "totals": {
+      "tests": 14,
+      "pass": 14,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 28666.5156
+    }
+  },
+  "all133TargetNamesCoveredInFull": true,
+  "all14StorageTargetNamesCoveredInFull": true,
+  "accountInnerPosixSkipsOnWindows": 5,
+  "accountSkipCountIsNotLinuxPass": true,
+  "audits": {
+    "audit-lessons": {
+      "startedAt": "2026-11-18T03:46:58.548314+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:lessons"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\b-major-right-descent-223\\logs\\audit-lessons.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 19428,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T03:47:03.200844+00:00",
+      "wallSeconds": 4.657,
+      "logSha256": "c2bc163498d1888c4519ad70d4d4032d6b850c5ba2051b26eb8ca184c906cc43",
+      "totals": {}
+    },
+    "audit-fingering": {
+      "startedAt": "2026-11-18T03:47:03.409506+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:fingering"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\b-major-right-descent-223\\logs\\audit-fingering.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 19200,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T03:47:14.163744+00:00",
+      "wallSeconds": 10.765,
+      "logSha256": "77835954608b5f32a922dbcc1f1bbeea12e5f9007be602dab03e4359f3339afa",
+      "totals": {}
+    },
+    "audit-curriculum": {
+      "startedAt": "2026-11-18T03:47:14.404529+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:curriculum"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\b-major-right-descent-223\\logs\\audit-curriculum.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 4628,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T03:47:27.672137+00:00",
+      "wallSeconds": 13.265,
+      "logSha256": "7886859172822f15496ec6818d91b3871c2f9feae4493d232bce5c1283d99f0d",
+      "totals": {}
+    },
+    "audit-coverage": {
+      "startedAt": "2026-11-18T03:47:27.874040+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:piano-coverage"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\b-major-right-descent-223\\logs\\audit-coverage.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 4584,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T03:47:30.244029+00:00",
+      "wallSeconds": 2.375,
+      "logSha256": "e8bf4a039f0644c7bb5da3bff9021f1d41345b08199f19ad092391e3334672b1",
+      "totals": {}
+    }
+  },
+  "service": {
+    "startedAt": "2026-11-18T03:47:30.446400+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\service.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 1580,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T03:48:05.450994+00:00",
+    "wallSeconds": 35.0,
+    "logSha256": "166b592df41221ad0a1f9ac783839938ba0ed50718a1909e253c8c1bfcb07d17",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 32725.3418
+    }
+  },
+  "serviceLimitation": "Seven Windows platform skips are not PostgreSQL integration passes.",
+  "build": {
+    "startedAt": "2026-11-18T03:48:05.659148+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build:web"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\b-major-right-descent-223\\logs\\build.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 11952,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T03:48:06.288636+00:00",
+    "wallSeconds": 0.64,
+    "logSha256": "5ec8ac4b6cf575102bd03aa9a1a43fcd74ff8e23fb79a8a4216bc86fa658804b",
+    "totals": {}
+  },
+  "runtime": {
+    "beforeFiles": 685,
+    "afterFiles": 687,
+    "allFrozenExactAfterFull": true,
+    "changedOldFiles": [
+      "curriculum-plan.js",
+      "deploy/shared-host/release_artifact.py",
+      "package.json",
+      "piano-lesson-development.js",
+      "piano-lesson-parts.js",
+      "service/course-registry.json",
+      "tests/account_deployment_test.py",
+      "tests/artifact_profile_test.py",
+      "tests/fixtures/piano-curriculum-counts.json",
+      "tests/piano-lesson-parts.test.cjs"
+    ],
+    "newFiles": [
+      "tests/fixtures/piano-before-b-major-right-descent-v1.json",
+      "tests/piano-b-major-right-descent.test.cjs"
+    ],
+    "newTestAndFixtureExactSinceFirstModelAndRed": true
+  },
+  "preservation": {
+    "oldCatalogRecords": 729,
+    "oldCanonicalEditions": 581,
+    "themes": 118,
+    "mainRoute": 295,
+    "mainNextPaths": 84,
+    "oldOptionalNextPaths": 286,
+    "newBranchAdvances": 2,
+    "newBranchTerminalCases": 1,
+    "validatedBy": "full target-name coverage including complete old-record and canonical fixture comparisons",
+    "guitarRouteAndBaselineUnchanged": true
+  },
+  "browser": "docs/qa/melodiajest-2026-11-18-223-browser.json",
+  "fullResourceSample": "tmp/b-major-right-descent-223/evidence/full-resources-sample.json",
+  "modelPreflight": "docs/qa/melodiajest-2026-11-18-223-model-preflight.json",
+  "nextPlan": "docs/qa/melodiajest-2026-11-18-223-next-plan.json",
+  "newLessons": 3,
+  "newPreparedCombinationGoals": 3,
+  "newGlobalMotorClasses": 0,
+  "teacherReviewed": 0,
+  "verifiedDistinct": null,
+  "deployed": false
+}

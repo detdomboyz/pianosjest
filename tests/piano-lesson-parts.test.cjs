@@ -37,13 +37,25 @@ test('invalid UTF-8 and inconsistent teaching-theme metadata fail even with matc
  const original=JSON.parse(bundle.files.get(d.key));for(const edit of [p=>p.theme.contentKind='piece',p=>p.theme.order=0,p=>p.lessons[0].order=0]){const value=copy(original);edit(value);const raw=Buffer.from(JSON.stringify(value)),v=copy(bundle.manifest);Object.assign(v.parts[0],{sha256:hash(raw),key:'parts/v1/'+hash(raw)+'.json',bytes:raw.length});assert.throws(()=>Parts.readPart(v,v.parts[0].key,raw));}
 });
 test('writer rejects a linked parent before creating any child at the link target',t=>{
- const root=path.resolve(__dirname,'..'),tmp=path.join(root,'tmp'),dir=fs.mkdtempSync(path.join(tmp,'lesson-parts-link-test-')),target=path.join(dir,'target'),link=path.join(dir,'link');fs.mkdirSync(target);
+ const root=path.resolve(__dirname,'..'),tmp=fs.realpathSync(path.join(root,'tmp')),dir=fs.mkdtempSync(path.join(tmp,'lesson-parts-link-test-')),target=path.join(dir,'target'),link=path.join(dir,'link');fs.mkdirSync(target);
  t.after(()=>{const actual=process.platform==='win32'?fs.realpathSync.native(dir):fs.realpathSync(dir);assert.equal(path.dirname(actual),tmp);assert.ok(path.basename(actual).startsWith('lesson-parts-link-test-'));fs.rmSync(actual,{recursive:true,force:false});});
  fs.symlinkSync(target,link,process.platform==='win32'?'junction':'dir');assert.throws(()=>Parts.write(bundle,path.join(link,'new-child')),/linked/);assert.deepEqual(fs.readdirSync(target),[]);
 });
 test('immutable writer reuses exact bytes and refuses collisions, inconsistent bundle metadata and output escape',t=>{
- const root=path.resolve(__dirname,'..'),tmp=path.join(root,'tmp'),dir=fs.mkdtempSync(path.join(tmp,'lesson-parts-test-'));t.after(()=>{const actual=process.platform==='win32'?fs.realpathSync.native(dir):fs.realpathSync(dir);assert.equal(path.dirname(actual),tmp);assert.ok(path.basename(actual).startsWith('lesson-parts-test-'));fs.rmSync(actual,{recursive:true,force:false});});
+ const root=path.resolve(__dirname,'..'),tmp=fs.realpathSync(path.join(root,'tmp')),dir=fs.mkdtempSync(path.join(tmp,'lesson-parts-test-'));t.after(()=>{const actual=process.platform==='win32'?fs.realpathSync.native(dir):fs.realpathSync(dir);assert.equal(path.dirname(actual),tmp);assert.ok(path.basename(actual).startsWith('lesson-parts-test-'));fs.rmSync(actual,{recursive:true,force:false});});
  assert.equal(Parts.write(bundle,dir).created,2);assert.equal(Parts.write(bundle,dir).reused,2);const manifest=fs.readFileSync(path.join(dir,bundle.manifestKey));assert.equal(hash(manifest),bundle.manifestSha256);
  assert.throws(()=>Parts.write({...bundle,manifestKey:'manifests/v1/'+'0'.repeat(64)+'.json'},dir),/inconsistent/);assert.throws(()=>Parts.write(bundle,path.join(root,'outside-lesson-parts')),/outside/);
  const d=bundle.manifest.parts[0];fs.writeFileSync(path.join(dir,d.key),'corrupt isolated fixture');assert.throws(()=>Parts.write(bundle,dir),/collision/);assert.equal(fs.readFileSync(path.join(dir,d.key),'utf8'),'corrupt isolated fixture');assert.ok(fs.readFileSync(path.join(dir,bundle.manifestKey)).equals(manifest));
+});
+
+test('trusted logical and physical storage paths share immutable bytes while linked children and unrelated paths stay rejected',t=>{
+ const root=path.resolve(__dirname,'..'),tmp=fs.realpathSync(path.join(root,'tmp')),dir=fs.mkdtempSync(path.join(tmp,'lesson-parts-alias-test-'));
+ t.after(()=>{const actual=fs.realpathSync(dir);assert.equal(path.dirname(actual),tmp);assert.ok(path.basename(actual).startsWith('lesson-parts-alias-test-'));fs.rmSync(actual,{recursive:true,force:false});});
+ const logical=path.join(root,'tmp',path.basename(dir),'output'),physical=path.join(dir,'output');
+ assert.equal(Parts.write(bundle,logical).created,2);assert.equal(Parts.write(bundle,physical).reused,2);
+ assert.ok(fs.readFileSync(path.join(physical,bundle.manifestKey)).equals(bundle.manifestBytes));
+ if(process.platform==='win32')assert.ok(physical.toLowerCase().startsWith('d:\\melodiajest-private\\host-maintenance\\workspace-artifacts\\tmp\\'));
+ const target=path.join(dir,'target'),link=path.join(dir,'linked-output');fs.mkdirSync(target);fs.symlinkSync(target,link,process.platform==='win32'?'junction':'dir');
+ assert.throws(()=>Parts.write(bundle,path.join(link,'new-child')),/linked/);assert.deepEqual(fs.readdirSync(target),[]);
+ const outside=path.join(root,'outside-'+path.basename(dir));assert.throws(()=>Parts.write(bundle,outside),/outside/);assert.equal(fs.existsSync(outside),false);
 });

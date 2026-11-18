@@ -137,11 +137,26 @@ def collect_sources(checkout):
     if checkout is None:
         return {}
     checkout = Path(checkout).resolve(strict=True)
-    candidates = list(checkout.iterdir())
+    candidates = []
+    for path in checkout.iterdir():
+        try:
+            selected = source_allowed(path.name)
+        except ArtifactError:
+            selected = False
+        if selected:
+            candidates.append(path)
     for folder in ['tools', 'tests', 'docs', 'deploy/shared-host', 'service']:
         directory = checkout / folder
         require(not directory.is_symlink() and not getattr(directory, 'is_junction', lambda: False)(), 'Linked source directory')
-        candidates.extend(directory.rglob('*'))
+        for parent, directories, files in os.walk(directory, topdown=True, followlinks=False):
+            for name in list(directories):
+                child = Path(parent) / name
+                relative = child.relative_to(checkout).as_posix()
+                if relative in EXCLUDED_EVIDENCE_ROOTS or name == '__pycache__':
+                    directories.remove(name)
+                    continue
+                require(not child.is_symlink() and not getattr(child, 'is_junction', lambda: False)(), 'Linked source directory')
+            candidates.extend(Path(parent) / name for name in files)
     result = {}
     for path in candidates:
         if path.is_dir():

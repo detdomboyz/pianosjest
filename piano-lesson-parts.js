@@ -1,6 +1,7 @@
 'use strict';
 // Offline producer and filesystem writer. The data validator is shared with browsers.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),Codec=require('./piano-lesson-parts-codec.js');
+const {assertBuildStorage}=require('./tools/build-web.cjs');
 const {VERSION,MAX_PART_BYTES,MAX_MANIFEST_BYTES,validateManifest}=Codec;
 const {clone,requireValue,isObject,id,sha,source,ids,same}=Codec.helpers;
 const encoded=(value,max)=>Buffer.from(Codec.helpers.encoded(value,max));
@@ -27,9 +28,20 @@ function assemble(manifest,files){
 }
 function write(bundle,outDir){
   requireValue(same(readManifest(bundle.manifestBytes,bundle.manifestSha256),bundle.manifest)&&bundle.manifestKey==='manifests/v1/'+bundle.manifestSha256+'.json','inconsistent bundle manifest');assemble(bundle.manifest,bundle.files);
-  const root=path.resolve(__dirname),dest=path.resolve(outDir),allowed=[path.join(root,'dist','lesson-parts'),path.join(root,'tmp')];requireValue(allowed.some(base=>dest===base||dest.startsWith(base+path.sep)),'output outside lesson-parts or tmp');
+  const root=path.resolve(__dirname),requested=path.resolve(outDir),allowed=[path.join(root,'dist','lesson-parts'),path.join(root,'tmp')];
   const real=p=>process.platform==='win32'?fs.realpathSync.native(p):fs.realpathSync(p);
-  function directory(dir){let at=root;for(const segment of path.relative(root,dir).split(path.sep)){at=path.join(at,segment);try{const stat=fs.lstatSync(at);requireValue(stat.isDirectory()&&!stat.isSymbolicLink(),'linked or non-directory parent');}catch(error){if(error.code!=='ENOENT')throw error;fs.mkdirSync(at);}requireValue(real(at)===at,'linked output directory');}}
+  const within=(base,value)=>{const relative=path.relative(base,value);return relative!== '..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
+  const bases=allowed.map(logical=>{
+    if(process.platform!=='win32')return {logical,physical:logical};
+    // Only the project's verified D: storage binding is trusted. Child links
+    // remain in the path below and are rejected before creating any output.
+    assertBuildStorage(logical);let ancestor=logical;
+    while(!fs.existsSync(ancestor))ancestor=path.dirname(ancestor);
+    return {logical,physical:path.resolve(real(ancestor),path.relative(ancestor,logical))};
+  });
+  const selected=bases.find(base=>within(base.logical,requested))||bases.find(base=>within(base.physical,requested));requireValue(selected,'output outside lesson-parts or tmp');
+  const source=within(selected.logical,requested)?selected.logical:selected.physical,dest=path.resolve(selected.physical,path.relative(source,requested));
+  function directory(dir){let at=path.parse(dir).root;for(const segment of path.relative(at,dir).split(path.sep)){at=path.join(at,segment);try{const stat=fs.lstatSync(at);requireValue(stat.isDirectory()&&!stat.isSymbolicLink(),'linked or non-directory parent');}catch(error){if(error.code!=='ENOENT')throw error;fs.mkdirSync(at);}requireValue(real(at)===at,'linked output directory');}}
   directory(dest);
   let created=0,reused=0;
   for(const [key,bytes]of [...bundle.files,[bundle.manifestKey,bundle.manifestBytes]]){

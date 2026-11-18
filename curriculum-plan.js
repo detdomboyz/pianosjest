@@ -3403,6 +3403,38 @@
       ]
     },
     {
+      "id": "detail-p-b-major-upper-descent-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-descent",
+      "fingerprint": "52d2532e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-thumb-exit-descent-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-descent",
+      "fingerprint": "1d8619e3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-descent-right-01",
+      "stage": "p7",
+      "branch": "b-major-right-descent",
+      "fingerprint": "58e6b1c1",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-descent-right-01",
+        "detail-p-b-major-upper-descent-right-01",
+        "detail-p-b-major-thumb-exit-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-thumb-exit-right-01",
       "stage": "p7",
       "branch": "b-major-right-ascent",

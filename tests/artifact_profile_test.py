@@ -3,6 +3,8 @@ import gzip
 import importlib.util
 import io
 import json
+import os
+import subprocess
 from pathlib import Path
 import tarfile
 import tempfile
@@ -129,6 +131,97 @@ class ArchiveProfileTests(unittest.TestCase):
         with self.assertRaises(artifact.ArtifactError):
             artifact.restore(target, self.root / 'contradiction', digest)
         self.assertFalse((self.root / 'contradiction').exists())
+
+
+    def directory_link(self, target, link):
+        if os.name == 'nt':
+            subprocess.run(['node', '-e', "require('node:fs').symlinkSync(process.argv[1],process.argv[2],'junction')", str(target), str(link)], check=True, capture_output=True)
+        else:
+            link.symlink_to(target, target_is_directory=True)
+
+    def remove_directory_link(self, link):
+        # rmdir removes only the Windows junction; never traverse its target.
+        if os.name == 'nt':
+            os.rmdir(link)
+        else:
+            link.unlink()
+
+    def test_unselected_junctions_are_not_enumerated_or_archived(self):
+        outside = self.root / 'private-outside-source'
+        outside.mkdir()
+        (outside / 'private.json').write_bytes(b'PRIVATE OUTSIDE DATA')
+        (self.checkout / 'docs/qa/large.json').unlink()
+        (self.checkout / 'docs/qa').rmdir()
+        links = [self.checkout / name for name in ['tmp', 'dist', '.qa', 'docs/qa']]
+        try:
+            for link in links:
+                self.directory_link(outside, link)
+            scan = os.scandir
+            def guarded_scan(path):
+                if Path(path).resolve() == outside.resolve():
+                    raise AssertionError('Unselected directory must not be enumerated')
+                return scan(path)
+            with patch.object(artifact.os, 'scandir', side_effect=guarded_scan):
+                target, receipt = self.pack('excluded-junctions.tar.gz')
+            files, _ = artifact.read_bundle(target, receipt['sha256'])
+            self.assertEqual(files['source/piano-lesson-development.js'], self.originals['piano-lesson-development.js'])
+            self.assertFalse(any(name.startswith(('source/tmp/', 'source/dist/', 'source/.qa/', 'source/docs/qa/')) for name in files))
+            self.assertFalse(any(b'PRIVATE OUTSIDE DATA' in data for data in files.values()))
+            self.assertEqual((outside / 'private.json').read_bytes(), b'PRIVATE OUTSIDE DATA')
+        finally:
+            for link in reversed(links):
+                if link.is_symlink() or getattr(link, 'is_junction', lambda: False)():
+                    self.remove_directory_link(link)
+
+    def test_selected_source_directory_links_still_fail_before_traversal(self):
+        outside = self.root / 'linked-selected-source'
+        outside.mkdir()
+        (outside / 'included.js').write_bytes(b'never read through selected link')
+        roots = [self.root / 'linked-root-checkout', self.checkout]
+        roots[0].mkdir()
+        cases = [(roots[0], roots[0] / 'docs'), (self.checkout, self.checkout / 'tools/nested-link'), (self.checkout, self.checkout / 'selected.js')]
+        for checkout, link in cases:
+            with self.subTest(link=link.name):
+                self.directory_link(outside, link)
+                try:
+                    scan = os.scandir
+                    def guarded_scan(path):
+                        if Path(path).resolve() == outside.resolve():
+                            raise AssertionError('Selected linked source must fail before traversal')
+                        return scan(path)
+                    with patch.object(artifact.os, 'scandir', side_effect=guarded_scan):
+                        with self.assertRaisesRegex(artifact.ArtifactError, 'Linked source directory'):
+                            artifact.collect_sources(checkout)
+                    self.assertEqual((outside / 'included.js').read_bytes(), b'never read through selected link')
+                finally:
+                    self.remove_directory_link(link)
+
+
+
+    def test_build_cache_directory_links_are_not_enumerated_or_archived(self):
+        outside = self.root / 'private-build-cache'
+        outside.mkdir()
+        (outside / 'not_source.py').write_bytes(b'BUILD CACHE MUST NOT ENTER SOURCE')
+        links = [self.checkout / name / '__pycache__' for name in ['tools', 'tests', 'deploy/shared-host', 'service']]
+        try:
+            for link in links:
+                self.directory_link(outside, link)
+            scan = os.scandir
+            def guarded_scan(path):
+                if Path(path).resolve() == outside.resolve():
+                    raise AssertionError('Build cache must not be enumerated')
+                return scan(path)
+            with patch.object(artifact.os, 'scandir', side_effect=guarded_scan):
+                target, receipt = self.pack('cache-junctions.tar.gz')
+            files, _ = artifact.read_bundle(target, receipt['sha256'])
+            self.assertFalse(any('__pycache__' in name for name in files))
+            self.assertFalse(any(b'BUILD CACHE MUST NOT ENTER SOURCE' in data for data in files.values()))
+            self.assertEqual((outside / 'not_source.py').read_bytes(), b'BUILD CACHE MUST NOT ENTER SOURCE')
+        finally:
+            for link in reversed(links):
+                if link.is_symlink() or getattr(link, 'is_junction', lambda: False)():
+                    self.remove_directory_link(link)
+
 
 
 if __name__ == '__main__':

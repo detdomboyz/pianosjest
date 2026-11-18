@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-11-18T05:03:17.792845+00:00",
+  "scope": "Local Windows processes only;no production/browser peak/INP claim",
+  "model": {
+    "totalRamBytes": 51452858368,
+    "freeRamBytes": 34965594112,
+    "model": [
+      {
+        "pid": 10752,
+        "workingSetBytes": 1151029248,
+        "peakWorkingSetBytes": 1287671808,
+        "cpuSeconds": 115.203125
+      }
+    ],
+    "heavyJobs": 1,
+    "beforeCopyBytes": 18885681,
+    "sourceCutBudgetBytes": 67108864,
+    "note": "One model command; scripts and snapshots on D:, no dependencies or runtime model changes."
+  },
+  "firstFullSample": {
+    "checkedAt": "2026-11-18T04:05:55.7708471Z",
+    "ownerRootPid": 19104,
+    "physicalRamBytes": 51452858368,
+    "freeRamBytes": 33797103616,
+    "processes": [
+      {
+        "pid": 19104,
+        "parent": 10520,
+        "name": "cmd.exe",
+        "executable": "C:\\Windows\\system32\\cmd.exe",
+        "workingSetBytes": 5275648,
+        "peakWorkingSetBytes": 5476352
+      },
+      {
+        "pid": 8704,
+        "parent": 19104,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 33951744,
+        "peakWorkingSetBytes": 40644608
+      },
+      {
+        "pid": 6548,
+        "parent": 8704,
+        "name": "cmd.exe",
+        "executable": "C:\\Windows\\system32\\cmd.exe",
+        "workingSetBytes": 4780032,
+        "peakWorkingSetBytes": 4882432
+      },
+      {
+        "pid": 736,
+        "parent": 6548,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 41058304,
+        "peakWorkingSetBytes": 42356736
+      },
+      {
+        "pid": 19080,
+        "parent": 736,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 533573632,
+        "peakWorkingSetBytes": 536326144
+      },
+      {
+        "pid": 18028,
+        "parent": 736,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 463319040,
+        "peakWorkingSetBytes": 520183808
+      },
+      {
+        "pid": 8224,
+        "parent": 736,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 311263232,
+        "peakWorkingSetBytes": 311267328
+      },
+      {
+        "pid": 2412,
+        "parent": 736,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 238702592,
+        "peakWorkingSetBytes": 240734208
+      },
+      {
+        "pid": 12868,
+        "parent": 736,
+        "name": "node.exe",
+        "executable": "C:\\Program Files\\nodejs\\node.exe",
+        "workingSetBytes": 122363904,
+        "peakWorkingSetBytes": 123580416
+      }
+    ],
+    "cFreeBytes": 166922928128,
+    "dFreeBytes": 783693553664,
+    "otherOwnedHeavyProcesses": 0,
+    "previewStopped": true
+  },
+  "finalFullSample": {
+    "checkedAt": "2026-11-18T04:39:23.2561619Z",
+    "ownerRootPid": 17476,
+    "freeRamBytes": 34283446272,
+    "processes": [
+      {
+        "pid": 17476,
+        "parent": 20316,
+        "name": "cmd.exe",
+        "workingSetBytes": 5292032,
+        "peakWorkingSetBytes": 5472256
+      },
+      {
+        "pid": 19080,
+        "parent": 17476,
+        "name": "node.exe",
+        "workingSetBytes": 34107392,
+        "peakWorkingSetBytes": 40644608
+      },
+      {
+        "pid": 16904,
+        "parent": 19080,
+        "name": "cmd.exe",
+        "workingSetBytes": 4804608,
+        "peakWorkingSetBytes": 4939776
+      },
+      {
+        "pid": 9424,
+        "parent": 16904,
+        "name": "node.exe",
+        "workingSetBytes": 43282432,
+        "peakWorkingSetBytes": 43483136
+      },
+      {
+        "pid": 19376,
+        "parent": 9424,
+        "name": "node.exe",
+        "workingSetBytes": 616738816,
+        "peakWorkingSetBytes": 617242624
+      },
+      {
+        "pid": 1720,
+        "parent": 9424,
+        "name": "node.exe",
+        "workingSetBytes": 472858624,
+        "peakWorkingSetBytes": 474021888
+      },
+      {
+        "pid": 16848,
+        "parent": 9424,
+        "name": "node.exe",
+        "workingSetBytes": 339464192,
+        "peakWorkingSetBytes": 351236096
+      },
+      {
+        "pid": 21500,
+        "parent": 9424,
+        "name": "node.exe",
+        "workingSetBytes": 211742720,
+        "peakWorkingSetBytes": 213880832
+      },
+      {
+        "pid": 19000,
+        "parent": 9424,
+        "name": "node.exe",
+        "workingSetBytes": 215564288,
+        "peakWorkingSetBytes": 215568384
+      }
+    ],
+    "cFreeBytes": 166861709312,
+    "dFreeBytes": 780277530624,
+    "otherOwnedHeavyProcesses": 0,
+    "previewStopped": true
+  },
+  "oneHeavyCommandAtATime": true,
+  "defaultTestRunnerConcurrencyUnchanged": true,
+  "systemFreeRamIsSampleNotContinuousMinimum": true,
+  "DCheckpointCoreBytes": 52064963,
+  "DCheckpointAndIsolatedRestoreLogicalPeakApproxBytes": 104129926,
+  "checkpointPeakIsCalculatedNotDiskHighWaterMeasurement": true
+}
