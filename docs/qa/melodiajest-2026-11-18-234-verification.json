@@ -1,0 +1,253 @@
+{
+  "checkedAt": "2026-11-18T16:40:17.031951+00:00",
+  "phase": "2026-11-18-234",
+  "version": "23.5.198",
+  "publicVersion": "23.5.186",
+  "complete": false,
+  "status": "automated-and-desktop-functional-verification-passed-mobile-visible-check-and-browser-cleanup-pending",
+  "full": {
+    "startedAt": "2026-11-18T16:08:30.626686+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-left-234\\logs\\full.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 21276,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T16:36:07.176449+00:00",
+    "wallSeconds": 1656.546,
+    "logSha256": "f7167659d3fde4da9cbc1a8dbef631b02dd607f0ecc050663e3b0998c72a8125",
+    "totals": {
+      "tests": 2721,
+      "pass": 2721,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1655989.5402
+    }
+  },
+  "fullAttempts": 1,
+  "target": {
+    "startedAt": "2026-11-18T15:41:55.245734+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-fsharp-major-full-descent-left.test.cjs",
+      "tests/piano-fsharp-major-upper-three-descent-left.test.cjs",
+      "tests/piano-e-major-descent-left.test.cjs",
+      "tests/piano-b-major-left-descent.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-left-234\\logs\\target.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 23140,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T15:46:21.230441+00:00",
+    "wallSeconds": 265.984,
+    "logSha256": "92bf4a267ea9e8b32680b5df02ac7d5203db017c2154e4a248be2d431dace921",
+    "totals": {
+      "tests": 101,
+      "pass": 101,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 265913.5254
+    }
+  },
+  "targetAttempts": 1,
+  "allTargetNamesCoveredInFull": true,
+  "audits": {
+    "audit-lessons": {
+      "startedAt": "2026-11-18T15:47:50.230149+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:lessons"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-left-234\\logs\\audit-lessons.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 20108,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T15:47:55.532231+00:00",
+      "wallSeconds": 5.297,
+      "logSha256": "d48e7a04376ff466ed997dd7bfc59293b2b9778c40eb3471d54c974bafb274f1",
+      "totals": {}
+    },
+    "audit-fingering": {
+      "startedAt": "2026-11-18T15:47:55.643222+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:fingering"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-left-234\\logs\\audit-fingering.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 23360,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T15:48:06.515157+00:00",
+      "wallSeconds": 10.875,
+      "logSha256": "84c1047104a2f346c0b606064ac5be4ea6659e876dc6fe6143068a99e5af36a3",
+      "totals": {}
+    },
+    "audit-curriculum": {
+      "startedAt": "2026-11-18T15:48:06.659184+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:curriculum"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-left-234\\logs\\audit-curriculum.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 14288,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T15:48:20.811112+00:00",
+      "wallSeconds": 14.156,
+      "logSha256": "5b18f6706c68044774339f2c7719d0e874ea76135c8f6d35b6d202ce1231a508",
+      "totals": {}
+    },
+    "audit-coverage": {
+      "startedAt": "2026-11-18T15:48:20.919253+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:piano-coverage"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-left-234\\logs\\audit-coverage.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 17476,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T15:48:23.490736+00:00",
+      "wallSeconds": 2.579,
+      "logSha256": "69345ebd92060bbbe19a73accbf6b8a09622026513340934849c5f91371615d2",
+      "totals": {}
+    }
+  },
+  "service": {
+    "startedAt": "2026-11-18T15:48:23.586757+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-left-234\\logs\\service.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 18488,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T15:49:02.277449+00:00",
+    "wallSeconds": 38.688,
+    "logSha256": "92800a2419e11a85ffcf321f28d4f68014fe9f060537fb16d35c56cbb27b781a",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 37198.4262
+    }
+  },
+  "serviceLimitation": "53Windows passes+7platformskips;not PG/Linux integration.",
+  "build": {
+    "startedAt": "2026-11-18T15:49:02.384395+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build:web"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-left-234\\logs\\build.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 17860,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T15:49:03.009129+00:00",
+    "wallSeconds": 0.625,
+    "logSha256": "b52106e6f3d3418b63d0a76455541eac86e8c76ab953d278bfb3b556d50eac3c",
+    "totals": {}
+  },
+  "runtime": {
+    "beforeFiles": 707,
+    "afterFiles": 709,
+    "allFrozenExactAfterFull": true,
+    "changedOldFiles": [
+      "curriculum-plan.js",
+      "package.json",
+      "piano-lesson-development.js",
+      "service/course-registry.json",
+      "tests/fixtures/piano-curriculum-counts.json"
+    ],
+    "newTestAndFixtureExactSinceFirstModelAndRed": true
+  },
+  "preservation": {
+    "oldCatalogRecords": 747,
+    "oldCanonicalEditions": 599,
+    "themes": 118,
+    "mainRoute": 295,
+    "canonicalGradedMainRoute": 289,
+    "oldMainNext": 84,
+    "oldOptionalNext": 304,
+    "actualAppNextPaths": 389,
+    "newBranchAdvances": 0,
+    "newTerminalCases": 1,
+    "guitarAndBaselineExact": true
+  },
+  "modelPreflight": "docs/qa/melodiajest-2026-11-18-234-model-preflight.json",
+  "actualSourceInputs": 55,
+  "modelAttempts": 1,
+  "clientServerModes": 30,
+  "actualSyntheticMidiCases": 20,
+  "v2Boundaries": 18,
+  "legacyBoundaries": 3,
+  "firstRed": {
+    "pass": 1,
+    "fail": 9,
+    "skip": 0
+  },
+  "modelMusicCorrections": 0,
+  "newTestOrFixtureChangesAfterFirstModelOrRed": 0,
+  "historicalTestsChanged": 0,
+  "privateTargetTestPathCorrectionBeforePreparation": 1,
+  "privateOrchestrationOrderCorrectionAfterImplementation": 1,
+  "futurePlanningPairedInventoryReaderCorrection": 1,
+  "browserDesktopFunctionalPathObserved": true,
+  "browserComplete": false,
+  "browserPartialProof": "docs/qa/melodiajest-2026-11-18-234-browser-incomplete.json",
+  "mobileNativeVisibleFramePending": true,
+  "viewportResetPending": true,
+  "ownTabClosePending": "12",
+  "ownPreviewPidAbsentAndPortsClosed": true,
+  "originalPreviewExitCodeOrGracefulShutdownNotObserved": true,
+  "newLessonsImplemented": 1,
+  "newLessonsFullyVerified": 0,
+  "newSourceEntries": 0,
+  "sourceEntries": 134,
+  "sourceApplicationsAdded": 5,
+  "freshSourceApplications": 1,
+  "reusedSourceApplications": 4,
+  "teacherReviewed": 0,
+  "verifiedDistinct": null,
+  "deployed": false,
+  "browserPolicyStoppedForCurrentTurn": true,
+  "latestBrowserProof": "docs/qa/melodiajest-2026-11-18-234-browser-policy-stop.json"
+}

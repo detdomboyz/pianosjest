@@ -434,3 +434,6 @@ docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclass
 
 
 Этап233: computer-use/действующаяBrowserSDK проверили1guestпуть точной41-fileсборки desktop390,mouseEnterSpace/focus,2prepsBack/3viewsreload/3preview/3virtual/terminalNext;0helpererrors. PFFLHFigure1/4 перечитаны по2провереннымPNG232;oldascendingrule не переписано,1точноеdescendingrule. React/Next/CSS/deps0. Recurringкурсору меняется ровнооднастрокабайтовойзаменой,исходныепереносыстроксохранены. Отчёт2026-11-18-11/QA233.
+
+
+Этап234: computer-use/BrowserSDK проверил desktopguest путь41-file198сборки и390pxгеометрию. Mobileframe/viewport-reset/tab-close не завершены: CUA снята средой,не пользователем. NodeComputerUse import/inventory работают;nativeframe далFrameArrivedtimeout,auto-review отклонил постороннееокно. Без разрешения действие не повторяется. DOMгеометрия не mobileframe. PFFLHFigure1/4 и отдельныеRH/LHWhole для будущего235 перечитаны по провереннымкопиям;новыхправил/dependencies/React/CSS0. Отчёт2026-11-18-12/QA234.
