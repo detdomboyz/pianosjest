@@ -1,0 +1,275 @@
+{
+  "checkedAt": "2026-11-18T10:40:13.542850+00:00",
+  "phase": "2026-11-18-228",
+  "version": "23.5.192",
+  "publicVersion": "23.5.186",
+  "full": {
+    "startedAt": "2026-11-18T10:17:25.639242+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\full.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 17892,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T10:39:27.701650+00:00",
+    "wallSeconds": 1322.063,
+    "logSha256": "4552a5d9fa14eea6821cb7bc6ea875f557aaf569db863c324e40a34827f56e72",
+    "totals": {
+      "tests": 2651,
+      "pass": 2651,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1321560.381
+    }
+  },
+  "fullAttempts": 1,
+  "target": {
+    "startedAt": "2026-11-18T09:57:19.313727+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-fsharp-major-top-halfstep-down-right.test.cjs",
+      "tests/piano-e-major-descent-right.test.cjs",
+      "tests/piano-bflat-full.test.cjs",
+      "tests/piano-fsharp-major-full-right.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\target-corrected.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 12868,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T10:00:42.903235+00:00",
+    "wallSeconds": 203.594,
+    "logSha256": "92600a09d4702c95d93954c271bfd3d9ca1e39ba9122d3e86b245a9c9beb375d",
+    "totals": {
+      "tests": 91,
+      "pass": 91,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 203527.9428
+    }
+  },
+  "firstTargetFailed": {
+    "startedAt": "2026-11-18T09:40:40.137274+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-fsharp-major-top-halfstep-down-right.test.cjs",
+      "tests/piano-e-major-descent-right.test.cjs",
+      "tests/piano-bflat-full.test.cjs",
+      "tests/piano-fsharp-major-full-right.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "failed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\target.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 18972,
+    "exitCode": 1,
+    "finishedAt": "2026-11-18T09:44:00.682527+00:00",
+    "wallSeconds": 200.547,
+    "logSha256": "ca94370755ce34550ce4c3ed762f1cada7035ac4bfeb677607516bf44767eca8",
+    "totals": {
+      "tests": 91,
+      "pass": 89,
+      "fail": 2,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 200480.4348
+    }
+  },
+  "targetAttempts": 2,
+  "testDisplayContractCorrection": "docs/qa/melodiajest-2026-11-18-228-display-contract-correction.json",
+  "correctedModelPreview": "docs/qa/melodiajest-2026-11-18-228-model-corrected-preview.json",
+  "allTargetNamesCoveredInFull": true,
+  "audits": {
+    "audit-lessons": {
+      "startedAt": "2026-11-18T10:01:36.218975+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:lessons"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\audit-lessons.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 19460,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T10:01:41.055972+00:00",
+      "wallSeconds": 4.844,
+      "logSha256": "4040c737dbc8a95258a21d78f65ca6b19cd260c6669d09cf2f4193cd36076403",
+      "totals": {}
+    },
+    "audit-fingering": {
+      "startedAt": "2026-11-18T10:01:41.149153+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:fingering"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\audit-fingering.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 2800,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T10:01:51.152082+00:00",
+      "wallSeconds": 10.0,
+      "logSha256": "15c794c8f3f68fe5c84b70db209c7f8d5a1abbf84358b1f1036d9f955e3a3ef9",
+      "totals": {}
+    },
+    "audit-curriculum": {
+      "startedAt": "2026-11-18T10:01:51.247032+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:curriculum"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\audit-curriculum.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 20472,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T10:02:03.888556+00:00",
+      "wallSeconds": 12.64,
+      "logSha256": "921a8e5657a114b6acecf4fb58c2ed9ea2f7b3adf7146d7963dd2070ad4a32c0",
+      "totals": {}
+    },
+    "audit-coverage": {
+      "startedAt": "2026-11-18T10:02:03.982496+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:piano-coverage"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\audit-coverage.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 17012,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T10:02:06.350292+00:00",
+      "wallSeconds": 2.375,
+      "logSha256": "883bc102774e10a7d7e23d11011a17af05e06aca66268b9bbd725812cade1045",
+      "totals": {}
+    }
+  },
+  "service": {
+    "startedAt": "2026-11-18T10:02:06.445065+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\service.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 1984,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T10:02:39.410614+00:00",
+    "wallSeconds": 32.953,
+    "logSha256": "9d16798dc703f41affa9fe54597de8e49df5c09c1ae03d155afcf6a3932b2f47",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 32166.6953
+    }
+  },
+  "serviceLimitation": "Seven Windows skips are not fresh PostgreSQL integration passes. No Linux run claimed.",
+  "build": {
+    "startedAt": "2026-11-18T10:02:39.512238+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build:web"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\build.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 15788,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T10:02:40.080788+00:00",
+    "wallSeconds": 0.563,
+    "logSha256": "e6717fe08cf5fea32f8e3415267a34fb5e439f5994bdf72578efc94b4b02594c",
+    "totals": {}
+  },
+  "runtime": {
+    "beforeFiles": 695,
+    "afterFiles": 697,
+    "allFrozenExactAfterFull": true,
+    "changedOldFiles": [
+      "curriculum-plan.js",
+      "package.json",
+      "piano-lesson-development.js",
+      "service/course-registry.json",
+      "tests/fixtures/piano-curriculum-counts.json"
+    ],
+    "newFiles": [
+      "tests/fixtures/piano-before-fsharp-major-top-halfstep-down-right-v1.json",
+      "tests/piano-fsharp-major-top-halfstep-down-right.test.cjs"
+    ],
+    "newTestAndFixtureExactSinceFirstModel": false,
+    "newFixtureExactSinceFirstModel": true,
+    "newTestAndFixtureExactSinceFirstModelAndRed": false,
+    "newTestAndFixtureNeverChangedAfterFirstRed": false
+  },
+  "preservation": {
+    "oldCatalogRecords": 739,
+    "oldCanonicalEditions": 591,
+    "themes": 118,
+    "mainRoute": 295,
+    "canonicalGradedMainRoute": 289,
+    "mainNextPaths": 84,
+    "oldOptionalNextPaths": 296,
+    "newBranchAdvances": 1,
+    "newBranchTerminalCases": 1,
+    "guitarRouteAndBaselineUnchanged": true
+  },
+  "browser": "docs/qa/melodiajest-2026-11-18-228-browser.json",
+  "modelPreflight": "docs/qa/melodiajest-2026-11-18-228-model-preflight.json",
+  "modelAttempts": 5,
+  "firstModelFailure": null,
+  "preFirstRedModelAttempts": 1,
+  "firstModelSourceFiles": 54,
+  "postImplementationAdditionalModelAttempts": 4,
+  "postImplementationAdditionalHarnessFailures": 3,
+  "finalAdditionalModelSourceFiles": 55,
+  "firstRed": {
+    "pass": 2,
+    "fail": 18,
+    "skip": 0
+  },
+  "newLessons": 2,
+  "newPreparedCombinationGoals": 1,
+  "newGlobalMotorClasses": 1,
+  "teacherReviewed": 0,
+  "verifiedDistinct": null,
+  "deployed": false
+}

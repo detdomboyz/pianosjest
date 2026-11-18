@@ -1,0 +1,9 @@
+# MelodiaJest — локальный этап 228
+
+**23.5.192 проверена локально;public23.5.186 сохранена.**2новыхправыхзаданияF♯5–E♯5/21иF♯5–E♯5–D♯5/213.593learning/569upperbound-only/distinctnull/teacher0,минимум1000не достигнут. [Учебныйотчёт](piano-curriculum-2026-11-18-06.md).
+
+Первыйtarget89PASS/2FAIL сохранён:новыйtestошибочноожидалE#5вместофизическойF5/MIDI77. Исправленыdisplayожидания+3explicitassertsнаслучай,музыка/evaluator/historicaltestsточны;wholetestнеexactfirstRED,fixtureexact. Итоговыйtarget91PASS/одинfull2651PASS/4freshaudits/service53+7Windows skips(неPG)/build41/2guestbrowsercards. First54filemodelPASS;3дополнительных package-isolationharnessотказа сохранены;final55filemodelс2current-note/previewcallbacksPASS.
+
+741catalog/593canonical/323MIDI/296provenance/118тем/697runtime точны.739oldfull/591canonical/84main296optional/382Next сохранены;132oldsourcecores/10apps2fresh8reuse/0newURLPNG. Dcopy `D:\MelodiaJest-private\host-maintenance\local-checkpoints\2026-11-18-228-23.5.192`,893files/61674366B,SHA `b672db0b671e910528599e9a291e3c45d4f2c8a8329f3db8980ac4aa56109f98`:fullreadback/isolatedrestore/realapp741593new2. НеPG/S3/offmachine/wholecheckout/browserprivate restore.6ownscratchснятыпослеproof:логически179216725B,Davailable749254647808→749439459328B;delta184811520Bнеизолирована. Toolkit/recoveryinputs сохранены.
+
+ManualPG/S3/SSH/servercleanup0. **Серверная сборка не публиковалась.** До1000локально. Сайт/соседи/сети/сертификаты/таймеры сохранены. ОднаучебнаяautomationACTIVE20min,другие не менялись. Next229prepared21321/1432,пока0уроков/applications. [Verification](../qa/melodiajest-2026-11-18-228-verification.json),[browser](../qa/melodiajest-2026-11-18-228-browser.json),[next](../qa/melodiajest-2026-11-18-228-next-plan.json). Scopedcommit/pushmain после финальнойсверки,pushнеdeployment.

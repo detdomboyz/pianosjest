@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-18T08:49:30.258Z",
+  "generatedAt": "2026-11-18T10:02:06.302Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 591,
-    "checkedMidiRouteLessons": 321,
-    "withStructuredProvenance": 294,
-    "individuallyMappedToDomain": 294,
+    "implementedLearningLessons": 593,
+    "checkedMidiRouteLessons": 323,
+    "withStructuredProvenance": 296,
+    "individuallyMappedToDomain": 296,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 567,
+    "goalGroupUpperBound": 569,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -296,6 +296,8 @@
         "detail-p-fsharp-major-upper-ascent-right-01",
         "detail-p-fsharp-major-thumb-fourth-descent-right-01",
         "detail-p-fsharp-major-lower-descent-right-01",
+        "detail-p-fsharp-major-top-half-step-descent-right-01",
+        "detail-p-fsharp-major-upper-three-descent-right-01",
         "detail-p-f-major-fourth-thumb-prep-right-01",
         "detail-p-f-major-fourth-thumb-connected-right-01",
         "detail-p-f-major-thumb-fourth-prep-right-01",
@@ -10840,6 +10842,62 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-fsharp-major-top-half-step-descent-right-01",
+      "title": "Правая: F♯5/2 → E♯5/1 через полутон",
+      "themeId": "detail-p-cross",
+      "stage": "p7",
+      "actions": 2,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "crossings",
+      "goal": "С чёрной F♯5 указательным 2 перейди вниз на соседнюю белую E♯5 большим 1 через полутон. Сократи знакомый целый тон до соседней белой, сохрани плавную передачу и свободную кисть.",
+      "requires": [
+        "detail-p-e-major-descent-right-01",
+        "detail-p-fsharp-major-ascent-right-01"
+      ],
+      "nextLessonId": "detail-p-fsharp-major-upper-three-descent-right-01",
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-thumb-fourth-down-right-2026-11-18",
+        "hutchinson-enharmonic-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-fsharp-major-upper-three-descent-right-01",
+      "title": "Правая вниз: F♯5–E♯5–D♯5 под 2–1–3",
+      "themeId": "detail-p-cross",
+      "stage": "p7",
+      "actions": 3,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "crossings",
+      "goal": "Свяжи F♯5–E♯5–D♯5 правой 2–1–3: после полутонового входа на большой продолжи средним на чёрную. Общая E♯5 звучит один раз, без повторного нажатия или остановки.",
+      "requires": [
+        "detail-p-fsharp-major-top-half-step-descent-right-01",
+        "detail-p-bflat-major-descent-right-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-thumb-fourth-down-right-2026-11-18",
+        "hutchinson-enharmonic-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-scale-01",
       "title": "Правая: 3 + 5 нот гаммы",
       "themeId": "detail-p-scale",
@@ -15496,5 +15554,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Локально реализовать две правые подготовки спуска фа-диез мажора: B4–A♯4/1–4 через полутон и B4–A♯4–G♯4/1–4–3. Exact/generic/poly0;1новыйдвигательныйклассwhite1black4half-down+1preparedintegration. Пара: полный собственный D5–C5–B♭4–A4/2–1–4–3 дважды с2тихимидолями и новый полный восходящийF#major длянотногоориентира. Срез C5–B♭4/1–4 минусполутон=B4–A4/1–4 черезтон;новаяA♯4 ближе ктойжеB4,это смена клавиши,непереименованиеA4. Тройка: новаяпара+полный собственный E♭major RHdescent,егоB♭4–A♭4/4–3=тежеA♯4–G♯4;общаяA♯4одинраз. Источник Figure1/4: B4,A♯4,G♯4на5.5,6,6.5;дляпарыend6.5далееG♯4/3,длятройкиend7далееF♯4/2,непауза. Проект2/3четверти/end2/3/partial4_4/manualquietungraded. СвежийFigure4иWholeView,полные4преп-ссылки/4unique,копия,20новыхтестов/fixture,actualmodel+4historicalcallbacks/RED обязательны до внедрения. Полныйспуск иужеизвестныйwhite1black3whole-down(3generic)не считать новымиуроками227. Standard/v2,старыеID/порядок/версии/прогресс сохранять;до1000безвыкладки."
+  "nextAction": "Локально реализовать две правые верхние подготовки спуска фа-диез мажора: F♯5–E♯5/2–1 через полутон и F♯5–E♯5–D♯5/2–1–3. Exact/generic/poly0;1новыйblack2→white1half-down+1preparedintegration. Пара:полный собственный Emajor RHdescent E5–D♯5–C♯5–B4–A4–G♯4–F♯4–E4/5–4–3–2–1–3–2–1,его F♯4–E4/2–1+12=F♯5–E5/2–1 черезтон;новая белая E♯5/F5 ближе ктойжеF♯5,это смена клавиши,непереименованиеE5. Полная восходящаяF#major190 даёт нотный ориентир,но не доказывает обратное движение. Тройка:новаяпара+полный собственный BbmajorRHdescent,егоF4–E♭4/1–3+12=E♯5–D♯5/1–3;общаяE♯5/1одинраз. SourceFigure1/4:peakF♯5/2sharedсascentна3.5,далееE♯5/1на4,D♯5/3на4.5;параend4.5далееD♯5/3,тройкаend5далееC♯5/2,непауза. Проект2/3четверти/end2/3/partial4_4/manualquietungraded. СвежиеFigure1/4 из проверенной227копии,полные4prepссылки/4unique/ноты-пальцы-ритм-паузы,копия,20новыхтестов/fixture,actualsourcecut+4historicalcallbacks/RED обязательны. Уже покрытыйwhite1→black3whole-down(3generic),полныйспуск ибудущиеupper21321/lower1432 не считать уроками228. Существующее227правило содержит полныйспуск;передприменением подтвердитьграницыиотдельнодатироватьверхниеapplications,непереписыватьстароеcore. Standard/v2/ID/пальцы/ноты/версии/порядок/прогресс сохранить;до1000безвыкладки."
 }

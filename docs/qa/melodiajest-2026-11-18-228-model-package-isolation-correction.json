@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-11-18T09:49:33.934809+00:00",
+  "firstAdditionalRun": {
+    "startedAt": "2026-11-18T09:47:40.621927+00:00",
+    "pid": 11800,
+    "status": "failed",
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\model-corrected-preview.log",
+    "correctedWholeTestAndFixtureExactBeforeAdditionalModel": true,
+    "otherOwnedHeavyJobsRunning": 0,
+    "exitCode": 1,
+    "wallSeconds": 11.562,
+    "finishedAt": "2026-11-18T09:47:52.184356+00:00",
+    "logSha256": "2e4c54ff827d1d796813039dc28398480fd7560211e41f7b0b667dc5993120f7"
+  },
+  "failure": "After implementation the real canonical builder imported root package192 while original isolated package remained191. Assertion caught this before preview callbacks.",
+  "oldHarness": "tmp\\fsharp-top-halfstep-down-right-228\\evidence\\model-corrected-preview-before-package-isolation.cjs",
+  "oldHarnessSha256": "bec8c5e71b5e3019584cb0885cb9024bf6b38977e72cf4f2c8e021dda518c400",
+  "correction": "Resolve only canonical package metadata from actual isolated source-cut package.json;expected191unchanged. No music,grading,productioncode or testchange.",
+  "correctedModelReport": "docs/qa/melodiajest-2026-11-18-228-model-corrected-preview.json",
+  "firstPreRedModelUnchangedAndPassed": true,
+  "historicalAssertionsRemoved": 0,
+  "secondAdditionalRun": {
+    "startedAt": "2026-11-18T09:49:34.145525+00:00",
+    "pid": 3348,
+    "status": "failed",
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\model-corrected-preview-package-isolated.log",
+    "correctedWholeTestAndFixtureExactBeforeAdditionalModel": true,
+    "otherOwnedHeavyJobsRunning": 0,
+    "exitCode": 1,
+    "wallSeconds": 10.735,
+    "finishedAt": "2026-11-18T09:49:44.877227+00:00",
+    "logSha256": "698ba53014a5c471b7780284a3cbc0dc0be0aaf4dee9062f0b1504a54acadada"
+  },
+  "secondFailure": "Original54-file UIcut did not contain package.json. Corrected canonical import required the exact before227source package191;missing-file assertion preserved.",
+  "original54Receipt": "tmp\\fsharp-top-halfstep-down-right-228\\evidence\\original-source-copy-receipt-54.json",
+  "addedVerifiedInput": {
+    "path": "package.json",
+    "bytes": 1572,
+    "sha256": "88e41dfebd4808a0f7874034d53ba3d36649884a7af949ca5b38b677b1a5d05a"
+  },
+  "augmentedCutFiles": 55,
+  "expectedPackageVersionUnchanged": "23.5.191",
+  "runtimeAndTestChanges": 0,
+  "thirdAdditionalRun": {
+    "startedAt": "2026-11-18T09:51:22.289415+00:00",
+    "pid": 9868,
+    "status": "failed",
+    "log": "tmp\\fsharp-top-halfstep-down-right-228\\logs\\model-corrected-preview-with-package.log",
+    "correctedWholeTestAndFixtureExactBeforeAdditionalModel": true,
+    "otherOwnedHeavyJobsRunning": 0,
+    "exitCode": 1,
+    "wallSeconds": 16.532,
+    "finishedAt": "2026-11-18T09:51:38.826573+00:00",
+    "logSha256": "b52fabad52c38691126bd2923087e08c9e3893e78af55b0086986c902519a0a0"
+  },
+  "thirdFailure": "Historical preservation callback independently imported root package192 and rejected canonical191. Redirect its and candidate-test package imports to same verifiedcut191,assertion unchanged.",
+  "thirdOriginalHarness": "tmp\\fsharp-top-halfstep-down-right-228\\evidence\\model-corrected-preview-before-all-package-imports.cjs",
+  "allCanonicalCandidateAndHistoricalPackageImportsNowIsolated": true,
+  "postImplementationAdditionalHarnessFailures": 3
+}

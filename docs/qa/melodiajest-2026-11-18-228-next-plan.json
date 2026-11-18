@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-11-18T09:59:08.541940+00:00",
+  "currentPhase": 228,
+  "futurePhase": 229,
+  "planningOnly": true,
+  "implementedLessons": 0,
+  "sourceApplicationsAdded": 0,
+  "plannedRecords": 2,
+  "plannedProjectMotorClasses": 0,
+  "plannedPreparedCombinationGoals": 2,
+  "nextWorkId": "local-fsharp-major-prepared-descent-right229",
+  "nextAction": "Локально реализовать2подготовленные правые связки спуска фа-диез мажора: F♯5–E♯5–D♯5–C♯5–B4/2–1–3–2–1 иB4–A♯4–G♯4–F♯4/1–4–3–2. Exact/generic/poly0;новых отдельных motorclasses0,два разных соединения подготовленных групп,не BPMварианты. Верхняя:полный собственный новый213 из228+полный старый правый спускBmajor B4–A♯4–G♯4–F♯4–E4–D♯4–C♯4–B3/54321321;из старого использоватьD♯4–C♯4–B3/321+12=D♯5–C♯5–B4/321,общаяD♯5/3одинраз. Нижняя:полный собственный143 из227+полный старый правыйEmajor descent,егоG♯4–F♯4/32;общаяG♯4/3одинраз. Всего4полныхsame-handprepID. ИсточникFigure1/4:верхние5восьмых3.5,4,4.5,5,5.5/end6,далееA♯4/4звучит;нижние4восьмых5.5,6,6.5,7/end7.5,сразуистиннаявосьмаяпауза7.5–8. Проект5/4четверти,end5/4:верхняя4/4+первая доля следующего такта,отпуститьнавторой;нижняяполный4/4,отпуститьнаразследующеготакта. Послеобеихручнаятихаячетвертьвнезачёта:дляверхнейэтоостановкапроектавместозвучащегоисточника;длянижнейисходнаявосьмаяпаузаотдельнообъяснена,нонеобъявляетсязаписанной/провереннойпаузойпроекта. Не терять реальнуюпаузу в описании и не менять ending/оценщик ради неё. E♯5=F5/MIDI77,подписьcurrent-noteF5;E5неE♯5. Старый1→3whole-downнеещёодинурок. Полный8-нотныйспускнеинтегрироватьдообеихгрупп. Повторно прочитатьFigure1/4изпроверенной228копии,подтвердитьсферусущеcтвующего227правила,датироватьтолькоapplications;cores/PNGзановоненужны. Стандарт/v2/ID/высоты/пальцы/ритм/версии/порядок/прогресссохранить;до1000безвыкладки.",
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-18-228-next-coverage.json",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-18-228-primary-source.json",
+  "sourceUrl": "https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-right-hand/",
+  "sourceRuleAlreadyRegistered": "pff-fsharp-major-thumb-fourth-down-right-2026-11-18",
+  "sourceScopeMustBeConfirmedBeforeReuse": true,
+  "freshSourceReadPendingFor229": true,
+  "cases": [
+    {
+      "id": "detail-p-fsharp-major-upper-descent-right-01",
+      "midis": [
+        78,
+        77,
+        75,
+        73,
+        71
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        2,
+        1
+      ],
+      "requires": [
+        "detail-p-fsharp-major-upper-three-descent-right-01",
+        "detail-p-b-major-descent-right-01"
+      ],
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5
+      ],
+      "sourceEnd": 6,
+      "sourceFollowing": "A#4/4at6,sound",
+      "preparation": "New213+oldfullBmajorlastD#4C#4B3/321+12=D#5C#5B4/321;sharedD#5once.",
+      "projectEnd": 5,
+      "partialBar": true,
+      "completeBars": 1
+    },
+    {
+      "id": "detail-p-fsharp-major-lower-four-descent-right-01",
+      "midis": [
+        71,
+        70,
+        68,
+        66
+      ],
+      "fingers": [
+        1,
+        4,
+        3,
+        2
+      ],
+      "requires": [
+        "detail-p-fsharp-major-lower-descent-right-01",
+        "detail-p-e-major-descent-right-01"
+      ],
+      "sourceStarts": [
+        5.5,
+        6,
+        6.5,
+        7
+      ],
+      "sourceEnd": 7.5,
+      "sourceFollowing": "eighthrest7.5–8immediatelyafterF#4",
+      "preparation": "New143+oldEmajorG#4F#4/32;sharedG#4once.",
+      "projectEnd": 4,
+      "partialBar": false,
+      "completeBars": 1
+    }
+  ],
+  "manualFollowingQuietUnscored": true,
+  "literalSourceRestBoundaryMustRemainExplicit": true,
+  "futureFullDescentImplemented": false,
+  "prior228DisplayTestCorrectionMustNotBeRepeated": true
+}
