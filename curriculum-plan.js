@@ -3712,6 +3712,18 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-ascent-left-01",
+      "stage": "p7",
+      "branch": "fsharp-major-left-full-ascent",
+      "fingerprint": "29104b38",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-ascent-left-01",
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-fsharp-major-upper-three-ascent-left-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

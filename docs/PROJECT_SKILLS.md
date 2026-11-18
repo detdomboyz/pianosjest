@@ -428,3 +428,6 @@ docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclass
 
 
 Этап231: применён computer-use к одной изолированной browser-карточке настоящей41-file сборки; прочитаны SKILL.md, актуальная Browser SDK документация/local-web-development/viewport. Проверены Enter/Space/фокус, гостевые виды/reload, подготовки, поиск, preview, виртуальные ноты, desktop390. Одна ошибка предположения QA о поиске сохранена, product/test не менялись. Первичный LH нотный источник Figure1/3 прочитан заново; React/Next/CSS/зависимости не менялись. Подробности QA231 и отчёт партии2026-11-18-09.
+
+
+Этап232: computer-use/действующая BrowserSDK проверили1guestпуть точной41-file сборки desktop390,mouseEnterSpace/focus,3prepsBack/3viewsreload/8preview/8virtual/terminalNext;0helpererrors. Primary PFFLHFigure1/3 перечитаны по2провереннымPNG231;Figure4прочитан только для следующего плана. React/Next/CSS/deps0. Полные ограничения и доказательства — отчёт2026-11-18-10/QA232.
