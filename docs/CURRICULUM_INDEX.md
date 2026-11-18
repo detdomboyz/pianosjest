@@ -460,6 +460,7 @@
 
 | ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
 | --- | --- | ---: | ---: | --- | --- |
+| detail-p-fsharp-major-upper-three-ascent-left-01 | Фа-диез мажор левой вверх: верхняя связка 2–1–2 | 3 | 40 | MIDI-челлендж | сначала detail-p-f-major-ascent-checkpoint-left-01; сначала detail-p-bflat-major-ascent-left-01 |
 | detail-p-eflat-middle-descent-right-01 | Правая вниз: B♭4–A♭4–G4–F4 под 4–3–2–1 | 4 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-g-natural-minor-descent-right-01 |
 | detail-p-eflat-major-descent-right-01 | Ми-бемоль мажор правой вниз: 3+4+1, E♭5–E♭4 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-descent-right-01; сначала detail-p-f-major-thumb-fourth-connected-right-01; сначала detail-p-eflat-middle-descent-right-01; сначала detail-p-bflat-major-descent-right-01 |
 | detail-p-eflat-white-black-pair-right-01 | Правая: G4–A♭4–B♭4, белая и две чёрные | 3 | 40 | MIDI-челлендж | сначала detail-p-black-03; сначала detail-p-bflat-major-ascent-right-01 |

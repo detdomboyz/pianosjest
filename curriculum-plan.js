@@ -3288,6 +3288,17 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-upper-three-ascent-left-01",
+      "stage": "p7",
+      "branch": "fsharp-major-left-upper-ascent",
+      "fingerprint": "a1eb3449",
+      "challenge": true,
+      "preparation": [
+        "detail-p-f-major-ascent-checkpoint-left-01",
+        "detail-p-bflat-major-ascent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-eflat-middle-descent-right-01",
       "stage": "p7",
       "branch": "eflat-right-descent",
