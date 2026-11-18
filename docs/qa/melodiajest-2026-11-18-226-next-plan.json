@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-11-18T07:57:36.293515+00:00",
+  "currentPhase": 226,
+  "futurePhase": 227,
+  "planningOnly": true,
+  "implementedLessons": 0,
+  "sourceApplicationsAdded": 0,
+  "plannedRecords": 2,
+  "plannedProjectMotorClasses": 1,
+  "plannedPreparedCombinationGoals": 1,
+  "nextWorkId": "local-fsharp-major-thumb-fourth-down-right227",
+  "nextAction": "Локально реализовать две правые подготовки спуска фа-диез мажора: B4–A♯4/1–4 через полутон и B4–A♯4–G♯4/1–4–3. Exact/generic/poly0;1новыйдвигательныйклассwhite1black4half-down+1preparedintegration. Пара: полный собственный D5–C5–B♭4–A4/2–1–4–3 дважды с2тихимидолями и новый полный восходящийF#major длянотногоориентира. Срез C5–B♭4/1–4 минусполутон=B4–A4/1–4 черезтон;новаяA♯4 ближе ктойжеB4,это смена клавиши,непереименованиеA4. Тройка: новаяпара+полный собственный E♭major RHdescent,егоB♭4–A♭4/4–3=тежеA♯4–G♯4;общаяA♯4одинраз. Источник Figure1/4: B4,A♯4,G♯4на5.5,6,6.5;дляпарыend6.5далееG♯4/3,длятройкиend7далееF♯4/2,непауза. Проект2/3четверти/end2/3/partial4_4/manualquietungraded. СвежийFigure4иWholeView,полные4преп-ссылки/4unique,копия,20новыхтестов/fixture,actualmodel+4historicalcallbacks/RED обязательны до внедрения. Полныйспуск иужеизвестныйwhite1black3whole-down(3generic)не считать новымиуроками227. Standard/v2,старыеID/порядок/версии/прогресс сохранять;до1000безвыкладки.",
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-18-226-next-coverage.json",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-18-226-primary-source.json",
+  "sourceUrl": "https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-right-hand/",
+  "sourceReadIsPlanningOnly": true,
+  "freshFigure4StillRequiredBefore227": true,
+  "newSourceRuleNeedsSeparateDescendingScope": true,
+  "sourceOriginalFollowingNotRest": true,
+  "cases": [
+    {
+      "id": "detail-p-fsharp-major-thumb-fourth-descent-right-01",
+      "midis": [
+        71,
+        70
+      ],
+      "fingers": [
+        1,
+        4
+      ],
+      "requires": [
+        "detail-p-f-major-thumb-fourth-connected-right-01",
+        "detail-p-fsharp-major-ascent-right-01"
+      ],
+      "sourceStarts": [
+        5.5,
+        6
+      ],
+      "sourceEnd": 6.5,
+      "sourceFollowing": "G#4/3at6.5",
+      "preparation": "OldC5Bb4/14 minus1=B4A4whole-down;newB4A#4half-downchangessecondphysicalkey,notrename."
+    },
+    {
+      "id": "detail-p-fsharp-major-lower-descent-right-01",
+      "midis": [
+        71,
+        70,
+        68
+      ],
+      "fingers": [
+        1,
+        4,
+        3
+      ],
+      "requires": [
+        "detail-p-fsharp-major-thumb-fourth-descent-right-01",
+        "detail-p-eflat-major-descent-right-01"
+      ],
+      "sourceStarts": [
+        5.5,
+        6,
+        6.5
+      ],
+      "sourceEnd": 7,
+      "sourceFollowing": "F#4/2at7",
+      "preparation": "New14 +oldEbmajorBb4Ab4/43exactkeyswrittenA#4G#4;sharedA#4once."
+    }
+  ]
+}

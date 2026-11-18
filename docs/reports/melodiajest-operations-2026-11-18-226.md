@@ -1,0 +1,13 @@
+# MelodiaJest — локальный этап226
+
+**23.5.190 проверена локально;сайт23.5.186 сохранён.** Один preparedRHfullFsharpascent23412312/3+3+2,0newmotorclasses.737catalog/589learning/319MIDI/292provenance/118themes/565upper-bound-only/verifiedDistinct=null/teacher0. [Полный музыкальный отчёт](piano-curriculum-2026-11-18-04.md).
+
+113target/2611full PASS одним прогоном каждого;4freshаудита/service53PASS+7Windows skips(неPG)/build41/1guest-browsercard1280+390/693runtime exact. Actualmodel второйPASS;первый отклонил coverageDomain:scales,метка/ожидание исправлены доRED наmajor-scales;original test/log/SHA сохранены. Тесты не byte-exact firstmodel,точные с первогоRED1PASS/9FAIL;музыка/оценщик/негативные assertions не менялись.736oldfull/588canonical/118тем/295main/289graded-main/84mainNext+293optional/378actualNext сохраняются,новаяветкаterminal. Standard/v2/baseline/guitar/data/progress точны.
+
+131oldsourcecores/0newrulesURLs/5apps1freshPFF+4reuse;2PNG перечитаны из225Dкопии/0downloads. Browser:mouse/Enter/Space/focus/3reloadviews/3preps/terminal/search589/preview4,7,8of8/virtualnotepractice8(неtimedMIDI).390/doc376/5строк;ранний неполный кадр исключён,2native приняты.0console/timeout,1DOMhelper numeric-conversion issue;неauth/личные данные/реальные MIDI/пальцы/teacher/whole-siteproof. Собственный preview штатно остановлен/tab4closed/viewportreset.
+
+Dcore851files/59923329B: `D:\MelodiaJest-private\host-maintenance\local-checkpoints\2026-11-18-226-23.5.190`,manifestSHA `598ec0b50eb5db4f724dbe6fd2aa3708e7dab35302e5d27476e2303380a54606`;fullread/size/SHA/isolatedrestore/realapp737/589/new1 подтверждены. Late-docs отдельно;неPG/S3/off-machine/wholecheckout restore.3ownscratch сняты послеproof,логически64692182B;Davailable753360932864→753427640320B,delta66707456Bнеизолирована. Toolkit/предыдущие копии/recovery inputs сохранены. Payload+11415B,неRAM/CPU/INP.
+
+Сервер не менялся:одинHTTPSmanifestGET200/version186,0manualPG/S3/SSH/hostcleanup. Сайт/соседи/домены/сети/сертификаты/штатные таймеры сохранены. **Компактная серверная сборка не публиковалась**;промежуточной публикации курса нет. Одна учебнаяautomation ACTIVE20min,другие не изменены. Коммит/pushmain — после финальной проверки документов,секреты/архивы/дампы внеGit;push не deployment.
+
+Следующий227 — [подтверждённый локальный план](../qa/melodiajest-2026-11-18-226-next-plan.json),пока0уроков/applications. Не повторять здоровые проверки190 без изменения/риска. [Verification](../qa/melodiajest-2026-11-18-226-verification.json),[copy](../qa/melodiajest-2026-11-18-226-local-copy.json),[cleanup](../qa/melodiajest-2026-11-18-226-local-cleanup.json).
