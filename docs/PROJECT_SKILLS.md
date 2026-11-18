@@ -431,3 +431,6 @@ docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclass
 
 
 Этап232: computer-use/действующая BrowserSDK проверили1guestпуть точной41-file сборки desktop390,mouseEnterSpace/focus,3prepsBack/3viewsreload/8preview/8virtual/terminalNext;0helpererrors. Primary PFFLHFigure1/3 перечитаны по2провереннымPNG231;Figure4прочитан только для следующего плана. React/Next/CSS/deps0. Полные ограничения и доказательства — отчёт2026-11-18-10/QA232.
+
+
+Этап233: computer-use/действующаяBrowserSDK проверили1guestпуть точной41-fileсборки desktop390,mouseEnterSpace/focus,2prepsBack/3viewsreload/3preview/3virtual/terminalNext;0helpererrors. PFFLHFigure1/4 перечитаны по2провереннымPNG232;oldascendingrule не переписано,1точноеdescendingrule. React/Next/CSS/deps0. Recurringкурсору меняется ровнооднастрокабайтовойзаменой,исходныепереносыстроксохранены. Отчёт2026-11-18-11/QA233.

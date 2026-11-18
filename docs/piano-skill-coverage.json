@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-18T13:56:43.628Z",
+  "generatedAt": "2026-11-18T14:48:57.472Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 598,
-    "checkedMidiRouteLessons": 328,
-    "withStructuredProvenance": 301,
-    "individuallyMappedToDomain": 301,
+    "implementedLearningLessons": 599,
+    "checkedMidiRouteLessons": 329,
+    "withStructuredProvenance": 302,
+    "individuallyMappedToDomain": 302,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 574,
+    "goalGroupUpperBound": 575,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -303,6 +303,7 @@
         "detail-p-fsharp-major-descent-right-01",
         "detail-p-fsharp-major-upper-three-ascent-left-01",
         "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-fsharp-major-upper-three-descent-left-01",
         "detail-p-f-major-fourth-thumb-prep-right-01",
         "detail-p-f-major-fourth-thumb-connected-right-01",
         "detail-p-f-major-thumb-fourth-prep-right-01",
@@ -11044,6 +11045,34 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-fsharp-major-upper-three-descent-left-01",
+      "title": "Фа-диез мажор левой вниз: верхняя связка 2–1–2",
+      "themeId": "detail-p-cross",
+      "stage": "p7",
+      "actions": 3,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "crossings",
+      "goal": "Соедини готовые переходы 2→1 и 1→2 в одну нисходящую связку F♯4–E♯4–D♯4. Общая E♯4 большим 1 звучит один раз; сохрани единый пульс через подведение большого к белой клавише и передачу указательному на следующую чёрную.",
+      "requires": [
+        "detail-p-bflat-major-descent-left-01",
+        "detail-p-f-major-descent-checkpoint-left-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-upper-212-descent-left-2026-11-18",
+        "hutchinson-enharmonic-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-scale-01",
       "title": "Правая: 3 + 5 нот гаммы",
       "themeId": "detail-p-scale",
@@ -15700,5 +15729,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Локально проверить и реализовать одну полную восходящую октаву фа-диез мажора левой F♯3–G♯3–A♯3–B3–C♯4–D♯4–E♯4–F♯4/43213212. Нижняя4321 уже точно есть в полном BmajorLH с индекса4;средняя132 уже точно есть в полном EmajorLH с индекса4. Их не добавлять отдельными новыми уроками. Третья собственная подготовка — нынешняя верхняяD♯4E♯4F♯4/212. Проверить все3полныхурока,соединить4+3+3−2=8:общиеB3/1иD♯4/2поодномуразу,без повторныхнажатий/пауз. Новыхmotorclasses0,одна подготовленнаяинтеграция;полнойLH43213212вкурсе0. PianoFingeringFiguresLHFigure1Whole/Figure3Ascending:8восьмых0..3.5/end4,послеE♯4/1на4реальнозвучитспуск,непауза;верхняяF♯4палец2. Проект8четвертей0..7/end8,2полных4/4/отпуститьнаразтретьего;следующаяручнаятихаячетвертьвнезачёта. E♯4=physicalF4/MIDI65,неE4/MIDI64. СохранённоеLHправило231прямоподдерживаетполный43213212;перечитатьпервичнуюстраницу/2проверенныхPNG,новыйURL/ruleбезпричинынеповторять. Не перескакиватькдвумрукам. Свежаяквота/Dкопия/actual55inputsourcecut(package/currentnote/preview+4historicalcallbacks)/первыйREDдо внедрения,тестынеослаблять;standard/v2/ID/ноты/пальцы/версии/порядок/прогресссохранить. До1000локально,безвыкладки."
+  "nextAction": "Локально проверить и реализовать одну левую верхнюю нисходящую связку F♯4–E♯4–D♯4/2–1–2. Пара black2→white1 вниз на полутон уже3generic в bflatsecondthumbdescentleft/bflatmajorLHdescent/eflatmajorLHdescent; белая1→чёрная2 вниз на тон уже3generic,отдельными новыми уроками пары не считать. Triple212 exact/generic/poly0,новыхmotorclasses0,одна подготовленнаяинтеграция. Проверить2полныхownLHpreps:detail-p-bflat-major-descent-left-01 B♭3–A3–G3–F3–E♭3–D3–C3–B♭2/21234123,первые2+8полутонов=F♯4–E♯4/21;detail-p-f-major-descent-checkpoint-left-01 F4–E4–D4–C4–B♭3–A3–G3–F3/12312345,индексы3,4+5полутонов=E♯4–D♯4/12. ОбщаяE♯4/F4/1одинраз. Переносы8/5 относятся к сравнению прежних подготовок,ноты выбранного источника не транспонируются. PianoFingeringFiguresLHFigure1Whole/Figure4Descending:полныйспускF♯4E♯4D♯4C♯4B3A♯3G♯3F♯3/21231234;выбранные восьмые3.5,4,4.5/end5,следующаяC♯4/3на5реальнозвучит,непауза. ВерхняяF♯4/2общаясподъёмом;начатьотдельнымновымнажатием. Проект3четверти0,1,2/end3,partial4/4/отпуститьначетыре,ручнаяследующаятихаячетвертьвнезачёта. E♯4=F4/MIDI65,неE4/MIDI64;пауза7.5–8внеотрезка. Перечитать2сохранённыхPNGиprimarypage,зарегистрироватьодноточноеLHdescendingправилопослефактическогочтения:старое231правилооподъёменеподменять,mainURLужеестьвledger,новуюнезависимуюработуневыдумывать. Source/app/уроков233пока0. ПолныйLHспуск/среднюю312поканевнедрять. Свежаяквота,Dкопия,actualsourcecutpackage/currentnote/preview+4historicalcallbacks/REDдовнедрения;wholeтест/fixtureнеослаблять. Standard/v2/ID/ноты/пальцы/версии/порядок/прогресссохранить. До1000локально,безвыкладки."
 }

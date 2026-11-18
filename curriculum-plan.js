@@ -3392,6 +3392,17 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-upper-three-descent-left-01",
+      "stage": "p7",
+      "branch": "fsharp-major-left-upper-descent",
+      "fingerprint": "2559d24b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-descent-left-01",
+        "detail-p-f-major-descent-checkpoint-left-01"
+      ]
+    },
+    {
       "id": "detail-p-eflat-middle-descent-left-01",
       "stage": "p7",
       "branch": "eflat-left-descent",
