@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-11-18T11:17:20.417060+00:00",
+  "currentPhase": 229,
+  "futurePhase": 230,
+  "planningOnly": true,
+  "implementedLessons": 0,
+  "sourceApplicationsAdded": 0,
+  "plannedRecords": 1,
+  "plannedProjectMotorClasses": 0,
+  "plannedPreparedCombinationGoals": 1,
+  "nextWorkId": "local-fsharp-major-full-descent-right230",
+  "nextAction": "Локально проверить и реализовать одну подготовленную интеграцию полного правого спуска фа-диез мажора F♯5–E♯5–D♯5–C♯5–B4–A♯4–G♯4–F♯4/2–1–3–2–1–4–3–2 после двух полностью проверенных связок229: upper21321 и lower1432. Общую B4/1 сыграть один раз:5+4−1=8,без паузы/повтора в месте соединения,группы2+3+3;новых отдельных motorclasses0,одна preparedintegrationgoal,не BPMвариант. Перечитать Figure1/4 Piano Fingering Figures из проверенной локальной копии: полный исходный спуск восьмыми3.5,4,4.5,5,5.5,6,6.5,7,end7.5,сразу настоящая восьмая пауза7.5–8. Проект8четвертей0..7/end8,два полных такта4/4,отпуститьнаразтретьего;ручнаятихаячетвертьвнезачёта не записанная/проверенная пауза. Сохранить явное различие исходной восьмой паузы и проекта. E♯5=F5/MIDI77,неE5. Действующее правило227 уже поддерживаетполный21321432:проверить применимость,не переписывать ядро и не добавлять его дубль;новые applicationsтолькопосле фактического чтения. До реализации проверить exact/generic/polyскрининг,полные собственные2подготовки,sourcecutвключаяpackage/currentnote/preview/историческиеcallbacks и RED;standard/v2/ID/ноты/пальцы/версии/порядок/прогресссохранить. До1000 без промежуточной публикации.",
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-18-229-next-coverage.json",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-18-229-primary-source.json",
+  "sourceRuleAlreadyRegistered": "pff-fsharp-major-thumb-fourth-down-right-2026-11-18",
+  "sourceScopeMustBeConfirmedBeforeReuse": true,
+  "freshSourceReadPendingFor230": true,
+  "cases": [
+    {
+      "id": "detail-p-fsharp-major-descent-right-01",
+      "midis": [
+        78,
+        77,
+        75,
+        73,
+        71,
+        70,
+        68,
+        66
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        2,
+        1,
+        4,
+        3,
+        2
+      ],
+      "requires": [
+        "detail-p-fsharp-major-upper-descent-right-01",
+        "detail-p-fsharp-major-lower-four-descent-right-01"
+      ],
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7
+      ],
+      "sourceEnd": 7.5,
+      "sourceFollowing": "eighthrest7.5–8 immediately after F#4",
+      "projectStarts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "projectDurations": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "projectEnd": 8,
+      "completeBars": 2,
+      "partialBar": false,
+      "sourceNoteSpelling": [
+        "F#5",
+        "E#5",
+        "D#5",
+        "C#5",
+        "B4",
+        "A#4",
+        "G#4",
+        "F#4"
+      ],
+      "sharedPreparationNote": "B4/1 once,5+4−1=8",
+      "manualFollowingQuietUnscored": true
+    }
+  ],
+  "priorPreparedGoalsNotCountedAgain": true,
+  "lowerSourceRestBoundaryMustRemainExplicit": true,
+  "deployed": false
+}
