@@ -3587,6 +3587,17 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-descent-right-01",
+      "stage": "p7",
+      "branch": "fsharp-major-right-full-descent",
+      "fingerprint": "0624be90",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-upper-descent-right-01",
+        "detail-p-fsharp-major-lower-four-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-upper-descent-left-01",
       "stage": "p7",
       "branch": "b-major-left-descent",

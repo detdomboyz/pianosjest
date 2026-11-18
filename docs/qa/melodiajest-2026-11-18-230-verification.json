@@ -1,0 +1,243 @@
+{
+  "checkedAt": "2026-11-18T12:42:59.780266+00:00",
+  "phase": "2026-11-18-230",
+  "version": "23.5.194",
+  "publicVersion": "23.5.186",
+  "full": {
+    "startedAt": "2026-11-18T12:20:13.714652+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-right-230\\logs\\full.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 7636,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T12:42:02.697884+00:00",
+    "wallSeconds": 1308.985,
+    "logSha256": "02c73e1605be7aba0baca36f29e4340a281cb323a90a6e9efe95b838d9564840",
+    "totals": {
+      "tests": 2681,
+      "pass": 2681,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1308487.2871
+    }
+  },
+  "fullAttempts": 1,
+  "target": {
+    "startedAt": "2026-11-18T12:07:21.532219+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-fsharp-major-full-descent-right.test.cjs",
+      "tests/piano-fsharp-major-prepared-descent-right.test.cjs",
+      "tests/piano-fsharp-major-full-right.test.cjs",
+      "tests/piano-fsharp-major-top-halfstep-down-right.test.cjs",
+      "tests/piano-fsharp-major-thumb-fourth-down-right.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-right-230\\logs\\target.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 14004,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T12:12:05.347223+00:00",
+    "wallSeconds": 283.812,
+    "logSha256": "d415ce56ca3b4c5b0705789503614094816212d1ba41a7331c919cbce8db7ea3",
+    "totals": {
+      "tests": 113,
+      "pass": 113,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 283752.3149
+    }
+  },
+  "targetAttempts": 1,
+  "allTargetNamesCoveredInFull": true,
+  "audits": {
+    "audit-lessons": {
+      "startedAt": "2026-11-18T12:13:16.997507+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:lessons"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-right-230\\logs\\audit-lessons.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 12120,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T12:13:21.024492+00:00",
+      "wallSeconds": 4.031,
+      "logSha256": "dcdf373200411b404580f364a9db2890445ce340b4c91b2d1ef677b209647089",
+      "totals": {}
+    },
+    "audit-fingering": {
+      "startedAt": "2026-11-18T12:13:21.117867+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:fingering"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-right-230\\logs\\audit-fingering.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 7496,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T12:13:31.112913+00:00",
+      "wallSeconds": 9.984,
+      "logSha256": "d353c12515de4288156155bdde156df055f6697b5923b682444c158de3f944b8",
+      "totals": {}
+    },
+    "audit-curriculum": {
+      "startedAt": "2026-11-18T12:13:31.387956+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:curriculum"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-right-230\\logs\\audit-curriculum.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 20852,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T12:13:43.750961+00:00",
+      "wallSeconds": 12.36,
+      "logSha256": "42c4fffe6e36b87c46c2fe8ae6acc95abc5b2d880d046c023a4583336ac22b3c",
+      "totals": {}
+    },
+    "audit-coverage": {
+      "startedAt": "2026-11-18T12:13:43.842750+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:piano-coverage"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-full-descent-right-230\\logs\\audit-coverage.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 16372,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T12:13:46.181854+00:00",
+      "wallSeconds": 2.344,
+      "logSha256": "0af5e92f1fb469b5bb34d6bd81fb0ae43f0824a6e8bada3654abb859338b599c",
+      "totals": {}
+    }
+  },
+  "service": {
+    "startedAt": "2026-11-18T12:13:46.271048+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-right-230\\logs\\service.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 3672,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T12:14:19.664110+00:00",
+    "wallSeconds": 33.39,
+    "logSha256": "7240e358b7f1cee137bd7e0d63400b69c0d3d9bcc612a3d7d9bb2599a808f4a7",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 32639.9583
+    }
+  },
+  "serviceLimitation": "Seven Windows platform skips are not fresh PostgreSQL integration passes. No Linux run claimed.",
+  "build": {
+    "startedAt": "2026-11-18T12:14:19.755681+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build:web"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-full-descent-right-230\\logs\\build.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 15104,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T12:14:20.306357+00:00",
+    "wallSeconds": 0.547,
+    "logSha256": "02d79256bc6c90546fb32c59a1579707c9ce582c01de5319b0f2e3428352cb75",
+    "totals": {}
+  },
+  "runtime": {
+    "beforeFiles": 699,
+    "afterFiles": 701,
+    "allFrozenExactAfterFull": true,
+    "changedOldFiles": [
+      "curriculum-plan.js",
+      "package.json",
+      "piano-lesson-development.js",
+      "service/course-registry.json",
+      "tests/fixtures/piano-curriculum-counts.json"
+    ],
+    "newFiles": [
+      "tests/fixtures/piano-before-fsharp-major-full-descent-right-v1.json",
+      "tests/piano-fsharp-major-full-descent-right.test.cjs"
+    ],
+    "newTestAndFixtureExactSinceFirstModelAndRed": true,
+    "newTestAndFixtureNeverChangedAfterFirstRed": true
+  },
+  "preservation": {
+    "oldCatalogRecords": 743,
+    "oldCanonicalEditions": 595,
+    "themes": 118,
+    "mainRoute": 295,
+    "canonicalGradedMainRoute": 289,
+    "mainNextPaths": 84,
+    "oldOptionalNextPaths": 300,
+    "newBranchAdvances": 0,
+    "newBranchTerminalCases": 1,
+    "guitarRouteAndBaselineUnchanged": true
+  },
+  "browser": "docs/qa/melodiajest-2026-11-18-230-browser.json",
+  "modelPreflight": "docs/qa/melodiajest-2026-11-18-230-model-preflight.json",
+  "modelAttempts": 1,
+  "modelSourceFiles": 55,
+  "actualCurrentNotePreviewCallbacks": 1,
+  "firstRed": {
+    "pass": 1,
+    "fail": 9,
+    "skip": 0
+  },
+  "privateGapHelperPathCorrectionBeforeFirstModel": 1,
+  "planningReaderEncodingRecoveryAttempts": 1,
+  "draftAuditoryIntervalTextCorrectionBeforeFirstModel": 0,
+  "newTestCorrectionsAfterFirstModelOrRed": 0,
+  "modelMusicCorrections": 0,
+  "actualSharedB4DuplicateRejected": true,
+  "newLessons": 1,
+  "newPreparedCombinationGoals": 1,
+  "newGlobalMotorClasses": 0,
+  "nextPlanningNewSourcePages": 1,
+  "nextPlanningNewPngDownloads": 2,
+  "nextPlanningFutureLessonsImplemented": 0,
+  "teacherReviewed": 0,
+  "verifiedDistinct": null,
+  "deployed": false
+}

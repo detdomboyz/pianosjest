@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-18T11:16:06.711Z",
+  "generatedAt": "2026-11-18T12:13:46.135Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 595,
-    "checkedMidiRouteLessons": 325,
-    "withStructuredProvenance": 298,
-    "individuallyMappedToDomain": 298,
+    "implementedLearningLessons": 596,
+    "checkedMidiRouteLessons": 326,
+    "withStructuredProvenance": 299,
+    "individuallyMappedToDomain": 299,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 571,
+    "goalGroupUpperBound": 572,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -300,6 +300,7 @@
         "detail-p-fsharp-major-upper-three-descent-right-01",
         "detail-p-fsharp-major-upper-descent-right-01",
         "detail-p-fsharp-major-lower-four-descent-right-01",
+        "detail-p-fsharp-major-descent-right-01",
         "detail-p-f-major-fourth-thumb-prep-right-01",
         "detail-p-f-major-fourth-thumb-connected-right-01",
         "detail-p-f-major-thumb-fourth-prep-right-01",
@@ -10956,6 +10957,34 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-fsharp-major-descent-right-01",
+      "title": "Фа-диез мажор правой вниз: группы 2+3+3, F♯5–F♯4",
+      "themeId": "detail-p-cross",
+      "stage": "p7",
+      "actions": 8,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "crossings",
+      "goal": "Соедини готовые верхнюю 2–1–3–2–1 и нижнюю 1–4–3–2 в полный спуск F♯5–F♯4. Общая B4 большим 1 звучит один раз: 5+4−1=8. Сохрани единый пульс через оба перекладывания, без остановки и лишнего нажатия на стыке групп.",
+      "requires": [
+        "detail-p-fsharp-major-upper-descent-right-01",
+        "detail-p-fsharp-major-lower-four-descent-right-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-thumb-fourth-down-right-2026-11-18",
+        "hutchinson-enharmonic-2026-11-05",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-scale-01",
       "title": "Правая: 3 + 5 нот гаммы",
       "themeId": "detail-p-scale",
@@ -15612,5 +15641,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Локально реализовать2подготовленные правые связки спуска фа-диез мажора: F♯5–E♯5–D♯5–C♯5–B4/2–1–3–2–1 иB4–A♯4–G♯4–F♯4/1–4–3–2. Exact/generic/poly0;новых отдельных motorclasses0,два разных соединения подготовленных групп,не BPMварианты. Верхняя:полный собственный новый213 из228+полный старый правый спускBmajor B4–A♯4–G♯4–F♯4–E4–D♯4–C♯4–B3/54321321;из старого использоватьD♯4–C♯4–B3/321+12=D♯5–C♯5–B4/321,общаяD♯5/3одинраз. Нижняя:полный собственный143 из227+полный старый правыйEmajor descent,егоG♯4–F♯4/32;общаяG♯4/3одинраз. Всего4полныхsame-handprepID. ИсточникFigure1/4:верхние5восьмых3.5,4,4.5,5,5.5/end6,далееA♯4/4звучит;нижние4восьмых5.5,6,6.5,7/end7.5,сразуистиннаявосьмаяпауза7.5–8. Проект5/4четверти,end5/4:верхняя4/4+первая доля следующего такта,отпуститьнавторой;нижняяполный4/4,отпуститьнаразследующеготакта. Послеобеихручнаятихаячетвертьвнезачёта:дляверхнейэтоостановкапроектавместозвучащегоисточника;длянижнейисходнаявосьмаяпаузаотдельнообъяснена,нонеобъявляетсязаписанной/провереннойпаузойпроекта. Не терять реальнуюпаузу в описании и не менять ending/оценщик ради неё. E♯5=F5/MIDI77,подписьcurrent-noteF5;E5неE♯5. Старый1→3whole-downнеещёодинурок. Полный8-нотныйспускнеинтегрироватьдообеихгрупп. Повторно прочитатьFigure1/4изпроверенной228копии,подтвердитьсферусущеcтвующего227правила,датироватьтолькоapplications;cores/PNGзановоненужны. Стандарт/v2/ID/высоты/пальцы/ритм/версии/порядок/прогресссохранить;до1000безвыкладки."
+  "nextAction": "Локально проверить и реализовать одну подготовленную интеграцию полного правого спуска фа-диез мажора F♯5–E♯5–D♯5–C♯5–B4–A♯4–G♯4–F♯4/2–1–3–2–1–4–3–2 после двух полностью проверенных связок229: upper21321 и lower1432. Общую B4/1 сыграть один раз:5+4−1=8,без паузы/повтора в месте соединения,группы2+3+3;новых отдельных motorclasses0,одна preparedintegrationgoal,не BPMвариант. Перечитать Figure1/4 Piano Fingering Figures из проверенной локальной копии: полный исходный спуск восьмыми3.5,4,4.5,5,5.5,6,6.5,7,end7.5,сразу настоящая восьмая пауза7.5–8. Проект8четвертей0..7/end8,два полных такта4/4,отпуститьнаразтретьего;ручнаятихаячетвертьвнезачёта не записанная/проверенная пауза. Сохранить явное различие исходной восьмой паузы и проекта. E♯5=F5/MIDI77,неE5. Действующее правило227 уже поддерживаетполный21321432:проверить применимость,не переписывать ядро и не добавлять его дубль;новые applicationsтолькопосле фактического чтения. До реализации проверить exact/generic/polyскрининг,полные собственные2подготовки,sourcecutвключаяpackage/currentnote/preview/историческиеcallbacks и RED;standard/v2/ID/ноты/пальцы/версии/порядок/прогресссохранить. До1000 без промежуточной публикации."
 }
