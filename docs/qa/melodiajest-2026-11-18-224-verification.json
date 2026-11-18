@@ -1,0 +1,227 @@
+{
+  "checkedAt": "2026-11-18T06:14:25.171018+00:00",
+  "phase": "2026-11-18-224",
+  "version": "23.5.188",
+  "publicVersion": "23.5.186",
+  "full": {
+    "startedAt": "2026-11-18T05:52:07.594712+00:00",
+    "command": [
+      "npm.cmd",
+      "test"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-four-thumb-right-224\\logs\\full.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 19364,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T06:13:04.983357+00:00",
+    "wallSeconds": 1257.391,
+    "logSha256": "5a7ab04de3d57e71d81a3e4bff9721fadbe8651b3a6da5949e07d81a85dbedee",
+    "totals": {
+      "tests": 2581,
+      "pass": 2581,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 1256893.7238
+    }
+  },
+  "fullAttempts": 1,
+  "target": {
+    "startedAt": "2026-11-18T05:40:04.303484+00:00",
+    "command": [
+      "node",
+      "--preserve-symlinks",
+      "--preserve-symlinks-main",
+      "--test",
+      "--test-concurrency=1",
+      "tests/piano-fsharp-major-four-thumb-right.test.cjs",
+      "tests/piano-b-major-right-ascent.test.cjs",
+      "tests/piano-optional-navigation.test.cjs",
+      "tests/curriculum.test.cjs"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-four-thumb-right-224\\logs\\target.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 6928,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T05:42:51.893619+00:00",
+    "wallSeconds": 167.578,
+    "logSha256": "e676fec53192d9d1b8f4c55346375f83d39f6990a34a85feca121457ac8d78c6",
+    "totals": {
+      "tests": 83,
+      "pass": 83,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 167530.9634
+    }
+  },
+  "all83TargetNamesCoveredInFull": true,
+  "audits": {
+    "audit-lessons": {
+      "startedAt": "2026-11-18T05:42:58.819284+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:lessons"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-four-thumb-right-224\\logs\\audit-lessons.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 13392,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T05:43:02.903313+00:00",
+      "wallSeconds": 4.078,
+      "logSha256": "6a3adcaf82b585dfa6d9812050a9839e405bd0ffa67d5d0cf108d49b176834ab",
+      "totals": {}
+    },
+    "audit-fingering": {
+      "startedAt": "2026-11-18T05:43:02.999538+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:fingering"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-four-thumb-right-224\\logs\\audit-fingering.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 21364,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T05:43:13.041929+00:00",
+      "wallSeconds": 10.046,
+      "logSha256": "07efa81bd45c2dfc4b01668ec8d21f20baf7037d732882de875664808bb789b4",
+      "totals": {}
+    },
+    "audit-curriculum": {
+      "startedAt": "2026-11-18T05:43:13.135563+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:curriculum"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-four-thumb-right-224\\logs\\audit-curriculum.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 3476,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T05:43:25.670437+00:00",
+      "wallSeconds": 12.531,
+      "logSha256": "42457d04b34731cbc38c1e77442d7ad722b010606effdcd32b351ac321b854e5",
+      "totals": {}
+    },
+    "audit-coverage": {
+      "startedAt": "2026-11-18T05:43:25.759751+00:00",
+      "command": [
+        "npm.cmd",
+        "run",
+        "audit:piano-coverage"
+      ],
+      "status": "passed",
+      "attempt": 1,
+      "log": "tmp\\fsharp-four-thumb-right-224\\logs\\audit-coverage.log",
+      "otherHeavyJobsFinished": true,
+      "childPid": 20684,
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T05:43:28.164324+00:00",
+      "wallSeconds": 2.406,
+      "logSha256": "4ffc1c3a4e30a3e1f13df51124ea9b62eff034e62a35330dd193296257edbf8b",
+      "totals": {}
+    }
+  },
+  "service": {
+    "startedAt": "2026-11-18T05:43:28.262574+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-four-thumb-right-224\\logs\\service.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 21024,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T05:44:23.772088+00:00",
+    "wallSeconds": 55.516,
+    "logSha256": "9353452742d09c7cb3b6ba6c5a212593fee28d857bc0fea5d93c4f7f8783dd06",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 54723.0508
+    }
+  },
+  "serviceLimitation": "Seven Windows skips are not fresh PostgreSQL integration passes. No Linux run claimed.",
+  "build": {
+    "startedAt": "2026-11-18T05:44:23.867357+00:00",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build:web"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-four-thumb-right-224\\logs\\build.log",
+    "otherHeavyJobsFinished": true,
+    "childPid": 3916,
+    "exitCode": 0,
+    "finishedAt": "2026-11-18T05:44:24.434934+00:00",
+    "wallSeconds": 0.562,
+    "logSha256": "09a258f82564c53efa952f1ac0a3e49d6518c55c51e30fc0847e62eb7ed3a2a9",
+    "totals": {}
+  },
+  "runtime": {
+    "beforeFiles": 687,
+    "afterFiles": 689,
+    "allFrozenExactAfterFull": true,
+    "changedOldFiles": [
+      "curriculum-plan.js",
+      "package.json",
+      "piano-lesson-development.js",
+      "service/course-registry.json",
+      "tests/fixtures/piano-curriculum-counts.json"
+    ],
+    "newFiles": [
+      "tests/fixtures/piano-before-fsharp-major-four-thumb-right-v1.json",
+      "tests/piano-fsharp-major-four-thumb-right.test.cjs"
+    ],
+    "newTestAndFixtureExactSinceFirstModelAndRed": true
+  },
+  "preservation": {
+    "oldCatalogRecords": 732,
+    "oldCanonicalEditions": 584,
+    "themes": 118,
+    "mainRoute": 295,
+    "mainNextPaths": 84,
+    "oldOptionalNextPaths": 289,
+    "newBranchAdvances": 1,
+    "newBranchTerminalCases": 1,
+    "guitarRouteAndBaselineUnchanged": true
+  },
+  "browser": "docs/qa/melodiajest-2026-11-18-224-browser.json",
+  "modelPreflight": "docs/qa/melodiajest-2026-11-18-224-model-preflight.json",
+  "modelAttempts": 2,
+  "firstModelFailure": "Stale harness expected186 for unchanged187 sourceVersion; no music or frozen-test changes.",
+  "firstRed": {
+    "pass": 2,
+    "fail": 18,
+    "skip": 0
+  },
+  "newLessons": 2,
+  "newPreparedCombinationGoals": 1,
+  "newGlobalMotorClasses": 1,
+  "teacherReviewed": 0,
+  "verifiedDistinct": null,
+  "deployed": false
+}
