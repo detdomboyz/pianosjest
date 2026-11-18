@@ -437,3 +437,6 @@ docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclass
 
 
 Этап234: computer-use/BrowserSDK проверил desktopguest путь41-file198сборки и390pxгеометрию. Mobileframe/viewport-reset/tab-close не завершены: CUA снята средой,не пользователем. NodeComputerUse import/inventory работают;nativeframe далFrameArrivedtimeout,auto-review отклонил постороннееокно. Без разрешения действие не повторяется. DOMгеометрия не mobileframe. PFFLHFigure1/4 и отдельныеRH/LHWhole для будущего235 перечитаны по провереннымкопиям;новыхправил/dependencies/React/CSS0. Отчёт2026-11-18-12/QA234.
+
+
+Завершение234: openai-docs применён к диагностике доступных возможностей по актуальному локальному коду;computer-use/guidance и bundled BrowserSDK API/confirmations/local-web-development/screenshots прочитаны. Вместо отсутствующего cua_repl работает официальный setupBrowserRuntime через node_repl;внутренний IAB390px/нативныйJPEG/mouseSpacefocus/console/viewportreset/tabclose подтверждены. Новых пакетов/браузеров/зависимостей/ReactCSS0. BrowserQA: MELODIAJEST_BROWSER_QA.md;отчёт: reports/melodiajest-operations-2026-11-18-234.md.

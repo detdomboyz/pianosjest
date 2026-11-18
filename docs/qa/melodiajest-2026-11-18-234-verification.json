@@ -3,8 +3,8 @@
   "phase": "2026-11-18-234",
   "version": "23.5.198",
   "publicVersion": "23.5.186",
-  "complete": false,
-  "status": "automated-and-desktop-functional-verification-passed-mobile-visible-check-and-browser-cleanup-pending",
+  "complete": true,
+  "status": "implemented-and-verified-locally-publication-held-until1000",
   "full": {
     "startedAt": "2026-11-18T16:08:30.626686+00:00",
     "command": [
@@ -231,15 +231,15 @@
   "privateOrchestrationOrderCorrectionAfterImplementation": 1,
   "futurePlanningPairedInventoryReaderCorrection": 1,
   "browserDesktopFunctionalPathObserved": true,
-  "browserComplete": false,
+  "browserComplete": true,
   "browserPartialProof": "docs/qa/melodiajest-2026-11-18-234-browser-incomplete.json",
-  "mobileNativeVisibleFramePending": true,
-  "viewportResetPending": true,
-  "ownTabClosePending": "12",
+  "mobileNativeVisibleFramePending": false,
+  "viewportResetPending": false,
+  "ownTabClosePending": null,
   "ownPreviewPidAbsentAndPortsClosed": true,
   "originalPreviewExitCodeOrGracefulShutdownNotObserved": true,
   "newLessonsImplemented": 1,
-  "newLessonsFullyVerified": 0,
+  "newLessonsFullyVerified": 1,
   "newSourceEntries": 0,
   "sourceEntries": 134,
   "sourceApplicationsAdded": 5,
@@ -248,6 +248,24 @@
   "teacherReviewed": 0,
   "verifiedDistinct": null,
   "deployed": false,
-  "browserPolicyStoppedForCurrentTurn": true,
-  "latestBrowserProof": "docs/qa/melodiajest-2026-11-18-234-browser-policy-stop.json"
+  "browserPolicyStoppedForCurrentTurn": false,
+  "latestBrowserProof": "docs/qa/melodiajest-2026-11-18-234-browser.json",
+  "completedAt": "2026-11-18T18:22:42.058908+00:00",
+  "browserProof": "docs/qa/melodiajest-2026-11-18-234-browser.json",
+  "historicalBrowserPolicyStopProof": "docs/qa/melodiajest-2026-11-18-234-browser-policy-stop.json",
+  "browserResumeCleanup": {
+    "pass": true,
+    "ownPid": 4616,
+    "exitCode": 0,
+    "gracefulShutdown": true,
+    "waitObserved": true,
+    "ports": [
+      61316,
+      61317
+    ],
+    "allPortsClosed": true,
+    "foreignProcessesTouched": 0,
+    "productionDataUsed": false
+  },
+  "heavyChecksRepeatedAfterBrowserRecovery": false
 }
