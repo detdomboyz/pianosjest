@@ -446,3 +446,6 @@ docs/reports/melodiajest-operations-2026-11-15-214.md:3LHцели/2newmotorclass
 
 
 Этап236: перечитан существующий find-skills и переиспользован проверенный каталог без CLI-установок;computer-use SKILL прочитан,Windows-native автоматизация не использовалась. Полностью прочитан BrowserSDK/documentation,local-web-development/screenshots/viewport;живой IAB2 через node_repl,своя вкладка4. Две свежие PFF HTML-страницы и два оригинальных PNG визуально/size/SHA проверены,0загрузок;новые React/CSS/зависимости0. Desktop390/EnterSpace/mouse/3guestreload/3preps/preview/виртуальныепары/search/focus/console/cleanup подтверждены. MELODIAJEST_BROWSER_QA.md и reports/melodiajest-operations-2026-11-19-236.md.
+
+
+Этап237: существующий find-skills каталог переиспользован без установки;web-design-guidelines SKILL прочитан и свежий Vercel command.md получен для проверки новой карточки. Штатный BrowserSDK/documentation и viewport переиспользованы через живой IAB2/node_repl;Windows-native/control чужих окон0. Две свежие PFF HTMLстраницы и2оригинальных PNG визуально/size/SHA проверены,0загрузок. VanillaJS;React/CSS/зависимости0. Desktop390/EnterSpace/mouse/3guestreload/3preps/preview/virtual3pairs/search603/focus/console/cleanup подтверждены. reports/melodiajest-operations-2026-11-19-237.md.

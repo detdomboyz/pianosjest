@@ -503,6 +503,7 @@
 | detail-p-fsharp-major-ascent-left-01 | Фа-диез мажор левой вверх: группы 4+3+1, F♯3–F♯4 | 8 | 40 | MIDI-челлендж | сначала detail-p-b-major-ascent-left-01; сначала detail-p-e-major-ascent-left-01; сначала detail-p-fsharp-major-upper-three-ascent-left-01 |
 | detail-p-fsharp-major-lower-three-paired-ascent-01 | Две руки: три чёрные пары F♯–G♯–A♯, левая 4–3–2 / правая 2–3–4 | 6 | 40 | MIDI-челлендж | сначала detail-p-fsharp-major-ascent-left-01; сначала detail-p-fsharp-major-ascent-right-01; сначала detail-p-e-major-connected-paired-ascent-01 |
 | detail-p-fsharp-major-middle-three-paired-ascent-01 | Две руки: A♯–B–C♯, левая 2–1–3 / правая 4–1–2 | 6 | 40 | MIDI-челлендж | сначала detail-p-fsharp-major-ascent-left-01; сначала detail-p-fsharp-major-ascent-right-01; сначала detail-p-fsharp-major-lower-three-paired-ascent-01 |
+| detail-p-fsharp-major-upper-three-paired-ascent-01 | Две руки: D♯–E♯–F♯, левая 2–1–2 / правая 3–1–2 | 6 | 40 | MIDI-челлендж | сначала detail-p-fsharp-major-ascent-left-01; сначала detail-p-fsharp-major-ascent-right-01; сначала detail-p-fsharp-major-middle-three-paired-ascent-01 |
 | oct201--2 | Семь ступеней C2–B2 | 65 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct202--2 | Через одну | 60 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct203--2 | Диезы C2 | 48 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |

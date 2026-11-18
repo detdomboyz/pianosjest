@@ -3771,6 +3771,18 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-upper-three-paired-ascent-01",
+      "stage": "p7",
+      "branch": "fsharp-major-upper-three-paired-ascent",
+      "fingerprint": "aabfeeb0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-fsharp-major-ascent-right-01",
+        "detail-p-fsharp-major-middle-three-paired-ascent-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
