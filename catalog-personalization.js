@@ -16,7 +16,11 @@
   function diffTable(before,after,max){const original=records(before,max),current=records(after,max),created=[],patches=[],removed=[];
     for(const row of after){const prior=original.get(row.id);if(!prior)created.push(clone(row));else{const fields=diffFields(prior,row,['id']);if(fields.length)patches.push({id:row.id,fields});}}
     for(const row of before)if(!current.has(row.id))removed.push(row.id);
-    return {order:after.map(row=>row.id),created,patches,removed};
+    const order=after.map(row=>row.id),inherited=before.filter(row=>current.has(row.id)).map(row=>row.id).concat(created.map(row=>row.id));
+    // An unchanged order needs no copy of every built-in ID. The existing
+    // applyTable map already retains base order, then appends private records.
+    // A user's permutation or insertion between base records stays explicit.
+    return equal(order,inherited)?{baseOrder:true,order:[],created,patches,removed}:{order,created,patches,removed};
   }
   function create(base,current,{baseRelease}={}){
     // JSON projection intentionally preserves arrays and finite JSON values;
@@ -32,11 +36,11 @@
   function validate(value){
     assert(object(value)&&value.kind===KIND&&value.version===VERSION&&typeof value.baseRelease==='string'&&/^\d+\.\d+\.\d+$/.test(value.baseRelease),'PERSONAL_CATALOG_VERSION');
     assert(new TextEncoder().encode(JSON.stringify(value)).length<=MAX_BYTES,'PERSONAL_CATALOG_SIZE');safe(value);
-    for(const name of ['themes','lessons']){const table=value[name],max=name==='themes'?2000:20000;assert(object(table),'PERSONAL_CATALOG_TABLE');const ordered=ids(table.order,max),removed=ids(table.removed,max),created=records(table.created,max);
+    for(const name of ['themes','lessons']){const table=value[name],max=name==='themes'?2000:20000;assert(object(table),'PERSONAL_CATALOG_TABLE');const inherited=table.baseOrder===true;assert(!own(table,'baseOrder')||inherited,'PERSONAL_CATALOG_ORDER');const ordered=ids(table.order,max),removed=ids(table.removed,max),created=records(table.created,max);assert(!inherited||ordered.size===0,'PERSONAL_CATALOG_ORDER');
       assert(Array.isArray(table.patches)&&table.patches.length<=max,'PERSONAL_CATALOG_PATCHES');const patched=new Set();
-      for(const row of table.created)assert(ordered.has(row.id)&&!removed.has(row.id),'PERSONAL_CATALOG_CREATED');
+      for(const row of table.created)assert((inherited||ordered.has(row.id))&&!removed.has(row.id),'PERSONAL_CATALOG_CREATED');
       for(const id of removed)assert(!ordered.has(id)&&!created.has(id),'PERSONAL_CATALOG_REMOVED');
-      for(const patch of table.patches){assert(object(patch)&&typeof patch.id==='string'&&ordered.has(patch.id)&&!created.has(patch.id)&&!removed.has(patch.id)&&!patched.has(patch.id),'PERSONAL_CATALOG_PATCH');patched.add(patch.id);changes(patch.fields,['id']);}
+      for(const patch of table.patches){assert(object(patch)&&typeof patch.id==='string'&&(inherited||ordered.has(patch.id))&&!created.has(patch.id)&&!removed.has(patch.id)&&!patched.has(patch.id),'PERSONAL_CATALOG_PATCH');ids([patch.id],1);patched.add(patch.id);changes(patch.fields,['id']);}
     }
     changes(value.fields,['version','savedAt','themes','lessons']);return value;
   }

@@ -1,0 +1,149 @@
+{
+  "checkedAt": "2026-11-19T00:44:59.290344+00:00",
+  "pass": true,
+  "version": "23.5.203",
+  "newLessonsAddedByFix": 0,
+  "firstServiceFailurePreserved": {
+    "startedAt": "2026-11-18T23:59:24.602741+00:00",
+    "cwd": "C:\\Users\\Alexander\\Documents\\web\\pianosjest",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "failed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-paired-descent-preparation-239\\logs\\service.log",
+    "otherOwnHeavyJobsFinished": true,
+    "childPid": 20680,
+    "exitCode": 1,
+    "finishedAt": "2026-11-18T23:59:57.571523+00:00",
+    "wallSeconds": 32.969,
+    "logSha256": "39422fb7fbdf3c79559025342b1ef06d5b1946a1bc8dd3ca3b72ca2cb4c0527e",
+    "totals": {
+      "tests": 60,
+      "pass": 52,
+      "fail": 1,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 32059.6692
+    }
+  },
+  "serviceAfterFix": {
+    "startedAt": "2026-11-19T00:14:04.642260+00:00",
+    "cwd": "C:\\Users\\Alexander\\Documents\\web\\pianosjest",
+    "command": [
+      "npm.cmd",
+      "run",
+      "test:service"
+    ],
+    "status": "passed",
+    "attempt": 1,
+    "log": "tmp\\fsharp-paired-descent-preparation-239\\logs\\service-after-catalog-fix.log",
+    "otherOwnHeavyJobsFinished": true,
+    "childPid": 11344,
+    "exitCode": 0,
+    "finishedAt": "2026-11-19T00:14:39.863192+00:00",
+    "wallSeconds": 35.219,
+    "logSha256": "7f6008f933eea3b4d4a79daf5a6a45954c91bb8e6cbe5dfc575c73a956d62893",
+    "totals": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 34231.5492
+    }
+  },
+  "newBaseOrderRed": {
+    "pass": 3,
+    "fail": 6,
+    "tests": 9,
+    "logSha256": "c457e04acb75e0d827beaf38ca53e9946a621f606cf558ecda6019285d543f57"
+  },
+  "additionalLegacyAndGuitarRed": {
+    "pass": 1,
+    "fail": 1,
+    "tests": 2,
+    "logSha256": "4d91bcc57fa81098edef57f93a374778a3bbcb48c08f892da3c2f7a9190a2157"
+  },
+  "green": {
+    "checkedAt": "2026-11-19T00:09:57.985870+00:00",
+    "exitCode": 0,
+    "wallSeconds": 18.656,
+    "logSha256": "87a4ac72525d8bbba93e6c7d39712d66925ccf0d5114f5801d9da2d2996a9a99",
+    "totals": {
+      "tests": 24,
+      "pass": 24,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 18578.5012
+    },
+    "originalNineAndTwoTestsExact": true,
+    "historicalTestsChanged": 0,
+    "limitsRaised": false
+  },
+  "newCodecsTestsNeverChangedAfterTheirFirstRed": true,
+  "historicalTestsChanged": 0,
+  "currentFreeze": {
+    "checkedAt": "2026-11-19T00:14:04.525034+00:00",
+    "pass": true,
+    "beforeFixRuntimeFiles": 719,
+    "afterFixRuntimeFiles": 721,
+    "old717ComparedToCurrent": true,
+    "additionalChangedFiles": [
+      "catalog-personalization.d.ts",
+      "catalog-personalization.js"
+    ],
+    "changedOldFilesTotal": [
+      "catalog-personalization.d.ts",
+      "catalog-personalization.js",
+      "curriculum-plan.js",
+      "package.json",
+      "piano-lesson-development.js",
+      "service/course-registry.json",
+      "tests/fixtures/piano-curriculum-counts.json"
+    ],
+    "newCodecRegressionFiles": [
+      "tests/catalog-personalization-base-order.test.cjs",
+      "tests/catalog-personalization-legacy-order.test.cjs"
+    ],
+    "newCodecTests": 11,
+    "firstNineTestSha256Unchanged": true,
+    "additionalTwoTestSha256Unchanged": true,
+    "allHistoricalTestLogicFilesExact": true,
+    "allMusicAndMusicalTestsUnchangedAfterFirstRootRed": true,
+    "fourMusicalAuditsReusedOnExactMusic": true,
+    "target158ReusedForUnchangedMusic": true,
+    "oneFullRunWillUseActualCorrectedCodec": true,
+    "firstFailedServiceLogPreserved": true,
+    "maxBytes2MiBAndHistorical20kBudgetUnchanged": true,
+    "noGuitarFolderChanges": true
+  },
+  "sizeAndSameBaseCompatibility": {
+    "checkedAt": "2026-11-19T00:15:50.220Z",
+    "pass": true,
+    "scope": "Synthetic title edit on exact same local755 base only;not production data,other published editions or rollback",
+    "beforeBytes": 20138,
+    "afterBytes": 462,
+    "savedBytes": 19676,
+    "compactRawSha256": "cd4986bc211267a5060abe1390ec78d62bbf54a262aff9144d1827f72b4be29b",
+    "sameBaseNewReaderFullRoundtrip": true,
+    "sameBaseOldReaderCompactExplicitError": "PERSONAL_CATALOG_PATCH",
+    "originalCompactUnchanged": true,
+    "sameBaseExpandedLegacyBytes": 20138,
+    "sameBaseOldReaderFullRoundtrip": true,
+    "oldWriterSourceSha256": "d0a01e41dda7754628ca25dc4c77df36e1aa9b497513702288e5a4698f95988b",
+    "maxBytesUnchanged": 2097152,
+    "historical20kBudgetPassed": true,
+    "productionRollbackOrCrossEditionClaimed": false
+  },
+  "documentation": "docs/CATALOG_PERSONALIZATION.md",
+  "fullCurrentRuntimeVerificationPending": false,
+  "publicCompatibilityAndRollbackStillRequireExactPublishedBases": true,
+  "deployed": false,
+  "fullTestsPassed": 2800,
+  "fullLogSha256": "d9e172b297c3ce5e408a24c3d70a1a9b0eac6e92330e70cfd7e3de7312b731f3"
+}

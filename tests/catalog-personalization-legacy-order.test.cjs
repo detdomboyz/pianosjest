@@ -1,0 +1,12 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),P=require('../catalog-personalization.js');
+const copy=x=>JSON.parse(JSON.stringify(x));
+
+test('legacy-order: duplicate explicit v1 IDs are rejected independently of compact-order markers',()=>{
+ const value={version:1,kind:'melodiajest-personal-catalog',baseRelease:'23.5.61',savedAt:null,themes:{order:['t'],created:[],patches:[],removed:[]},lessons:{order:['a','b'],created:[],patches:[],removed:[]},fields:[]};P.validate(value);for(const table of ['themes','lessons']){const bad=copy(value);bad[table].order.push(bad[table].order[0]);assert.throws(()=>P.validate(bad),e=>e.code==='PERSONAL_CATALOG_ID');}assert.equal(value.lessons.baseOrder,undefined);assert.deepEqual(value.lessons.order,['a','b']);
+});
+
+test('base-order: piano and guitar opaque music keep distinct fingers,held timing,open strings and technique metadata',()=>{
+ const base={version:7,savedAt:null,themes:[{id:'p',name:'Пианино'},{id:'g',name:'Гитара'}],lessons:[{id:'piano',themeId:'p',contentKind:'exercise',title:'Пианино',instrument:'piano',notes:[{id:'p1',midi:60,startBeat:0,durationBeats:2},{id:'p2',midi:67,startBeat:0,durationBeats:1}],fingeringSpec:{steps:[[{hand:'right',num:1},{hand:'right',num:5}]]},musicVersion:'piano-kept'},{id:'guitar',themeId:'g',contentKind:'piece',title:'Гитара',instrument:'guitar',notes:[{id:'g1',midi:64,startBeat:0,durationBeats:2,string:1,fret:0},{id:'g2',midi:66,startBeat:1,durationBeats:1,string:1,fret:2}],fingeringSpec:{steps:[[],[{hand:'left',num:1}]]},technique:{kind:'bend',sourceNoteId:'g2',physicalFret:2,fromMidi:66,targetMidi:68},musicVersion:'guitar-kept'}]};
+ for(const reorder of [false,true]){const current=copy(base);current.lessons[1].title='Личная гитара';if(reorder)current.lessons.reverse();const patch=P.create(base,current,{baseRelease:'23.5.61'});assert.equal(patch.lessons.baseOrder,reorder?undefined:true);const before=JSON.stringify(base),payload=JSON.stringify(patch),result=P.apply(base,JSON.parse(payload));assert.equal(result.ok,true);assert.deepEqual(result.snapshot,current);assert.equal(JSON.stringify(base),before);assert.equal(JSON.stringify(patch),payload);for(const original of base.lessons){const restored=result.snapshot.lessons.find(x=>x.id===original.id);for(const key of ['notes','fingeringSpec','technique','musicVersion','instrument','contentKind'])assert.deepEqual(restored[key],original[key]);}}
+});

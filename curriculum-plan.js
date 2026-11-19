@@ -3797,6 +3797,44 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-upper-three-paired-descent-01",
+      "stage": "p7",
+      "branch": "fsharp-major-paired-descent-preparation",
+      "fingerprint": "30b88820",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ]
+    },
+    {
+      "id": "detail-p-fsharp-major-middle-three-paired-descent-01",
+      "stage": "p7",
+      "branch": "fsharp-major-paired-descent-preparation",
+      "fingerprint": "5a1ea75a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01",
+        "detail-p-fsharp-major-upper-three-paired-descent-01"
+      ]
+    },
+    {
+      "id": "detail-p-fsharp-major-lower-four-paired-descent-01",
+      "stage": "p7",
+      "branch": "fsharp-major-paired-descent-preparation",
+      "fingerprint": "bc0692e3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01",
+        "detail-p-fsharp-major-middle-three-paired-descent-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

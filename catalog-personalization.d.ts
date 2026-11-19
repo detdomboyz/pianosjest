@@ -4,7 +4,9 @@ export interface Record {readonly id:string;readonly[key:string]:JsonValue}
 export interface Snapshot {readonly version:7;readonly savedAt?:string|null;readonly themes:readonly Record[];readonly lessons:readonly Record[];readonly[key:string]:JsonValue|undefined}
 export type Slot={readonly present:false}|{readonly present:true;readonly value:JsonValue};
 export interface FieldChange {readonly key:string;readonly before:Slot;readonly after:Slot}
-export interface Table {readonly order:readonly string[];readonly created:readonly Record[];readonly removed:readonly string[];readonly patches:readonly {readonly id:string;readonly fields:readonly FieldChange[]}[]}
+/** baseOrder:true requires an empty order and inherits the supplied base order.
+ * Without the marker, order retains the existing explicit v1 ID-list format. */
+export interface Table {readonly baseOrder?:true;readonly order:readonly string[];readonly created:readonly Record[];readonly removed:readonly string[];readonly patches:readonly {readonly id:string;readonly fields:readonly FieldChange[]}[]}
 export interface Personal {readonly version:1;readonly kind:'melodiajest-personal-catalog';readonly baseRelease:string;readonly savedAt:string|null;readonly themes:Table;readonly lessons:Table;readonly fields:readonly FieldChange[]}
 export type Result={readonly ok:true;readonly conflicts:readonly [];readonly snapshot:Snapshot}|{readonly ok:false;readonly conflicts:readonly {readonly code:string;readonly id:string;readonly key:string}[];readonly snapshot:null};
 export function create(base:Snapshot,current:Snapshot,options:{baseRelease:string}):Personal;
