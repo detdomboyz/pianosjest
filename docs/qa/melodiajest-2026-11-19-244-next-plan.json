@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-11-19T06:10:25.234239+00:00",
+  "currentPhase": 244,
+  "futurePhase": 245,
+  "planningOnly": true,
+  "current244MustBeCompletedFirst": true,
+  "futureBatchSuggestedIfStarted19November": "2026-11-19-10",
+  "plannedNewRecords": 2,
+  "plannedNewPreparedCombinationGoals": 1,
+  "plannedNewPreparedIntegrationGoals": 1,
+  "plannedNewGlobalMotorClasses": 0,
+  "newLessonsImplemented": 0,
+  "newSourceRulesRegistered": 0,
+  "newSourceApplicationsAdded": 0,
+  "plannedNewBoundedNotationRules": 2,
+  "plannedNewSourceUrls": 0,
+  "old140SourceCoresMustRemainExact": true,
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-19-244-next-coverage.json",
+  "preparationEvidence": "docs/qa/melodiajest-2026-11-19-244-next-full-preparations.json",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-19-244-next-primary-source.json",
+  "freshSourceReadRequiredBeforeImplementation": true,
+  "branch": "csharp-major-left-prepared-descent",
+  "cases": [
+    {
+      "id": "detail-p-csharp-major-lower-four-descent-left-01",
+      "title": "Левая: F♯3–E♯3–D♯3–C♯3 под 4–1–2–3",
+      "pattern": "Q q ( *",
+      "midis": [
+        54,
+        53,
+        51,
+        49
+      ],
+      "fingers": [
+        4,
+        1,
+        2,
+        3
+      ],
+      "hand": "left",
+      "requires": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-bflat-major-descent-left-01"
+      ],
+      "stage": "p7",
+      "after": "course10-08",
+      "profile": "legato",
+      "timingPrecision": "beat-boundary-v2",
+      "sourceFromIndex": 11,
+      "sourceToIndex": 14,
+      "sourceStarts": [
+        5.5,
+        6,
+        6.5,
+        7
+      ],
+      "sourceEnd": 7.5,
+      "sourceFollowingActualNote": null,
+      "sourceFollowingAt": 7.5,
+      "sourceFollowingIsRest": true,
+      "sourceFollowingRestDuration": 0.5,
+      "sourceFollowingRestEnd": 8,
+      "projectStarts": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "projectEnd": 4,
+      "projectCompleteBars": 1,
+      "newPreparedCombinationGoal": true,
+      "newGlobalMotorClasses": 0,
+      "nextLessonId": "detail-p-csharp-major-descent-left-01",
+      "branch": "csharp-major-left-prepared-descent",
+      "coverageDomain": "major-scales"
+    },
+    {
+      "id": "detail-p-csharp-major-descent-left-01",
+      "title": "До-диез мажор левой вниз: две готовые группы C♯4–C♯3",
+      "pattern": "T t E W Q q ( *",
+      "midis": [
+        61,
+        60,
+        58,
+        56,
+        54,
+        53,
+        51,
+        49
+      ],
+      "fingers": [
+        2,
+        1,
+        2,
+        3,
+        4,
+        1,
+        2,
+        3
+      ],
+      "hand": "left",
+      "requires": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-csharp-major-lower-four-descent-left-01"
+      ],
+      "stage": "p7",
+      "after": "detail-p-csharp-major-lower-four-descent-left-01",
+      "profile": "legato",
+      "timingPrecision": "beat-boundary-v2",
+      "sourceFromIndex": 7,
+      "sourceToIndex": 14,
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7
+      ],
+      "sourceEnd": 7.5,
+      "sourceFollowingActualNote": null,
+      "sourceFollowingAt": 7.5,
+      "sourceFollowingIsRest": true,
+      "sourceFollowingRestDuration": 0.5,
+      "sourceFollowingRestEnd": 8,
+      "projectStarts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "projectEnd": 8,
+      "projectCompleteBars": 2,
+      "newPreparedIntegrationGoal": true,
+      "newGlobalMotorClasses": 0,
+      "nextLessonId": null,
+      "branch": "csharp-major-left-prepared-descent",
+      "coverageDomain": "major-scales"
+    }
+  ],
+  "nextAction": "Сначала завершить244/23.5.208/mainpush/Dcompletion. Затем245 локально: по PFF Csharp LH Figure1 две подготовленные нисходящие левые цели: lowerF♯3–E♯3–D♯3–C♯3/4–1–2–3,54/53/51/49,Q q ( *, затем fullC♯4–C♯3/2–1–2–3–4–1–2–3,61/60/58/56/54/53/51/49,T t E W Q q ( *. Две старые own-LH подготовки целиком:FsharpLHdescent8 иBflatLHdescent8. Нижняя4→1чёрная-белая/полутон изBflatindices4..5(Eb3/4→D3/1)сдвиг+3;хвост1–2–3 изFsharpindices1..3 сдвиг−12;общаяE♯3под1звучитодинраз,2+3−1=4. Upper2123 ужеестькакFsharpfirst4 со сдвигом−5 иотдельноне добавляется;пара4→1тожеужепокрыта,не добавлять. Upperfive21234отдельноне вводить:еёстык включёнвполнуюинтеграцию4+4=8разныхнот. Fullтребуетactualnewlower4123вмодели;barlineG♯3/3→F♯3/4обечёрные/внизцелыйтон. E♯3=physicalF3/53,B♯3=physicalC4/60. СамsourceCsharpregisterне транспонируется. SourceLHlowerindices11..14/eighths5.5,6,6.5,7/end7.5;full7..14/eighths3.5..7/end7.5;послеобоихименноeighthrest7.5..8,оназа пределами выбранных нот/notgraded. TopC♯4/2общаясвосхождением. Project4quarter/end4/один4/4или8quarter/end8/два4/4,40BPM/legato-v2;finalC♯3offnextonebar2/bar3,manualquietunscored/notstored.2preparedgoals/0globalclasses;exact/generic/polyнижнейиполной0.2newboundedrulesнаизвестномLHURL,новыхURL/independentpublications0,старые140coresнерасширять. PNG43567B/SHA5ffb1bf9352b8fc5cfffd47d743ef0c6ce8e2a698e685fa356c7c93028e57479повторнопрочитан/visual244;0newdownloads,HTMLcached4monthsнеoriginfreshness. Futurelessons/rules/apps0. Freshquota/primary/reuse244Dcopy,actual731freeze/762oldfull/614canonical/403Nextдоfirstnewmodel/ROOTRED;до1000локально.",
+  "deployed": false,
+  "current244SourcePngAndFuture245UseSameOriginalFile": true
+}

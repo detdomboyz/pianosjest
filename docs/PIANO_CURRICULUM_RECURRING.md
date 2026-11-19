@@ -266,3 +266,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Локальный243/23.5.207:612learning/588upperonly/nullteacher0;2850full/111target/4аудита/two guestdesktop390PASS. UpperRH2143→full21432132;sourceBsharp4=C5/Esharp4=F4,fullsourcefollowing eighthrest7.5..8 omitted outside eight selected notes.4/8quarter/40BPM/legato-v2.12virtualnotes/4nativeJPEG/0CDPtimeouts. Public186. Сначалаmainpush243/Dcompletion,затем244по двум LHпланам;old138sourcecoresнерасширять.
+
+
+Локальный244/23.5.208:614learning/590upperonly/nullteacher0;2870full/111target/4аудита/two guestdesktop390PASSнаsecondattempt. LowerLH3214→full32143212;Esharp3=F3/Bsharp3=C4,4/8quarter/40BPM/legato-v2.1model-wording correction доROOTRED,final20fresh;firstSDKkernelreset/3nativebufferslost,second4originalJPEG/12virtualnotes сохранены,безfull/buildповтора. Public186. Сначалаmainpush244/Dcompletion,затем245по2LHdescentпланам;old140sourcecoresнерасширять.

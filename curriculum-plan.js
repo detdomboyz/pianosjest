@@ -3893,6 +3893,28 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-lower-four-ascent-left-01",
+      "stage": "p7",
+      "branch": "csharp-major-left-prepared-ascent",
+      "fingerprint": "44615e01",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-bflat-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-ascent-left-01",
+      "stage": "p7",
+      "branch": "csharp-major-left-prepared-ascent",
+      "fingerprint": "657dd374",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-csharp-major-lower-four-ascent-left-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
