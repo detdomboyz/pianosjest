@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-19T15:57:15.888Z",
+  "generatedAt": "2026-11-19T17:55:01.841Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 626,
-    "checkedMidiRouteLessons": 356,
-    "withStructuredProvenance": 329,
-    "individuallyMappedToDomain": 329,
+    "implementedLearningLessons": 628,
+    "checkedMidiRouteLessons": 358,
+    "withStructuredProvenance": 331,
+    "individuallyMappedToDomain": 331,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 602,
+    "goalGroupUpperBound": 604,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -567,6 +567,8 @@
         "detail-p-csharp-major-upper-four-paired-descent-01",
         "detail-p-csharp-major-lower-four-paired-descent-01",
         "detail-p-csharp-major-connected-paired-descent-01",
+        "detail-p-csharp-major-apex-turn-paired-01",
+        "detail-p-csharp-major-prepared-roundtrip-paired-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -10377,6 +10379,71 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-csharp-major-apex-turn-paired-01",
+      "title": "Две руки: C4+C5 → C♯4+C♯5 → C4+C5",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 3,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Согласуй три пары C4+C5 → C♯4+C♯5 → C4+C5, обеими руками1–2–1. Слева нужно перекладывание второго и возврат большого под него, справа естественный соседний ход. Услышь общую вершину без двух разнесённых атак и нажми возвращающиеся белые клавиши заново после отпускания.",
+      "requires": [
+        "detail-p-csharp-major-apex-turn-left-01",
+        "detail-p-csharp-major-apex-turn-right-01",
+        "detail-p-csharp-major-connected-paired-ascent-01",
+        "detail-p-csharp-major-connected-paired-descent-01"
+      ],
+      "nextLessonId": "detail-p-csharp-major-prepared-roundtrip-paired-01",
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-ascent-left-2026-11-19",
+        "pff-csharp-major-full-descent-left-2026-11-19",
+        "pff-csharp-major-full-ascent-right-2026-11-19",
+        "pff-csharp-major-full-descent-right-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-csharp-major-prepared-roundtrip-paired-01",
+      "title": "До-диез мажор двумя руками: один разворот и возврат",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 15,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Соедини подготовленные подъём и спуск до-диез мажора двумя руками в одну фразу C♯3+C♯4 → C♯4+C♯5 → C♯3+C♯4. У каждой руки пятнадцать новых нажатий и одна верхняя атака; направление меняется в общем пульсе, без остановки и повторения вершины. Последнюю пару держи две доли и освободи обе клавиши.",
+      "requires": [
+        "detail-p-csharp-major-prepared-roundtrip-left-01",
+        "detail-p-csharp-major-prepared-roundtrip-right-01",
+        "detail-p-csharp-major-apex-turn-paired-01",
+        "detail-p-csharp-major-connected-paired-ascent-01",
+        "detail-p-csharp-major-connected-paired-descent-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-ascent-left-2026-11-19",
+        "pff-csharp-major-full-descent-left-2026-11-19",
+        "pff-csharp-major-full-ascent-right-2026-11-19",
+        "pff-csharp-major-full-descent-right-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -16531,5 +16598,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Complete249target141/audits/service/build/full2990/two guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
+  "nextAction": "Complete250target141/audits/service/build/full2990/two guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
 }

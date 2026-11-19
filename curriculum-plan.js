@@ -4059,6 +4059,33 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-apex-turn-paired-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-roundtrip",
+      "fingerprint": "39e86818",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-apex-turn-left-01",
+        "detail-p-csharp-major-apex-turn-right-01",
+        "detail-p-csharp-major-connected-paired-ascent-01",
+        "detail-p-csharp-major-connected-paired-descent-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-prepared-roundtrip-paired-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-roundtrip",
+      "fingerprint": "d541e20d",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-prepared-roundtrip-left-01",
+        "detail-p-csharp-major-prepared-roundtrip-right-01",
+        "detail-p-csharp-major-apex-turn-paired-01",
+        "detail-p-csharp-major-connected-paired-ascent-01",
+        "detail-p-csharp-major-connected-paired-descent-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
