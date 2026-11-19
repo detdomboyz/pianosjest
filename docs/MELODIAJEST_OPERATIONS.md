@@ -849,3 +849,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Локальный245/23.5.209:2LH Csharp descent цели4123→21234123,616learning/592upperonly/nullteacher0,216music/105local.2890full/121target/4freshаудита/service53+7/build41/two guestdesktop390PASS. Browseractual1/prestartguard1/readtimeout1/kernel0;4originalJPEG/12distinctcontacts,не musicalgrade. Preview21400exit0/54868,54875closed/own16closed/vpreset;Dcopy/actualapp764616restore/3scratchcleanup,lateDocs/native/main отдельные квитанции. Public186/host/PG/S3не менялись,codecproductionrollbackgate остаётся.
+
+
+Локальный246/23.5.210:3pairedCsharpascent цели/619learning/595upperonly/nullteacher0/217music106local. Финальные2920full/131target PASS;full2/build2 из-за чистойEOL-коррекции5035CRCRLF→LF/−10070B,все767/619 данные точны;4аудита/service53+7 применимы. Оригинальные3UIcase+final3smoke/2preview,7uniqueJPEG/8captures9emits/16dyads32contacts,неperformancegrade. Own17/18closed/vpreset/PID18972,20080exit0/4ownportsclosed. Dcopy/actualapp767619restore/5scratchcleanup,lateDocs/native/main отдельно. Public186/hosting/PG/S3 без изменений.

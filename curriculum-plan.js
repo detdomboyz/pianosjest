@@ -3937,6 +3937,44 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-lower-four-paired-ascent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-ascent",
+      "fingerprint": "b84020a5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-upper-four-paired-ascent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-ascent",
+      "fingerprint": "b78b3e84",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-connected-paired-ascent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-ascent",
+      "fingerprint": "f8217a58",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-csharp-major-lower-four-paired-ascent-01",
+        "detail-p-csharp-major-upper-four-paired-ascent-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

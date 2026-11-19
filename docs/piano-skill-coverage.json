@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-19T07:39:00.977Z",
+  "generatedAt": "2026-11-19T09:17:18.587Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 616,
-    "checkedMidiRouteLessons": 346,
-    "withStructuredProvenance": 319,
-    "individuallyMappedToDomain": 319,
+    "implementedLearningLessons": 619,
+    "checkedMidiRouteLessons": 349,
+    "withStructuredProvenance": 322,
+    "individuallyMappedToDomain": 322,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 592,
+    "goalGroupUpperBound": 595,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -557,6 +557,9 @@
         "detail-p-fsharp-major-middle-three-paired-descent-01",
         "detail-p-fsharp-major-lower-four-paired-descent-01",
         "detail-p-fsharp-major-connected-paired-descent-01",
+        "detail-p-csharp-major-lower-four-paired-ascent-01",
+        "detail-p-csharp-major-upper-four-paired-ascent-01",
+        "detail-p-csharp-major-connected-paired-ascent-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -10189,6 +10192,95 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-csharp-major-lower-four-paired-ascent-01",
+      "title": "Две руки: C♯3+C♯4 → F♯3+F♯4",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 4,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Соедини четыре одновременные пары C♯3+C♯4 → D♯3+D♯4 → E♯3+E♯4 → F♯3+F♯4: левая 3–2–1–4, правая 2–3–1–2. После двух больших левая выходит четвёртым, правая вторым; сохрани общий пульс и полную длительность обеих нот.",
+      "requires": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ],
+      "nextLessonId": "detail-p-csharp-major-upper-four-paired-ascent-01",
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-ascent-right-2026-11-19",
+        "pff-csharp-major-full-ascent-left-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-csharp-major-upper-four-paired-ascent-01",
+      "title": "Две руки: G♯3+G♯4 → C♯4+C♯5",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 4,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Соедини четыре одновременные пары G♯3+G♯4 → A♯3+A♯4 → B♯3+B♯4 → C♯4+C♯5: левая3–2–1–2, правая3–4–1–2. Подготовь разные движения2→1 слева и4→1 справа к белым C4+C5 через целый тон; сохрани одновременность и пульс.",
+      "requires": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ],
+      "nextLessonId": "detail-p-csharp-major-connected-paired-ascent-01",
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-ascent-right-2026-11-19",
+        "pff-csharp-major-full-ascent-left-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-csharp-major-connected-paired-ascent-01",
+      "title": "До-диез мажор двумя руками: две готовые группы вверх",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 8,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Соедини две готовые группы по четыре пары в полную до-диез-мажорную октаву двумя руками: левая3–2–1–4–3–2–1–2, правая2–3–1–2–3–4–1–2. Продолжай через тактовую черту F♯3+F♯4 → G♯3+G♯4 без паузы и повторной пары, сохрани весь пульс и оба отпускания.",
+      "requires": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-csharp-major-lower-four-paired-ascent-01",
+        "detail-p-csharp-major-upper-four-paired-ascent-01",
+        "detail-p-fsharp-major-connected-paired-ascent-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-ascent-right-2026-11-19",
+        "pff-csharp-major-full-ascent-left-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -16229,5 +16321,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Complete245target/audits/service/build/full/two guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
+  "nextAction": "Complete246target/audits/service/build/full/three guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
 }
