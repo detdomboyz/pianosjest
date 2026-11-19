@@ -840,3 +840,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Локальный242/23.5.206:1полнаяRH Csharp23123412;2830full/101target/53Windowsservice+7skips/4аудита/build41/guestdesktop390PASS.610learning/586upper/nullteacher0;213music/102local. Dcopy+actualapprestore,3ownscratchcleanup;native/mainpush отдельные квитанции.1CDPtimeout/0kernel,7AXclick после подтверждённой первойноты,неповторено. Public186/PG/S3/хостне менялись,productionrollbackcodecgateостался.
+
+
+Локальный243/23.5.207:2RH Csharp descent preparedgoals,612learning/588upper/nullteacher0,214music/103local.2850full/111target/53Windowsservice+7skips/4аудита/build41/two guestdesktop390PASS. Dcopy+actualapp760612restore,3ownscratchcleanup;native/main отдельные квитанции. Public186/host/PG/S3не менялись,productionrollbackcodecgate остаётся.

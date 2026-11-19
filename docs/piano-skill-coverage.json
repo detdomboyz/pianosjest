@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-19T03:45:11.090Z",
+  "generatedAt": "2026-11-19T05:01:33.392Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 610,
-    "checkedMidiRouteLessons": 340,
-    "withStructuredProvenance": 313,
-    "individuallyMappedToDomain": 313,
+    "implementedLearningLessons": 612,
+    "checkedMidiRouteLessons": 342,
+    "withStructuredProvenance": 315,
+    "individuallyMappedToDomain": 315,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 586,
+    "goalGroupUpperBound": 588,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -367,7 +367,9 @@
         "detail-p-b-major-descent-right-01",
         "detail-p-fsharp-major-ascent-right-01",
         "detail-p-csharp-major-upper-four-ascent-right-01",
-        "detail-p-csharp-major-ascent-right-01"
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-csharp-major-upper-four-descent-right-01",
+        "detail-p-csharp-major-descent-right-01"
       ],
       "plannedLessonIds": []
     },
@@ -15377,6 +15379,60 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-csharp-major-upper-four-descent-right-01",
+      "title": "Правая: C♯5–B♯4–A♯4–G♯4 под 2–1–4–3",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 4,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Соедини знакомые 2→1 на полутоне, 1→4 через целый тон и 4→3 на двух чёрных клавишах в одну правую нисходящую группу C♯5–B♯4–A♯4–G♯4. Сохрани ровные доли и свободную кисть.",
+      "requires": [
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-f-major-descent-checkpoint-right-01"
+      ],
+      "nextLessonId": "detail-p-csharp-major-descent-right-01",
+      "sourceEvidenceIds": [
+        "pff-csharp-major-upper-2143-right-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-csharp-major-descent-right-01",
+      "title": "До-диез мажор правой вниз: две готовые группы C♯5–C♯4",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 8,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Соедини готовые нисходящие группы C♯5–G♯4/2–1–4–3 и F♯4–C♯4/2–1–3–2 в полную правую октаву. Продолжай через тактовую черту G♯4/3→F♯4/2 без паузы и повторной ноты; сохрани пульс на знакомых переходах через большой.",
+      "requires": [
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-csharp-major-upper-four-descent-right-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-csharp-major-full-descent-right-2026-11-19",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-improv-three-key-answer-right-01",
       "title": "Правая: свой ответ из C4–D4–E4",
       "themeId": "detail-p-improv-response",
@@ -16061,5 +16117,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Complete242target/audits/service/build/full/browser/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain catalog different-published-base rollback gate."
+  "nextAction": "Complete243target/audits/service/build/full/two guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
 }

@@ -263,3 +263,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Локальный242/23.5.206:610learning/586upper/nullteacher0;2830full/101target/4аудита/desktop390PASS. ПолнаяRH Csharp23123412,sourceEsharp4=F4/Bsharp4=C5,8четвертей/end8/два4/4/legato-v2. ОдинCDPtimeout восстановлен безповтора ноты,гостеваяпамятьбраузеромнепроверена. Public23.5.186. Сначала mainpush242/Dcompletion,затем243по сохранённому upper-descent2143 плану;старые136sourcecoresнерасширять.
+
+
+Локальный243/23.5.207:612learning/588upperonly/nullteacher0;2850full/111target/4аудита/two guestdesktop390PASS. UpperRH2143→full21432132;sourceBsharp4=C5/Esharp4=F4,fullsourcefollowing eighthrest7.5..8 omitted outside eight selected notes.4/8quarter/40BPM/legato-v2.12virtualnotes/4nativeJPEG/0CDPtimeouts. Public186. Сначалаmainpush243/Dcompletion,затем244по двум LHпланам;old138sourcecoresнерасширять.
