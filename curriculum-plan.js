@@ -3767,6 +3767,28 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-lower-four-descent-left-01",
+      "stage": "p7",
+      "branch": "csharp-major-left-prepared-descent",
+      "fingerprint": "3f038a13",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-bflat-major-descent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-descent-left-01",
+      "stage": "p7",
+      "branch": "csharp-major-left-prepared-descent",
+      "fingerprint": "ba2faf92",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-csharp-major-lower-four-descent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-ascent-left-01",
       "stage": "p7",
       "branch": "b-major-left-ascent",
