@@ -831,3 +831,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 ## Локальный этап230 —23.5.194
 
 Один RHfull21321432,596learning572upperonly/nullteacher0;2681full113targetPASS/4аудита/service53+7Windows/build41/1guestкарточка/701runtime. Core132точны/5apps1fresh4reuse;дополнительноLHplanning1page2PNG,0futureimplemented. Dcopyrestore/own3scratchcleanup,public186/noPGS3server,next231LH212безповторнойпары12.
+
+
+Локальный240/23.5.204:одна подготовленная двуручная нисходящая фраза,2810full/168target/53Windowsservice+7skips/4аудита/build41/guestdesktop390PASS.608learning/584upper/nullteacher0;211music/100local. Публичная186/хост/S3/PG не менялись. Dкопия+actualapprestore,ownscratchcleanup,документы/native/mainpush отдельными квитанциями.

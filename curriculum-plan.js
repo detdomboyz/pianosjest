@@ -3835,6 +3835,20 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-connected-paired-descent-01",
+      "stage": "p7",
+      "branch": "fsharp-major-connected-paired-descent",
+      "fingerprint": "a1883abf",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-descent-left-01",
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-fsharp-major-upper-three-paired-descent-01",
+        "detail-p-fsharp-major-middle-three-paired-descent-01",
+        "detail-p-fsharp-major-lower-four-paired-descent-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
