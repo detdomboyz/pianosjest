@@ -3915,6 +3915,44 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-upper-four-paired-descent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-descent",
+      "fingerprint": "dc820340",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-descent-left-01",
+        "detail-p-csharp-major-descent-right-01",
+        "detail-p-fsharp-major-connected-paired-descent-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-lower-four-paired-descent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-descent",
+      "fingerprint": "97b11123",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-descent-left-01",
+        "detail-p-csharp-major-descent-right-01",
+        "detail-p-fsharp-major-connected-paired-descent-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-connected-paired-descent-01",
+      "stage": "p7",
+      "branch": "csharp-major-prepared-paired-descent",
+      "fingerprint": "1813b0ca",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-descent-left-01",
+        "detail-p-csharp-major-descent-right-01",
+        "detail-p-csharp-major-upper-four-paired-descent-01",
+        "detail-p-csharp-major-lower-four-paired-descent-01",
+        "detail-p-fsharp-major-connected-paired-descent-01"
+      ]
+    },
+    {
       "id": "detail-p-csharp-major-lower-four-ascent-left-01",
       "stage": "p7",
       "branch": "csharp-major-left-prepared-ascent",
