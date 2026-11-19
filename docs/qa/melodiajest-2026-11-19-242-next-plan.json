@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-11-19T03:42:58.212647+00:00",
+  "currentPhase": 242,
+  "futurePhase": 243,
+  "planningOnly": true,
+  "current242MustBeCompletedFirst": true,
+  "futureBatchSuggestedIfStarted19November": "2026-11-19-08",
+  "plannedNewRecords": 1,
+  "plannedPreparedCombinationGoals": 1,
+  "plannedNewGlobalMotorClasses": 0,
+  "newLessonsImplemented": 0,
+  "newSourceRulesRegistered": 0,
+  "newSourceApplicationsAdded": 0,
+  "plannedNewBoundedNotationRules": 1,
+  "plannedNewSourceUrls": 0,
+  "old136SourceCoresMustRemainExact": true,
+  "coverageEvidence": "docs/qa/melodiajest-2026-11-19-242-next-coverage.json",
+  "preparationEvidence": "docs/qa/melodiajest-2026-11-19-242-next-full-preparations.json",
+  "sourceEvidence": "docs/qa/melodiajest-2026-11-19-242-next-primary-source.json",
+  "freshSourceReadRequiredBeforeImplementation": true,
+  "branch": "csharp-major-upper-four-right-descent",
+  "cases": [
+    {
+      "id": "detail-p-csharp-major-upper-four-descent-right-01",
+      "title": "Правая: C♯5–B♯4–A♯4–G♯4 под 2–1–4–3",
+      "pattern": "S s P O",
+      "midis": [
+        73,
+        72,
+        70,
+        68
+      ],
+      "fingers": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "hand": "right",
+      "requires": [
+        "detail-p-fsharp-major-descent-right-01",
+        "detail-p-f-major-descent-checkpoint-right-01"
+      ],
+      "stage": "p7",
+      "after": "course10-08",
+      "coverageDomain": "major-scales",
+      "branch": "csharp-major-upper-four-right-descent",
+      "nextLessonId": null,
+      "profile": "legato",
+      "timingPrecision": "beat-boundary-v2",
+      "projectStarts": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "projectEnd": 4,
+      "sourceStarts": [
+        3.5,
+        4,
+        4.5,
+        5
+      ],
+      "sourceEnd": 5.5,
+      "sourceFollowingActualNote": "F♯4/2",
+      "sourceFollowingIsRest": false,
+      "newPreparedCombinationGoal": true,
+      "newGlobalMotorClasses": 0
+    }
+  ],
+  "nextAction": "Сначала завершить242/23.5.206/mainpush/Dcompletion. Затем243 локально: проверить по PFF Csharp RH Figure1 новую верхнюю нисходящую C♯5–B♯4–A♯4–G♯4/2–1–4–3, MIDI73/72/70/68, интервалы−1/−2/−2, S s P O. Две полные подготовки: Fsharp RH descent8 и Fmajor RH descent checkpoint8; первое2→1 black-white half из Fsharp со сдвигом−5,1→4 white-black whole из C5→Bb4 в Fmajor физически72→70,4→3 black-black whole из A#4→G#4 в Fsharp. Сам целевой источник остаётся в исходном регистре. В source indices7..10 от общей верхнейC♯5, восьмые3.5/4/4.5/5/end5.5, далееF♯4/2at5.5 реальный спуск, не пауза. B♯4=physicalC5/MIDI72, не B4/71. Проект4четверти0..3/end4/один4/4/40BPM/legato-v2, последнююG♯4offнараз2такта, ручная следующая тишина вне зачёта. Новая подготовленная комбинация1/глобальных классов0; полного/верхнего exact/generic/poly нет, нижняя2132 уже покрыта и отдельно не добавляется. Полный восходящий136-й sourcecore242 не расширять: отдельное ограниченное descending-upper правило на том же URL, новыхURL0/самостоятельных публикаций0; старые136cores точны. Freshquota/primary/fullPNG/Dcopy, actual727freeze и758oldfull/610canonical/399Next перед первым тестом. До1000 локально; не считать будущий план реализованным.",
+  "deployed": false
+}
