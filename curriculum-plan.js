@@ -3664,6 +3664,17 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-apex-turn-right-01",
+      "stage": "p7",
+      "branch": "csharp-major-apex-turn-right",
+      "fingerprint": "eb26e168",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-ascent-right-01",
+        "detail-p-csharp-major-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-upper-descent-left-01",
       "stage": "p7",
       "branch": "b-major-left-descent",
@@ -3972,6 +3983,17 @@
       "preparation": [
         "detail-p-fsharp-major-ascent-left-01",
         "detail-p-csharp-major-lower-four-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-csharp-major-apex-turn-left-01",
+      "stage": "p7",
+      "branch": "csharp-major-apex-turn-left",
+      "fingerprint": "0dc42a3b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-csharp-major-ascent-left-01",
+        "detail-p-csharp-major-descent-left-01"
       ]
     },
     {
