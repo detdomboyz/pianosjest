@@ -3620,6 +3620,17 @@
       ]
     },
     {
+      "id": "detail-p-csharp-major-upper-four-ascent-right-01",
+      "stage": "p7",
+      "branch": "csharp-major-upper-four-right-ascent",
+      "fingerprint": "d9d8a334",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-right-01",
+        "detail-p-f-major-ascent-checkpoint-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-upper-descent-left-01",
       "stage": "p7",
       "branch": "b-major-left-descent",

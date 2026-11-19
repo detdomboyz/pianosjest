@@ -834,3 +834,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Локальный240/23.5.204:одна подготовленная двуручная нисходящая фраза,2810full/168target/53Windowsservice+7skips/4аудита/build41/guestdesktop390PASS.608learning/584upper/nullteacher0;211music/100local. Публичная186/хост/S3/PG не менялись. Dкопия+actualapprestore,ownscratchcleanup,документы/native/mainpush отдельными квитанциями.
+
+
+Локальный241/23.5.205:1верхняяправаяCsharp3412;2820fullдоEOL,10freshпослеEOL/111target/53Windowsservice+7skips/4аудита/build41/guestdesktop390PASS.609learning/585upper/nullteacher0;212music/101local. Dкопия+actualapprestore,4ownscratchcleanup;native/mainpush отдельными квитанциями. Public186/PG/S3/хостне менялись,productionrollbackcodecgateостался.

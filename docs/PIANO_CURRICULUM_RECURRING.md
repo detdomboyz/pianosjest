@@ -257,3 +257,6 @@ docs/reports/melodiajest-operations-2026-11-15-221.md:3RHpreparedBmajorascentgoa
 
 
 Актуальное продолжение19ноября:240/23.5.204 локально проверен,608learning/584upper/nullteacher0;2810full/168target/4аудита/desktop390PASS. Public23.5.186. Сначала mainpush240/Dcompletion,затем241по сохранённому плану;codecdifferent-public-base/productionrollbackgate остаётся.
+
+
+Локальный241/23.5.205:609learning/585upper/nullteacher0;2820fullдоEOL,10freshпослеEOL/111target/4аудита/desktop390PASS.1правыйCsharp3412,источникBsharp4physicalC5,4четверти/end4/legato-v2. Public23.5.186. Сначала mainpush241/Dcompletion,затем242по сохранённому полному правому плану;старые135sourcecoresнерасширять.
