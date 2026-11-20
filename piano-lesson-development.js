@@ -880,7 +880,34 @@
     events: [...fsharpConnectedPairedAscent.events, ...fsharpConnectedPairedDescent.events.slice(1)],
     options: { ...fsharpRoundtripLeft.options, articulation: 'standard' }
   };
-  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex, fsharpPairedRoundtrip);
+  const bMajorRoundtrips = [
+    {
+      hand: 'left', ascent: bMajorAscentLeft, descent: bMajorDescentLeft,
+      tonic: 'B2', apex: 'B3', up: '4–3–2–1–4–3–2–1', down: '1–2–3–4–1–2–3–4',
+      turn: 'Сыграй A♯3–B3–A♯3 под 2–1–2. На верхней белой B3 сыграй большим один раз и на следующую долю верни указательный на чёрную A♯3.',
+      crossing: 'Внизу начни B2 безымянным. На подъёме после E3 большим перенеси безымянный над ним на F♯3. На спуске подведи большой под безымянный с F♯3 к E3.',
+      transferCrossing: 'E3–F♯3',
+      sources: ['pff-b-major-ascending-thumb-fourth-left-2026-11-15', 'pff-b-major-descending-thumb-white-left-2026-11-15']
+    },
+    {
+      hand: 'right', ascent: bMajorAscentRight, descent: bMajorDescentRight,
+      tonic: 'B3', apex: 'B4', up: '1–2–3–1–2–3–4–5', down: '5–4–3–2–1–3–2–1',
+      turn: 'Сыграй A♯4–B4–A♯4 под 4–5–4. На верхней белой B4 мизинец играет один раз. Верни безымянный на чёрную A♯4 на следующую долю.',
+      crossing: 'Начни B3 большим. На подъёме после D♯4 средним подведи большой на E4. На спуске после E4 большим перенеси средний над ним к D♯4.',
+      transferCrossing: 'D♯4–E4',
+      sources: ['pff-b-major-ascending-prepared-right-2026-11-15', 'pff-b-major-descending-prepared-right-2026-11-18']
+    }
+  ].map(spec => ({
+    ...spec,
+    id: 'detail-p-b-major-prepared-roundtrip-' + spec.hand + '-01',
+    title: 'Си мажор ' + (spec.hand === 'left' ? 'левой' : 'правой') + ': октава вверх и обратно',
+    group: 'major-scales', groupTitle: 'Мажорные гаммы', stage: 'p7', after: spec.descent.id,
+    requires: [spec.ascent.id, spec.descent.id],
+    goal: 'Сыграй от ' + spec.tonic + ' до ' + spec.apex + ' и обратно в одном пульсе. Один раз нажми верхнюю си, сохрани пальцы на сменах позиции и держи нижнюю си две доли.',
+    events: [...spec.ascent.events, ...spec.descent.events.slice(1)],
+    options: { bpm: 40, beats: [...Array(14).fill(1), 2], articulation: 'legato' }
+  }));
+  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex, fsharpPairedRoundtrip, ...bMajorRoundtrips);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1111,6 +1138,42 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: fsharpPairedRoundtrip.goal,
         context: 'Параллельные октавы в мелодии и согласование рук при сменах позиции на разных ступенях.',
         sourceNote: 'Piano Fingering Figures, F-sharp Major scale 1 octave, рисунок 1 Whole View каждой руки. В каждой схеме пятнадцать восьмых и восьмая пауза. Проект объединяет две схемы в параллельные октавы с исходными нотами и пальцами и задаёт четырнадцать четвертей, последнюю половинную и 40 BPM. Тихая доля отсчитывается вручную.'
+      }
+    });
+  }
+
+  function describeBMajorRoundtrip(lesson, spec, adapter) {
+    const setup = 'Сыграй готовые подъём и спуск этой рукой по ссылкам. Найди ' + spec.tonic + ' и ' + spec.apex + '. Проверь C♯, D♯, F♯, G♯ и A♯ на пяти чёрных клавишах. Вторая рука отдыхает, педаль выключена.';
+    const motion = spec.crossing + ' Освобождай предыдущую клавишу к следующему звуку, сохраняя свободную кисть.';
+    const count = 'При 40 BPM считай четыре такта 4/4. Верхняя ' + spec.apex + ' приходится на «четыре» второго такта. Спуск начинается сразу на «раз» третьего. Последнюю ' + spec.tonic + ' держи на «три–четыре» четвёртого такта и отпусти на следующем «раз». После отпускания отсчитай тихую долю.';
+    const hearing = 'Послушай образец и пропой направление. Услышь один верхний звук, ровный переход к спуску и длинное возвращение к нижней си.';
+    const mastery = 'Пятнадцать нажатий, одна верхняя си, ровный пульс и две полные доли нижней си. Пальцы и удобство движения проверь вручную.';
+    const source = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-' + spec.hand + '-hand/';
+    lesson.rhythm.source = 'project-b-major-prepared-roundtrip-' + spec.hand + '-v1';
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Непрерывный разворот в си мажоре', setup, motion: spec.turn + ' ' + motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-roundtrip-' + spec.hand, coverageDomain: 'major-scales',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup, spec.turn,
+        'Соедини направления. Вверх пальцы ' + spec.up + ', вниз ' + spec.down + '. Обе последовательности сходятся на одном нажатии верхней си.',
+        motion, count, hearing,
+        'Разбирай 3–5 минут короткими пробами с отдыхом. Придумай фразу из 7–9 нот си мажора с началом на C♯ или D♯ и своим местом разворота. Включи знакомую смену ' + spec.transferCrossing + ' и одну долгую ноту. Назови пальцы и счёт, сыграй и проверь на слух. Повтори после отдыха и на следующий день.'
+      ],
+      selfCheck: [
+        'На вершине слышу один звук и продолжаю на следующую долю. Возвращающийся ля-диез начинается новым нажатием.',
+        'На смене позиции пальцы остаются в порядке. Если пульс сбился, разбираю три ноты вокруг смены отдельно.',
+        'Нижняя си звучит две доли. Своевременное отпускание, пальцы и ровный звук сверяю вручную.'
+      ],
+      rhythmNotice: count,
+      references: [source], referenceTitles: { [source]: 'Piano Fingering Figures: си мажор, рисунок 1' },
+      sourceEvidenceIds: [...spec.sources],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: spec.goal,
+        context: 'Восходящий и нисходящий ход в одной мелодической фразе с разворотом и сменами позиции.',
+        sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 Whole View выбранной руки. Сохранены ноты и пальцы схемы. Проект заменяет пятнадцать восьмых и восьмую паузу четырнадцатью четвертями и половинной при 40 BPM. Тихая доля отсчитывается вручную.'
       }
     });
   }
@@ -4513,6 +4576,9 @@
     }
     if (!existing.has(fsharpPairedRoundtrip.id)) {
       describeFsharpPairedRoundtrip(lessons.find(lesson => lesson.id === fsharpPairedRoundtrip.id), adapter);
+    }
+    for (const spec of bMajorRoundtrips) {
+      if (!existing.has(spec.id)) describeBMajorRoundtrip(lessons.find(lesson => lesson.id === spec.id), spec, adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

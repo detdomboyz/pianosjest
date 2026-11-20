@@ -3735,6 +3735,17 @@
       ]
     },
     {
+      "id": "detail-p-b-major-prepared-roundtrip-right-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-roundtrip-right",
+      "fingerprint": "c0a9c1df",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-ascent-right-01",
+        "detail-p-b-major-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-upper-descent-left-01",
       "stage": "p7",
       "branch": "b-major-left-descent",
@@ -3869,6 +3880,17 @@
         "detail-p-b-major-lower-combination-left-01",
         "detail-p-b-major-thumb-fourth-left-01",
         "detail-p-e-major-ascent-left-01"
+      ]
+    },
+    {
+      "id": "detail-p-b-major-prepared-roundtrip-left-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-roundtrip-left",
+      "fingerprint": "067d412a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-ascent-left-01",
+        "detail-p-b-major-descent-left-01"
       ]
     },
     {
