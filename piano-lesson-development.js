@@ -819,7 +819,18 @@
       options: { bpm: 40, beats: [...Array(14).fill(1), 2], articulation: 'legato' }
     };
   });
-  piano.push(...eMajorRoundtrips);
+  const [eMajorRoundtripLeft, eMajorRoundtripRight] = eMajorRoundtrips;
+  const eMajorPairedRoundtrip = {
+    id: 'detail-p-e-major-prepared-roundtrip-paired-01',
+    title: 'Ми мажор двумя руками: один разворот и возврат',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: eMajorConnectedPairedDescent.id,
+    requires: [eMajorConnectedPairedAscent.id, eMajorConnectedPairedDescent.id, eMajorRoundtripLeft.id, eMajorRoundtripRight.id],
+    goal: 'Сыграй обеими руками ми мажор на октаву вверх и обратно. На каждом шаге две клавиши вступают вместе. Правая меняет позицию у соль-диеза и ля, левая у си и до-диеза. Сохрани общий пульс через одну верхнюю пару ми и отпусти нижнюю пару после двух долей.',
+    events: eMajorRoundtripLeft.events.map((left, i) => [...left, ...eMajorRoundtripRight.events[i]]),
+    options: { bpm: 40, beats: eMajorRoundtripLeft.options.beats, articulation: 'standard' }
+  };
+  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -877,6 +888,56 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: spec.goal,
         context: 'Смена направления в мелодии при сохранении ровного пульса, аппликатуры и тональности.',
         sourceNote
+      }
+    });
+  }
+
+  function describeEMajorPairedRoundtrip(lesson, adapter) {
+    const setup = 'По ссылкам повтори двуручный подъём и спуск и оба одноручных разворота. Поставь левый мизинец 5 на E3, правый большой 1 на E4. Между клавишами октава. Педаль выключена.';
+    const crossing = 'Вверх правая подводит большой к A4 после G♯4 средним 3. Через две доли левая переносит средний на C♯4 после B3 большим 1. Вниз порядок обратный: сначала левая 3→1 на C♯4–B3, затем правая 1→3 на A4–G♯4. Предплечье каждой руки свободно следует за кистью. Вторая рука в эти моменты играет свою соседнюю ноту точно в долю.';
+    const turn = 'Медленно сыграй три пары у вершины: D♯4+D♯5 пальцами 2/4, E4+E5 пальцами 1/5, опять D♯4+D♯5 пальцами 2/4. В каждой паре сначала указан левый палец. После верхней ми сразу готовь новую атаку ре-диеза на следующую долю. Если пара распадается на два удара, вернись к трём парам и послушай их ещё раз.';
+    const count = 'Четыре такта 4/4, 40 BPM. В каждом такте считай «раз, два, три, четыре». Верхняя пара E4+E5 приходится на «четыре» второго такта, спуск начинается на «раз» третьего. Сыграй четырнадцать четвертей, нижнюю E3+E4 держи на «три–четыре» четвёртого такта. Отпусти обе клавиши на следующем «раз». После отпускания отсчитай тихую долю вручную.';
+    const hearing = 'Послушай образец и пропой направление одной линии. В игре слушай, как оба голоса приходят на верхнюю ми вместе и возвращаются к нижней без рывка. Проверь, одинаково ли ясно слышны обе ноты на сменах позиции.';
+    const mastery = 'Пятнадцать одновременных пар, один разворот, два разнесённых во времени перехода большого пальца в каждом направлении и совместное отпускание нижней пары.';
+    const fingeringSource = 'https://www.potsdam.edu/sites/default/files/KeyboardSkillsI.pdf';
+    const coordinationSource = 'https://arts-sciences.und.edu/academics/music/_files/docs/keyboard_skills_proficiency_guide_08_2023.pdf';
+    const { beats, bpm } = eMajorPairedRoundtrip.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-e-major-prepared-paired-roundtrip-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Ми мажор двумя руками: общий пульс при смене позиции',
+      setup, motion: crossing, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'e-major-prepared-paired-roundtrip', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup, turn,
+        'Сложи отрезки в целую фразу. Левая вверх 5–4–3–2–1–3–2–1, вниз 1–2–3–1–2–3–4–5. Правая вверх 1–2–3–1–2–3–4–5, вниз 5–4–3–2–1–3–2–1. Верхняя пара общая для двух направлений и звучит один раз.',
+        crossing, count, hearing,
+        'Работай 3–5 минут короткими пробами с отдыхом. Придумай новую фразу из 5–7 пар между F♯ и D♯: сам выбери начало и место разворота, включи оба сменных перехода между G♯ и A и между B и C♯. Назови пальцы и направление заранее, затем сравни на слух вступления двух рук. После перерыва и на следующий день повтори фразу, оценивая перенос вручную.'
+      ],
+      selfCheck: [
+        'В обеих октавах звучат F♯, G♯, C♯ и D♯. Слушаю по одной общей атаке на пару, включая верхнюю E4+E5.',
+        'E4 в начале и конце играет правая, на вершине — левая. Каждый раз клавиша нажимается заново.',
+        'Правая и левая меняют позиции на своих ступенях. Пальцы и свободу кисти сверяю вручную.',
+        'Спуск начинается точно на следующую долю. Нижняя пара звучит две доли и полностью отпускается.',
+        'MIDI сверяет ноты и время. Ровность двух голосов, тишину после фразы и перенос проверяю самостоятельно.'
+      ],
+      rhythmNotice: count,
+      references: [fingeringSource, coordinationSource],
+      referenceTitles: {
+        [fingeringSource]: 'SUNY Potsdam: ми мажор, таблица аппликатуры, PDF с. 2',
+        [coordinationSource]: 'University of North Dakota: мажорные гаммы двумя руками, Keyboard Skills Level I'
+      },
+      sourceEvidenceIds: [
+        'potsdam-e-major-left-map-2026-11-13',
+        'potsdam-e-major-right-map-2026-11-13',
+        'und-one-octave-major-paired-2026-11-20'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: eMajorPairedRoundtrip.goal,
+        context: 'Параллельное движение обеих рук в мелодических линиях. Смена позиции каждой руки подчиняется общему счёту.',
+        sourceNote: 'Техническая отработка MelodiaJest. SUNY Potsdam, Requirements for Keyboard Skills I, § 3 и третья строка Major Scales, PDF с. 1–2, даёт аппликатуры для каждой руки отдельно. University of North Dakota, Keyboard Proficiency Guideline, август 2023, Keyboard Skills Level I, пункт 1, включает ми мажор в одну октаву двумя руками с ровным темпом. Проект соединяет две аппликатуры в пятнадцать пар через общую вершину. Регистры, 40 BPM, последняя половинная, тихая доля и допуски относятся к этому упражнению.'
       }
     });
   }
@@ -4267,6 +4328,9 @@
     if(!existing.has(csharpPreparedRoundtripPaired.id))describeCsharpPreparedRoundtripPaired(lessons.find(l=>l.id===csharpPreparedRoundtripPaired.id),adapter);
     for (const spec of eMajorRoundtrips) {
       if (!existing.has(spec.id)) describeEMajorRoundtrip(lessons.find(lesson => lesson.id === spec.id), spec, adapter);
+    }
+    if (!existing.has(eMajorPairedRoundtrip.id)) {
+      describeEMajorPairedRoundtrip(lessons.find(lesson => lesson.id === eMajorPairedRoundtrip.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

@@ -1,0 +1,322 @@
+{
+  "phase": "2026-11-20-252",
+  "batch": "2026-11-20-02",
+  "version": "23.5.216",
+  "lessonId": "detail-p-e-major-prepared-roundtrip-paired-01",
+  "checkedAt": "2026-11-20T21:42:00.944862+05:00",
+  "input": {
+    "phase": 252,
+    "batch": "2026-11-20-02",
+    "status": "full-run-pending-browser-and-local-restore-verified",
+    "startedAt": "2026-11-20T20:52:21.137497+05:00",
+    "nativeStatus": "PAUSED",
+    "nativeScheduledRunsStarted": 0,
+    "manualPassesCompleted": 0,
+    "localParentCommit": "a92a4d61181ae41230d887023285c2dd971ada9a",
+    "parentCoreManifestSha256": "a9f0a1beb338fbd664ec19b15a3704bf3a7498ef27dd69394982925861ac893f",
+    "parentFinalDocumentsManifestSha256": "e19a241876691f2d0de3ced2b3164448e5a1772dc6e11268ff0102d04e73b60f",
+    "sourceFilesVerifiedAgainst251Core": 756,
+    "coreDifferencesCoveredByFinalOverlay": 5,
+    "currentFinalDocumentsVerified": 22,
+    "publicObservedVersion": "23.5.186",
+    "plan": "One paired E-major octave roundtrip, both connected directions and both one-hand turns already in the catalog.",
+    "version": "23.5.216",
+    "lessonId": "detail-p-e-major-prepared-roundtrip-paired-01",
+    "courseSha256": "68d65faeb263b71334b9f801b4551b20f17437429ee03ce49eca43ccaccd95de",
+    "preChangeTests": {
+      "pass": 1,
+      "expectedAbsenceFailures": 3,
+      "logSha256": "9c27fb7c9631f7d0d72f5ccfe04487e55909d5061fab39229c2d6b1baec7d614"
+    },
+    "changedFileHashes": {
+      "tests/fixtures/piano-curriculum-counts.json": "00df2e6b8990b62132aaa615a3ed2adcde2c5f109c28520fc0b1bd9395dba141",
+      "tests/piano-e-major-paired-roundtrip.test.cjs": "6a6bf0ab230bf7ab1d3b7cd137a5f4d53cf14219652e0c98c3361d115d8c5861",
+      "piano-lesson-development.js": "61dd716761517a8e2fe58bae8a40d05bfb375c64e61e112728542697cc357bb2",
+      "service/course-registry.json": "e723383af9d0c2575c1276bb5b6d960b8d886489c26af9e61b02da3cda461155",
+      "package.json": "96aaf1711fdbab9c876b627e7645715568e46b297cda8169beeeba1025f1717c",
+      "docs/piano-curriculum-sources.json": "466e7f33f8690cb8fe4f5c7abb848df9607faa616e3129bd6034dbfa2062be2a",
+      "curriculum-plan.js": "15913ca38d23b001f182b7de49207e2611d980c68f44a29a63dbe80adb9195f9",
+      "tests/fixtures/piano-before-e-major-paired-roundtrip-v1.json": "0018b5d830d93c2ad5566a55066c41e4bb7bb5e66eb31aa9b614cb31da2a5ed8"
+    },
+    "verificationStartedAt": "2026-11-20T21:00:27.3041057+05:00",
+    "fullRunSessionId": 48485,
+    "fullRunChunkId": "7ad8b7",
+    "restoreManifestSha256": "c632499c09e513ef7bd41a4588bfadab8da3858533c6ffdbc59ada1829660aaa",
+    "restoreSelectedFiles": 810,
+    "browserScreenshotSha256": "87331ec200bdfa54ebdd997608efc50e4fd9f5b28a89b0c776cda7e67f467098",
+    "browserComplete": true,
+    "ownTabClosed": true,
+    "previewSessionClosed": true,
+    "updatedAt": "2026-11-20T21:17:20.6066696+05:00"
+  },
+  "nativeAutomation": {
+    "phase": 252,
+    "verifiedAt": "2026-11-20T21:41:46.931338+05:00",
+    "id": "automation",
+    "status": "PAUSED",
+    "sameOriginalSchedule": true,
+    "originalIntervalMinutes": 20,
+    "newSchedulesCreated": 0,
+    "otherAutomationsUnchanged": 3,
+    "nativeScheduledRunsStarted": 0,
+    "manualPassesCompleted": 1,
+    "canonicalRawSha256": "2b0b1b8759514cd9a2927b77fb77aac642a44eae141a50a24cdd301579767a73",
+    "canonicalPromptSha256": "bdc6816a0a8a03727355f4deb08312a30e5e3847becf0c4e92d9153c9d3a527a",
+    "nativeUpdateSha256": "061b547642894145ebe51540fda25879c1033528aeb508a3b2ace28f9c5e160d"
+  },
+  "nativeScheduledRunsStarted": 0,
+  "manualPassesCompleted": 1,
+  "sources": {
+    "rules": 143,
+    "newRule": "und-one-octave-major-paired-2026-11-20",
+    "newApplications": 3,
+    "twoExistingFingeringRulesCheckedAgain": true,
+    "scope": "Source table and program requirements, with local choreography and rhythm."
+  },
+  "tests": {
+    "full": {
+      "tests": 3020,
+      "pass": 3020,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 2340329.062
+    },
+    "fullLogSha256": "6823bdff13ff964c854bcfaecf3a4a3b5ebc7382905d4af3ac5ebf95c4f902f8",
+    "fullAttempts": 1,
+    "serviceWindows": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 42469.4676
+    },
+    "preImplementation": {
+      "tests": 4,
+      "pass": 1,
+      "fail": 3,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 2238.5398
+    },
+    "firstTarget": {
+      "tests": 30,
+      "pass": 28,
+      "fail": 2,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 122030.765
+    },
+    "finalFocused": {
+      "tests": 4,
+      "pass": 4,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 2315.1303
+    },
+    "checkInvocations": [
+      {
+        "name": "audit-lessons",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:00:27.3856824+05:00",
+        "finishedAt": "2026-11-20T21:00:34.9919089+05:00",
+        "seconds": 7.606,
+        "logSha256": "5ce5c48287a397fadb850628bc37ed78946172b8d5b45121253640317b161853"
+      },
+      {
+        "name": "audit-fingering",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:00:35.0275699+05:00",
+        "finishedAt": "2026-11-20T21:00:48.2809830+05:00",
+        "seconds": 13.254,
+        "logSha256": "5fae0a7177174b11fafe69880e6fa6a4bf40eb27e9b36c6f2d7ffc5708e90648"
+      },
+      {
+        "name": "audit-curriculum",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:00:48.2936273+05:00",
+        "finishedAt": "2026-11-20T21:01:05.2807370+05:00",
+        "seconds": 16.987,
+        "logSha256": "440cf52c35ac16f951d6084917225ffb5163b6d8d70b731b46efd594ce80ff4a"
+      },
+      {
+        "name": "audit-coverage",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:01:05.2931102+05:00",
+        "finishedAt": "2026-11-20T21:01:08.0541362+05:00",
+        "seconds": 2.761,
+        "logSha256": "37358705d6d31e69894f513bb603021156487a59fddf78f0979d51f9229381f1"
+      },
+      {
+        "name": "build",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:01:08.0655035+05:00",
+        "finishedAt": "2026-11-20T21:01:08.7218547+05:00",
+        "seconds": 0.656,
+        "logSha256": "4488e8f96fbff4a14a32c6d66c6d298c2ce7fe9f16a71f10158d03bed1fb8efb"
+      },
+      {
+        "name": "service",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:01:08.7335298+05:00",
+        "finishedAt": "2026-11-20T21:01:52.7880204+05:00",
+        "seconds": 44.055,
+        "logSha256": "5e0922c6194b5144ef7e4d8f25e0326f09c70d85f5a697c9ef06d4a607f8d2fc"
+      },
+      {
+        "name": "full",
+        "exit": 0,
+        "startedAt": "2026-11-20T21:01:52.7976074+05:00",
+        "finishedAt": "2026-11-20T21:40:53.6924200+05:00",
+        "seconds": 2340.895,
+        "logSha256": "6823bdff13ff964c854bcfaecf3a4a3b5ebc7382905d4af3ac5ebf95c4f902f8"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "catalog": [
+      778,
+      779
+    ],
+    "learning": [
+      630,
+      631
+    ],
+    "midi": [
+      360,
+      361
+    ],
+    "provenance": [
+      333,
+      334
+    ],
+    "themes": [
+      118,
+      118
+    ],
+    "goalUpperBound": [
+      606,
+      607
+    ],
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "contracts": {
+    "priorFullRecords": 778,
+    "priorCanonicalEditions": 630,
+    "priorNextPreserved": 630,
+    "guitarRoutePreserved": true,
+    "courseSha256": "68d65faeb263b71334b9f801b4551b20f17437429ee03ce49eca43ccaccd95de",
+    "tempo": 40,
+    "profile": "standard",
+    "timingPrecision": "beat-boundary-v2"
+  },
+  "web": {
+    "localFiles": 41,
+    "payloadDeltaBytes": 9219,
+    "manifestSha256": "100b18cd557d140030498c93c51cf7543e218ed993bf7382637426d4266a179e",
+    "versionObservedPublicAtEntry": "23.5.186",
+    "publicManifestHttpsStatusAtEntry": 200,
+    "deployed": false,
+    "lastKnownIndependentServerRestore": "2026-11-15T11:06:42.650175+00:00",
+    "serverBackupsRun": 0,
+    "externalRestoreRun": false
+  },
+  "browser": {
+    "controlledLessonCount": 1,
+    "guestOnly": true,
+    "virtualPairedActions": 15,
+    "completed": true,
+    "notedSingleTapsDidNotAdvance": true,
+    "viewportReset": [
+      1280,
+      720
+    ],
+    "tabClosed": true,
+    "geometry": {
+      "card": [
+        517.6199951171875,
+        682.6199951171875
+      ],
+      "catalog": "true",
+      "copyHeight": 112,
+      "doc": 376,
+      "head": [
+        106.89999389648438,
+        166.69999313354492
+      ],
+      "lineHeight": "22.4px",
+      "scrollWidth": 376,
+      "viewport": [
+        390,
+        844
+      ],
+      "y": 1240.3199462890625
+    },
+    "preparedLinks": 4,
+    "twoSourceLinks": true,
+    "consoleWarningsOrErrors": 0,
+    "jpeg": {
+      "path": "mobile.jpg",
+      "bytes": 44941,
+      "sha256": "87331ec200bdfa54ebdd997608efc50e4fd9f5b28a89b0c776cda7e67f467098"
+    },
+    "jpegPrivatePath": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-20-252-23.5.216\\evidence\\mobile.jpg",
+    "browserRestartRecoveredExistingTestTab": true
+  },
+  "localCopy": {
+    "phase": 252,
+    "version": "23.5.216",
+    "checkedAt": "2026-11-20T21:12:26.152403+05:00",
+    "pass": true,
+    "selectedFiles": 810,
+    "selectedBytes": 81711710,
+    "newStoredFiles": 18,
+    "newStoredBytes": 11945584,
+    "parentRetainedFiles": 792,
+    "sourceFiles": 769,
+    "publicFiles": 41,
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedSourceSmoke": {
+      "pass": 4,
+      "fail": 0
+    },
+    "restoredPriorCatalog": 778,
+    "restoredPriorCanonical": 630,
+    "manifestSha256": "c632499c09e513ef7bd41a4588bfadab8da3858533c6ffdbc59ada1829660aaa",
+    "smokeLogSha256": "f7c9b265ef78194cd2c34b55fd0fa3781edcccd4a7c65b92399cd12dd1095a69",
+    "restorePath": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-252-work\\restore",
+    "parentCheckpoint": "2026-11-20-251-23.5.215",
+    "freeBytesBeforeCopy": 712384626688,
+    "changedPublicPayload": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "scope": "D: selected local source and web export with parent dependency. No account, database, S3, or production restore."
+  },
+  "cleanup": {
+    "phase": 252,
+    "checkedAt": "2026-11-20T21:42:00.6911008+05:00",
+    "scratchRemoved": true,
+    "previewStopped": true,
+    "retainedDefaultWebBuild": true,
+    "logicalRemovedBytes": 82926451.0,
+    "availableBeforeBytes": 712284147712,
+    "availableAfterBytes": 712368967680,
+    "observedDeltaBytes": 84819968,
+    "driveActivityNotIsolated": true,
+    "retainedEvidenceFiles": 19,
+    "scope": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-252-work"
+  },
+  "limitation": "Guest visual and note practice, synthetic MIDI grading and selected source restore. Physical fingers, audio, pedagogy, production and S3 were outside this pass."
+}

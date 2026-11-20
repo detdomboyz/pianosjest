@@ -3449,6 +3449,19 @@
       ]
     },
     {
+      "id": "detail-p-e-major-prepared-roundtrip-paired-01",
+      "stage": "p7",
+      "branch": "e-major-prepared-paired-roundtrip",
+      "fingerprint": "7d3ea09f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-connected-paired-ascent-01",
+        "detail-p-e-major-connected-paired-descent-01",
+        "detail-p-e-major-prepared-roundtrip-left-01",
+        "detail-p-e-major-prepared-roundtrip-right-01"
+      ]
+    },
+    {
       "id": "detail-p-fsharp-major-thumb-half-step-right-01",
       "stage": "p7",
       "branch": "fsharp-major-right-upper-transition",
