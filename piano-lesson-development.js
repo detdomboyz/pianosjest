@@ -830,7 +830,43 @@
     events: eMajorRoundtripLeft.events.map((left, i) => [...left, ...eMajorRoundtripRight.events[i]]),
     options: { bpm: 40, beats: eMajorRoundtripLeft.options.beats, articulation: 'standard' }
   };
-  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip);
+  const fsharpRoundtrips = [
+    {
+      hand: 'left', ascent: fsharpFullAscentLeft, descent: fsharpFullDescentLeft,
+      tonic: 'F♯3', apex: 'F♯4', up: '4–3–2–1–3–2–1–2', down: '2–1–2–3–1–2–3–4',
+      upper: 'D♯4–E♯4–F♯4–E♯4–D♯4 под 2–1–2–1–2',
+      turn: 'Слева сыграй E♯4 большим, проведи указательный над ним к F♯4 и верни большой на белую F4. Ниже после B3 большим проведи средний к C♯4. На спуске с C♯4 верни большой к B3.',
+      sources: ['pff-fsharp-major-upper-212-left-2026-11-18', 'pff-fsharp-major-upper-212-descent-left-2026-11-18']
+    },
+    {
+      hand: 'right', ascent: fsharpFullAscentRight, descent: fsharpFullDescentRight,
+      tonic: 'F♯4', apex: 'F♯5', up: '2–3–4–1–2–3–1–2', down: '2–1–3–2–1–4–3–2',
+      upper: 'D♯5–E♯5–F♯5–E♯5–D♯5 под 3–1–2–1–3',
+      turn: 'После D♯5 средним подведи правый большой к белой F5, затем сыграй F♯5 указательным. На спуске после большого на F5 верни средний к D♯5. Ниже заранее подготовь переход между A♯4 безымянным и B4 большим в обе стороны.',
+      sources: ['pff-fsharp-major-upper-prepared-right-2026-11-18', 'pff-fsharp-major-thumb-fourth-down-right-2026-11-18']
+    }
+  ].map(spec => ({
+    ...spec,
+    id: 'detail-p-fsharp-major-prepared-roundtrip-' + spec.hand + '-01',
+    title: 'Фа-диез мажор ' + (spec.hand === 'left' ? 'левой' : 'правой') + ': октава вверх и обратно',
+    group: 'major-scales', groupTitle: 'Мажорные гаммы', stage: 'p7', after: spec.descent.id,
+    requires: [spec.ascent.id, spec.descent.id],
+    goal: 'Сыграй от ' + spec.tonic + ' до ' + spec.apex + ' и обратно в одном счёте. Соедини направления через одну верхнюю ноту и сохрани аппликатуру до нижней тоники.',
+    events: [...spec.ascent.events, ...spec.descent.events.slice(1)],
+    options: { bpm: 40, beats: [...Array(14).fill(1), 2], articulation: 'legato' }
+  }));
+  const [fsharpUpperThreePairedDescent] = fsharpPairedDescentPreparation;
+  const fsharpPairedApex = {
+    id: 'detail-p-fsharp-major-prepared-paired-apex-01',
+    title: 'Фа-диез мажор: разворот двумя руками',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: fsharpUpperThreePairedDescent.id,
+    requires: [...fsharpRoundtrips.map(spec => spec.id), fsharpUpperThreePairedAscent.id, fsharpUpperThreePairedDescent.id],
+    goal: 'Сыграй пять пар от ре-диеза до фа-диеза и обратно. На ре-диезах слева работает указательный, справа средний. На белых ми-диезах играют оба больших, на вершине оба указательных. Вернись к разным пальцам в общем пульсе.',
+    events: [...fsharpUpperThreePairedAscent.events, ...fsharpUpperThreePairedDescent.events.slice(1)],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
+  };
+  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -938,6 +974,84 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: eMajorPairedRoundtrip.goal,
         context: 'Параллельное движение обеих рук в мелодических линиях. Смена позиции каждой руки подчиняется общему счёту.',
         sourceNote: 'Техническая отработка MelodiaJest. SUNY Potsdam, Requirements for Keyboard Skills I, § 3 и третья строка Major Scales, PDF с. 1–2, даёт аппликатуры для каждой руки отдельно. University of North Dakota, Keyboard Proficiency Guideline, август 2023, Keyboard Skills Level I, пункт 1, включает ми мажор в одну октаву двумя руками с ровным темпом. Проект соединяет две аппликатуры в пятнадцать пар через общую вершину. Регистры, 40 BPM, последняя половинная, тихая доля и допуски относятся к этому упражнению.'
+      }
+    });
+  }
+
+  function describeFsharpRoundtrip(lesson, spec, adapter) {
+    const setup = 'Сыграй подготовленный подъём и спуск этой рукой. Найди нижнюю ' + spec.tonic + ' и верхнюю ' + spec.apex + ' заранее. E♯ звучит на белой F. Вторая рука отдыхает, педаль выключена.';
+    const motion = spec.turn;
+    const count = 'Четыре такта 4/4 при 40 BPM. Вторая половина фразы начинается на «раз» третьего такта сразу после вершины на «четыре». Последнюю ' + spec.tonic + ' держи на «три–четыре» и освободи на следующем «раз». Тихую долю после отпускания отсчитай вручную.';
+    const hearing = 'Послушай образец, затем пропой направление в удобном регистре. Услышь одну вершину и непрерывный счёт при возвращении к нижней тонике.';
+    const source = 'https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-' + spec.hand + '-hand/';
+    lesson.rhythm.source = 'project-fsharp-major-prepared-roundtrip-' + spec.hand + '-v1';
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Одна октава с непрерывным разворотом', setup, motion, blind: hearing,
+      mastery: 'Пятнадцать атак, одна верхняя нота и две полные доли нижней тоники. Пальцы и свободу кисти сверяй вручную.'
+    });
+    Object.assign(lesson.learning, {
+      branch: 'fsharp-major-prepared-roundtrip-' + spec.hand, coverageDomain: 'major-scales',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Отдельно послушай и сыграй ' + spec.upper + '. Соедини через неё подъём пальцами ' + spec.up + ' и спуск пальцами ' + spec.down + '. Вершина входит в обе последовательности и звучит один раз.',
+        motion, count, hearing,
+        'Разбирай 3–5 минут с короткими остановками и отдыхом. Придумай фразу из 6–8 нот с началом на B или C♯ и концом на D♯ или C♯, сохраняя выбранные пальцы в районе верхнего F♯. Сверь слухом разворот. Повтори после отдыха и на следующий день, затем переходи к верхней связке двумя руками.'
+      ],
+      selfCheck: [
+        'Подъём и спуск правильно соединены. Верхнюю ' + spec.apex + ' слышу один раз.',
+        'Пальцы вверх ' + spec.up + ', вниз ' + spec.down + '. Счёт остаётся ровным на сменах позиции.',
+        'Последняя ' + spec.tonic + ' длится две доли. Отпускание, пальцы и удобство движения проверяю отдельно.'
+      ],
+      rhythmNotice: count,
+      references: [source], referenceTitles: { [source]: 'Piano Fingering Figures: фа-диез мажор, рисунок 1' },
+      sourceEvidenceIds: [...spec.sources],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: spec.goal,
+        context: 'Подготовка одноручной фразы к общему развороту в параллельных октавах.',
+        sourceNote: 'Piano Fingering Figures, F-sharp Major scale 1 octave, рисунок 1 выбранной руки. Схема даёт полную октаву в обе стороны с пальцами ' + spec.up + ' и ' + spec.down + '. Проект сохраняет высоты и аппликатуру, задаёт четырнадцать четвертей и половинную, 40 BPM и ручную тихую долю.'
+      }
+    });
+  }
+
+  function describeFsharpPairedApex(lesson, adapter) {
+    const setup = 'Повтори полный разворот каждой рукой и два двуручных хода у вершины. Поставь левый указательный на D♯4, правый средний на D♯5. Обе ноты звучат вместе. E♯4 и E♯5 играются на белых клавишах F4 и F5. Педаль выключена.';
+    const motion = 'На переходе вверх с D♯ к E♯ вместе поставь оба больших. Слева подведи указательный к F♯4 над большим, справа сыграй соседнюю F♯5 указательным. После одной верхней пары верни оба больших на E♯. На D♯ слева снова указательный, справа средний. Кисть следует за движением и освобождает прежнюю клавишу.';
+    const count = 'При 40 BPM считай первый такт 4/4: раз — D♯, два — E♯, три — F♯, четыре — снова E♯. Во втором такте держи последнюю пару D♯ на «раз–два» и отпусти обе клавиши на «три». Эту тихую долю отсчитай сам.';
+    const hearing = 'Послушай образец и пропой ход вверх и вниз. У каждой пары слышится одно общее вступление. Верхний фа-диез прозвучал один раз, и обе руки без остановки вернулись вниз.';
+    const mastery = 'Левая 2–1–2–1–2, правая 3–1–2–1–3. Пульс одинаков до и после вершины, последняя пара звучит две доли.';
+    const prefix = 'https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-';
+    const left = prefix + 'left-hand/';
+    const right = prefix + 'right-hand/';
+    const { beats, bpm } = fsharpPairedApex.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-fsharp-major-prepared-paired-apex-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({ stage: 'Разворот на чёрной клавише в двух октавах', setup, motion, blind: hearing, mastery });
+    Object.assign(lesson.learning, {
+      branch: 'fsharp-major-prepared-paired-apex', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Медленно соедини две тройки в пять пар. Вверх левая 2–1–2 и правая 3–1–2. После общей вершины левая 1–2 и правая 1–3. Проследи, чтобы правая вернулась к среднему на D♯5.',
+        motion, count, hearing,
+        'Разбирай 3–5 минут короткими пробами. Придумай новую фразу из 6–8 пар: выбери начало на B или C♯ и конец на D♯ или C♯. Проведи через верхний F♯ один раз и спланируй пальцы по готовым направлениям. Прослушай вступления и свой выход из поворота. Повтори после отдыха и на следующий день.'
+      ],
+      selfCheck: [
+        'Оба больших попадают на белые F, которые здесь записаны как E♯. На верхних чёрных F♯ работают оба указательных.',
+        'Возвращающиеся E♯ и D♯ нажимаются заново. Последние D♯ слева играет 2, справа 3.',
+        'Вершина звучит один раз. У последней пары две полные доли и совместное отпускание.',
+        'Пальцы, свободу кисти, ровность звука и тихую долю проверяю вручную.'
+      ],
+      rhythmNotice: count,
+      references: [left, right],
+      referenceTitles: { [left]: 'Piano Fingering Figures: фа-диез мажор левой, рисунок 1', [right]: 'Piano Fingering Figures: фа-диез мажор правой, рисунок 1' },
+      sourceEvidenceIds: [
+        'pff-fsharp-major-upper-212-left-2026-11-18', 'pff-fsharp-major-upper-212-descent-left-2026-11-18',
+        'pff-fsharp-major-upper-prepared-right-2026-11-18', 'pff-fsharp-major-thumb-fourth-down-right-2026-11-18'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: fsharpPairedApex.goal,
+        context: 'Согласование возвращающихся нот после разворота у вершины мелодической линии.',
+        sourceNote: 'Техническое упражнение MelodiaJest по двум схемам Piano Fingering Figures, фа-диез мажор в одну октаву, рисунок 1 Whole View каждой руки. В схемах пять восьмых вокруг общей вершины: слева 2–1–2–1–2, справа 3–1–2–1–3. Проект объединяет две руки и переводит фразу в четыре четверти и половинную при 40 BPM. Тихая доля и допуски заданы для упражнения.'
       }
     });
   }
@@ -4331,6 +4445,12 @@
     }
     if (!existing.has(eMajorPairedRoundtrip.id)) {
       describeEMajorPairedRoundtrip(lessons.find(lesson => lesson.id === eMajorPairedRoundtrip.id), adapter);
+    }
+    for (const spec of fsharpRoundtrips) {
+      if (!existing.has(spec.id)) describeFsharpRoundtrip(lessons.find(lesson => lesson.id === spec.id), spec, adapter);
+    }
+    if (!existing.has(fsharpPairedApex.id)) {
+      describeFsharpPairedApex(lessons.find(lesson => lesson.id === fsharpPairedApex.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

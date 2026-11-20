@@ -3657,6 +3657,17 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-prepared-roundtrip-right-01",
+      "stage": "p7",
+      "branch": "fsharp-major-prepared-roundtrip-right",
+      "fingerprint": "7e5d2e9c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-right-01",
+        "detail-p-fsharp-major-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-csharp-major-upper-four-descent-right-01",
       "stage": "p7",
       "branch": "csharp-major-right-prepared-descent",
@@ -3873,6 +3884,17 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-prepared-roundtrip-left-01",
+      "stage": "p7",
+      "branch": "fsharp-major-prepared-roundtrip-left",
+      "fingerprint": "fd210cb5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-fsharp-major-descent-left-01"
+      ]
+    },
+    {
       "id": "detail-p-fsharp-major-lower-three-paired-ascent-01",
       "stage": "p7",
       "branch": "fsharp-major-lower-three-paired-ascent",
@@ -3932,6 +3954,19 @@
         "detail-p-fsharp-major-descent-left-01",
         "detail-p-fsharp-major-descent-right-01",
         "detail-p-fsharp-major-connected-paired-ascent-01"
+      ]
+    },
+    {
+      "id": "detail-p-fsharp-major-prepared-paired-apex-01",
+      "stage": "p7",
+      "branch": "fsharp-major-prepared-paired-apex",
+      "fingerprint": "7421900c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-prepared-roundtrip-left-01",
+        "detail-p-fsharp-major-prepared-roundtrip-right-01",
+        "detail-p-fsharp-major-upper-three-paired-ascent-01",
+        "detail-p-fsharp-major-upper-three-paired-descent-01"
       ]
     },
     {

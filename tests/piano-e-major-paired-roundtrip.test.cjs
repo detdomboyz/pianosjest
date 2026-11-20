@@ -104,16 +104,19 @@ test('paired E-major client and server agree on attack, release and timing failu
 });
 
 test('paired addition preserves all earlier records, routes and canonical editions', () => {
-  const priorLearning = learning.filter(lesson => lesson.id !== id);
+  const oldIds = new Set(before.catalogIds);
+  const priorLearning = learning.filter(lesson => oldIds.has(lesson.id));
+  assert.equal(oldIds.size, before.catalogRecords);
+  assert.ok(!oldIds.has(id));
   assert.equal(priorLearning.length, before.learningRecords);
-  assert.equal(app.lessons.length, before.catalogRecords + Number(Boolean(find(id))));
-  assert.equal(hash(app.lessons.filter(lesson => lesson.id !== id)), before.catalogHash);
+  assert.equal(app.lessons.length, require('./fixtures/piano-curriculum-counts.json').catalogRecords);
+  assert.equal(hash(app.lessons.filter(lesson => oldIds.has(lesson.id))), before.catalogHash);
   assert.equal(app.themes.length, before.themes);
   assert.equal(hash(app.themes), before.themeHash);
-  assert.equal(hash(plan.piano.filter(lesson => lesson.id !== id)), before.pianoPlanHash);
+  assert.equal(hash(plan.piano.filter(lesson => oldIds.has(lesson.id))), before.pianoPlanHash);
   assert.equal(hash(plan.guitar), before.guitarPlanHash);
-  assert.equal(hash(course.lessons.filter(lesson => lesson.id !== id)), before.canonicalHash);
-  assert.equal(hash(course.route.filter(lessonId => lessonId !== id)), before.canonicalRouteHash);
+  assert.equal(hash(course.lessons.filter(lesson => oldIds.has(lesson.id))), before.canonicalHash);
+  assert.equal(hash(course.route.filter(lessonId => oldIds.has(lessonId))), before.canonicalRouteHash);
   assert.equal(hash(priorLearning.map(lesson => [lesson.id, curriculum.next(plan, 'piano', learning, lesson.id)?.id ?? null])), before.nextHash);
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(require.resolve('../lesson-review-baseline.js'))).digest('hex'), before.reviewBaseline);
 });

@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-20T16:01:08.009Z",
+  "generatedAt": "2026-11-20T17:23:31.342Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 631,
-    "checkedMidiRouteLessons": 361,
-    "withStructuredProvenance": 334,
-    "individuallyMappedToDomain": 334,
+    "implementedLearningLessons": 634,
+    "checkedMidiRouteLessons": 364,
+    "withStructuredProvenance": 337,
+    "individuallyMappedToDomain": 337,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 607,
+    "goalGroupUpperBound": 610,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -379,7 +379,9 @@
         "detail-p-csharp-major-prepared-roundtrip-left-01",
         "detail-p-csharp-major-prepared-roundtrip-right-01",
         "detail-p-e-major-prepared-roundtrip-left-01",
-        "detail-p-e-major-prepared-roundtrip-right-01"
+        "detail-p-e-major-prepared-roundtrip-right-01",
+        "detail-p-fsharp-major-prepared-roundtrip-left-01",
+        "detail-p-fsharp-major-prepared-roundtrip-right-01"
       ],
       "plannedLessonIds": []
     },
@@ -572,6 +574,7 @@
         "detail-p-csharp-major-apex-turn-paired-01",
         "detail-p-csharp-major-prepared-roundtrip-paired-01",
         "detail-p-e-major-prepared-roundtrip-paired-01",
+        "detail-p-fsharp-major-prepared-paired-apex-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -10475,6 +10478,35 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-fsharp-major-prepared-paired-apex-01",
+      "title": "Фа-диез мажор: разворот двумя руками",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 5,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Сыграй пять пар от ре-диеза до фа-диеза и обратно. На ре-диезах слева работает указательный, справа средний. На белых ми-диезах играют оба больших, на вершине оба указательных. Вернись к разным пальцам в общем пульсе.",
+      "requires": [
+        "detail-p-fsharp-major-prepared-roundtrip-left-01",
+        "detail-p-fsharp-major-prepared-roundtrip-right-01",
+        "detail-p-fsharp-major-upper-three-paired-ascent-01",
+        "detail-p-fsharp-major-upper-three-paired-descent-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-upper-212-left-2026-11-18",
+        "pff-fsharp-major-upper-212-descent-left-2026-11-18",
+        "pff-fsharp-major-upper-prepared-right-2026-11-18",
+        "pff-fsharp-major-thumb-fourth-down-right-2026-11-18"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -16001,6 +16033,56 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-fsharp-major-prepared-roundtrip-left-01",
+      "title": "Фа-диез мажор левой: октава вверх и обратно",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 15,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Сыграй от F♯3 до F♯4 и обратно в одном счёте. Соедини направления через одну верхнюю ноту и сохрани аппликатуру до нижней тоники.",
+      "requires": [
+        "detail-p-fsharp-major-ascent-left-01",
+        "detail-p-fsharp-major-descent-left-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-upper-212-left-2026-11-18",
+        "pff-fsharp-major-upper-212-descent-left-2026-11-18"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-fsharp-major-prepared-roundtrip-right-01",
+      "title": "Фа-диез мажор правой: октава вверх и обратно",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 15,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Сыграй от F♯4 до F♯5 и обратно в одном счёте. Соедини направления через одну верхнюю ноту и сохрани аппликатуру до нижней тоники.",
+      "requires": [
+        "detail-p-fsharp-major-ascent-right-01",
+        "detail-p-fsharp-major-descent-right-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "pff-fsharp-major-upper-prepared-right-2026-11-18",
+        "pff-fsharp-major-thumb-fourth-down-right-2026-11-18"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-improv-three-key-answer-right-01",
       "title": "Правая: свой ответ из C4–D4–E4",
       "themeId": "detail-p-improv-response",
@@ -16685,5 +16767,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "После нового прямого запроса проверить двуручный ми мажор по фактическому каталогу. Сверить, есть ли полные непрерывные парные подъём и спуск с аппликатурами из двух одноручных уроков этапа 251. Если обоих направлений достаточно для объединения и полной фразы ещё нет, выбрать одну подготовленную задачу координации. Если подготовки не хватает, сначала закрыть подтверждённый пробел. Перед изменениями заново проверить квоту, источник, отсутствие дублей и копию этапа 251. Публикация курса отложена до достижения 1000 содержательных целей."
+  "nextAction": "Только по новому прямому запросу сверить покрытие фа-диез мажора: полные одноручные подъём и спуск, верхние связки и оба полных двуручных направления. Сопоставить аппликатуры и чёрные тоники с первоисточником. Если нет подготовленного разворота, выбрать один реальный пробел перед объединением направлений. Перед правками проверить квоту и локальную копию этапа 252."
 }
