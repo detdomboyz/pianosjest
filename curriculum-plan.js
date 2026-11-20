@@ -4010,6 +4010,20 @@
       ]
     },
     {
+      "id": "detail-p-fsharp-major-prepared-roundtrip-paired-01",
+      "stage": "p7",
+      "branch": "fsharp-major-prepared-paired-roundtrip",
+      "fingerprint": "7e82db9e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-fsharp-major-connected-paired-ascent-01",
+        "detail-p-fsharp-major-connected-paired-descent-01",
+        "detail-p-fsharp-major-prepared-roundtrip-left-01",
+        "detail-p-fsharp-major-prepared-roundtrip-right-01",
+        "detail-p-fsharp-major-prepared-paired-apex-01"
+      ]
+    },
+    {
       "id": "detail-p-csharp-major-upper-four-paired-descent-01",
       "stage": "p7",
       "branch": "csharp-major-prepared-paired-descent",

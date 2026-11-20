@@ -1,0 +1,568 @@
+{
+  "phase": "2026-11-20-254",
+  "version": "23.5.218",
+  "batch": "2026-11-20-04",
+  "lessonId": "detail-p-fsharp-major-prepared-roundtrip-paired-01",
+  "checkedAt": "2026-11-21T00:03:34.381169+05:00",
+  "nativeAutomation": {
+    "phase": 254,
+    "id": "automation",
+    "status": "PAUSED",
+    "verifiedAt": "2026-11-21T00:03:32.199778+05:00",
+    "originalIntervalMinutes": 20,
+    "sameOriginalSchedule": true,
+    "otherAutomationsUnchanged": 3,
+    "newSchedulesCreated": 0,
+    "nativeScheduledRunsStarted": 0,
+    "manualPassesCompleted": 1,
+    "canonicalRawSha256": "6275847c6e1af715cc45623b212fcfd2ea5e6646c96868732b546363a277e43b",
+    "canonicalPromptSha256": "65fda228c95ab79b22c9211edef3ca7758a8bbd9ae975241935d381964b3fd39",
+    "nativeUpdateSha256": "6eab17272d814548453527406f6affdc27bca19855e413b0c45645c51002f46a"
+  },
+  "counts": {
+    "catalog": 783,
+    "learning": 635,
+    "midi": 365,
+    "provenance": 338,
+    "themes": 118,
+    "goalUpperBound": 611,
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "before": {
+    "oldCatalog": 782,
+    "oldLearning": 634,
+    "themes": 118,
+    "sourceRules": 143,
+    "courseSha256": "4b568000eb126b34b8632b201c7a2220cce59f3773690181d4e961d84739c565",
+    "prepIds": [
+      "detail-p-fsharp-major-connected-paired-ascent-01",
+      "detail-p-fsharp-major-connected-paired-descent-01",
+      "detail-p-fsharp-major-prepared-roundtrip-left-01",
+      "detail-p-fsharp-major-prepared-roundtrip-right-01",
+      "detail-p-fsharp-major-prepared-paired-apex-01"
+    ],
+    "oldPairedExplicit": 33,
+    "comparable15PairIds": [
+      "detail-p-csharp-major-prepared-roundtrip-paired-01",
+      "detail-p-e-major-prepared-roundtrip-paired-01"
+    ],
+    "normalizedShapeMatches": 0,
+    "exactSoloFrames": true,
+    "exactPairedDirections": true,
+    "exactApexSlice": true
+  },
+  "preEditBackup": {
+    "preEditBackupFilesReadAndVerified": 7,
+    "verifiedFrom": "2026-11-20-253-23.5.217",
+    "main": "28bc4dcae71770f4d1c8811f283c22cdaaff6a2c",
+    "workingTreeClean": true
+  },
+  "tests": {
+    "red": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 5063.4916
+    },
+    "target-initial": {
+      "tests": 43,
+      "pass": 42,
+      "fail": 1,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 30516.4146
+    },
+    "target": {
+      "tests": 43,
+      "pass": 43,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 31700.4651
+    },
+    "service": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 7,
+      "todo": 0,
+      "duration_ms": 41914.2272
+    },
+    "full": {
+      "tests": 3031,
+      "pass": 3031,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 2210261.1358
+    }
+  },
+  "runs": [
+    {
+      "name": "target",
+      "exit": 0,
+      "started": "2026-11-20T23:23:59.3902198+05:00",
+      "ended": "2026-11-20T23:24:31.1885873+05:00",
+      "logBytes": 10236,
+      "logSha256": "0a201f064d5048e4320bf3a099df4947171e62ce599629735c481e6756f0626c"
+    },
+    {
+      "name": "audit-lessons",
+      "exit": 0,
+      "started": "2026-11-20T23:24:31.2216394+05:00",
+      "ended": "2026-11-20T23:24:36.7377306+05:00",
+      "logBytes": 754,
+      "logSha256": "e6207dad0ae695bf30a33ff35e653b52b983e7b8b3ea6b2dddc2ac4ea7cc7779"
+    },
+    {
+      "name": "audit-fingering",
+      "exit": 0,
+      "started": "2026-11-20T23:24:36.7521237+05:00",
+      "ended": "2026-11-20T23:24:50.0183325+05:00",
+      "logBytes": 737,
+      "logSha256": "e3e1f01d22dffe19d62a4c58f4a0615106d610f146555547cefcb4c45836f2bf"
+    },
+    {
+      "name": "audit-curriculum",
+      "exit": 0,
+      "started": "2026-11-20T23:24:50.0295252+05:00",
+      "ended": "2026-11-20T23:25:06.7522796+05:00",
+      "logBytes": 646,
+      "logSha256": "54a74fe02a3e816b250017b67dd71b413396f43ca4968ef759b18e0ca7973533"
+    },
+    {
+      "name": "audit-coverage",
+      "exit": 0,
+      "started": "2026-11-20T23:25:06.7696109+05:00",
+      "ended": "2026-11-20T23:25:09.9551583+05:00",
+      "logBytes": 494,
+      "logSha256": "9a38a38ed759e7e0c95681659f1ef3cbb64e5b9a78af7102c5a7b8dbf4f6dcf8"
+    },
+    {
+      "name": "build",
+      "exit": 0,
+      "started": "2026-11-20T23:25:09.9659882+05:00",
+      "ended": "2026-11-20T23:25:10.7578642+05:00",
+      "logBytes": 242,
+      "logSha256": "df46a6c2ff7fe8b5b9f37ee36f96f9986be0c680f49a3c21b69a64a9c9a71477"
+    },
+    {
+      "name": "service",
+      "exit": 0,
+      "started": "2026-11-20T23:25:10.7696118+05:00",
+      "ended": "2026-11-20T23:25:53.7375508+05:00",
+      "logBytes": 15606,
+      "logSha256": "fe12a99b3fd758387b1c769f28d2d0459190144512de67d206dfb2a9474c9354"
+    },
+    {
+      "name": "full",
+      "exit": 0,
+      "started": "2026-11-20T23:25:53.7507342+05:00",
+      "ended": "2026-11-21T00:02:44.6787310+05:00",
+      "logBytes": 802689,
+      "logSha256": "06a0bd6a35fc4f79c98dc95584437fae6e296c11dce8282d361832ce7377016d"
+    }
+  ],
+  "sourceEntries": 143,
+  "sourceRulesAdded": 0,
+  "sourceApplications": 4,
+  "sourceFigures": [
+    {
+      "url": "https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-left-hand/",
+      "figure": 1,
+      "bytes": 43454,
+      "sha256": "e321f385a786f42b277ff6ef47302ec94f786ba42d2c2c12b69b51da7c825733"
+    },
+    {
+      "url": "https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-right-hand/",
+      "figure": 1,
+      "bytes": 44082,
+      "sha256": "b36072805585541d25200804efd5c13f102c04b3735c9a90274dcef9bcff2825"
+    }
+  ],
+  "toolsUsed": {
+    "findSkills": "https://skills.sh/vercel-labs/skills/find-skills",
+    "computerUseAttempted": true,
+    "freshIsolatedEdgeUsed": true
+  },
+  "localWeb": {
+    "files": 41,
+    "version": "23.5.218",
+    "manifestSha256": "08bed7211d02b144775af3a72c41706b356fbe3c28b4aa96d04802bf8babced5",
+    "courseSha256": "e20e6c8b74231628eb5c592c5d9d80378dfd76282b84a46449a2c85d35e489d8",
+    "payloadDeltaBytes": 8166,
+    "observedPublicVersion": "23.5.186",
+    "deployed": false
+  },
+  "browser": {
+    "phase": 254,
+    "lessonId": "detail-p-fsharp-major-prepared-roundtrip-paired-01",
+    "profile": "fresh headless Edge",
+    "syntheticBrowserKeyboard": true,
+    "guestOnly": true,
+    "prerequisites": [
+      {
+        "id": "detail-p-fsharp-major-connected-paired-ascent-01",
+        "title": "Фа-диез мажор двумя руками: три связки в одной фразе"
+      },
+      {
+        "id": "detail-p-fsharp-major-connected-paired-descent-01",
+        "title": "Фа-диез мажор двумя руками вниз: три связки в одной фразе"
+      },
+      {
+        "id": "detail-p-fsharp-major-prepared-roundtrip-left-01",
+        "title": "Фа-диез мажор левой: октава вверх и обратно"
+      },
+      {
+        "id": "detail-p-fsharp-major-prepared-roundtrip-right-01",
+        "title": "Фа-диез мажор правой: октава вверх и обратно"
+      },
+      {
+        "id": "detail-p-fsharp-major-prepared-paired-apex-01",
+        "title": "Фа-диез мажор: разворот двумя руками"
+      }
+    ],
+    "steps": [
+      {
+        "token": "QI",
+        "notes": [
+          "F#3",
+          "F#4"
+        ],
+        "fingers": [
+          4,
+          2
+        ],
+        "timing": "такт 1, доля 1",
+        "duration": 1
+      },
+      {
+        "token": "WO",
+        "notes": [
+          "G#3",
+          "G#4"
+        ],
+        "fingers": [
+          3,
+          3
+        ],
+        "timing": "такт 1, доля 2",
+        "duration": 1
+      },
+      {
+        "token": "EP",
+        "notes": [
+          "A#3",
+          "A#4"
+        ],
+        "fingers": [
+          2,
+          4
+        ],
+        "timing": "такт 1, доля 3",
+        "duration": 1
+      },
+      {
+        "token": "ra",
+        "notes": [
+          "B3",
+          "B4"
+        ],
+        "fingers": [
+          1,
+          1
+        ],
+        "timing": "такт 1, доля 4",
+        "duration": 1
+      },
+      {
+        "token": "TS",
+        "notes": [
+          "C#4",
+          "C#5"
+        ],
+        "fingers": [
+          3,
+          2
+        ],
+        "timing": "такт 2, доля 1",
+        "duration": 1
+      },
+      {
+        "token": "YD",
+        "notes": [
+          "D#4",
+          "D#5"
+        ],
+        "fingers": [
+          2,
+          3
+        ],
+        "timing": "такт 2, доля 2",
+        "duration": 1
+      },
+      {
+        "token": "ig",
+        "notes": [
+          "F4",
+          "F5"
+        ],
+        "fingers": [
+          1,
+          1
+        ],
+        "timing": "такт 2, доля 3",
+        "duration": 1
+      },
+      {
+        "token": "IG",
+        "notes": [
+          "F#4",
+          "F#5"
+        ],
+        "fingers": [
+          2,
+          2
+        ],
+        "timing": "такт 2, доля 4",
+        "duration": 1
+      },
+      {
+        "token": "ig",
+        "notes": [
+          "F4",
+          "F5"
+        ],
+        "fingers": [
+          1,
+          1
+        ],
+        "timing": "такт 3, доля 1",
+        "duration": 1
+      },
+      {
+        "token": "YD",
+        "notes": [
+          "D#4",
+          "D#5"
+        ],
+        "fingers": [
+          2,
+          3
+        ],
+        "timing": "такт 3, доля 2",
+        "duration": 1
+      },
+      {
+        "token": "TS",
+        "notes": [
+          "C#4",
+          "C#5"
+        ],
+        "fingers": [
+          3,
+          2
+        ],
+        "timing": "такт 3, доля 3",
+        "duration": 1
+      },
+      {
+        "token": "ra",
+        "notes": [
+          "B3",
+          "B4"
+        ],
+        "fingers": [
+          1,
+          1
+        ],
+        "timing": "такт 3, доля 4",
+        "duration": 1
+      },
+      {
+        "token": "EP",
+        "notes": [
+          "A#3",
+          "A#4"
+        ],
+        "fingers": [
+          2,
+          4
+        ],
+        "timing": "такт 4, доля 1",
+        "duration": 1
+      },
+      {
+        "token": "WO",
+        "notes": [
+          "G#3",
+          "G#4"
+        ],
+        "fingers": [
+          3,
+          3
+        ],
+        "timing": "такт 4, доля 2",
+        "duration": 1
+      },
+      {
+        "token": "QI",
+        "notes": [
+          "F#3",
+          "F#4"
+        ],
+        "fingers": [
+          4,
+          2
+        ],
+        "timing": "такт 4, доля 3",
+        "duration": 2
+      }
+    ],
+    "version": "23.5.218",
+    "publicFiles": 41,
+    "title": "Фа-диез мажор двумя руками: октава вверх и обратно",
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 375,
+      "scrollWidth": 375,
+      "copyHeight": 111.953125,
+      "lineHeight": "22.4px"
+    },
+    "reader": {
+      "expanded": true,
+      "retainedToggleFocus": true,
+      "enharmonicExplanation": true,
+      "transferVisible": true,
+      "hiddenAfterReload": true,
+      "compactRestored": true
+    },
+    "player": {
+      "start": 0,
+      "max": 14,
+      "end": 14
+    },
+    "singleCorrectKeyWaits": true,
+    "completed": true,
+    "status": "Практика завершена",
+    "nextStayedOnLesson": true,
+    "pass": true,
+    "method": "scripted tester in a dedicated, empty headless browser",
+    "appConsoleWarningsOrErrors": []
+  },
+  "browserClosure": {
+    "checkedAt": "2026-11-20T23:36:55.0472402+05:00",
+    "phase": 254,
+    "previewExitCode": 0,
+    "previewShutdownHttp": 200,
+    "headlessResultPass": true,
+    "embeddedBrowserAttached": false,
+    "ownedProcessesRemaining": 0,
+    "headlessTestDriverExit": 1,
+    "normalEdgeExitCodeObserved": false,
+    "separateCimClosureVerified": true,
+    "note": "Initial browser close acknowledgement timed out after the lesson passed. Immediate process inventory found no Edge or preview process for this phase."
+  },
+  "previousBrowserAttempts": [
+    {
+      "phase": 254,
+      "lessonId": "detail-p-fsharp-major-prepared-roundtrip-paired-01",
+      "profile": "fresh headless Edge",
+      "syntheticBrowserKeyboard": true,
+      "guestOnly": true,
+      "prerequisites": [],
+      "steps": [],
+      "version": "23.5.218",
+      "publicFiles": 41,
+      "pass": false,
+      "failure": "Did not observe new lesson "
+    },
+    {
+      "phase": 254,
+      "lessonId": "detail-p-fsharp-major-prepared-roundtrip-paired-01",
+      "profile": "fresh headless Edge",
+      "syntheticBrowserKeyboard": true,
+      "guestOnly": true,
+      "prerequisites": [],
+      "steps": [],
+      "version": "23.5.218",
+      "publicFiles": 41,
+      "title": "Фа-диез мажор двумя руками: октава вверх и обратно",
+      "mobile": {
+        "viewport": [
+          390,
+          844
+        ],
+        "documentWidth": 375,
+        "scrollWidth": 375,
+        "copyHeight": 111.953125,
+        "lineHeight": "22.4px"
+      },
+      "pass": false,
+      "failure": "Compact card height 111.953125",
+      "method": "scripted tester in a dedicated, empty headless browser",
+      "appConsoleWarningsOrErrors": []
+    }
+  ],
+  "localCopy": {
+    "phase": 254,
+    "version": "23.5.218",
+    "pass": true,
+    "checkedAt": "2026-11-20T23:36:21.239068+05:00",
+    "selectedFiles": 820,
+    "selectedBytes": 82233347,
+    "sourceFiles": 779,
+    "publicFiles": 41,
+    "newStoredFiles": 18,
+    "newStoredBytes": 12095619,
+    "reusedFiles": 802,
+    "retentionDependencies": [
+      "2026-11-20-251-23.5.215",
+      "2026-11-20-252-23.5.216",
+      "2026-11-20-253-23.5.217"
+    ],
+    "changedPublicFiles": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "webPayloadDeltaBytes": 8166,
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedTestsPassed": 5,
+    "manifestSha256": "67418163eff2d172e1f5ea5fc6673dce7b40b6f83a3c3eeef89b56a623064d25",
+    "smokeLogSha256": "0007c2c40e7cc1648039b966c81a0718763e6729b7f288e986dedc55d88a96fc",
+    "restorePath": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-254-work\\restore",
+    "freeBytesBeforeCopy": 710606950400,
+    "scope": "D: selected local source and web files without production data or external backup restore."
+  },
+  "cleanup": {
+    "phase": 254,
+    "checkedAt": "2026-11-21T00:03:34.1862277+05:00",
+    "scratchRemoved": true,
+    "path": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-254-work",
+    "ownedProcessesRemaining": 0,
+    "retainedLocalBuild": true,
+    "logicalBytes": 139393270.0,
+    "availableBeforeBytes": 710494150656,
+    "availableAfterBytes": 710635368448,
+    "observedDeltaBytes": 141217792,
+    "driveActivityNotIsolated": true,
+    "retainedEvidenceFiles": 34
+  },
+  "changedPriorCatalogRecords": 0,
+  "previousCanonicalEditionsCompared": 634,
+  "limits": "Synthetic MIDI and browser keyboard, guest-only. Local selected recovery. Physical playing, accounts and production recovery outside scope."
+}

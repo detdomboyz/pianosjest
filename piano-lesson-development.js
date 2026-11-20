@@ -866,7 +866,21 @@
     events: [...fsharpUpperThreePairedAscent.events, ...fsharpUpperThreePairedDescent.events.slice(1)],
     options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
   };
-  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex);
+  const [fsharpRoundtripLeft, fsharpRoundtripRight] = fsharpRoundtrips;
+  const fsharpPairedRoundtrip = {
+    id: 'detail-p-fsharp-major-prepared-roundtrip-paired-01',
+    title: 'Фа-диез мажор двумя руками: октава вверх и обратно',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: fsharpPairedApex.id,
+    requires: [
+      fsharpConnectedPairedAscent.id, fsharpConnectedPairedDescent.id,
+      fsharpRoundtripLeft.id, fsharpRoundtripRight.id, fsharpPairedApex.id
+    ],
+    goal: 'Соедини подъём и спуск фа-диез мажора двумя руками. Сохрани общий пульс, когда правая меняет позицию между ля-диезом и си, а левая между си и до-диезом. Верхняя пара звучит один раз. Нижнюю пару держи две доли.',
+    events: [...fsharpConnectedPairedAscent.events, ...fsharpConnectedPairedDescent.events.slice(1)],
+    options: { ...fsharpRoundtripLeft.options, articulation: 'standard' }
+  };
+  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex, fsharpPairedRoundtrip);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1052,6 +1066,51 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: fsharpPairedApex.goal,
         context: 'Согласование возвращающихся нот после разворота у вершины мелодической линии.',
         sourceNote: 'Техническое упражнение MelodiaJest по двум схемам Piano Fingering Figures, фа-диез мажор в одну октаву, рисунок 1 Whole View каждой руки. В схемах пять восьмых вокруг общей вершины: слева 2–1–2–1–2, справа 3–1–2–1–3. Проект объединяет две руки и переводит фразу в четыре четверти и половинную при 40 BPM. Тихая доля и допуски заданы для упражнения.'
+      }
+    });
+  }
+
+  function describeFsharpPairedRoundtrip(lesson, adapter) {
+    const setup = 'Сыграй подъём и спуск двумя руками по ссылкам. Повтори полный разворот каждой рукой, затем пять пар у вершины. Начни с F♯3 четвёртым слева и F♯4 вторым справа. Педаль выключена.';
+    const motion = 'На подъёме правый большой идёт под четвёртым с A♯ к B. На B встречаются оба больших. Дальше у C♯ слева средний проходит над большим, справа играет указательный. На спуске выполни эти смены в обратном порядке. Слушай общее вступление, когда руки двигаются по-разному.';
+    const count = 'Считай четыре такта 4/4 при 40 BPM. Верхняя пара звучит на «четыре» второго такта. Вернись на E♯ на «раз» третьего. Нижние F♯ держи на «три–четыре» четвёртого такта и отпусти вместе на следующем «раз». Отсчитай после отпускания одну тихую долю.';
+    const hearing = 'Послушай образец, затем пропой подъём и спуск. Услышь одно вступление у каждой пары. Через верхнюю пару и через смены позиции сохраняй одинаковые промежутки между атаками.';
+    const mastery = 'Пятнадцать общих вступлений, один разворот и две полные доли нижней пары. Ровность звука, пальцы и свободу кистей проверь вручную.';
+    const prefix = 'https://en.piano-fingering.org/sharp-keys/6-sharps-f-sharp-major/f-sharp-major-scale-1-octave-';
+    const left = prefix + 'left-hand/';
+    const right = prefix + 'right-hand/';
+    const { beats, bpm } = fsharpPairedRoundtrip.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-fsharp-major-prepared-paired-roundtrip-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Полная октава двумя руками с разворотом', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'fsharp-major-prepared-paired-roundtrip', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Медленно сыграй пять пар D♯–E♯–F♯–E♯–D♯ из подготовки. E♯4 и E♯5 звучат на белых F4 и F5. В полной фразе каждая из этих пар занимает одну долю. Сыграй верхние F♯ один раз обоими указательными и верни оба больших на следующую долю.',
+        'Собери октаву. Левая вверх 4–3–2–1–3–2–1–2, вниз 2–1–2–3–1–2–3–4. Правая вверх 2–3–4–1–2–3–1–2, вниз 2–1–3–2–1–4–3–2. Последний палец подъёма и первый палец спуска приходятся на одно общее нажатие.',
+        motion, count, hearing,
+        'Работай 3–5 минут короткими пробами с отдыхом. Придумай ответ из 8–10 пар в фа-диез мажоре. Сам выбери начало между G♯ и B, место разворота и одну удлинённую пару. Сохрани хотя бы одну знакомую смену позиции между A♯ и B или B и C♯. Назови пальцы и счёт, затем проверь совместность на слух. Повтори после отдыха и на следующий день.'
+      ],
+      selfCheck: [
+        'Правая и левая меняют позицию на своих ступенях. У B и C♯ слышу общие атаки без задержки одной руки.',
+        'F♯4 звучит в начале и конце справа, а на вершине слева. Каждый раз клавиша нажимается заново.',
+        'После одной верхней пары обе руки сразу возвращаются вниз в общем пульсе. Последние F♯ звучат две доли и отпускаются вместе.',
+        'Правильные пальцы, свободу кистей, тихую долю и перенос в ответную фразу проверяю вручную.'
+      ],
+      rhythmNotice: count,
+      references: [left, right],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures: фа-диез мажор левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures: фа-диез мажор правой рукой, рисунок 1'
+      },
+      sourceEvidenceIds: fsharpRoundtrips.flatMap(spec => spec.sources),
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: fsharpPairedRoundtrip.goal,
+        context: 'Параллельные октавы в мелодии и согласование рук при сменах позиции на разных ступенях.',
+        sourceNote: 'Piano Fingering Figures, F-sharp Major scale 1 octave, рисунок 1 Whole View каждой руки. В каждой схеме пятнадцать восьмых и восьмая пауза. Проект объединяет две схемы в параллельные октавы с исходными нотами и пальцами и задаёт четырнадцать четвертей, последнюю половинную и 40 BPM. Тихая доля отсчитывается вручную.'
       }
     });
   }
@@ -4451,6 +4510,9 @@
     }
     if (!existing.has(fsharpPairedApex.id)) {
       describeFsharpPairedApex(lessons.find(lesson => lesson.id === fsharpPairedApex.id), adapter);
+    }
+    if (!existing.has(fsharpPairedRoundtrip.id)) {
+      describeFsharpPairedRoundtrip(lessons.find(lesson => lesson.id === fsharpPairedRoundtrip.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
