@@ -472,6 +472,8 @@
 | detail-p-fsharp-major-upper-three-descent-left-01 | Фа-диез мажор левой вниз: верхняя связка 2–1–2 | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-descent-left-01; сначала detail-p-f-major-descent-checkpoint-left-01 |
 | detail-p-eflat-middle-descent-left-01 | Левая вниз: C4–B♭3–A♭3 под 2–3–4 | 3 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-descent-left-01; сначала detail-p-e-major-descent-left-01 |
 | detail-p-eflat-major-descent-left-01 | Ми-бемоль мажор левой вниз: 1+4+3, E♭4–E♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-descent-left-01; сначала detail-p-eflat-middle-descent-left-01 |
+| detail-p-e-major-prepared-roundtrip-right-01 | Ми мажор правой: один разворот E4–E5–E4 | 15 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01; сначала detail-p-e-major-descent-right-01; сначала detail-p-g-major-upper-right-01 |
+| detail-p-e-major-prepared-roundtrip-left-01 | Ми мажор левой: один разворот E3–E4–E3 | 15 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-left-01; сначала detail-p-e-major-descent-left-01; сначала detail-p-g-major-upper-left-01 |
 | detail-p-fsharp-major-thumb-half-step-right-01 | Правая: E♯5/1 → F♯5/2 через полутон | 2 | 40 | MIDI-челлендж | сначала detail-p-e-major-ascent-right-01 |
 | detail-p-fsharp-major-upper-ascent-right-01 | Правая: D♯5/3 → E♯5/1 → F♯5/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-fsharp-major-thumb-half-step-right-01; сначала detail-p-bflat-major-ascent-right-01 |
 | detail-p-fsharp-major-four-thumb-right-01 | Правая: A♯4/4 → B4/1 через полутон | 2 | 40 | MIDI-челлендж | сначала detail-p-f-major-fourth-thumb-connected-right-01 |

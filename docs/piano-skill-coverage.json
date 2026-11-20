@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-19T17:55:01.841Z",
+  "generatedAt": "2026-11-20T11:18:40.035Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 628,
-    "checkedMidiRouteLessons": 358,
-    "withStructuredProvenance": 331,
-    "individuallyMappedToDomain": 331,
+    "implementedLearningLessons": 630,
+    "checkedMidiRouteLessons": 360,
+    "withStructuredProvenance": 333,
+    "individuallyMappedToDomain": 333,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 604,
+    "goalGroupUpperBound": 606,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -377,7 +377,9 @@
         "detail-p-csharp-major-apex-turn-left-01",
         "detail-p-csharp-major-apex-turn-right-01",
         "detail-p-csharp-major-prepared-roundtrip-left-01",
-        "detail-p-csharp-major-prepared-roundtrip-right-01"
+        "detail-p-csharp-major-prepared-roundtrip-right-01",
+        "detail-p-e-major-prepared-roundtrip-left-01",
+        "detail-p-e-major-prepared-roundtrip-right-01"
       ],
       "plannedLessonIds": []
     },
@@ -15914,6 +15916,62 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-e-major-prepared-roundtrip-left-01",
+      "title": "Ми мажор левой: один разворот E3–E4–E3",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 15,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Сыграй левой ми мажор от E3 до E4 и обратно. На подъёме и спуске свяжи B3 и C♯4 через смену большого и среднего пальцев. Развернись на E4 один раз и сохрани пульс до нижней E3.",
+      "requires": [
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-major-descent-left-01",
+        "detail-p-g-major-upper-left-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "potsdam-e-major-left-map-2026-11-13",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
+      "id": "detail-p-e-major-prepared-roundtrip-right-01",
+      "title": "Ми мажор правой: один разворот E4–E5–E4",
+      "themeId": "detail-p-major-scales",
+      "stage": "p7",
+      "actions": 15,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "major-scales",
+      "goal": "Сыграй правой ми мажор от E4 до E5 и обратно. Свяжи G♯4 и A4 в обоих направлениях. После E5 мизинцем вернись на D♯5 безымянным на следующую долю и сохрани пульс до нижней E4.",
+      "requires": [
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-major-descent-right-01",
+        "detail-p-g-major-upper-right-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "potsdam-e-major-right-map-2026-11-13",
+        "dumlavwalla-basic-technique-2026-11-05",
+        "kovarsky-fingering-context-2026-11-05",
+        "duke-simmons-small-goals-2026-11-05"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-improv-three-key-answer-right-01",
       "title": "Правая: свой ответ из C4–D4–E4",
       "themeId": "detail-p-improv-response",
@@ -16598,5 +16656,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Complete250target141/audits/service/build/full2990/two guestbrowsercases/Dcopyrestore/cleanup/docs/native/mainpush.No hosting before1000;retain different-published-base codec/rollback gate."
+  "nextAction": "После нового прямого запроса проверить двуручный ми мажор по фактическому каталогу. Сверить, есть ли полные непрерывные парные подъём и спуск с аппликатурами из двух одноручных уроков этапа 251. Если обоих направлений достаточно для объединения и полной фразы ещё нет, выбрать одну подготовленную задачу координации. Если подготовки не хватает, сначала закрыть подтверждённый пробел. Перед изменениями заново проверить квоту, источник, отсутствие дублей и копию этапа 251. Публикация курса отложена до достижения 1000 содержательных целей."
 }

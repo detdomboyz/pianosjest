@@ -785,6 +785,102 @@
 
 
 
+  const eMajorRoundtrips = [
+    {
+      hand: 'left',
+      octave: [52, 54, 56, 57, 59, 61, 63, 64],
+      fingers: [5, 4, 3, 2, 1, 3, 2, 1],
+      tonic: 'E3', apex: 'E4', turn: 'D♯4–E4–D♯4', turnFingers: '2–1–2',
+      previousTurn: 'F♯3–G3–F♯3',
+      connection: 'На подъёме после B3 большим пальцем перенеси средний на C♯4. На спуске после C♯4 подведи большой к B3. Предплечье свободно следует за кистью. У верхней E4 большим пальцем сразу готовь возвращение на D♯4 указательным.',
+      goal: 'Сыграй левой ми мажор от E3 до E4 и обратно. На подъёме и спуске свяжи B3 и C♯4 через смену большого и среднего пальцев. Развернись на E4 один раз и сохрани пульс до нижней E3.'
+    },
+    {
+      hand: 'right',
+      octave: [64, 66, 68, 69, 71, 73, 75, 76],
+      fingers: [1, 2, 3, 1, 2, 3, 4, 5],
+      tonic: 'E4', apex: 'E5', turn: 'D♯5–E5–D♯5', turnFingers: '4–5–4',
+      previousTurn: 'F♯4–G4–F♯4',
+      connection: 'На подъёме подведи большой к A4 после G♯4 средним. На спуске после A4 перенеси средний через большой к G♯4. У верхней E5 мизинцем легко верни D♯5 безымянным и C♯5 средним, сохраняя ровную громкость.',
+      goal: 'Сыграй правой ми мажор от E4 до E5 и обратно. Свяжи G♯4 и A4 в обоих направлениях. После E5 мизинцем вернись на D♯5 безымянным на следующую долю и сохрани пульс до нижней E4.'
+    }
+  ].map(spec => {
+    const { hand, octave, fingers, tonic, apex } = spec;
+    const up = octave.map((midi, i) => [tone(midi, fingers[i], hand)]);
+    const events = [...up, ...up.slice(0, -1).reverse()];
+    return {
+      ...spec,
+      id: 'detail-p-e-major-prepared-roundtrip-' + hand + '-01',
+      title: 'Ми мажор ' + (hand === 'left' ? 'левой' : 'правой') + ': один разворот ' + [tonic, apex, tonic].join('–'),
+      group: 'major-scales', groupTitle: 'Мажорные гаммы', stage: 'p7', after: 'course10-08',
+      requires: ['detail-p-e-major-ascent-', 'detail-p-e-major-descent-', 'detail-p-g-major-upper-']
+        .map(prefix => prefix + hand + '-01'),
+      events,
+      options: { bpm: 40, beats: [...Array(14).fill(1), 2], articulation: 'legato' }
+    };
+  });
+  piano.push(...eMajorRoundtrips);
+
+  function describeEMajorRoundtrip(lesson, spec, adapter) {
+    const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
+    const setup = 'Сыграй подготовку вверх и вниз этой рукой по ссылкам. Затем перенеси знакомый разворот ' +
+      previousTurn + ' из соль мажора на ' + turn + ', сохраняя пальцы ' + turnFingers +
+      '. Начни целую фразу от ' + tonic + '. Вторая рука отдыхает, педаль выключена.';
+    const motion = connection + ' Отпускай прежнюю клавишу к началу следующей ноты. После ' + apex +
+      ' продолжи счёт вниз. При напряжении остановись и вернись к трём нотам разворота.';
+    const count = 'При 40 BPM считай четыре такта 4/4. Верхняя ' + apex +
+      ' звучит на «четыре» второго такта, следующий D♯ — на «раз» третьего. Четырнадцать четвертей и две доли последней ' + tonic +
+      ': держи её на «три–четыре», отпусти на следующем «раз». Одну тихую долю после отпускания отсчитай сам.';
+    const hearing = 'Послушай образец. Затем пропой подъём и спуск в удобном регистре. Услышь один верхний звук, ровный переход к спуску и длинную нижнюю опору. Сравни плавность и громкость на стыке двух направлений.';
+    const mastery = 'Пятнадцать нажатий с четырьмя диезами, одна верхняя нота, ровный счёт и своевременное отпускание последней тоники.';
+    const source = 'https://www.potsdam.edu/sites/default/files/KeyboardSkillsI.pdf';
+    const sourceNote = 'Техническое упражнение MelodiaJest. SUNY Potsdam, Requirements for Keyboard Skills I (MUCC 111), § 3 Scales на с. 1 и третья строка Major Scales на с. 2 PDF. Таблица даёт E–F♯–G♯–A–B–C♯–D♯–E и пальцы ' +
+      fingers.join('–') + ' для этой руки. Программа задаёт игру вверх и вниз каждой рукой отдельно. В проекте две части соединены через одну общую вершину. ' +
+      'Регистр, 40 BPM, legato, последняя половинная, ручная тихая доля и допуски выбраны для этого задания. Экзаменационный темп источника — 126.';
+    lesson.rhythm.source = 'project-e-major-prepared-roundtrip-' + hand + '-v1';
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Ми мажор: одна октава вверх и обратно', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'e-major-prepared-roundtrip-' + hand,
+      coverageDomain: 'major-scales',
+      timingPrecision: 'beat-boundary-v2',
+      nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Медленно сыграй первую и вторую половины. Вверх пальцы ' + fingers.join('–') +
+          ', вниз ' + [...fingers].reverse().join('–') + '. Сыграй верхнюю клавишу один раз на стыке.',
+        motion, count, hearing,
+        'Разбирай фразу 3–5 минут короткими пробами с отдыхом. После перерыва и на следующий день сыграй её снова. Для переноса придумай мотив из 5–7 нот ми мажора с одним поворотом в другом месте. Назови пальцы и счёт заранее, затем проверь их на слух и рукой.'
+      ],
+      selfCheck: [
+        'Во всей фразе звучат F♯, G♯, C♯ и D♯. Верхняя ' + apex + ' нажата один раз.',
+        'На развороте слышен ровный пульс. Возвращающиеся ноты начинаются новым нажатием.',
+        'Последняя ' + tonic + ' звучит две доли и полностью отпускается.',
+        'Ладонь свободна. Пальцы, ровность звука и перенос в новую фразу проверь вручную.'
+      ],
+      rhythmNotice: count,
+      references: [source, TECHNIQUE, POSITION_CONTEXT, PRACTICE],
+      referenceTitles: {
+        [source]: 'SUNY Potsdam: ми мажор, таблица аппликатуры, PDF с. 2',
+        [TECHNIQUE]: 'Diana Dumlavwalla: свободная кисть',
+        [POSITION_CONTEXT]: 'Jerry Kovarsky: аппликатура в контексте фразы',
+        [PRACTICE]: 'Robert Duke и Amy Simmons: короткие цели и повторения'
+      },
+      sourceEvidenceIds: [
+        'potsdam-e-major-' + hand + '-map-2026-11-13',
+        'dumlavwalla-basic-technique-2026-11-05',
+        'kovarsky-fingering-context-2026-11-05',
+        'duke-simmons-small-goals-2026-11-05'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: spec.goal,
+        context: 'Смена направления в мелодии при сохранении ровного пульса, аппликатуры и тональности.',
+        sourceNote
+      }
+    });
+  }
+
   function describeDMajorDescentLeft(lesson,spec,adapter){
     const bpm=44,starts=[0,1,2,3,4,5,6,7];
     lesson.rhythm=adapter.normalizeRhythm({version:1,source:'project-d-major-descent-left-v1',bpm,practiceBpm:bpm,timeSignature:{numerator:4,denominator:4},steps:starts.map((startBeat,i)=>({startBeat,durationBeats:1,restBeforeBeats:0,measure:Math.floor(startBeat/4)+1,beatInMeasure:startBeat%4,sourceStartMs:startBeat*60000/bpm,sourceDurationMs:60000/bpm,stepIndex:i}))},8);lesson.timeLimit=30;
@@ -4169,6 +4265,9 @@
     if(!existing.has(csharpPreparedRoundtripRight.id))describeCsharpPreparedRoundtripRight(lessons.find(l=>l.id===csharpPreparedRoundtripRight.id),adapter);
     if(!existing.has(csharpApexTurnPaired.id))describeCsharpApexTurnPaired(lessons.find(l=>l.id===csharpApexTurnPaired.id),adapter);
     if(!existing.has(csharpPreparedRoundtripPaired.id))describeCsharpPreparedRoundtripPaired(lessons.find(l=>l.id===csharpPreparedRoundtripPaired.id),adapter);
+    for (const spec of eMajorRoundtrips) {
+      if (!existing.has(spec.id)) describeEMajorRoundtrip(lessons.find(lesson => lesson.id === spec.id), spec, adapter);
+    }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
     if(!existing.has(bMajorUpperDescentRight.id))describeBMajorRightDescent(lessons.find(l=>l.id===bMajorUpperDescentRight.id),adapter,'upper');

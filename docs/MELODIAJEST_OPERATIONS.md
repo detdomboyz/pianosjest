@@ -1,3 +1,5 @@
+20 ноября 2026 один ручной проход MelodiaJest завершён локально на этапе 251. Два урока, версия 23.5.215, общий прогон с проверкой исправленного исторического теста, гостевой браузер и восстановление выбранной копии на D:. Сайт на 23.5.186. Расписание на паузе. Подробности в docs/reports/melodiajest-operations-2026-11-20-251.md.
+
 Актуальное продолжение19ноября2026: этап239/23.5.203 проверен локально;607learning/583upperonly,nullteacher0;2800full/158target/4аудита/3case desktop390BrowserPASS.210music/99local,Public23.5.186.3нисходящиепарныеподготовки F♯major;codecдельта20138→462B,legacy same-base restore проверен,публичныйrollbackещёgated. Следующий240 — полнаянисходящаядвуручнаяфраза,толькоплан. Отчётdocs/reports/melodiajest-operations-2026-11-19-239.md.
 
 Актуальное продолжение18ноября2026: этап233/23.5.197,599learning/575upperonly,verifiedDistinct=null,2711full93targetPASS. Public23.5.186, следующий234 локально до1000. Отчётdocs/reports/melodiajest-operations-2026-11-18-233.md.

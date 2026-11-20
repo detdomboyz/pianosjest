@@ -1,0 +1,139 @@
+{
+  "phase": 251,
+  "version": "23.5.215",
+  "checkedAt": "2026-11-20T11:53:34.318744+00:00",
+  "full": {
+    "tests": 3016,
+    "pass": 3014,
+    "fail": 2,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 1760093.8461
+  },
+  "target": {
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 2147.3812
+  },
+  "service": {
+    "tests": 60,
+    "pass": 53,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 7,
+    "todo": 0,
+    "duration_ms": 36045.4685
+  },
+  "previousCatalogRed": {
+    "tests": 6,
+    "pass": 1,
+    "fail": 5,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 2544.4809
+  },
+  "onlyOneFullRun": true,
+  "firstFullExitCode": 1,
+  "finalBytesFullNotRerun": true,
+  "targetTestsInFull": [
+    "E major left integrates both prepared octaves with a single apex",
+    "E major left client and canonical grading require a continuous turn and final release",
+    "E major right integrates both prepared octaves with a single apex",
+    "E major right client and canonical grading require a continuous turn and final release",
+    "E major addition preserves the 776 existing records, canon, themes, navigation and baseline",
+    "E major source applications leave older evidence intact and explain the project rhythm"
+  ],
+  "finalCoverage": 3016,
+  "unchangedFullTestsPassed": 2996,
+  "historicalFileRecheckedPass": 20,
+  "affectedTargetRecheck": {
+    "tests": 26,
+    "pass": 26,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 112713.2056
+  },
+  "resolvedFullRegressions": [
+    "paired-roundtrip250 short preserves415 actual Next paths,old catalogue order and separate new optional branch",
+    "paired-roundtrip250 full preserves415 actual Next paths,old catalogue order and separate new optional branch"
+  ],
+  "onlyFrozenChangeAfterFull": "tests/piano-csharp-major-prepared-paired-roundtrip.test.cjs",
+  "unchangedApplicationHashesExact": true,
+  "allRuntimeHashesExact": true,
+  "checks": [
+    {
+      "command": "audit-lessons",
+      "startedAt": "2026-11-20T11:18:08.3921663Z",
+      "finishedAt": "2026-11-20T11:18:13.7273314Z",
+      "exitCode": 0,
+      "bytes": 754,
+      "sha256": "1bdc7ae9a390f93696197edadc260c5fd591cddd3b7f1413e1dc9697f0815396"
+    },
+    {
+      "command": "audit-fingering",
+      "startedAt": "2026-11-20T11:18:13.7560992Z",
+      "finishedAt": "2026-11-20T11:18:23.9306884Z",
+      "exitCode": 0,
+      "bytes": 736,
+      "sha256": "694c1c7a7b7e9b06f40ae4dbe43108a6145a733932e0836a1462f9d1921e1ab9"
+    },
+    {
+      "command": "audit-curriculum",
+      "startedAt": "2026-11-20T11:18:23.9402835Z",
+      "finishedAt": "2026-11-20T11:18:37.3997800Z",
+      "exitCode": 0,
+      "bytes": 646,
+      "sha256": "05bfe7aaf2eee20b88c083f8655de6cb5f55b0c3e38dcf4fcc3ac6039ca0580f"
+    },
+    {
+      "command": "audit-coverage",
+      "startedAt": "2026-11-20T11:18:37.4072056Z",
+      "finishedAt": "2026-11-20T11:18:40.0792301Z",
+      "exitCode": 0,
+      "bytes": 494,
+      "sha256": "4c3e899c2b08ee6867aa004d718b6d715e7e6ec155e6962bfa728a74204ae8d0"
+    },
+    {
+      "command": "service",
+      "startedAt": "2026-11-20T11:18:40.0894817Z",
+      "finishedAt": "2026-11-20T11:19:17.7268135Z",
+      "exitCode": 0,
+      "bytes": 15598,
+      "sha256": "d50e76389036a0f72d206953d79c2c585287b8c6070a19d28e373116de5fc886"
+    },
+    {
+      "command": "build",
+      "startedAt": "2026-11-20T11:19:17.7402799Z",
+      "finishedAt": "2026-11-20T11:19:18.5627099Z",
+      "exitCode": 0,
+      "bytes": 242,
+      "sha256": "dcdd07019c2e15525462fe65a6ccaf36bfbbd9a4207796a88eb11160c3b61af7"
+    },
+    {
+      "command": "full",
+      "startedAt": "2026-11-20T11:19:18.5709507Z",
+      "finishedAt": "2026-11-20T11:48:39.2357166Z",
+      "exitCode": 1,
+      "bytes": 801080,
+      "sha256": "3a42bab17653a5f6a553f63f5723e3becec8e524fc94d684a7b20782557508b1"
+    }
+  ],
+  "sourceCopyManifest": "a9f0a1beb338fbd664ec19b15a3704bf3a7498ef27dd69394982925861ac893f",
+  "sourceFunctionalRestoreVerified": true,
+  "copyMetadataRecovery": {
+    "exited": 1,
+    "stage": "serializing checks metadata after actual restore and manifest",
+    "toolChunk": "63bd57",
+    "message": "The Python variable for the target-test totals was shadowed by a Path. The restore passed and signed byte hashes were read independently. Wrote only the missing verification metadata.",
+    "testReruns": 0,
+    "restoreReruns": 0
+  }
+}

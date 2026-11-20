@@ -3425,6 +3425,30 @@
       ]
     },
     {
+      "id": "detail-p-e-major-prepared-roundtrip-right-01",
+      "stage": "p7",
+      "branch": "e-major-prepared-roundtrip-right",
+      "fingerprint": "3dd080e4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-right-01",
+        "detail-p-e-major-descent-right-01",
+        "detail-p-g-major-upper-right-01"
+      ]
+    },
+    {
+      "id": "detail-p-e-major-prepared-roundtrip-left-01",
+      "stage": "p7",
+      "branch": "e-major-prepared-roundtrip-left",
+      "fingerprint": "f5ef199f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-e-major-ascent-left-01",
+        "detail-p-e-major-descent-left-01",
+        "detail-p-g-major-upper-left-01"
+      ]
+    },
+    {
       "id": "detail-p-fsharp-major-thumb-half-step-right-01",
       "stage": "p7",
       "branch": "fsharp-major-right-upper-transition",

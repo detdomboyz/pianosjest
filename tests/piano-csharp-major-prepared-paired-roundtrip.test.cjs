@@ -63,7 +63,30 @@ for(const s of specs){
   for(const mode of selected){const clock={now:1000},a=loadApp({events:true,clock,storage:createMemoryStorage(),locks:{request:async(n,o,fn)=>fn({name:n})}});a.setTestLesson(lesson(a));a.state.attemptMode='challenge';assert.equal(a.challengeEligible(),true);const es=events(mode);for(const[i,e]of es.entries()){clock.now=e.at;if(mode==='clean'&&i===es.length-1)assert.equal(a.state.completed,false,'wait for second final release');if(e.type==='on')a.handleNoteOn(e.midi,e.source);else a.handleNoteOff(e.midi);}assert.equal(a.state.passed,mode==='clean',mode);assert.equal(a.state.learningProgress[ID]?.cleanTakes??0,mode==='clean'?1:0);if(mode==='clean')assert.equal(a.state.completed,true);if(mode==='missing-final-off')assert.equal(a.state.completed,false);for(const id of new Set([...s.requires,...specs.filter(x=>x.id!==ID).map(x=>x.id)]))assert.equal(Object.hasOwn(a.state.learningProgress,id),false,id);await a.legacyProgressStore.settled();a.resetLessonState();}
  });
  test(label+' preserves415 actual Next paths,old catalogue order and separate new optional branch',()=>{
-  const live=loadApp({events:true,storage:createMemoryStorage()}),all=live.lessons;live.state.guidedPath=true;live.setContentSection('learning');assert.equal(before.oldNextPaths.length,84);assert.equal(before.oldOptionalNextPaths.length,331);for(const x of [...before.oldNextPaths,...before.oldOptionalNextPaths]){live.setTestLesson(all.find(l=>l.id===x.from));live.nextLesson();assert.equal(live.state.lesson.id,x.to??x.from,x.from);}live.setTestLesson(lesson(live));live.nextLesson();assert.equal(live.state.lesson.id,s.nextLessonId??ID);assert.equal(lesson(live).learning.branch,BRANCH);const cov=require('../tools/piano-skill-coverage.cjs').build();assert.equal(cov.counts.implementedLearningLessons,628);assert.equal(cov.counts.goalGroupUpperBound,604);assert.equal(cov.counts.verifiedDistinctGoalCount,null);assert.equal(cov.counts.independentTeacherReviewed,0);const old=new Set(before.catalog.map(x=>x.id));assert.deepEqual(plain(all.filter(l=>old.has(l.id)).map(l=>l.id)),before.catalog.map(x=>x.id));assert.equal(C.next(route(),'piano',all,'course10-08'),null);
+  const live=loadApp({events:true,storage:createMemoryStorage()});
+  const all=live.lessons;
+  live.state.guidedPath=true;
+  live.setContentSection('learning');
+  assert.equal(before.oldNextPaths.length,84);
+  assert.equal(before.oldOptionalNextPaths.length,331);
+  for (const x of [...before.oldNextPaths,...before.oldOptionalNextPaths]) {
+   live.setTestLesson(all.find(l=>l.id===x.from));
+   live.nextLesson();
+   assert.equal(live.state.lesson.id,x.to??x.from,x.from);
+  }
+  live.setTestLesson(lesson(live));
+  live.nextLesson();
+  assert.equal(live.state.lesson.id,s.nextLessonId??ID);
+  assert.equal(lesson(live).learning.branch,BRANCH);
+  const cov=require('../tools/piano-skill-coverage.cjs').build();
+  const current=require('./fixtures/piano-curriculum-counts.json');
+  assert.equal(cov.counts.implementedLearningLessons,current.implementedLearningLessons);
+  assert.equal(cov.counts.goalGroupUpperBound,current.goalGroupUpperBound);
+  assert.equal(cov.counts.verifiedDistinctGoalCount,null);
+  assert.equal(cov.counts.independentTeacherReviewed,0);
+  const old=new Set(before.catalog.map(x=>x.id));
+  assert.deepEqual(plain(all.filter(l=>old.has(l.id)).map(l=>l.id)),before.catalog.map(x=>x.id));
+  assert.equal(C.next(route(),'piano',all,'course10-08'),null);
  });
  test(label+' preserves142 original source cores and registers4fresh plus3reused scoped applications from separate charts',()=>{
   const l=lesson(),ledger=require('../docs/piano-curriculum-sources.json'),original=entries=>entries.slice(0,142).map(e=>{const x=plain(e);if(Array.isArray(x.applications)){x.applications=x.applications.filter(a=>a.batch<=before.sourceApplicationCutoff);if(!x.applications.length)delete x.applications;}return x;});assert.equal(hash(original(ledger.entries)),before.sourceEntriesSha256);const damaged=original(ledger.entries);damaged[141].supports='changed';assert.notEqual(hash(damaged),before.sourceEntriesSha256);const future=plain(ledger.entries);future.push({id:'future'});(future[0].applications??=[]).push({batch:'2099-01-01-01',lessonIds:['future']});assert.equal(hash(original(future)),before.sourceEntriesSha256);assert.equal(l.learning.references.length,5);assert.equal(new Set(l.learning.references).size,5);assert.equal(l.learning.sourceEvidenceIds.length,7);let fresh=0,reused=0;
