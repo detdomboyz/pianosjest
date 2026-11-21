@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import os
 from pathlib import Path
+import random
 import shutil
 import sys
 import tempfile
@@ -71,6 +72,22 @@ class RecoveryKits(unittest.TestCase):
         self.assertTrue(result['success']);self.assertTrue(result['coldRestore']);self.assertFalse(result['productionInputsUsed']);self.assertEqual(result['controlsRestored'],12)
         self.assertEqual(len(runtime.checked),2);self.assertEqual(result['entries']['current']['manifestSha256'],self.shas['new'])
         self.assertTrue(all(str(self.root/'cold') in path for path in runtime.checked))
+
+    def test_cold_restore_accepts_a_bundle_larger_than_one_archive_member(self):
+        rng = random.Random(220)
+        for name in ('examples.js', 'exercises.js'):
+            (self.source / name).write_bytes(rng.randbytes(9 * 1024 * 1024))
+        bundled = self.make_edition('larger', '1.0.2')
+        self.assertGreater(bundled['bytes'], artifact.MAX_FILE)
+        self.write_policy()
+        update.switch(self.base, 'current', 'releases/larger')
+        self.complete()
+        kit = self.prepare()
+        restored = replica.restore_check(
+            kit['path'], kit['manifestSha256'], self.root / 'cold',
+            lambda base, image: fixture.FakeNginx(),
+        )
+        self.assertEqual(restored['entries']['current']['manifestSha256'], bundled['webManifestSha256'])
 
     def test_changed_archive_and_unlisted_secret_reject_the_kit(self):
         self.complete();prepared=self.prepare();kit=Path(prepared['path']);snapshot=backup.load_snapshot(kit)

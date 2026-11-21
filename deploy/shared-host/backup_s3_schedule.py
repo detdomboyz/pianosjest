@@ -73,7 +73,9 @@ class Backend:
         source=ctx['source'];sha=ctx['checkoutSha256'];_,meta=artifact.read_bundle(source,sha)
         require(meta['sourceSnapshotIncluded'] and meta['webManifestSha256']==ctx['currentManifestSha256'],'selected source does not cover current release')
         folder=job.private_directory(OPS/('development-source-'+sha[:12]));target=folder/'selected-checkout.tar.gz'
-        if target.exists():require(artifact.sha256(artifact.regular_bytes(folder,target.name))==sha,'immutable selected checkout changed')
+        if target.exists():
+            saved=artifact.regular_bytes(folder,target.name,max_bytes=artifact.MAX_TOTAL)
+            require(artifact.sha256(saved)==sha,'immutable selected checkout changed')
         else:
             with target.open('xb') as out:out.write(source.read_bytes())
             target.chmod(0o600);require(artifact.sha256(target.read_bytes())==sha,'selected source staging differs')

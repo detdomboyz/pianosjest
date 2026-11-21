@@ -72,6 +72,19 @@ class RuntimeContract(unittest.TestCase):
   with tempfile.TemporaryDirectory(prefix='melodiajest-payload-test-') as directory:
    p=Path(directory).resolve();digest=self.payload(p);self.assertEqual(len(job.verify_payload(p,digest)['files']),8);(p/'checkout.tar.gz').write_bytes(b'changed')
    with self.assertRaises(ValueError):job.verify_payload(p,digest)
+ def test_larger_release_payload_uses_the_bundle_size_cap(self):
+  with tempfile.TemporaryDirectory(prefix='melodiajest-payload-test-') as directory:
+   path=Path(directory).resolve();self.payload(path)
+   file=path/'checkout.tar.gz'
+   data=b'0'*(65*1024*1024)
+   file.write_bytes(data)
+   manifest=json.loads((path/'payload.json').read_bytes())
+   manifest['files']['checkout.tar.gz']=job.artifact.descriptor(data)
+   raw=json.dumps(manifest).encode();(path/'payload.json').write_bytes(raw)
+   digest=hashlib.sha256(raw).hexdigest()
+   self.assertEqual(job.verify_payload(path,digest)['files'],manifest['files'])
+   with file.open('r+b') as archive:archive.truncate(job.artifact.MAX_TOTAL+1)
+   with self.assertRaisesRegex(ValueError,'size limit'):job.verify_payload(path,digest)
  def test_extra_nested_manifest_is_not_ignored(self):
   with tempfile.TemporaryDirectory(prefix='melodiajest-payload-test-') as directory:
    p=Path(directory).resolve();digest=self.payload(p);(p/'published/payload.json').write_bytes(b'{}')

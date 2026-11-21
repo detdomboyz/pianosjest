@@ -32,6 +32,12 @@ def expected_names(snapshot, receipt):
     return names
 
 
+def kit_bytes(path, name):
+    # A blob is a whole archive. Its members are still checked by read_bundle.
+    limit = artifact.MAX_TOTAL if name.startswith('blobs/') else artifact.MAX_FILE
+    return artifact.regular_bytes(path, name, max_bytes=limit)
+
+
 def load_kit(path, expected):
     path = Path(path).absolute()
     require(path.resolve() == path and path.is_dir() and not path.is_symlink(), 'Kit must be a real directory')
@@ -57,7 +63,7 @@ def load_kit(path, expected):
             require(item.is_dir() and item.relative_to(path).as_posix() in {'blobs', 'controls', 'snapshots'}, 'Unexpected kit directory')
     require(actual == set(listed) | {MANIFEST}, 'Unlisted or missing kit files')
     for name, descriptor in listed.items():
-        require(artifact.descriptor(artifact.regular_bytes(path, name)) == descriptor, 'Kit file checksum differs')
+        require(artifact.descriptor(kit_bytes(path, name)) == descriptor, 'Kit file checksum differs')
     receipt = backup.json_file(path / 'last-backup-success.json')
     snapshot = backup.load_snapshot(path)
     require(set(listed) == expected_names(snapshot, receipt), 'Incomplete or extra recovery references')
@@ -90,7 +96,7 @@ def collect(base):
     timestamp = dt.datetime.fromisoformat(receipt['checkedAt'])
     require(timestamp.tzinfo is not None and -300 <= (dt.datetime.now(dt.timezone.utc) - timestamp).total_seconds() <= 30 * 3600, 'Source backup is stale or has an invalid time')
     names = expected_names(snapshot, receipt)
-    files = {name: artifact.regular_bytes(home, name) for name in names}
+    files = {name: kit_bytes(home, name) for name in names}
     require(sum(map(len, files.values())) <= MAX_KIT, 'Source kit exceeds size limit')
     manifest = {'version': 1, 'scope': 'melodiajest-recovery-kit', 'snapshotId': snapshot['id'],
                 'currentManifestSha256': snapshot['entries']['current']['manifestSha256'],
@@ -159,7 +165,7 @@ def restore_check(kit, expected, destination, runtime_factory):
         path = home / name
         path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
         with path.open('xb') as stream:
-            stream.write(artifact.regular_bytes(kit, name))
+            stream.write(kit_bytes(kit, name))
         path.chmod(0o600)
     controls = backup.read_blob(home, 'controls', snapshot['controls'], '.json')[1]
     backup.restore_controls(controls, destination / 'recovered-controls')

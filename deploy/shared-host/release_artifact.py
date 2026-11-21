@@ -83,7 +83,7 @@ def source_allowed(name):
     return path.parts[:2] == ('deploy', 'shared-host') and path.suffix in {'.py', '.json', '.yaml', '.conf', '.fragment', '.md'}
 
 
-def regular_bytes(base, name):
+def regular_bytes(base, name, *, max_bytes=MAX_FILE):
     safe_name(name)
     base = Path(base).resolve(strict=True)
     path = base / name
@@ -92,9 +92,9 @@ def regular_bytes(base, name):
             break
         require(not item.is_symlink() and not getattr(item, 'is_junction', lambda: False)(), 'Link in input: ' + name)
     require(path.is_file(), 'Missing regular file: ' + name)
-    require(path.stat().st_size <= MAX_FILE, 'Oversized input: ' + name)
+    require(path.stat().st_size <= max_bytes, 'Oversized input: ' + name)
     data = path.read_bytes()
-    require(len(data) <= MAX_FILE, 'Input changed size: ' + name)
+    require(len(data) <= max_bytes, 'Input changed size: ' + name)
     return data
 
 

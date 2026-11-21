@@ -1,0 +1,528 @@
+{
+  "result": {
+    "id": "2026-11-21-release-220",
+    "phase": "2026-11-21-release-220",
+    "version": "23.5.220",
+    "status": "deployed-and-verified",
+    "completedAt": "2026-11-21T06:13:30.006295+00:00",
+    "report": "docs/reports/melodiajest-operations-2026-11-21-release-220.md",
+    "newLessonsThisOperationsPhase": 0,
+    "newLearningRecordCount": 0,
+    "newIndependentGoalCount": 0,
+    "newSourceApplications": 0,
+    "additionalLearningRecordsPublished": 57,
+    "learningRecords": 638,
+    "verifiedDistinctGoalCount": null,
+    "operationsAreNotLessons": true,
+    "artifactSha256": "b6930d73978b78ceb7225a8254c3e4208d93cd4b4fe8c4685af1f9444e829ec9",
+    "webManifestSha256": "269ba8b767c2de8c58596e21f01e6d268051b22a11e7330d24ff74d69b51b4af",
+    "sourceSha256": "34fff011378997a54d9bd5191c9b32bc806f1df5331d1b9addbe98d77be78f0f",
+    "courseSha256": "0406a46f7736793a73e68829f72472a94d1e6fff6478a1752eadc0c221adfea0",
+    "publicBrowserVerified": true,
+    "accountSnapshot": "5ab1c8b879c730ec92d876aa624ff3c99176943d2ec6cc11229fe5cbac347520",
+    "staticSnapshot": "6245ff823a3c8590e3532197060475b76e8ea6046f427cd9d10e3cc600213b88",
+    "previousVersion": "23.5.186",
+    "linuxTestsPassed": 22,
+    "linuxSkipped": 0,
+    "dataMigrationPerformed": false,
+    "nativeAutomationStatus": "PAUSED",
+    "explicitOneTimePublicationBefore1000": true,
+    "sourceCommit": "030fd89add58bcf027ad4f1a60fe45021fa6afbc",
+    "qa": "docs/qa/melodiajest-2026-11-21-release-220.json"
+  },
+  "artifact": {
+    "archive": "D:\\MelodiaJest-private\\host-maintenance\\archives\\melodiajest-23.5.220-20261121-production.tar.gz",
+    "bytes": 20238920,
+    "sha256": "b6930d73978b78ceb7225a8254c3e4208d93cd4b4fe8c4685af1f9444e829ec9",
+    "version": "23.5.220",
+    "publicFiles": 41,
+    "sourceFiles": 1530,
+    "sourceProfile": "application-course-reports-v1",
+    "sourceCommit": "030fd89add58bcf027ad4f1a60fe45021fa6afbc",
+    "schemaExact": true,
+    "checkpointFilesExact": 830,
+    "oldCanonicalRowsExact": 581,
+    "newCanonicalRows": 638,
+    "assessedRouteExact": 289
+  },
+  "localApplicationTestEvidence": {
+    "stage": 256,
+    "fullPassed": 3043,
+    "targetedPassed": 55,
+    "musicalAuditsPassed": 4,
+    "exactStageCheckpointReused": true
+  },
+  "linuxCandidate": {
+    "checkedAt": "2026-11-21T05:36:05.592963+00:00",
+    "startedAt": "2026-11-21T05:35:40.016986+00:00",
+    "archiveSha256": "b6930d73978b78ceb7225a8254c3e4208d93cd4b4fe8c4685af1f9444e829ec9",
+    "releaseStage": "/opt/melodiajest/ops/release-220-b6930d73978b",
+    "tapSha256": "efd6b551ec5945a2614db4bf286e9c87decda2e0b0d834765c2d8036dcd85254",
+    "files": [
+      "tests/piano-b-major-paired-upper-turn.test.cjs",
+      "service/tests/course-cache.test.cjs",
+      "tests/service-client.test.cjs"
+    ],
+    "totals": {
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 25003.339633
+    },
+    "candidateImplementationChanges": [
+      "catalog-personalization.js",
+      "service/course-registry.json"
+    ],
+    "schemaExact": true,
+    "initialHarnessFailure": "ENOENT /fixture/tmp",
+    "initialTapSha256": "1dc50777b079e7e8154240457887db1128e2c681d0f724f56fb5d9c180f15140",
+    "testFilesUnchanged": true,
+    "linksUnchanged": true,
+    "freeBytes": 23064084480,
+    "constraints": {
+      "readOnly": true,
+      "network": "none",
+      "memoryMiB": 384,
+      "CPU": 0.65,
+      "pids": 96
+    },
+    "plan": {
+      "changed": true,
+      "old": "releases/23.5.186-665baf26c009",
+      "oldPrevious": "releases/23.5.100-8f02cdfef1a8",
+      "new": "releases/23.5.220-269ba8b767c2",
+      "oldSha256": "665baf26c009d9f789d8c9db7b04f371703e0be98b700e133241c4d577359196",
+      "newSha256": "269ba8b767c2de8c58596e21f01e6d268051b22a11e7330d24ff74d69b51b4af",
+      "version": "23.5.220",
+      "archiveSha256": "b6930d73978b78ceb7225a8254c3e4208d93cd4b4fe8c4685af1f9444e829ec9"
+    }
+  },
+  "isolatedAccountRestore": {
+    "productionDataUsed": false,
+    "productionVolumesMounted": false,
+    "network": "none",
+    "postgresImageImported": true,
+    "imageBlobsVerified": 20,
+    "daemonLayerReusePossible": true,
+    "nodeFromRestoredArchive": true,
+    "pgDependenciesFromRestoredArchive": true,
+    "sourceSha256": "34fff011378997a54d9bd5191c9b32bc806f1df5331d1b9addbe98d77be78f0f",
+    "dataDigestMatched": true,
+    "ddlDenied": true,
+    "wrongPasswordDenied": true,
+    "restoredSessionsRevoked": true,
+    "apiHealth": "ok",
+    "twoUsersRegistered": true,
+    "privateWriteReadback": true,
+    "forgedOwnerDenied": true,
+    "syntheticMidiDeviceUsed": false
+  },
+  "production": {
+    "current": "releases/23.5.220-269ba8b767c2",
+    "previous": "releases/23.5.186-665baf26c009",
+    "apiCurrent": "releases/23.5.220-b6930d73978b78ce",
+    "apiPrevious": "releases/23.5.186-550361242dc440d8",
+    "staticUpdateId": "c660042d0a92441696e0280491c59abf",
+    "accountUpdateId": "174a1b9f6a204a318557c470caa10662",
+    "publicFilesVerified": 41,
+    "neighbors": {
+      "libreta.ru": 200,
+      "praicer.ru": 200,
+      "grigorova.libreta.ru": 200
+    },
+    "caddyAndTimersPreserved": true,
+    "apiHealth": {
+      "engine": "postgres",
+      "databaseSchemaVersion": 2,
+      "status": "ok",
+      "serviceVersion": 1,
+      "schemaVersion": 1,
+      "contracts": {
+        "catalog-transfer.js": "6c90aef7a26bf38e612d6f702f01f7e1e184cf08b494896e14cd702e2f1747bb",
+        "catalog-personalization.js": "338747c4c692e08caacdedeb879b50fa26762a5e612a2715d627ea0d7d8c4f32",
+        "music-document.js": "66ff1cbe2073195f494933cf776189f9029de531e5114c518fd0c1de58dd4c14",
+        "piano-catalog-adapter.js": "80486c669c733cc75b169acbffce823354ae964c5d5a55079b42c26ddc687266",
+        "practice-assessment.js": "65bebad12a462f8af08eea36b85238fc5407ab6ddceb2c3f6dbfe9b7c388ac47"
+      },
+      "implementationSha256": "34fff011378997a54d9bd5191c9b32bc806f1df5331d1b9addbe98d77be78f0f",
+      "registrationEnabled": true,
+      "maintenanceReadOnly": false,
+      "courseSha256": "0406a46f7736793a73e68829f72472a94d1e6fff6478a1752eadc0c221adfea0"
+    }
+  },
+  "publicBrowser": {
+    "actualMidiTested": false,
+    "courseRowsVisible": 638,
+    "enterExpanded": true,
+    "focusPreserved": true,
+    "horizontalOverflow": false,
+    "midiRoutesVisible": 368,
+    "pass": true,
+    "preparationLinksVisible": 3,
+    "spaceCollapsed": true,
+    "temporaryTabClosed": true,
+    "url": "https://melodiajest.ru/trainer.html?lesson=detail-p-b-major-prepared-paired-upper-turn-01",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "publicFromDesktop": {
+    "version": "23.5.220",
+    "checkedAt": "2026-11-21T06:06:34.020640+00:00",
+    "webSha": "269ba8b767c2de8c58596e21f01e6d268051b22a11e7330d24ff74d69b51b4af",
+    "tlsPeerVerified": true,
+    "courseLength": 638,
+    "courseETag": "W/\"117f1c34dd28ee2fd47cefc1dedea2882ba7285a3adb74151f440b5b749366eb\"",
+    "conditionalStatus": 304,
+    "redirects": {
+      "http://melodiajest.ru": {
+        "status": 308,
+        "location": "https://melodiajest.ru/web-release.json?check=220"
+      },
+      "https://www.melodiajest.ru": {
+        "status": 301,
+        "location": "https://melodiajest.ru/web-release.json?check=220"
+      }
+    }
+  },
+  "backup": {
+    "preUpdateComparison": {
+      "snapshot": "7fadc342a07c6092a8f2d79dd9772fcbb29710514ae8025a3d1f31c843efa690",
+      "restoredAt": "2026-11-15T11:04:38.059364+00:00",
+      "dataComparedAt": "2026-11-21T05:37:18.186559+00:00",
+      "sourceSha256": "dc7a4f70c9b122cbecb5e3af4722cb2a4d256b149ffa080333fa5822f2d238c0",
+      "newSnapshotCreated": false
+    },
+    "verifiedAccountRestore": {
+      "snapshot": "5ab1c8b879c730ec92d876aa624ff3c99176943d2ec6cc11229fe5cbac347520",
+      "restoredAt": "2026-11-21T05:40:05.419076+00:00",
+      "dataComparedAt": "2026-11-21T05:40:05.419087+00:00",
+      "sourceSha256": "34fff011378997a54d9bd5191c9b32bc806f1df5331d1b9addbe98d77be78f0f",
+      "newSnapshotCreated": true
+    },
+    "staticSnapshot": "6245ff823a3c8590e3532197060475b76e8ea6046f427cd9d10e3cc600213b88",
+    "staticRestoredAt": "2026-11-21T06:13:28.633940+00:00",
+    "health": {
+      "success": true,
+      "accountSuccess": true,
+      "checkedAt": "2026-11-21T06:13:29.400936+00:00"
+    },
+    "nativeCalls": [
+      {
+        "before": {
+          "ActiveState": "inactive",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 02:15:15 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 02:15:08 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "0d27cf7a53d741dbbf25c88170adba66",
+          "Result": "success"
+        },
+        "finishedAt": "2026-11-21T05:37:18.229504+00:00",
+        "requestedAt": "2026-11-21T05:37:11.190332+00:00",
+        "result": {
+          "ActiveState": "inactive",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 05:37:18 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 05:37:11 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "97a3da1d9d0f488ea5f582039e4f78d7",
+          "Result": "success"
+        },
+        "status": "success",
+        "unit": "melodiajest-account-backup.service"
+      },
+      {
+        "before": {
+          "ActiveState": "inactive",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 05:37:18 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 05:37:11 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "97a3da1d9d0f488ea5f582039e4f78d7",
+          "Result": "success"
+        },
+        "finishedAt": "2026-11-21T05:40:06.576938+00:00",
+        "requestedAt": "2026-11-21T05:39:07.090525+00:00",
+        "result": {
+          "ActiveState": "inactive",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 05:40:06 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 05:39:07 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "77469f67bd0b429794e2482b9c8ae216",
+          "Result": "success"
+        },
+        "status": "success",
+        "unit": "melodiajest-account-backup.service"
+      },
+      {
+        "before": {
+          "ActiveState": "inactive",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 01:41:25 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 01:41:17 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "e6cf115b75464df4a6ef2e66c420b56f",
+          "Result": "success"
+        },
+        "finishedAt": "2026-11-21T05:41:31.500783+00:00",
+        "requestedAt": "2026-11-21T05:41:19.600922+00:00",
+        "result": {
+          "ActiveState": "activating",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 05:41:26 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 05:41:19 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "ec29c73082f94c63b46a0b28415c6f19",
+          "Result": "exit-code"
+        },
+        "status": "failed",
+        "unit": "melodiajest-backup.service"
+      },
+      {
+        "before": {
+          "ActiveState": "activating",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 05:56:39 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 05:56:31 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "bf042804435b4570bda8aac926584557",
+          "MainPID": "0",
+          "Result": "exit-code",
+          "SubState": "auto-restart"
+        },
+        "observedAt": "2026-11-21T06:12:41.037890+00:00",
+        "requestedAt": "2026-11-21T06:00:05.639548+00:00",
+        "status": "client-wait-timeout-existing-native-backoff-preserved",
+        "unit": "melodiajest-backup.service"
+      },
+      {
+        "manualExtraStartIssued": false,
+        "observedAt": "2026-11-21T06:12:41.037942+00:00",
+        "result": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 06:11:48 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 06:11:41 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "2a93084c2aa34ff0a72a346301c29fc6",
+          "MainPID": "0",
+          "Result": "success",
+          "SubState": "dead"
+        },
+        "status": "existing-native-retry-succeeded",
+        "unit": "melodiajest-backup.service"
+      },
+      {
+        "before": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sun 2026-11-15 11:06:14 UTC",
+          "ExecMainStartTimestamp": "Sun 2026-11-15 11:05:57 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "8460193d1c7f48a58aed1bdc6b57658d",
+          "MainPID": "0",
+          "Result": "success",
+          "SubState": "dead"
+        },
+        "finishedAt": "2026-11-21T06:13:28.805119+00:00",
+        "requestedAt": "2026-11-21T06:12:41.620282+00:00",
+        "result": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 06:13:00 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 06:12:41 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "7a4b186e42164684b4f02e7a3dda86c9",
+          "MainPID": "0",
+          "Result": "success",
+          "SubState": "dead"
+        },
+        "status": "success",
+        "unit": "melodiajest-restore-check.service"
+      },
+      {
+        "before": {
+          "ActiveState": "failed",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 06:01:57 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 06:01:56 UTC",
+          "ExecMainStatus": "1",
+          "InvocationID": "f29f84140cb84517b809f678981d3dfd",
+          "MainPID": "0",
+          "Result": "exit-code",
+          "SubState": "failed"
+        },
+        "finishedAt": "2026-11-21T06:13:29.436048+00:00",
+        "requestedAt": "2026-11-21T06:13:28.908567+00:00",
+        "result": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecMainExitTimestamp": "Sat 2026-11-21 06:13:29 UTC",
+          "ExecMainStartTimestamp": "Sat 2026-11-21 06:13:28 UTC",
+          "ExecMainStatus": "0",
+          "InvocationID": "f8bdf8acdb184e9f9c0cda1992b347b1",
+          "MainPID": "0",
+          "Result": "success",
+          "SubState": "dead"
+        },
+        "status": "success",
+        "unit": "melodiajest-backup-health.service"
+      }
+    ],
+    "calendarRunsClaimed": false
+  },
+  "s3ReaderRepair": {
+    "initialFailure": "Complete release archive exceeded the 16 MiB member limit and the assembled payload exceeded the old 64 MiB limit.",
+    "unitMemoryMaxBytes": 268435456,
+    "observedNativeBackupMemoryPeakBytes": 268435456,
+    "memberBytesUnchanged": 16777216,
+    "payloadCapBytes": 134217728,
+    "checks": {
+      "dryFixtureRetry": "copied missing attempt receipt",
+      "dryRun": {
+        "kitFiles": 8,
+        "limitMiB": 256,
+        "peakRssBytes": 255467520,
+        "sourceArchiveSha": "b6930d73978b78ceb7225a8254c3e4208d93cd4b4fe8c4685af1f9444e829ec9",
+        "sourceRestoreFiles": 1575,
+        "verifiedPayloadBytes": 68520740,
+        "webSha": "269ba8b767c2de8c58596e21f01e6d268051b22a11e7330d24ff74d69b51b4af"
+      },
+      "firstHarnessFailureLogSha256": "4e30e364a197843c42afd60ba32614f030236a39980c90105932153d280008c5",
+      "identity": "ec09dde464b64cd6aac4b679a50a0eaee17cab82387da9887b98c7b1efad806e",
+      "isolatedCodeSetUnchangedSinceGreen": true,
+      "legacyMisboundLogSha256": "4e30e364a197843c42afd60ba32614f030236a39980c90105932153d280008c5",
+      "linuxLogSha256": "94df5d3b8553c49ecac33810bab8204e926309849a0c37b7857caa58adb501bd",
+      "linuxRan": 13,
+      "linuxSummary": "OK",
+      "liveControlsChanged": false,
+      "noNetworkOrProductionMounts": true,
+      "priorRecoveryFailureLogSha256": "1c8262ebde8fd7816f5797116c176014185561734845d7cdbb400582fb7759b8",
+      "status": "isolated-stage-verified",
+      "target": "/opt/melodiajest/ops/tooling/s3-ec09dde464b64cd6"
+    },
+    "prepareMemory": {
+      "filesVerified": 8,
+      "kitBytes": 38173650,
+      "memoryLimitMiB": 256,
+      "peakRssBytes": 277024768
+    },
+    "installation": {
+      "accountAndStaticUnaffected": true,
+      "checkedAt": "2026-11-21T05:59:46.081900+00:00",
+      "controlSha256": {
+        "ops/s3-schedule.json": "8e1fb0584a4405762aeecc318bbed9617b07e1c94a38eaa9c5cbfef3b5d0eba2",
+        "ops/s3-tooling.json": "b65574832f5d34539786c50bb5a89dd2a5c7897bd63f51ce5611f06b9edd67cc",
+        "systemd/melodiajest-backup-health.service.d/20-external-s3.conf": "cb8aee5a39e38657f16ee88dcaf8d6dcfed49a707d657fd560df3200b82bb78c",
+        "systemd/melodiajest-backup.service.d/20-external-s3.conf": "9a4c4e6fbb4c35159766ff30c0e494cee3ad1d4a72c13c050c68d138b9e0935f",
+        "systemd/melodiajest-restore-check.service.d/20-external-s3.conf": "95cc581011e1b0e02b82de759000feeda02aa9f48abb76cf4ce045abb2afca49"
+      },
+      "controlsChanged": [
+        "ops/s3-schedule.json",
+        "ops/s3-tooling.json",
+        "systemd/melodiajest-backup-health.service.d/20-external-s3.conf",
+        "systemd/melodiajest-backup.service.d/20-external-s3.conf",
+        "systemd/melodiajest-restore-check.service.d/20-external-s3.conf"
+      ],
+      "identity": "ec09dde464b64cd6aac4b679a50a0eaee17cab82387da9887b98c7b1efad806e",
+      "oldControlsAndToolkitRetainedOnD": true,
+      "previousToolkit": "/opt/melodiajest/ops/tooling/s3-d984eea14ae6a676",
+      "status": "installed-existing-native-services",
+      "timersUnchanged": true,
+      "toolkit": "/opt/melodiajest/ops/tooling/s3-ec09dde464b64cd6",
+      "unitsUsed": {
+        "melodiajest-backup-health.service": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecStartPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/melodiajest/ops/tooling/s3-ec09dde464b64cd6/deploy/shared-host/backup_s3_schedule.py health ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+          "MainPID": "0",
+          "MemoryMax": "268435456",
+          "StartLimitBurst": "8",
+          "StartLimitIntervalUSec": "2h"
+        },
+        "melodiajest-backup.service": {
+          "ActiveState": "activating",
+          "ControlPID": "0",
+          "ExecStartPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/melodiajest/ops/tooling/s3-ec09dde464b64cd6/deploy/shared-host/backup_s3_schedule.py backup ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+          "MainPID": "0",
+          "MemoryMax": "268435456",
+          "StartLimitBurst": "8",
+          "StartLimitIntervalUSec": "2h"
+        },
+        "melodiajest-restore-check.service": {
+          "ActiveState": "inactive",
+          "ControlPID": "0",
+          "ExecStartPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B /opt/melodiajest/ops/tooling/s3-ec09dde464b64cd6/deploy/shared-host/backup_s3_schedule.py restore-check ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+          "MainPID": "0",
+          "MemoryMax": "268435456",
+          "StartLimitBurst": "8",
+          "StartLimitIntervalUSec": "2h"
+        }
+      }
+    },
+    "priorToolingCopySha256": "139ea247884a02202b397ad0581d6d075170cbe82192d2cc12e896ff4139a7ce"
+  },
+  "storage": {
+    "D": {
+      "checkedAt": "2026-11-21T11:00:34.0727232+05:00",
+      "archivesVerified": 3,
+      "temporaryRestoreDirectoriesRemoved": [
+        "20261121-production-23.5.220",
+        "20261121-production-prior-186",
+        "20261121-production-prior-100"
+      ],
+      "freeBefore": 704666546176,
+      "freeAfter": 704952819712
+    },
+    "vps": {
+      "archivePreserved": true,
+      "availableDelta": 3256320,
+      "backupDataRetentionUnchanged": true,
+      "cleanedTemporaryPaths": [
+        "ops/release-220-b6930d73978b/restored",
+        "ops/release-220-b6930d73978b/release.tar.gz",
+        "ops/tooling/s3-bee8e30ac6fce731"
+      ],
+      "currentAndPrevious": {
+        "api": [
+          "23.5.186-550361242dc440d8",
+          "23.5.220-b6930d73978b78ce"
+        ],
+        "static": [
+          "23.5.186-665baf26c009",
+          "23.5.220-269ba8b767c2"
+        ]
+      },
+      "deletedEntries": 75,
+      "freeAfter": 21625311232,
+      "freeBefore": 21622054912,
+      "health": {
+        "account": "ok",
+        "web": "23.5.220"
+      },
+      "logicalBytes": 3094862,
+      "neighbors": {
+        "grigorova.libreta.ru": 200,
+        "libreta.ru": 200,
+        "praicer.ru": 200
+      },
+      "removedReleaseDirectories": [
+        "releases/23.5.100-8f02cdfef1a8",
+        "account-service/releases/23.5.100-d4087bb957e77811"
+      ],
+      "retirementArchiveSha256": "052f300e25dbc5899fbfa607669a1a8e066b4cc8bbcae5f0d2043ea28100cb9b",
+      "sourceIndexArchivePreserved": true,
+      "tempFreeAfter": 21603098624,
+      "tempFreeBefore": 21505273856,
+      "tempObservedDelta": 97824768
+    },
+    "retirementArchiveSha256": "052f300e25dbc5899fbfa607669a1a8e066b4cc8bbcae5f0d2043ea28100cb9b",
+    "retirementFilesRestored": 75
+  },
+  "scope": {
+    "newLessons": 0,
+    "realMidiTested": false,
+    "liveDataRestoredInPlace": false,
+    "productionRollbackExecuted": false,
+    "newSchedulesCreated": 0
+  }
+}

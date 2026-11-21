@@ -59,13 +59,18 @@ def verify_payload(path,expected):
         return name in {'checkout.tar.gz','external-config.json','runtime-pin.json','schedule-controls.json','runtime/restic_0.19.1_linux_amd64.bz2','runtime/SHA256SUMS','runtime/SHA256SUMS.asc','runtime/restic-signing-key.asc'} or re.fullmatch(r'published/(?:kit\.json|last-backup-success\.json|snapshots/[a-f0-9]{32}\.json|controls/[a-f0-9]{64}\.json|blobs/[a-f0-9]{64}\.tar\.gz)',name)
     require(all(allowed(name) for name in meta['files']),'unapproved payload file name')
     actual={}
+    total=0
     for p in path.rglob('*'):
         require(not p.is_symlink() and p.resolve()==p,'link in restored payload')
         relative=p.relative_to(path).as_posix()
         if p.is_file() and relative!='payload.json':
             require(allowed(relative),'unapproved restored payload file')
-            actual[relative]=artifact.descriptor(p.read_bytes())
-    require(actual==meta['files'] and sum(v['bytes'] for v in actual.values())<=64*1024*1024,'payload file set, sizes or SHA differ')
+            remaining=artifact.MAX_TOTAL-total
+            require(p.stat().st_size<=remaining,'payload exceeds complete archive size limit')
+            entry=artifact.descriptor(artifact.regular_bytes(path,relative,max_bytes=remaining))
+            actual[relative]=entry
+            total+=entry['bytes']
+    require(actual==meta['files'],'payload file set, sizes or SHA differ')
     runtime.validate_configuration(read(path/'external-config.json'))
     if (path/'schedule-controls.json').exists():schedule_controls(artifact.regular_bytes(path,'schedule-controls.json'))
     return meta
