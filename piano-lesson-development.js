@@ -907,7 +907,24 @@
     events: [...spec.ascent.events, ...spec.descent.events.slice(1)],
     options: { bpm: 40, beats: [...Array(14).fill(1), 2], articulation: 'legato' }
   }));
-  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex, fsharpPairedRoundtrip, ...bMajorRoundtrips);
+  const [bMajorRoundtripLeft, bMajorRoundtripRight] = bMajorRoundtrips;
+  // The upper span runs from the fifth note through its return after the tonic.
+  const bMajorUpperStart = 4;
+  const bMajorUpperEnd = 11;
+  const bMajorUpperRight = bMajorRoundtripRight.events.slice(bMajorUpperStart, bMajorUpperEnd);
+  const bMajorPairedUpperTurn = {
+    id: 'detail-p-b-major-prepared-paired-upper-turn-01',
+    title: 'Си мажор двумя руками: три чёрные пары и разворот',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorRoundtripLeft.id,
+    requires: [bMajorRoundtripLeft.id, bMajorRoundtripRight.id, fsharpLowerThreePairedAscent.id],
+    goal: 'Сыграй три чёрные пары F♯–G♯–A♯, соедини их с одной белой парой си и вернись к F♯. На си левый большой и правый мизинец вступают вместе. Заверши двумя долями на исходной паре.',
+    events: bMajorRoundtripLeft.events.slice(bMajorUpperStart, bMajorUpperEnd)
+      .map((left, i) => [...left, ...bMajorUpperRight[i]]),
+    options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 2], articulation: 'standard' }
+  };
+  piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
+    fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1174,6 +1191,50 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: spec.goal,
         context: 'Восходящий и нисходящий ход в одной мелодической фразе с разворотом и сменами позиции.',
         sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 Whole View выбранной руки. Сохранены ноты и пальцы схемы. Проект заменяет пятнадцать восьмых и восьмую паузу четырнадцатью четвертями и половинной при 40 BPM. Тихая доля отсчитывается вручную.'
+      }
+    });
+  }
+
+  function describeBMajorPairedUpperTurn(lesson, adapter) {
+    const setup = 'Повтори разворот си мажора каждой рукой и готовую тройку F♯–G♯–A♯ двумя руками. Начни на F♯3 безымянным левой и F♯4 указательным правой. Педаль выключена.';
+    const motion = 'На белых B3 и B4 сыграй левый большой и правый мизинец одновременно. На следующую долю вернись на A♯ левым указательным и правым безымянным. На G♯ работают оба средних. Заверши F♯ безымянным слева и указательным справа.';
+    const count = 'При 40 BPM в первом такте считай F♯ на «раз», G♯ на «два», A♯ на «три» и B на «четыре». Во втором такте сыграй A♯ на «раз», G♯ на «два» и держи F♯ на «три–четыре». Отпусти обе клавиши на следующем «раз» и отсчитай тихую долю.';
+    const hearing = 'Послушай образец и пропой подъём и спуск. У каждой пары слышно одно общее вступление. Белая си звучит один раз, затем обе руки возвращаются в том же пульсе.';
+    const mastery = 'Семь общих вступлений с одной вершиной. Последняя пара звучит две полные доли и отпускается одновременно.';
+    const source = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = source + 'left-hand/';
+    const right = source + 'right-hand/';
+    const { beats, bpm } = bMajorPairedUpperTurn.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-upper-turn-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Разворот через белую си после трёх чёрных пар', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-upper-turn', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Пройди семь пар F♯–G♯–A♯–B–A♯–G♯–F♯. Левая играет 4–3–2–1–2–3–4, правая 2–3–4–5–4–3–2. Сыграй вершину один раз.',
+        motion, count, hearing,
+        'Разбирай 3–5 минут короткими пробами с отдыхом. Придумай ответ из 6–8 пар си мажора. Сам выбери старт между E и G♯, длину одной пары и конец на F♯ или G♯. Включи подъём к си один раз, спланируй пальцы и сравни вступления на слух. Повтори после отдыха и на следующий день.'
+      ],
+      selfCheck: [
+        'У первых трёх пар слышу один общий пульс. На си работают левый большой и правый мизинец.',
+        'После си ля-диезы начинаются новыми одновременными нажатиями. Если одна рука спешит, повторяю четыре пары до вершины медленнее.',
+        'На возврате к F♯ использую исходные пальцы. Слушаю две доли и совместное отпускание.',
+        'Свободу кистей, пальцы, тишину и перенос в новую фразу проверяю вручную.'
+      ],
+      rhythmNotice: count,
+      references: [left, right],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures: си мажор левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures: си мажор правой рукой, рисунок 1'
+      },
+      sourceEvidenceIds: bMajorRoundtrips.flatMap(spec => spec.sources),
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedUpperTurn.goal,
+        context: 'Движение мелодии параллельными октавами с согласованным разворотом двух рук.',
+        sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 Whole View каждой руки. Взяты семь восьмых от F♯ до верхней B и обратно. Проект объединяет одноручные схемы, задаёт шесть четвертей, финальную половинную и 40 BPM. Тихая доля отсчитывается вручную.'
       }
     });
   }
@@ -4579,6 +4640,9 @@
     }
     for (const spec of bMajorRoundtrips) {
       if (!existing.has(spec.id)) describeBMajorRoundtrip(lessons.find(lesson => lesson.id === spec.id), spec, adapter);
+    }
+    if (!existing.has(bMajorPairedUpperTurn.id)) {
+      describeBMajorPairedUpperTurn(lessons.find(lesson => lesson.id === bMajorPairedUpperTurn.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
