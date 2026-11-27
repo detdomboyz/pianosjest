@@ -1007,10 +1007,20 @@
     events: [...bMajorPairedMiddleDescent.events, ...bMajorPairedLowerDescent.events.slice(1)],
     options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
   };
+  const bMajorPairedFullDescent = {
+    id: 'detail-p-b-major-prepared-paired-full-descent-01',
+    title: 'Си мажор двумя руками. Октава вниз',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedJoinedDescent.id,
+    requires: [bMajorPairedUpperTurn.id, bMajorPairedJoinedDescent.id, bMajorDescentLeft.id, bMajorDescentRight.id],
+    goal: 'Сыграй восемь октавных пар вниз от верхних си. Отпусти среднее си левой на второй доле и заново нажми эту клавишу правой в последней паре. На стыке сыграй фа-диезы один раз и сохрани общий пульс.',
+    events: [...bMajorPairedUpperTurn.events.slice(3), ...bMajorPairedJoinedDescent.events.slice(1)],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 1, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
-    bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent);
+    bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent, bMajorPairedFullDescent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1654,6 +1664,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedJoinedDescent.goal,
         context: 'Продолжение нисходящей мелодии в параллельных октавах через общую ступень двух подготовленных групп.',
         sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 3–7. Проект объединяет пять восьмых каждой руки в пары на четыре четверти и половинную при 40 BPM. Принцип общей ноты у соседних участков взят из главы 1, § 7 Чанга. Ре-диезы на стыке и их длительность выбраны проектом.'
+      }
+    });
+  }
+
+  function describeBMajorPairedFullDescent(lesson, adapter) {
+    const setup = 'Найди си слева от среднего до. Начни на этой клавише левым большим и на си октавой выше правым мизинцем. Оставь педаль выключенной. Сначала сыграй каждую нисходящую октаву отдельно.';
+    const motion = 'Левая играет 1–2–3–4–1–2–3–4, правая 5–4–3–2–1–3–2–1. На вступлении ля-диезов освободи среднее си. От трёх чёрных пар пройди к двум белым ми под большими. От ми уйди на ре-диезы левым указательным и правым средним. В финале правый большой заново нажимает среднее си одновременно с левым безымянным на си октавой ниже.';
+    const count = '40 BPM, по четверти на пару. Первый такт — «раз си, два ля-диез, три соль-диез, четыре фа-диез». Второй — «раз ми, два ре-диез, три до-диез, четыре си». На следующем «раз» отпусти оба си и самостоятельно отсчитай тихую долю.';
+    const hearing = 'Послушай образец и пропой верхний голос. На стыке услышь одну пару фа-диезов, а следом на новом «раз» — ми. Если среднее си в конце пропало или продолжало звучать с начала, отдельно сыграй первую и последнюю пары. Между ними полностью отпусти общую клавишу.';
+    const mastery = 'Слышу восемь ровных пар. Левый большой освобождает среднее си после первой доли. Правый большой заново играет его вместе с нижним си на последней доле.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedFullDescent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-full-descent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Полный спуск мелодии в параллельных октавах', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-full-descent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Повтори нисходящие четыре пары верхнего разворота и готовые пять пар от фа-диезов. Сыграй общие фа-диезы один раз. Заключительные пары коротких групп теперь звучат по одной доле, чтобы сохранить ровные четверти на всём спуске.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на пробы с паузами. Придумай короткий ответ в си мажоре. Начни с пары, где среднее си играет левая, а затем выбери другие пары и закончи тем же средним си под правым большим вместе с нижним. Послушай новое вступление и ровное движение внутри фразы. Повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Начинаю пальцами 1 слева и 5 справа. На второй доле освобождаю среднее си.',
+        'Фа-диезы звучат один раз на «четыре». На ми оба больших вступают вместе.',
+        'Правая заново играет среднее си на «четыре» второго такта. Слева в это время звучит нижнее си под 4.',
+        'Отпускаю обе последние клавиши одновременно. В своей фразе слышу новое вступление и проверяю пальцы за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Спуск си мажора левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Спуск си мажора правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Соединение отрезков, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[1], bMajorRoundtripRight.sources[1],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedFullDescent.goal,
+        context: 'Полный нисходящий ответ в параллельных октавах с новым вступлением средней си другой рукой.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки. Верхняя си завершает первый такт. За ней идут семь нисходящих восьмых во втором такте. Проект объединяет линии в восемь пар четвертей при 40 BPM. Принцип общей ступени взят из главы 1, § 7 Чанга. Фа-диезы в роли стыка и ритм заданы проектом.'
       }
     });
   }
@@ -5083,6 +5142,9 @@
     }
     if (!existing.has(bMajorPairedJoinedDescent.id)) {
       describeBMajorPairedJoinedDescent(lessons.find(lesson => lesson.id === bMajorPairedJoinedDescent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedFullDescent.id)) {
+      describeBMajorPairedFullDescent(lessons.find(lesson => lesson.id === bMajorPairedFullDescent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
