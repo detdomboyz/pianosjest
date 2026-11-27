@@ -1394,6 +1394,20 @@
     ],
     options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 1, 1, 1], startBeats: [0, 1, 2, 2.5, 3, 4, 5], articulation: 'standard' }
   };
+  const pairedWaltzBassHandoff = {
+    id: 'detail-p-paired-waltz-bass-handoff-01',
+    title: 'Вальс: передай восьмую басу',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzBassUpbeat.id,
+    requires: [pairedWaltzBassUpbeat.id, pairedWaltzBarlineHandoff.id],
+    goal: 'На «три» сыграй ми правой, на «и» передай пульс низкой си. Си ведёт к двум до на «раз» нового такта.',
+    events: [
+      ...pairedWaltzBassUpbeat.events.slice(0, 2),
+      pairedWaltzBarlineHandoff.events[3],
+      ...pairedWaltzBassUpbeat.events.slice(2)
+    ],
+    options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 1], startBeats: [0, 1, 2, 2.5, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1405,7 +1419,7 @@
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
-    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff);
+    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff, pairedWaltzBassHandoff);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3130,6 +3144,49 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBarlineHandoff.goal,
         context: 'Две руки по очереди ведут слабую долю к совместному вступлению на сильной доле вальса.',
         sourceNote: 'У Бургмюллера нижняя восьмая сменяется новой верхней атакой перед общим вступлением. Верхнее ми сначала удерживается. Хоффман разбирает восьмые с паузами у разных рук. Здесь обе восьмые звучат по очереди, а ноты, пальцы и размер 3/4 заданы для упражнения.'
+      }
+    });
+  }
+
+  function describePairedWaltzBassHandoff(lesson, adapter) {
+    const setup = 'Повтори басовый затакт си–до и короткое ми из передачи перед новым тактом. Слева найди G2 пальцем 5, D3 пальцем 1, B2 пальцем 3 и C3 пальцем 2. Справа приготовь большой над C4 и средний над E4. Педаль выключена.';
+    const motion = 'На «раз» сыграй соль левой, на «два» отпусти соль и нажми ре. На «три» отпусти ре и сыграй E4 правым средним. На «и» отпусти ми и нажми B2 левым средним. На новое «раз» отпусти си и сыграй C3 левым указательным вместе с C4 правым большим.';
+    const count = 'Считай «раз, два, три-и | раз» при 48 BPM. Ми и си длятся по полдоли. Оба до держи одну долю и отпусти на «два». После окончания образца досчитай тихие «два, три».';
+    const hearing = 'Послушай образец и напой си–до в басу. Слышно короткое верхнее ми, затем низкую си и одно общее вступление. Если ми и си звучат вместе или после си есть заминка, сыграй отдельно «три-и-раз» под ровный счёт.';
+    const mastery = 'На «три» звучит только ми, на «и» только си. Си подводит к до одним полутоном. Два до начинаются одним ударом на «раз» и отпускаются на «два».';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=56';
+    const bass = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    const rhythm = 'https://app.hoffmanacademy.com/lessons/piano/la-cinquantaine-melody/video/';
+    lesson.rhythm = waltzRhythm(pairedWaltzBassHandoff.options, 'project-paired-waltz-bass-handoff-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Правая восьмая перед басовым затактом в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-bass-handoff', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Простучи правой на «три», левой на «и» и обеими на «раз». На клавишах сыграй ми, си и два до. Затем добавь первые две доли левой.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу. Выбери удобную ноту правой на «три» и верхнюю ноту на новом «раз». Оставь си–до в басу и по полдоли каждой руке перед чертой. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Ре отпущено к началу ми. Ми отпущено к началу си.',
+        'На «и» слышна только си. Сыграй два до вместе на следующем «раз» и отпусти их на «два».',
+        'От «три» до общего «раз» проходит одна ровная доля. Напой басовый ход си–до после игры.'
+      ],
+      rhythmNotice: count,
+      references: [score, bass, rhythm],
+      referenceTitles: {
+        [score]: 'Луи Кёлер. Детский вальс op. 249 № 123, такты 4–5',
+        [bass]: 'Джейсон Зак. Вальсовое сопровождение, проходящая си в шаге 4',
+        [rhythm]: 'Джозеф Хоффман. La Cinquantaine, урок 99, две восьмые разными руками'
+      },
+      sourceEvidenceIds: ['kohler-zac-hoffman-waltz-bass-handoff-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassHandoff.goal,
+        context: 'Короткая мелодическая нота передаёт пульс басу. Басовый полутон ведёт обе руки к первой доле.',
+        sourceNote: 'У Кёлера левая играет на третьей доле при паузе правой, затем обе вступают. Зак показывает ход си–до, Хоффман делит долю восьмыми слева направо. В упражнении свой порядок рук, ноты и пальцы.'
       }
     });
   }
@@ -7005,6 +7062,9 @@
     }
     if (!existing.has(pairedWaltzBarlineHandoff.id)) {
       describePairedWaltzBarlineHandoff(lessons.find(lesson => lesson.id === pairedWaltzBarlineHandoff.id), adapter);
+    }
+    if (!existing.has(pairedWaltzBassHandoff.id)) {
+      describePairedWaltzBassHandoff(lessons.find(lesson => lesson.id === pairedWaltzBassHandoff.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

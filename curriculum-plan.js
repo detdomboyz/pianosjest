@@ -4675,6 +4675,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-bass-handoff-01",
+      "stage": "p7",
+      "branch": "paired-waltz-bass-handoff",
+      "fingerprint": "cdd5e31b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-bass-upbeat-01",
+        "detail-p-paired-waltz-barline-handoff-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
