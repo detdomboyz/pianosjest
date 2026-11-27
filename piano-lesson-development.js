@@ -1171,6 +1171,21 @@
     events: [...leftWaltzBar, ...leftWaltzBar],
     options: { bpm: 48, beats: [1, 0.5, 1, 1, 0.5, 1], articulation: 'standard' }
   };
+  const leftWaltzCToF = {
+    id: 'detail-p-left-waltz-c-f-01',
+    title: 'Левая: смена до и фа в вальсе',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzBass.id,
+    requires: ['detail-p-triads-02', 'detail-p-left-position-triad-01', leftWaltzBass.id],
+    goal: 'Соедини такт до мажора с тактом фа мажора. Отпусти последнее созвучие на полдоли раньше нового «раз» и используй тишину для переноса руки к басу фа.',
+    events: [
+      [tone(48, 5, 'left')],
+      [tone(52, 3, 'left'), tone(55, 1, 'left')],
+      [tone(52, 3, 'left'), tone(55, 1, 'left')],
+      ...leftWaltzBar
+    ],
+    options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1178,7 +1193,7 @@
     bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent,
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
-    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip, leftWaltzBass);
+    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip, leftWaltzBass, leftWaltzCToF);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2140,6 +2155,20 @@
     });
   }
 
+  function waltzRhythm(options, source, adapter) {
+    const { beats, bpm } = options;
+    const beatMs = 60000 / bpm;
+    return adapter.normalizeRhythm({
+      version: 1, source, bpm, practiceBpm: bpm,
+      timeSignature: { numerator: 3, denominator: 4 },
+      steps: beats.map((durationBeats, startBeat) => ({
+        startBeat, durationBeats, restBeforeBeats: startBeat === 0 ? 0 : 1 - beats[startBeat - 1],
+        measure: Math.floor(startBeat / 3) + 1, beatInMeasure: startBeat % 3,
+        sourceStartMs: startBeat * beatMs, sourceDurationMs: durationBeats * beatMs
+      }))
+    }, beats.length);
+  }
+
   function describeLeftWaltzBass(lesson, adapter) {
     const setup = 'Левой найди фа F3, ля A3 и до C4 из знакомого трезвучия фа мажора. Положи на них мизинец, средний и большой. Произнеси два раза «раз, два-и, три». Правая отдыхает, педаль выключена.';
     const motion = 'На «раз» возьми F3 мизинцем 5. На «два» отпусти бас и вместе нажми A3–C4 пальцами 3 и 1. На «и» освободи обе клавиши. На «три» нажми ту же пару заново и держи целую долю. На следующем «раз» отпусти обе клавиши и вернись к фа лёгким движением предплечья.';
@@ -2148,17 +2177,7 @@
     const mastery = 'Бас отпущен к первому созвучию. Обе верхние клавиши свободны в середине второй доли и снова звучат вместе ровно на «три». На возврате к басу счёт продолжается.';
     const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
     const winn = 'https://www.ragtimepiano.ca/images/winn.pdf';
-    const { beats, bpm } = leftWaltzBass.options;
-    const beatMs = 60000 / bpm;
-    lesson.rhythm = adapter.normalizeRhythm({
-      version: 1, source: 'project-left-waltz-bass-v1', bpm, practiceBpm: bpm,
-      timeSignature: { numerator: 3, denominator: 4 },
-      steps: beats.map((durationBeats, startBeat) => ({
-        startBeat, durationBeats, restBeforeBeats: startBeat % 3 === 2 ? 0.5 : 0,
-        measure: Math.floor(startBeat / 3) + 1, beatInMeasure: startBeat % 3,
-        sourceStartMs: startBeat * beatMs, sourceDurationMs: durationBeats * beatMs
-      }))
-    }, beats.length);
+    lesson.rhythm = waltzRhythm(leftWaltzBass.options, 'project-left-waltz-bass-v1', adapter);
     lesson.guide = adapter.normalizeGuide({
       stage: 'Бас и повтор созвучия в 3/4', setup, motion, blind: hearing, mastery
     });
@@ -2188,6 +2207,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzBass.goal,
         context: 'Первый рисунок вальсового сопровождения одной левой рукой на знакомом трезвучии. Позже его можно играть под мелодией.',
         sourceNote: 'Майкл Кларк показывает отдельный бас и два созвучия в размере 3/4. В проекте фа мажор, пальцы 5 и 3–1, темп 48 BPM и полдоли тишины после первого созвучия. В авторском плане для преподавателей Эдвард Уинн советовал сперва найти звуки вальсового баса левой без требования скорости.'
+      }
+    });
+  }
+
+  function describeLeftWaltzCToF(lesson, adapter) {
+    const setup = 'Отдельно найди C3–E3–G3 и F3–A3–C4 под пальцами 5–3–1 левой. Сыграй знакомый вальсовый такт на фа. Затем приготовь до мажор для начала. Правая отдыхает, педаль выключена.';
+    const motion = 'В первом такте бас C3 играет мизинец 5. На «два» и «три» нажимай E3 и G3 средним и большим. После «три» отпусти обе клавиши на «и». Пока тихо, перенеси кисть вместе с предплечьем вправо к F3. На новом «раз» нажми F3 мизинцем и сыграй знакомую пару A3–C4 на «два» и «три».';
+    const count = 'При 48 BPM в первом такте бас занимает долю, а каждое созвучие занимает полдоли. На «и» после «два» и после «три» тихо. Во втором такте первое созвучие снова короткое с полудолей тишины, второе держится целую долю. В конце отпусти обе клавиши на мысленное новое «раз».';
+    const hearing = 'Простучи ровные «раз, два-и, три-и». Послушай конец первого такта. Сразу после короткого созвучия слышна тишина, а новый бас приходит на «раз». Соль из предыдущей пары должна закончиться до баса фа.';
+    const mastery = 'Сохраняю три доли в каждом такте. Отпускаю ми и соль вместе, переношу левую в тишине и попадаю на фа на новое «раз». В такте фа оба созвучия имеют отдельные вступления.';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    lesson.rhythm = waltzRhythm(leftWaltzCToF.options, 'project-left-waltz-c-f-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Смена баса между тактами 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-harmony-change', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Потренируй стык без таймера. Одновременно нажми E3–G3, полностью отпусти, перенеси кисть и найди F3 мизинцем. Затем свяжи то же движение со счётом «три-и, раз».',
+        motion, count, hearing,
+        'Придумай свою двухтактовую фразу из знакомых трезвучий. Можно повернуть исходный переход обратно от фа к до. Оставь полдоли для движения в конце первого такта и заново найди бас на «раз». Проверь перенос вне зачёта. Позанимайся 3–5 минут с отдыхом, вернись к рисунку после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «раз» слышен один бас. В первом такте это C3, во втором F3.',
+        'На «и» после «три» первого такта ми и соль уже отпущены. Рука спокойно переходит вправо.',
+        'Фа начинается на «раз» второго такта. Ля и до вместе звучат на «два», прекращаются и заново вступают на «три».',
+        'В конце обе ноты звучат полную долю. Проверяю мягкость движения и пальцы за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [clark, TECHNIQUE],
+      referenceTitles: {
+        [clark]: 'Майкл Кларк. Baylor Piano Basics, § 90.1, первые два такта',
+        [TECHNIQUE]: 'Диана Думлавалла. Свободное запястье и опора пальцев'
+      },
+      sourceEvidenceIds: ['clark-baylor-waltz-primary-chords-2026-11-27', 'dumlavwalla-basic-technique-2026-11-05'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCToF.goal,
+        context: 'Один переход от до мажора к фа мажору в левой руке. Пригодится, когда под мелодией нужно сменить гармонию на «раз».',
+        sourceNote: 'В § 90.1 Майкла Кларка гармония меняется на фа мажор над прежним басом C3. Проект переносит бас к F3 и играет A3–C4. Полдоли тишины на стыке и пальцы для новой позиции заданы проектом. Диана Думлавалла описывает подвижное запястье с возвращением к нейтральному положению.'
       }
     });
   }
@@ -5997,6 +6057,9 @@
     }
     if (!existing.has(leftWaltzBass.id)) {
       describeLeftWaltzBass(lessons.find(lesson => lesson.id === leftWaltzBass.id), adapter);
+    }
+    if (!existing.has(leftWaltzCToF.id)) {
+      describeLeftWaltzCToF(lessons.find(lesson => lesson.id === leftWaltzCToF.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

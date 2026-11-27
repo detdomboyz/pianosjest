@@ -3564,6 +3564,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-c-f-01",
+      "stage": "p7",
+      "branch": "left-waltz-harmony-change",
+      "fingerprint": "46466769",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-left-position-triad-01",
+        "detail-p-left-waltz-bass-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

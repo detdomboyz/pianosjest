@@ -38,9 +38,41 @@ function hasEarlierHandLine(required, lessons, hand, target) {
  }
  return false;
 }
+function explicitWaltzBars(lesson) {
+ const { timeSignature, steps: rhythm } = lesson.rhythm;
+ assert.deepEqual(copy(timeSignature), { numerator: 3, denominator: 4 });
+ assert.ok(lesson.steps.length >= 3 && lesson.steps.length % 3 === 0);
+ const frames = lesson.steps.map((step, i) => {
+  const midis = app.stepMidiList(step), fingers = lesson.fingeringSpec.steps[i];
+  assert.equal(midis.length, i % 3 === 0 ? 1 : 2);
+  assert.equal(fingers.length, midis.length);
+  assert.ok(fingers.every(f => f.hand === lesson.handMode && Number.isInteger(f.num) && f.num >= 1 && f.num <= 5),
+   'Every waltz key has an explicit finger of the prepared hand');
+  const digits = fingers.map(f => f.num);
+  assert.equal(new Set(digits).size, digits.length);
+  assert.equal(rhythm[i].startBeat, i);
+  assert.ok(rhythm[i].durationBeats > 0 && rhythm[i].durationBeats <= 1);
+  return { midis, digits, duration: rhythm[i].durationBeats };
+ });
+ const bars = [];
+ for (let i = 0; i < frames.length; i += 3) {
+  const [bass, weak, repeat] = frames.slice(i, i + 3);
+  assert.ok(bass.midis[0] < weak.midis[0]);
+  assert.deepEqual(repeat.midis, weak.midis);
+  assert.deepEqual(repeat.digits, weak.digits);
+  bars.push(JSON.stringify([bass, weak, repeat]));
+ }
+ return bars;
+}
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
+  if (lesson.themeId === 'detail-p-left-waltz' && preparation.themeId === lesson.themeId) {
+   const earlier = explicitWaltzBars(preparation);
+   assert.ok(explicitWaltzBars(lesson).some(bar => earlier.includes(bar)),
+    'At least one complete waltz bar must match the earlier pitches, fingers and durations');
+   return;
+  }
   explicitPreparationFrames(lesson,lesson.handMode);explicitPreparationFrames(preparation,preparation.handMode);return;
  }
  assert.equal(lesson.learning.coverageDomain,'coordination','Only explicitly declared paired coordination can combine prepared hands');
@@ -153,6 +185,19 @@ test('joined paired phrases require exact earlier transitions and an extension f
  assert.ok(f >= 0);
  completeLeft.fingeringSpec.steps[f][0].num = 5;
  assert.throws(() => assertPreparedHandEvidence(upper, joined, use(completeLeft)), /The whole separate-hand phrase/);
+});
+
+test('a waltz dependency must supply a complete earlier bar with exact pitches, fingers and note lengths', () => {
+ const original = app.lessons.find(l => l.id === 'detail-p-left-waltz-bass-01');
+ const joined = app.lessons.find(l => l.id === 'detail-p-left-waltz-c-f-01');
+ assertPreparedHandEvidence(joined, original, app.lessons);
+ const heldLonger = copy(original), otherFingers = copy(original), wrongHand = copy(original);
+ for (const i of [1, 4]) heldLonger.rhythm.steps[i].durationBeats = 0.75;
+ for (const i of [1, 2, 4, 5]) otherFingers.fingeringSpec.steps[i][0].num = 2;
+ wrongHand.fingeringSpec.steps[1][0].hand = 'right';
+ assert.throws(() => assertPreparedHandEvidence(joined, heldLonger, app.lessons), /At least one complete waltz bar/);
+ assert.throws(() => assertPreparedHandEvidence(joined, otherFingers, app.lessons), /At least one complete waltz bar/);
+ assert.throws(() => assertPreparedHandEvidence(joined, wrongHand, app.lessons), /Every waltz key/);
 });
 
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{
