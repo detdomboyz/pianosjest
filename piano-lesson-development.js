@@ -1186,6 +1186,21 @@
     ],
     options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
   };
+  const leftWaltzCommonBass = {
+    id: 'detail-p-left-waltz-common-bass-01',
+    title: 'Левая: вальс со сменой созвучий над басом до',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzCToF.id,
+    requires: ['detail-p-triads-02', 'detail-p-c-f-common-bass-left-01', leftWaltzCToF.id],
+    goal: 'Начни оба такта с отдельного нажатия до C3. На «два» и «три» сначала играй ми и соль, затем фа и ля.',
+    events: [
+      ...leftWaltzCToF.events.slice(0, 3),
+      [tone(48, 5, 'left')],
+      [tone(53, 2, 'left'), tone(57, 1, 'left')],
+      [tone(53, 2, 'left'), tone(57, 1, 'left')]
+    ],
+    options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1193,7 +1208,8 @@
     bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent,
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
-    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip, leftWaltzBass, leftWaltzCToF);
+    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
+    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2248,6 +2264,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCToF.goal,
         context: 'Один переход от до мажора к фа мажору в левой руке. Пригодится, когда под мелодией нужно сменить гармонию на «раз».',
         sourceNote: 'В § 90.1 Майкла Кларка гармония меняется на фа мажор над прежним басом C3. Проект переносит бас к F3 и играет A3–C4. Полдоли тишины на стыке и пальцы для новой позиции заданы проектом. Диана Думлавалла описывает подвижное запястье с возвращением к нейтральному положению.'
+      }
+    });
+  }
+
+  function describeLeftWaltzCommonBass(lesson, adapter) {
+    const setup = 'Сыграй первый такт из урока «Левая: смена до и фа в вальсе». Затем по очереди найди C3–E3–G3 пальцами 5–3–1 и C3–F3–A3 пальцами 5–2–1 из подготовки с общей нижней опорой. Правая отдыхает, педаль выключена.';
+    const motion = 'На «раз» обоих тактов нажимай C3 мизинцем 5 и освобождай его на «два». В первом такте на «два» и «три» вместе звучат E3–G3 пальцами 3–1. Во втором такте на этих же долях звучат F3–A3 пальцами 2–1. Дай кисти спокойно подойти к каждой паре, пока мизинец свободен.';
+    const count = 'При 48 BPM считай два такта «раз, два-и, три-и». Держи каждый бас до «два». После «два» в обоих тактах и после «три» в первом отпускай обе клавиши на «и» и выдерживай полдоли тишины. Последнее фа–ля держи целую долю до мысленного «раз».';
+    const hearing = 'Послушай образец и напой оба низких «раз» на одной высоте. Сравни за инструментом два тихих вступления до с одним удержанным до. В рисунке слышны два отдельных басовых звука, полдоли тишины на стыке и две разные пары над одним басом.';
+    const mastery = 'Оба «раз» начинаются на одном C3, каждый бас отпущен вовремя. Ми–соль сменяется фа–ля, а повтор каждой пары слышен отдельно. Пульс идёт ровно через тишину между тактами.';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    const czerny = 'https://www.koelnklavier.de/quellen/czer-brf/brief-03.html';
+    lesson.rhythm = waltzRhythm(leftWaltzCommonBass.options, 'project-left-waltz-common-bass-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Смена созвучия над прежним басом в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-common-bass', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй E3–G3 и полностью отпусти. Найди прежний C3 мизинцем. Сыграй этот стык на «три-и, раз», затем добавь F3–A3 на следующее «два». Соедини оба такта, когда стык получается спокойно.',
+        motion, count, hearing,
+        'Придумай свою фразу из двух тактов над одной басовой клавишей. Выбери порядок двух знакомых созвучий и выдержи полдоли тишины перед новым «раз». Проверь перенос на слух вне зачёта. Позанимайся 3–5 минут с отдыхом, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Два «раз» звучат одинаково низко. Во втором такте мизинец снова нажимает до C3, а фа появляется в верхней паре на «два».',
+        'Обе клавиши каждой пары отпускаются вместе. На «и» перед вторым тактом слышна тишина.',
+        'На «два» и «три» второго такта фа и ля вступают одновременно пальцами 2–1. Последняя пара длится целую долю.',
+        'Проверяю пальцы и свободу левой руки за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [clark, czerny],
+      referenceTitles: {
+        [clark]: 'Майкл Кларк. Baylor Piano Basics, § 90.1, такты 1–2',
+        [czerny]: 'Карл Черни. Третье письмо об обучении игре на фортепиано, с. 20'
+      },
+      sourceEvidenceIds: ['clark-baylor-waltz-primary-chords-2026-11-27', 'czerny-letter3-release-2026-11-05'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCommonBass.goal,
+        context: 'Один способ сменить гармонию в аккомпанементе, когда мелодия продолжается над прежней басовой ступенью.',
+        sourceNote: 'Первые два такта рисунка I–IV–I–V7–I у Майкла Кларка показывают две гармонии над C3. В печати все длительности четвертные, а вторые созвучия без номеров пальцев. Полудоли тишины, повтор той же аппликатуры в паре и темп 48 BPM заданы проектом. Карл Черни в третьем письме связывает отпускание клавиши с записанной длительностью ноты и паузой.'
       }
     });
   }
@@ -6060,6 +6118,9 @@
     }
     if (!existing.has(leftWaltzCToF.id)) {
       describeLeftWaltzCToF(lessons.find(lesson => lesson.id === leftWaltzCToF.id), adapter);
+    }
+    if (!existing.has(leftWaltzCommonBass.id)) {
+      describeLeftWaltzCommonBass(lessons.find(lesson => lesson.id === leftWaltzCommonBass.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

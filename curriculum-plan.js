@@ -3576,6 +3576,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-common-bass-01",
+      "stage": "p7",
+      "branch": "left-waltz-common-bass",
+      "fingerprint": "87151ef8",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-c-f-common-bass-left-01",
+        "detail-p-left-waltz-c-f-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

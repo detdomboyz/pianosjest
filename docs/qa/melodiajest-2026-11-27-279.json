@@ -1,0 +1,502 @@
+{
+  "phase": "2026-11-27-279",
+  "completedAt": "2026-11-27T19:44:06.597113+05:00",
+  "batch": "2026-11-27-23",
+  "lesson": "detail-p-left-waltz-common-bass-01",
+  "localVersion": "23.5.243",
+  "publicVersion": "23.5.220",
+  "baseGitCommit": "0d969d964aee25f1b24fc3c0fab40fa183d65879",
+  "checkpointRoot": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-279-23.5.243",
+  "musicReport": "docs/reports/piano-curriculum-2026-11-27-23.md",
+  "operationsReport": "docs/reports/melodiajest-operations-2026-11-27-279.md",
+  "counts": {
+    "catalog": 809,
+    "learning": 661,
+    "midi": 391,
+    "provenance": 364,
+    "themes": 119,
+    "goalUpperBound": 637,
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "verifiedCoverage": {
+    "reviewedLearningRecords": 660,
+    "anyMeterConsecutiveWindows": 17875,
+    "alignedThreeFourPairs": 5,
+    "previousTwoBarWaltzRecords": 2,
+    "previousHarmonyChanges": 1,
+    "previousHarmonyChangesOverSameBass": 0,
+    "firstBarMatchesPreparation": true,
+    "previousCatalogRecordsExact": 808,
+    "previousCanonicalEditionsExact": 660,
+    "previousThemesExact": 119,
+    "previousRoutesAndCallbacksExact": true,
+    "guitarRouteAndImmutableBaselineExact": true,
+    "personalEditRoundtripSynthetic": true
+  },
+  "musicalContract": {
+    "hand": "left",
+    "meter": [
+      3,
+      4
+    ],
+    "midis": [
+      [
+        48
+      ],
+      [
+        52,
+        55
+      ],
+      [
+        52,
+        55
+      ],
+      [
+        48
+      ],
+      [
+        53,
+        57
+      ],
+      [
+        53,
+        57
+      ]
+    ],
+    "fingers": [
+      [
+        5
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        5
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "beats": [
+      1,
+      0.5,
+      0.5,
+      1,
+      0.5,
+      1
+    ],
+    "tempoBpm": 48,
+    "restIntervals": [
+      [
+        1.5,
+        2
+      ],
+      [
+        2.5,
+        3
+      ],
+      [
+        4.5,
+        5
+      ]
+    ],
+    "bass": {
+      "midi": 48,
+      "onBeats": [
+        0,
+        3
+      ],
+      "offBeats": [
+        1,
+        4
+      ]
+    },
+    "articulation": "standard",
+    "timing": "beat-boundary-v2",
+    "endBeat": 6,
+    "physicalComfortObserved": false
+  },
+  "sources": {
+    "rules": 147,
+    "applications": 1174,
+    "newRules": 0,
+    "newApplications": 1,
+    "originalFigureVisuallyReadOn": "2026-11-27",
+    "baylorChapterRefreshHttp": 403,
+    "relatedTimingReadOn": "2026-11-27",
+    "primaryFigure": {
+      "url": "https://openbooks.library.baylor.edu/app/uploads/sites/55/2026/06/I-IV-I-V7-I-LH-Waltz-Bass-accompaniment_0004-scaled.png",
+      "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-278-23.5.242\\evidence\\baylor-waltz-primary-chords.png",
+      "bytes": 45676,
+      "sha256": "46aed2cb6efa5dd7bc95f1b6c67ae59d17eb9ccf6cd308d1fb689d08ffca97fc",
+      "checkedAt": "2026-11-27T19:23:53.8396127+05:00"
+    },
+    "sourceSecondMeasureMidis": [
+      [
+        48
+      ],
+      [
+        53,
+        57
+      ],
+      [
+        53,
+        57
+      ]
+    ],
+    "relatedTimingEvidenceId": "czerny-letter3-release-2026-11-05"
+  },
+  "tests": {
+    "target": {
+      "tests": 152,
+      "pass": 152,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 121870.8311,
+      "sha256": "8d5908414d7aa9cda59875a9e39bd972546f731f5cdd761d2ae98c572bf26a22"
+    },
+    "newLesson": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 6563.7089,
+      "sha256": "8f04017600c349512df47049081ae7b790f87850b699c887b4e77b02eb42d126"
+    },
+    "targetFiles": [
+      "tests/piano-left-waltz-common-bass.test.cjs",
+      "tests/piano-left-waltz-c-f.test.cjs",
+      "tests/piano-left-waltz-bass.test.cjs",
+      "tests/piano-c-f-common-bass-left.test.cjs",
+      "tests/piano-left-triple-pulse.test.cjs",
+      "tests/piano-eighth-triple-meter.test.cjs",
+      "tests/piano-position-triads.test.cjs",
+      "tests/piano-blocked-triads.test.cjs",
+      "tests/piano-paired-eighth-rest-repeat.test.cjs",
+      "tests/curriculum.test.cjs",
+      "tests/curriculum-forward-preparation.test.cjs",
+      "tests/lesson-development.test.cjs",
+      "tests/piano-skill-coverage.test.cjs",
+      "tests/piano-progress-store.test.cjs",
+      "tests/piano-learning-ui.test.cjs",
+      "tests/catalog-transfer.test.cjs",
+      "tests/web-release.test.cjs"
+    ],
+    "windowsService": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 7,
+      "duration_ms": 32768.1384,
+      "sha256": "62ac5a5627cdf393f84ee7f96afce5a77744afa71362026b32c39e6e57746b6a"
+    },
+    "redBeforeImplementation": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4,
+      "skipped": 0,
+      "duration_ms": 4059.8973,
+      "sha256": "46bd99cb48a1a0dd63dbf72725faf7664c9c9138aecac022321e045cbb6d4ad6"
+    },
+    "targetBeforeCountFixtureRefresh": {
+      "tests": 152,
+      "pass": 148,
+      "fail": 4,
+      "skipped": 0,
+      "duration_ms": 120995.9816,
+      "sha256": "4e9477c013b869c231b7c74c07b369f9776a8076f99bece2dd86905bfb49520d"
+    },
+    "wholeSuiteRerun": false,
+    "previousBroaderVerification": "docs/qa/melodiajest-2026-11-27-276.json",
+    "priorResultsFreshForThisVersion": false,
+    "audits": [
+      {
+        "name": "audit-lessons",
+        "exit": 0,
+        "started": "2026-11-27T19:36:29.6030067+05:00",
+        "ended": "2026-11-27T19:36:34.0185160+05:00",
+        "logBytes": 754,
+        "logSha256": "ff3ebf4b13541ce9f29be89567e27bc91eda058312cb3385d3d41e031a53e8bc"
+      },
+      {
+        "name": "audit-fingering",
+        "exit": 0,
+        "started": "2026-11-27T19:36:34.0281995+05:00",
+        "ended": "2026-11-27T19:36:44.7581017+05:00",
+        "logBytes": 736,
+        "logSha256": "b7ecd10b4ca6a34491e8cac9f658b69b641d59377e2f116485cf3148a1869f8f"
+      },
+      {
+        "name": "audit-curriculum",
+        "exit": 0,
+        "started": "2026-11-27T19:36:44.7668163+05:00",
+        "ended": "2026-11-27T19:36:57.5790362+05:00",
+        "logBytes": 646,
+        "logSha256": "55d2d09288955a2a79ef35bc39f23496e28d51cb6104d6770c32b1128ee41076"
+      },
+      {
+        "name": "audit-coverage",
+        "exit": 0,
+        "started": "2026-11-27T19:36:57.5895962+05:00",
+        "ended": "2026-11-27T19:37:00.0793280+05:00",
+        "logBytes": 494,
+        "logSha256": "c64dbd5a727ceeeb7a964452cfdad3d1cd98dc6ac884fe40e128c0fcd8765830"
+      }
+    ]
+  },
+  "browser": {
+    "tool": "Built-in browser via computer-use, isolated anonymous preview",
+    "origin": "http://127.0.0.1:64798",
+    "title": "Левая: вальс со сменой созвучий над басом до",
+    "home": {
+      "learning": 661,
+      "midi": 391
+    },
+    "links": [
+      {
+        "id": "detail-p-triads-02",
+        "title": "Левая: собрать C major",
+        "opened": true
+      },
+      {
+        "id": "detail-p-c-f-common-bass-left-01",
+        "title": "Левая: C → F → C с общей нижней опорой",
+        "opened": true
+      },
+      {
+        "id": "detail-p-left-waltz-c-f-01",
+        "title": "Левая: смена до и фа в вальсе",
+        "opened": true
+      }
+    ],
+    "enter": {
+      "opened": true,
+      "focusRetained": true
+    },
+    "space": {
+      "collapsed": true,
+      "focusRetained": true
+    },
+    "firstNotes": [
+      {
+        "midi": 48,
+        "hand": "left",
+        "finger": 5
+      }
+    ],
+    "firstNotesAccessibility": "C3: левая рука: палец 5 — мизинец",
+    "remainingPracticeSteps": 6,
+    "score": {
+      "timeSignature": "3/4",
+      "tempoBpm": 48,
+      "measures": 2,
+      "rows": [
+        "C3 · ♩ четверть · начало 0 доли · длительность 1 доля / 1250 мс",
+        "E3 + G3 · ♪ восьмая · начало 1 доли · длительность 0,5 доли / 625 мс",
+        "E3 + G3 · ♪ восьмая · начало 2 доли · длительность 0,5 доли / 625 мс · пауза до: 625 мс",
+        "C3 · ♩ четверть · начало 0 доли · длительность 1 доля / 1250 мс · пауза до: 625 мс",
+        "F3 + A3 · ♪ восьмая · начало 1 доли · длительность 0,5 доли / 625 мс",
+        "F3 + A3 · ♩ четверть · начало 2 доли · длительность 1 доля / 1250 мс · пауза до: 625 мс"
+      ],
+      "mobileRestLabels": [
+        "E3 + G3 · ♪ восьмая · начало 2 доли · длительность 0,5 доли / 625 мс · пауза до: 625 мс",
+        "C3 · ♩ четверть · начало 0 доли · длительность 1 доля / 1250 мс · пауза до: 625 мс",
+        "F3 + A3 · ♩ четверть · начало 2 доли · длительность 1 доля / 1250 мс · пауза до: 625 мс"
+      ],
+      "restCountOnMobile": 3,
+      "restMs": 625
+    },
+    "mobile": {
+      "cardBottom": 653.8199768066406,
+      "cardTop": 487.53997802734375,
+      "cardWidth": 322.3999938964844,
+      "compactHeight": 112,
+      "documentClientWidth": 376,
+      "documentWidth": 376,
+      "headingBottom": 137.2599983215332,
+      "headingTop": 77.45999908447266,
+      "height": 844,
+      "lineHeight": 22.4,
+      "selected": "Кратко",
+      "width": 390,
+      "lines": 5,
+      "wholeFrameObserved": true,
+      "horizontalOverflow": false,
+      "initialHeadingTop": 1347.219970703125,
+      "afterManualScroll": true
+    },
+    "hiddenPersistedAfterReload": true,
+    "compactRestored": true,
+    "viewportBefore": [
+      1280,
+      720
+    ],
+    "viewportImmediatelyAfterReset": [
+      390,
+      844
+    ],
+    "viewportAfterReset": [
+      1280,
+      720
+    ],
+    "temporaryTabsRemaining": 0,
+    "screenshot": {
+      "captured": true,
+      "file": "mobile.jpg",
+      "bytes": 44923,
+      "sha256": "3ee5cfcc8cb7f469e3269f06e0de86ef6479b047ba6ce2f6a3f97ba0dcbf2695"
+    },
+    "screenshotStatusRu": "Мобильный кадр сохранён в приватной копии на D:.",
+    "syntheticGuest": true,
+    "serviceSessionStub": true,
+    "physicalMidiObserved": false,
+    "audioObserved": false,
+    "teacherReviewed": false,
+    "manifestSha256": "d8e6b6eab3c7efb7547cedaa9462a725a2ead07c73ae9bd4ae3c9533f1eebedc",
+    "courseSha256": "017b0345896c7b96e520543f098924048389efa1fba45ef4e36e85ded1b86b98",
+    "publicFiles": 41,
+    "ownedPreviewStopped": true,
+    "ownedPortsClosed": [
+      64798,
+      64799
+    ],
+    "courseStatuses": [
+      200,
+      304,
+      304,
+      304,
+      304,
+      304,
+      304
+    ]
+  },
+  "localCopy": {
+    "phase": 279,
+    "version": "23.5.243",
+    "pass": true,
+    "checkedAt": "2026-11-27T19:38:46.832576+05:00",
+    "selectedFiles": 948,
+    "selectedBytes": 83880100,
+    "sourceFiles": 907,
+    "publicFiles": 41,
+    "newStoredFiles": 19,
+    "newStoredBytes": 12712044,
+    "reusedFiles": 929,
+    "retentionDependencies": [
+      "2026-11-20-251-23.5.215",
+      "2026-11-20-252-23.5.216",
+      "2026-11-20-253-23.5.217",
+      "2026-11-20-254-23.5.218",
+      "2026-11-21-255-23.5.219",
+      "2026-11-21-256-23.5.220",
+      "2026-11-27-257-23.5.221",
+      "2026-11-27-258-23.5.222",
+      "2026-11-27-259-23.5.223",
+      "2026-11-27-260-23.5.224",
+      "2026-11-27-261-23.5.225",
+      "2026-11-27-262-23.5.226",
+      "2026-11-27-263-23.5.227",
+      "2026-11-27-264-23.5.228",
+      "2026-11-27-265-23.5.229",
+      "2026-11-27-266-23.5.230",
+      "2026-11-27-267-23.5.231",
+      "2026-11-27-268-23.5.232",
+      "2026-11-27-269-23.5.233",
+      "2026-11-27-270-23.5.234",
+      "2026-11-27-271-23.5.235",
+      "2026-11-27-272-23.5.236",
+      "2026-11-27-273-23.5.237",
+      "2026-11-27-274-23.5.238",
+      "2026-11-27-275-23.5.239",
+      "2026-11-27-276-23.5.240",
+      "2026-11-27-277-23.5.241",
+      "2026-11-27-278-23.5.242"
+    ],
+    "changedPublicFiles": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "webPayloadDeltaBytes": 7244,
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedTestsPassed": 5,
+    "manifestSha256": "eb3cd03c39f58b61cdbc28d4dc7e6a28d375d88c9148addafbbba7ac96beb411",
+    "smokeLogSha256": "dae66ab8d04e377d481b459ad9361bccfa63587dfd18894ef68693bcabf9dac7",
+    "webManifestSha256": "d8e6b6eab3c7efb7547cedaa9462a725a2ead07c73ae9bd4ae3c9533f1eebedc",
+    "courseSha256": "017b0345896c7b96e520543f098924048389efa1fba45ef4e36e85ded1b86b98",
+    "freeBytesBeforeCopy": 824759095296,
+    "scope": "Selected local source and web export. No production data."
+  },
+  "cleanup": {
+    "removed": true,
+    "path": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-279-work",
+    "removedFiles": 953,
+    "logicalBytes": 84210423.0,
+    "dAvailableBefore": 824658644992,
+    "dAvailableAfter": 824745066496,
+    "measuredAvailableDelta": 86421504,
+    "checkedAt": "2026-11-27T19:43:07.3329741+05:00"
+  },
+  "quota": {
+    "source": "get_usage_limits",
+    "limitId": "codex",
+    "policy": "until-exhausted",
+    "reservePercent": 0,
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "rateLimitReachedType": null,
+    "primary": {
+      "usedPercent": 69,
+      "windowDurationMins": 10080,
+      "resetsAt": 1795892423,
+      "remainingPercent": 31
+    },
+    "secondary": null,
+    "stage": "before local copy verification",
+    "checkedAt": "2026-11-27T14:38:09.004Z"
+  },
+  "production": {
+    "https": 200,
+    "version": "23.5.220",
+    "observedAt": "2026-11-27T19:22:53.0493571+05:00",
+    "deployed": false,
+    "manualPgStarts": 0,
+    "s3Requests": 0,
+    "freshExternalRestore": false,
+    "lastKnownReleaseReceipt": "docs/qa/melodiajest-2026-11-21-release-220.json"
+  },
+  "automation": {
+    "id": "automation",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "sameChat": true,
+    "newAutomationCreated": false,
+    "promptSha256": "18c78cede8f6600e57743ace9625a6f95d4ceec0a4b636e0cbaaa038cb643dba",
+    "verifiedAt": "2026-11-27T19:44:06.597113+05:00",
+    "nextStage": 280
+  },
+  "nextWork": {
+    "id": "left-waltz-tonic-cadence-after-279",
+    "priority": 1,
+    "status": "ready-for-next-local-stage",
+    "action": "Проверить кадансовое окончание вальса левой в размере 3/4. В тактах 4–5 рисунка Майкла Кларка в § 90.1 сверить B2 на «раз», два созвучия F3–G3 и финальный аккорд C3–E3–G3 на три доли. Найти эти позиции в подготовке C → G7/B → C и проверить покрытие в каталоге. При подтверждённом пробеле подготовить один переход с общим вступлением и отпусканием трёх клавиш тоники, ровным счётом на удержании и переносом в свою фразу. Начать с квоты и копии этапа 279.",
+    "checkpoint": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-279-23.5.243\\completion.json",
+    "planReference": "docs/reports/piano-curriculum-2026-11-27-23.md",
+    "plannedNewRecords": 0,
+    "newLessonsImplemented": 0,
+    "resumeRequiresExplicitUserRequest": false
+  }
+}
