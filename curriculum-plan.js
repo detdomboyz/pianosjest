@@ -3990,6 +3990,20 @@
       ]
     },
     {
+      "id": "detail-p-b-major-prepared-paired-full-ascent-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-paired-full-ascent",
+      "fingerprint": "30a6151a",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-prepared-paired-lower-ascent-01",
+        "detail-p-b-major-prepared-paired-joined-ascent-01",
+        "detail-p-b-major-prepared-paired-upper-turn-01",
+        "detail-p-b-major-ascent-left-01",
+        "detail-p-b-major-ascent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-fsharp-major-upper-three-paired-ascent-01",
       "stage": "p7",
       "branch": "fsharp-major-upper-three-paired-ascent",

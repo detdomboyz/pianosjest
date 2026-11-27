@@ -958,9 +958,25 @@
     events: bMajorLowerCombinationLeft.events.map((left, i) => [...left, ...bMajorAscentRight.events[i]]),
     options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
   };
+  const bMajorPairedFullAscent = {
+    id: 'detail-p-b-major-prepared-paired-full-ascent-01',
+    title: 'Си мажор двумя руками. Октава вверх',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedLowerAscent.id,
+    requires: [
+      bMajorPairedLowerAscent.id, bMajorPairedJoinedAscent.id, bMajorPairedUpperTurn.id,
+      bMajorAscentLeft.id, bMajorAscentRight.id
+    ],
+    goal: 'Соедини подготовленные группы в восемь пар си мажора. Отпусти среднее си после первой доли правой рукой и заново сыграй эту клавишу левой в последней паре. Сохрани ровный пульс и общий удар двух рук.',
+    events: [
+      ...bMajorPairedLowerAscent.events, ...bMajorPairedJoinedAscent.events.slice(1),
+      bMajorPairedUpperTurn.events[3]
+    ],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 1, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
-    bMajorPairedJoinedAscent, bMajorPairedLowerAscent);
+    bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1408,6 +1424,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedLowerAscent.goal,
         context: 'Начало восходящей мелодии в параллельных октавах и подготовка общего ре-диеза для продолжения.',
         sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 каждой руки, такт 1, ноты 1–3. Проект соединяет одноручные схемы и заменяет три восьмые двумя четвертями и половинной при 40 BPM. Тихая доля отсчитывается вручную.'
+      }
+    });
+  }
+
+  function describeBMajorPairedFullAscent(lesson, adapter) {
+    const setup = 'Найди си слева от среднего до. Поставь на него правый большой, а на си октавой ниже поставь левый безымянный. Педаль оставь выключенной. Сначала вспомни обе полные октавы отдельно.';
+    const motion = 'Левая играет 4–3–2–1–4–3–2–1, правая 1–2–3–1–2–3–4–5. На ми встречаются два больших. К фа-диезам подведи левый безымянный и правый указательный вместе с предплечьями. Дай общим ре-диезам и ля-диезам по одному удару. В начале отпусти среднее си правой на «два». В конце вновь нажми эту клавишу левым большим вместе с верхним си под правым мизинцем.';
+    const count = 'Считай четверти при 40 BPM. Первый такт — «раз си, два до-диез, три ре-диез, четыре ми». Второй — «раз фа-диез, два соль-диез, три ля-диез, четыре си». На очередное «раз» отпусти обе клавиши. Тихую долю после упражнения отсчитай сам.';
+    const hearing = 'Послушай восемь общих вступлений, затем пропой верхнюю линию. На стыках слышен один ре-диезовый и один ля-диезовый удар, после каждого сразу идёт следующая доля. Если в конце слышно лишь верхнее си, потренируй первые и последние пары отдельно и проследи за новым вступлением левой.';
+    const mastery = 'Обе руки проходят восемь ступеней в одном пульсе. Среднее си свободно после первого удара и вновь звучит под левым большим на последней доле. Оба си в конце отпускаются вместе.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedFullAscent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-full-ascent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Восходящая мелодия в параллельных октавах', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-full-ascent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Медленно повтори подготовленные группы си–до-диез–ре-диез, ре-диез–ми–фа-диез–соль-диез–ля-диез и начало верхнего разворота до си. Соедини их с одной общей парой на каждом стыке. Последние пары коротких подготовок теперь длятся по одной доле.',
+        motion, count, hearing,
+        'Отведи 3–5 минут с короткими паузами. Придумай продолжение для небольшой мелодии в си мажоре с парой октавных вступлений. Сам выбери, с какой ступени начать и где выдержать остановку. Если среднее си звучало правой, проверь его новое вступление левой, когда оно подходит к твоей фразе. Сверь общий удар на слух, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Стартую на си пальцами 4 слева и 1 справа. На ми играют оба больших.',
+        'Слышу восемь общих ударов и по одной четверти на каждый. Отпускаю первую пару вместе на «два».',
+        'На «четыре» второго такта играю среднее си левым большим и верхнее си правым мизинцем. Сверяю пальцы за инструментом.',
+        'На новом «раз» освобождаю обе клавиши. В своей фразе проверяю общие вступления на слух.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Си мажор левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Си мажор правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Соединение отрезков, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[0], bMajorRoundtripRight.sources[0],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedFullAscent.goal,
+        context: 'Полный подъём мелодии двумя руками в параллельных октавах, с общим пульсом и сменой руки на среднем си между краями фразы.',
+        sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 каждой руки, такт 1. Из восьми восьмых каждой руки проект собирает восемь пар четвертей при 40 BPM. Принцип общей ноты у соседних отрезков взят из главы 1, § 7 Чанга. Одновременные пары, темп и новая фраза заданы проектом.'
       }
     });
   }
@@ -4825,6 +4890,9 @@
     }
     if (!existing.has(bMajorPairedLowerAscent.id)) {
       describeBMajorPairedLowerAscent(lessons.find(lesson => lesson.id === bMajorPairedLowerAscent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedFullAscent.id)) {
+      describeBMajorPairedFullAscent(lessons.find(lesson => lesson.id === bMajorPairedFullAscent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
