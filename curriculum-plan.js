@@ -4605,6 +4605,19 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-eighth-handoff-01",
+      "stage": "p7",
+      "branch": "paired-waltz-eighth-handoff",
+      "fingerprint": "5f719409",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-eighth-pairs-01",
+        "detail-p-eighth-rest-offbeat-right-01",
+        "course04-07",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

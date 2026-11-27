@@ -586,6 +586,7 @@
 | detail-p-paired-waltz-right-rest-01 | Вальс: левая играет на «три» | 11 | 48 | MIDI-челлендж | сначала course01-02; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-left-rest-01 | Вальс: правая играет на «три» | 11 | 48 | MIDI-челлендж | сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-handoff-01 | Вальс: передай пульс другой руке | 10 | 48 | MIDI-челлендж | сначала course01-02; сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
+| detail-p-paired-waltz-eighth-handoff-01 | Вальс: передай пульс на «два-и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-offbeat-right-01; сначала course04-07; сначала course01-07 |
 | oct201--2 | Семь ступеней C2–B2 | 65 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct202--2 | Через одну | 60 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct203--2 | Диезы C2 | 48 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |

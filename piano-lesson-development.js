@@ -1315,6 +1315,20 @@
     }),
     options: pairedWaltzBassShift.options
   };
+  const pairedWaltzEighthHandoff = {
+    id: 'detail-p-paired-waltz-eighth-handoff-01',
+    title: 'Вальс: передай пульс на «два-и»',
+    group: pairedWaltzHandoff.group, groupTitle: pairedWaltzHandoff.groupTitle, stage: 'p7',
+    after: pairedWaltzHandoff.id,
+    requires: ['detail-p-left-eighth-pairs-01', 'detail-p-eighth-rest-offbeat-right-01', 'course04-07', 'course01-07'],
+    goal: 'Раздели «два» пополам. На «два» сыграй до левой, на «и» ми правой. На «три» обе руки снова берут до вместе.',
+    events: [
+      ...pairedWaltzHandoff.events.slice(0, 3),
+      pairedWaltzPulse.events[0],
+      ...pairedWaltzPulse.events.slice(3)
+    ],
+    options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 1, 1, 1], startBeats: [0, 1, 1.5, 2, 3, 4, 5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1325,7 +1339,7 @@
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
-    pairedWaltzLeftRest, pairedWaltzHandoff);
+    pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2816,6 +2830,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzHandoff.goal,
         context: 'Смена руки, ведущей пульс, помогает сохранить ровное движение мелодии и сопровождения при паузах.',
         sourceNote: 'На второй доле первого полного такта вальса Брамса op. 39 № 9 звучит нижний аккорд, на третьей верхняя нота, а следующий такт начинает пара рук. Ноты, пальцы, темп и игра без педали заданы для упражнения проекта.'
+      }
+    });
+  }
+
+  function describePairedWaltzEighthHandoff(lesson, adapter) {
+    const setup = 'Повтори две ровные восьмые левой и вступление правой на «и» из подготовок. Найди C3 левым мизинцем 5 и C4 правым большим 1. Проверь, что клавиши нажимаются вместе. Педаль выключена.';
+    const motion = 'К «два» отпусти обе клавиши и снова сыграй C3 мизинцем 5. На «и» отпусти C3 и возьми E4 правым средним 3. На «три» отпусти E4 и одновременно сыграй C3 и C4. Левая остаётся над знакомым до.';
+    const count = 'При 48 BPM веди счёт «раз, два-и, три | раз, два, три». Два одиночных звука делят вторую долю поровну, по 625 мс. Пары длятся по четверти. Во втором такте правая играет D4, E4, F4 пальцами 2–3–4, левая повторяет C3.';
+    const hearing = 'Послушай пару, низкое до, верхнее ми и снова пару. Произнеси «два-и-три» тремя ровными слогами. В предыдущем вальсе левая и правая занимали по целой доле. Здесь оба одиночных звука помещаются на «два-и».';
+    const mastery = 'Слышны две одинаково длинные восьмые, низкая на «два» и высокая на «и». Каждый одиночный звук заканчивается к следующей атаке. На «три» пара звучит одним ударом.';
+    const reference = 'https://app.hoffmanacademy.com/lessons/piano/la-cinquantaine-melody/video/';
+    lesson.rhythm = waltzRhythm(pairedWaltzEighthHandoff.options, 'project-paired-waltz-eighth-handoff-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Передача на двух восьмых одной доли в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-eighth-handoff', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Проговори «два-и-три». Постучи левой на «два», правой на «и», обеими на «три». Если третья доля опаздывает, вернись к медленным равным промежуткам.',
+        motion, count, hearing,
+        'Придумай свою верхнюю ноту на «и» из знакомых клавиш и верхний голос пары на «три». Сохрани бас до, две равные восьмые и общую атаку. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'К «два» правое до отпущено и слышен новый удар только левой.',
+        'На «и» левое до уже отпущено, а ми занимает вторую половину той же доли.',
+        'На «три» ми освободилось, а оба до слышны вместе и вовремя.'
+      ],
+      rhythmNotice: count,
+      references: [reference],
+      referenceTitles: { [reference]: 'Джозеф Хоффман. La Cinquantaine: Melody, урок 99, разбор восьмых и пауз' },
+      sourceEvidenceIds: ['hoffman-la-cinquantaine-eighth-handoff-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzEighthHandoff.goal,
+        context: 'Передача половины доли от баса к мелодии помогает вернуться к совместной атаке без сдвига следующей доли.',
+        sourceNote: 'Джозеф Хоффман в уроке 99 разбирает две восьмые с попеременными паузами рук в партии мелодии дуэта. В упражнении проекта этот принцип применён в 3/4 со своими нотами, пальцами и общим вступлением на «три».'
       }
     });
   }
@@ -6673,6 +6724,9 @@
     }
     if (!existing.has(pairedWaltzHandoff.id)) {
       describePairedWaltzHandoff(lessons.find(lesson => lesson.id === pairedWaltzHandoff.id), adapter);
+    }
+    if (!existing.has(pairedWaltzEighthHandoff.id)) {
+      describePairedWaltzEighthHandoff(lessons.find(lesson => lesson.id === pairedWaltzEighthHandoff.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
