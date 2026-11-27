@@ -3239,6 +3239,18 @@
       ]
     },
     {
+      "id": "detail-p-bflat-major-prepared-paired-middle-ascent-01",
+      "stage": "p7",
+      "branch": "bflat-major-prepared-paired-middle-ascent",
+      "fingerprint": "93ae0be4",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-prepared-paired-lower-ascent-01",
+        "detail-p-bflat-fourth-third-left-01",
+        "detail-p-bflat-major-ascent-right-01"
+      ]
+    },
+    {
       "id": "course10-06",
       "stage": "p6",
       "branch": "common",
