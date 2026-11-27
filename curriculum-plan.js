@@ -3612,6 +3612,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-passing-bass-01",
+      "stage": "p7",
+      "branch": "left-waltz-passing-bass",
+      "fingerprint": "1bae5ccd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-triple-pulse-01",
+        "detail-p-g-major-split-left-01",
+        "detail-p-eighth-rest-offbeat-left-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

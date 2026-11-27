@@ -1226,6 +1226,16 @@
     ],
     options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
   };
+  const leftWaltzPassingBass = {
+    id: 'detail-p-left-waltz-passing-bass-01',
+    title: 'Левая: си перед новым басом вальса',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzRootFifth.id,
+    requires: [leftTriplePulse.id, 'detail-p-g-major-split-left-01', leftOffbeatRest.id],
+    goal: 'Поставь короткую си на «и» после «три». Возьми до отдельным нажатием на новое «раз» и досчитай второй такт.',
+    events: [[tone(43, 5, 'left')], [tone(50, 1, 'left')], [tone(43, 5, 'left')], [tone(47, 3, 'left')], [tone(48, 2, 'left')]],
+    options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1234,7 +1244,7 @@
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
-    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth);
+    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2415,6 +2425,45 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzRootFifth.goal,
         context: 'Смена басовой опоры при той же паре ми–соль. Так можно разнообразить один аккорд в двух тактах сопровождения.',
         sourceNote: 'Chord Rhythms предлагает чередовать основной тон и квинту на первых долях соседних тактов. В вальсе № 69 из школы Кёлера виден другой пример неизменной верхней пары: ре сменяется до под фа-диезом и ля. Высоты, аппликатура, темп и паузы данного упражнения заданы проектом.'
+      }
+    });
+  }
+
+  function describeLeftWaltzPassingBass(lesson, adapter) {
+    const setup = 'В знакомой позиции соль мажор левой найди G2 мизинцем 5 и D3 большим 1. Между ними си B2 берёт средний 3, а до C3 — указательный 2. Правая отдыхает, педаль выключена.';
+    const motion = 'На «раз» сыграй G2, на «два» D3. На «три» верни мизинец к G2, на «и» отпусти её и сыграй B2 средним. На новом «раз» отпусти B2 и нажми соседнюю C3 указательным. Оба басовых вступления слышны по отдельности.';
+    const count = 'При 48 BPM считай «раз, два, три-и | раз, два, три». Соль и ре в начале длятся по целой доле. На третьей доле G2 и B2 длятся по полдоли. После нового «раз» держи C3 три доли и отпусти на мысленное следующее «раз».';
+    const hearing = 'Послушай, как низкая соль открывает такт. Затем напой короткую си и более долгое до. Услышь полутон от си к до, а первую долю нового такта отметь голосом.';
+    const mastery = 'Си слышна только на «и» после «три». Она освобождается к началу до. До вступает один раз, клавиша удерживается все три доли.';
+    const zac = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    const { beats, bpm } = leftWaltzPassingBass.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-left-waltz-passing-bass-v1', adapter, 3);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Подводящая нота перед первой долей 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-passing-bass', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй только G2, B2 и C3 на «три-и, раз». Найди два равных отрезка в третьей доле, затем добавь первые соль и ре. Сохрани положение руки из подготовки.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу с одной восьмой перед новым тактом. Начни с другого знакомого рисунка в той же позиции и снова подведи си к до. Проверь вступление на слабой половине доли и новое «раз». Позанимайся 3–5 минут с отдыхом, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «три» звучит G2, на «и» — B2. Третья доля занимает столько же времени, сколько «раз» и «два».',
+        'B2 берёт средний, C3 — указательный. Отпускаю си к новому «раз».',
+        'При переходе слышно один короткий звук си и одно долгое до. Держу C3 до конца второго такта.',
+        'Проверяю пальцы и свободу движения за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [zac],
+      referenceTitles: { [zac]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаги 1 и 4' },
+      sourceEvidenceIds: ['zac-waltz-passing-bass-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzPassingBass.goal,
+        context: 'Короткий звук си ведёт к басу до на границе тактов. Такой подвод можно добавить к своей мелодии после отработки ровного счёта.',
+        sourceNote: 'Джейсон Зак описывает G–D–G–B перед C–E–G и обращает внимание на подводящую си. Письменное описание не указывает точную долю си. Проект задаёт её на «и» после «три», возвращает вторую соль в G2 и оставляет в следующем такте только бас до. Пальцы, длительности и темп выбраны для знакомой позиции.'
       }
     });
   }
@@ -4961,9 +5010,21 @@
       provenance:{type:'project-technical-drill',author:'Упражнение проекта',purpose:'Сохранить внутренний пульс на конечной паузе, когда нет следующей атаки, которая показала бы её конец.',context:'Так заканчиваются короткие фразы и ответы перед следующим вступлением. Навык полезен при чтении, игре с партнёром и самостоятельном сопровождении.',sourceNote:'Последовательность C4 и её аппликатура созданы проектом. OpenLearn подтверждает длительности тишины, Open Music Theory — счёт и размер 4/4; это не цитата из произведения и не упражнение, утверждённое авторами. У издания copy и исходного URL различается нумерация примеров; здесь прочитаны Time Signatures / Counting, Examples 10–13.'}
     });
   }
-  function rhythmFromDurations(durations,bpm,source,adapter){
-    let cursor=0;
-    return adapter.normalizeRhythm({version:1,source,bpm,practiceBpm:bpm,timeSignature:{numerator:4,denominator:4},steps:durations.map(duration=>{const start=cursor;cursor+=duration;return {startBeat:start,durationBeats:duration,restBeforeBeats:0,measure:Math.floor(start/4)+1,beatInMeasure:start%4,sourceStartMs:Math.round(start*60000/bpm),sourceDurationMs:Math.round(duration*60000/bpm)};})},durations.length);
+  function rhythmFromDurations(durations, bpm, source, adapter, beatsPerMeasure = 4) {
+    let cursor = 0;
+    return adapter.normalizeRhythm({
+      version: 1, source, bpm, practiceBpm: bpm,
+      timeSignature: { numerator: beatsPerMeasure, denominator: 4 },
+      steps: durations.map(duration => {
+        const start = cursor;
+        cursor += duration;
+        return {
+          startBeat: start, durationBeats: duration, restBeforeBeats: 0,
+          measure: Math.floor(start / beatsPerMeasure) + 1, beatInMeasure: start % beatsPerMeasure,
+          sourceStartMs: Math.round(start * 60000 / bpm), sourceDurationMs: Math.round(duration * 60000 / bpm)
+        };
+      })
+    }, durations.length);
   }
   function describePositionReturn(lesson,adapter){
     const l=lesson.learning,starts=[0,2,3,4,6],durations=[1,1,1,1,2];
@@ -6236,6 +6297,9 @@
     }
     if (!existing.has(leftWaltzRootFifth.id)) {
       describeLeftWaltzRootFifth(lessons.find(lesson => lesson.id === leftWaltzRootFifth.id), adapter);
+    }
+    if (!existing.has(leftWaltzPassingBass.id)) {
+      describeLeftWaltzPassingBass(lessons.find(lesson => lesson.id === leftWaltzPassingBass.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
