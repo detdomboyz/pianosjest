@@ -3600,6 +3600,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-root-fifth-01",
+      "stage": "p7",
+      "branch": "left-waltz-root-fifth",
+      "fingerprint": "abdbb885",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-g-major-split-left-01",
+        "detail-p-left-waltz-common-bass-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

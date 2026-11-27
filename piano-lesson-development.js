@@ -1212,6 +1212,20 @@
     events: [[leftCadenceBass], leftCadenceDyad, leftCadenceDyad, dominantSeventhLeft.events[0]],
     options: { bpm: 48, beats: [1, 0.5, 0.5, 3], articulation: 'standard' }
   };
+  const leftWaltzRootFifth = {
+    id: 'detail-p-left-waltz-root-fifth-01',
+    title: 'Левая: смена баса до–соль в вальсе',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzCadence.id,
+    requires: ['detail-p-triads-02', 'detail-p-g-major-split-left-01', leftWaltzCommonBass.id],
+    goal: 'Начни первый такт с до C3, а второй с низкой соль G2. На «два» и «три» обоих тактов сыграй одну и ту же пару ми–соль.',
+    events: [
+      ...leftWaltzCommonBass.events.slice(0, 3),
+      [tone(43, 5, 'left')],
+      ...leftWaltzCommonBass.events.slice(1, 3)
+    ],
+    options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1220,7 +1234,7 @@
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
-    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence);
+    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2359,6 +2373,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCadence.goal,
         context: 'Переход от вальсового сопровождения к заключительному аккорду. Си, фа и соль образуют сокращённый G7/B, который разрешается в до мажор.',
         sourceNote: 'В рисунке I–IV–I–V7–I Майкла Кларка такт 4 состоит из четвертей B2, F3–G3 и F3–G3. В такте 5 C3–E3–G3 записаны половинной с точкой. Проект добавляет тишину после двух верхних пар, повторяет аппликатуру пары 2–1 и берёт для финала проверенную форму 5–3–1. Темп задан проектом. Карл Черни связывает момент отпускания с записанной длительностью.'
+      }
+    });
+  }
+
+  function describeLeftWaltzRootFifth(lesson, adapter) {
+    const setup = 'Сыграй знакомый такт C3, E3–G3, E3–G3. Отдельно найди соль G2 из начала гаммы соль мажор левой. Она расположена ниже первого до C3. Обе басовые клавиши берёт мизинец. Правая отдыхает, педаль выключена.';
+    const motion = 'На «раз» первого такта сыграй C3, на «два» и «три» вместе E3–G3 пальцами 3–1. На «и» после «три» освободи обе клавиши и перенеси руку влево к G2. На новом «раз» сыграй низкую соль мизинцем 5. Освободи её на «два» и перенеси руку к прежним ми и соль. Сыграй ту же пару на «два» и «три».';
+    const count = 'При 48 BPM считай ровно по три доли. Оба баса держи до «два». После «два» в обоих тактах и после «три» в первом такте отпусти пару на «и» и оставь полдоли тишины. Последнюю пару держи до мысленного нового «раз».';
+    const hearing = 'Послушай два начала такта. Сначала слышно до, затем соль ниже. На слабых долях ответ остаётся тем же. Низкая соль G2 — квинтовый звук трезвучия до мажор, а соль G3 входит в верхнюю пару.';
+    const mastery = 'Новая низкая соль вступает ровно после тишины. После обоих басов ми и соль звучат вместе в том же регистре. Счёт на переносе остаётся ровным.';
+    const rhythmGuide = 'https://chordrhythm.com/accompaniment-patterns/waltz-accompaniment/';
+    const edition = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=28';
+    lesson.rhythm = waltzRhythm(leftWaltzRootFifth.options, 'project-left-waltz-root-fifth-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Основной и квинтовый бас в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-root-fifth', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера отпусти ми и соль, тихо найди G2 мизинцем. Сыграй G2, отпусти её и вместе с предплечьем перенеси кисть обратно к E3–G3. Затем сыграй стык «три-и, раз, два» и добавь остальные доли.',
+        motion, count, hearing,
+        'Придумай свою двухтактовую фразу. Поменяй басы местами или возьми основной и квинтовый звуки другого знакомого трезвучия. Сохрани одну верхнюю пару и проверь ровный счёт. Позанимайся 3–5 минут с отдыхом, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'В первом такте на «раз» слышу C3, во втором G2. Каждый бас берет мизинец отдельным нажатием.',
+        'В полудоле тишины перед новым «раз» обе верхние клавиши уже свободны. Рука спокойно перемещается влево.',
+        'На слабых долях обоих тактов вместе вступают E3 и G3 под пальцами 3–1. Низкая G2 заканчивается до переноса.',
+        'Проверяю пальцы и удобство переноса за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [rhythmGuide, edition],
+      referenceTitles: {
+        [rhythmGuide]: 'Chord Rhythms. Waltz accompaniment, How to practice it',
+        [edition]: 'Луис Кёлер. Practical Method, op. 249, № 69, с. 26'
+      },
+      sourceEvidenceIds: ['chord-rhythms-waltz-root-fifth-2026-11-27', 'kohler-op249-waltz-no69-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzRootFifth.goal,
+        context: 'Смена басовой опоры при той же паре ми–соль. Так можно разнообразить один аккорд в двух тактах сопровождения.',
+        sourceNote: 'Chord Rhythms предлагает чередовать основной тон и квинту на первых долях соседних тактов. В вальсе № 69 из школы Кёлера виден другой пример неизменной верхней пары: ре сменяется до под фа-диезом и ля. Высоты, аппликатура, темп и паузы данного упражнения заданы проектом.'
       }
     });
   }
@@ -6177,6 +6233,9 @@
     }
     if (!existing.has(leftWaltzCadence.id)) {
       describeLeftWaltzCadence(lessons.find(lesson => lesson.id === leftWaltzCadence.id), adapter);
+    }
+    if (!existing.has(leftWaltzRootFifth.id)) {
+      describeLeftWaltzRootFifth(lessons.find(lesson => lesson.id === leftWaltzRootFifth.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
