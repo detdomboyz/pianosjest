@@ -458,6 +458,7 @@
 | detail-p-bflat-major-prepared-paired-lower-ascent-01 | Си-бемоль мажор двумя руками. Первые три пары | 6 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-ascent-left-01; сначала detail-p-bflat-second-thumb-right-01 |
 | detail-p-bflat-major-prepared-paired-middle-ascent-01 | Си-бемоль мажор двумя руками. От ре до фа | 6 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-prepared-paired-lower-ascent-01; сначала detail-p-bflat-fourth-third-left-01; сначала detail-p-bflat-major-ascent-right-01 |
 | detail-p-bflat-major-prepared-paired-joined-ascent-01 | Си-бемоль мажор двумя руками. Одна пара ре | 10 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-prepared-paired-lower-ascent-01; сначала detail-p-bflat-major-prepared-paired-middle-ascent-01 |
+| detail-p-bflat-major-prepared-paired-upper-ascent-01 | Си-бемоль мажор двумя руками. От фа до си-бемоля | 8 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-prepared-paired-joined-ascent-01; сначала detail-p-bflat-thumb-second-terminal-left-01; сначала detail-p-bflat-major-ascent-right-01 |
 
 ### 6. Закрепление начального курса
 
