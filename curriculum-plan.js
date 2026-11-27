@@ -3540,6 +3540,18 @@
       ]
     },
     {
+      "id": "detail-p-bflat-major-prepared-roundtrip-paired-01",
+      "stage": "p7",
+      "branch": "bflat-major-prepared-roundtrip-paired",
+      "fingerprint": "8c4ea0cd",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-prepared-paired-full-ascent-01",
+        "detail-p-bflat-major-prepared-paired-upper-turn-01",
+        "detail-p-bflat-major-prepared-paired-full-descent-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

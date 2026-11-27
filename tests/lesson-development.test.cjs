@@ -17,6 +17,27 @@ function explicitPreparationFrames(lesson,handMode){
   const result={};for(let j=0;j<hands.length;j++){const f=fingers[j];assert.equal(f.hand,hands[j]);assert.ok(Number.isInteger(f.num)&&f.num>=1&&f.num<=5);result[f.hand]={midi:notes[j],num:f.num};}return result;
  });
 }
+function containsPreparedFrames(prepared, target, hands) {
+ return prepared.some((_, start) => start + target.length <= prepared.length &&
+  target.every((frame, i) => hands.every(hand =>
+   frame[hand].midi === prepared[start + i][hand]?.midi && frame[hand].num === prepared[start + i][hand]?.num)));
+}
+function hasEarlierHandLine(required, lessons, hand, target) {
+ const pending = new Set(required.map(lesson => lesson.id));
+ for (const id of pending) {
+  const lesson = lessons.find(candidate => candidate.id === id);
+  if (lesson?.contentKind !== 'exercise') continue;
+  for (const preparation of lesson.learning?.requires ?? []) pending.add(preparation);
+  if (lesson.handMode !== hand || !(lesson.steps?.length >= target.length) || !lesson.fingeringSpec?.steps) continue;
+  const frames = lesson.steps.map((step, i) => {
+   const notes = app.stepMidiList(step), fingers = lesson.fingeringSpec.steps[i];
+   return notes.length === 1 && fingers?.length === 1 && fingers[0].hand === hand
+    ? { [hand]: { midi: notes[0], num: fingers[0].num } } : {};
+  });
+  if (containsPreparedFrames(frames, target, [hand])) return true;
+ }
+ return false;
+}
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -25,11 +46,29 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  assert.equal(lesson.learning.coverageDomain,'coordination','Only explicitly declared paired coordination can combine prepared hands');
  const target=explicitPreparationFrames(lesson,'split');explicitPreparationFrames(preparation,preparation.handMode);
  const required=lesson.learning.requires.map(id=>{const l=lessons.find(x=>x.id===id);assert.ok(l,'Every declared preparation must exist');assert.equal(l.contentKind,'exercise');return l;});
- for(const hand of ['left','right']){
-  const candidates=required.filter(l=>l.handMode===hand);assert.ok(candidates.length>0,'Both separate hands must be prepared');
-  assert.ok(candidates.some(l=>{const frames=explicitPreparationFrames(l,hand);for(let from=0;from<=frames.length-target.length;from++)if(target.every((event,i)=>event[hand].midi===frames[from+i][hand].midi&&event[hand].num===frames[from+i][hand].num))return true;return false;}),'Exact contiguous pitches and fingers of each own hand must already be prepared');
+ const hands = ['left', 'right'];
+ const paired = required.filter(l => l.handMode === 'split').map(l => explicitPreparationFrames(l, 'split'));
+ assert.ok(paired.length > 0, 'A prior explicit paired coordination is also required');
+ if (paired.length === required.length) {
+  assert.ok(paired.length >= 2, 'A paired integration requires at least two earlier exercises');
+  const transitions = target.slice(1).map((frame, i) => [target[i], frame]);
+  assert.ok(transitions.every(transition => paired.some(frames => containsPreparedFrames(frames, transition, hands))),
+   'Every adjacent pair must match both hands together in a declared earlier exercise');
+  assert.ok(paired.every(frames => transitions.some(transition => containsPreparedFrames(frames, transition, hands))),
+   'Each declared paired exercise must prepare a transition');
+  return;
  }
- assert.ok(required.some(l=>l.handMode==='split'&&explicitPreparationFrames(l,'split').length>0),'A prior explicit paired coordination is also required');
+ const startsOnPreparedPair = target.length > 1 &&
+  paired.some(frames => containsPreparedFrames(frames.slice(-1), target.slice(0, 1), hands));
+ for (const hand of hands) {
+  const candidates = required.filter(l => l.handMode === hand);
+  assert.ok(candidates.length > 0, 'Both separate hands must be prepared');
+  const spans = candidates.map(l => explicitPreparationFrames(l, hand));
+  if (spans.some(frames => containsPreparedFrames(frames, target, [hand]))) continue;
+  assert.ok(startsOnPreparedPair && spans.some(frames => containsPreparedFrames(frames, target.slice(1), [hand])),
+   'Exact own-hand pitches and fingers must already be prepared after the shared pair');
+  assert.ok(hasEarlierHandLine(required, lessons, hand, target), 'The whole separate-hand phrase must already be prepared, including the join');
+ }
 }
 function assertPreparationEdge(x){
   const {instrument,lesson,preparation,entry,preparationEntry,index,preparationIndex,historicalIds,canonicalRow,plan,lessons}=x;
@@ -94,6 +133,26 @@ test('paired optional preparation requires both exact own-hand groups,a prior dy
   {historicalIds:new Set([...protectedPrerequisiteIds,lesson.id])}
  ];
  assert.equal(patches.length,20);for(const patch of patches)assert.throws(()=>assertPreparationEdge({...base,...patch}));
+});
+
+test('joined paired phrases require exact earlier transitions and an extension from a shared pair needs its whole hand line', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const use = replacement => app.lessons.map(lesson => lesson.id === replacement.id ? replacement : lesson);
+ const joined = get('detail-p-bflat-major-prepared-paired-joined-ascent-01');
+ const [lower, middle] = joined.learning.requires.map(get);
+ assertPreparedHandEvidence(joined, lower, app.lessons);
+ const withoutSharedD = {
+  ...middle, steps: middle.steps.slice(1), fingeringSpec: { ...middle.fingeringSpec, steps: middle.fingeringSpec.steps.slice(1) }
+ };
+ assert.throws(() => assertPreparedHandEvidence(joined, lower, use(withoutSharedD)), /Every adjacent pair/);
+
+ const upper = get('detail-p-bflat-major-prepared-paired-upper-ascent-01');
+ const completeLeft = copy(get('detail-p-bflat-major-ascent-left-01'));
+ assertPreparedHandEvidence(upper, joined, app.lessons);
+ const f = completeLeft.steps.findIndex(step => app.stepMidiList(step)[0] === 53);
+ assert.ok(f >= 0);
+ completeLeft.fingeringSpec.steps[f][0].num = 5;
+ assert.throws(() => assertPreparedHandEvidence(upper, joined, use(completeLeft)), /The whole separate-hand phrase/);
 });
 
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{
