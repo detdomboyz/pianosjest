@@ -1201,6 +1201,17 @@
     ],
     options: { bpm: 48, beats: [1, 0.5, 0.5, 1, 0.5, 1], articulation: 'standard' }
   };
+  const [leftCadenceBass, ...leftCadenceDyad] = dominantSeventhLeft.events[1];
+  const leftWaltzCadence = {
+    id: 'detail-p-left-waltz-cadence-01',
+    title: 'Левая: три доли в конце вальса',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzCommonBass.id,
+    requires: ['detail-p-triads-02', dominantSeventhLeft.id, leftWaltzCommonBass.id],
+    goal: 'После вальсового такта от си возьми до мажор одним движением. Держи все три клавиши три доли и отпусти вместе.',
+    events: [[leftCadenceBass], leftCadenceDyad, leftCadenceDyad, dominantSeventhLeft.events[0]],
+    options: { bpm: 48, beats: [1, 0.5, 0.5, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1209,7 +1220,7 @@
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
-    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass);
+    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2306,6 +2317,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCommonBass.goal,
         context: 'Один способ сменить гармонию в аккомпанементе, когда мелодия продолжается над прежней басовой ступенью.',
         sourceNote: 'Первые два такта рисунка I–IV–I–V7–I у Майкла Кларка показывают две гармонии над C3. В печати все длительности четвертные, а вторые созвучия без номеров пальцев. Полудоли тишины, повтор той же аппликатуры в паре и темп 48 BPM заданы проектом. Карл Черни в третьем письме связывает отпускание клавиши с записанной длительностью ноты и паузой.'
+      }
+    });
+  }
+
+  function describeLeftWaltzCadence(lesson, adapter) {
+    const setup = 'Левой собери C3–E3–G3 пальцами 5–3–1. Затем найди B2–F3–G3 пальцами 5–2–1 из подготовки C → G7/B → C. Повтори знакомый вальсовый счёт «раз, два-и, три-и». Правая отдыхает, педаль выключена.';
+    const motion = 'На «раз» сыграй си B2 мизинцем 5. На «два» отпусти бас и нажми F3–G3 пальцами 2–1. На «и» отпусти обе клавиши. На «три» повтори пару и снова освободи её на «и». В тишине подведи мизинец к C3 и средний к E3, большой верни к G3. Нажми все три клавиши вместе на новое «раз».';
+    const count = 'При 48 BPM первый такт идёт «раз, два-и, три-и». После обеих восьмых пар есть полдоли тишины. Во втором такте аккорд начинается на «раз» и длится «раз, два, три». Отпусти все три клавиши на следующее мысленное «раз».';
+    const hearing = 'Послушай короткие фа–соль и спокойное окончание на до мажоре. Услышь одно вступление всех трёх звуков. Пока звук стихает, продолжай считать доли и держи клавиши до границы такта.';
+    const mastery = 'На «и» после первого «три» обе клавиши свободны. В финале слышен один аккорд. До, ми и соль держатся три доли и отпускаются вместе.';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    const czerny = 'https://www.koelnklavier.de/quellen/czer-brf/brief-03.html';
+    lesson.rhythm = waltzRhythm(leftWaltzCadence.options, 'project-left-waltz-cadence-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Окончание вальса аккордом на три доли', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-cadence', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера нажми заключительный аккорд вместе и произнеси «раз, два, три». На следующее «раз» отпусти три клавиши. Затем сыграй только стык «три-и, раз» от F3–G3 к этому аккорду.',
+        motion, count, hearing,
+        'Придумай свою концовку из одного вальсового такта и одного долгого аккорда. Возьми другую знакомую форму левой, если она удобна. Услышь её единое вступление и проверь совместное отпускание после трёх долей. Позанимайся 3–5 минут с отдыхом и повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Бас си заканчивается на «два». Пара F3–G3 дважды нажимается отдельно и дважды освобождается на «и».',
+        'Большой возвращается на G3 новым нажатием. До, ми и соль вступают одновременно пальцами 5–3–1.',
+        'Клавиши остаются нажатыми на «два» и «три». Снимаю все три вместе на мысленное новое «раз».',
+        'Проверяю пальцы и свободу левой руки за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [clark, czerny],
+      referenceTitles: {
+        [clark]: 'Майкл Кларк. Baylor Piano Basics, § 90.1, такты 4–5',
+        [czerny]: 'Карл Черни. Третье письмо об обучении игре на фортепиано, с. 20'
+      },
+      sourceEvidenceIds: ['clark-baylor-waltz-cadence-2026-11-27', 'czerny-letter3-release-2026-11-05'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzCadence.goal,
+        context: 'Переход от вальсового сопровождения к заключительному аккорду. Си, фа и соль образуют сокращённый G7/B, который разрешается в до мажор.',
+        sourceNote: 'В рисунке I–IV–I–V7–I Майкла Кларка такт 4 состоит из четвертей B2, F3–G3 и F3–G3. В такте 5 C3–E3–G3 записаны половинной с точкой. Проект добавляет тишину после двух верхних пар, повторяет аппликатуру пары 2–1 и берёт для финала проверенную форму 5–3–1. Темп задан проектом. Карл Черни связывает момент отпускания с записанной длительностью.'
       }
     });
   }
@@ -6121,6 +6174,9 @@
     }
     if (!existing.has(leftWaltzCommonBass.id)) {
       describeLeftWaltzCommonBass(lessons.find(lesson => lesson.id === leftWaltzCommonBass.id), adapter);
+    }
+    if (!existing.has(leftWaltzCadence.id)) {
+      describeLeftWaltzCadence(lessons.find(lesson => lesson.id === leftWaltzCadence.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

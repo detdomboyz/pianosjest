@@ -64,11 +64,51 @@ function explicitWaltzBars(lesson) {
  }
  return bars;
 }
+function assertWaltzCadencePreparation(lesson, earlierBars, lessons) {
+ const { steps, fingeringSpec, rhythm } = lesson;
+ assert.equal(steps.length, 4, 'The cadential phrase needs one waltz bar and one closing chord');
+ const [firstBar] = explicitWaltzBars({
+  ...lesson, steps: steps.slice(0, 3),
+  fingeringSpec: { ...fingeringSpec, steps: fingeringSpec.steps.slice(0, 3) },
+  rhythm: { ...rhythm, steps: rhythm.steps.slice(0, 3) }
+ }).map(bar => JSON.parse(bar));
+ assert.ok(earlierBars.some(bar => JSON.parse(bar).every((step, i) => step.duration === firstBar[i].duration)),
+  'The earlier waltz exercise must prepare the exact first-bar durations');
+ const [bass, weak, repeat] = firstBar;
+ const ending = rhythm.steps[3];
+ assert.deepEqual([ending.measure, ending.beatInMeasure, ending.startBeat, ending.durationBeats], [2, 0, 3, 3],
+  'The closing chord must occupy the full next 3/4 measure');
+ assert.ok(ending.restBeforeBeats > 0 && ending.restBeforeBeats === 1 - repeat.duration,
+  'The weak beat must be released before the closing chord');
+ const preparedShapes = new Set();
+ for (const id of lesson.learning.requires) {
+  const preparation = lessons.find(candidate => candidate.id === id);
+  if (preparation?.handMode !== 'left' || preparation.contentKind !== 'exercise') continue;
+  preparation.steps.forEach((step, i) => {
+   const midis = app.stepMidiList(step);
+   const fingers = preparation.fingeringSpec?.steps[i] ?? [];
+   if (midis.length === 3 && fingers.length === 3 && fingers.every(f => f.hand === 'left')) {
+    preparedShapes.add(JSON.stringify([midis, fingers.map(f => f.num)]));
+   }
+  });
+ }
+ const finalFingers = fingeringSpec.steps[3];
+ assert.equal(finalFingers.length, 3);
+ assert.ok(finalFingers.every(f => f.hand === 'left'));
+ assert.ok(preparedShapes.has(JSON.stringify([[...bass.midis, ...weak.midis], [...bass.digits, ...weak.digits]])),
+  'The cadential bass and upper dyad must form an earlier left-hand shape');
+ assert.ok(preparedShapes.has(JSON.stringify([app.stepMidiList(steps[3]), finalFingers.map(f => f.num)])),
+  'The closing chord pitches and fingers must match an earlier left-hand shape');
+}
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
   if (lesson.themeId === 'detail-p-left-waltz' && preparation.themeId === lesson.themeId) {
    const earlier = explicitWaltzBars(preparation);
+   if (lesson.learning.branch === 'left-waltz-cadence') {
+    assertWaltzCadencePreparation(lesson, earlier, lessons);
+    return;
+   }
    assert.ok(explicitWaltzBars(lesson).some(bar => earlier.includes(bar)),
     'At least one complete waltz bar must match the earlier pitches, fingers and durations');
    return;
@@ -198,6 +238,24 @@ test('a waltz dependency must supply a complete earlier bar with exact pitches, 
  assert.throws(() => assertPreparedHandEvidence(joined, heldLonger, app.lessons), /At least one complete waltz bar/);
  assert.throws(() => assertPreparedHandEvidence(joined, otherFingers, app.lessons), /At least one complete waltz bar/);
  assert.throws(() => assertPreparedHandEvidence(joined, wrongHand, app.lessons), /Every waltz key/);
+});
+
+test('the waltz cadence requires the earlier timing and both prepared chord shapes', () => {
+ const cadence = app.lessons.find(l => l.id === 'detail-p-left-waltz-cadence-01');
+ const earlier = app.lessons.find(l => l.id === 'detail-p-left-waltz-common-bass-01');
+ assertPreparedHandEvidence(cadence, earlier, app.lessons);
+ const wrongTiming = copy(earlier);
+ for (const i of [1, 4]) wrongTiming.rhythm.steps[i].durationBeats = 0.75;
+ assert.throws(() => assertPreparedHandEvidence(cadence, wrongTiming, app.lessons), /exact first-bar durations/);
+ const alteredDyad = copy(cadence);
+ for (const i of [1, 2]) alteredDyad.fingeringSpec.steps[i][0].num = 3;
+ assert.throws(() => assertPreparedHandEvidence(alteredDyad, earlier, app.lessons), /bass and upper dyad/);
+ const alteredChord = copy(cadence);
+ alteredChord.fingeringSpec.steps[3][1].num = 4;
+ assert.throws(() => assertPreparedHandEvidence(alteredChord, earlier, app.lessons), /closing chord pitches and fingers/);
+ const shortened = copy(cadence);
+ shortened.rhythm.steps[3].durationBeats = 2;
+ assert.throws(() => assertPreparedHandEvidence(shortened, earlier, app.lessons), /full next 3\/4 measure/);
 });
 
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{

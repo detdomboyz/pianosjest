@@ -3588,6 +3588,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-cadence-01",
+      "stage": "p7",
+      "branch": "left-waltz-cadence",
+      "fingerprint": "bf6be2e6",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-c-g7-common-tone-left-01",
+        "detail-p-left-waltz-common-bass-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",
