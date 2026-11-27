@@ -1291,6 +1291,16 @@
     events: pairedWaltzBassShift.events.map((pair, index) => index === 2 ? pair.slice(0, 1) : pair),
     options: pairedWaltzBassShift.options
   };
+  const pairedWaltzLeftRest = {
+    id: 'detail-p-paired-waltz-left-rest-01',
+    title: 'Вальс: правая играет на «три»',
+    group: pairedWaltzRightRest.group, groupTitle: pairedWaltzRightRest.groupTitle, stage: 'p7',
+    after: pairedWaltzRightRest.id,
+    requires: ['course04-07', 'detail-p-relocate-02', 'course01-07'],
+    goal: 'На «три» сыграй ми правой и перенеси левый мизинец с до на фа. На новом «раз» фа левой и ре правой звучат вместе.',
+    events: pairedWaltzBassShift.events.map((pair, index) => index === 2 ? pair.slice(1) : pair),
+    options: pairedWaltzBassShift.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1300,7 +1310,8 @@
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
-    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest);
+    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
+    pairedWaltzLeftRest);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2717,6 +2728,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzRightRest.goal,
         context: 'Пауза мелодии оставляет место для одного удара сопровождения и готовит общее начало новой фразы.',
         sourceNote: 'В № 123 из пособия Кёлера верхняя строка молчит на третьей доле четвёртого такта, нижняя играет четверть. В пятом такте обе вступают вместе. Точные ноты, пальцы, повтор баса и темп относятся к упражнению проекта.'
+      }
+    });
+  }
+
+  function describePairedWaltzLeftRest(lesson, adapter) {
+    const setup = 'Повтори правой вальсовую фразу до–ре–ми и ре–ми–фа. Найди C3 и F3 левым мизинцем 5, как в уроке переноса. Начни упражнение с C3 и C4 вместе. Педаль выключена.';
+    const motion = 'На «два» сыграй C3 и D4. К «три» отпусти C3, а правая перейдёт с ре на E4 средним пальцем 3. Пока звучит ми, подведи левую кисть с предплечьем к F3. На новом «раз» сыграй F3 мизинцем и D4 правым указательным 2 вместе.';
+    const count = 'При 48 BPM считай «раз, два, три | раз, два, три». Пальцы правой 1–2–3 | 2–3–4. Левая играет C3, C3, паузу, затем три F3. Длительность каждого звучащего шага — четверть.';
+    const hearing = 'Послушай, как бас исчезает на «три», а мелодия ведёт счёт одной нотой. На следующем «раз» фа и ре начинаются одним ударом. Сравни с вариантом, где на «три» слышно только низкое до.';
+    const mastery = 'На «три» слышно одно ми, а левая успевает свободно прийти к фа. На новом «раз» входят обе руки. Проверь пальцы и перенос за инструментом.';
+    const score = 'https://vmirror.imslp.org/files/imglnks/usimg/5/5a/IMSLP02505-Brahms_-_Waltzes_Op.39.pdf#page=8';
+    lesson.rhythm = waltzRhythm(pairedWaltzLeftRest.options, 'project-paired-waltz-left-rest-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Перенос левой руки во время четверти правой в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-left-rest', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Отдельно сыграй стык «два, три, раз». После до с ре сыграй одно ми, затем фа с ре. Если фа звучит одновременно с ми, вернись к медленному счёту и дождись нового «раз».',
+        motion, count, hearing,
+        'Придумай свою правую фразу в двух тактах. Оставь на первом «три» только правый звук. Перенеси левый мизинец к F3 за эту долю и вступи вместе с новой нотой правой. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На первом «три» C3 уже отпущена. Звучит только E4 правым средним пальцем.',
+        'Левый мизинец готов над F3, пока ми звучит в своём темпе. На новом «раз» фа и ре вступают вместе.',
+        'Два такта имеют ровные доли. Я проверяю удобство переноса и слышу мелодию на «три».'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Иоганнес Брамс. Вальс op. 39 № 9, цифровая копия IMSLP, с. 8 PDF' },
+      sourceEvidenceIds: ['brahms-op39-waltz9-left-rest-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzLeftRest.goal,
+        context: 'Одиночная нота мелодии даёт левой время для переноса баса и ведёт пульс к совместному началу следующего такта.',
+        sourceNote: 'У Брамса в вальсе op. 39 № 9 на третьей доле первого полного такта верхняя четверть звучит при паузе внизу. В следующем такте обе руки вступают вместе. Упражнение использует свои ноты, пальцы и темп с выключенной педалью.'
       }
     });
   }
@@ -6568,6 +6616,9 @@
     }
     if (!existing.has(pairedWaltzRightRest.id)) {
       describePairedWaltzRightRest(lessons.find(lesson => lesson.id === pairedWaltzRightRest.id), adapter);
+    }
+    if (!existing.has(pairedWaltzLeftRest.id)) {
+      describePairedWaltzLeftRest(lessons.find(lesson => lesson.id === pairedWaltzLeftRest.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
