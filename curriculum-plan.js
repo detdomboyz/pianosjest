@@ -4568,6 +4568,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-right-rest-01",
+      "stage": "p7",
+      "branch": "paired-waltz-right-rest",
+      "fingerprint": "de66adde",
+      "challenge": true,
+      "preparation": [
+        "course01-02",
+        "detail-p-relocate-02",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

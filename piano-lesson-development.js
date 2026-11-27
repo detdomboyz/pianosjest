@@ -1281,6 +1281,16 @@
     events: [...pairedWaltzBassShift.events.slice(0, 2), ...pairedWaltzBassShift.events.slice(3)],
     options: { bpm: 48, beats: [1, 1, 1, 1, 1], startBeats: [0, 1, 3, 4, 5], articulation: 'standard' }
   };
+  const pairedWaltzRightRest = {
+    id: 'detail-p-paired-waltz-right-rest-01',
+    title: 'Вальс: левая играет на «три»',
+    group: pairedWaltzSharedRest.group, groupTitle: pairedWaltzSharedRest.groupTitle, stage: 'p7',
+    after: pairedWaltzSharedRest.id,
+    requires: ['course01-02', 'detail-p-relocate-02', 'course01-07'],
+    goal: 'На «три» отпусти ре правой и снова нажми до левым мизинцем. На новом «раз» вместе сыграй фа левой и ре правой.',
+    events: pairedWaltzBassShift.events.map((pair, index) => index === 2 ? pair.slice(0, 1) : pair),
+    options: pairedWaltzBassShift.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1290,7 +1300,7 @@
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
-    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest);
+    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2670,6 +2680,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzSharedRest.goal,
         context: 'Общая пауза даёт время на перенос баса и готовит ясное вступление обеих рук после окончания фразы.',
         sourceNote: 'В № 24 из пособия Кёлера обе нотные строки имеют четвертную паузу на третьей доле перед первым повтором. Высоты, пальцы, положение паузы в учебной фразе, перенос баса и темп выбраны проектом.'
+      }
+    });
+  }
+
+  function describePairedWaltzRightRest(lesson, adapter) {
+    const setup = 'Повтори три отдельных C3 левым мизинцем 5, затем перенос того же пальца к F3. Начни с C3 и C4 вместе, как в подготовке. Правая рука начинает большим пальцем 1. Педаль выключена.';
+    const motion = 'На «два» возьми до левой и ре правым указательным 2. К «три» отпусти обе клавиши. Тут же снова сыграй C3 мизинцем, а правый указательный оставь над D4. К новому «раз» отпусти C3 и подвези руку к F3. Вместе сыграй F3 и D4.';
+    const count = 'При 48 BPM первый такт звучит как C3 и C4, C3 и D4, одно C3. Во втором такте бас F3 звучит с D4, E4, F4. Пальцы правой 1–2 | 2–3–4. Считай «раз, два, три | раз, два, три». Все шесть долей занимают по четверти.';
+    const hearing = 'Послушай два звука, два звука, один низкий звук, затем снова пары. Верхнее ре заканчивается к «три». Бас звучит на каждой доле, а фа и ре начинают второй такт одной атакой.';
+    const mastery = 'На первом «три» слышно новое нажатие до без верхнего звука. На следующем «раз» фа и ре слышны вместе. Проверь пальцы и свободный перенос за инструментом.';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=56';
+    lesson.rhythm = waltzRhythm(pairedWaltzRightRest.options, 'project-paired-waltz-right-rest-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Пульс левой при паузе правой в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-right-rest', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сыграй отдельно стык на счёт «два, три, раз». После пары до и ре оставь на «три» одно до. Сравни с прошлым вальсом, где «три» было тихим для обеих рук. Сохрани равные доли.',
+        motion, count, hearing,
+        'Придумай свою верхнюю фразу в двух тактах. На первом «три» сохрани одно C3. На новом «раз» сыграй F3 одновременно с выбранным звуком правой. Позанимайся 3–5 минут и повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На первом «три» левая нажимает C3 заново, правая уже отпустила D4.',
+        'Слышу ровные доли. Нижний звук на «три» занимает столько же времени, сколько соседние пары.',
+        'На новом «раз» одновременно звучат F3 и D4. Я проверяю свободный перенос левой и готовый правый указательный.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Луис Кёлер. Practical Method, op. 249, № 123, Edition Wood, печатная с. 54' },
+      sourceEvidenceIds: ['kohler-op249-waltz-no123-right-rest-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzRightRest.goal,
+        context: 'Пауза мелодии оставляет место для одного удара сопровождения и готовит общее начало новой фразы.',
+        sourceNote: 'В № 123 из пособия Кёлера верхняя строка молчит на третьей доле четвёртого такта, нижняя играет четверть. В пятом такте обе вступают вместе. Точные ноты, пальцы, повтор баса и темп относятся к упражнению проекта.'
       }
     });
   }
@@ -6518,6 +6565,9 @@
     }
     if (!existing.has(pairedWaltzSharedRest.id)) {
       describePairedWaltzSharedRest(lessons.find(lesson => lesson.id === pairedWaltzSharedRest.id), adapter);
+    }
+    if (!existing.has(pairedWaltzRightRest.id)) {
+      describePairedWaltzRightRest(lessons.find(lesson => lesson.id === pairedWaltzRightRest.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
