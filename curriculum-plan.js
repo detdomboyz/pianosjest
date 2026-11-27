@@ -3517,6 +3517,18 @@
       ]
     },
     {
+      "id": "detail-p-bflat-major-prepared-paired-full-descent-01",
+      "stage": "p7",
+      "branch": "bflat-major-prepared-paired-full-descent",
+      "fingerprint": "e836019e",
+      "challenge": true,
+      "preparation": [
+        "detail-p-bflat-major-prepared-paired-upper-descent-01",
+        "detail-p-bflat-major-prepared-paired-middle-descent-01",
+        "detail-p-bflat-major-prepared-paired-lower-descent-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",
