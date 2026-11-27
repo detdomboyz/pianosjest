@@ -1050,11 +1050,22 @@
     events: bflatFourthThirdLeft.events.map((left, i) => [...left, ...bflatMajorAscentRight.events[i + 2]]),
     options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
   };
+  const bflatPairedJoinedAscent = {
+    id: 'detail-p-bflat-major-prepared-paired-joined-ascent-01',
+    title: 'Си-бемоль мажор двумя руками. Одна пара ре',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bflatPairedMiddleAscent.id,
+    requires: [bflatPairedLowerAscent.id, bflatPairedMiddleAscent.id],
+    goal: 'Соедини начало си-бемоль мажора с переходом к фа. Сыграй общие ре один раз на «три», дай им одну долю и сразу перейди к ми-бемолям.',
+    events: [...bflatPairedLowerAscent.events, ...bflatPairedMiddleAscent.events.slice(1)],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
     bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent,
-    bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent, bflatPairedMiddleAscent);
+    bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent,
+    bflatPairedMiddleAscent, bflatPairedJoinedAscent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1558,6 +1569,56 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bflatPairedMiddleAscent.goal,
         context: 'Средний отрезок восходящей фразы в октавах. Первые ре совпадают с последней парой готового начала си-бемоль мажора.',
         sourceNote: 'Piano Fingering Figures, B-flat Major scale 1 octave, рисунок 1 каждой руки, такт 1, ноты 3–5. Проект соединяет одноручные схемы в их регистрах и заменяет три восьмые двумя четвертями и половинной при 40 BPM. Тихая доля отсчитывается вручную. Общие ре на стыке следуют принципу соединения отрезков у Чанга в разделе 7.'
+      }
+    });
+  }
+
+  function describeBflatPairedJoinedAscent(lesson, adapter) {
+    const setup = 'Повтори две подготовленные тройки с общими ре. Найди чёрные си-бемоли перед C3 и C4. Положи левый средний на B♭2 и правый указательный на B♭3. Педаль выключена.';
+    const motion = 'В первой тройке правая подводит большой к до, левая к ре. Дай общим ре один удар под левым большим и правым указательным. Через долю перейди на ми-бемоли, подводя левый безымянный вправо и глубже, а правый средний к верхней чёрной. На фа правая подводит большой к белой, левая играет средним. Отпускай предшествующую пару при новой.';
+    const count = 'Считай четверти при 40 BPM. В первом такте «раз» си-бемоли, «два» до, «три» ре, «четыре» ми-бемоли. На следующее «раз» сыграй фа, держи через «два» и отпусти на «три». Эту долю тишины отсчитай сам.';
+    const hearing = 'Послушай образец и пропой «си-бемоль, до, ре, ми-бемоль, фа». Услышь пять общих вступлений и более длинные фа. Если ре прозвучали повторно или стали слишком длинными, потренируй только до, ре и ми-бемоли по одной доле.';
+    const mastery = 'Пять пар идут ровно. Ре звучат одну долю, левая переносится на ми-бемоль, правая подводит большой на фа. Фа держатся две доли и обе клавиши отпускаются вместе.';
+    const scale = 'https://en.piano-fingering.org/flat-keys/2-flats-b-flat-major/b-flat-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bflatPairedJoinedAscent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-bflat-major-prepared-paired-joined-ascent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Соединение двух отрезков си-бемоль мажора', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'bflat-major-prepared-paired-joined-ascent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера собери по рукам до, ре и ми-бемоли. Слева 2–1–4, справа 1–2–3. Потренируй стык обеими руками и только потом добавь начало и фа. В коротком уроке начала ре звучали две доли. В связной фразе на третьей доле они занимают одну.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на короткие пробы с отдыхом. Придумай продолжение после фа на знакомых клавишах или возьми соседние звуки из готовых одноручных гамм. Выбери, где закончить, и подпиши пальцы. Если продолжаешь без остановки, дай фа одну долю и один удар перед следующей парой. Разбери незнакомый переход по рукам. Оцени свой вариант на слух вне зачёта. Верни исходный отрезок после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Начинаю с чёрных си-бемолей под левым 3 и правым 2.',
+        'На «три» играю одну пару ре под левым 1 и правым 2, на «четыре» уже звучат ми-бемоли.',
+        'На фа ставлю правый большой. Держу обе фа две доли и отпускаю вместе.',
+        'За инструментом сверяю пальцы и свободу кистей. В своём продолжении слушаю, сохраняется ли общий пульс.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Си-бемоль мажор левой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Си-бемоль мажор правой, рисунок 1',
+        [continuity]: 'Chuan C. Chang. Разбор коротких участков и соединение, раздел 7'
+      },
+      sourceEvidenceIds: [
+        'pff-bflat-major-ascending-contacts-left-2026-11-15',
+        'pff-bflat-major-ascending-contacts-right-2026-11-15',
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bflatPairedJoinedAscent.goal,
+        context: 'Первые пять ступеней восходящей фразы в октавах. Два подготовленных двуручных отрезка сходятся на общей паре ре.',
+        sourceNote: 'Piano Fingering Figures, B-flat Major scale 1 octave, рисунок 1 каждой руки, такт 1, ноты 1–5. Проект сохраняет регистры и пальцы, соединяет руки и заменяет исходные восьмые четырьмя четвертями и половинной при 40 BPM. Ручная тишина следует после конца. Стык на общей паре применяет принцип Чанга из раздела 7.'
       }
     });
   }
@@ -5337,6 +5398,9 @@
     }
     if (!existing.has(bflatPairedMiddleAscent.id)) {
       describeBflatPairedMiddleAscent(lessons.find(lesson => lesson.id === bflatPairedMiddleAscent.id), adapter);
+    }
+    if (!existing.has(bflatPairedJoinedAscent.id)) {
+      describeBflatPairedJoinedAscent(lessons.find(lesson => lesson.id === bflatPairedJoinedAscent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
