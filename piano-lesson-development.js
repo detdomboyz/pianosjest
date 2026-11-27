@@ -1017,10 +1017,24 @@
     events: [...bMajorPairedUpperTurn.events.slice(3), ...bMajorPairedJoinedDescent.events.slice(1)],
     options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 1, 1], articulation: 'standard' }
   };
+  const bMajorPairedRoundtrip = {
+    id: 'detail-p-b-major-prepared-roundtrip-paired-01',
+    title: 'Си мажор двумя руками. Вверх и обратно',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedFullDescent.id,
+    requires: [
+      bMajorPairedFullAscent.id, bMajorPairedFullDescent.id, bMajorPairedUpperTurn.id,
+      bMajorRoundtripLeft.id, bMajorRoundtripRight.id
+    ],
+    goal: 'Соедини подъём и спуск си мажора двумя руками. Верхние си сыграй один раз и продолжи вниз в том же пульсе. Среднее си звучит правой в начале, левой наверху и снова правой в финале.',
+    events: [...bMajorPairedFullAscent.events, ...bMajorPairedFullDescent.events.slice(1)],
+    options: { ...bMajorRoundtripLeft.options, articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
-    bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent, bMajorPairedFullDescent);
+    bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent,
+    bMajorPairedFullDescent, bMajorPairedRoundtrip);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1713,6 +1727,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedFullDescent.goal,
         context: 'Полный нисходящий ответ в параллельных октавах с новым вступлением средней си другой рукой.',
         sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки. Верхняя си завершает первый такт. За ней идут семь нисходящих восьмых во втором такте. Проект объединяет линии в восемь пар четвертей при 40 BPM. Принцип общей ступени взят из главы 1, § 7 Чанга. Фа-диезы в роли стыка и ритм заданы проектом.'
+      }
+    });
+  }
+
+  function describeBMajorPairedRoundtrip(lesson, adapter) {
+    const setup = 'Найди среднее си слева от среднего до. Поставь на него правый большой, а на си октавой ниже левый безымянный. Оставь педаль выключенной. Вспомни полный проход вверх и обратно по одной руке.';
+    const motion = 'На подъёме левая играет 4–3–2–1–4–3–2–1, правая 1–2–3–1–2–3–4–5. На верхней паре вступают левый большой и правый мизинец. Сыграй её один раз и на следующую долю перейди к ля-диезам. После вершины левая играет 2–3–4–1–2–3–4, правая 4–3–2–1–3–2–1. Среднее си заново играет левая наверху после отпускания правой в начале. После него освободи клавишу до финального вступления правой.';
+    const count = '40 BPM, четыре такта 4/4. Первый такт — си, до-диез, ре-диез, ми. Второй — фа-диез, соль-диез, ля-диез, верхнее си. Третий — ля-диез, соль-диез, фа-диез, ми. Четвёртый — ре-диез на «раз», до-диез на «два», нижние си на «три–четыре». На следующем «раз» отпусти обе клавиши и сам отсчитай тихую долю.';
+    const hearing = 'Послушай образец и пропой верхнюю линию. Наверху слышна одна пара си между двумя ля-диезами. Прислушайся и к средней клавише си. Она звучит в начале, на вершине и в конце, каждый раз с новым вступлением. Если наверху получился повтор или задержка, повтори короткий разворот и верни подъём и спуск.';
+    const mastery = 'Играю 15 общих пар в ровном пульсе. Си наверху звучат один раз. Среднее си вступает трижды с отпусканиями. Нижние си в конце держатся две доли и уходят вместе.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedRoundtrip.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-roundtrip-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Один поворот мелодии в параллельных октавах', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-roundtrip-paired', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сыграй отдельно готовый подъём, спуск и три чёрные пары с разворотом. В соединённом проходе оставь общий верхний звук один раз. Сначала свяжи ля-диезы, верхнее си и ля-диезы тремя ровными долями. Добавь начало и окончание, когда поворот идёт в общем пульсе.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на короткие пробы с отдыхом. Придумай свою фразу с поворотом в си мажоре. Сам выбери начало, высшую ступень и окончание. Сыграй пару на выбранной вершине один раз и проверь, что следующий шаг вниз пришёл на свою долю. Вернись к фразе после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На вершине слышу одну общую атаку. Следующая пара ля-диезов входит ровно на «раз» третьего такта.',
+        'Среднее си звучит правой в первом такте, левой в конце второго и снова правой в конце четвёртого.',
+        'Между этими вступлениями освобождаю среднее си. В конце держу оба си на «три–четыре» и вместе отпускаю.',
+        'В своей фразе различаю один поворот и общее окончание. Пальцы и свободу движения проверяю за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Си мажор вверх и вниз левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Си мажор вверх и вниз правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Соединение отрезков, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        ...bMajorRoundtripLeft.sources, ...bMajorRoundtripRight.sources,
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedRoundtrip.goal,
+        context: 'Октава вверх и обратно с общим поворотом, тремя отдельными вступлениями средней си и полным заключительным удержанием.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такты 1–2, 15 восьмых и заключительная восьмая пауза. Проект объединяет линии в пары, даёт 14 четвертей и половинную при 40 BPM. Правило общего начала соседних участков описано в главе 1, § 7 Чанга. Общая пара наверху и новый ритм заданы проектом.'
       }
     });
   }
@@ -5145,6 +5208,9 @@
     }
     if (!existing.has(bMajorPairedFullDescent.id)) {
       describeBMajorPairedFullDescent(lessons.find(lesson => lesson.id === bMajorPairedFullDescent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedRoundtrip.id)) {
+      describeBMajorPairedRoundtrip(lessons.find(lesson => lesson.id === bMajorPairedRoundtrip.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
