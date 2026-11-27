@@ -1156,6 +1156,21 @@
     events: [...bflatPairedFullAscent.events, ...bflatPairedFullDescent.events.slice(1)],
     options: { bpm: 40, beats: Array(15).fill(1), articulation: 'standard' }
   };
+  const leftWaltzBar = [
+    [tone(53, 5, 'left')],
+    [tone(57, 3, 'left'), tone(60, 1, 'left')],
+    [tone(57, 3, 'left'), tone(60, 1, 'left')]
+  ];
+  const leftWaltzBass = {
+    id: 'detail-p-left-waltz-bass-01',
+    title: 'Левая: вальсовый бас и два созвучия',
+    group: 'left-waltz', groupTitle: 'Левая: вальсовое сопровождение', stage: 'p7',
+    after: 'course10-08',
+    requires: ['course04-07', leftTriplePulse.id, 'detail-p-left-position-triad-01'],
+    goal: 'Сыграй бас на «раз», созвучие на «два» и ещё раз на «три». После первой пары нот оставь полдоли тишины.',
+    events: [...leftWaltzBar, ...leftWaltzBar],
+    options: { bpm: 48, beats: [1, 0.5, 1, 1, 0.5, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1163,7 +1178,7 @@
     bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent,
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
-    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip);
+    bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip, leftWaltzBass);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2121,6 +2136,58 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bflatPairedRoundtrip.goal,
         context: 'Параллельные октавы в си-бемоль мажоре с одной общей вершиной и тремя отдельными вступлениями среднего си-бемоля.',
         sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такты 1–2. В источнике 15 восьмых и заключительная восьмая пауза. Проект сохраняет регистры и пальцы, соединяет руки и играет 15 четвертей при 40 BPM. Тихая доля после отпускания в конце отсчитывается вне зачёта. Общая вершина применяет принцип соединения из раздела 7 Чанга.'
+      }
+    });
+  }
+
+  function describeLeftWaltzBass(lesson, adapter) {
+    const setup = 'Левой найди фа F3, ля A3 и до C4 из знакомого трезвучия фа мажора. Положи на них мизинец, средний и большой. Произнеси два раза «раз, два-и, три». Правая отдыхает, педаль выключена.';
+    const motion = 'На «раз» возьми F3 мизинцем 5. На «два» отпусти бас и вместе нажми A3–C4 пальцами 3 и 1. На «и» освободи обе клавиши. На «три» нажми ту же пару заново и держи целую долю. На следующем «раз» отпусти обе клавиши и вернись к фа лёгким движением предплечья.';
+    const count = 'Два такта по три доли при 48 BPM. Бас и второе созвучие звучат по целой доле. Первое созвучие звучит полдоли, затем полдоли тишины. В конце второго такта отпусти обе клавиши на мысленное следующее «раз».';
+    const hearing = 'Послушай низкое фа и два более лёгких созвучия. Для сравнения попробуй один раз удержать ля и до через «три» вне зачёта. Затем отпусти их на «и» и снова нажми на «три». Во втором случае слышны тишина и новое вступление.';
+    const mastery = 'Бас отпущен к первому созвучию. Обе верхние клавиши свободны в середине второй доли и снова звучат вместе ровно на «три». На возврате к басу счёт продолжается.';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    const winn = 'https://www.ragtimepiano.ca/images/winn.pdf';
+    const { beats, bpm } = leftWaltzBass.options;
+    const beatMs = 60000 / bpm;
+    lesson.rhythm = adapter.normalizeRhythm({
+      version: 1, source: 'project-left-waltz-bass-v1', bpm, practiceBpm: bpm,
+      timeSignature: { numerator: 3, denominator: 4 },
+      steps: beats.map((durationBeats, startBeat) => ({
+        startBeat, durationBeats, restBeforeBeats: startBeat % 3 === 2 ? 0.5 : 0,
+        measure: Math.floor(startBeat / 3) + 1, beatInMeasure: startBeat % 3,
+        sourceStartMs: startBeat * beatMs, sourceDurationMs: durationBeats * beatMs
+      }))
+    }, beats.length);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Бас и повтор созвучия в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-accompaniment', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера найди бас отдельно. Затем мягко нажми ля и до вместе, отпусти и сделай второе нажатие. Сыграй один такт со счётом и только потом добавь второй.',
+        motion, count, hearing,
+        'Придумай свой двухтактовый рисунок. Выбери до мажор C3–E3–G3 или другое знакомое трезвучие в удобной позиции. Начинай каждый такт отдельным басом и сохрани тишину перед новым созвучием на «три». Проверь перенос вне зачёта. Практикуйся 3–5 минут с отдыхом. Вернись после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «раз» звучит только бас. Мизинец освобождает клавишу на «два».',
+        'В обоих созвучиях ля берёт средний палец, до берёт большой. Клавиши вступают вместе.',
+        'После короткого созвучия слышна полдоля тишины. На «три» пальцы заново нажимают обе клавиши.',
+        'Возврат к басу и последнее отпускание попадают в счёт. На инструменте проверяю пальцы и свободное движение руки.'
+      ],
+      rhythmNotice: count,
+      references: [clark, winn],
+      referenceTitles: {
+        [clark]: 'Майкл Кларк. Baylor Piano Basics, гл. 90, Waltz Bass',
+        [winn]: 'Эдвард Р. Уинн. Teachers’ Outline, Left Hand Alone, пп. 1–3'
+      },
+      sourceEvidenceIds: ['clark-baylor-waltz-bass-2026-11-27', 'winn-left-hand-waltz-preparation-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzBass.goal,
+        context: 'Первый рисунок вальсового сопровождения одной левой рукой на знакомом трезвучии. Позже его можно играть под мелодией.',
+        sourceNote: 'Майкл Кларк показывает отдельный бас и два созвучия в размере 3/4. В проекте фа мажор, пальцы 5 и 3–1, темп 48 BPM и полдоли тишины после первого созвучия. В авторском плане для преподавателей Эдвард Уинн советовал сперва найти звуки вальсового баса левой без требования скорости.'
       }
     });
   }
@@ -5927,6 +5994,9 @@
     }
     if (!existing.has(bflatPairedRoundtrip.id)) {
       describeBflatPairedRoundtrip(lessons.find(lesson => lesson.id === bflatPairedRoundtrip.id), adapter);
+    }
+    if (!existing.has(leftWaltzBass.id)) {
+      describeLeftWaltzBass(lessons.find(lesson => lesson.id === leftWaltzBass.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

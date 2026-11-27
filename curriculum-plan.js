@@ -3552,6 +3552,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-bass-01",
+      "stage": "p7",
+      "branch": "left-waltz-accompaniment",
+      "fingerprint": "0882a9b8",
+      "challenge": true,
+      "preparation": [
+        "course04-07",
+        "detail-p-left-triple-pulse-01",
+        "detail-p-left-position-triad-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",
