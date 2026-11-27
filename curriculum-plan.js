@@ -4618,6 +4618,19 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-eighth-relocate-01",
+      "stage": "p7",
+      "branch": "waltz-eighth-bass-shift",
+      "fingerprint": "fa65ac42",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-02",
+        "detail-p-left-eighth-pairs-01",
+        "detail-p-eighth-rest-repeat-left-01",
+        "course04-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
