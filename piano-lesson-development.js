@@ -1301,6 +1301,20 @@
     events: pairedWaltzBassShift.events.map((pair, index) => index === 2 ? pair.slice(1) : pair),
     options: pairedWaltzBassShift.options
   };
+  const pairedWaltzHandoff = {
+    id: 'detail-p-paired-waltz-handoff-01',
+    title: 'Вальс: передай пульс другой руке',
+    group: pairedWaltzLeftRest.group, groupTitle: pairedWaltzLeftRest.groupTitle, stage: 'p7',
+    after: pairedWaltzLeftRest.id,
+    requires: ['course01-02', 'course04-07', 'detail-p-relocate-02', 'course01-07'],
+    goal: 'На «два» сыграй одно до левой, на «три» одно ми правой. Веди счёт обеими руками по очереди, пока на новом «раз» фа и ре не вступят вместе.',
+    events: pairedWaltzBassShift.events.map((pair, index) => {
+      if (index === 1) return pair.slice(0, 1);
+      if (index === 2) return pair.slice(1);
+      return pair;
+    }),
+    options: pairedWaltzBassShift.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1311,7 +1325,7 @@
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
-    pairedWaltzLeftRest);
+    pairedWaltzLeftRest, pairedWaltzHandoff);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2765,6 +2779,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzLeftRest.goal,
         context: 'Одиночная нота мелодии даёт левой время для переноса баса и ведёт пульс к совместному началу следующего такта.',
         sourceNote: 'У Брамса в вальсе op. 39 № 9 на третьей доле первого полного такта верхняя четверть звучит при паузе внизу. В следующем такте обе руки вступают вместе. Упражнение использует свои ноты, пальцы и темп с выключенной педалью.'
+      }
+    });
+  }
+
+  function describePairedWaltzHandoff(lesson, adapter) {
+    const setup = 'Левым мизинцем 5 повтори до C3 и найди фа F3 в уроке переноса. Правой повтори вальсовый счёт, затем проверь общее вступление C3 и C4. Начни двумя руками, педаль выключена.';
+    const motion = 'К «два» отпусти обе клавиши и снова нажми только C3 мизинцем 5. К «три» отпусти C3, а правым средним 3 сыграй ми E4. Пока звучит ми, подведи левый мизинец к F3 вместе с кистью и предплечьем. На новом «раз» возьми F3 и D4 одновременно.';
+    const count = 'При 48 BPM считай «раз, два, три | раз, два, три». Первый такт: C3 с C4, одно C3, одно E4. Второй: три F3 с D4, E4 и F4. Правая играет 1, пауза, 3 | 2–3–4. Каждый шаг занимает четверть.';
+    const hearing = 'Послушай пару, один низкий звук, один высокий звук и снова пару. Отметь «два» левой, «три» правой даже при отработке без клавиш. В прежнем вальсе на «два» звучала пара. Здесь низкое до само несёт эту долю.';
+    const mastery = 'На «два» слышно новое нажатие одного C3. На «три» звучит только E4, а левая уже идёт к фа. Новый такт начинается общей атакой в прежнем темпе.';
+    const score = 'https://vmirror.imslp.org/files/imglnks/usimg/5/5a/IMSLP02505-Brahms_-_Waltzes_Op.39.pdf#page=8';
+    lesson.rhythm = waltzRhythm(pairedWaltzHandoff.options, 'project-paired-waltz-handoff-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Передача пульса на соседних долях в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-handoff', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Медленно сыграй «раз, два, три, раз» без метронома. Проверь, что правое до к «два» отпущено, левое до прозвучало повторно, а первое ми не накладывается на бас.',
+        motion, count, hearing,
+        'Придумай свою верхнюю фразу из знакомых клавиш. Сохрани одну левую ноту на «два», одну правую на «три» и общее начало нового такта. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «два» слышу только повтор C3, правая клавиша свободна.',
+        'На «три» слышу только E4. Проверяю отпускание C3 и свободный перенос левой к F3.',
+        'На следующем «раз» F3 и D4 начинаются вместе. Между долями сохраняется одинаковое время.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Иоганнес Брамс. Вальс op. 39 № 9, цифровая копия IMSLP, с. 8 PDF' },
+      sourceEvidenceIds: ['brahms-op39-waltz9-handoff-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzHandoff.goal,
+        context: 'Смена руки, ведущей пульс, помогает сохранить ровное движение мелодии и сопровождения при паузах.',
+        sourceNote: 'На второй доле первого полного такта вальса Брамса op. 39 № 9 звучит нижний аккорд, на третьей верхняя нота, а следующий такт начинает пара рук. Ноты, пальцы, темп и игра без педали заданы для упражнения проекта.'
       }
     });
   }
@@ -6619,6 +6670,9 @@
     }
     if (!existing.has(pairedWaltzLeftRest.id)) {
       describePairedWaltzLeftRest(lessons.find(lesson => lesson.id === pairedWaltzLeftRest.id), adapter);
+    }
+    if (!existing.has(pairedWaltzHandoff.id)) {
+      describePairedWaltzHandoff(lessons.find(lesson => lesson.id === pairedWaltzHandoff.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

@@ -4592,6 +4592,19 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-handoff-01",
+      "stage": "p7",
+      "branch": "paired-waltz-handoff",
+      "fingerprint": "79a42853",
+      "challenge": true,
+      "preparation": [
+        "course01-02",
+        "course04-07",
+        "detail-p-relocate-02",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
