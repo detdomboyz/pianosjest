@@ -124,6 +124,57 @@ function assertWaltzApproachChordPreparation(lesson, preparation) {
  assert.deepEqual(chord, earlier.at(-1), 'The final chord must match the prepared pitches, fingers and timing');
 }
 
+function timedPreparationLines(lesson) {
+ const { steps, fingeringSpec, rhythm, handMode } = lesson;
+ assert.ok(steps.length > 0);
+ assert.equal(fingeringSpec.steps.length, steps.length);
+ assert.equal(rhythm.steps.length, steps.length);
+ const lines = { left: [], right: [] };
+ let end = 0;
+ for (const [i, step] of steps.entries()) {
+  const pitches = app.stepMidiList(step);
+  const fingers = fingeringSpec.steps[i];
+  assert.equal(pitches.length, fingers.length);
+  const hands = Array.from(fingers, finger => finger.hand);
+  if (handMode !== 'split') {
+   assert.deepEqual(hands, [handMode]);
+  } else if (hands.length === 2) {
+   assert.deepEqual(hands, ['left', 'right']);
+  } else {
+   assert.equal(hands.length, 1);
+  }
+  const { startBeat, durationBeats, restBeforeBeats } = rhythm.steps[i];
+  assert.ok(Number.isFinite(startBeat) && startBeat >= end);
+  assert.ok(Number.isFinite(durationBeats) && durationBeats > 0);
+  assert.equal(restBeforeBeats, startBeat - end);
+  end = startBeat + durationBeats;
+  for (const [j, finger] of fingers.entries()) {
+   assert.ok(Object.hasOwn(lines, finger.hand));
+   assert.ok(Number.isInteger(finger.num) && finger.num >= 1 && finger.num <= 5);
+   lines[finger.hand].push([pitches[j], finger.num, startBeat, durationBeats]);
+  }
+ }
+ return lines;
+}
+
+function assertMixedWaltzPreparation(lesson, required) {
+ const separate = required.find(candidate => ['left', 'right'].includes(candidate.handMode));
+ const paired = required.find(candidate => candidate.handMode === 'split');
+ assert.ok(separate && paired, 'Mixed attacks need an exact separate line and a prior paired exercise');
+ for (const candidate of [lesson, separate, paired]) {
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), copy(lesson.rhythm.timeSignature));
+ }
+ const hand = separate.handMode;
+ const otherHand = hand === 'left' ? 'right' : 'left';
+ const target = timedPreparationLines(lesson);
+ const priorPair = timedPreparationLines(paired);
+ assert.deepEqual(target[hand], timedPreparationLines(separate)[hand], 'The moving hand needs its exact prepared attacks and releases');
+ assert.deepEqual(target[otherHand], priorPair[otherHand], 'The other hand needs its exact prepared attacks and releases');
+ assert.deepEqual(target[hand][0], priorPair[hand][0]);
+ assert.equal(target[hand][0][2], target[otherHand][0][2], 'The opening is a prepared paired attack');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -144,8 +195,12 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
   explicitPreparationFrames(lesson,lesson.handMode);explicitPreparationFrames(preparation,preparation.handMode);return;
  }
  assert.equal(lesson.learning.coverageDomain,'coordination','Only explicitly declared paired coordination can combine prepared hands');
- const target=explicitPreparationFrames(lesson,'split');explicitPreparationFrames(preparation,preparation.handMode);
  const required=lesson.learning.requires.map(id=>{const l=lessons.find(x=>x.id===id);assert.ok(l,'Every declared preparation must exist');assert.equal(l.contentKind,'exercise');return l;});
+ if (lesson.steps.some(step => app.stepMidiList(step).length === 1)) {
+  assertMixedWaltzPreparation(lesson, required);
+  return;
+ }
+ const target=explicitPreparationFrames(lesson,'split');explicitPreparationFrames(preparation,preparation.handMode);
  const hands = ['left', 'right'];
  const paired = required.filter(l => l.handMode === 'split').map(l => explicitPreparationFrames(l, 'split'));
  assert.ok(paired.length > 0, 'A prior explicit paired coordination is also required');
@@ -201,6 +256,32 @@ test('preparations precede lessons; historical branches stay independent and exp
   for(const [instrument,ls] of [['piano',app.lessons],['guitar',guitar.lessons]])for(const l of ls.filter(l=>l.learning?.after)){
     const entries=plan[instrument],i=entries.findIndex(e=>e.id===l.id);for(const id of l.learning.requires){const j=entries.findIndex(e=>e.id===id);assertPreparationEdge({instrument,lesson:l,preparation:ls.find(p=>p.id===id),entry:entries[i],preparationEntry:entries[j],index:i,preparationIndex:j,historicalIds:protectedPrerequisiteIds,canonicalRow:canonical.lessons.find(row=>row.id===l.id),plan,lessons:ls});}
   }
+});
+
+test('mixed waltz attacks require each prepared hand in its exact rhythm', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const lesson = get('detail-p-paired-waltz-eighth-bass-shift-01');
+ assert.ok(lesson, 'Missing the split waltz under test');
+ const [left, paired] = lesson.learning.requires.map(get);
+ assertPreparedHandEvidence(lesson, left, app.lessons);
+ assertPreparedHandEvidence(lesson, paired, app.lessons);
+ const replace = altered => app.lessons.map(candidate => candidate.id === altered.id ? altered : candidate);
+ const lateLeft = copy(left);
+ lateLeft.rhythm.steps[1].durationBeats = 0.75;
+ assert.throws(() => assertPreparedHandEvidence(lesson, lateLeft, replace(lateLeft)));
+ const wrongLanding = copy(left);
+ wrongLanding.fingeringSpec.steps[2][0].num = 4;
+ assert.throws(() => assertPreparedHandEvidence(lesson, wrongLanding, replace(wrongLanding)));
+ const lateRight = copy(paired);
+ lateRight.rhythm.steps[2].startBeat = 1.75;
+ lateRight.rhythm.steps[2].durationBeats = 0.25;
+ assert.throws(() => assertPreparedHandEvidence(lesson, lateRight, replace(lateRight)));
+ const doubled = copy(lesson);
+ doubled.fingeringSpec.steps[3][1].hand = 'left';
+ assert.throws(() => assertPreparedHandEvidence(doubled, left, app.lessons));
+ assert.throws(() => assertPreparedHandEvidence({
+  ...lesson, learning: { ...lesson.learning, requires: [left.id] }
+ }, left, app.lessons));
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{

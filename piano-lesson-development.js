@@ -1339,6 +1339,19 @@
     events: [48, 48, 53, 53, 53, 53].map(midi => [tone(midi, 5, 'left')]),
     options: { bpm: 48, beats: [1, 0.5, 1, 1, 1, 1], startBeats: [0, 1, 2, 3, 4, 5], articulation: 'standard' }
   };
+  const pairedWaltzEighthBassShift = {
+    id: 'detail-p-paired-waltz-eighth-bass-shift-01',
+    title: 'Вальс: перенеси бас на «и»',
+    group: pairedWaltzEighthHandoff.group, groupTitle: pairedWaltzEighthHandoff.groupTitle, stage: 'p7',
+    after: leftWaltzEighthRelocate.id,
+    requires: [leftWaltzEighthRelocate.id, pairedWaltzEighthHandoff.id],
+    goal: 'На «два» сыграй до левой. На «и» правая играет ми, а левая переносится к фа. На «три» сыграй фа левой и до правой вместе.',
+    events: [
+      ...pairedWaltzEighthHandoff.events.slice(0, 3),
+      ...pairedWaltzEighthHandoff.events.slice(3).map(([, right]) => [tone(53, 5, 'left'), right])
+    ],
+    options: pairedWaltzEighthHandoff.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1349,7 +1362,8 @@
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
-    pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate);
+    pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
+    pairedWaltzEighthBassShift);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2918,6 +2932,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzEighthRelocate.goal,
         context: 'Отпускание и короткий перенос готовят смену баса, пока в другой партии звучит отдельная восьмая.',
         sourceNote: 'В заключении «Арабески» Бургмюллера обе руки отдыхают одну восьмую перед новым аккордом. Белкин предлагает заранее находить клавишу назначения. Здесь отрабатывается меньший перенос одной рукой с собственными нотами, пальцем и счётом.'
+      }
+    });
+  }
+
+  function describePairedWaltzEighthBassShift(lesson, adapter) {
+    const setup = 'Левой повтори подготовленный перенос C3–F3 за восьмую тишины. Затем сыграй знакомую передачу на «два-и» с неподвижным басом. Начни новую фразу с двух до вместе. Педаль выключена.';
+    const motion = 'На «два» заново сыграй C3 левым мизинцем 5. На «и» отпусти до, а правым средним 3 нажми E4. Пока ми звучит, подведи левую кисть с предплечьем к F3. На «три» отпусти E4 и сыграй F3 мизинцем и C4 правым большим 1 вместе.';
+    const count = 'При 48 BPM считай «раз, два-и, три | раз, два, три». В первом такте звучат C3 с C4, одно C3, одно E4, затем F3 с C4. Каждая одиночная нота занимает 625 мс. Во втором такте F3 звучит с D4, E4 и F4. Правая играет 2–3–4.';
+    const hearing = 'Послушай пару, короткое низкое до, короткое верхнее ми и новую пару с фа внизу. В подготовке левой на «и» была тишина, теперь её занимает ми правой. Фа появляется только вместе с верхним до на «три».';
+    const mastery = 'Ровные «два-и» слышны как две восьмые. Левая успевает свободно подойти к фа, а новый бас и верхнее до звучат одним ударом. Последующие пары сохраняют счёт.';
+    const score = 'https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-02/25EF-02-let.pdf#page=1';
+    lesson.rhythm = waltzRhythm(pairedWaltzEighthBassShift.options, 'project-paired-waltz-eighth-bass-shift-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Смена баса во время восьмой правой в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-eighth-bass-shift', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Разбери три атаки «два-и-три» вне темпа. Назови фа заранее и улови момент, когда начнётся перенос. Затем сыграй их под медленный ровный счёт. Если фа опаздывает, замедли обе руки.',
+        motion, count, hearing,
+        'Придумай свою верхнюю ноту на «и» и верхнюю ноту общей атаки на «три» в знакомой позиции. Сохрани перенос левой к F3 во время правой восьмой. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «два» слышно одно C3. На «и» C3 уже отпущено и слышно только E4.',
+        'Пока играет ми, левая готовит фа. Слышно, что фа и верхнее до вступают вместе и ровно на «три».',
+        'Следующий такт идёт без заминки. Левый мизинец удобно повторяет F3.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Иоганн Бургмюллер. Арабеска op. 100 № 2, такты 12–13, издание Mutopia' },
+      sourceEvidenceIds: ['burgmuller-arabesque-bass-release-under-eighth-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzEighthBassShift.goal,
+        context: 'Верхняя восьмая ведёт пульс, пока освобождённая левая рука готовит новый бас.',
+        sourceNote: 'В тактах 12–13 «Арабески» Бургмюллера верхняя восьмая звучит во время восьмой паузы внизу перед общей атакой. В упражнении свои ноты, пальцы и размер 3/4. Пара вступает на «три».'
       }
     });
   }
@@ -6781,6 +6832,9 @@
     }
     if (!existing.has(leftWaltzEighthRelocate.id)) {
       describeLeftWaltzEighthRelocate(lessons.find(lesson => lesson.id === leftWaltzEighthRelocate.id), adapter);
+    }
+    if (!existing.has(pairedWaltzEighthBassShift.id)) {
+      describePairedWaltzEighthBassShift(lessons.find(lesson => lesson.id === pairedWaltzEighthBassShift.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

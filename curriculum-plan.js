@@ -4631,6 +4631,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-eighth-bass-shift-01",
+      "stage": "p7",
+      "branch": "paired-waltz-eighth-bass-shift",
+      "fingerprint": "c0d648b5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-eighth-relocate-01",
+        "detail-p-paired-waltz-eighth-handoff-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
