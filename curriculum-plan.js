@@ -3965,6 +3965,19 @@
       ]
     },
     {
+      "id": "detail-p-b-major-prepared-paired-joined-ascent-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-paired-joined-ascent",
+      "fingerprint": "396e31e9",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-prepared-paired-middle-01",
+        "detail-p-b-major-prepared-paired-upper-turn-01",
+        "detail-p-b-major-prepared-roundtrip-left-01",
+        "detail-p-b-major-prepared-roundtrip-right-01"
+      ]
+    },
+    {
       "id": "detail-p-fsharp-major-upper-three-paired-ascent-01",
       "stage": "p7",
       "branch": "fsharp-major-upper-three-paired-ascent",

@@ -938,8 +938,18 @@
       .map((left, i) => [...left, ...bMajorMiddleRight[i]]),
     options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
   };
+  const bMajorPairedJoinedAscent = {
+    id: 'detail-p-b-major-prepared-paired-joined-ascent-01',
+    title: 'Си мажор двумя руками. Один фа-диез на стыке',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedMiddle.id,
+    requires: [bMajorPairedMiddle.id, bMajorPairedUpperTurn.id, bMajorRoundtripLeft.id, bMajorRoundtripRight.id],
+    goal: 'Свяжи ре-диез–ми–фа-диез и фа-диез–соль-диез–ля-диез двумя руками. Сыграй общую пару фа-диезов один раз, держи её одну долю и продолжи пульс к соль-диезам.',
+    events: [...bMajorPairedMiddle.events, ...bMajorPairedUpperTurn.events.slice(1, 3)],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
-    fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle);
+    fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle, bMajorPairedJoinedAscent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1294,6 +1304,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedMiddle.goal,
         context: 'Связка для мелодии параллельными октавами в середине подъёма си мажора.',
         sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 Whole View каждой руки, такт 1, ноты 3–5. Проект объединяет одноручные схемы, заменяет восьмые двумя четвертями и половинной и задаёт 40 BPM. Тихая доля отсчитывается вручную.'
+      }
+    });
+  }
+
+  function describeBMajorPairedJoinedAscent(lesson, adapter) {
+    const setup = 'По ссылкам повтори D♯–E–F♯ и первые три пары разворота F♯–G♯–A♯. Начни на D♯3 левой и D♯4 правой. У каждой руки своя октава, педаль выключена.';
+    const motion = 'На ми нажми обе клавиши большими. К фа-диезам выведи левый безымянный и правый указательный. Через одну долю отпусти фа-диезы и сыграй соль-диезы обоими средними. Веди предплечья за пальцами вправо, оставляя кисти свободными.';
+    const count = 'При 40 BPM сыграй первые четыре пары на «раз, два, три, четыре». Ля-диезы держи на «раз–два» следующего такта. Отпусти обе клавиши на «три» и отсчитай тихую долю вручную.';
+    const hearing = 'Послушай образец и пропой одну из линий. Услышь пять общих вступлений без задержки на фа-диезах. Если на стыке слышишь лишний удар или задержку, повтори ми–фа-диез–соль-диез со счётом.';
+    const mastery = 'Пять пар вступают вместе. На третьей доле фа-диезы звучат один раз и одну долю. Последняя пара держится две доли и отпускается вместе.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedJoinedAscent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-joined-ascent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Две группы си мажора с общим фа-диезом', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-joined-ascent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сначала сыграй каждую руку медленно. Левая D♯3–E3–F♯3–G♯3–A♯3 пальцами 2–1–4–3–2. Правая D♯4–E4–F♯4–G♯4–A♯4 пальцами 3–1–2–3–4.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на короткие пробы с отдыхом. Придумай новую фразу из 5–7 пар си мажора. Выбери старт на до-диезе или ми и место поворота. Сохрани переход от фа-диеза к соль-диезу и сыграй общую пару один раз. Выбери счёт заранее и проверь на слух пять или больше общих вступлений. Повтори после отдыха и на следующий день.'
+      ],
+      selfCheck: [
+        'На ми вступают оба больших, на фа-диезе левая 4 и правая 2, на соль-диезе оба средних.',
+        'Фа-диезы звучат на «три» одну долю и сменяются соль-диезами на «четыре».',
+        'Ля-диезы звучат две доли. Затем обе клавиши свободны.',
+        'Пальцы, свободу кистей и перенос в свою фразу проверяю за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Си мажор левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Си мажор правой рукой, рисунок 1',
+        [continuity]: 'Чуан Чанг. Практика отрезками с общей нотой, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[0], bMajorRoundtripRight.sources[0],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedJoinedAscent.goal,
+        context: 'Соединение двух групп мелодии в параллельных октавах с ровным пульсом.',
+        sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 каждой руки, такт 1, ноты 3–7. Чуан Чанг описывает разучивание с перекрытием в Fundamentals of Piano Practice, гл. 1, § 7. Проект соединяет руки на общей паре F♯, задаёт четыре четверти, заключительную половинную и темп 40 BPM. Тихая доля отсчитывается вручную.'
       }
     });
   }
@@ -4705,6 +4764,9 @@
     }
     if (!existing.has(bMajorPairedMiddle.id)) {
       describeBMajorPairedMiddle(lessons.find(lesson => lesson.id === bMajorPairedMiddle.id), adapter);
+    }
+    if (!existing.has(bMajorPairedJoinedAscent.id)) {
+      describeBMajorPairedJoinedAscent(lessons.find(lesson => lesson.id === bMajorPairedJoinedAscent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

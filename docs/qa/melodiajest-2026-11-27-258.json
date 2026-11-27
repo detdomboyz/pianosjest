@@ -1,0 +1,496 @@
+{
+  "phase": "2026-11-27-258",
+  "completedAt": "2026-11-27T11:57:17.677782+05:00",
+  "batch": "2026-11-27-02",
+  "lesson": "detail-p-b-major-prepared-paired-joined-ascent-01",
+  "baseGitCommit": "4f02446d2d8e239848b7d5b767789901e543b8f5",
+  "localVersion": "23.5.222",
+  "publicVersion": "23.5.220",
+  "checkpointRoot": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-258-23.5.222",
+  "musicReport": "docs/reports/piano-curriculum-2026-11-27-02.md",
+  "operationsReport": "docs/reports/melodiajest-operations-2026-11-27-258.md",
+  "counts": {
+    "catalog": 788,
+    "learning": 640,
+    "midi": 370,
+    "provenance": 343,
+    "themes": 118,
+    "goalUpperBound": 616,
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "verifiedCoverage": {
+    "windowsOfFiveOctavePairs": 80,
+    "exercisesWithExplicitOctavePairs": 41,
+    "sameIntervalContour": 6,
+    "samePitchWindows": 0,
+    "matchingIntervalsColorsAndFingers": 0,
+    "newMotorClass": false,
+    "previousCatalogRecordsExact": 787,
+    "previousCanonicalEditionsExact": 639,
+    "previousRoutesAndCallbacksExact": true,
+    "guitarRouteAndImmutableBaselineExact": true,
+    "personalEditRoundtripSynthetic": true
+  },
+  "musicalContract": {
+    "pitches": [
+      [
+        51,
+        63
+      ],
+      [
+        52,
+        64
+      ],
+      [
+        54,
+        66
+      ],
+      [
+        56,
+        68
+      ],
+      [
+        58,
+        70
+      ]
+    ],
+    "fingers": [
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "beats": [
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "tempoBpm": 40,
+    "articulation": "standard",
+    "timing": "beat-boundary-v2",
+    "junctionAttacks": 1,
+    "junctionBeats": 1,
+    "sourceEntries": 144,
+    "newSourceRules": 1,
+    "newSourceApplications": 3
+  },
+  "sources": {
+    "figureReadOn": "2026-11-27",
+    "primaryFigures": [
+      {
+        "hand": "left",
+        "archived": "2026-11-21-255-23.5.219/evidence/sources/left.png",
+        "page": "https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-left-hand/",
+        "imageBytes": 42459,
+        "imageSha256": "0459ede8e225c6717b520b3381b0f9abfeb67ed7c42cd206870090d31b8b623f"
+      },
+      {
+        "hand": "right",
+        "archived": "2026-11-21-255-23.5.219/evidence/sources/right.png",
+        "page": "https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-right-hand/",
+        "imageBytes": 42414,
+        "imageSha256": "16315f5af142f349d5d21bff2cf86a99abb8feb6c0587fb245276af290a1df5c"
+      }
+    ],
+    "continuity": {
+      "author": "Chuan C. Chang",
+      "url": "https://fopp.readthedocs.io/en/latest/ch1/section_07.html",
+      "locator": "Chapter One, § 7, Continuity Rule"
+    }
+  },
+  "tests": {
+    "fullBeforePreparationFix": {
+      "tests": 3053,
+      "pass": 3052,
+      "fail": 1,
+      "skipped": 0,
+      "duration_ms": 2403420.6776,
+      "sha256": "960bd3531308f0a087b2e473b186e966cde179f2c6c5bcfa35e72d0102ef0e2d"
+    },
+    "targetBeforePreparationFix": {
+      "tests": 46,
+      "pass": 46,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 83717.7855,
+      "sha256": "62686bbe53fed73574d50c58a8a466088107829ce521e32aada63dff1ed6984e"
+    },
+    "targetAfterPreparationFix": {
+      "tests": 105,
+      "pass": 105,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 74991.2525,
+      "sha256": "25d2ea1009eeca9f59fc21002676afbdf8c59cf2a03d6942aa9e1f67b36e1266"
+    },
+    "windowsServiceAfterPreparationFix": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 7,
+      "duration_ms": 34414.4323,
+      "sha256": "85f43e01a4fa93ef25e47cb97123b4f8f291896d54b652cf9cd75fd51c4869e3"
+    },
+    "beforeImplementation": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4,
+      "skipped": 0,
+      "duration_ms": 5404.8078,
+      "sha256": "f4bc2929bd86f112c3fdbc66a86eeff9f42691569ed21b826bdcd6157ec99887"
+    },
+    "finalVerifiedTestsCovered": 3053,
+    "audits": [
+      {
+        "name": "final-audit-lessons",
+        "exit": 0,
+        "started": "2026-11-27T11:50:08.9085764+05:00",
+        "ended": "2026-11-27T11:50:13.4487464+05:00",
+        "logBytes": 754,
+        "logSha256": "736044e15a325e52aba9064e270ba6c7776e5b558b98d4e045abaf361c8a4088"
+      },
+      {
+        "name": "final-audit-fingering",
+        "exit": 0,
+        "started": "2026-11-27T11:50:13.4525196+05:00",
+        "ended": "2026-11-27T11:50:24.2522409+05:00",
+        "logBytes": 736,
+        "logSha256": "5e4de93c759ad476724bf4224717d3076b57ecd8cefd300338a30b3996f80fc5"
+      },
+      {
+        "name": "final-audit-curriculum",
+        "exit": 0,
+        "started": "2026-11-27T11:50:24.2625909+05:00",
+        "ended": "2026-11-27T11:50:37.5354301+05:00",
+        "logBytes": 646,
+        "logSha256": "73c35d2d18c7af9ade1610c9978c772e165fa8d6b37fb15824b7b9def3dd915c"
+      },
+      {
+        "name": "final-audit-coverage",
+        "exit": 0,
+        "started": "2026-11-27T11:50:37.5391844+05:00",
+        "ended": "2026-11-27T11:50:40.0714185+05:00",
+        "logBytes": 494,
+        "logSha256": "c62d31a5ce26d009955c0fab2b5fe30fa6aab876c57836464076c282a32579c7"
+      }
+    ]
+  },
+  "preparationCorrection": {
+    "fullFailedCase": "Both separate hands must be prepared",
+    "passedInFinalRelatedTests": true,
+    "change": "Reference both existing single-hand roundtrips explicitly.",
+    "before": [
+      "detail-p-b-major-prepared-paired-middle-01",
+      "detail-p-b-major-prepared-paired-upper-turn-01"
+    ],
+    "after": [
+      "detail-p-b-major-prepared-paired-middle-01",
+      "detail-p-b-major-prepared-paired-upper-turn-01",
+      "detail-p-b-major-prepared-roundtrip-left-01",
+      "detail-p-b-major-prepared-roundtrip-right-01"
+    ],
+    "otherCatalogPlanAndGradeFieldsExact": true,
+    "initialCourseSha256": "a4417f3f68de1d5d68f8cf6cec37accd3738ec880e648cfaa180204f5cdd8e16",
+    "finalCourseSha256": "e45fb4eac013c994bf31f96537c8beabc6b21f4c9f21157f538668560b61f1f2",
+    "initialEditionVersion": "5d2d7e0ff8d660349e29617adef58093d70b2de3611af29847120aa5c7bcadf8",
+    "finalEditionVersion": "f07ce19114b1a27136a2f272c688e86766770f64f49f31998b1ef48260547c38"
+  },
+  "initialBrowser": {
+    "version": "23.5.222",
+    "browser": "Codex in-app browser",
+    "mainCatalog": {
+      "learning": 640,
+      "midi": 370
+    },
+    "lesson": "detail-p-b-major-prepared-paired-joined-ascent-01",
+    "enterExpandedRetainedFocus": true,
+    "spaceCollapsedRetainedFocus": true,
+    "preparations": [
+      {
+        "id": "detail-p-b-major-prepared-paired-middle-01",
+        "title": "Си мажор двумя руками. Два больших на ми"
+      },
+      {
+        "id": "detail-p-b-major-prepared-paired-upper-turn-01",
+        "title": "Си мажор двумя руками: три чёрные пары и разворот"
+      }
+    ],
+    "sourceLinks": 3,
+    "selectedModes": [
+      "compact",
+      "expanded",
+      "hidden"
+    ],
+    "hiddenPassedReload": true,
+    "compactRestored": true,
+    "compactLines": 5,
+    "textHeightPx": 112,
+    "lineHeightPx": 22.4,
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "clientAndScrollWidth": [
+        376,
+        376
+      ],
+      "headingBounds": [
+        87.06,
+        146.86,
+        26.64,
+        349.04
+      ],
+      "cardBounds": [
+        497.78,
+        662.78,
+        29.2,
+        348.4
+      ],
+      "scrollY": 1260.16,
+      "wholeFrameObserved": true,
+      "jpegBytesObserved": 45878,
+      "rawScreenshotSavedOnD": false
+    },
+    "expectedFirstPair": [
+      51,
+      63
+    ],
+    "displayedFingers": [
+      2,
+      3
+    ],
+    "stepsRemaining": 5,
+    "viewportReset": [
+      1280,
+      720
+    ],
+    "temporaryTabsRemaining": 0,
+    "hardwareMidiObserved": false,
+    "browserPairedInputAttempted": false,
+    "ownedPreviewStopped": true,
+    "previewShutdownHttp": 200,
+    "closedPorts": [
+      58140,
+      58142
+    ],
+    "manifestSha256": "3610f7867041f3ec375f7531185c5d751f961a86d194d882e3083c3a5f9aca6a",
+    "courseSha256": "a4417f3f68de1d5d68f8cf6cec37accd3738ec880e648cfaa180204f5cdd8e16",
+    "qaRequestsSha256": "ae3619a4299af912dd535bb7e08c696a60cdbcd16a1b2a14e1733b1408200332",
+    "checkedAt": "2026-11-27T11:23:05.7424283+05:00"
+  },
+  "browser": {
+    "version": "23.5.222",
+    "browser": "Codex in-app browser",
+    "mainCatalog": {
+      "learning": 640,
+      "midi": 370
+    },
+    "lesson": "detail-p-b-major-prepared-paired-joined-ascent-01",
+    "enterExpandedRetainedFocus": true,
+    "spaceCollapsedRetainedFocus": true,
+    "preparations": [
+      {
+        "id": "detail-p-b-major-prepared-paired-middle-01",
+        "title": "Си мажор двумя руками. Два больших на ми"
+      },
+      {
+        "id": "detail-p-b-major-prepared-paired-upper-turn-01",
+        "title": "Си мажор двумя руками: три чёрные пары и разворот"
+      },
+      {
+        "id": "detail-p-b-major-prepared-roundtrip-left-01",
+        "title": "Си мажор левой: октава вверх и обратно"
+      },
+      {
+        "id": "detail-p-b-major-prepared-roundtrip-right-01",
+        "title": "Си мажор правой: октава вверх и обратно"
+      }
+    ],
+    "sourceLinks": 3,
+    "selectedModes": [
+      "compact",
+      "expanded",
+      "hidden"
+    ],
+    "hiddenPassedReload": true,
+    "compactRestored": true,
+    "compactLines": 5,
+    "textHeightPx": 112,
+    "lineHeightPx": 22.4,
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "clientAndScrollWidth": [
+        376,
+        376
+      ],
+      "headingBounds": [
+        137.62,
+        197.42,
+        26.64,
+        349.04
+      ],
+      "cardBounds": [
+        548.34,
+        713.34,
+        29.2,
+        348.4
+      ],
+      "scrollY": 1209.6,
+      "wholeFrameObserved": true,
+      "jpegBytesObserved": 46348,
+      "rawScreenshotSavedOnD": false
+    },
+    "expectedFirstPair": [
+      51,
+      63
+    ],
+    "displayedFingers": [
+      2,
+      3
+    ],
+    "stepsRemaining": 5,
+    "viewportReset": [
+      1280,
+      720
+    ],
+    "temporaryTabsRemaining": 0,
+    "hardwareMidiObserved": false,
+    "browserPairedInputAttempted": false,
+    "ownedPreviewStopped": true,
+    "previewShutdownHttp": 200,
+    "closedPorts": [
+      58140,
+      58142,
+      56754,
+      56755
+    ],
+    "manifestSha256": "93899c2b9f37b022af270f50f1440fc76683f2e47702743b4a16deca00d25b18",
+    "courseSha256": "e45fb4eac013c994bf31f96537c8beabc6b21f4c9f21157f538668560b61f1f2",
+    "qaRequestsSha256": "e1fb19c2b2cb5aec04aa7ab52163b81c252caa7e18e3cd344e121b5586c9bfbf",
+    "checkedAt": "2026-11-27T11:56:10.9266731+05:00"
+  },
+  "localCopy": {
+    "phase": 258,
+    "version": "23.5.222",
+    "pass": true,
+    "checkedAt": "2026-11-27T11:52:40.675785+05:00",
+    "selectedFiles": 843,
+    "selectedBytes": 82305053,
+    "sourceFiles": 802,
+    "publicFiles": 41,
+    "newStoredFiles": 19,
+    "newStoredBytes": 12149552,
+    "reusedFiles": 824,
+    "retentionDependencies": [
+      "2026-11-20-251-23.5.215",
+      "2026-11-20-252-23.5.216",
+      "2026-11-20-253-23.5.217",
+      "2026-11-20-254-23.5.218",
+      "2026-11-21-255-23.5.219",
+      "2026-11-21-256-23.5.220",
+      "2026-11-27-257-23.5.221"
+    ],
+    "changedPublicFiles": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "webPayloadDeltaBytes": 7045,
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedTestsPassed": 5,
+    "manifestSha256": "e24777568b4ce61bd9b516bfd5476d495d1402bbc13896d19af4148913869101",
+    "smokeLogSha256": "031f761b4fa15ff83af1b63338ace19e6f8d9f3a490ea9012b94e1b88b77dbd5",
+    "webManifestSha256": "93899c2b9f37b022af270f50f1440fc76683f2e47702743b4a16deca00d25b18",
+    "courseSha256": "e45fb4eac013c994bf31f96537c8beabc6b21f4c9f21157f538668560b61f1f2",
+    "freeBytesBeforeCopy": 833619558400,
+    "scope": "Selected local source and web export. No production data."
+  },
+  "cleanup": {
+    "phase": 258,
+    "scope": "Own isolated browser and source restore scratch",
+    "removed": true,
+    "removedFiles": 852,
+    "logicalBytes": 82872375,
+    "dAvailableBefore": 833520119808,
+    "dAvailableAfter": 833604960256,
+    "measuredAvailableDelta": 84840448,
+    "localCheckpointKept": true,
+    "exactLocalWebBuildKept": true,
+    "checkedAt": "2026-11-27T11:56:11.3295428+05:00"
+  },
+  "production": {
+    "https": 200,
+    "version": "23.5.220",
+    "observedAt": "2026-11-27T10:56:46.9257560+05:00",
+    "deployed": false,
+    "manualPgStarts": 0,
+    "s3Requests": 0,
+    "freshExternalRestore": false,
+    "lastKnownReleaseReceipt": "docs/qa/melodiajest-2026-11-21-release-220.json"
+  },
+  "automation": {
+    "id": "automation",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "sameChat": true,
+    "newAutomationCreated": false,
+    "promptSha256": "7a6a4135c4650de5ab76600c190b46d499f847695af166793bbf98d824f47bc8",
+    "verifiedAt": "2026-11-27T11:57:17.677782+05:00",
+    "pendingContinuationAt": "2026-11-27T06:15:44.239Z",
+    "nextStage": 259
+  },
+  "quota": {
+    "source": "get_usage_limits",
+    "limitId": "codex",
+    "policy": "until-exhausted",
+    "reservePercent": 0,
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "rateLimitReachedType": null,
+    "primary": {
+      "usedPercent": 56,
+      "windowDurationMins": 10080,
+      "resetsAt": 1795892423,
+      "remainingPercent": 44
+    },
+    "secondary": null,
+    "stage": "before local copy verification",
+    "checkedAt": "2026-11-27T06:52:15.021Z"
+  },
+  "nextWork": {
+    "id": "b-major-paired-lower-preparation-after-258",
+    "priority": 1,
+    "status": "ready-for-next-local-stage",
+    "action": "Проверить нижнюю тройку B–C♯–D♯ си мажора двумя руками. Сравнить B2–C♯3–D♯3 под 4–3–2 и B3–C♯4–D♯4 под 1–2–3 с одноручными схемами и готовыми парными тройками. При отдельной задаче подготовить вступление с белой пары си на две чёрные, проверив стык с уроком 258 на общей паре D♯. Сначала сверить квоту и копию 258.",
+    "checkpoint": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-258-23.5.222\\completion.json",
+    "planReference": "docs/reports/piano-curriculum-2026-11-27-02.md",
+    "plannedNewRecords": 0,
+    "newLessonsImplemented": 0,
+    "resumeRequiresExplicitUserRequest": false
+  }
+}
