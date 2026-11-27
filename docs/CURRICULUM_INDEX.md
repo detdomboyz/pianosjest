@@ -591,6 +591,7 @@
 | detail-p-left-waltz-eighth-relocate-01 | Левая: смени бас за восьмую паузу | 6 | 48 | MIDI-челлендж | сначала detail-p-relocate-02; сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-repeat-left-01; сначала course04-07 |
 | detail-p-paired-waltz-eighth-bass-shift-01 | Вальс: перенеси бас на «и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-waltz-eighth-relocate-01; сначала detail-p-paired-waltz-eighth-handoff-01 |
 | detail-p-paired-waltz-upbeat-01 | Вальс: начни фразу с «три-и» | 11 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-eighth-handoff-01; сначала detail-p-paired-waltz-pulse-01 |
+| detail-p-paired-waltz-barline-handoff-01 | Вальс: передай «три-и» к новому такту | 12 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-upbeat-01; сначала detail-p-paired-waltz-eighth-handoff-01 |
 | oct201--2 | Семь ступеней C2–B2 | 65 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct202--2 | Через одну | 60 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct203--2 | Диезы C2 | 48 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |

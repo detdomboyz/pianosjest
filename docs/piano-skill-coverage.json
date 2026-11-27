@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-27T21:16:31.844Z",
+  "generatedAt": "2026-11-27T21:33:47.619Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 676,
-    "checkedMidiRouteLessons": 406,
-    "withStructuredProvenance": 379,
-    "individuallyMappedToDomain": 379,
+    "implementedLearningLessons": 677,
+    "checkedMidiRouteLessons": 407,
+    "withStructuredProvenance": 380,
+    "individuallyMappedToDomain": 380,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 652,
+    "goalGroupUpperBound": 653,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -617,6 +617,7 @@
         "detail-p-paired-waltz-eighth-bass-shift-01",
         "detail-p-paired-waltz-upbeat-01",
         "detail-p-paired-waltz-bass-upbeat-01",
+        "detail-p-paired-waltz-barline-handoff-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -11403,6 +11404,30 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-paired-waltz-barline-handoff-01",
+      "title": "Вальс: передай «три-и» к новому такту",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 7,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "На «три» заново нажми до левой. На «и» отпусти его и сыграй ми правой. Оба до вступают вместе на «раз» следующего такта.",
+      "requires": [
+        "detail-p-paired-waltz-upbeat-01",
+        "detail-p-paired-waltz-eighth-handoff-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "burgmuller-hoffman-waltz-barline-handoff-2026-11-28"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -17921,5 +17946,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Проверить, есть ли в 3/4 басовая восьмая левой после тишины перед совместным вступлением на «раз». Если такой переход ещё не отработан, найти пример в нотах и точную подготовку для низкой ноты и общего вступления. Сопоставить с готовыми проходящими басами и исключить повторы одной цели."
+  "nextAction": "Проверить, отработана ли передача двух восьмых от левой к правой на «три-и» с общим вступлением на «раз» следующего такта. Сопоставить с передачей на «два-и» и раздельными затактами этапов 293–294. Если цель уже покрыта, выбрать другой подтверждённый пробел."
 }

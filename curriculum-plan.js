@@ -4664,6 +4664,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-barline-handoff-01",
+      "stage": "p7",
+      "branch": "paired-waltz-barline-handoff",
+      "fingerprint": "6f385245",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-upbeat-01",
+        "detail-p-paired-waltz-eighth-handoff-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

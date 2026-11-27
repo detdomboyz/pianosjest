@@ -1380,6 +1380,20 @@
     ],
     options: { bpm: 48, beats: [1, 1, 0.5, 1], startBeats: [0, 1, 2.5, 3], articulation: 'standard' }
   };
+  const pairedWaltzBarlineHandoff = {
+    id: 'detail-p-paired-waltz-barline-handoff-01',
+    title: 'Вальс: передай «три-и» к новому такту',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzUpbeat.id,
+    requires: [pairedWaltzUpbeat.id, pairedWaltzEighthHandoff.id],
+    goal: 'На «три» заново нажми до левой. На «и» отпусти его и сыграй ми правой. Оба до вступают вместе на «раз» следующего такта.',
+    events: [
+      ...pairedWaltzUpbeat.events.slice(0, 2),
+      pairedWaltzEighthHandoff.events[1],
+      ...pairedWaltzUpbeat.events.slice(2)
+    ],
+    options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 1, 1, 1], startBeats: [0, 1, 2, 2.5, 3, 4, 5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1391,7 +1405,7 @@
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
-    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat);
+    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3075,6 +3089,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassUpbeat.goal,
         context: 'Проходящая си ведёт низкую партию к до. Правая присоединяется на сильной доле и сохраняет пульс баса.',
         sourceNote: 'У Кёлера левая звучит одну четверть во время паузы правой, затем обе вступают. Зак использует проходящую си перед до. В упражнении добавлена общая полудолевая пауза перед восьмой си. Регистр, пальцы и ритм заданы для этого урока.'
+      }
+    });
+  }
+
+  function describePairedWaltzBarlineHandoff(lesson, adapter) {
+    const setup = 'Повтори две восьмые из передачи на «два-и» и затакт правой перед новым «раз». Положи левый мизинец 5 на C3. Правая держит 1–2–3 над C4–D4–E4. Педаль выключена.';
+    const motion = 'Сыграй две четвертные пары C3 с C4 и C3 с D4. На «три» отпусти пару и заново нажми C3 мизинцем. На «и» отпусти C3 и сыграй E4 правым средним 3. На новое «раз» отпусти ми и сыграй два до вместе мизинцем и правым большим.';
+    const count = 'Считай «раз, два, три-и | раз, два, три» при 48 BPM. На «три» и «и» звучит ровно по полдоли. В следующем такте сыграй C4–D4–E4 с повтором C3 на каждой доле.';
+    const hearing = 'Послушай короткое низкое до, короткое ми и общее вступление на «раз». Проговори «три-и-раз» под ровный пульс. Если ми перекрывает два до или перед «раз» слышна заминка, разучи эти три атаки отдельно.';
+    const mastery = 'Низкое до нажато заново на «три». На «и» слышно только ми. На «раз» обе руки вступают вместе, а следующие «два» и «три» идут в прежнем темпе.';
+    const score = 'https://www.mutopiaproject.org/ftp/BurgmullerJFF/O100/25EF-02/25EF-02-let.pdf#page=1';
+    const method = 'https://app.hoffmanacademy.com/lessons/piano/la-cinquantaine-melody/video/';
+    lesson.rhythm = waltzRhythm(pairedWaltzBarlineHandoff.options, 'project-paired-waltz-barline-handoff-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Передача двух восьмых перед новым тактом 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-barline-handoff', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Отстучи левую на «три», правую на «и» и обе на «раз». Затем сыграй переход на клавишах. Добавь предыдущие четверти и продолжи весь новый такт.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу с другой верхней нотой на «и» и другой верхней нотой на «раз». Сохрани полдоли за каждой рукой и общую первую долю. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «три» слышно новое низкое до. На «и» оно отпущено и слышно одно ми.',
+        'На новое «раз» ми отпущено. Оба до начинают такт одним ударом.',
+        'После общего «раз» счёт продолжается ровно. Пальцы готовы к следующей ноте без лишнего движения.'
+      ],
+      rhythmNotice: count,
+      references: [score, method],
+      referenceTitles: {
+        [score]: 'Иоганн Бургмюллер. Арабеска op. 100 № 2, такты 12–13, издание Mutopia',
+        [method]: 'Джозеф Хоффман. La Cinquantaine, урок 99, разбор восьмых пауз'
+      },
+      sourceEvidenceIds: ['burgmuller-hoffman-waltz-barline-handoff-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBarlineHandoff.goal,
+        context: 'Две руки по очереди ведут слабую долю к совместному вступлению на сильной доле вальса.',
+        sourceNote: 'У Бургмюллера нижняя восьмая сменяется новой верхней атакой перед общим вступлением. Верхнее ми сначала удерживается. Хоффман разбирает восьмые с паузами у разных рук. Здесь обе восьмые звучат по очереди, а ноты, пальцы и размер 3/4 заданы для упражнения.'
       }
     });
   }
@@ -6947,6 +7002,9 @@
     }
     if (!existing.has(pairedWaltzBassUpbeat.id)) {
       describePairedWaltzBassUpbeat(lessons.find(lesson => lesson.id === pairedWaltzBassUpbeat.id), adapter);
+    }
+    if (!existing.has(pairedWaltzBarlineHandoff.id)) {
+      describePairedWaltzBarlineHandoff(lessons.find(lesson => lesson.id === pairedWaltzBarlineHandoff.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

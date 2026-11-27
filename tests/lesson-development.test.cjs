@@ -228,6 +228,29 @@ function assertWaltzBassUpbeatPreparation(lesson, required) {
  }
 }
 
+function assertWaltzBarlineHandoffPreparation(lesson, required) {
+ const [upbeat, handoff] = required;
+ assert.equal(required.length, 2);
+ for (const candidate of [lesson, upbeat, handoff]) {
+  assert.equal(candidate.handMode, 'split');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const target = timedPreparationLines(lesson);
+ const earlierUpbeat = timedPreparationLines(upbeat);
+ const earlierHandoff = timedPreparationLines(handoff);
+ assert.deepEqual(copy(lesson.rhythm.steps.slice(2, 5).map(s => [s.measure, s.beatInMeasure, s.restBeforeBeats])),
+  [[1, 2, 0], [1, 2.5, 0], [2, 0, 0]], 'Both eighths and the next downbeat must keep a continuous count');
+ assert.deepEqual(target.left.filter(([, , start]) => start !== 2), earlierUpbeat.left);
+ assert.deepEqual(target.right, earlierUpbeat.right);
+ for (const hand of ['left', 'right']) {
+  const window = target[hand].filter(([, , start]) => start >= 2 && start <= 3);
+  const ready = earlierHandoff[hand].filter(([, , start]) => start >= 1 && start <= 2)
+   .map(([midi, finger, start, duration]) => [midi, finger, start + 1, duration]);
+  assert.deepEqual(window, ready, 'The three barline attacks must retain the prepared pitches, fingers and timing');
+ }
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -255,6 +278,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-bass-upbeat') {
   assertWaltzBassUpbeatPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-barline-handoff') {
+  assertWaltzBarlineHandoffPreparation(lesson, required);
   return;
  }
  if (lesson.steps.some(step => app.stepMidiList(step).length === 1)) {
@@ -374,6 +401,22 @@ test('bass upbeat retains the prepared left notes and matches the prepared pair'
  const changed = copy(pair);
  changed.fingeringSpec.steps[1][0].num = 5;
  assert.throws(() => assertWaltzBassUpbeatPreparation(exercise, [bass, changed]), /prepared pair/);
+});
+
+test('waltz barline handoff retains the prepared pair and both eighths', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const exercise = get('detail-p-paired-waltz-barline-handoff-01');
+ assert.ok(exercise, 'Missing the barline handoff lesson');
+ const [upbeat, handoff] = exercise.learning.requires.map(get);
+ assertWaltzBarlineHandoffPreparation(exercise, [upbeat, handoff]);
+ const wrongLeft = copy(handoff);
+ wrongLeft.fingeringSpec.steps[1][0].num = 4;
+ assert.throws(() => assertWaltzBarlineHandoffPreparation(exercise, [upbeat, wrongLeft]), /barline attacks/);
+ const rightHolds = copy(handoff);
+ rightHolds.rhythm.steps[2].durationBeats = 0.625;
+ rightHolds.rhythm.steps[3].startBeat = 2.125;
+ rightHolds.rhythm.steps[3].durationBeats = 0.875;
+ assert.throws(() => assertWaltzBarlineHandoffPreparation(exercise, [upbeat, rightHolds]), /barline attacks/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{
