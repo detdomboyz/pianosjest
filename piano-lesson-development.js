@@ -997,10 +997,20 @@
       .map((left, i) => [...left, ...bMajorDescentRight.events.at(i - 3)]),
     options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
   };
+  const bMajorPairedJoinedDescent = {
+    id: 'detail-p-b-major-prepared-paired-joined-descent-01',
+    title: 'Си мажор двумя руками. Один ре-диез на стыке',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedLowerDescent.id,
+    requires: [bMajorPairedMiddleDescent.id, bMajorPairedLowerDescent.id, bMajorDescentLeft.id, bMajorDescentRight.id],
+    goal: 'Сыграй пять октавных пар от фа-диеза до си. Общие ре-диезы звучат один раз и одну долю. Переходи с них к до-диезам в том же пульсе. Последние си держи две доли.',
+    events: [...bMajorPairedMiddleDescent.events, ...bMajorPairedLowerDescent.events.slice(1)],
+    options: { bpm: 40, beats: [1, 1, 1, 1, 2], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
-    bMajorPairedMiddleDescent, bMajorPairedLowerDescent);
+    bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1595,6 +1605,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedLowerDescent.goal,
         context: 'Окончание нисходящей фразы двумя руками. Левая приходит на си безымянным, правая большим, и обе удерживают тонику вместе.',
         sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 5–7. Проект объединяет три восьмые каждой руки в две четверти и половинную при 40 BPM. Короткая подготовка и общая нота взяты из главы 1, § 7 Чанга. Для этого стыка выбрана пара ре-диезов.'
+      }
+    });
+  }
+
+  function describeBMajorPairedJoinedDescent(lesson, adapter) {
+    const setup = 'Поставь левый безымянный на F♯3 и правый указательный на F♯4. Найди белые ми справа от пар чёрных клавиш. Сначала повтори раздельно последние пять нот полного спуска каждой рукой. Педаль выключена.';
+    const motion = 'Левая играет 4–1–2–3–4, правая 2–1–3–2–1. На ми сходятся оба больших. Затем ре-диезы играют левый указательный и правый средний. Пока они звучат, подготовь на соседних чёрных левый средний и правый указательный. С началом до-диезов освободи ре-диезы и продолжи к белым си.';
+    const count = 'При 40 BPM считай первый такт по четверти на пару. «Раз» — фа-диезы, «два» — ми, «три» — ре-диезы, «четыре» — до-диезы. Во втором такте держи оба си на «раз–два», отпусти на «три» и сам досчитай «три–четыре» в тишине.';
+    const hearing = 'Послушай образец и пропой верхний голос по долям. Услышь пять общих вступлений и длинные си в конце. Если на стыке слышен второй удар ре-диезов или задержка перед до-диезом, повтори по одному удару на ми, ре-диез и до-диез, затем верни остальные пары.';
+    const mastery = 'На «три» звучит одна общая пара ре-диезов ровно одну долю. На «четыре» обе руки уже играют до-диезы. Си удерживаются вместе две доли.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedJoinedDescent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-joined-descent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Соединение нисходящих октавных групп', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-joined-descent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Повтори готовый спуск через ми и окончание на си. Найди ре-диезы в конце первой группы и в начале второй. В целой фразе сыграй их одной парой, подержи одну долю вместо прежних двух и сразу продолжи пульс на до-диезах.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на пробы с отдыхом. Придумай свою нисходящую фразу. Сам выбери начальные пары и длительность финального звука. Проведи её через ми, ре-диез и до-диез на трёх ровных долях. Сыграй ре-диезы один раз. Повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На ми входят оба больших. На следующих ре-диезах пальцы 2 слева и 3 справа.',
+        'Ре-диезы звучат один раз на «три». До-диезы вступают вместе на «четыре».',
+        'Держу белые си «раз–два» второго такта и одновременно освобождаю на «три».',
+        'В своей фразе слышу ровный стык и общие вступления. Пальцы проверяю за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Спуск си мажора левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Спуск си мажора правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Соединение отрезков, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[1], bMajorRoundtripRight.sources[1],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedJoinedDescent.goal,
+        context: 'Продолжение нисходящей мелодии в параллельных октавах через общую ступень двух подготовленных групп.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 3–7. Проект объединяет пять восьмых каждой руки в пары на четыре четверти и половинную при 40 BPM. Принцип общей ноты у соседних участков взят из главы 1, § 7 Чанга. Ре-диезы на стыке и их длительность выбраны проектом.'
       }
     });
   }
@@ -5021,6 +5080,9 @@
     }
     if (!existing.has(bMajorPairedLowerDescent.id)) {
       describeBMajorPairedLowerDescent(lessons.find(lesson => lesson.id === bMajorPairedLowerDescent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedJoinedDescent.id)) {
+      describeBMajorPairedJoinedDescent(lessons.find(lesson => lesson.id === bMajorPairedJoinedDescent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

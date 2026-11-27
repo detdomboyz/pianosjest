@@ -3965,6 +3965,19 @@
       ]
     },
     {
+      "id": "detail-p-b-major-prepared-paired-joined-descent-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-paired-joined-descent",
+      "fingerprint": "d103b911",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-prepared-paired-middle-descent-01",
+        "detail-p-b-major-prepared-paired-lower-descent-01",
+        "detail-p-b-major-descent-left-01",
+        "detail-p-b-major-descent-right-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-prepared-paired-lower-ascent-01",
       "stage": "p7",
       "branch": "b-major-prepared-paired-lower-ascent",
