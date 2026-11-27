@@ -1,0 +1,471 @@
+{
+  "phase": "2026-11-27-275",
+  "completedAt": "2026-11-27T17:55:11.679745+05:00",
+  "batch": "2026-11-27-19",
+  "lesson": "detail-p-bflat-major-prepared-paired-upper-turn-01",
+  "localVersion": "23.5.239",
+  "publicVersion": "23.5.220",
+  "baseGitCommit": "dca0b8a27f2908459f69347c10a7a4a19aa2c63a",
+  "checkpointRoot": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-275-23.5.239",
+  "musicReport": "docs/reports/piano-curriculum-2026-11-27-19.md",
+  "operationsReport": "docs/reports/melodiajest-operations-2026-11-27-275.md",
+  "counts": {
+    "catalog": 805,
+    "learning": 657,
+    "midi": 387,
+    "provenance": 360,
+    "themes": 118,
+    "goalUpperBound": 633,
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "verifiedCoverage": {
+    "reviewedLearningRecords": 656,
+    "explicitOctaveExercises": 58,
+    "signedWindowsOfFive": 110,
+    "allPitchWindowsOfFive": 216,
+    "sameIntervalContourWindows": 6,
+    "exactPitchMatches": 0,
+    "reverseMatches": 0,
+    "unsignedExactPitchMatches": 0,
+    "sameIntervalColorFingerMatches": 0,
+    "previousCatalogRecordsExact": 804,
+    "previousCanonicalEditionsExact": 656,
+    "previousRoutesAndCallbacksExact": true,
+    "guitarRouteAndImmutableBaselineExact": true,
+    "personalEditRoundtripSynthetic": true,
+    "newGlobalMotorClass": false
+  },
+  "musicalContract": {
+    "pitches": [
+      [
+        55,
+        67
+      ],
+      [
+        57,
+        69
+      ],
+      [
+        58,
+        70
+      ],
+      [
+        57,
+        69
+      ],
+      [
+        55,
+        67
+      ]
+    ],
+    "fingers": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "beats": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tempoBpm": 40,
+    "articulation": "standard",
+    "timing": "beat-boundary-v2",
+    "apex": {
+      "midis": [
+        58,
+        70
+      ],
+      "startBeat": 2,
+      "releaseBeat": 3,
+      "fingers": [
+        2,
+        4
+      ],
+      "attacks": 1
+    },
+    "returnToA": {
+      "midis": [
+        57,
+        69
+      ],
+      "startBeat": 3,
+      "releaseBeat": 4,
+      "fingers": [
+        1,
+        3
+      ]
+    },
+    "lastG": {
+      "midis": [
+        55,
+        67
+      ],
+      "startBeat": 4,
+      "releaseBeat": 5,
+      "fingers": [
+        2,
+        2
+      ]
+    },
+    "sourceFollowingNote": "F",
+    "recordedEndBeat": 5,
+    "secondMeasureSoundingBeats": 1,
+    "manualQuietBeatsAfterRelease": 1
+  },
+  "sources": {
+    "rules": 144,
+    "newApplications": 5,
+    "originalFiguresVisuallyReadOn": "2026-11-27",
+    "pagesReadOn": "2026-11-27",
+    "primaryFigures": [
+      {
+        "hand": "left",
+        "url": "https://en.piano-fingering.org/wp-content/uploads/2014/12/f1.-B-flat-LH1-whole-view-plane.png",
+        "archived": "2026-11-27-266-23.5.230/sources/bflat-figure-1-left.png",
+        "imageBytes": 42993,
+        "imageSha256": "88ba2039fe7f3afbf4c41a3506f60651b45eab1c7310ede94e7ad3707d840f20",
+        "format": "original PNG",
+        "figure": 1
+      },
+      {
+        "hand": "right",
+        "url": "https://en.piano-fingering.org/wp-content/uploads/2014/12/f1.-B-flat-RH1-whole-view-plane.png",
+        "archived": "2026-11-27-266-23.5.230/sources/bflat-figure-1-right.png",
+        "imageBytes": 43805,
+        "imageSha256": "083dbc0cfeae082e39451bf7b31a29fd66399028896336782b92abfe06c5a890",
+        "format": "original PNG",
+        "figure": 1
+      }
+    ]
+  },
+  "tests": {
+    "target": {
+      "tests": 85,
+      "pass": 85,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 88642.8721,
+      "sha256": "4ca0ad38291b277db2ced4fb3359b368969a4fdee375d2d47a98dd9876b12cf5"
+    },
+    "newLesson": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "duration_ms": 13322.1574,
+      "sha256": "77984edff7564d3364f5fdab063c84e5349b83c122cea071fcc2a8ada6f3dd0f"
+    },
+    "targetFiles": [
+      "tests/piano-bflat-major-paired-upper-turn.test.cjs",
+      "tests/piano-bflat-major-paired-upper-ascent.test.cjs",
+      "tests/piano-bflat-major-paired-upper-descent.test.cjs",
+      "tests/piano-bflat-major-paired-full-ascent.test.cjs",
+      "tests/piano-bflat-major-paired-full-descent.test.cjs",
+      "tests/curriculum.test.cjs",
+      "tests/curriculum-forward-preparation.test.cjs",
+      "tests/piano-skill-coverage.test.cjs",
+      "tests/piano-progress-store.test.cjs",
+      "tests/piano-learning-ui.test.cjs",
+      "tests/catalog-transfer.test.cjs"
+    ],
+    "windowsService": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 7,
+      "duration_ms": 41059.6469,
+      "sha256": "f08a47a6417893b6c5c0f510ce4dfde32df6c3f0ccede74afd5564e65bc26a9f"
+    },
+    "redBeforeImplementation": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4,
+      "skipped": 0,
+      "duration_ms": 5664.8791,
+      "sha256": "dc4b246be1c6cb81677fc0e1a7739bf0b5a9bdce5952260e001832463554d64c"
+    },
+    "wholeSuiteRerun": false,
+    "previousBroaderVerification": "docs/qa/melodiajest-2026-11-27-266.json",
+    "priorResultsFreshForThisVersion": false,
+    "audits": [
+      {
+        "name": "audit-lessons",
+        "exit": 0,
+        "started": "2026-11-27T17:47:52.9710138+05:00",
+        "ended": "2026-11-27T17:48:01.9023486+05:00",
+        "logBytes": 754,
+        "logSha256": "952d77ae05e9d543acef7c6eceb3e6552cfb5b87304d6def04dff51af50cd2bf"
+      },
+      {
+        "name": "audit-fingering",
+        "exit": 0,
+        "started": "2026-11-27T17:48:01.9124748+05:00",
+        "ended": "2026-11-27T17:48:17.5877224+05:00",
+        "logBytes": 737,
+        "logSha256": "c691ea40d11af39ad70e7ef291e59058feb5ef391483aac7d3461f69b0ae1577"
+      },
+      {
+        "name": "audit-curriculum",
+        "exit": 0,
+        "started": "2026-11-27T17:48:17.6200607+05:00",
+        "ended": "2026-11-27T17:48:36.7481099+05:00",
+        "logBytes": 646,
+        "logSha256": "073d3019480dc5a19f6eb3d0bc542c3dbdd28f21e1f4296205f6f666fe9e56ac"
+      },
+      {
+        "name": "audit-coverage",
+        "exit": 0,
+        "started": "2026-11-27T17:48:36.7646146+05:00",
+        "ended": "2026-11-27T17:48:40.5913462+05:00",
+        "logBytes": 494,
+        "logSha256": "8c266fc233cb718edebc42916620cb7302dc8631608f2ec6811b874d89e70967"
+      }
+    ]
+  },
+  "browser": {
+    "tool": "Built-in browser via computer-use, isolated anonymous preview",
+    "origin": "http://127.0.0.1:51245",
+    "title": "Си-бемоль мажор двумя руками. Разворот на вершине",
+    "manifestSha256": "b46927d55f27d949c65cd0762e17b4c6d6551f4a60b2aafc4fcd486c95f29450",
+    "courseSha256": "0b388ee8ecd8c30fc7fa76518a3f0674654faa7b5fb65d7c21e811a7c90ad7fb",
+    "publicFiles": 41,
+    "home": {
+      "learning": 657,
+      "midi": 387
+    },
+    "links": [
+      {
+        "id": "detail-p-bflat-major-prepared-paired-upper-ascent-01",
+        "title": "Си-бемоль мажор двумя руками. От фа до си-бемоля",
+        "opened": true
+      },
+      {
+        "id": "detail-p-bflat-major-prepared-paired-upper-descent-01",
+        "title": "Си-бемоль мажор двумя руками. Спуск до фа",
+        "opened": true
+      }
+    ],
+    "enter": {
+      "opened": true,
+      "focusRetained": true
+    },
+    "space": {
+      "collapsed": true,
+      "focusRetained": true
+    },
+    "firstNotes": [
+      {
+        "midi": 55,
+        "hand": "left",
+        "finger": 2
+      },
+      {
+        "midi": 67,
+        "hand": "right",
+        "finger": 2
+      }
+    ],
+    "remainingPracticeSteps": 5,
+    "score": {
+      "timeSignature": "4/4",
+      "measures": 2,
+      "secondMeasureSoundingBeats": 1,
+      "tempoBpm": 40,
+      "pairs": [
+        "G3 + G4",
+        "A3 + A4",
+        "A#3 + A#4",
+        "A3 + A4",
+        "G3 + G4"
+      ],
+      "quarterDurationMs": 1500
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 376,
+      "documentClientWidth": 376,
+      "headingTop": 48.02,
+      "headingBottom": 107.82,
+      "cardTop": 458.1,
+      "cardBottom": 624.38,
+      "cardWidth": 322.4,
+      "compactHeight": 112,
+      "lineHeight": 22.4,
+      "lines": 5,
+      "wholeFrameObserved": true,
+      "horizontalOverflow": false,
+      "initialHeadingTop": -71.02,
+      "afterManualScroll": true
+    },
+    "hiddenPersistedAfterReload": true,
+    "compactRestored": true,
+    "viewportBefore": [
+      1280,
+      720
+    ],
+    "viewportAfterReset": [
+      1280,
+      720
+    ],
+    "temporaryTabsRemaining": 0,
+    "screenshot": {
+      "file": "mobile.jpg",
+      "bytes": 44486,
+      "sha256": "4d3a88eadfc704fe27dc0ab8bc464be91d2a6fc8ffeba7ea52f472e9aa15e8c7"
+    },
+    "screenshotStatusRu": "Полный кадр разбора сохранён в приватной копии на D:.",
+    "syntheticGuest": true,
+    "serviceSessionStub": true,
+    "physicalMidiObserved": false,
+    "audioObserved": false,
+    "teacherReviewed": false,
+    "ownedPreviewStopped": true,
+    "ownedPortsClosed": [
+      51245,
+      51246
+    ],
+    "courseStatuses": [
+      200,
+      304,
+      304,
+      304,
+      304
+    ]
+  },
+  "localCopy": {
+    "phase": 275,
+    "version": "23.5.239",
+    "pass": true,
+    "checkedAt": "2026-11-27T17:52:03.583565+05:00",
+    "selectedFiles": 928,
+    "selectedBytes": 83553514,
+    "sourceFiles": 887,
+    "publicFiles": 41,
+    "newStoredFiles": 19,
+    "newStoredBytes": 12601997,
+    "reusedFiles": 909,
+    "retentionDependencies": [
+      "2026-11-20-251-23.5.215",
+      "2026-11-20-252-23.5.216",
+      "2026-11-20-253-23.5.217",
+      "2026-11-20-254-23.5.218",
+      "2026-11-21-255-23.5.219",
+      "2026-11-21-256-23.5.220",
+      "2026-11-27-257-23.5.221",
+      "2026-11-27-258-23.5.222",
+      "2026-11-27-259-23.5.223",
+      "2026-11-27-260-23.5.224",
+      "2026-11-27-261-23.5.225",
+      "2026-11-27-262-23.5.226",
+      "2026-11-27-263-23.5.227",
+      "2026-11-27-264-23.5.228",
+      "2026-11-27-265-23.5.229",
+      "2026-11-27-266-23.5.230",
+      "2026-11-27-267-23.5.231",
+      "2026-11-27-268-23.5.232",
+      "2026-11-27-269-23.5.233",
+      "2026-11-27-270-23.5.234",
+      "2026-11-27-271-23.5.235",
+      "2026-11-27-272-23.5.236",
+      "2026-11-27-273-23.5.237",
+      "2026-11-27-274-23.5.238"
+    ],
+    "changedPublicFiles": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "webPayloadDeltaBytes": 7439,
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedTestsPassed": 5,
+    "manifestSha256": "ebb0b3107f8df5740ed736522a2add93e5573cc2e0626dec2ddafb2aaaffb8c9",
+    "smokeLogSha256": "35b1e7fd0323dd64f9afdd499d7039d1eb9debeeb1778a653aee9a4d56cf00b5",
+    "webManifestSha256": "b46927d55f27d949c65cd0762e17b4c6d6551f4a60b2aafc4fcd486c95f29450",
+    "courseSha256": "0b388ee8ecd8c30fc7fa76518a3f0674654faa7b5fb65d7c21e811a7c90ad7fb",
+    "freeBytesBeforeCopy": 825076121600,
+    "scope": "Selected local source and web export. No production data."
+  },
+  "cleanup": {
+    "removed": true,
+    "path": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\melodiajest-275-work",
+    "removedFiles": 933,
+    "logicalBytes": 83882698.0,
+    "dAvailableBefore": 824976556032,
+    "dAvailableAfter": 825062596608,
+    "measuredAvailableDelta": 86040576,
+    "checkedAt": "2026-11-27T17:54:22.4008776+05:00"
+  },
+  "quota": {
+    "source": "get_usage_limits",
+    "limitId": "codex",
+    "policy": "until-exhausted",
+    "reservePercent": 0,
+    "ordinaryUsageAllowed": true,
+    "spendControlReached": false,
+    "rateLimitReachedType": null,
+    "primary": {
+      "usedPercent": 66,
+      "windowDurationMins": 10080,
+      "resetsAt": 1795892423,
+      "remainingPercent": 34
+    },
+    "secondary": null,
+    "stage": "before local copy verification",
+    "checkedAt": "2026-11-27T12:51:13.153Z"
+  },
+  "production": {
+    "https": 200,
+    "version": "23.5.220",
+    "observedAt": "2026-11-27T17:42:42.8417161+05:00",
+    "deployed": false,
+    "manualPgStarts": 0,
+    "s3Requests": 0,
+    "freshExternalRestore": false,
+    "lastKnownReleaseReceipt": "docs/qa/melodiajest-2026-11-21-release-220.json"
+  },
+  "automation": {
+    "id": "automation",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "sameChat": true,
+    "newAutomationCreated": false,
+    "promptSha256": "23710d8b3ebe48d92e3cb4eaab8cb20eb480cb564162ca8873bddde423fa116d",
+    "verifiedAt": "2026-11-27T17:55:11.679745+05:00",
+    "nextStage": 276
+  },
+  "nextWork": {
+    "id": "b-flat-major-roundtrip-paired-after-275",
+    "priority": 1,
+    "status": "ready-for-next-local-stage",
+    "action": "Проверить полный двуручный проход си-бемоль мажора вверх и вниз из 15 пар. Сверить оба такта рисунка 1 каждой руки и три готовые подготовки: полный подъём, верхний разворот и полный спуск. Цель — одно вступление верхней пары и три раздельных вступления B♭3 правой, левой и снова правой. Если такой проход ещё открыт, добавить его с окончанием на нижних си-бемолях и переносом разворота в новую фразу. Начать с квоты и копии этапа 275. После проверки 23.5.240 сверить группу десяти локальных сборок 23.5.231–23.5.240 по существующему порядку.",
+    "checkpoint": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-27-275-23.5.239\\completion.json",
+    "planReference": "docs/reports/piano-curriculum-2026-11-27-19.md",
+    "plannedNewRecords": 0,
+    "newLessonsImplemented": 0,
+    "resumeRequiresExplicitUserRequest": false
+  }
+}
