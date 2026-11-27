@@ -4614,6 +4614,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-common-bass-01",
+      "stage": "p7",
+      "branch": "paired-waltz-common-bass",
+      "fingerprint": "e49d01e6",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-common-bass-01",
+        "detail-p-paired-waltz-dyad-entry-01",
+        "course04-06"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",

@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-27T22:45:38.068Z",
+  "generatedAt": "2026-11-27T23:10:59.019Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 680,
-    "checkedMidiRouteLessons": 410,
-    "withStructuredProvenance": 383,
-    "individuallyMappedToDomain": 383,
+    "implementedLearningLessons": 681,
+    "checkedMidiRouteLessons": 411,
+    "withStructuredProvenance": 384,
+    "individuallyMappedToDomain": 384,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 656,
+    "goalGroupUpperBound": 657,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -621,6 +621,7 @@
         "detail-p-paired-waltz-bass-handoff-01",
         "detail-p-paired-waltz-delayed-melody-01",
         "detail-p-paired-waltz-dyad-entry-01",
+        "detail-p-paired-waltz-common-bass-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -11504,6 +11505,31 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-paired-waltz-common-bass-01",
+      "title": "Вальс: меняем созвучие над тем же басом",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 6,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "Начни оба такта с басового до. На «два» первого такта соедини ми–соль левой с до правой, во втором соедини фа–ля левой с фа правой.",
+      "requires": [
+        "detail-p-left-waltz-common-bass-01",
+        "detail-p-paired-waltz-dyad-entry-01",
+        "course04-06"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "tchaikovsky-waltz-common-bass-2026-11-28"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -18022,5 +18048,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Проверить, есть ли подготовленный переход от одной ноты баса к двухзвучию левой на «два», когда правая вступает над ним. Сверить аппликатуру баса и пары по нотам и ID. Добавить одно упражнение при подтверждённой новой задаче, удобной позиции и совпадающих длительностях звуков в совместной атаке."
+  "nextAction": "Проверить, есть ли готовый вальсовый переход от ми–соль к фа–ля над повторным басовым до, пока правая начинает отдельную ноту на «два» каждого такта. Сверить перенос пальцев левой и подготовленные правые ноты по ID. Добавить упражнение только при новом гармоническом и двигательном задании и проверенном нотном примере."
 }

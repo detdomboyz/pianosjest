@@ -291,6 +291,13 @@ function assertWaltzDelayedMelodyPreparation(lesson, required) {
  assert.equal(lesson.rhythm.steps[2].restBeforeBeats, 0.5, 'The eighth rest before the pickup stays in place');
 }
 
+function waltzHandFrame(candidate, index, hand) {
+ const timing = candidate.rhythm.steps[index];
+ const notes = app.stepMidiList(candidate.steps[index]);
+ const paired = candidate.fingeringSpec.steps[index].map((finger, i) => [notes[i], finger.hand, finger.num]);
+ return [copy(paired.filter(([, name]) => name === hand)), timing.startBeat, timing.durationBeats, timing.restBeforeBeats];
+}
+
 function assertWaltzDyadEntryPreparation(lesson, required) {
  const [bass, delayed, rightEighths] = required;
  assert.equal(required.length, 3);
@@ -304,19 +311,38 @@ function assertWaltzDyadEntryPreparation(lesson, required) {
   assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
   assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
  }
- const frame = (candidate, index, hand) => {
-  const timing = candidate.rhythm.steps[index];
-  const notes = app.stepMidiList(candidate.steps[index]);
-  const paired = candidate.fingeringSpec.steps[index].map((finger, i) => [notes[i], finger.hand, finger.num]);
-  return [copy(paired.filter(([, name]) => name === hand)), timing.startBeat, timing.durationBeats, timing.restBeforeBeats];
- };
- assert.deepEqual([0,1,2].map(i => frame(lesson, i, 'left')), [0,1,2].map(i => frame(bass, i, 'left')),
+ assert.deepEqual([0,1,2].map(i => waltzHandFrame(lesson, i, 'left')), [0,1,2].map(i => waltzHandFrame(bass, i, 'left')),
   'The left waltz bar must retain exact pitches, fingers, attacks, releases and rests');
- const [notes, , length] = frame(rightEighths, 0, 'right');
- assert.deepEqual([0,1,2].map(i => frame(lesson, i, 'right')[0]), [[],notes,[]], 'Only the prepared right eighth enters');
+ const [notes, , length] = waltzHandFrame(rightEighths, 0, 'right');
+ assert.deepEqual([0,1,2].map(i => waltzHandFrame(lesson, i, 'right')[0]), [[],notes,[]], 'Only the prepared right eighth enters');
  assert.equal(lesson.rhythm.steps[1].durationBeats, length);
  assert.equal(lesson.rhythm.steps[1].beatInMeasure, delayed.rhythm.steps.at(-1).beatInMeasure);
- assert.deepEqual(notes, frame(delayed, delayed.steps.length - 1, 'right')[0]);
+ assert.deepEqual(notes, waltzHandFrame(delayed, delayed.steps.length - 1, 'right')[0]);
+}
+
+function assertWaltzCommonBassPreparation(lesson, required) {
+ const [leftBars, pairedFirstBar, rightEighths] = required;
+ assert.equal(required.length, 3);
+ assert.equal(lesson.handMode, 'split');
+ assert.equal(leftBars.handMode, 'left');
+ assert.equal(pairedFirstBar.handMode, 'split');
+ assert.equal(rightEighths.id, 'course04-06');
+ assert.equal(Catalog.sectionOf('piano', rightEighths, app.themes), 'learning');
+ for (const candidate of [lesson, leftBars, pairedFirstBar]) {
+  assert.equal(candidate.contentKind, 'exercise');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const frames = (candidate, hand) => Array.from(candidate.steps, (_, i) => waltzHandFrame(candidate, i, hand));
+ assert.deepEqual(frames(lesson, 'left'), frames(leftBars, 'left'),
+  'Both left-hand bars must keep the prepared pitches, fingers, attacks, releases and rests');
+ const right = frames(lesson, 'right');
+ assert.deepEqual(right.slice(0, 3), frames(pairedFirstBar, 'right'), 'The first right-hand entrance stays prepared');
+ const [notes, , duration] = waltzHandFrame(rightEighths, 3, 'right');
+ assert.deepEqual(right.slice(3).map(([keys]) => keys), [[], notes, []],
+  'Only the second prepared right eighth enters in the second bar');
+ assert.equal(lesson.rhythm.steps[4].beatInMeasure, 1);
+ assert.equal(lesson.rhythm.steps[4].durationBeats, duration);
 }
 
 function assertPreparedHandEvidence(lesson,preparation,lessons){
@@ -342,6 +368,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  const required=lesson.learning.requires.map(id=>{const l=lessons.find(x=>x.id===id);assert.ok(l,'Every declared preparation must exist');return l;});
  if (lesson.learning.branch === 'paired-waltz-dyad-entry') {
   assertWaltzDyadEntryPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-common-bass') {
+  assertWaltzCommonBassPreparation(lesson, required);
   return;
  }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');
@@ -543,6 +573,20 @@ test('waltz dyad entry retains a prepared left bar and the right eighth', () => 
  assert.throws(() => assertWaltzDyadEntryPreparation(exercise, [bass, delayed, changedRight]), /right eighth/);
  const piece = { ...copy(right), contentKind: 'piece' };
  assert.throws(() => assertWaltzDyadEntryPreparation(exercise, [bass, delayed, piece]), /must be in Learning/);
+});
+
+test('shared-bass waltz preparation protects both left bars and the second right eighth', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const lesson = get('detail-p-paired-waltz-common-bass-01');
+ assert.ok(lesson, 'Missing the shared-bass waltz lesson');
+ const [leftBars, pairedFirstBar, rightEighths] = lesson.learning.requires.map(get);
+ assertWaltzCommonBassPreparation(lesson, [leftBars, pairedFirstBar, rightEighths]);
+ const changedLeft = copy(leftBars);
+ changedLeft.fingeringSpec.steps[4][0].num = 3;
+ assert.throws(() => assertWaltzCommonBassPreparation(lesson, [changedLeft, pairedFirstBar, rightEighths]), /Both left-hand bars/);
+ const changedRight = copy(rightEighths);
+ changedRight.fingeringSpec.steps[3][0].num = 2;
+ assert.throws(() => assertWaltzCommonBassPreparation(lesson, [leftBars, pairedFirstBar, changedRight]), /second prepared right eighth/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{
