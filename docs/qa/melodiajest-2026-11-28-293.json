@@ -1,0 +1,622 @@
+{
+  "phase": "2026-11-28-293",
+  "completedAt": "2026-11-28T01:59:44.931497+05:00",
+  "batch": "2026-11-28-05",
+  "lesson": "detail-p-paired-waltz-upbeat-01",
+  "localVersion": "23.5.257",
+  "publicVersion": "23.5.220",
+  "baseGitCommit": "efc9582f0b6c2b567595c0179dbf9ab623a8d3a5",
+  "checkpointRoot": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257",
+  "musicReport": "docs/reports/piano-curriculum-2026-11-28-05.md",
+  "operationsReport": "docs/reports/melodiajest-operations-2026-11-28-293.md",
+  "counts": {
+    "catalog": 823,
+    "themes": 119,
+    "learning": 675,
+    "midi": 405,
+    "provenance": 378,
+    "goalUpperBound": 651,
+    "verifiedDistinct": null,
+    "teacherReviewed": 0
+  },
+  "coverage": {
+    "reviewedLearningRecords": 674,
+    "priorThreeFourLessons": 23,
+    "halfThenChord": 2,
+    "halfThenChordOnBarline": 0,
+    "priorLeadingRests": 0,
+    "priorExactGoalCount": 0,
+    "previousCatalogRecordsExact": 822,
+    "previousCanonicalEditionsExact": 674,
+    "previousThemesExact": 119,
+    "previousRoutesExact": true,
+    "guitarRouteAndOriginalReviewBaselineExact": true
+  },
+  "sources": {
+    "entries": 163,
+    "applications": 1190,
+    "newRules": 1,
+    "newApplications": 1,
+    "id": "schubert-d365-no19-eighth-upbeat-2026-11-28",
+    "url": "https://s9.imslp.org/files/imglnks/usimg/b/b0/IMSLP03151-Schubert_-_36_Original_Dances_%28First_Waltzes%29%2C_D.365_%28Op.9%29.pdf#page=7",
+    "edition": "Historical engraving reproduced in IMSLP #03151, 12-page scan",
+    "section": "PDF p. 7, system 1, dance No. 19, opening pickup and first full measure",
+    "notatedExample": {
+      "pdfPage": 7,
+      "system": 1,
+      "dance": 19,
+      "meter": "3/4",
+      "rightPickupMidis": [
+        74,
+        79
+      ],
+      "rightPickupDurations": [
+        0.5,
+        0.5
+      ],
+      "leftPickupRestBeats": 1,
+      "firstFullBarDownbeat": [
+        43,
+        62
+      ],
+      "downbeatDurations": [
+        1,
+        1
+      ],
+      "printedFingerNumbers": []
+    },
+    "pdfSha256": "15cb086ceac354b5aec27d9353ceaf87abf186c1511a052009e7cdc5ab462df5",
+    "excerptSha256": "fe5e50baa1f4dfc375a408f4d500dc98c47182cf65724921f03eede1ee9b4b39",
+    "bothStavesVisuallyRead": true,
+    "scoreReproduced": false
+  },
+  "rhythm": {
+    "beats": [
+      0,
+      1,
+      2.5,
+      3,
+      4,
+      5
+    ],
+    "durations": [
+      1,
+      1,
+      0.5,
+      1,
+      1,
+      1
+    ],
+    "midis": [
+      [
+        48,
+        60
+      ],
+      [
+        48,
+        62
+      ],
+      [
+        64
+      ],
+      [
+        48,
+        60
+      ],
+      [
+        48,
+        62
+      ],
+      [
+        48,
+        64
+      ]
+    ],
+    "fingers": [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "sharedRest": [
+      2,
+      2.5
+    ],
+    "leftRest": [
+      2,
+      3
+    ],
+    "bpm": 48,
+    "meter": "3/4",
+    "profile": "standard",
+    "timingPrecision": "beat-boundary-v2",
+    "firstDownbeatAfterPickup": 3
+  },
+  "tests": {
+    "initialRed": {
+      "tests": 39,
+      "pass": 33,
+      "fail": 6,
+      "skipped": 0,
+      "durationMs": 25758.8679,
+      "sha256": "83fbf0a0969a99023a31e29e1df327517a779d3666c02a5666d9e56f4eef27ea"
+    },
+    "themeFixtureCorrectionRed": {
+      "tests": 5,
+      "pass": 1,
+      "fail": 4,
+      "skipped": 0,
+      "durationMs": 3982.2767,
+      "sha256": "91a634ceffc29849fc0841c8b29f56ee720bb50be00c7a7b0dddb6e9fbbb596e"
+    },
+    "themeFixtureCorrection": "Added complete topic records before implementation.",
+    "testBodiesUnchangedAfterFirstRed": true,
+    "newLesson": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "durationMs": 6259.789,
+      "sha256": "9e69cff3a7532ba2f5de19e36ca8be690d818cd64006cbbab880e6d10344b3cc"
+    },
+    "target": {
+      "tests": 165,
+      "pass": 165,
+      "fail": 0,
+      "skipped": 0,
+      "durationMs": 189444.3128,
+      "sha256": "82b73ea3148bd3dcaf4259b68bdb6bae8bb05c48a7780a717e92317584ed275e"
+    },
+    "targetFiles": [
+      "tests/curriculum-forward-preparation.test.cjs",
+      "tests/curriculum.test.cjs",
+      "tests/lesson-development.test.cjs",
+      "tests/piano-skill-coverage.test.cjs",
+      "tests/piano-paired-waltz-pulse.test.cjs",
+      "tests/piano-paired-waltz-bass-shift.test.cjs",
+      "tests/piano-paired-waltz-shared-rest.test.cjs",
+      "tests/piano-paired-waltz-right-rest.test.cjs",
+      "tests/piano-paired-waltz-left-rest.test.cjs",
+      "tests/piano-paired-waltz-handoff.test.cjs",
+      "tests/piano-paired-waltz-eighth-handoff.test.cjs",
+      "tests/piano-left-waltz-eighth-relocate.test.cjs",
+      "tests/piano-paired-waltz-eighth-bass-shift.test.cjs",
+      "tests/piano-quarter-pulse-rests.test.cjs",
+      "tests/piano-paired-eighth-rest-repeat.test.cjs",
+      "tests/piano-left-offbeat-rest.test.cjs",
+      "tests/piano-rhythm-review.test.cjs",
+      "tests/piano-blind-rhythm.test.cjs",
+      "tests/web-release.test.cjs",
+      "tests/piano-paired-waltz-upbeat.test.cjs"
+    ],
+    "windowsService": {
+      "tests": 60,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 7,
+      "durationMs": 38551.123,
+      "sha256": "045bb62e989301afc16ac2106ea9befc91b4dc58161f9a8902bdfe7471f272aa"
+    },
+    "audits": [
+      {
+        "name": "audit-lessons",
+        "exit": 0,
+        "durationSeconds": 4.1230108,
+        "logBytes": 754,
+        "logSha256": "b5a82d1453806fafd5866e659e37d412e38a7787386ce883362d8e9168afc2bf"
+      },
+      {
+        "name": "audit-fingering",
+        "exit": 0,
+        "durationSeconds": 10.2932999,
+        "logBytes": 736,
+        "logSha256": "6228358ad869956409285322a4bc8bd4121812aeade4c4e991f56b8fb366c00f"
+      },
+      {
+        "name": "audit-curriculum",
+        "exit": 0,
+        "durationSeconds": 13.0044581,
+        "logBytes": 646,
+        "logSha256": "1076a6b41b5a745f3f03e114c3751fc060f187b13463ffaa0ff9aadfb82aa2be"
+      },
+      {
+        "name": "audit-coverage",
+        "exit": 0,
+        "durationSeconds": 2.5744473,
+        "logBytes": 494,
+        "logSha256": "3aa874382c4950eefd95885de532bcba195c32f4c8cc00fc90e931bbc287b543"
+      }
+    ],
+    "priorBroaderVerification": "docs/qa/melodiajest-2026-11-27-286.json",
+    "wholeSuiteRerun": false,
+    "originalGradingCodeUnchanged": true,
+    "personalEditTestedOnlyInIsolatedStorage": true
+  },
+  "browser": {
+    "browser": "Built-in browser, fresh localhost origin",
+    "exactVersion": "23.5.257",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "initialStaticPreview": {
+      "samePublicBuild": true,
+      "missingAccountApi": true,
+      "incompleteResponseShown": true,
+      "modeChangesWorkedUntilReload": true,
+      "allReloadsReturnedCompact": true,
+      "retainedAsFallbackObservation": true
+    },
+    "links": [
+      {
+        "id": "detail-p-paired-waltz-eighth-handoff-01",
+        "opened": true
+      },
+      {
+        "id": "detail-p-paired-waltz-pulse-01",
+        "opened": true
+      }
+    ],
+    "keyboard": {
+      "enterExpanded": true,
+      "spaceCollapsed": true,
+      "focusedAfterBoth": true,
+      "openedPreparationButtons": 2,
+      "desktopMouseExpanded": true
+    },
+    "guestModes": [
+      {
+        "mode": "expanded",
+        "persisted": true,
+        "links": 2
+      },
+      {
+        "mode": "hidden",
+        "persisted": true,
+        "toggleAbsent": true,
+        "links": 0
+      },
+      {
+        "mode": "compact",
+        "persisted": true,
+        "toggleCollapsed": true,
+        "links": 0
+      }
+    ],
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 376,
+      "compactHeightPixels": 112,
+      "lineHeightPixels": 22.4,
+      "lines": 5,
+      "scoreRowTitles": 7,
+      "timeSignature": "3/4",
+      "bpm": 48,
+      "restMs": 625,
+      "rightEighthMidi": 64,
+      "startBeatInMeasure": 2.5,
+      "noteMs": 625,
+      "nextBarPair": [
+        48,
+        60
+      ],
+      "nextBarStartBeatInMeasure": 0,
+      "pairMs": 1250,
+      "playerPositions": [
+        3,
+        4
+      ],
+      "playerSteps": 6
+    },
+    "screenshot": {
+      "file": "mobile.jpg",
+      "bytes": 36840,
+      "sha256": "7e600480cbc361b766d91653543c2402f159bb139d8dc3b80c9ddba69842c818"
+    },
+    "returnedViewport": [
+      1280,
+      720
+    ],
+    "ownedTabsClosed": 3,
+    "physicalInstrumentObserved": false,
+    "audioQualityObserved": false,
+    "screenReaderObserved": false,
+    "accountWritesTested": false,
+    "courseReads": [
+      {
+        "request": 1,
+        "ifNoneMatch": null,
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "status": 200,
+        "bodyBytes": 790661,
+        "etag": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cacheControl": "public, no-cache"
+      },
+      {
+        "request": 2,
+        "ifNoneMatch": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "status": 304,
+        "bodyBytes": 0,
+        "etag": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cacheControl": "public, no-cache"
+      },
+      {
+        "request": 3,
+        "ifNoneMatch": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "status": 304,
+        "bodyBytes": 0,
+        "etag": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cacheControl": "public, no-cache"
+      },
+      {
+        "request": 4,
+        "ifNoneMatch": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cookieSent": false,
+        "ownerHeaderSent": false,
+        "status": 304,
+        "bodyBytes": 0,
+        "etag": "W/\"0eaa590f4b6d30d902ad1820783df6e9e7dc474c091c76fa75616c9bb6b1653b\"",
+        "cacheControl": "public, no-cache"
+      }
+    ],
+    "previewStopped": true
+  },
+  "restore": {
+    "phase": 293,
+    "version": "23.5.257",
+    "pass": true,
+    "checkedAt": "2026-11-28T01:46:54.378423+05:00",
+    "selectedFiles": 1016,
+    "selectedBytes": 85166588,
+    "sourceFiles": 975,
+    "publicFiles": 41,
+    "newStoredFiles": 19,
+    "newStoredBytes": 13074846,
+    "reusedFiles": 997,
+    "retentionDependencies": [
+      "2026-11-20-251-23.5.215",
+      "2026-11-20-252-23.5.216",
+      "2026-11-20-253-23.5.217",
+      "2026-11-20-254-23.5.218",
+      "2026-11-21-255-23.5.219",
+      "2026-11-21-256-23.5.220",
+      "2026-11-27-257-23.5.221",
+      "2026-11-27-258-23.5.222",
+      "2026-11-27-259-23.5.223",
+      "2026-11-27-260-23.5.224",
+      "2026-11-27-261-23.5.225",
+      "2026-11-27-262-23.5.226",
+      "2026-11-27-263-23.5.227",
+      "2026-11-27-264-23.5.228",
+      "2026-11-27-265-23.5.229",
+      "2026-11-27-266-23.5.230",
+      "2026-11-27-267-23.5.231",
+      "2026-11-27-268-23.5.232",
+      "2026-11-27-269-23.5.233",
+      "2026-11-27-270-23.5.234",
+      "2026-11-27-271-23.5.235",
+      "2026-11-27-272-23.5.236",
+      "2026-11-27-273-23.5.237",
+      "2026-11-27-274-23.5.238",
+      "2026-11-27-275-23.5.239",
+      "2026-11-27-276-23.5.240",
+      "2026-11-27-277-23.5.241",
+      "2026-11-27-278-23.5.242",
+      "2026-11-27-279-23.5.243",
+      "2026-11-27-280-23.5.244",
+      "2026-11-27-281-23.5.245",
+      "2026-11-27-282-23.5.246",
+      "2026-11-27-283-23.5.247",
+      "2026-11-27-284-23.5.248",
+      "2026-11-27-285-23.5.249",
+      "2026-11-27-286-23.5.250",
+      "2026-11-27-287-23.5.251",
+      "2026-11-27-288-23.5.252",
+      "2026-11-28-289-23.5.253",
+      "2026-11-28-290-23.5.254",
+      "2026-11-28-291-23.5.255",
+      "2026-11-28-292-23.5.256"
+    ],
+    "changedPublicFiles": [
+      "curriculum-plan.js",
+      "piano-lesson-development.js",
+      "web-release.json",
+      "web-runtime.js"
+    ],
+    "fullReadSizeAndSha256": true,
+    "restoredFromIndependentCopy": true,
+    "isolatedTestsPassed": 5,
+    "manifestSha256": "31c3f995998607ae83e7ee8f62387da460d01f1c313d35ad14230bc3c336c103",
+    "smokeLogSha256": "64f3226a157ea1a958baca76232dbf68b26ae14fc193587ce01864ab5cdfffa3",
+    "webManifestSha256": "a3a324f002859e6eadedaab3e0f53f8e16a72eab626e159ddf70950653b24d3f",
+    "courseSha256": "041d2b79f5a22a2d96fabe4449c9172048e44ae9429622f99d234c95679e05ac",
+    "restoreRoot": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\restore-check",
+    "buildRoot": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\phase-293-web-23.5.257",
+    "freeBytesBeforeRestore": 822191095808,
+    "scope": "Selected local source and exact web export. Late final documents use a separately verified overlay."
+  },
+  "cleanup": {
+    "removed": [
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\restore-check",
+        "files": 1016,
+        "logicalBytes": 85166588.0
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\workspace-artifacts\\tmp\\phase-293-web-23.5.257",
+        "files": 41,
+        "logicalBytes": 4286871.0
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\guest-qa",
+        "files": 4,
+        "logicalBytes": 313102.0
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\owned-preview293.cjs",
+        "files": 1,
+        "logicalBytes": 377
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\owned-guest-preview293.cjs",
+        "files": 1,
+        "logicalBytes": 8029
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-1.png",
+        "files": 1,
+        "logicalBytes": 153299
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-2.png",
+        "files": 1,
+        "logicalBytes": 209522
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-3.png",
+        "files": 1,
+        "logicalBytes": 192039
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-4.png",
+        "files": 1,
+        "logicalBytes": 192560
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-5.png",
+        "files": 1,
+        "logicalBytes": 202210
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-6.png",
+        "files": 1,
+        "logicalBytes": 201793
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-7.png",
+        "files": 1,
+        "logicalBytes": 155997
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-8.png",
+        "files": 1,
+        "logicalBytes": 208153
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-9.png",
+        "files": 1,
+        "logicalBytes": 216781
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-10.png",
+        "files": 1,
+        "logicalBytes": 163736
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-11.png",
+        "files": 1,
+        "logicalBytes": 152758
+      },
+      {
+        "path": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\evidence\\d365-page-12.png",
+        "files": 1,
+        "logicalBytes": 208924
+      }
+    ],
+    "files": 1075.0,
+    "availableBefore": 821758824448,
+    "availableAfter": 821853339648,
+    "measuredDelta": 94515200,
+    "ownPreviewPidsClosed": [
+      5360,
+      12864
+    ],
+    "guestPortsClosed": [
+      57076,
+      57080
+    ],
+    "checkedAt": "2026-11-28T01:54:37.1301514+05:00",
+    "allTargetsAbsent": true
+  },
+  "quota": {
+    "atStart": {
+      "ordinaryUsageAllowed": true,
+      "primary": {
+        "usedPercent": 80,
+        "windowDurationMins": 10080,
+        "resetsAt": 1795892423
+      },
+      "secondary": null,
+      "spendControlReached": false
+    },
+    "beforeRestore": {
+      "check": "before-isolated-restore",
+      "checkedAt": "2026-11-27T20:45:43.877Z",
+      "ordinaryUsageAllowed": true,
+      "primary": {
+        "usedPercent": 80,
+        "windowDurationMins": 10080,
+        "resetsAt": 1795892423
+      },
+      "secondary": null,
+      "spendControlReached": false,
+      "rateLimitReachedType": null
+    }
+  },
+  "production": {
+    "http": 200,
+    "version": "23.5.220",
+    "checkedAt": "2026-11-28T01:30:24.2976424+05:00",
+    "lastRecordedReleaseRestore": "docs/qa/melodiajest-2026-11-21-release-220.json",
+    "newDeployments": 0,
+    "manualPgStarts": 0,
+    "s3Requests": 0,
+    "serverMutations": 0
+  },
+  "automation": {
+    "id": "automation",
+    "status": "ACTIVE",
+    "intervalMinutes": 20,
+    "targetThreadId": "01a1a79e-67df-7cb2-8ead-4e7a8a52724b",
+    "promptSha256": "ac1d1819be908d2bb0ffcd0a8118f4ac99c52f322ecfc9959d3d57ad2aa41199",
+    "canonicalFileSha256": "1b51735851862d39ff86ab40ff109fa336a0f12de4263c69e3e2612a481d3158"
+  },
+  "nextWork": {
+    "id": "paired-waltz-left-upbeat-after-293",
+    "priority": 1,
+    "status": "ready-for-next-local-stage",
+    "action": "Проверить, есть ли в 3/4 басовая восьмая левой после тишины перед совместным вступлением на «раз». Если такой переход ещё не отработан, найти пример в нотах и точную подготовку для низкой ноты и общего вступления. Сопоставить с готовыми проходящими басами и исключить повторы одной цели.",
+    "checkpoint": "D:\\MelodiaJest-private\\host-maintenance\\local-checkpoints\\2026-11-28-293-23.5.257\\completion.json",
+    "planReference": "docs/reports/piano-curriculum-2026-11-28-05.md",
+    "plannedNewRecords": 0,
+    "newLessonsImplemented": 0,
+    "resumeRequiresExplicitUserRequest": false
+  }
+}

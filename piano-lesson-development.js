@@ -1352,6 +1352,20 @@
     ],
     options: pairedWaltzEighthHandoff.options
   };
+  const pairedWaltzUpbeat = {
+    id: 'detail-p-paired-waltz-upbeat-01',
+    title: 'Вальс: начни фразу с «три-и»',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzEighthHandoff.id,
+    requires: [pairedWaltzEighthHandoff.id, pairedWaltzPulse.id],
+    goal: 'Отпусти обе клавиши на «три». На «и» сыграй ми правой. Через полдоли начни новый такт двумя до вместе на «раз».',
+    events: [
+      ...pairedWaltzPulse.events.slice(0, 2),
+      pairedWaltzEighthHandoff.events[2],
+      ...pairedWaltzPulse.events.slice(0, 3)
+    ],
+    options: { bpm: 48, beats: [1, 1, 0.5, 1, 1, 1], startBeats: [0, 1, 2.5, 3, 4, 5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1363,7 +1377,7 @@
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
-    pairedWaltzEighthBassShift);
+    pairedWaltzEighthBassShift, pairedWaltzUpbeat);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2969,6 +2983,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzEighthBassShift.goal,
         context: 'Верхняя восьмая ведёт пульс, пока освобождённая левая рука готовит новый бас.',
         sourceNote: 'В тактах 12–13 «Арабески» Бургмюллера верхняя восьмая звучит во время восьмой паузы внизу перед общей атакой. В упражнении свои ноты, пальцы и размер 3/4. Пара вступает на «три».'
+      }
+    });
+  }
+
+  function describePairedWaltzUpbeat(lesson, adapter) {
+    const setup = 'Повтори передачу на «два-и» и первый такт вальсового пульса. Положи левый мизинец 5 на C3 и правые пальцы 1–2–3 на C4–D4–E4. Педаль выключена.';
+    const motion = 'На «раз» сыграй два до, на «два» C3 с D4. На «три» отпусти обе клавиши. На «и» возьми E4 правым средним 3. На новое «раз» отпусти ми и одновременно нажми C3 мизинцем и C4 большим 1.';
+    const count = 'Считай ровно «раз, два, три-и | раз, два, три» при 48 BPM. От «три» до «и» тишина, от «и» до «раз» звучит ми. Оба промежутка занимают по полдоли. Доиграй знакомый такт с правыми C4–D4–E4 и тем же C3 на каждую долю.';
+    const hearing = 'Послушай образец. Перед новым «раз» слышны полдоли тишины и одно короткое ми. Пропой «и-раз» и хлопни вместе с двумя до. Если ми звучит уже на «три» или до вступают по очереди, повтори «три-и-раз» медленнее.';
+    const mastery = 'Обе руки молчат на первой половине «три». На «и» слышно только ми, а два до вступают одним ударом на «раз». После черты темп остаётся ровным.';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/b/b0/IMSLP03151-Schubert_-_36_Original_Dances_%28First_Waltzes%29%2C_D.365_%28Op.9%29.pdf#page=7';
+    lesson.rhythm = waltzRhythm(pairedWaltzUpbeat.options, 'project-paired-waltz-upbeat-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Восьмая правой перед первой долей вальса', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-upbeat', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Произнеси «три-и-раз». На «три» оставь руки свободными, на «и» нажми ми, на «раз» два до. Затем добавь две начальные доли. Сыграй весь переход дважды с тем же счётом.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу с другой правой нотой на «и» и другой парой на «раз». Оставь половину доли тишины перед затактом. Позанимайся 3–5 минут и повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «три» обе клавиши уже свободны. До «и» есть тишина.',
+        'Ми правой длится ровно от «и» до «раз». Левая вступает только на «раз», вместе с верхним до.',
+        'После общей атаки счёт «два, три» идёт в прежнем темпе.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Франц Шуберт. 36 оригинальных танцев D 365, № 19, затакт и первый полный такт' },
+      sourceEvidenceIds: ['schubert-d365-no19-eighth-upbeat-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzUpbeat.goal,
+        context: 'Мелодия начинает новую фразу на полдоли раньше баса. Так можно собрать вступление двух рук на сильной доле.',
+        sourceNote: 'В танце № 19 Шуберта в затакте звучат две восьмые правой и пауза левой. Последняя восьмая ведёт к общему вступлению. В упражнении свои ноты и пальцы, а перед одной восьмой добавлена тишина.'
       }
     });
   }
@@ -6835,6 +6886,9 @@
     }
     if (!existing.has(pairedWaltzEighthBassShift.id)) {
       describePairedWaltzEighthBassShift(lessons.find(lesson => lesson.id === pairedWaltzEighthBassShift.id), adapter);
+    }
+    if (!existing.has(pairedWaltzUpbeat.id)) {
+      describePairedWaltzUpbeat(lessons.find(lesson => lesson.id === pairedWaltzUpbeat.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

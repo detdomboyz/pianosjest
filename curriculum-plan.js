@@ -4642,6 +4642,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-upbeat-01",
+      "stage": "p7",
+      "branch": "paired-waltz-upbeat",
+      "fingerprint": "d8baf680",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-eighth-handoff-01",
+        "detail-p-paired-waltz-pulse-01"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
