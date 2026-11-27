@@ -985,9 +985,22 @@
       .map((left, i) => [...left, ...bMajorThumbExitDescentRight.events[i]]),
     options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
   };
+  const bMajorLowerRight = bMajorDescentRight.events.slice(-3);
+  const bMajorPairedLowerDescent = {
+    id: 'detail-p-b-major-prepared-paired-lower-descent-01',
+    title: 'Си мажор двумя руками. Окончание на си',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedMiddleDescent.id,
+    requires: [bMajorLowerDescentLeft.id, bMajorDescentRight.id, bMajorPairedMiddleDescent.id],
+    goal: 'Сыграй двумя руками спуск от ре-диеза через до-диез к си. На белых си одновременно играют левый безымянный и правый большой. Сохрани два целых тона вниз и держи финальную пару две доли.',
+    events: bMajorLowerDescentLeft.events.slice(1)
+      .map((left, i) => [...left, ...bMajorDescentRight.events.at(i - 3)]),
+    options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
-    bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent, bMajorPairedMiddleDescent);
+    bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
+    bMajorPairedMiddleDescent, bMajorPairedLowerDescent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1533,6 +1546,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedMiddleDescent.goal,
         context: 'Обе руки проходят целый тон к ми и полутон после него. Это движение пригодится для поступенного нисходящего ответа в параллельных октавах.',
         sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 3–5. Проект объединяет три восьмые каждой руки в пары на две четверти и половинную при 40 BPM. Чанг описывает подготовку коротких участков отдельно и общую ноту на стыке. В упражнении стык выбран на фа-диезе.'
+      }
+    });
+  }
+
+  function describeBMajorPairedLowerDescent(lesson, adapter) {
+    const setup = 'Найди две группы до-диез–ре-диез в соседних октавах. От каждой группы найди белую до, затем белую си сразу левее неё. Поставь левый указательный на D♯3 и правый средний на D♯4. Оставь педаль выключенной.';
+    const motion = 'Левая играет D♯3–C♯3–B2 пальцами 2–3–4, правая D♯4–C♯4–B3 пальцами 3–2–1. На до-диезах обе кисти продвигаются влево. На си дай им последовать к белым клавишам, чтобы левый безымянный и правый большой вступили вместе. Освобождай прежнюю пару при вступлении следующей.';
+    const count = 'При 40 BPM сыграй ре-диезы на «раз» и до-диезы на «два». Си держи на «три–четыре». Обе клавиши отпусти на следующем «раз» и отсчитай тихую долю самостоятельно.';
+    const hearing = 'Послушай образец и пропой верхнюю линию. Услышь два равных шага вниз и более длинное окончание. Белое до дало бы только полутон от до-диеза. Если слышишь короткий второй шаг, повтори до-диез–си по одной руке и затем сыграй общий удар.';
+    const mastery = 'Две чёрные пары сменяются белыми си на общем пульсе. Финал звучит полные две доли и заканчивается одновременным отпусканием.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedLowerDescent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-lower-descent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Общее окончание нисходящей фразы на тонике', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-lower-descent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Повтори последние три ноты из готового нижнего спуска левой и полной октавы правой. Сыграй их отдельно медленнее рабочего темпа. В спуске через ми найди конечные ре-диезы. Здесь та же пара начинает окончание.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на короткие пробы с отдыхом. Придумай окончание из четырёх или пяти пар. Сам выбери, какие ступени подведут к этим ре-диезам. Если входишь после спуска через ми, сыграй общие ре-диезы один раз. Попробуй закончить на си вместе и подержать финал на выбранный тобой счёт. Повтори фразу после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Слышу два целых тона вниз. После пары до-диезов попадаю на си.',
+        'Финал играю левым безымянным и правым большим. Проверяю пальцы за инструментом.',
+        'В упражнении оба си звучат «три–четыре» и вместе отпускаются на новом «раз».',
+        'В своей фразе слышу одну атаку каждой пары и общий конец.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Спуск си мажора левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Спуск си мажора правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Короткие отрезки и общая нота, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[1], bMajorRoundtripRight.sources[1],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedLowerDescent.goal,
+        context: 'Окончание нисходящей фразы двумя руками. Левая приходит на си безымянным, правая большим, и обе удерживают тонику вместе.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 5–7. Проект объединяет три восьмые каждой руки в две четверти и половинную при 40 BPM. Короткая подготовка и общая нота взяты из главы 1, § 7 Чанга. Для этого стыка выбрана пара ре-диезов.'
       }
     });
   }
@@ -4956,6 +5018,9 @@
     }
     if (!existing.has(bMajorPairedMiddleDescent.id)) {
       describeBMajorPairedMiddleDescent(lessons.find(lesson => lesson.id === bMajorPairedMiddleDescent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedLowerDescent.id)) {
+      describeBMajorPairedLowerDescent(lessons.find(lesson => lesson.id === bMajorPairedLowerDescent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
