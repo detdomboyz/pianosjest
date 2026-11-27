@@ -4556,6 +4556,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-shared-rest-01",
+      "stage": "p7",
+      "branch": "paired-waltz-shared-rest",
+      "fingerprint": "dd0b80d5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-triple-pulse-01",
+        "detail-p-relocate-02",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

@@ -1271,6 +1271,16 @@
     ],
     options: pairedWaltzPulse.options
   };
+  const pairedWaltzSharedRest = {
+    id: 'detail-p-paired-waltz-shared-rest-01',
+    title: 'Две руки: общая пауза в вальсе',
+    group: pairedWaltzBassShift.group, groupTitle: pairedWaltzBassShift.groupTitle, stage: 'p7',
+    after: pairedWaltzBassShift.id,
+    requires: ['detail-p-left-triple-pulse-01', 'detail-p-relocate-02', 'course01-07'],
+    goal: 'Отпусти обе клавиши к «три». На тихой доле перенеси левый мизинец с до на фа. На новом «раз» сыграй фа и ре вместе.',
+    events: [...pairedWaltzBassShift.events.slice(0, 2), ...pairedWaltzBassShift.events.slice(3)],
+    options: { bpm: 48, beats: [1, 1, 1, 1, 1], startBeats: [0, 1, 3, 4, 5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1280,7 +1290,7 @@
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
-    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift);
+    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2623,6 +2633,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassShift.goal,
         context: 'Одно басовое движение при сохранении мелодии готовит смену гармонической опоры во время сопровождения.',
         sourceNote: 'У Джейсона Зака вальсовый рисунок переходит от соль к до. У Луиса Кёлера в № 69 последовательные такты начинаются с D3 и C3. В упражнении проекта выбрана знакомая смена C3–F3, а правая продолжает фразу предыдущего вальса. Точные ноты, пальцы, общие вступления и темп относятся к проекту.'
+      }
+    });
+  }
+
+  function describePairedWaltzSharedRest(lesson, adapter) {
+    const setup = 'Повтори отпускание левой на «три», перенос мизинца к F3 и общее вступление из трёх подготовок. Поставь левый мизинец 5 на C3 и правый большой 1 на C4. Педаль выключена.';
+    const motion = 'На «два» играют левый мизинец на C3 и правый указательный 2 на D4. К «три» отпусти оба звука. Левую кисть вместе с предплечьем подведи к F3. Правый указательный ждёт над D4. На новом «раз» нажми обе клавиши вместе.';
+    const count = 'Считай «раз, два, три | раз, два, три» при 48 BPM. В первом такте пары C3 и C4, C3 и D4, затем целая доля тишины. Во втором F3 сочетается с D4, E4 и F4. Правая играет 1–2 | 2–3–4. Каждая звучащая пара длится четверть.';
+    const hearing = 'Представь два удара, одну тихую долю и три удара с новым басом. Проговори первое «три» вслух. На следующем «раз» послушай, слились ли фа и ре в одну атаку.';
+    const mastery = 'Оба звука заканчиваются к «три», тишина занимает одну долю, фа и ре начинают новый такт вместе. Проверь аппликатуру и свободный перенос за инструментом.';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=10';
+    lesson.rhythm = waltzRhythm(pairedWaltzSharedRest.options, 'project-paired-waltz-shared-rest-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Отпускание и общее вступление после паузы в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-shared-rest', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сыграй средний стык отдельно. На «два» возьми до с ре, на «три» отпусти их, на «раз» сыграй фа с ре. Сравни с предыдущим вальсом, где на «три» звучат до и ми. Сохрани один счёт в обоих вариантах.',
+        motion, count, hearing,
+        'Придумай свою правую фразу в двух тактах. Поменяй верхние ноты и сохрани тихое первое «три», перенос до–фа и общее вступление. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На первом «три» обе клавиши отпущены, педаль поднята. Счёт продолжается.',
+        'Левый мизинец приходит на F3 за тихую долю. Правый указательный заново нажимает D4 одновременно с фа.',
+        'Я слышу пять пар и одну тихую долю. Сохраняю одинаковый пульс до и после паузы.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: { [score]: 'Луис Кёлер. Practical Method, op. 249, № 24, Edition Wood, печатная с. 8' },
+      sourceEvidenceIds: ['kohler-op249-waltz-no24-rest-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzSharedRest.goal,
+        context: 'Общая пауза даёт время на перенос баса и готовит ясное вступление обеих рук после окончания фразы.',
+        sourceNote: 'В № 24 из пособия Кёлера обе нотные строки имеют четвертную паузу на третьей доле перед первым повтором. Высоты, пальцы, положение паузы в учебной фразе, перенос баса и темп выбраны проектом.'
       }
     });
   }
@@ -6468,6 +6515,9 @@
     }
     if (!existing.has(pairedWaltzBassShift.id)) {
       describePairedWaltzBassShift(lessons.find(lesson => lesson.id === pairedWaltzBassShift.id), adapter);
+    }
+    if (!existing.has(pairedWaltzSharedRest.id)) {
+      describePairedWaltzSharedRest(lessons.find(lesson => lesson.id === pairedWaltzSharedRest.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
