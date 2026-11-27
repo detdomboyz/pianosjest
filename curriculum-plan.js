@@ -3624,6 +3624,18 @@
       ]
     },
     {
+      "id": "detail-p-left-waltz-approach-chord-01",
+      "stage": "p7",
+      "branch": "left-waltz-approach-chord",
+      "fingerprint": "d94aebb5",
+      "challenge": true,
+      "preparation": [
+        "detail-p-triads-02",
+        "detail-p-left-waltz-passing-bass-01",
+        "detail-p-left-waltz-cadence-01"
+      ]
+    },
+    {
       "id": "detail-p-e-major-prepared-roundtrip-right-01",
       "stage": "p7",
       "branch": "e-major-prepared-roundtrip-right",

@@ -1,4 +1,6 @@
 'use strict';
+const { assertPreservedThemes } = require('./helpers/assert-preserved-themes.cjs');
+const preWaltzThemes = require('./fixtures/piano-before-csharp-major-prepared-paired-roundtrip-v1.json').themes;
 
 const assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
@@ -110,7 +112,7 @@ test('all previously published and local records, editions, routes and sources k
   assert.equal(ids.size, before.catalogRecords);
   assert.equal(earlier.length, before.learningRecords);
   assert.equal(hash(app.lessons.filter(l => ids.has(l.id))), before.catalogHash);
-  assert.equal(hash(app.themes), before.themeHash);
+  assert.equal(hash(assertPreservedThemes(app.themes, preWaltzThemes)), before.themeHash);
   assert.equal(hash(plan.piano.filter(l => ids.has(l.id))), before.pianoPlanHash);
   assert.equal(hash(plan.guitar), before.guitarPlanHash);
   assert.equal(hash(course.lessons.filter(l => ids.has(l.id))), before.canonicalHash);

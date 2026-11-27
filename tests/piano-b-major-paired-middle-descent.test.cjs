@@ -1,4 +1,6 @@
 'use strict';
+const { assertPreservedThemes } = require('./helpers/assert-preserved-themes.cjs');
+const preWaltzThemes = require('./fixtures/piano-before-csharp-major-prepared-paired-roundtrip-v1.json').themes;
 
 const assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
@@ -109,7 +111,7 @@ test('adding the descending group preserves earlier records, editions, routes an
   assert.equal(old.size, before.catalogRecords);
   assert.equal(earlier.length, before.learningRecords);
   assert.equal(hash(app.lessons.filter(lesson => old.has(lesson.id))), before.catalogHash);
-  assert.equal(hash(app.themes), before.themeHash);
+  assert.equal(hash(assertPreservedThemes(app.themes, preWaltzThemes)), before.themeHash);
   assert.equal(hash(plan.piano.filter(row => old.has(row.id))), before.pianoPlanHash);
   assert.equal(hash(plan.guitar), before.guitarPlanHash);
   assert.equal(hash(course.lessons.filter(row => old.has(row.id))), before.canonicalHash);

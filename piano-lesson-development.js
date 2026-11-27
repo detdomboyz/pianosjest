@@ -1236,6 +1236,16 @@
     events: [[tone(43, 5, 'left')], [tone(50, 1, 'left')], [tone(43, 5, 'left')], [tone(47, 3, 'left')], [tone(48, 2, 'left')]],
     options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 3], articulation: 'standard' }
   };
+  const leftWaltzApproachChord = {
+    id: 'detail-p-left-waltz-approach-chord-01',
+    title: 'Левая: короткая си перед аккордом до мажора',
+    group: leftWaltzBass.group, groupTitle: leftWaltzBass.groupTitle, stage: 'p7',
+    after: leftWaltzPassingBass.id,
+    requires: ['detail-p-triads-02', leftWaltzPassingBass.id, leftWaltzCadence.id],
+    goal: 'Отпусти короткую си до нового «раз». За четверть доли тишины приготовь до мажор, возьми аккорд вместе и держи три доли.',
+    events: [...leftWaltzPassingBass.events.slice(0, 4), leftWaltzCadence.events[3]],
+    options: { bpm: 48, beats: [1, 1, 0.5, 0.25, 3], startBeats: [0, 1, 2, 2.5, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1244,7 +1254,8 @@
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
-    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass);
+    leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
+    leftWaltzApproachChord);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2207,16 +2218,20 @@
   }
 
   function waltzRhythm(options, source, adapter) {
-    const { beats, bpm } = options;
+    const { beats, bpm, startBeats = beats.map((_, i) => i) } = options;
     const beatMs = 60000 / bpm;
     return adapter.normalizeRhythm({
       version: 1, source, bpm, practiceBpm: bpm,
       timeSignature: { numerator: 3, denominator: 4 },
-      steps: beats.map((durationBeats, startBeat) => ({
-        startBeat, durationBeats, restBeforeBeats: startBeat === 0 ? 0 : 1 - beats[startBeat - 1],
-        measure: Math.floor(startBeat / 3) + 1, beatInMeasure: startBeat % 3,
-        sourceStartMs: startBeat * beatMs, sourceDurationMs: durationBeats * beatMs
-      }))
+      steps: beats.map((durationBeats, i) => {
+        const startBeat = startBeats[i];
+        const previousEnd = i === 0 ? 0 : startBeats[i - 1] + beats[i - 1];
+        return {
+          startBeat, durationBeats, restBeforeBeats: startBeat - previousEnd,
+          measure: Math.floor(startBeat / 3) + 1, beatInMeasure: startBeat % 3,
+          sourceStartMs: startBeat * beatMs, sourceDurationMs: durationBeats * beatMs
+        };
+      })
     }, beats.length);
   }
 
@@ -2464,6 +2479,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzPassingBass.goal,
         context: 'Короткий звук си ведёт к басу до на границе тактов. Такой подвод можно добавить к своей мелодии после отработки ровного счёта.',
         sourceNote: 'Джейсон Зак описывает G–D–G–B перед C–E–G и обращает внимание на подводящую си. Письменное описание не указывает точную долю си. Проект задаёт её на «и» после «три», возвращает вторую соль в G2 и оставляет в следующем такте только бас до. Пальцы, длительности и темп выбраны для знакомой позиции.'
+      }
+    });
+  }
+
+  function describeLeftWaltzApproachChord(lesson, adapter) {
+    const setup = 'Левой повтори знакомую соль G2 мизинцем 5, ре D3 большим 1 и си B2 средним 3. Затем отдельно собери до C3, ми E3 и соль G3 пальцами 5–3–1. Правая отдыхает, педаль выключена.';
+    const motion = 'На «три» сыграй G2, на «и» отпусти её и нажми B2. В середине «и» освободи си и мягко подведи руку вправо к трём клавишам. На новое «раз» нажми до, ми и соль вместе.';
+    const count = 'При 48 BPM считай «раз, два, три-и | раз, два, три». Первые соль и ре длятся по доле. На «три» соль звучит полдоли, а на «и» четверть доли звучит си и ещё четверть длится пауза. Во втором такте держи аккорд три доли и отпусти все клавиши на следующее мысленное «раз».';
+    const hearing = 'Послушай короткую си, тишину и одно общее вступление до, ми и соль. Проговори счёт поверх образца, пока затихает аккорд.';
+    const mastery = 'На «и» слышна короткая си, затем есть тишина. После неё на «раз» все три клавиши нажаты вместе и остаются внизу до конца такта.';
+    const zac = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    lesson.rhythm = waltzRhythm(leftWaltzApproachChord.options, 'project-left-waltz-approach-chord-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Пауза перед заключительным трезвучием вальса', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'left-waltz-approach-chord', coverageDomain: 'arpeggios',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй только си, отпусти её и положи пальцы 5–3–1 над до, ми и соль. Нажми три клавиши вместе. Если одна звучит раньше других или рука напрягается, дай себе больше времени на перенос.',
+        motion, count, hearing,
+        'Придумай свою двухтактовую фразу в 3/4. Измени первые две ноты и оставь короткую си с тишиной перед общим вступлением трезвучия. Проверь счёт и отпускание. Позанимайся 3–5 минут с отдыхом, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Си нажимаю средним на «и» и освобождаю в его середине. Рука успевает занять новую позицию в тишине.',
+        'До, ми и соль нажаты пальцами 5–3–1 вместе на новое «раз».',
+        'Досчитываю три доли и отпускаю все три клавиши вместе. Проверяю пальцы и свободу движения за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [zac, clark],
+      referenceTitles: {
+        [zac]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаги 3 и 4',
+        [clark]: 'Майкл Кларк. Piano Basics, §90.1, такты 4–5 примера I–IV–I–V7–I'
+      },
+      sourceEvidenceIds: ['zac-waltz-approach-tonic-2026-11-27', 'clark-baylor-waltz-cadence-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzApproachChord.goal,
+        context: 'Короткая си подводит к заключительному аккорду вальса. Пауза даёт время перенести руку перед первой долей.',
+        sourceNote: 'Джейсон Зак описывает G–D–G–B перед C–E–G. В примере Майкла Кларка после вальсового такта от си звучит аккорд до мажора на три доли. Шестнадцатую си, паузу, регистры нот, пальцы и темп для этого стыка задаёт проект.'
       }
     });
   }
@@ -6300,6 +6356,9 @@
     }
     if (!existing.has(leftWaltzPassingBass.id)) {
       describeLeftWaltzPassingBass(lessons.find(lesson => lesson.id === leftWaltzPassingBass.id), adapter);
+    }
+    if (!existing.has(leftWaltzApproachChord.id)) {
+      describeLeftWaltzApproachChord(lessons.find(lesson => lesson.id === leftWaltzApproachChord.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

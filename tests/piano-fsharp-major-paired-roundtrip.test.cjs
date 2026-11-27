@@ -1,4 +1,6 @@
 'use strict';
+const { assertPreservedThemes } = require('./helpers/assert-preserved-themes.cjs');
+const preWaltzThemes = require('./fixtures/piano-before-csharp-major-prepared-paired-roundtrip-v1.json').themes;
 
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
@@ -125,8 +127,9 @@ test('existing records, grading editions, and Next paths retain their prior valu
   assert.equal(priorLearning.length, before.learningRecords);
   assert.equal(app.lessons.length, require('./fixtures/piano-curriculum-counts.json').catalogRecords);
   assert.equal(hash(app.lessons.filter(lesson => oldIds.has(lesson.id))), before.catalogHash);
-  assert.equal(app.themes.length, before.themes);
-  assert.equal(hash(app.themes), before.themeHash);
+  const historical = assertPreservedThemes(app.themes, preWaltzThemes);
+  assert.equal(historical.length, before.themes);
+  assert.equal(hash(historical), before.themeHash);
   assert.equal(hash(plan.piano.filter(lesson => oldIds.has(lesson.id))), before.pianoPlanHash);
   assert.equal(hash(plan.guitar), before.guitarPlanHash);
   assert.equal(hash(course.lessons.filter(lesson => oldIds.has(lesson.id))), before.canonicalHash);

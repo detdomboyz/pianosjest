@@ -1,4 +1,6 @@
 'use strict';
+const { assertPreservedThemes } = require('./helpers/assert-preserved-themes.cjs');
+const preWaltzThemes = require('./fixtures/piano-before-csharp-major-prepared-paired-roundtrip-v1.json').themes;
 
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
@@ -102,8 +104,9 @@ test('F-sharp addition preserves prior editions, progress fingerprints, and navi
   assert.equal(past.length, before.learningRecords);
   assert.equal(app.lessons.length, require('./fixtures/piano-curriculum-counts.json').catalogRecords);
   assert.equal(digest(app.lessons.filter(lesson => knownIds.has(lesson.id))), before.catalogHash);
-  assert.equal(app.themes.length, before.themes);
-  assert.equal(digest(app.themes), before.themeHash);
+  const historical = assertPreservedThemes(app.themes, preWaltzThemes);
+  assert.equal(historical.length, before.themes);
+  assert.equal(digest(historical), before.themeHash);
   assert.equal(digest(plan.piano.filter(lesson => knownIds.has(lesson.id))), before.pianoPlanHash);
   assert.equal(digest(plan.guitar), before.guitarPlanHash);
   assert.equal(digest(course.lessons.filter(lesson => knownIds.has(lesson.id))), before.canonicalHash);

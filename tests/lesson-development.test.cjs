@@ -100,10 +100,38 @@ function assertWaltzCadencePreparation(lesson, earlierBars, lessons) {
  assert.ok(preparedShapes.has(JSON.stringify([app.stepMidiList(steps[3]), finalFingers.map(f => f.num)])),
   'The closing chord pitches and fingers must match an earlier left-hand shape');
 }
+function assertWaltzApproachChordPreparation(lesson, preparation) {
+ const frames = candidate => copy(candidate.steps.map((step, i) => ({
+  midis: app.stepMidiList(step), fingers: candidate.fingeringSpec.steps[i],
+  start: candidate.rhythm.steps[i].startBeat, duration: candidate.rhythm.steps[i].durationBeats
+ })));
+ for (const candidate of [lesson, preparation]) {
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const ending = frames(lesson), earlier = frames(preparation);
+ assert.equal(ending.length, 5);
+ const [pickup, chord] = ending.slice(3);
+ assert.deepEqual([pickup.start, pickup.duration, chord.start, chord.duration], [2.5, 0.25, 3, 3]);
+ assert.equal(lesson.rhythm.steps[4].restBeforeBeats, chord.start - (pickup.start + pickup.duration),
+  'The short pickup must leave a quarter beat of silence');
+ if (preparation.learning.branch === 'left-waltz-passing-bass') {
+  assert.deepEqual(ending.slice(0, 3), earlier.slice(0, 3), 'The first three frames must match the prepared approach');
+  assert.deepEqual({ ...pickup, duration: 0.5 }, earlier[3], 'The pickup must preserve the earlier onset, pitch and finger');
+  assert.deepEqual(chord.midis.slice(0, 1), earlier[4].midis, 'The triad starts on the prepared bass pitch');
+  return;
+ }
+ assert.equal(preparation.learning.branch, 'left-waltz-cadence');
+ assert.deepEqual(chord, earlier.at(-1), 'The final chord must match the prepared pitches, fingers and timing');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
   if (lesson.themeId === 'detail-p-left-waltz' && preparation.themeId === lesson.themeId) {
+   if (lesson.learning.branch === 'left-waltz-approach-chord') {
+    assertWaltzApproachChordPreparation(lesson, preparation);
+    return;
+   }
    const earlier = explicitWaltzBars(preparation);
    if (lesson.learning.branch === 'left-waltz-cadence') {
     assertWaltzCadencePreparation(lesson, earlier, lessons);
@@ -256,6 +284,23 @@ test('the waltz cadence requires the earlier timing and both prepared chord shap
  const shortened = copy(cadence);
  shortened.rhythm.steps[3].durationBeats = 2;
  assert.throws(() => assertPreparedHandEvidence(shortened, earlier, app.lessons), /full next 3\/4 measure/);
+});
+
+test('the pickup and final chord retain separate waltz preparations and an exact silence', () => {
+ const lesson = app.lessons.find(l => l.id === 'detail-p-left-waltz-approach-chord-01');
+ const bass = app.lessons.find(l => l.id === 'detail-p-left-waltz-passing-bass-01');
+ const cadence = app.lessons.find(l => l.id === 'detail-p-left-waltz-cadence-01');
+ assertPreparedHandEvidence(lesson, bass, app.lessons);
+ assertPreparedHandEvidence(lesson, cadence, app.lessons);
+ const alteredBass = copy(bass);
+ alteredBass.rhythm.steps[3].startBeat = 2.25;
+ assert.throws(() => assertPreparedHandEvidence(lesson, alteredBass, app.lessons), /preserve the earlier onset/);
+ const alteredCadence = copy(cadence);
+ alteredCadence.fingeringSpec.steps[3][1].num = 2;
+ assert.throws(() => assertPreparedHandEvidence(lesson, alteredCadence, app.lessons), /match the prepared pitches, fingers and timing/);
+ const noSilence = copy(lesson);
+ noSilence.rhythm.steps[4].restBeforeBeats = 0;
+ assert.throws(() => assertPreparedHandEvidence(noSilence, bass, app.lessons), /quarter beat of silence/);
 });
 
 test('piano corrective migration fixes all old learning exercises, once, preserving original music',()=>{
