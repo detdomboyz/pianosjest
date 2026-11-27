@@ -585,6 +585,7 @@
 | detail-p-paired-waltz-bass-shift-01 | Две руки: смена баса до–фа в вальсе | 12 | 48 | MIDI-челлендж | сначала detail-p-relocate-02; сначала course04-07; сначала course01-07 |
 | detail-p-paired-waltz-shared-rest-01 | Две руки: общая пауза в вальсе | 10 | 48 | MIDI-челлендж | сначала detail-p-left-triple-pulse-01; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-right-rest-01 | Вальс: левая играет на «три» | 11 | 48 | MIDI-челлендж | сначала course01-02; сначала detail-p-relocate-02; сначала course01-07 |
+| detail-p-paired-waltz-delayed-melody-01 | Вальс: мелодия вступает на «два» | 6 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-bass-upbeat-01; сначала detail-p-paired-waltz-right-rest-01 |
 | detail-p-paired-waltz-left-rest-01 | Вальс: правая играет на «три» | 11 | 48 | MIDI-челлендж | сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-handoff-01 | Вальс: передай пульс другой руке | 10 | 48 | MIDI-челлендж | сначала course01-02; сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-eighth-handoff-01 | Вальс: передай пульс на «два-и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-offbeat-right-01; сначала course04-07; сначала course01-07 |

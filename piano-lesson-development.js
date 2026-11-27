@@ -1408,6 +1408,20 @@
     ],
     options: { bpm: 48, beats: [1, 1, 0.5, 0.5, 1], startBeats: [0, 1, 2, 2.5, 3], articulation: 'standard' }
   };
+  const pairedWaltzDelayedMelody = {
+    id: 'detail-p-paired-waltz-delayed-melody-01',
+    title: 'Вальс: мелодия вступает на «два»',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzBassUpbeat.id,
+    requires: [pairedWaltzBassUpbeat.id, pairedWaltzRightRest.id],
+    goal: 'После короткой басовой си возьми до левой на «раз». Правая ждёт одну долю. На «два» сыграй два до вместе.',
+    events: [
+      ...pairedWaltzBassUpbeat.events.slice(0, 3),
+      pairedWaltzBassUpbeat.events[3].slice(0, 1),
+      pairedWaltzBassUpbeat.events[3]
+    ],
+    options: { bpm: 48, beats: [1, 1, 0.5, 1, 1], startBeats: [0, 1, 2.5, 3, 4], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1419,7 +1433,8 @@
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
-    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff, pairedWaltzBassHandoff);
+    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
+    pairedWaltzBassHandoff, pairedWaltzDelayedMelody);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3187,6 +3202,45 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassHandoff.goal,
         context: 'Короткая мелодическая нота передаёт пульс басу. Басовый полутон ведёт обе руки к первой доле.',
         sourceNote: 'У Кёлера левая играет на третьей доле при паузе правой, затем обе вступают. Зак показывает ход си–до, Хоффман делит долю восьмыми слева направо. В упражнении свой порядок рук, ноты и пальцы.'
+      }
+    });
+  }
+
+  function describePairedWaltzDelayedMelody(lesson, adapter) {
+    const setup = 'Повтори подход си–до и урок, где правая ждёт, пока звучит басовая четверть. Слева поставь 5 на G2, 1 на D3, 3 на B2 и 2 на C3. Правый большой приготовь над C4. Педаль выключена.';
+    const motion = 'Сыграй левой G2 на «раз» и D3 на «два». На «три» отпусти ре. На «и» сыграй B2 левым средним. На новом «раз» отпусти си и нажми C3 левым указательным. На «два» отпусти C3 и сразу нажми его тем же пальцем вместе с C4 правым большим.';
+    const count = 'При 48 BPM считай «раз, два, три-и | раз, два, три». От «три» до «и» полдоли тишины. Си звучит до нового «раз». Соло до и пара до держатся по одной доле. Отпусти пару на «три» и закончи счёт.';
+    const hearing = 'Послушай короткую си, низкое до и вступление верхнего до на долю позже. Пропой басовый ход. Если слышишь верхнее до уже на «раз» или в басу только одну длинную ноту, отстучи «раз» левой и «два» обеими, затем сыграй с тем же счётом.';
+    const mastery = 'Низкое до само отмечает «раз». Верхнее до впервые звучит на «два», вместе с новым нажатием нижнего. Между двумя вступлениями проходит ровно одна доля.';
+    const score = 'https://noctavepiano.com/partitions/tchaikovsky-valse-op39-8/tchaikovsky-valse-op39-8.pdf#page=1';
+    lesson.rhythm = waltzRhythm(pairedWaltzDelayedMelody.options, 'project-paired-waltz-delayed-melody-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Вступление мелодии после первой доли вальса', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-delayed-melody', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Отдельно сыграй «и-раз» левой. Добавь «два» обеими и проговори доли. Когда слышны три отдельных вступления, добавь соль и ре в начале.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу с другой правой нотой на «два» и продолжи ещё на одну долю. Бас пусть отмечает «раз», а мелодия ждёт одну полную долю. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Между ре и си слышна половина доли тишины. Си отпущена к новому «раз».',
+        'На «раз» слышно одно низкое до. На «два» нижнее до нажато заново вместе с верхним.',
+        'Правая успела спокойно приготовиться. Отсчитай «три» после отпускания пары.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: {
+        [score]: 'Пётр Чайковский. Вальс op. 39 № 8, такты 1–2, издание Noctave'
+      },
+      sourceEvidenceIds: ['tchaikovsky-waltz-delayed-right-entry-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzDelayedMelody.goal,
+        context: 'Бас задаёт начало такта. Мелодия ждёт одну долю и вступает на уже слышимом пульсе.',
+        sourceNote: 'Во втором такте вальса Чайковского левая берёт ми-бемоль на «раз», а мелодия начинает с соль на «два». В упражнении свои ноты и пальцы. Бас идёт си–до и повторяет до вместе с правой.'
       }
     });
   }
@@ -7065,6 +7119,9 @@
     }
     if (!existing.has(pairedWaltzBassHandoff.id)) {
       describePairedWaltzBassHandoff(lessons.find(lesson => lesson.id === pairedWaltzBassHandoff.id), adapter);
+    }
+    if (!existing.has(pairedWaltzDelayedMelody.id)) {
+      describePairedWaltzDelayedMelody(lessons.find(lesson => lesson.id === pairedWaltzDelayedMelody.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

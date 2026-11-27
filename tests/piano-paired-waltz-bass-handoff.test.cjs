@@ -15,6 +15,8 @@ const registry = require('../service/course-registry.json');
 const ledger = require('../docs/piano-curriculum-sources.json');
 const before = require('./fixtures/piano-before-paired-waltz-bass-handoff-v1.json');
 const { themes } = require('./fixtures/piano-before-paired-waltz-bass-upbeat-v1.json');
+const { catalogIds } = require('./fixtures/piano-before-b-major-paired-upper-turn-v1.json');
+const { catalogIdsAdded } = require('./fixtures/piano-before-paired-waltz-eighth-bass-shift-v1.json');
 
 const id = 'detail-p-paired-waltz-bass-handoff-01';
 const upbeat = 'detail-p-paired-waltz-bass-upbeat-01';
@@ -110,15 +112,19 @@ test('both graders require the solo right eighth, bass approach and shared C dow
 });
 
 test('existing learning records, versions, routes, themes, guitar and source entries stay exact', () => {
-  const prior = learning.filter(l => l.id !== id);
-  assert.equal(app.lessons.filter(l => l.id !== id).length, before.catalogRecords);
+  const old = new Set([...catalogIds, ...catalogIdsAdded, 'detail-p-paired-waltz-eighth-bass-shift-01',
+    'detail-p-paired-waltz-upbeat-01', 'detail-p-paired-waltz-bass-upbeat-01', 'detail-p-paired-waltz-barline-handoff-01']);
+  const preserved = app.lessons.filter(l => old.has(l.id));
+  const prior = learning.filter(l => old.has(l.id));
+  assert.equal(old.size, before.catalogRecords);
+  assert.equal(preserved.length, before.catalogRecords);
   assert.equal(prior.length, before.learningRecords);
-  assert.equal(hash(app.lessons.filter(l => l.id !== id)), before.catalogHash);
+  assert.equal(hash(preserved), before.catalogHash);
   assert.equal(hash(assertPreservedThemes(app.themes, themes)), before.themeHash);
-  assert.equal(hash(plan.piano.filter(row => row.id !== id)), before.pianoPlanHash);
+  assert.equal(hash(plan.piano.filter(row => old.has(row.id))), before.pianoPlanHash);
   assert.equal(hash(plan.guitar), before.guitarPlanHash);
-  assert.equal(hash(registry.lessons.filter(l => l.id !== id)), before.canonicalHash);
-  assert.equal(hash(registry.route.filter(l => l !== id)), before.canonicalRouteHash);
+  assert.equal(hash(registry.lessons.filter(l => old.has(l.id))), before.canonicalHash);
+  assert.equal(hash(registry.route.filter(l => old.has(l))), before.canonicalRouteHash);
   assert.equal(hash(prior.map(l => [l.id, next(plan, 'piano', learning, l.id)?.id ?? null])), before.nextHash);
   assert.equal(sha(fs.readFileSync(require.resolve('../lesson-review-baseline.js'))), before.reviewBaseline);
   assert.equal(hash(ledger.entries.slice(0, before.sourceEntries)), before.sourceHash);

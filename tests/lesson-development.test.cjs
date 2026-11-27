@@ -270,6 +270,27 @@ function assertWaltzBassHandoffPreparation(lesson, required) {
   [[1, 2, 0], [1, 2.5, 0], [2, 0, 0]]);
 }
 
+function assertWaltzDelayedMelodyPreparation(lesson, required) {
+ const [bassUpbeat, rightRest] = required;
+ assert.equal(required.length, 2);
+ for (const candidate of [lesson, bassUpbeat, rightRest]) {
+  assert.equal(candidate.handMode, 'split');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const target = timedPreparationLines(lesson);
+ const bass = timedPreparationLines(bassUpbeat);
+ const comparison = timedPreparationLines(rightRest);
+ const [midi, finger, beat, duration] = bass.left.at(-1);
+ assert.deepEqual(target.left, [...bass.left, [midi, finger, beat + 1, duration]], 'The bass retains its prepared approach and repeats C with the same finger');
+ assert.deepEqual(target.right, bass.right.map(([pitch, digit, start, beats]) => [pitch, digit, start + 1, beats]),
+  'The same right note must enter exactly one beat later');
+ assert.ok(comparison.left.some(([, , start, length]) => start === 2 && length === 1));
+ assert.equal(comparison.right.some(([, , start]) => start === 2), false);
+ assert.ok(comparison.right.some(([, , start, length]) => start === 3 && length === 1));
+ assert.equal(lesson.rhythm.steps[2].restBeforeBeats, 0.5, 'The eighth rest before the pickup stays in place');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -305,6 +326,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-bass-handoff') {
   assertWaltzBassHandoffPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-delayed-melody') {
+  assertWaltzDelayedMelodyPreparation(lesson, required);
   return;
  }
  if (lesson.steps.some(step => app.stepMidiList(step).length === 1)) {
@@ -455,6 +480,20 @@ test('bass handoff retains the bass approach and moves the prepared right eighth
  wrongRight.rhythm.steps[3].durationBeats = 0.25;
  wrongRight.rhythm.steps[4].restBeforeBeats = 0.25;
  assert.throws(() => assertWaltzBassHandoffPreparation(exercise, [bass, wrongRight]), /right eighth/);
+});
+
+test('delayed melody retains the prepared left approach and shifts the right attack by one beat', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const exercise = get('detail-p-paired-waltz-delayed-melody-01');
+ assert.ok(exercise, 'Missing the delayed melody lesson');
+ const [bass, rest] = exercise.learning.requires.map(get);
+ assertWaltzDelayedMelodyPreparation(exercise, [bass, rest]);
+ const wrongBass = copy(bass);
+ wrongBass.fingeringSpec.steps[3][0].num = 4;
+ assert.throws(() => assertWaltzDelayedMelodyPreparation(exercise, [wrongBass, rest]), /prepared approach/);
+ const wrongRight = copy(bass);
+ wrongRight.fingeringSpec.steps[3][1].num = 2;
+ assert.throws(() => assertWaltzDelayedMelodyPreparation(exercise, [wrongRight, rest]), /one beat later/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{

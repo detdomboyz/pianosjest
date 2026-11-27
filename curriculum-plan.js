@@ -4591,6 +4591,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-delayed-melody-01",
+      "stage": "p7",
+      "branch": "paired-waltz-delayed-melody",
+      "fingerprint": "f69a377c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-bass-upbeat-01",
+        "detail-p-paired-waltz-right-rest-01"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",

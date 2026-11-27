@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-27T22:00:24.172Z",
+  "generatedAt": "2026-11-27T22:21:33.426Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 678,
-    "checkedMidiRouteLessons": 408,
-    "withStructuredProvenance": 381,
-    "individuallyMappedToDomain": 381,
+    "implementedLearningLessons": 679,
+    "checkedMidiRouteLessons": 409,
+    "withStructuredProvenance": 382,
+    "individuallyMappedToDomain": 382,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 654,
+    "goalGroupUpperBound": 655,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -619,6 +619,7 @@
         "detail-p-paired-waltz-bass-upbeat-01",
         "detail-p-paired-waltz-barline-handoff-01",
         "detail-p-paired-waltz-bass-handoff-01",
+        "detail-p-paired-waltz-delayed-melody-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -11453,6 +11454,30 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-paired-waltz-delayed-melody-01",
+      "title": "Вальс: мелодия вступает на «два»",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 5,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "После короткой басовой си возьми до левой на «раз». Правая ждёт одну долю. На «два» сыграй два до вместе.",
+      "requires": [
+        "detail-p-paired-waltz-bass-upbeat-01",
+        "detail-p-paired-waltz-right-rest-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "tchaikovsky-waltz-delayed-right-entry-2026-11-28"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -17971,5 +17996,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Проверить, есть ли в 3/4 переход от правой восьмой на «три» к подводящей восьмой баса на «и» и общему «раз». Искать задачу, в которой бас ведёт к новой опоре. Сопоставить с раздельным басовым затактом и передачей от левой к правой. Добавлять упражнение при подтверждённой подготовке и музыкальном примере."
+  "nextAction": "Проверить, есть ли в 3/4 ход си–до перед чертой, после которого бас отмечает «раз», а правая вступает только на «два». Сравнить с готовым басовым затактом и паузами правой. Добавить одно упражнение, если отдельное вступление мелодии ещё не покрыто и подтверждено нотным примером."
 }
