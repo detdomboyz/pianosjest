@@ -1422,6 +1422,20 @@
     ],
     options: { bpm: 48, beats: [1, 1, 0.5, 1, 1], startBeats: [0, 1, 2.5, 3, 4], articulation: 'standard' }
   };
+  const pairedWaltzDyadEntry = {
+    id: 'detail-p-paired-waltz-dyad-entry-01',
+    title: 'Вальс: мелодия над двумя нотами левой',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzDelayedMelody.id,
+    requires: [leftWaltzCToF.id, pairedWaltzDelayedMelody.id, 'course04-06'],
+    goal: 'На «раз» сыграй басовое до. На «два» возьми ми–соль левой вместе с до правой. Отпусти три клавиши на «и».',
+    events: [
+      leftWaltzCToF.events[0],
+      [...leftWaltzCToF.events[1], tone(60, 1, 'right')],
+      leftWaltzCToF.events[2]
+    ],
+    options: { bpm: 48, beats: [1, 0.5, 0.5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1434,7 +1448,7 @@
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
-    pairedWaltzBassHandoff, pairedWaltzDelayedMelody);
+    pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3241,6 +3255,45 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzDelayedMelody.goal,
         context: 'Бас задаёт начало такта. Мелодия ждёт одну долю и вступает на уже слышимом пульсе.',
         sourceNote: 'Во втором такте вальса Чайковского левая берёт ми-бемоль на «раз», а мелодия начинает с соль на «два». В упражнении свои ноты и пальцы. Бас идёт си–до и повторяет до вместе с правой.'
+      }
+    });
+  }
+
+  function describePairedWaltzDyadEntry(lesson, adapter) {
+    const setup = 'Повтори первый такт левой из урока про смену до и фа. Поставь мизинец 5 на C3, средний 3 на E3, большой 1 на G3. Правый большой приготовь над C4. Педаль выключена.';
+    const motion = 'На «раз» нажми C3 левым мизинцем. На «два» отпусти бас и возьми E3–G3 пальцами 3–1 левой вместе с C4 большим правой. На «и» отпусти все три. На «три» повтори E3–G3 только левой.';
+    const count = 'При 48 BPM считай «раз, два-и, три-и». Бас длится целую долю. Совместные ми–соль–до и последние ми–соль длятся по полдоли. После каждого созвучия остаётся полдоли тишины. В конце досчитай «три-и» после отпускания.';
+    const hearing = 'Послушай бас, затем три ноты одним звуком и короткий ответ из двух нот. Напой верхнее до и попробуй услышать его над ми–соль. Если левая раскладывает ми и соль по очереди, сначала возьми их вместе без правой, затем добавь верхнее до.';
+    const mastery = 'На «раз» звучит одна басовая нота. На «два» три ноты имеют общее начало и окончание. На «три» слышно только новое ми–соль левой. Кисти остаются свободными.';
+    const score = 'https://noctavepiano.com/partitions/tchaikovsky-valse-op39-8/tchaikovsky-valse-op39-8.pdf#page=1';
+    lesson.rhythm = waltzRhythm(pairedWaltzDyadEntry.options, 'project-paired-waltz-dyad-entry-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Мелодия и двухзвучие левой на второй доле', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-dyad-entry', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сыграй один такт левой на ровный счёт. Отдельно сыграй C4 большим на «два», как первую восьмую из подготовки. Затем соедини только «раз» и «два». Добавь третью долю, когда все три звука на «два» совпадут.',
+        motion, count, hearing,
+        'Придумай свою короткую мелодию. На «два» выбери другую удобную верхнюю ноту, а на следующее «раз» добавь новый бас. Сохрани общий удар и полдоли тишины. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Мизинец отпускает бас, прежде чем левая берёт ми–соль. Правый большой вступает с обоими пальцами левой.',
+        'Все три клавиши свободны на «и». На «три» повторяются только две ноты левой.',
+        'Верхнее до различимо на слух. Оба запястья свободны, счёт остаётся ровным.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: {
+        [score]: 'Пётр Чайковский. Вальс op. 39 № 8, такт 6, издание Noctave'
+      },
+      sourceEvidenceIds: ['tchaikovsky-waltz-dyad-entry-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzDyadEntry.goal,
+        context: 'В вальсовом сопровождении один бас отмечает первую долю. На второй левая собирает две ноты, пока правая начинает мелодию.',
+        sourceNote: 'В шестом такте вальса Чайковского после басового C3 вступают три ноты левой и верхнее C5 правой. В упражнении слева две подготовленные ноты, справа C4. Все три звука на «два» отпускаются одновременно.'
       }
     });
   }
@@ -7122,6 +7175,9 @@
     }
     if (!existing.has(pairedWaltzDelayedMelody.id)) {
       describePairedWaltzDelayedMelody(lessons.find(lesson => lesson.id === pairedWaltzDelayedMelody.id), adapter);
+    }
+    if (!existing.has(pairedWaltzDyadEntry.id)) {
+      describePairedWaltzDyadEntry(lessons.find(lesson => lesson.id === pairedWaltzDyadEntry.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

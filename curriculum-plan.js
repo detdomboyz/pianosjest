@@ -4602,6 +4602,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-dyad-entry-01",
+      "stage": "p7",
+      "branch": "paired-waltz-dyad-entry",
+      "fingerprint": "7d14069c",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-c-f-01",
+        "detail-p-paired-waltz-delayed-melody-01",
+        "course04-06"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",
