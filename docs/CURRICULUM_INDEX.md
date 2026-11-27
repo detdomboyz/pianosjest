@@ -448,6 +448,21 @@
 | course10-05 | Две руки вслепую | 16 | 58 | MIDI-челлендж | сначала course07-02; сначала course07-04; сначала course10-01; сначала course10-02 |
 | detail-p-bflat-major-descent-right-01 | Си-бемоль мажор правой: спуск 4+3+1, B♭4–B♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-f-major-thumb-fourth-connected-right-01; сначала detail-p-g-natural-minor-descent-right-01; сначала detail-p-bflat-thumb-second-descent-right-01 |
 | detail-p-bflat-major-ascent-left-01 | Си-бемоль мажор левой: группы 3+4+1, B♭2–B♭3 | 8 | 40 | MIDI-челлендж | сначала detail-p-g-natural-minor-ascent-left-01; сначала detail-p-bflat-fourth-third-left-01; сначала detail-p-bflat-thumb-second-terminal-left-01 |
+
+### Расширение техники · дополнительная практика
+
+Новые позиции, чёрные клавиши, бас и мелодия, аккордовый аккомпанемент.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
+| detail-p-bflat-major-prepared-paired-lower-ascent-01 | Си-бемоль мажор двумя руками. Первые три пары | 6 | 40 | MIDI-челлендж | сначала detail-p-bflat-major-ascent-left-01; сначала detail-p-bflat-second-thumb-right-01 |
+
+### 6. Закрепление начального курса
+
+Соединить знакомые движения; повторить без подсказок и на следующий день.
+
+| ID | Урок | Нот | BPM | Проверка | Ограничения / подготовка |
+| --- | --- | ---: | ---: | --- | --- |
 | course10-06 | Аккорды вслепую | 15 | 54 | MIDI-челлендж | сначала course08-05; сначала course08-02; сначала detail-p-left-triple-pulse-01 |
 | detail-p-bflat-second-thumb-descent-left-01 | Левая: B♭3/2→A3/1 перед G3/2 | 3 | 40 | MIDI-челлендж | сначала detail-p-black-position-left-01; сначала detail-p-d-natural-minor-descent-left-01 |
 | course10-07 | Мелодия вслепую | 30 | 68 | MIDI-челлендж | сначала course09-01; сначала course09-02; сначала course09-07; сначала course10-01 |
