@@ -4544,6 +4544,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-bass-shift-01",
+      "stage": "p7",
+      "branch": "paired-waltz-changing-bass",
+      "fingerprint": "ec43b59f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-relocate-02",
+        "course04-07",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",

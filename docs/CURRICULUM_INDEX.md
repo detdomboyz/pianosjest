@@ -581,6 +581,7 @@
 | detail-p-csharp-major-apex-turn-paired-01 | Две руки: C4+C5 → C♯4+C♯5 → C4+C5 | 6 | 40 | MIDI-челлендж | сначала detail-p-csharp-major-apex-turn-left-01; сначала detail-p-csharp-major-apex-turn-right-01; сначала detail-p-csharp-major-connected-paired-ascent-01; сначала detail-p-csharp-major-connected-paired-descent-01 |
 | detail-p-csharp-major-prepared-roundtrip-paired-01 | До-диез мажор двумя руками: один разворот и возврат | 30 | 40 | MIDI-челлендж | сначала detail-p-csharp-major-prepared-roundtrip-left-01; сначала detail-p-csharp-major-prepared-roundtrip-right-01; сначала detail-p-csharp-major-apex-turn-paired-01; сначала detail-p-csharp-major-connected-paired-ascent-01; сначала detail-p-csharp-major-connected-paired-descent-01 |
 | detail-p-paired-waltz-pulse-01 | Две руки: мелодия над вальсовым пульсом | 12 | 48 | MIDI-челлендж | сначала course01-02; сначала course04-07; сначала course01-07 |
+| detail-p-paired-waltz-bass-shift-01 | Две руки: смена баса до–фа в вальсе | 12 | 48 | MIDI-челлендж | сначала detail-p-relocate-02; сначала course04-07; сначала course01-07 |
 | oct201--2 | Семь ступеней C2–B2 | 65 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct202--2 | Через одну | 60 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |
 | oct203--2 | Диезы C2 | 48 | 60 | Практика | Машинных замечаний нет; редактура педагогом впереди |

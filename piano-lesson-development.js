@@ -1258,6 +1258,19 @@
     ]),
     options: { bpm: 48, beats: [1, 1, 1, 1, 1, 1], articulation: 'standard' }
   };
+  const pairedWaltzBassShift = {
+    id: 'detail-p-paired-waltz-bass-shift-01',
+    title: 'Две руки: смена баса до–фа в вальсе',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzPulse.id,
+    requires: ['detail-p-relocate-02', 'course04-07', 'course01-07'],
+    goal: 'После трёх ударов до перенеси левый мизинец к фа. На новом «раз» вместе возьми фа левой и ре правой, сохраняя ровный счёт.',
+    events: [
+      ...pairedWaltzPulse.events.slice(0, 3),
+      ...pairedWaltzPulse.events.slice(3).map(([, right]) => [tone(53, 5, 'left'), right])
+    ],
+    options: pairedWaltzPulse.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1267,7 +1280,7 @@
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
-    leftWaltzApproachChord, pairedWaltzPulse);
+    leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2569,6 +2582,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzPulse.goal,
         context: 'Один басовый звук на каждой доле помогает сначала согласовать две руки в 3/4. Затем тот же пульс можно использовать под своей мелодией.',
         sourceNote: 'Джейсон Зак предлагает играть по одной ноте левой на каждую долю, пока она не согласуется с мелодией, и показывает G–D–G. В упражнении проекта левая повторяет знакомую C3, а правая берёт два такта из урока про вальсовый счёт. Их общие вступления, пальцы и длительности заданы здесь.'
+      }
+    });
+  }
+
+  function describePairedWaltzBassShift(lesson, adapter) {
+    const setup = 'Левым мизинцем 5 найди C3 и F3, как в уроке смены позиции. Правая повторяет до–ре–ми и ре–ми–фа пальцами 1–2–3 и 2–3–4. Сначала повтори оба такта с басом до из прошлого упражнения. Педаль выключена.';
+    const motion = 'После третьей пары отпусти до C3 и ми E4. Подведи левый мизинец вправо к F3 вместе с кистью и предплечьем. Правая в это время идёт с ми на соседнее ре. На новом «раз» нажми фа и ре вместе.';
+    const count = 'При 48 BPM считай «раз, два, три | раз, два, три». Левая играет три C3, затем три F3. Правая сохраняет знакомую мелодию. Каждая пара занимает долю. После последней пары отпусти две клавиши на следующее мысленное «раз».';
+    const hearing = 'Послушай, как нижнее до сменяется более высоким фа, а верхнее ми опускается к ре. Напой правую фразу и хлопни на первую долю каждого такта. При игре услышь одну общую атаку на новом «раз».';
+    const mastery = 'После «три» обе руки освобождают клавиши. На новом «раз» ясно слышны F3 и D4 вместе, счёт остаётся ровным, а мизинец заново берёт фа на каждой доле.';
+    const zac = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    const kohler = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=28';
+    lesson.rhythm = waltzRhythm(pairedWaltzBassShift.options, 'project-paired-waltz-bass-shift-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Одновременная смена баса и мелодии в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-changing-bass', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй только две пары на стыке. Сначала до с ми, затем фа с ре. Убедись, что левое до уже отпущено, и соедини движение с «три, раз». Если руки вступают по очереди, сделай перенос медленнее.',
+        motion, count, hearing,
+        'Придумай свою правую фразу в двух тактах 3/4. Сохрани смену баса с до на фа и выбери новые верхние звуки. Проверь общий удар на втором «раз». Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На каждом «раз» слышно новое басовое вступление. Во втором такте это F3 мизинцем 5.',
+        'У нового такта до больше не удерживается, а фа и ре начинаются вместе. Между тактами нет добавленной доли.',
+        'Левый мизинец переносится вместе с рукой. Проверяю удобство движения и слышимость мелодии за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [zac, kohler],
+      referenceTitles: {
+        [zac]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаги 3 и 4',
+        [kohler]: 'Луис Кёлер. Practical Method, op. 249, № 69, Edition Wood, печатная с. 26'
+      },
+      sourceEvidenceIds: ['zac-waltz-changing-bass-2026-11-27', 'kohler-op249-waltz-no69-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassShift.goal,
+        context: 'Одно басовое движение при сохранении мелодии готовит смену гармонической опоры во время сопровождения.',
+        sourceNote: 'У Джейсона Зака вальсовый рисунок переходит от соль к до. У Луиса Кёлера в № 69 последовательные такты начинаются с D3 и C3. В упражнении проекта выбрана знакомая смена C3–F3, а правая продолжает фразу предыдущего вальса. Точные ноты, пальцы, общие вступления и темп относятся к проекту.'
       }
     });
   }
@@ -6411,6 +6465,9 @@
     }
     if (!existing.has(pairedWaltzPulse.id)) {
       describePairedWaltzPulse(lessons.find(lesson => lesson.id === pairedWaltzPulse.id), adapter);
+    }
+    if (!existing.has(pairedWaltzBassShift.id)) {
+      describePairedWaltzBassShift(lessons.find(lesson => lesson.id === pairedWaltzBassShift.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
