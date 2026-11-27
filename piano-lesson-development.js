@@ -1366,6 +1366,20 @@
     ],
     options: { bpm: 48, beats: [1, 1, 0.5, 1, 1, 1], startBeats: [0, 1, 2.5, 3, 4, 5], articulation: 'standard' }
   };
+  const pairedWaltzBassUpbeat = {
+    id: 'detail-p-paired-waltz-bass-upbeat-01',
+    title: 'Вальс: подведи басом к «раз»',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: leftWaltzPassingBass.id,
+    requires: [leftWaltzPassingBass.id, bflatPairedLowerAscent.id],
+    goal: 'На «три» отпусти ре. На «и» сыграй си левой, сохранив тишину справа. На новое «раз» сыграй два до одним движением.',
+    events: [
+      ...leftWaltzPassingBass.events.slice(0, 2),
+      leftWaltzPassingBass.events[3],
+      bflatPairedLowerAscent.events[1]
+    ],
+    options: { bpm: 48, beats: [1, 1, 0.5, 1], startBeats: [0, 1, 2.5, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1377,7 +1391,7 @@
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
-    pairedWaltzEighthBassShift, pairedWaltzUpbeat);
+    pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3020,6 +3034,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzUpbeat.goal,
         context: 'Мелодия начинает новую фразу на полдоли раньше баса. Так можно собрать вступление двух рук на сильной доле.',
         sourceNote: 'В танце № 19 Шуберта в затакте звучат две восьмые правой и пауза левой. Последняя восьмая ведёт к общему вступлению. В упражнении свои ноты и пальцы, а перед одной восьмой добавлена тишина.'
+      }
+    });
+  }
+
+  function describePairedWaltzBassUpbeat(lesson, adapter) {
+    const setup = 'Повтори си–до из урока про проходящий бас. Найди G2 и D3 левой, затем B2 средним 3 и C3 указательным 2. Отдельно сыграй два до из подготовки. Правая ждёт над C4 с большим пальцем 1. Педаль выключена.';
+    const motion = 'Сыграй G2 мизинцем 5 на «раз» и D3 большим 1 на «два». На «три» отпусти ре. Полдоли обе руки молчат. На «и» сыграй B2 средним 3. На следующее «раз» отпусти си и сыграй C3 левым указательным 2 вместе с C4 правым большим 1.';
+    const count = 'При 48 BPM считай «раз, два, три-и | раз, два, три». Пауза и си длятся по полдоли. Оба до держи одну долю и отпусти на «два». Досчитай остаток такта без новых нажатий.';
+    const hearing = 'Послушай две ровные четверти, полдоли тишины, короткую низкую си и один общий удар двумя до. Напой си–до. Если правая начинает раньше или позже левой, повтори «три-и-раз» медленно и заранее приготовь большой над верхним до.';
+    const mastery = 'На «три» нет звука. На «и» слышна только си, а оба до начинаются вместе на «раз» и отпускаются на «два».';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=56';
+    const method = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    lesson.rhythm = waltzRhythm(pairedWaltzBassUpbeat.options, 'project-paired-waltz-bass-upbeat-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Басовая восьмая и общее вступление в 3/4', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-bass-upbeat', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Произнеси «три-и-раз». На «три» расслабь пальцы, на «и» нажми си, на «раз» два до. Затем добавь соль и ре. Сохрани ровный счёт, когда вступает правая.',
+        motion, count, hearing,
+        'Придумай свою короткую фразу с другим началом в этой позиции и другой удобной правой нотой на «раз». Сохрани тишину на «три» и ход си–до в басу. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Ре свободно на «три». До «и» обе руки молчат.',
+        'Си звучит половину доли. Правая ждёт до нового «раз».',
+        'Два до звучат и отпускаются вместе. Счёт продолжается до конца такта.'
+      ],
+      rhythmNotice: count,
+      references: [score, method],
+      referenceTitles: {
+        [score]: 'Луи Кёлер. Детский вальс op. 249 № 123, такты 4–5',
+        [method]: 'Джейсон Зак. Вальсовое сопровождение, шаг 4'
+      },
+      sourceEvidenceIds: ['kohler-zac-waltz-bass-upbeat-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzBassUpbeat.goal,
+        context: 'Проходящая си ведёт низкую партию к до. Правая присоединяется на сильной доле и сохраняет пульс баса.',
+        sourceNote: 'У Кёлера левая звучит одну четверть во время паузы правой, затем обе вступают. Зак использует проходящую си перед до. В упражнении добавлена общая полудолевая пауза перед восьмой си. Регистр, пальцы и ритм заданы для этого урока.'
       }
     });
   }
@@ -6889,6 +6944,9 @@
     }
     if (!existing.has(pairedWaltzUpbeat.id)) {
       describePairedWaltzUpbeat(lessons.find(lesson => lesson.id === pairedWaltzUpbeat.id), adapter);
+    }
+    if (!existing.has(pairedWaltzBassUpbeat.id)) {
+      describePairedWaltzBassUpbeat(lessons.find(lesson => lesson.id === pairedWaltzBassUpbeat.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

@@ -201,6 +201,33 @@ function assertWaltzUpbeatPreparation(lesson, required) {
  }
 }
 
+function assertWaltzBassUpbeatPreparation(lesson, required) {
+ const [passingBass, preparedPair] = required;
+ assert.equal(required.length, 2);
+ assert.equal(passingBass.handMode, 'left');
+ assert.equal(preparedPair.handMode, 'split');
+ for (const candidate of [lesson, passingBass, preparedPair]) {
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+ }
+ assert.deepEqual(copy(lesson.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ assert.deepEqual(copy(passingBass.rhythm.timeSignature), copy(lesson.rhythm.timeSignature));
+ const target = timedPreparationLines(lesson);
+ const priorBass = timedPreparationLines(passingBass).left;
+ const pair = timedPreparationLines(preparedPair);
+ assert.equal(target.left.length, 4);
+ assert.equal(target.right.length, 1, 'The right hand enters on the shared downbeat');
+ assert.deepEqual(target.left.slice(0, 3), [...priorBass.slice(0, 2), priorBass[3]],
+  'The bass onset, duration and fingers must match the passing-bass preparation');
+ assert.deepEqual(target.left[3].slice(0, 3), priorBass[4].slice(0, 3));
+ assert.equal(lesson.rhythm.steps[2].restBeforeBeats, 0.5);
+ assert.deepEqual(copy(lesson.rhythm.steps.slice(2).map(step => [step.measure, step.beatInMeasure])),
+  [[1, 2.5], [2, 0]]);
+ for (const [hand, attack] of [['left', target.left[3]], ['right', target.right[0]]]) {
+  const [midi, finger, , duration] = pair[hand][1];
+  assert.deepEqual(attack, [midi, finger, 3, duration], 'The prepared pair must have the same pitches, fingers and duration');
+ }
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -224,6 +251,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  const required=lesson.learning.requires.map(id=>{const l=lessons.find(x=>x.id===id);assert.ok(l,'Every declared preparation must exist');assert.equal(l.contentKind,'exercise');return l;});
  if (lesson.learning.branch === 'paired-waltz-upbeat') {
   assertWaltzUpbeatPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-bass-upbeat') {
+  assertWaltzBassUpbeatPreparation(lesson, required);
   return;
  }
  if (lesson.steps.some(step => app.stepMidiList(step).length === 1)) {
@@ -327,6 +358,22 @@ test('prepared waltz pickup requires the original handoff and a complete pulse a
  const wrongPulse = copy(pulse);
  wrongPulse.fingeringSpec.steps[2][1].num = 2;
  assert.throws(() => assertWaltzUpbeatPreparation(lesson, [handoff, wrongPulse]));
+});
+
+test('bass upbeat retains the prepared left notes and matches the prepared pair', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const exercise = get('detail-p-paired-waltz-bass-upbeat-01');
+ assert.ok(exercise, 'Missing the prepared bass upbeat');
+ const [bass, pair] = exercise.learning.requires.map(get);
+ assertWaltzBassUpbeatPreparation(exercise, [bass, pair]);
+ const late = copy(bass);
+ late.rhythm.steps[2].durationBeats = 0.625;
+ late.rhythm.steps[3].startBeat = 2.625;
+ late.rhythm.steps[3].durationBeats = 0.375;
+ assert.throws(() => assertWaltzBassUpbeatPreparation(exercise, [late, pair]), /bass onset/);
+ const changed = copy(pair);
+ changed.fingeringSpec.steps[1][0].num = 5;
+ assert.throws(() => assertWaltzBassUpbeatPreparation(exercise, [bass, changed]), /prepared pair/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{

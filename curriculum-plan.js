@@ -3624,6 +3624,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-bass-upbeat-01",
+      "stage": "p7",
+      "branch": "paired-waltz-bass-upbeat",
+      "fingerprint": "34041e03",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-passing-bass-01",
+        "detail-p-bflat-major-prepared-paired-lower-ascent-01"
+      ]
+    },
+    {
       "id": "detail-p-left-waltz-approach-chord-01",
       "stage": "p7",
       "branch": "left-waltz-approach-chord",
