@@ -1246,6 +1246,18 @@
     events: [...leftWaltzPassingBass.events.slice(0, 4), leftWaltzCadence.events[3]],
     options: { bpm: 48, beats: [1, 1, 0.5, 0.25, 3], startBeats: [0, 1, 2, 2.5, 3], articulation: 'standard' }
   };
+  const pairedWaltzPulse = {
+    id: 'detail-p-paired-waltz-pulse-01',
+    title: 'Две руки: мелодия над вальсовым пульсом',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: 'course10-08',
+    requires: ['course01-02', 'course04-07', 'course01-07'],
+    goal: 'Веди мелодию правой. На каждую из трёх долей заново нажимай нижнее до левой вместе с правой нотой. Сохрани счёт у тактовой черты.',
+    events: [[60, 1], [62, 2], [64, 3], [62, 2], [64, 3], [65, 4]].map(([pitch, finger]) => [
+      tone(48, 5, 'left'), tone(pitch, finger, 'right')
+    ]),
+    options: { bpm: 48, beats: [1, 1, 1, 1, 1, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1255,7 +1267,7 @@
     bflatPairedFullAscent, bflatPairedUpperDescent, bflatPairedMiddleDescent, bflatPairedLowerDescent,
     bflatPairedFullDescent, bflatPairedUpperTurn, bflatPairedRoundtrip,
     leftWaltzBass, leftWaltzCToF, leftWaltzCommonBass, leftWaltzCadence, leftWaltzRootFifth, leftWaltzPassingBass,
-    leftWaltzApproachChord);
+    leftWaltzApproachChord, pairedWaltzPulse);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -2520,6 +2532,43 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: leftWaltzApproachChord.goal,
         context: 'Короткая си подводит к заключительному аккорду вальса. Пауза даёт время перенести руку перед первой долей.',
         sourceNote: 'Джейсон Зак описывает G–D–G–B перед C–E–G. В примере Майкла Кларка после вальсового такта от си звучит аккорд до мажора на три доли. Шестнадцатую си, паузу, регистры нот, пальцы и темп для этого стыка задаёт проект.'
+      }
+    });
+  }
+
+  function describePairedWaltzPulse(lesson, adapter) {
+    const setup = 'Найди до C3 левой мизинцем 5 и до C4 правой большим 1. Оставь правые 2–3–4 над ре D4, ми E4 и фа F4. Повтори первые два такта правой из подготовки к размеру 3/4. Педаль выключена.';
+    const motion = 'В каждой паре нажимай две клавиши вместе. На следующую долю освободи прежние клавиши и снова нажми нижнее до тем же мизинцем, пока правая меняет ноту. На границе тактов после ми сразу играй ре с новым нижним до.';
+    const count = 'При 48 BPM считай «раз, два, три | раз, два, три». Правая играет до–ре–ми, затем ре–ми–фа. Левая играет шесть отдельных до по одному на долю. Каждая пара звучит долю. Отпусти последнюю пару на следующее мысленное «раз».';
+    const hearing = 'Послушай в образце мелодию и шесть ударов нижнего до. Напой верхние ноты, а затем сыграй их поверх тихого баса. Проверь, что новое «раз» приходит через такую же долю, как «два» и «три».';
+    const mastery = 'Слышу шесть общих вступлений. На первой доле второго такта левая снова нажимает до вместе с ре, а обе руки освобождают последнюю пару одновременно.';
+    const source = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    lesson.rhythm = waltzRhythm(pairedWaltzPulse.options, 'project-paired-waltz-pulse-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Мелодия и одна басовая нота на каждую долю', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-pulse', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй левой три отдельных до на «раз, два, три». Затем повтори правую отдельно и соедини три пары первого такта. Если бас растягивается, остановись и снова попробуй одно отпускание и новое нажатие.',
+        motion, count, hearing,
+        'Придумай свою мелодию из соседних клавиш в двух тактах 3/4. Оставь слева тихое до на каждой доле и проверь, что на втором «раз» атаки совпали. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На каждой доле мизинец левой заново нажимает C3, и я слышу каждый удар баса.',
+        'После «три» отпускаю ми и старое до. На новое «раз» вместе вступают C3 и D4.',
+        'Слышу верхнюю мелодию поверх ровного баса. Пальцы, свободу движения и громкость проверяю за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [source],
+      referenceTitles: { [source]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаги 1 и 2' },
+      sourceEvidenceIds: ['zac-waltz-paired-pulse-2026-11-27'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzPulse.goal,
+        context: 'Один басовый звук на каждой доле помогает сначала согласовать две руки в 3/4. Затем тот же пульс можно использовать под своей мелодией.',
+        sourceNote: 'Джейсон Зак предлагает играть по одной ноте левой на каждую долю, пока она не согласуется с мелодией, и показывает G–D–G. В упражнении проекта левая повторяет знакомую C3, а правая берёт два такта из урока про вальсовый счёт. Их общие вступления, пальцы и длительности заданы здесь.'
       }
     });
   }
@@ -6359,6 +6408,9 @@
     }
     if (!existing.has(leftWaltzApproachChord.id)) {
       describeLeftWaltzApproachChord(lessons.find(lesson => lesson.id === leftWaltzApproachChord.id), adapter);
+    }
+    if (!existing.has(pairedWaltzPulse.id)) {
+      describePairedWaltzPulse(lessons.find(lesson => lesson.id === pairedWaltzPulse.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

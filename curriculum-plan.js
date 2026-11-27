@@ -4532,6 +4532,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-pulse-01",
+      "stage": "p7",
+      "branch": "paired-waltz-pulse",
+      "fingerprint": "92c08456",
+      "challenge": true,
+      "preparation": [
+        "course01-02",
+        "course04-07",
+        "course01-07"
+      ]
+    },
+    {
       "id": "oct201--2",
       "stage": "p7",
       "branch": "common",
