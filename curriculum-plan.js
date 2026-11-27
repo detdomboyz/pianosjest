@@ -4626,6 +4626,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-root-fifth-01",
+      "stage": "p7",
+      "branch": "paired-waltz-root-fifth",
+      "fingerprint": "6f9960e0",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-root-fifth-01",
+        "detail-p-paired-waltz-common-bass-01"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",

@@ -345,6 +345,28 @@ function assertWaltzCommonBassPreparation(lesson, required) {
  assert.equal(lesson.rhythm.steps[4].durationBeats, duration);
 }
 
+function assertWaltzRootFifthPreparation(lesson, required) {
+ const [leftBars, pairedBars] = required;
+ assert.equal(required.length, 2);
+ assert.equal(lesson.handMode, 'split');
+ assert.equal(leftBars.handMode, 'left');
+ assert.equal(pairedBars.handMode, 'split');
+ for (const candidate of [lesson, leftBars, pairedBars]) {
+  assert.equal(candidate.contentKind, 'exercise');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const frames = (candidate, hand) => Array.from(candidate.steps, (_, i) => waltzHandFrame(candidate, i, hand));
+ assert.deepEqual(frames(lesson, 'left'), frames(leftBars, 'left'),
+  'The bass shift must preserve the prepared left pitches, fingers, attacks, releases and rests');
+ const right = frames(lesson, 'right');
+ assert.deepEqual(right.slice(0, 3), frames(pairedBars, 'right').slice(0, 3),
+  'The first paired bar keeps its prepared right line');
+ const [notes, beat, duration, restBefore] = right[1];
+ assert.deepEqual(right[4], [notes, beat + 3, duration, restBefore], 'The right eighth repeats exactly one bar later');
+ assert.deepEqual(right.map(([keys]) => keys.length), [0, 1, 0, 0, 1, 0]);
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -372,6 +394,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-common-bass') {
   assertWaltzCommonBassPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-root-fifth') {
+  assertWaltzRootFifthPreparation(lesson, required);
   return;
  }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');
@@ -587,6 +613,20 @@ test('shared-bass waltz preparation protects both left bars and the second right
  const changedRight = copy(rightEighths);
  changedRight.fingeringSpec.steps[3][0].num = 2;
  assert.throws(() => assertWaltzCommonBassPreparation(lesson, [leftBars, pairedFirstBar, changedRight]), /second prepared right eighth/);
+});
+
+test('alternating-bass waltz preparation protects the left transfer and repeated right eighth', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const lesson = get('detail-p-paired-waltz-root-fifth-01');
+ assert.ok(lesson, 'Missing the alternating-bass waltz lesson');
+ const [leftBars, pairedBars] = lesson.learning.requires.map(get);
+ assertWaltzRootFifthPreparation(lesson, [leftBars, pairedBars]);
+ const wrongLeft = copy(leftBars);
+ wrongLeft.fingeringSpec.steps[3][0].num = 2;
+ assert.throws(() => assertWaltzRootFifthPreparation(lesson, [wrongLeft, pairedBars]), /prepared left pitches/);
+ const wrongRight = copy(lesson);
+ wrongRight.fingeringSpec.steps[4][2].num = 2;
+ assert.throws(() => assertWaltzRootFifthPreparation(wrongRight, [leftBars, pairedBars]), /right eighth repeats/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{

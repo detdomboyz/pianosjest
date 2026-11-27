@@ -1451,6 +1451,21 @@
     ],
     options: leftWaltzCommonBass.options
   };
+  const pairedWaltzRootFifth = {
+    id: 'detail-p-paired-waltz-root-fifth-01',
+    title: 'Вальс: смена баса под прежним созвучием',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzCommonBass.id,
+    requires: [leftWaltzRootFifth.id, pairedWaltzCommonBass.id],
+    goal: 'Начни первый такт с басового до, второй с низкой соль. На «два» обоих тактов сыграй те же ми–соль левой вместе с до правой.',
+    events: [
+      ...pairedWaltzCommonBass.events.slice(0, 3),
+      leftWaltzRootFifth.events[3],
+      [...leftWaltzRootFifth.events[4], tone(60, 1, 'right')],
+      leftWaltzRootFifth.events[5]
+    ],
+    options: leftWaltzRootFifth.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1463,7 +1478,7 @@
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
-    pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass);
+    pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3348,6 +3363,45 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzCommonBass.goal,
         context: 'При смене аккорда в вальсе первая доля может снова начинаться с прежней басовой ноты. На второй доле мелодия и сопровождение меняются вместе.',
         sourceNote: 'В тактах 3–4 вальса Чайковского повторяется бас E♭3, а на «два» меняются аккорд левой и нота правой. Упражнение использует бас C3, подготовленные пары ми–соль и фа–ля и две короткие верхние ноты. В источнике также есть ноты правой на первой доле и в конце такта.'
+      }
+    });
+  }
+
+  function describePairedWaltzRootFifth(lesson, adapter) {
+    const setup = 'Сыграй оба такта из урока левой о смене до–соль. Отдельно найди C3 и более низкую G2 левым мизинцем 5. Подготовь E3–G3 под левыми 3–1, а C4 под правым большим 1. Педаль выключена.';
+    const motion = 'На «раз» первого такта возьми C3, второго — G2 тем же мизинцем. На «два» освободи бас, перенеси кисть к E3–G3 и возьми эту пару вместе с C4 правой. На «и» отпусти три клавиши. На «три» снова нажми ми–соль только левой.';
+    const count = 'Считай два раза «раз, два-и, три-и» при 48 BPM. Каждый бас держи долю. На «два» обе руки играют по полдоли. После первого «три» отпусти ми–соль на «и» и за полдоли тишины найди низкую соль. Последнее ми–соль отпусти на воображаемое следующее «раз».';
+    const hearing = 'Пропой два коротких верхних до. В записи услышь, как бас уходит вниз с до на соль, а ответ остаётся одинаковым. Если вместо G2 прозвучала верхняя соль G3, остановись и найди две клавиши соль на расстоянии октавы. Услышь низкую соль отдельно и повтори переход.';
+    const mastery = 'На новом «раз» слышна G2. На «два» после неё снова вместе звучат E3, G3 и C4. Три клавиши освобождаются на «и». Кисть успевает вернуться к паре свободным движением.';
+    const score = 'https://s9.imslp.org/files/imglnks/usimg/7/77/IMSLP106221-PMLP216604-Practical_Method_for_the_Pianoforte_Op249-Kohler.pdf#page=28';
+    lesson.rhythm = waltzRhythm(pairedWaltzRootFifth.options, 'project-paired-waltz-root-fifth-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Перенос баса и возврат к прежней паре', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-root-fifth', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Повтори первый такт из урока о смене созвучий над общим басом. Отдельно разучи стык «три-и, раз, два» левой рукой. Отпусти пару, перенеси предплечье к G2 и после баса вернись к ми–соль. Добавь знакомую короткую до правой на «два», когда левая уверенно возвращается к паре.',
+        motion, count, hearing,
+        'Придумай свой двухтактовый рисунок. Поставь низкую соль в первый такт и до во второй, если удобно. Затем выбери другую подготовленную пару басов с подходящим созвучием и оставь короткий ответ правой на «два». Занимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Пауза после первого «три» даёт время найти G2. На «раз» второго такта бас играет левый мизинец.',
+        'На «два» в обоих тактах левый средний и большой возвращаются к E3–G3. Правый большой вступает одновременно на C4.',
+        'Все три ноты вместе замолкают на «и». Последний ответ левой длится целую долю.'
+      ],
+      rhythmNotice: count,
+      references: [score],
+      referenceTitles: {
+        [score]: 'Луис Кёлер. Practical Method, op. 249, вальс № 69, с. 26, третья система'
+      },
+      sourceEvidenceIds: ['kohler-op249-waltz-bass-shift-paired-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzRootFifth.goal,
+        context: 'В вальсовом сопровождении смена низкого баса меняет опору, пока верхние звуки аккорда остаются знакомыми.',
+        sourceNote: 'В третьей системе вальса № 69 Кёлера бас меняется с D3 на C3, после обоих басов левая играет F♯3–A3. Во втором полном такте с этой парой на «два» вступает A4 правой. В упражнении свои басы до–соль, пара ми–соль и две короткие до правой.'
       }
     });
   }
@@ -7235,6 +7289,9 @@
     }
     if (!existing.has(pairedWaltzCommonBass.id)) {
       describePairedWaltzCommonBass(lessons.find(lesson => lesson.id === pairedWaltzCommonBass.id), adapter);
+    }
+    if (!existing.has(pairedWaltzRootFifth.id)) {
+      describePairedWaltzRootFifth(lessons.find(lesson => lesson.id === pairedWaltzRootFifth.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
