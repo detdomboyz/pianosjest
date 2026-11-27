@@ -1083,13 +1083,23 @@
     events: [...bflatPairedJoinedAscent.events, ...bflatPairedUpperAscent.events.slice(1)],
     options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 1, 1], articulation: 'standard' }
   };
+  const bflatPairedUpperDescent = {
+    id: 'detail-p-bflat-major-prepared-paired-upper-descent-01',
+    title: 'Си-бемоль мажор двумя руками. Спуск до фа',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bflatPairedFullAscent.id,
+    requires: [bflatMajorDescentLeft.id, bflatMajorDescentRight.id],
+    goal: 'Спустись с чёрных си-бемолей через белые ля и соль до фа. На ля одновременно приходят левый большой и правый средний.',
+    events: bflatMajorDescentLeft.events.slice(0, 4).map((left, i) => [...left, ...bflatMajorDescentRight.events[i]]),
+    options: { bpm: 40, beats: [1, 1, 1, 1], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
     bMajorPairedMiddleDescent, bMajorPairedLowerDescent, bMajorPairedJoinedDescent,
     bMajorPairedFullDescent, bMajorPairedRoundtrip, bflatPairedLowerAscent,
     bflatPairedMiddleAscent, bflatPairedJoinedAscent, bflatPairedUpperAscent,
-    bflatPairedFullAscent);
+    bflatPairedFullAscent, bflatPairedUpperDescent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1743,6 +1753,56 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bflatPairedFullAscent.goal,
         context: 'Полный подъём си-бемоль мажора в параллельных октавах. Подготовленные нижний и верхний отрезки соединяются на фа.',
         sourceNote: 'Piano Fingering Figures, B-flat Major scale 1 octave, рисунок 1 каждой руки, такт 1, ноты 1–8. Проект сохраняет регистры и пальцы, соединяет руки и заменяет восемь восьмых восемью четвертями при 40 BPM. В проекте упражнение завершается после подъёма и тихая доля отсчитывается вручную. Стык на общей паре фа применяет принцип Чанга из раздела 7.'
+      }
+    });
+  }
+
+  function describeBflatPairedUpperDescent(lesson, adapter) {
+    const setup = 'Найди B♭3 и B♭4. Поставь на них левый указательный и правый безымянный. Повтори первые четыре ноты выученных спусков по одной руке. Педаль выключена.';
+    const motion = 'От чёрных си-бемолей передвинь обе руки немного влево и ближе к себе. Вместе отпусти чёрные и возьми белые ля левым большим и правым средним. Дальше бери соль обоими указательными, фа левым средним и правым большим.';
+    const count = 'Один такт 4/4 при 40 BPM. Си-бемоли на «раз», ля на «два», соль на «три», фа на «четыре». Держи фа до следующего «раз», вместе отпусти и отсчитай тихую долю вручную.';
+    const hearing = 'Послушай образец и пропой си-бемоль, ля, соль, фа. Услышь четыре совместных вступления и окончание на фа. Если ля разделились на два удара или вместо ля прозвучал ля-бемоль, вернись к первым двум парам.';
+    const mastery = 'В четырёх парах левый ряд пальцев 2–1–2–3, правый 4–3–2–1. Обе ля вступают вместе после отпускания си-бемолей. Обе фа длятся одну долю и отпускаются вместе.';
+    const scale = 'https://en.piano-fingering.org/flat-keys/2-flats-b-flat-major/b-flat-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bflatPairedUpperDescent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-bflat-major-prepared-paired-upper-descent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'С чёрных си-бемолей на белые ля разными пальцами', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'bflat-major-prepared-paired-upper-descent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй си-бемоль и ля левой 2–1, затем правой 4–3. Сыграй обе пары вместе. Отдельно сыграй ля–соль–фа и соедини отрезки на одной паре ля.',
+        motion, count, hearing,
+        'Отведи 3–5 минут на короткие пробы с отдыхом. Придумай свою короткую нисходящую фразу. Начни с совместных си-бемолей и ля, выбери новые последние пары из знакомых клавиш и сначала разбери их отдельно. Услышь общий вход на ля и выбери конец фразы вне зачёта. Повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Начинаю на чёрной паре. На «два» обе руки вместе приходят на белые ля.',
+        'Слева ля играет большой, справа средний. Си-бемоли уже отпущены.',
+        'На «четыре» играю фа и держу их до следующего «раз».',
+        'За инструментом слушаю общий вход обеих рук и сверяю пальцы.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Си-бемоль мажор левой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Си-бемоль мажор правой, рисунок 1',
+        [continuity]: 'Chuan C. Chang. Разбор коротких участков и соединение, раздел 7'
+      },
+      sourceEvidenceIds: [
+        'pff-bflat-major-descending-contacts-left-2026-11-15',
+        'pff-bflat-major-descending-contacts-right-2026-11-15',
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bflatPairedUpperDescent.goal,
+        context: 'Начало спуска си-бемоль мажора в параллельных октавах. На ля руки переходят с чёрной пары на белую разными пальцами.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 для каждой руки. Берём верхний си-бемоль в конце первого такта и первые три восьмые второго такта. Высоты, регистры и пальцы сохранены. Проект соединяет руки, даёт каждой паре четверть при 40 BPM и завершает упражнение на фа. Разбор отрезков применяет принцип Чанга из раздела 7.'
       }
     });
   }
@@ -5531,6 +5591,9 @@
     }
     if (!existing.has(bflatPairedFullAscent.id)) {
       describeBflatPairedFullAscent(lessons.find(lesson => lesson.id === bflatPairedFullAscent.id), adapter);
+    }
+    if (!existing.has(bflatPairedUpperDescent.id)) {
+      describeBflatPairedUpperDescent(lessons.find(lesson => lesson.id === bflatPairedUpperDescent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
