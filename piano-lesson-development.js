@@ -974,9 +974,20 @@
     ],
     options: { bpm: 40, beats: [1, 1, 1, 1, 1, 1, 1, 1], articulation: 'standard' }
   };
+  const bMajorPairedMiddleDescent = {
+    id: 'detail-p-b-major-prepared-paired-middle-descent-01',
+    title: 'Си мажор двумя руками. Спуск через ми',
+    group: 'hands', groupTitle: 'Согласование двух рук по шагам', stage: 'p7',
+    after: bMajorPairedUpperTurn.id,
+    requires: [bMajorDescentLeft.id, bMajorThumbExitDescentRight.id, bMajorPairedUpperTurn.id],
+    goal: 'Сыграй фа-диез, ми и ре-диез октавными парами. Спустись к белым ми на целый тон и сыграй их двумя большими. До ре-диезов останется полутон. В каждой паре сохрани один общий удар.',
+    events: bMajorDescentLeft.events.slice(3, 6)
+      .map((left, i) => [...left, ...bMajorThumbExitDescentRight.events[i]]),
+    options: { bpm: 40, beats: [1, 1, 2], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
-    bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent);
+    bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent, bMajorPairedMiddleDescent);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -1473,6 +1484,55 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedFullAscent.goal,
         context: 'Полный подъём мелодии двумя руками в параллельных октавах, с общим пульсом и сменой руки на среднем си между краями фразы.',
         sourceNote: 'Piano Fingering Figures, B Major scale 1 octave, рисунок 1 каждой руки, такт 1. Из восьми восьмых каждой руки проект собирает восемь пар четвертей при 40 BPM. Принцип общей ноты у соседних отрезков взят из главы 1, § 7 Чанга. Одновременные пары, темп и новая фраза заданы проектом.'
+      }
+    });
+  }
+
+  function describeBMajorPairedMiddleDescent(lesson, adapter) {
+    const setup = 'В двух соседних октавах найди фа-диез у левого края тройки чёрных. Найди ми сразу справа от группы из двух чёрных, а ре-диез на её правой чёрной. Начни на фа-диезах левым безымянным и правым указательным. Педаль выключена.';
+    const motion = 'Левая играет F♯3–E3–D♯3 пальцами 4–1–2, правая F♯4–E4–D♯4 пальцами 2–1–3. На «два» освободи фа-диезы, мягко направь кисти влево и вместе сыграй оба ми большими. На «три» с ми перейди к чёрным ре-диезам левым указательным и правым средним. Дай правой кисти последовать за средним влево.';
+    const count = 'При 40 BPM сыграй фа-диезы на «раз», ми на «два», ре-диезы держи на «три–четыре». Полностью отпусти обе клавиши на следующем «раз». Потом вручную отсчитай тихую долю.';
+    const hearing = 'Послушай образец и спой верхнюю линию. К ми ведёт целый тон, к ре-диезу полутон. В родственном спуске до-диез мажора оба больших играют белые фа, которые в нотах пишутся как ми-диез. Там полутон слышен в первом переходе. Если в середине вышло фа, найди белую ми у пары чёрных и повтори переход к ней медленно.';
+    const mastery = 'В первом переходе слышен более широкий шаг, во втором короткий. На ми вступают оба больших вместе. Ре-диезы звучат до следующего «раз» и отпускаются вместе.';
+    const scale = 'https://en.piano-fingering.org/sharp-keys/5-sharps-b-major/b-major-scale-1-octave-';
+    const left = scale + 'left-hand/';
+    const right = scale + 'right-hand/';
+    const continuity = 'https://fopp.readthedocs.io/en/latest/ch1/section_07.html';
+    const { beats, bpm } = bMajorPairedMiddleDescent.options;
+    lesson.rhythm = rhythmFromDurations(beats, bpm, 'project-b-major-prepared-paired-middle-descent-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Нисходящие октавные пары с двумя большими на ми', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'b-major-prepared-paired-middle-descent', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сначала медленно разбери три нужные ноты по одной руке. Левая берёт середину полного спуска си мажора, правая повторяет свой готовый переход фа-диез–ми–ре-диез. В конце верхнего разворота найди знакомую пару фа-диезов с теми же пальцами.',
+        motion, count, hearing,
+        'Отведи 3–5 минут, чередуя короткие пробы и отдых. Придумай нисходящий ответ из четырёх или пяти пар с этой связкой и сам реши, где остановиться. Если входишь из верхнего разворота, сыграй его общий фа-диез один раз и продолжи через ми. Послушай общие вступления и повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'От фа-диезов до ми в каждой руке целый тон, от ми до ре-диезов полутон.',
+        'Слева играю 4–1–2, справа 2–1–3. Оба больших вступают на «два».',
+        'Держу последние ре-диезы «три–четыре» и вместе отпускаю на новом «раз».',
+        'В своей фразе сверяю общий удар на слух. За инструментом проверяю пальцы и свободу кистей.'
+      ],
+      rhythmNotice: count,
+      references: [left, right, continuity],
+      referenceTitles: {
+        [left]: 'Piano Fingering Figures. Спуск си мажора левой рукой, рисунок 1',
+        [right]: 'Piano Fingering Figures. Спуск си мажора правой рукой, рисунок 1',
+        [continuity]: 'Чуан Ч. Чанг. Короткие отрезки и общая нота, глава 1, § 7'
+      },
+      sourceEvidenceIds: [
+        bMajorRoundtripLeft.sources[1], bMajorRoundtripRight.sources[1],
+        'chang-continuity-overlapping-segments-2026-11-27'
+      ],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: bMajorPairedMiddleDescent.goal,
+        context: 'Обе руки проходят целый тон к ми и полутон после него. Это движение пригодится для поступенного нисходящего ответа в параллельных октавах.',
+        sourceNote: 'Piano Fingering Figures, рисунок 1 каждой руки, такт 2, ноты 3–5. Проект объединяет три восьмые каждой руки в пары на две четверти и половинную при 40 BPM. Чанг описывает подготовку коротких участков отдельно и общую ноту на стыке. В упражнении стык выбран на фа-диезе.'
       }
     });
   }
@@ -4893,6 +4953,9 @@
     }
     if (!existing.has(bMajorPairedFullAscent.id)) {
       describeBMajorPairedFullAscent(lessons.find(lesson => lesson.id === bMajorPairedFullAscent.id), adapter);
+    }
+    if (!existing.has(bMajorPairedMiddleDescent.id)) {
+      describeBMajorPairedMiddleDescent(lessons.find(lesson => lesson.id === bMajorPairedMiddleDescent.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

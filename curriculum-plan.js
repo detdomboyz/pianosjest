@@ -3941,6 +3941,18 @@
       ]
     },
     {
+      "id": "detail-p-b-major-prepared-paired-middle-descent-01",
+      "stage": "p7",
+      "branch": "b-major-prepared-paired-middle-descent",
+      "fingerprint": "17f44a34",
+      "challenge": true,
+      "preparation": [
+        "detail-p-b-major-descent-left-01",
+        "detail-p-b-major-thumb-exit-descent-right-01",
+        "detail-p-b-major-prepared-paired-upper-turn-01"
+      ]
+    },
+    {
       "id": "detail-p-b-major-prepared-paired-lower-ascent-01",
       "stage": "p7",
       "branch": "b-major-prepared-paired-lower-ascent",
