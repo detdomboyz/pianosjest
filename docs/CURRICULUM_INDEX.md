@@ -596,6 +596,7 @@
 | detail-p-paired-waltz-handoff-01 | Вальс: передай пульс другой руке | 10 | 48 | MIDI-челлендж | сначала course01-02; сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-eighth-handoff-01 | Вальс: передай пульс на «два-и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-offbeat-right-01; сначала course04-07; сначала course01-07 |
 | detail-p-paired-waltz-right-after-bass-01 | Правая отвечает басу в вальсе | 6 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-chord-to-bass-01; сначала detail-p-paired-waltz-delayed-melody-01; сначала detail-p-paired-waltz-eighth-handoff-01 |
+| detail-p-paired-waltz-shared-return-01 | Аккорд возвращается после тихой доли | 10 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-right-after-bass-01; сначала detail-p-paired-waltz-shared-rest-01; сначала detail-p-paired-waltz-shared-cadence-01 |
 | detail-p-left-waltz-eighth-relocate-01 | Левая: смени бас за восьмую паузу | 6 | 48 | MIDI-челлендж | сначала detail-p-relocate-02; сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-repeat-left-01; сначала course04-07 |
 | detail-p-paired-waltz-eighth-bass-shift-01 | Вальс: перенеси бас на «и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-waltz-eighth-relocate-01; сначала detail-p-paired-waltz-eighth-handoff-01 |
 | detail-p-paired-waltz-upbeat-01 | Вальс: начни фразу с «три-и» | 11 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-eighth-handoff-01; сначала detail-p-paired-waltz-pulse-01 |

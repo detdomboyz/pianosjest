@@ -4721,6 +4721,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-shared-return-01",
+      "stage": "p7",
+      "branch": "paired-waltz-shared-return",
+      "fingerprint": "c72cd75b",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-right-after-bass-01",
+        "detail-p-paired-waltz-shared-rest-01",
+        "detail-p-paired-waltz-shared-cadence-01"
+      ]
+    },
+    {
       "id": "detail-p-left-waltz-eighth-relocate-01",
       "stage": "p7",
       "branch": "waltz-eighth-bass-shift",
