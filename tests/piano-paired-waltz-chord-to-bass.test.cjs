@@ -17,6 +17,7 @@ const { catalogIds } = require('./fixtures/piano-before-b-major-paired-upper-tur
 const { catalogIdsAdded } = require('./fixtures/piano-before-paired-waltz-eighth-bass-shift-v1.json');
 
 const id = 'detail-p-paired-waltz-chord-to-bass-01';
+const previousIds = new Set([...catalogIds, ...catalogIdsAdded, ...before.extraCatalogIds]);
 const cadence = 'detail-p-paired-waltz-shared-cadence-01';
 const sharedRest = 'detail-p-paired-waltz-shared-rest-01';
 const bassPreparation = 'detail-p-paired-waltz-bass-upbeat-01';
@@ -39,7 +40,7 @@ const find = key => learning.find(lesson => lesson.id === key);
 const plan = vm.runInNewContext(fs.readFileSync(require.resolve('../curriculum-plan.js'), 'utf8') + ';MUSIC_CURRICULUM_PLAN');
 
 test('the new transition keeps every prior record, route callback, theme and source exact', () => {
-  const old = new Set([...catalogIds, ...catalogIdsAdded, ...before.extraCatalogIds]);
+  const old = previousIds;
   const oldLearning = learning.filter(lesson => old.has(lesson.id));
   assert.equal(old.size, before.catalogRecords);
   assert.equal(oldLearning.length, before.learningRecords);
@@ -86,7 +87,7 @@ test('the prepared common chord releases on the offbeat before a left-only downb
   app.setTestLesson(lesson);
   assert.equal(app.challengeEligible(), true);
   assert.equal(next(plan, 'piano', learning, id), null);
-  assert.equal(learning.length, before.learningRecords + 1);
+  assert.equal(learning.filter(row => previousIds.has(row.id) || row.id === id).length, before.learningRecords + 1);
 });
 
 test('the browser and account graders distinguish common release, unbroken silence and a single bass', () => {

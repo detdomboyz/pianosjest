@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "generatedAt": "2026-11-28T02:46:32.906Z",
+  "generatedAt": "2026-11-28T03:52:32.431Z",
   "scope": "piano-only",
   "targetMinimum": 1000,
   "capacitySlots": 1310,
   "capacityStatus": "Preliminary topic budgets, not individual specified lesson IDs; refine with sources and deduplication.",
   "counts": {
     "plannedFutureLessons": 6,
-    "implementedLearningLessons": 685,
-    "checkedMidiRouteLessons": 415,
-    "withStructuredProvenance": 388,
-    "individuallyMappedToDomain": 388,
+    "implementedLearningLessons": 686,
+    "checkedMidiRouteLessons": 416,
+    "withStructuredProvenance": 389,
+    "individuallyMappedToDomain": 389,
     "independentTeacherReviewed": 0,
     "explicitSameGoalVariants": 11,
     "explicitCheckpoints": 13,
-    "goalGroupUpperBound": 661,
+    "goalGroupUpperBound": 662,
     "verifiedDistinctGoalCount": null
   },
   "sameGoalGroups": [
@@ -626,6 +626,7 @@
         "detail-p-paired-waltz-pickup-dyad-01",
         "detail-p-paired-waltz-shared-cadence-01",
         "detail-p-paired-waltz-chord-to-bass-01",
+        "detail-p-paired-waltz-right-after-bass-01",
         "detail-p-eighth-rest-repeat-paired-01"
       ],
       "plannedLessonIds": [
@@ -11631,6 +11632,31 @@
       "independentTeacherReview": false
     },
     {
+      "id": "detail-p-paired-waltz-right-after-bass-01",
+      "title": "Правая отвечает басу в вальсе",
+      "themeId": "detail-p-hands",
+      "stage": "p7",
+      "actions": 3,
+      "explicitFingers": true,
+      "exactTiming": true,
+      "challenge": true,
+      "structuredProvenance": true,
+      "coverageDomain": "coordination",
+      "goal": "На новое «раз» сыграй соль G2 левой. На «два» отпусти соль и возьми до C4 правой, пока левая отдыхает.",
+      "requires": [
+        "detail-p-paired-waltz-chord-to-bass-01",
+        "detail-p-paired-waltz-delayed-melody-01",
+        "detail-p-paired-waltz-eighth-handoff-01"
+      ],
+      "nextLessonId": null,
+      "sourceEvidenceIds": [
+        "zac-country-waltz-left-right-2026-11-28"
+      ],
+      "sameGoalAs": null,
+      "goalCounting": null,
+      "independentTeacherReview": false
+    },
+    {
       "id": "detail-p-cross-01",
       "title": "Правая: 3 → 1 на E4–F4",
       "themeId": "detail-p-cross",
@@ -18149,5 +18175,5 @@
       "independentTeacherReview": false
     }
   ],
-  "nextAction": "Проверить покрытие вступления правой на второй доле после одиночного баса, который следует за общим аккордом и восьмой паузой. Сопоставить ноты, длительности, обе руки и отпускание с уроком delayed-melody и другими существующими примерами. Добавить одну короткую связку по первоисточнику при подтверждённом пробеле."
+  "nextAction": "Проверить переход от одиночного ответа правой на «два» к общему аккорду на новом «раз» через целую долю тишины. Сверить спокойный возврат левой кисти к аккорду с готовыми упражнениями и первоисточником. Добавить одну короткую связку при подтверждённом пробеле, сохранив отпускание на «три» и одновременное возвращение обеих рук."
 }

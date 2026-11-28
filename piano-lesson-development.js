@@ -1499,6 +1499,16 @@
     events: [pairedWaltzSharedCadence.events.at(-1), pairedWaltzBassUpbeat.events[0]],
     options: { bpm: 48, beats: [2.5, 1], startBeats: [0, 3], articulation: 'standard' }
   };
+  const pairedWaltzRightAfterBass = {
+    id: 'detail-p-paired-waltz-right-after-bass-01',
+    title: 'Правая отвечает басу в вальсе',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzChordToBass.id,
+    requires: [pairedWaltzChordToBass.id, pairedWaltzDelayedMelody.id, pairedWaltzEighthHandoff.id],
+    goal: 'На новое «раз» сыграй соль G2 левой. На «два» отпусти соль и возьми до C4 правой, пока левая отдыхает.',
+    events: [...pairedWaltzChordToBass.events, pairedWaltzDelayedMelody.events.at(-1).slice(1)],
+    options: { bpm: 48, beats: [2.5, 1, 1], startBeats: [0, 3, 4], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1512,7 +1522,7 @@
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
     pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth,
-    pairedWaltzPickupDyad, pairedWaltzSharedCadence, pairedWaltzChordToBass);
+    pairedWaltzPickupDyad, pairedWaltzSharedCadence, pairedWaltzChordToBass, pairedWaltzRightAfterBass);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3562,6 +3572,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzChordToBass.goal,
         context: 'После общего аккорда и паузы начинается новый такт с одиночной басовой опоры.',
         sourceNote: 'Ван Диллен объясняет длительность восьмой паузы в гл. 2. Зак предлагает счёт с «и» в 3/4 и низкую соль мизинцем на первой доле. Аккорд, регистры, остальные пальцы, точные длительности и темп выбраны для этого упражнения.'
+      }
+    });
+  }
+
+  function describePairedWaltzRightAfterBass(lesson, adapter) {
+    const setup = 'Собери C3–E3–G3 левой пальцами 5–3–1 и до C4 большим правой. Повтори отпускание аккорда и найди соль G2 мизинцем левой. Педаль выключена.';
+    const motion = 'После общей восьмой паузы возьми соль левой на «раз». Правая свободно ждёт над C4. На «два» левая отпускает соль, а большой палец правой заново нажимает до. На «три» отпусти до.';
+    const count = 'При 48 BPM считай «раз-и, два-и, три-и | раз, два, три». Отпусти аккорд на последнем «и» первого такта. Во втором такте соль и до длятся по одной доле. После отпускания до досчитай тихое «три» перед повтором.';
+    const hearing = 'Послушай образец и пропой низкую соль и среднее до. Сначала слышен общий аккорд, затем тишина, после неё два отдельных звука в разных регистрах. На «два» послушай, успел ли замолчать бас.';
+    const mastery = 'На «раз» слышу только соль, на «два» только до. Соль заканчивается в момент вступления до. Правый палец успевает освободить клавишу после аккорда и нажать её заново.';
+    const waltz = 'https://www.nathanielschool.com/lessons/3-old-school-country-piano-rhythms-for-beginners/';
+    const rests = 'https://www.oscarvandillen.com/basic_elements_of_music_theory/musical_notation/';
+    lesson.rhythm = waltzRhythm(pairedWaltzRightAfterBass.options, 'project-paired-waltz-right-after-bass-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Вступление правой после баса', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-right-after-bass', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сыграй только второй такт. На «раз» нажми G2, на «два» отпусти её и сыграй C4, на «три» отпусти C4. Когда две доли получатся ровно, добавь общий аккорд и паузу.',
+        motion, count, hearing,
+        'Если руки входят вместе, повтори только «раз, два» и назови руку на каждой доле. Если вторая доля звучит гулко, проверь, поднимается ли басовая клавиша к вступлению правой.',
+        'Придумай свой ответ на другой удобной ноте правой. Добавь знакомый аккорд и бас, сохрани восьмую паузу и порядок «раз» левой, «два» правой. Занимайся 3–5 минут с отдыхом. Проверь перенос после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Аккорд отпускается обеими руками на «и» после «три». До баса слышна полдоли тишины.',
+        'На «раз» играет G2 мизинцем левой. На «два» бас уже отпущен и звучит только C4 большим правой.',
+        'До освобождается на «три». Сохраняю пульс, проверяю аппликатуру и свободу обеих кистей за инструментом.'
+      ],
+      rhythmNotice: count,
+      references: [waltz, rests],
+      referenceTitles: {
+        [waltz]: 'Джейсон Зак. 3 Old-School Country Piano Rhythms for Easy Accompaniment, Pattern 1',
+        [rests]: 'Оскар ван Диллен. Basic elements of music theory, гл. 2, Note and rest values'
+      },
+      sourceEvidenceIds: ['zac-country-waltz-left-right-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzRightAfterBass.goal,
+        context: 'Бас отмечает начало нового такта, а на вторую долю ему отвечает звук в другом регистре.',
+        sourceNote: 'В примере Зака бас левой звучит на первой доле, аккорды правой на второй и третьей. Упражнение использует первые два вступления с одним звуком правой. Пауза, совместный аккорд, высоты, пальцы, длительности и темп выбраны проектом.'
       }
     });
   }
@@ -7461,6 +7513,9 @@
     }
     if (!existing.has(pairedWaltzChordToBass.id)) {
       describePairedWaltzChordToBass(lessons.find(lesson => lesson.id === pairedWaltzChordToBass.id), adapter);
+    }
+    if (!existing.has(pairedWaltzRightAfterBass.id)) {
+      describePairedWaltzRightAfterBass(lessons.find(lesson => lesson.id === pairedWaltzRightAfterBass.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

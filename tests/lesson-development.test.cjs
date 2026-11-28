@@ -443,6 +443,41 @@ function assertWaltzChordToBassPreparation(lesson, required) {
   'The right hand must stay released on the bass downbeat');
 }
 
+function assertWaltzRightAfterBassPreparation(lesson, required) {
+ const [opening, delayed, handoff] = required;
+ assert.deepEqual(Array.from(required, candidate => candidate.id), [
+  'detail-p-paired-waltz-chord-to-bass-01',
+  'detail-p-paired-waltz-delayed-melody-01',
+  'detail-p-paired-waltz-eighth-handoff-01'
+ ]);
+ for (const candidate of [lesson, opening, delayed, handoff]) {
+  assert.equal(candidate.contentKind, 'exercise');
+  assert.equal(candidate.handMode, 'split');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ assert.equal(lesson.steps.length, 3);
+ assert.equal(opening.steps.length, 2);
+ for (const hand of ['left', 'right']) {
+  for (const index of [0, 1]) {
+   assert.deepEqual(waltzHandFrame(lesson, index, hand), waltzHandFrame(opening, index, hand),
+    'The chord, shared rest and solo bass must match the prepared opening');
+  }
+ }
+ const preparedEntry = waltzHandFrame(delayed, delayed.steps.length - 1, 'right');
+ assert.equal(preparedEntry[0].length, 1);
+ assert.deepEqual(preparedEntry.slice(1), [4, 1, 0]);
+ assert.deepEqual(waltzHandFrame(lesson, 2, 'right'), preparedEntry,
+  'The reply must keep the pitch, finger and second-beat timing');
+ assert.deepEqual(waltzHandFrame(lesson, 2, 'left'), [[], 4, 1, 0],
+  'The left hand must release the bass and stay silent during the reply');
+ assert.deepEqual(waltzHandFrame(handoff, 1, 'left'), [[[48, 'left', 5]], 1, 0.5, 0]);
+ assert.deepEqual(waltzHandFrame(handoff, 1, 'right'), [[], 1, 0.5, 0]);
+ assert.deepEqual(waltzHandFrame(handoff, 2, 'left'), [[], 1.5, 0.5, 0]);
+ assert.deepEqual(waltzHandFrame(handoff, 2, 'right'), [[[64, 'right', 3]], 1.5, 0.5, 0],
+  'The earlier handoff must already alternate the two hands without overlap');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -486,6 +521,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-chord-to-bass') {
   assertWaltzChordToBassPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-right-after-bass') {
+  assertWaltzRightAfterBassPreparation(lesson, required);
   return;
  }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');

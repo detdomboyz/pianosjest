@@ -4709,6 +4709,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-right-after-bass-01",
+      "stage": "p7",
+      "branch": "paired-waltz-right-after-bass",
+      "fingerprint": "499a3f77",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-chord-to-bass-01",
+        "detail-p-paired-waltz-delayed-melody-01",
+        "detail-p-paired-waltz-eighth-handoff-01"
+      ]
+    },
+    {
       "id": "detail-p-left-waltz-eighth-relocate-01",
       "stage": "p7",
       "branch": "waltz-eighth-bass-shift",
