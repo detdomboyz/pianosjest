@@ -407,6 +407,42 @@ function assertWaltzSharedCadencePreparation(lesson, required) {
   'The prepared right downbeat must wait through the pause and share the full final measure');
 }
 
+function assertWaltzChordToBassPreparation(lesson, required) {
+ const [cadence, sharedRest, bass] = required;
+ assert.deepEqual(Array.from(required, candidate => candidate.id), [
+  'detail-p-paired-waltz-shared-cadence-01',
+  'detail-p-paired-waltz-shared-rest-01',
+  'detail-p-paired-waltz-bass-upbeat-01'
+ ]);
+ for (const candidate of [lesson, cadence, sharedRest, bass]) {
+  assert.equal(candidate.contentKind, 'exercise');
+  assert.equal(candidate.handMode, 'split');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ assert.equal(lesson.steps.length, 2);
+ for (const [hand, notes] of [['left', 3], ['right', 1]]) {
+  const closing = waltzHandFrame(cadence, cadence.steps.length - 1, hand);
+  assert.equal(closing[0].length, notes);
+  assert.deepEqual(closing.slice(1, 3), [3, 3]);
+  assert.deepEqual(waltzHandFrame(lesson, 0, hand), [closing[0], 0, 2.5, 0],
+   'The prepared chord must release together on the last eighth of the bar');
+  const before = waltzHandFrame(sharedRest, 1, hand);
+  const after = waltzHandFrame(sharedRest, 2, hand);
+  assert.equal(before[0].length, 1);
+  assert.equal(after[0].length, 1);
+  assert.deepEqual(before.slice(1, 3), [1, 1]);
+  assert.deepEqual(after.slice(1), [3, 1, 1], 'Both hands must have practiced the shared release');
+ }
+ const [preparedBass, onset, length] = waltzHandFrame(bass, 0, 'left');
+ assert.equal(preparedBass.length, 1);
+ assert.deepEqual([onset, length], [0, 1]);
+ assert.deepEqual(waltzHandFrame(lesson, 1, 'left'), [preparedBass, 3, 1, 0.5],
+  'The prepared bass must return on the next downbeat after half a beat of silence');
+ assert.deepEqual(waltzHandFrame(lesson, 1, 'right'), [[], 3, 1, 0.5],
+  'The right hand must stay released on the bass downbeat');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -446,6 +482,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-shared-cadence') {
   assertWaltzSharedCadencePreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-chord-to-bass') {
+  assertWaltzChordToBassPreparation(lesson, required);
   return;
  }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');
@@ -529,6 +569,25 @@ test('preparations precede lessons; historical branches stay independent and exp
   for(const [instrument,ls] of [['piano',app.lessons],['guitar',guitar.lessons]])for(const l of ls.filter(l=>l.learning?.after)){
     const entries=plan[instrument],i=entries.findIndex(e=>e.id===l.id);for(const id of l.learning.requires){const j=entries.findIndex(e=>e.id===id);assertPreparationEdge({instrument,lesson:l,preparation:ls.find(p=>p.id===id),entry:entries[i],preparationEntry:entries[j],index:i,preparationIndex:j,historicalIds:protectedPrerequisiteIds,canonicalRow:canonical.lessons.find(row=>row.id===l.id),plan,lessons:ls});}
   }
+});
+
+test('the waltz after a shared chord needs the prepared release and a lone downbeat bass', () => {
+ const lesson = app.lessons.find(row => row.id === 'detail-p-paired-waltz-chord-to-bass-01');
+ const required = lesson.learning.requires.map(id => app.lessons.find(row => row.id === id));
+ assertWaltzChordToBassPreparation(lesson, required);
+ const heldChord = copy(lesson);
+ heldChord.rhythm.steps[0].durationBeats = 3;
+ assert.throws(() => assertWaltzChordToBassPreparation(heldChord, required), /release together/);
+ const noSilence = copy(lesson);
+ noSilence.rhythm.steps[1].restBeforeBeats = 0;
+ assert.throws(() => assertWaltzChordToBassPreparation(noSilence, required), /half a beat of silence/);
+ const wrongBass = copy(lesson);
+ wrongBass.fingeringSpec.steps[1][0].num = 4;
+ assert.throws(() => assertWaltzChordToBassPreparation(wrongBass, required), /prepared bass/);
+ const rightReturns = copy(lesson);
+ rightReturns.fingeringSpec.steps[1].push({ hand: 'right', num: 1 });
+ rightReturns.steps[1].keys.push(rightReturns.steps[0].keys.at(-1));
+ assert.throws(() => assertWaltzChordToBassPreparation(rightReturns, required), /right hand must stay released/);
 });
 
 test('mixed waltz attacks require each prepared hand in its exact rhythm', () => {

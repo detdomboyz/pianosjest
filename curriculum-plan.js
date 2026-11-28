@@ -4659,6 +4659,18 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-chord-to-bass-01",
+      "stage": "p7",
+      "branch": "paired-waltz-chord-to-bass",
+      "fingerprint": "1af7e4d3",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-shared-cadence-01",
+        "detail-p-paired-waltz-shared-rest-01",
+        "detail-p-paired-waltz-bass-upbeat-01"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",

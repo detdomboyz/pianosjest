@@ -1489,6 +1489,16 @@
     ],
     options: leftWaltzApproachChord.options
   };
+  const pairedWaltzChordToBass = {
+    id: 'detail-p-paired-waltz-chord-to-bass-01',
+    title: 'Вальс с паузой и новым басом',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzSharedCadence.id,
+    requires: [pairedWaltzSharedCadence.id, pairedWaltzSharedRest.id, pairedWaltzBassUpbeat.id],
+    goal: 'На «и» после «три» отпусти общий аккорд обеими руками. Выдержи полдоли тишины и сыграй соль G2 левой на новое «раз».',
+    events: [pairedWaltzSharedCadence.events.at(-1), pairedWaltzBassUpbeat.events[0]],
+    options: { bpm: 48, beats: [2.5, 1], startBeats: [0, 3], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1502,7 +1512,7 @@
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
     pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth,
-    pairedWaltzPickupDyad, pairedWaltzSharedCadence);
+    pairedWaltzPickupDyad, pairedWaltzSharedCadence, pairedWaltzChordToBass);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3510,6 +3520,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzSharedCadence.goal,
         context: 'В конце фразы верхняя нота и аккорд вступают и прекращаются вместе. Короткая пауза даёт время подготовить три клавиши левой.',
         sourceNote: 'У Чайковского в такте 85 обе руки начинают с общей восьмой в ми-бемоль мажоре. У Кларка трезвучие до мажора левой длится три доли. Зак описывает подводящую си перед до. Регистры, пальцы, пауза, общие три доли и темп заданы проектом.'
+      }
+    });
+  }
+
+  function describePairedWaltzChordToBass(lesson, adapter) {
+    const setup = 'Собери C3–E3–G3 левой пальцами 5–3–1 и поставь большой правой на C4. Найди соль G2 мизинцем левой и вернись к аккорду. Педаль выключена.';
+    const motion = 'Нажми четыре клавиши вместе. Отпусти их на «и» после «три». В тишине перемести левую кисть к G2 целиком, чтобы мизинцу было удобно. На новое «раз» нажми только G2. Правая уже отпущена и отдыхает.';
+    const count = 'Считай при 48 BPM «раз-и, два-и, три-и | раз, два». Аккорд держится две с половиной доли. На последнем «и» отпусти клавиши и выдержи восьмую паузу. Соль G2 вступает на «раз» и освобождается на «два».';
+    const hearing = 'Послушай два вступления. Первое широкое, второе — один низкий звук. Пропой соль до игры и мысленно сохрани пульс в тихом промежутке.';
+    const mastery = 'Слышу один общий аккорд, полдоли тишины и одну соль на новом «раз». Все четыре клавиши освобождаются вместе. Правая после паузы остаётся свободной.';
+    const rests = 'https://www.oscarvandillen.com/basic_elements_of_music_theory/musical_notation/';
+    const bass = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    lesson.rhythm = waltzRhythm(pairedWaltzChordToBass.options, 'project-paired-waltz-chord-to-bass-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Общий отпуск и новый бас в вальсе', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-chord-to-bass', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сначала без таймера проверь отпускание аккорда. В отдельном повторе перенеси левую от отпущенного до к соль без спешки. Затем уложи перенос в полдоли.',
+        motion, count, hearing,
+        'Если соль торопится, произнеси тихое «и» до нового «раз». Если правая продолжает звучать, отработай отпускание всех четырёх клавиш вместе и только потом повтори переход.',
+        'Выбери знакомый аккорд обеими руками и другой доступный бас ниже. Придумай два такта в 3/4 с тем же тихим «и» и вступлением одной левой. Занимайся 3–5 минут с отдыхом. Повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Четыре клавиши вступают на первое «раз» и вместе освобождаются на «и» после «три».',
+        'Слышу полдоли тишины. Левая спокойно находит соль G2 мизинцем.',
+        'На следующее «раз» слышна только соль. Она длится одну долю. За инструментом проверяю пальцы и свободу кисти.'
+      ],
+      rhythmNotice: count,
+      references: [rests, bass],
+      referenceTitles: {
+        [rests]: 'Оскар ван Диллен. Basic elements of music theory, гл. 2, Note and rest values',
+        [bass]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаги 1–2'
+      },
+      sourceEvidenceIds: ['van-dillen-eighth-rest-values-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzChordToBass.goal,
+        context: 'После общего аккорда и паузы начинается новый такт с одиночной басовой опоры.',
+        sourceNote: 'Ван Диллен объясняет длительность восьмой паузы в гл. 2. Зак предлагает счёт с «и» в 3/4 и низкую соль мизинцем на первой доле. Аккорд, регистры, остальные пальцы, точные длительности и темп выбраны для этого упражнения.'
       }
     });
   }
@@ -7406,6 +7458,9 @@
     }
     if (!existing.has(pairedWaltzSharedCadence.id)) {
       describePairedWaltzSharedCadence(lessons.find(lesson => lesson.id === pairedWaltzSharedCadence.id), adapter);
+    }
+    if (!existing.has(pairedWaltzChordToBass.id)) {
+      describePairedWaltzChordToBass(lessons.find(lesson => lesson.id === pairedWaltzChordToBass.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
