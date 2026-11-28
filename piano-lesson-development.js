@@ -1466,6 +1466,16 @@
     ],
     options: leftWaltzRootFifth.options
   };
+  const pairedWaltzPickupDyad = {
+    id: 'detail-p-paired-waltz-pickup-dyad-01',
+    title: 'Вальс: от подводящей си к созвучию',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzRootFifth.id,
+    requires: [pairedWaltzDelayedMelody.id, pairedWaltzRootFifth.id],
+    goal: 'Сыграй короткую си на «и» после «три» и отдельное басовое до на новом «раз». На «два» перенеси левую к ми–соль и вместе с ними сыграй до правой.',
+    events: [...pairedWaltzDelayedMelody.events.slice(0, 4), ...pairedWaltzRootFifth.events.slice(4)],
+    options: { bpm: 48, beats: [1, 1, 0.5, 1, 0.5, 1], startBeats: [0, 1, 2.5, 3, 4, 5], articulation: 'standard' }
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1478,7 +1488,8 @@
     leftWaltzApproachChord, pairedWaltzPulse, pairedWaltzBassShift, pairedWaltzSharedRest, pairedWaltzRightRest,
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
-    pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth);
+    pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth,
+    pairedWaltzPickupDyad);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3402,6 +3413,47 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzRootFifth.goal,
         context: 'В вальсовом сопровождении смена низкого баса меняет опору, пока верхние звуки аккорда остаются знакомыми.',
         sourceNote: 'В третьей системе вальса № 69 Кёлера бас меняется с D3 на C3, после обоих басов левая играет F♯3–A3. Во втором полном такте с этой парой на «два» вступает A4 правой. В упражнении свои басы до–соль, пара ми–соль и две короткие до правой.'
+      }
+    });
+  }
+
+  function describePairedWaltzPickupDyad(lesson, adapter) {
+    const setup = 'Повтори начало вальса, где мелодия вступает на «два». Слева найди G2 мизинцем 5, D3 большим 1, B2 средним 3 и C3 указательным 2. Отдельно собери ми–соль E3–G3 левыми 3–1 и приготовь C4 под правым большим. Педаль выключена.';
+    const motion = 'После соль и ре оставь полдоли тишины на «три». На «и» нажми B2 средним. На новом «раз» отпусти си и нажми C3 указательным. На «два» освободи бас и перенеси кисть к E3–G3. Возьми их вместе с C4 правой. На «и» отпусти все три, на «три» повтори только ми–соль левой.';
+    const count = 'При 48 BPM считай «раз, два, три-и | раз, два-и, три». Си на первом «и» и три ноты на втором «два» длятся по полдоли. Перед си и после трёх нот слышна полдоля тишины. Последние ми–соль держи до мысленного нового «раз».';
+    const hearing = 'Напой короткую си и низкое до, затем услышь верхнее до вместе с ми–соль. Если правая вступает с первым до или левая повторяет бас на «два», произнеси «и, раз, два» и разучи этот стык левой. Добавь правый большой, когда ми и соль звучат вместе.';
+    const mastery = 'Си звучит после паузы на «и». Новое «раз» слышно по отдельному басу до. Левая успевает освободить бас и вернуться к паре. На «два» у трёх клавиш общее начало и отпускание, а на «три» снова звучит только левая.';
+    const method = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    const score = 'https://noctavepiano.com/partitions/tchaikovsky-valse-op39-8/tchaikovsky-valse-op39-8.pdf#page=1';
+    lesson.rhythm = waltzRhythm(pairedWaltzPickupDyad.options, 'project-paired-waltz-pickup-dyad-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Подводящая си, бас и общий ответ на второй доле', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-pickup-dyad', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Сначала сыграй B2 и C3 со счётом «и, раз». На «два» перенеси предплечье вправо и собери ми–соль. Отдельно повтори общий ответ с C4 из предыдущего урока. Соедини стык, затем добавь соль и ре перед паузой и ми–соль на «три».',
+        motion, count, hearing,
+        'Придумай свой короткий ответ после си и басового до. Выбери другую удобную верхнюю ноту, начни её с левой парой на «два» и сохрани полдоли тишины после неё. Послушай, как изменилась фраза. Позанимайся 3–5 минут, повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'Полдоли после первого «три» тихо. Си появляется на «и» и освобождает место для до на новом «раз».',
+        'На «два» левая берёт E3–G3 средним и большим. C4 правой совпадает с этой парой.',
+        'Все три клавиши отпущены на «и». На «три» заново звучат только ми и соль левой.'
+      ],
+      rhythmNotice: count,
+      references: [method, score],
+      referenceTitles: {
+        [method]: 'Джейсон Зак. Вальсовое сопровождение, шаг 4',
+        [score]: 'Пётр Чайковский. Вальс op. 39 № 8, такт 6, издание Noctave'
+      },
+      sourceEvidenceIds: ['tchaikovsky-waltz-pickup-dyad-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzPickupDyad.goal,
+        context: 'Подводящая нота ведёт к басу нового такта. После баса левая возвращается к созвучию, а правая входит вместе с ним.',
+        sourceNote: 'Зак показывает си, которая ведёт к до. В шестом такте вальса Чайковского бас C3 отмечает «раз». На «два» вместе вступают три ноты левой и C5 правой. Упражнение соединяет эти приёмы с собственными длительностями и аппликатурой.'
       }
     });
   }
@@ -7292,6 +7344,9 @@
     }
     if (!existing.has(pairedWaltzRootFifth.id)) {
       describePairedWaltzRootFifth(lessons.find(lesson => lesson.id === pairedWaltzRootFifth.id), adapter);
+    }
+    if (!existing.has(pairedWaltzPickupDyad.id)) {
+      describePairedWaltzPickupDyad(lessons.find(lesson => lesson.id === pairedWaltzPickupDyad.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

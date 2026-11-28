@@ -4637,6 +4637,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-pickup-dyad-01",
+      "stage": "p7",
+      "branch": "paired-waltz-pickup-dyad",
+      "fingerprint": "331b65d2",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-delayed-melody-01",
+        "detail-p-paired-waltz-root-fifth-01"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",
