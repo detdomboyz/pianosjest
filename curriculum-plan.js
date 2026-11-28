@@ -4733,6 +4733,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-altered-voicing-01",
+      "stage": "p7",
+      "branch": "paired-waltz-altered-voicing",
+      "fingerprint": "e54d8c6f",
+      "challenge": true,
+      "preparation": [
+        "detail-p-paired-waltz-shared-return-01",
+        "detail-p-paired-waltz-common-bass-01"
+      ]
+    },
+    {
       "id": "detail-p-left-waltz-eighth-relocate-01",
       "stage": "p7",
       "branch": "waltz-eighth-bass-shift",

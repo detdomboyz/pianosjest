@@ -564,6 +564,21 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
   assertWaltzSharedReturnPreparation(lesson, required);
   return;
  }
+ if (lesson.learning.branch === 'paired-waltz-altered-voicing') {
+  const [returnLesson, newVoicing] = required;
+  assert.deepEqual(Array.from(required, row => row.id), [
+   'detail-p-paired-waltz-shared-return-01',
+   'detail-p-paired-waltz-common-bass-01'
+  ]);
+  assert.equal(lesson.handMode, 'split');
+  assert.deepEqual(copy(lesson.steps.slice(0,3)), copy(returnLesson.steps.slice(0,3)));
+  const actual = lesson.steps.at(-1);
+  const prepared = newVoicing.steps[4];
+  assert.deepEqual(copy([actual.type, actual.keys, actual.raw]), copy([prepared.type, prepared.keys, prepared.raw]));
+  assert.deepEqual(copy(lesson.fingeringSpec.steps.at(-1)), copy(newVoicing.fingeringSpec.steps[4]));
+  assert.equal(lesson.rhythm.steps.at(-1).restBeforeBeats, 1);
+  return;
+ }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');
  if (lesson.learning.branch === 'paired-waltz-upbeat') {
   assertWaltzUpbeatPreparation(lesson, required);

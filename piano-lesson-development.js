@@ -1519,6 +1519,16 @@
     events: [...pairedWaltzRightAfterBass.events, pairedWaltzSharedCadence.events.at(-1)],
     options: { bpm: 48, beats: [2.5, 1, 1, 1], startBeats: [0, 3, 4, 6], articulation: 'standard' }
   };
+  const pairedWaltzAlteredVoicing = {
+    id: 'detail-p-paired-waltz-altered-voicing-01',
+    title: 'Вальс: новое созвучие после тихой доли',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzSharedReturn.id,
+    requires: [pairedWaltzSharedReturn.id, pairedWaltzCommonBass.id],
+    goal: 'Приготовь фа–ля левой и фа правой за тихую третью долю. Возьми новое созвучие обеими руками на следующее «раз».',
+    events: [...pairedWaltzRightAfterBass.events, pairedWaltzCommonBass.events[4]],
+    options: pairedWaltzSharedReturn.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1532,7 +1542,8 @@
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
     pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth,
-    pairedWaltzPickupDyad, pairedWaltzSharedCadence, pairedWaltzChordToBass, pairedWaltzRightAfterBass, pairedWaltzSharedReturn);
+    pairedWaltzPickupDyad, pairedWaltzSharedCadence, pairedWaltzChordToBass, pairedWaltzRightAfterBass, pairedWaltzSharedReturn,
+    pairedWaltzAlteredVoicing);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3666,6 +3677,48 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzSharedReturn.goal,
         context: 'После короткой мелодической реплики пауза даёт время подготовить следующее совместное вступление.',
         sourceNote: 'Хуан описывает отпускание давления перед следующим звуком или аккордом. У ван Диллена четверть служит одной долей в 3/4. Сама фраза, точный перенос, пальцы, длительности и темп выбраны проектом.'
+      }
+    });
+  }
+
+  function describePairedWaltzAlteredVoicing(lesson, adapter) {
+    const setup = 'Знакомое начало — C3–E3–G3 левой пальцами 5–3–1 и C4 большим пальцем правой. Отдельно проверь новое созвучие. Слева F3–A3 пальцами 2–1, справа F4 безымянным. Педаль выключена.';
+    const motion = 'На «раз» второго такта сыграй G2 мизинцем левой. Отпусти соль на «два» и сыграй C4 большим пальцем правой. На тихом «три» после отпускания до приготовь левую к фа–ля, а правый безымянный к фа. Проверь положение лёгким касанием без звука. На новом «раз» нажми три клавиши вместе.';
+    const count = 'При 48 BPM считай «раз-и, два-и, три-и | раз, два, три | раз, два». На последнем «и» первого такта отпусти начальный аккорд. Во втором такте «три» целиком тихое. Новое созвучие держи одну долю и отпусти на «два».';
+    const hearing = 'Послушай образец. После начального аккорда слышны полдоли тишины, соль левой и до правой. На новом «раз» после полной тихой доли услышь другое созвучие с верхним фа и одной общей атакой.';
+    const mastery = 'На «три» слышна тишина. Пальцы спокойно готовы над F3, A3 и F4 до нового «раз». Три звука начинаются вместе и вместе отпускаются на «два».';
+    const position = 'https://practisingthepiano.com/leaps-of-faith-on-practising-waltzes/';
+    const meter = 'https://www.oscarvandillen.com/basic_elements_of_music_theory/musical_notation/';
+    lesson.rhythm = waltzRhythm(pairedWaltzAlteredVoicing.options, 'project-paired-waltz-altered-voicing-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Подготовка другого созвучия в паузе', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-altered-voicing', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй G2 мизинцем левой, отпусти и найди F3–A3. Затем отдельно сыграй C4 правой, отпусти и приготовь безымянный над F4. В обоих случаях сначала найди клавиши, затем нажми их.',
+        motion, count, hearing,
+        'Если вернулось прежнее до или три ноты прозвучали вразнобой, повтори тихую долю и вступление. После спокойного одновременного нажатия верни целую фразу.',
+        'Придумай свою короткую фразу с двумя удобными созвучиями. Перед вторым оставь тихую долю, за которую пальцы займут новые места. Занимайся 3–5 минут с отдыхом и повтори перенос на следующий день.'
+      ],
+      selfCheck: [
+        'Первый бас нового такта звучит после полудоли тишины. На «два» отвечает до правой, на «три» обе руки свободны.',
+        'Левой успеваю найти F3–A3 пальцами 2–1, правой готовлю F4 пальцем 4. Проверяю движение и касание за инструментом.',
+        'На новое «раз» звучат фа–ля и верхнее фа единым вступлением. На «два» все три клавиши освобождаются.'
+      ],
+      rhythmNotice: count,
+      references: [position, meter],
+      referenceTitles: {
+        [position]: 'Грэм Фитч. Leaps of Faith: On Practising Waltzes, Quick Cover',
+        [meter]: 'Оскар ван Диллен. Basic elements of music theory, гл. 2, Note and rest values'
+      },
+      sourceEvidenceIds: ['fitch-waltz-chord-position-preparation-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzAlteredVoicing.goal,
+        context: 'Целая доля тишины даёт время найти новую гармонию после одиночного ответа правой.',
+        sourceNote: 'Фитч предлагает в разборе вальса сначала найти клавиши следующего аккорда, затем сыграть. Подготовка обеих рук в заданной паузе, состав созвучий, пальцы и темп выбраны проектом.'
       }
     });
   }
@@ -7571,6 +7624,9 @@
     }
     if (!existing.has(pairedWaltzSharedReturn.id)) {
       describePairedWaltzSharedReturn(lessons.find(lesson => lesson.id === pairedWaltzSharedReturn.id), adapter);
+    }
+    if (!existing.has(pairedWaltzAlteredVoicing.id)) {
+      describePairedWaltzAlteredVoicing(lessons.find(lesson => lesson.id === pairedWaltzAlteredVoicing.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);
