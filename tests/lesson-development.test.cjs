@@ -385,6 +385,28 @@ function assertWaltzPickupDyadPreparation(lesson, required) {
  }
 }
 
+function assertWaltzSharedCadencePreparation(lesson, required) {
+ const [left, paired] = required;
+ assert.equal(required.length, 2);
+ assert.equal(lesson.handMode, 'split');
+ assert.equal(left.handMode, 'left');
+ assert.equal(paired.handMode, 'split');
+ for (const candidate of [lesson, left, paired]) {
+  assert.equal(candidate.contentKind, 'exercise');
+  assert.equal(candidate.learning.timingPrecision, 'beat-boundary-v2');
+  assert.deepEqual(copy(candidate.rhythm.timeSignature), { numerator: 3, denominator: 4 });
+ }
+ const frames = (candidate, hand) => Array.from(candidate.steps, (_, i) => waltzHandFrame(candidate, i, hand));
+ const leftLine = frames(lesson, 'left');
+ assert.deepEqual(leftLine, frames(left, 'left'), 'The complete left cadence must match its prepared pitches, timing and fingers');
+ assert.deepEqual(leftLine.map(([notes]) => notes.length), [1, 1, 1, 1, 3]);
+ const right = frames(lesson, 'right');
+ assert.deepEqual(right.map(([notes]) => notes.length), [0, 0, 0, 0, 1]);
+ const [preparedKeys, preparedBeat] = frames(paired, 'right').at(-1);
+ assert.deepEqual(right.at(-1), [preparedKeys, preparedBeat, 3, 0.25],
+  'The prepared right downbeat must wait through the pause and share the full final measure');
+}
+
 function assertPreparedHandEvidence(lesson,preparation,lessons){
  if(lesson.handMode!=='split'){
   assert.ok(['left','right'].includes(lesson.handMode));assert.equal(preparation.handMode,lesson.handMode,'Optional motor preparation must use the same hand');
@@ -420,6 +442,10 @@ function assertPreparedHandEvidence(lesson,preparation,lessons){
  }
  if (lesson.learning.branch === 'paired-waltz-pickup-dyad') {
   assertWaltzPickupDyadPreparation(lesson, required);
+  return;
+ }
+ if (lesson.learning.branch === 'paired-waltz-shared-cadence') {
+  assertWaltzSharedCadencePreparation(lesson, required);
   return;
  }
  for (const candidate of required) assert.equal(candidate.contentKind, 'exercise');
@@ -663,6 +689,20 @@ test('pickup-to-dyad preparation protects the separate C3 finger and the prepare
  const wrongRelease = copy(ending);
  wrongRelease.rhythm.steps[4].durationBeats = 1;
  assert.throws(() => assertWaltzPickupDyadPreparation(lesson, [opening, wrongRelease]), /dyad and its answer must match/);
+});
+
+test('shared waltz cadence preparation preserves the left triad and the right downbeat through the release', () => {
+ const get = id => app.lessons.find(lesson => lesson.id === id);
+ const lesson = get('detail-p-paired-waltz-shared-cadence-01');
+ assert.ok(lesson, 'Missing the shared waltz cadence');
+ const [left, paired] = lesson.learning.requires.map(get);
+ assertWaltzSharedCadencePreparation(lesson, [left, paired]);
+ const wrongTriad = copy(left);
+ wrongTriad.fingeringSpec.steps.at(-1)[1].num = 4;
+ assert.throws(() => assertWaltzSharedCadencePreparation(lesson, [wrongTriad, paired]), /complete left cadence/);
+ const wrongDownbeat = copy(paired);
+ wrongDownbeat.fingeringSpec.steps.at(-1)[1].num = 2;
+ assert.throws(() => assertWaltzSharedCadencePreparation(lesson, [left, wrongDownbeat]), /prepared right downbeat/);
 });
 
 test('optional cross-branch preparation rejects wrong hand,pieces,later or missing prerequisites,non-p7 stages,undeclared canonical links and historical exceptions',()=>{

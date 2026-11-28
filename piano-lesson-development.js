@@ -1476,6 +1476,19 @@
     events: [...pairedWaltzDelayedMelody.events.slice(0, 4), ...pairedWaltzRootFifth.events.slice(4)],
     options: { bpm: 48, beats: [1, 1, 0.5, 1, 0.5, 1], startBeats: [0, 1, 2.5, 3, 4, 5], articulation: 'standard' }
   };
+  const pairedWaltzSharedCadence = {
+    id: 'detail-p-paired-waltz-shared-cadence-01',
+    title: 'Вальс: заключительный аккорд обеими руками',
+    group: pairedWaltzPulse.group, groupTitle: pairedWaltzPulse.groupTitle, stage: 'p7',
+    after: pairedWaltzPickupDyad.id,
+    requires: [leftWaltzApproachChord.id, pairedWaltzBassUpbeat.id],
+    goal: 'После короткой си и паузы возьми до–ми–соль левой и верхнее до правой на новое «раз». Удерживай все четыре клавиши три доли и отпусти вместе.',
+    events: [
+      ...leftWaltzApproachChord.events.slice(0, 4),
+      [...leftWaltzApproachChord.events[4], pairedWaltzBassUpbeat.events[3][1]]
+    ],
+    options: leftWaltzApproachChord.options
+  };
   piano.push(...eMajorRoundtrips, eMajorPairedRoundtrip, ...fsharpRoundtrips, fsharpPairedApex,
     fsharpPairedRoundtrip, ...bMajorRoundtrips, bMajorPairedUpperTurn, bMajorPairedMiddle,
     bMajorPairedJoinedAscent, bMajorPairedLowerAscent, bMajorPairedFullAscent,
@@ -1489,7 +1502,7 @@
     pairedWaltzLeftRest, pairedWaltzHandoff, pairedWaltzEighthHandoff, leftWaltzEighthRelocate,
     pairedWaltzEighthBassShift, pairedWaltzUpbeat, pairedWaltzBassUpbeat, pairedWaltzBarlineHandoff,
     pairedWaltzBassHandoff, pairedWaltzDelayedMelody, pairedWaltzDyadEntry, pairedWaltzCommonBass, pairedWaltzRootFifth,
-    pairedWaltzPickupDyad);
+    pairedWaltzPickupDyad, pairedWaltzSharedCadence);
 
   function describeEMajorRoundtrip(lesson, spec, adapter) {
     const { hand, tonic, apex, turn, turnFingers, previousTurn, connection, fingers } = spec;
@@ -3454,6 +3467,49 @@
         type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzPickupDyad.goal,
         context: 'Подводящая нота ведёт к басу нового такта. После баса левая возвращается к созвучию, а правая входит вместе с ним.',
         sourceNote: 'Зак показывает си, которая ведёт к до. В шестом такте вальса Чайковского бас C3 отмечает «раз». На «два» вместе вступают три ноты левой и C5 правой. Упражнение соединяет эти приёмы с собственными длительностями и аппликатурой.'
+      }
+    });
+  }
+
+  function describePairedWaltzSharedCadence(lesson, adapter) {
+    const setup = 'Повтори подготовку левой: соль G2 мизинцем, ре D3 большим, соль G2 мизинцем и си B2 средним. Отдельно собери C3–E3–G3 пальцами 5–3–1. Поставь правый большой над C4. Педаль выключена.';
+    const motion = 'Отпусти си в середине «и». В короткую тишину перенеси левую кисть вправо, чтобы мизинец оказался у C3. На новое «раз» нажми три нижние клавиши вместе с верхним до. Отпусти все четыре одним движением после полного такта.';
+    const count = 'При 48 BPM считай «раз, два, три-е-и-а | раз, два, три». Первые соль и ре длятся по доле. На «три» соль звучит полдоли. Си начинается на «и» и длится четверть доли. На «а» отпусти си и дождись нового «раз». Держи аккорд весь второй такт.';
+    const hearing = 'Послушай короткую си, тишину и один общий аккорд. Пропой верхнее до до игры. Отсчитай три доли поверх затихающего аккорда и услышь цельное окончание.';
+    const mastery = 'После паузы слышен один удар четырёх клавиш. Верхнее до и три нижние ноты удерживаются ровно три доли и отпускаются на следующее мысленное «раз».';
+    const score = 'https://noctavepiano.com/partitions/tchaikovsky-valse-op39-8/tchaikovsky-valse-op39-8.pdf#page=2';
+    const clark = 'https://openbooks.library.baylor.edu/pianobasics/chapter/accompaniment-styles/';
+    const zac = 'https://www.nathanielschool.com/lessons/waltz-piano-accompaniment-3-4-left-hand-patterns/';
+    lesson.rhythm = waltzRhythm(pairedWaltzSharedCadence.options, 'project-paired-waltz-shared-cadence-v1', adapter);
+    lesson.guide = adapter.normalizeGuide({
+      stage: 'Две руки: общий заключительный аккорд', setup, motion, blind: hearing, mastery
+    });
+    Object.assign(lesson.learning, {
+      branch: 'paired-waltz-shared-cadence', coverageDomain: 'coordination',
+      timingPrecision: 'beat-boundary-v2', nextLessonId: null,
+      practiceSteps: [
+        setup,
+        'Без таймера сыграй только си. Отпусти, перенеси левую и возьми аккорд обеими руками. Если верхнее до запаздывает или три ноты левой раскатываются, остановись и собери четыре клавиши без перехода.',
+        motion, count, hearing,
+        'Придумай свой двухтактовый финал в 3/4. Оставь ход си–аккорд и выбери другую удобную верхнюю ноту. Проверь общую атаку и отпускание на счёт. Занимайся 3–5 минут с отдыхом. Повтори после перерыва и на следующий день.'
+      ],
+      selfCheck: [
+        'На «а» все клавиши свободны. За это время левая успевает приготовиться к трезвучию.',
+        'На «раз» звучат C3, E3, G3 и C4. Верхнее до входит вместе с тремя нижними нотами.',
+        'Держу все клавиши до следующего мысленного «раз» и освобождаю вместе. За инструментом проверяю пальцы и свободу кисти.'
+      ],
+      rhythmNotice: count,
+      references: [score, clark, zac],
+      referenceTitles: {
+        [score]: 'П. И. Чайковский. Вальс, op. 39 № 8, Noctave, с. 2, такт 85',
+        [clark]: 'Майкл Кларк. Baylor Piano Basics, § 90.1, такт 5 примера I–IV–I–V7–I',
+        [zac]: 'Джейсон Зак. Essential Waltz Piano Accompaniment Tools, шаг 4'
+      },
+      sourceEvidenceIds: ['tchaikovsky-waltz-shared-cadence-2026-11-28'],
+      provenance: {
+        type: 'project-technical-drill', author: 'Упражнение проекта', purpose: pairedWaltzSharedCadence.goal,
+        context: 'В конце фразы верхняя нота и аккорд вступают и прекращаются вместе. Короткая пауза даёт время подготовить три клавиши левой.',
+        sourceNote: 'У Чайковского в такте 85 обе руки начинают с общей восьмой в ми-бемоль мажоре. У Кларка трезвучие до мажора левой длится три доли. Зак описывает подводящую си перед до. Регистры, пальцы, пауза, общие три доли и темп заданы проектом.'
       }
     });
   }
@@ -7347,6 +7403,9 @@
     }
     if (!existing.has(pairedWaltzPickupDyad.id)) {
       describePairedWaltzPickupDyad(lessons.find(lesson => lesson.id === pairedWaltzPickupDyad.id), adapter);
+    }
+    if (!existing.has(pairedWaltzSharedCadence.id)) {
+      describePairedWaltzSharedCadence(lessons.find(lesson => lesson.id === pairedWaltzSharedCadence.id), adapter);
     }
     if(!existing.has(fsharpFourThumbRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpFourThumbRight.id),adapter,false);
     if(!existing.has(fsharpThumbExitRight.id))describeFsharpFourThumbRight(lessons.find(l=>l.id===fsharpThumbExitRight.id),adapter,true);

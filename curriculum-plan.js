@@ -4648,6 +4648,17 @@
       ]
     },
     {
+      "id": "detail-p-paired-waltz-shared-cadence-01",
+      "stage": "p7",
+      "branch": "paired-waltz-shared-cadence",
+      "fingerprint": "a06db534",
+      "challenge": true,
+      "preparation": [
+        "detail-p-left-waltz-approach-chord-01",
+        "detail-p-paired-waltz-bass-upbeat-01"
+      ]
+    },
+    {
       "id": "detail-p-paired-waltz-left-rest-01",
       "stage": "p7",
       "branch": "paired-waltz-left-rest",

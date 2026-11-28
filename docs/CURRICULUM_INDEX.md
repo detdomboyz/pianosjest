@@ -590,6 +590,7 @@
 | detail-p-paired-waltz-common-bass-01 | Вальс: меняем созвучие над тем же басом | 12 | 48 | MIDI-челлендж | сначала detail-p-left-waltz-common-bass-01; сначала detail-p-paired-waltz-dyad-entry-01; сначала course04-06 |
 | detail-p-paired-waltz-root-fifth-01 | Вальс: смена баса под прежним созвучием | 12 | 48 | MIDI-челлендж | сначала detail-p-left-waltz-root-fifth-01; сначала detail-p-paired-waltz-common-bass-01 |
 | detail-p-paired-waltz-pickup-dyad-01 | Вальс: от подводящей си к созвучию | 9 | 48 | MIDI-челлендж | сначала detail-p-paired-waltz-delayed-melody-01; сначала detail-p-paired-waltz-root-fifth-01 |
+| detail-p-paired-waltz-shared-cadence-01 | Вальс: заключительный аккорд обеими руками | 8 | 48 | MIDI-челлендж | сначала detail-p-left-waltz-approach-chord-01; сначала detail-p-paired-waltz-bass-upbeat-01 |
 | detail-p-paired-waltz-left-rest-01 | Вальс: правая играет на «три» | 11 | 48 | MIDI-челлендж | сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-handoff-01 | Вальс: передай пульс другой руке | 10 | 48 | MIDI-челлендж | сначала course01-02; сначала course04-07; сначала detail-p-relocate-02; сначала course01-07 |
 | detail-p-paired-waltz-eighth-handoff-01 | Вальс: передай пульс на «два-и» | 12 | 48 | MIDI-челлендж | сначала detail-p-left-eighth-pairs-01; сначала detail-p-eighth-rest-offbeat-right-01; сначала course04-07; сначала course01-07 |
